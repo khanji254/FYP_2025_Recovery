@@ -1,0 +1,56 @@
+\section{Methodology}
+\label{sec:methodology}
+
+The proposed solution implements a comprehensive dual-subsystem approach integrating mechanical and electrical innovations to address identified system vulnerabilities.
+
+\subsection{Mechanical System Design}
+
+\subsubsection{Deployment Mechanism: The Sealed Explosion Cap}
+
+Implementation of a sealed explosion cap architecture to house the Crimson Powder pyrotechnic charge. The design serves dual critical functions: containment of combustion flame products to prevent thermal damage to parachute canopy materials, while simultaneously directing pressure wave energy to shear pin interfaces for reliable mechanical ejection. This approach eliminates the thermal damage risk observed in previous deployment attempts while ensuring consistent deployment force application.
+
+The explosion cap will be fabricated using high-temperature resistant materials capable of withstanding the combustion process while maintaining structural integrity for multiple test cycles. The internal geometry will be optimized through iterative testing to achieve consistent pressurization characteristics.
+
+\subsubsection{Avionics Bay Structure}
+
+Design and fabrication of a custom 3D-printed sled/holder assembly to secure critical flight computer components, LiPo battery packs, and Battery Management System (BMS) modules. The key engineering feature incorporates mechanical isolation and vibration dampening capabilities specifically engineered to withstand high-G launch acceleration forces while maintaining structural integrity throughout flight operations. The design maintains center of gravity stability critical for flight trajectory predictability.
+
+Materials selection will consider the thermal, mechanical, and mass constraints of the N4 airframe. PETG filament has been identified as the primary candidate due to its superior strength and temperature resistance compared to standard PLA.
+
+\subsection{Electrical System Architecture}
+
+\subsubsection{Hardware Architecture}
+
+\textbf{Microcontroller Unit:} ESP32 platform selected for high-speed processing capabilities required for real-time telemetry data processing and transmission. The dual-core architecture enables parallel processing of sensor data acquisition and wireless communication tasks.
+
+\textbf{Telemetry System:} Integration of Digi XBee-PRO 900HP module providing robust long-range communication capabilities exceeding 5km operational range with verified packet loss rates below 5\%. The module operates in the 900 MHz ISM band, offering superior range and obstacle penetration compared to 2.4 GHz alternatives.
+
+\textbf{PCB Fabrication:} Custom printed circuit board design and fabrication to minimize circuit footprint, eliminate loose wire connection failures, and improve overall system reliability under vibration conditions. The PCB will incorporate proper grounding techniques, decoupling capacitors, and ESD protection for all external interfaces.
+
+\subsubsection{Smart Ignition Control System}
+
+Implementation of Pulse Width Modulation (PWM) controlled ignition utilizing low-side MOSFET driver architecture. The system implements precise heating profile control logic enabling temperature regulation of nichrome wire deployment igniters. This approach prevents wire burnout while enabling multiple deployment tests, significantly improving pre-flight validation capabilities and reducing deployment risk.
+
+The PWM control algorithm will be developed to deliver controlled current to the nichrome wire, gradually increasing temperature to the ignition threshold while monitoring wire resistance to prevent thermal runaway conditions.
+
+\subsubsection{Power Management and Feedback Systems}
+
+\textbf{Battery Management System Integration:} Active battery monitoring and management ensuring operational safety through real-time voltage monitoring and protection against over-discharge conditions. The BMS will also provide cell balancing functionality to maximize battery pack longevity and performance.
+
+\textbf{Feedback Loop Architecture:} Real-time monitoring and transmission of critical system parameters including battery voltage levels and igniter continuity status to ground station operators. Implementation of automatic "Launch Inhibit" safety protocol triggered when main battery voltage drops below 14.0V threshold, preventing launch under insufficient power conditions.
+
+\subsection{Testing and Validation Plan}
+
+\subsubsection{Ground Testing}
+
+\begin{itemize}
+    \item Telemetry range testing in open field conditions
+    \item PWM ignition profile characterization using thermal imaging
+    \item Explosion cap deployment force measurements
+    \item Avionics holder vibration testing using shake table
+    \item Full system integration testing
+\end{itemize}
+
+\subsubsection{Flight Testing}
+
+Progressive flight testing approach beginning with low-altitude test flights to validate basic functionality before proceeding to full mission profile testing.

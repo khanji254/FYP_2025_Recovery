@@ -1,0 +1,59 @@
+\section{Literature Review}
+\label{sec:review}
+
+\subsection{Telemetry Systems Analysis}
+
+Comprehensive analysis of telemetry technologies reveals distinct performance characteristics across different platforms. The comparison of various systems used in student rocketry and UAV applications is presented in Table~\ref{tab:telemetry}.
+
+\begin{table}[h]
+\centering
+\caption{Telemetry System Comparison for Student Rocketry Applications}
+\label{tab:telemetry}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+\textbf{Technology} & \textbf{Typical Use} & \textbf{Range} & \textbf{Data Cap} & \textbf{Strength} & \textbf{Limitation} \\ \midrule
+433 MHz RF & DIY recovery & 5--10 km & Very low & Simple, long range & No ACKs \\
+Beacon & N4 Recovery & 4 km/0.8 km & Low--Med & Simple & Range drops \\
+LoRa SX1278 & Student rockets & 2--15 km & Low & Low power & Low bandwidth \\
+XBee 2.4 GHz & UAVs & $<$2 km & Medium & Easy integration & Short range \\
+\textbf{XBee-PRO 900HP} & \textbf{Advanced rockets} & \textbf{5--15 km} & \textbf{Med--High} & \textbf{Reliable protocol} & \textbf{Higher power} \\
+ESP-NOW & Command control & $<$1 km & Medium & Low latency & Not long-range \\
+Cellular LTE & High-budget & Global & High & Unlimited range & Network dependent \\ \bottomrule
+\end{tabular}
+\end{table}
+
+The XBee-PRO 900HP system emerges as the optimal solution for the N4 mission, providing the necessary balance between range, data capacity, and protocol reliability required for critical telemetry operations. Its acknowledgment-based protocol ensures data integrity, while the 900 MHz frequency band provides superior penetration characteristics compared to 2.4 GHz alternatives.
+
+\subsection{Deployment Mechanism Literature}
+
+\subsubsection{Igniter Technologies}
+
+Commercial E-Match igniters provide reliable and rapid ignition but present significant cost constraints and operate as single-use devices. Each E-Match costs approximately \$5--\$10, making repeated testing prohibitively expensive for student projects. Nichrome wire-based DIY ignition systems offer reusability advantages and substantial cost reduction, making them the preferred choice for the Nakuja project.
+
+\subsubsection{N4 System Analysis}
+
+Previous Nakuja N4 implementations utilized a direct DC drive method, applying 14.8V directly to nichrome wire igniters. This approach resulted in instantaneous temperature escalation exceeding 1000 degrees Celsius, causing wire failure and "popped" wire phenomena. Critical gaps identified include:
+
+\begin{itemize}
+    \item Absence of deployment system reusability, complicating testing protocols and introducing deployment risk
+    \item Lack of battery monitoring systems to verify sufficient power before launch
+    \item No continuity feedback to ground control systems, preventing verification of igniter circuit integrity
+\end{itemize}
+
+\subsection{Structural and Power System Challenges}
+
+\subsubsection{Crimson Powder Deployment Issues}
+
+Empirical testing of the existing system revealed significant structural vulnerabilities. Standard spring-loaded battery holders demonstrate mechanical resonance failure under high shock loads, resulting in momentary power loss and microcontroller reset events. Flight computer mounting systems employing rigid attachment methods transmit high-frequency vibrations directly to PCB assemblies, causing solder fatigue and sensor noise degradation.
+
+\subsubsection{Identified Research Gaps}
+
+\begin{enumerate}
+    \item \textbf{Quantifiable Charge Energy:} Absence of empirical data correlating charge mass (grams) to ejection force (Newtons) for the N4 airframe volume, preventing optimization of deployment energy.
+    
+    \item \textbf{Ruggedized Avionics Structure:} Lack of shock-isolated Flight Computer holder designs specifically engineered to withstand high-impact forces generated during pyrotechnic deployment events.
+    
+    \item \textbf{Pressurization Predictability:} Pop test observations indicate unpredictable pressurization characteristics within the explosion chamber, leading to inconsistent deployment performance and potential thermal damage to recovery systems.
+\end{enumerate}
+
+These research gaps provide the foundation for the proposed system improvements, ensuring that solutions address documented failure modes while contributing new knowledge to the student rocketry community.

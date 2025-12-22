@@ -1,0 +1,23 @@
+\section{Introduction}\label{sec:introduction}
+
+\subsection{Background of Study}
+
+Rocket recovery systems represent the most critical subsystem for preserving flight data and hardware in high-power rocketry missions. The evolution of recovery systems has progressed from simple single deployment methods to sophisticated dual deployment architectures. Single deployment systems release a parachute at apogee, presenting risks of high drift radius and unpredictable landing zones. In contrast, dual deployment systems utilize a drogue parachute at apogee for stability, followed by a main parachute deployment at lower altitude for controlled soft landing, establishing the standard for modern high-power rocketry operations.
+
+The Nakuja Project N4 mission builds upon previous experiences from the N3.5 mission, which employed a basic single-deployment piston-based system. The current N4 design implements dual deployment architecture but faces significant challenges in deployment reliability and telemetry signal integrity. Previous missions demonstrated critical vulnerabilities in both mechanical deployment mechanisms and communication systems, necessitating a comprehensive redesign approach.
+
+\subsection{Problem Statement}
+
+The N4 mission confronts three critical reliability challenges that threaten mission success:
+
+\textbf{Telemetry Range Limitations:} The current telemetry system protocol exhibits significant range constraints, resulting in signal degradation and potential complete signal loss during critical flight phases. This limitation creates substantial risk of vehicle loss and inability to track the rocket post-flight, particularly during descent and landing phases.
+
+\textbf{Uncontrolled Ignition System:} The existing "DC dump" ignition method for nichrome wire deployment generates uncontrolled temperatures exceeding 1000 degrees Celsius. This excessive heat generation causes wire burnout, creating a single-use deployment system that cannot be tested reliably and introduces significant deployment risk during actual flight operations.
+
+\textbf{Absence of Pre-flight Monitoring:} The lack of real-time feedback systems for critical parameters including battery voltage and igniter continuity leaves ground operators without visibility into potential system failures. This blind spot in operational awareness substantially increases the risk of mission aborts or catastrophic deployment malfunctions during critical flight phases.
+
+\subsection{Justification}
+
+The development of a reliable recovery system is paramount to mission success. Loss of the rocket vehicle results not only in hardware loss but also complete loss of flight data critical for mission analysis and future design improvements. The proposed improvements address documented failure modes from previous missions and implement industry-standard practices adapted for student rocketry applications.
+
+The Nakuja Project represents a significant investment in student engineering education and practical aerospace systems development. Ensuring mission success through robust recovery systems validates this investment and provides valuable learning opportunities for future engineering professionals.

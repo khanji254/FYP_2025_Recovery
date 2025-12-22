@@ -1,0 +1,692 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440) (preloaded format=pdflatex 2020.6.4)  20 MAY 2021 09:26
+entering extended mode
+**./Latex_Template.tex
+(Latex_Template.tex
+LaTeX2e <2020-02-02> patch level 5
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\fleqn.clo"
+File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
+\mathindent=\dimen102
+Applying: [2015/01/01] Make \[ robust on input line 50.
+LaTeX Info: Redefining \[ on input line 51.
+Already applied: [0000/00/00] Make \[ robust on input line 62.
+Applying: [2015/01/01] Make \] robust on input line 74.
+LaTeX Info: Redefining \] on input line 75.
+Already applied: [0000/00/00] Make \] robust on input line 83.
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/base\size12.clo"
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen103
+)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/latex/ntgclass\a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/latex/psfrag\psfrag.sty
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count88
+\pfg@scount=\count89
+\pfg@temp=\write3
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen106
+)) ("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen107
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen108
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks17
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks18
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (Styles/hangcaption.sty
+\captionwidth=\skip46
+) (Styles/pstricks.sty
+
+LaTeX Warning: You have requested package `Styles/pstricks',
+               but the package provides `pstricks'.
+
+Package: pstricks 1997/03/25: package wrapper for PSTricks pstricks.tex
+("C:\Program Files\MiKTeX 2.9\tex/generic/pstricks\pstricks.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/xkeyval\pst-xkey.tex"
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.tex"
+("C:\Program Files\MiKTeX 2.9\tex/generic/xkeyval\xkvutils.tex"
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+)
+\XKV@depth=\count102
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)))
+("C:\Program Files\MiKTeX 2.9\tex/generic/pstricks\pst-fp.tex" `pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count103
+\pstFP@xia=\count104
+\pstFP@xib=\count105
+\pstFP@xfa=\count106
+\pstFP@xfb=\count107
+\pstFP@rega=\count108
+\pstFP@regb=\count109
+\pstFP@regs=\count110
+\pstFP@times=\count111
+)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks23
+\pgfutil@tempdima=\dimen115
+\pgfutil@tempdimb=\dimen116
+
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pgfutil-common-lists.tex))
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks24
+\pgfkeys@temptoks=\toks25
+
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks26
+))
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pgffor.code.tex
+Loading pgffor.code.tex
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath.code.tex
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathcalc.code.tex
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathutil.code.tex
+\pgf@x=\dimen117
+\pgf@xa=\dimen118
+\pgf@xb=\dimen119
+\pgf@xc=\dimen120
+\pgf@y=\dimen121
+\pgf@ya=\dimen122
+\pgf@yb=\dimen123
+\pgf@yc=\dimen124
+\c@pgf@counta=\count112
+\c@pgf@countb=\count113
+\c@pgf@countc=\count114
+\c@pgf@countd=\count115
+\pgfutil@tempcnta=\count116
+\pgfutil@tempcntb=\count117
+)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen125
+\pgfmath@count=\count118
+\pgfmath@box=\box29
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.code.tex
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.random.code.tex)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.base.code.tex)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.round.code.tex)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex)
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex)))
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count119
+))
+\pgffor@iter=\dimen126
+\pgffor@skip=\dimen127
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+)
+\psLoopIndex=\count120
+
+`PSTricks' v2.97  <2019/05/11> (tvz,hv)
+\pst@dima=\dimen128
+\pst@dimb=\dimen129
+\pst@dimc=\dimen130
+\pst@dimd=\dimen131
+\pst@dimg=\dimen132
+\pst@dimh=\dimen133
+\pst@dimm=\dimen134
+\pst@dimn=\dimen135
+\pst@dimo=\dimen136
+\pst@dimp=\dimen137
+\pst@hbox=\box30
+\pst@ibox=\box31
+\pst@boxg=\box32
+\pst@cnta=\count121
+\pst@cntb=\count122
+\pst@cntc=\count123
+\pst@cntd=\count124
+\pst@cntg=\count125
+\pst@cnth=\count126
+\pst@cntm=\count127
+\pst@cntn=\count128
+\pst@cnto=\count129
+\pst@cntp=\count130
+\@zero=\count131
+\pst@toks=\toks32
+("C:\Program Files\MiKTeX 2.9\tex/generic/pstricks\pstricks.con")
+\psunit=\dimen138
+\psxunit=\dimen139
+\psyunit=\dimen140
+\pst@C@@rType=\count132
+\pslinewidth=\dimen141
+
+! Undefined control sequence.
+\pssetxlength ...\@psunit \psxunit \ifpst@useCalc 
+                                                  \edef \@@temp {\pscalculat...
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\pssetxlength ...Calc \edef \@@temp {\pscalculate 
+                                                  {#2}}\afterassignment \pst...
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   {
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   {
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Extra \else.
+\pssetxlength ...it@off #1 \@@temp \@psunit \else 
+                                                  \afterassignment \pstunit@...
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+I'm ignoring this; it doesn't match any \if.
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \@psunit 
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Undefined control sequence.
+\pssetylength ...\@psunit \psyunit \ifpst@useCalc 
+                                                  \edef \@@temp {\pscalculat...
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\pssetylength ...Calc \edef \@@temp {\pscalculate 
+                                                  {#2}}\afterassignment \pst...
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   {
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   {
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Extra \else.
+\pssetylength ...it@off #1 \@@temp \@psunit \else 
+                                                  \afterassignment \pstunit@...
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+I'm ignoring this; it doesn't match any \if.
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \@psunit 
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Extra \else.
+\XKV@s@tk@ys ...XKV@tfam \XKV@s@tk@ys@ {#3}}\else 
+                                                  \XKV@whilist \XKV@fams \XK...
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+I'm ignoring this; it doesn't match any \if.
+
+! Extra \fi.
+\XKV@s@tk@ys ...urrentOption }\fi \fi \fi \fi \fi 
+                                                  
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+I'm ignoring this; it doesn't match any \if.
+
+! Extra \fi.
+\XKV@f@r ...two \else #2\expandafter \XKV@f@r \fi 
+                                                  #1{#2}
+l.1277 ...ricks]{fsOrigin={0,0},fsAngle=137.50775}
+                                                  
+I'm ignoring this; it doesn't match any \if.
+
+\psk@startLW=\dimen142
+\psk@endLW=\dimen143
+\pst@customdefs=\toks33
+\pslinearc=\dimen144
+\pst@symbolStep=\dimen145
+\pst@symbolWidth=\dimen146
+\pst@symbolLinewidth=\dimen147
+! Undefined control sequence.
+l.2878 \ifpst@psfonts
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra \else.
+l.2880 \else
+            
+I'm ignoring this; it doesn't match any \if.
+
+! Extra \fi.
+l.2882 \fi
+          
+I'm ignoring this; it doesn't match any \if.
+
+\everypsbox=\toks34
+\psframesep=\dimen148
+\pslabelsep=\dimen149
+\sh@wgridXunit=\dimen150
+\sh@wgridYunit=\dimen151
+\pst@shift=\dimen152
+)) (Styles/pst-node.sty
+
+LaTeX Warning: You have requested package `Styles/pst-node',
+               but the package provides `pst-node'.
+
+Package: pst-node 1997/03/25: package wrapper for PSTricks pst-node.tex
+(C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/generic/pst-node\pst-node.tex  v1.42a, 2020/04/01
+\psrow=\count133
+\pscol=\count134
+\psmatrixcnt=\count135
+\psrowsep=\skip47
+\pscolsep=\skip48
+\pst@args=\count136
+\num@pts=\count137
+\pst@argcnt=\count138
+))
+(Styles/fancyheadings.sty
+\headrulewidth=\dimen153
+\footrulewidth=\dimen154
+\plainheadrulewidth=\dimen155
+\plainfootrulewidth=\dimen156
+\headwidth=\dimen157
+\footruleskip=\dimen158
+) (C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/latex/tocloft\tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip49
+\cftbeforetoctitleskip=\skip50
+\cftaftertoctitleskip=\skip51
+\cftbeforepartskip=\skip52
+\cftpartnumwidth=\skip53
+\cftpartindent=\skip54
+\cftbeforesecskip=\skip55
+\cftsecindent=\skip56
+\cftsecnumwidth=\skip57
+\cftbeforesubsecskip=\skip58
+\cftsubsecindent=\skip59
+\cftsubsecnumwidth=\skip60
+\cftbeforesubsubsecskip=\skip61
+\cftsubsubsecindent=\skip62
+\cftsubsubsecnumwidth=\skip63
+\cftbeforeparaskip=\skip64
+\cftparaindent=\skip65
+\cftparanumwidth=\skip66
+\cftbeforesubparaskip=\skip67
+\cftsubparaindent=\skip68
+\cftsubparanumwidth=\skip69
+\cftbeforeloftitleskip=\skip70
+\cftafterloftitleskip=\skip71
+\cftbeforefigskip=\skip72
+\cftfigindent=\skip73
+\cftfignumwidth=\skip74
+\c@lofdepth=\count139
+\c@lotdepth=\count140
+\cftbeforelottitleskip=\skip75
+\cftafterlottitleskip=\skip76
+\cftbeforetabskip=\skip77
+\cfttabindent=\skip78
+\cfttabnumwidth=\skip79
+) (Latex_Template.aux)
+\openout1 = `Latex_Template.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+ (C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/context/base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count141
+\scratchdimen=\dimen159
+\scratchbox=\box33
+\nofMPsegments=\count142
+\nofMParguments=\count143
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen160
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
+\everyMPtoPDFconversion=\toks36
+) (C:\Users\muchi\AppData\Roaming\MiKTeX\2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+) (Files/title_page.tex [1
+Non-PDF special ignored!
+<special> header=psfrag.pro
+Non-PDF special ignored!
+<special> header=pstricks.pro
+Non-PDF special ignored!
+<special> header=pst-algparser.pro
+Non-PDF special ignored!
+<special> header=pst-tools.pro
+Non-PDF special ignored!
+<special> header=pst-dots.pro
+Non-PDF special ignored!
+<special> header=pst-node.pro
+{C:/Users/muchi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+Non-PDF special ignored!
+<special> ps: /pssetRGBcolor /setrgbcolor load def /pssetCMYKcolor /setcmyk...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
+Non-PDF special ignored!
+<special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
+]
+<Figures/Jomo_logo.pdf, id=6, 249.93375pt x 185.69376pt>
+File: Figures/Jomo_logo.pdf Graphic file (type pdf)
+<use Figures/Jomo_logo.pdf>
+Package pdftex.def Info: Figures/Jomo_logo.pdf  used on input line 6.
+(pdftex.def)             Requested size: 136.5746pt x 101.47452pt.
+ [1 <./Figures/Jomo_logo.pdf>]) (Files/Declaration.tex) [1] (Files/Acknowledgment.tex) [2
+
+] (Files/Abstract.tex)
+[3
+
+] (Latex_Template.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write4
+\openout4 = `Latex_Template.toc'.
+
+ [1
+
+] (Latex_Template.lof)
+\tf@lof=\write5
+\openout5 = `Latex_Template.lof'.
+
+ [2
+
+] (Latex_Template.lot)
+\tf@lot=\write6
+\openout6 = `Latex_Template.lot'.
+
+ [3
+
+]
+(Files/Introduction.tex
+
+LaTeX Warning: Citation `Banks2005' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `ebeling' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `iso22400' on page 1 undefined on input line 8.
+
+
+LaTeX Warning: Citation `macchi1' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Citation `chen' on page 1 undefined on input line 9.
+
+
+LaTeX Warning: Citation `macchi1' on page 1 undefined on input line 12.
+
+[1
+
+]
+
+LaTeX Warning: Citation `macchi1' on page 2 undefined on input line 22.
+
+) [2] (Files/Chapter2.tex [3
+
+]
+
+LaTeX Warning: Reference `fig:drei_arm' on page 4 undefined on input line 71.
+
+) [4] (Files/Chapter3.tex
+
+LaTeX Warning: Citation `boone' on page 5 undefined on input line 2.
+
+
+LaTeX Warning: Citation `hofstede' on page 5 undefined on input line 2.
+
+) [5
+
+] (Files/Chapter4.tex) [6
+
+] (Files/Summary.tex) [7
+
+] (Latex_Template.bbl
+! You can't use `macro parameter character #' in horizontal mode.
+<argument> https://www.iso.org/obp/ui/##
+                                        iso:std:iso:22400:-1:ed-1:v1:en (ext...
+l.41   on 03/9/2015)}
+                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+)
+
+LaTeX Warning: Citation `Lun01' undefined on input line 105.
+
+[8
+
+] (Files/app1.tex [9
+
+]) [10] (Latex_Template.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 9942 strings out of 491273
+ 170305 string characters out of 3112168
+ 246690 words of memory out of 3000000
+ 15303 multiletter control sequences out of 15000+200000
+ 13907 words of font info for 50 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 31i,15n,40p,736b,342s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\muchi\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl1
+2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Latex_Template.pdf (18 pages, 205684 bytes).
+PDF statistics:
+ 121 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

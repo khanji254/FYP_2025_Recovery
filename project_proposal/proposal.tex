@@ -1,0 +1,275 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cite}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{booktabs}
+
+% Set margins
+\geometry{margin=1in}
+
+% Set graphics path
+\graphicspath{{images/}{diagrams/}}
+
+% Document settings
+\onehalfspacing
+\pagestyle{fancy}
+\fancyhead[L]{N4 Rocket Recovery System - Project Proposal}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{}
+
+% Title information
+\title{\textbf{Design and Fabrication of a Reliable Dual Recovery System for the N4 Rocket with Extended Telemetry Range}}
+\author{Your Name \\ Student Number \\ Nakuja Project Team}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The N4 rocket mission represents a critical advancement in student rocketry, requiring a reliable dual recovery system capable of preserving flight data and hardware integrity. This project addresses three fundamental reliability challenges: telemetry range limitations leading to signal loss, uncontrolled heat generation from DC dump ignition methods causing single-use deployment systems, and absence of real-time pre-flight feedback on critical system parameters. The proposed solution integrates the Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km, implements a PWM-controlled ignition system to regulate Nichrome wire temperature and enable reusable deployment, and develops a comprehensive feedback monitoring system transmitting real-time battery voltage and igniter continuity to ground control. Additionally, a sealed explosion cap design prevents thermal damage to the parachute canopy while ensuring consistent deployment, and a custom 3D-printed avionics holder provides vibration isolation under high-G launch forces. Expected outcomes include operational telemetry with less than 5\% packet loss at 5km altitude, zero thermal damage to recovery systems, and automatic launch inhibit protocols for critical power failures. This comprehensive approach addresses identified research gaps in student rocket recovery systems and establishes a foundation for future high-power rocketry missions.
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+\subsection{Background of Study}
+
+Rocket recovery systems represent the most critical subsystem for preserving flight data and hardware in high-power rocketry missions. The evolution of recovery systems has progressed from simple single deployment methods to sophisticated dual deployment architectures. Single deployment systems release a parachute at apogee, presenting risks of high drift radius and unpredictable landing zones. In contrast, dual deployment systems utilize a drogue parachute at apogee for stability, followed by a main parachute deployment at lower altitude for controlled soft landing, establishing the standard for modern high-power rocketry operations.
+
+The Nakuja Project N4 mission builds upon previous experiences from the N3.5 mission, which employed a basic single-deployment piston-based system. The current N4 design implements dual deployment architecture but faces significant challenges in deployment reliability and telemetry signal integrity. Previous missions demonstrated critical vulnerabilities in both mechanical deployment mechanisms and communication systems, necessitating a comprehensive redesign approach.
+
+\subsection{Problem Statement}
+
+The N4 mission confronts three critical reliability challenges that threaten mission success:
+
+\textbf{Telemetry Range Limitations:} The current telemetry system protocol exhibits significant range constraints, resulting in signal degradation and potential complete signal loss during critical flight phases. This limitation creates substantial risk of vehicle loss and inability to track the rocket post-flight, particularly during descent and landing phases.
+
+\textbf{Uncontrolled Ignition System:} The existing "DC dump" ignition method for nichrome wire deployment generates uncontrolled temperatures exceeding 1000 degrees Celsius. This excessive heat generation causes wire burnout, creating a single-use deployment system that cannot be tested reliably and introduces significant deployment risk during actual flight operations.
+
+\textbf{Absence of Pre-flight Monitoring:} The lack of real-time feedback systems for critical parameters including battery voltage and igniter continuity leaves ground operators without visibility into potential system failures. This blind spot in operational awareness substantially increases the risk of mission aborts or catastrophic deployment malfunctions during critical flight phases.
+
+\section{Literature Review}
+
+\subsection{Telemetry Systems Analysis}
+
+Comprehensive analysis of telemetry technologies reveals distinct performance characteristics across different platforms. The comparison of various systems is presented in Table \ref{tab:telemetry}.
+
+\begin{table}[H]
+\centering
+\caption{Telemetry System Comparison}
+\label{tab:telemetry}
+\begin{tabular}{@{}llllll@{}}
+\toprule
+\textbf{Technology} & \textbf{Typical Use} & \textbf{Range} & \textbf{Data Cap} & \textbf{Strength} & \textbf{Limitation} \\ \midrule
+433 MHz RF & DIY recovery & 5–10 km & Very low & Simple, long range & No ACKs \\
+Beacon & N4 Recovery & 4 km/0.8 km & Low–Med & Simple & Range drops \\
+LoRa SX1278 & Student rockets & 2–15 km & Low & Low power & Low bandwidth \\
+XBee 2.4 GHz & UAVs & <2 km & Medium & Easy integration & Short range \\
+\textbf{XBee-PRO 900HP} & \textbf{Advanced rockets} & \textbf{5–15 km} & \textbf{Med–High} & \textbf{Reliable protocol} & \textbf{Higher power} \\
+ESP-NOW & Command control & <1 km & Medium & Low latency & Not long-range \\
+Cellular LTE & High-budget & Global & High & Unlimited range & Network dependent \\ \bottomrule
+\end{tabular}
+\end{table}
+
+The XBee-PRO 900HP system emerges as the optimal solution for the N4 mission, providing the necessary balance between range, data capacity, and protocol reliability required for critical telemetry operations.
+
+\subsection{Deployment Mechanism Literature}
+
+\textbf{Igniter Technologies:}
+
+Commercial E-Match igniters provide reliable and rapid ignition but present significant cost constraints and operate as single-use devices. Nichrome wire-based DIY ignition systems offer reusability advantages and substantial cost reduction, making them the preferred choice for the Nakuja project.
+
+\textbf{N4 System Analysis:}
+
+Previous Nakuja N4 implementations utilized a direct DC drive method, applying 14.8V directly to nichrome wire. This approach resulted in instantaneous temperature escalation exceeding 1000 degrees Celsius, causing wire failure and "popped" wire phenomena. Critical gaps identified include:
+
+\begin{itemize}
+    \item Absence of deployment system reusability, complicating testing protocols and introducing deployment risk
+    \item Lack of battery monitoring systems
+    \item No continuity feedback to ground control systems
+\end{itemize}
+
+\subsection{Structural and Power System Challenges}
+
+\textbf{Crimson Powder Deployment Issues:}
+
+Empirical testing of the existing system revealed significant structural vulnerabilities. Standard spring-loaded battery holders demonstrate mechanical resonance failure under high shock loads, resulting in momentary power loss and microcontroller reset events. Flight computer mounting systems employing rigid attachment methods transmit high-frequency vibrations directly to PCB assemblies, causing solder fatigue and sensor noise degradation.
+
+\textbf{Identified Research Gaps:}
+
+\begin{enumerate}
+    \item \textbf{Quantifiable Charge Energy:} Absence of empirical data correlating charge mass (grams) to ejection force (Newtons) for the N4 airframe volume, preventing optimization of deployment energy.
+    
+    \item \textbf{Ruggedized Avionics Structure:} Lack of shock-isolated Flight Computer holder designs specifically engineered to withstand high-impact forces generated during pyrotechnic deployment events.
+    
+    \item \textbf{Pressurization Predictability:} Pop test observations indicate unpredictable pressurization characteristics within the explosion chamber, leading to inconsistent deployment performance.
+\end{enumerate}
+
+\section{Research Objectives}
+
+\subsection{Main Objective}
+
+To design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range, ensuring mission success through enhanced communication capabilities, controlled deployment mechanisms, and comprehensive real-time monitoring systems.
+
+\subsection{Specific Objectives}
+
+\begin{enumerate}
+    \item To implement the Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with less than 5\% packet loss.
+    
+    \item To design and validate a PWM-controlled ignition system capable of regulating Nichrome wire temperature, preventing burnout while enabling reusable deployment testing.
+    
+    \item To develop a comprehensive feedback monitoring system that transmits real-time battery percentage and deployment pin continuity status to the ground station.
+    
+    \item To implement a sealed explosion cap design that ensures consistent and reliable parachute deployment while preventing thermal damage to the canopy.
+    
+    \item To design and fabricate a ruggedized 3D-printed avionics holder providing vibration isolation and maintaining center of gravity stability under high-G launch forces.
+\end{enumerate}
+
+\section{Methodology}
+
+The proposed solution implements a comprehensive dual-subsystem approach integrating mechanical and electrical innovations to address identified system vulnerabilities.
+
+\subsection{Mechanical System Design}
+
+\subsubsection{Deployment Mechanism: The Sealed Explosion Cap}
+
+Implementation of a sealed explosion cap architecture to house the Crimson Powder pyrotechnic charge. The design serves dual critical functions: containment of combustion flame products to prevent thermal damage to parachute canopy materials, while simultaneously directing pressure wave energy to shear pin interfaces for reliable mechanical ejection. This approach eliminates the thermal damage risk observed in previous deployment attempts while ensuring consistent deployment force application.
+
+\subsubsection{Avionics Bay Structure}
+
+Design and fabrication of a custom 3D-printed sled/holder assembly to secure critical flight computer components, LiPo battery packs, and Battery Management System (BMS) modules. The key engineering feature incorporates mechanical isolation and vibration dampening capabilities specifically engineered to withstand high-G launch acceleration forces while maintaining structural integrity throughout flight operations. The design maintains center of gravity stability critical for flight trajectory predictability.
+
+\subsection{Electrical System Architecture}
+
+\subsubsection{Hardware Architecture}
+
+\textbf{Microcontroller Unit:} ESP32 platform selected for high-speed processing capabilities required for real-time telemetry data processing and transmission.
+
+\textbf{Telemetry System:} Integration of Digi XBee-PRO 900HP module providing robust long-range communication capabilities exceeding 5km operational range with verified packet loss rates below 5\%.
+
+\textbf{PCB Fabrication:} Custom printed circuit board design and fabrication to minimize circuit footprint, eliminate loose wire connection failures, and improve overall system reliability under vibration conditions.
+
+\subsubsection{Smart Ignition Control System}
+
+Implementation of Pulse Width Modulation (PWM) controlled ignition utilizing low-side MOSFET driver architecture. The system implements precise heating profile control logic enabling temperature regulation of nichrome wire deployment igniters. This approach prevents wire burnout while enabling multiple deployment tests, significantly improving pre-flight validation capabilities and reducing deployment risk.
+
+\subsubsection{Power Management and Feedback Systems}
+
+\textbf{Battery Management System Integration:} Active battery monitoring and management ensuring operational safety through real-time voltage monitoring and protection against over-discharge conditions.
+
+\textbf{Feedback Loop Architecture:} Real-time monitoring and transmission of critical system parameters including battery voltage levels and igniter continuity status to ground station operators. Implementation of automatic "Launch Inhibit" safety protocol triggered when main battery voltage drops below 14.0V threshold, preventing launch under insufficient power conditions.
+
+\section{Project Timeline}
+
+The project implementation follows a structured timeline ensuring systematic development and validation of all subsystems:
+
+
+\subsection{Electronic Components}
+
+\begin{itemize}
+    \item ESP32 Development Board (Microcontroller)
+    \item Digi XBee-PRO 900HP Telemetry Module (2 units: Flight + Ground)
+
+The proposed dual recovery system for the N4 rocket addresses critical gaps in current student rocketry recovery systems through comprehensive integration of advanced telemetry, controlled deployment mechanisms, and real-time monitoring capabilities. The implementation of XBee-PRO 900HP telemetry eliminates range limitations that have historically compromised mission success, while PWM-controlled ignition enables reusable deployment testing and eliminates thermal damage risks to recovery systems.
+
+The sealed explosion cap design represents a significant advancement in deployment reliability, ensuring consistent performance while protecting critical parachute components. Integration of real-time feedback systems for battery voltage and igniter continuity provides ground operators with unprecedented visibility into system status, enabling proactive identification of potential failure modes before launch operations.
+
+This project establishes a foundation for future high-power rocketry missions within the Nakuja project and contributes valuable empirical data regarding charge-to-ejection force relationships and ruggedized avionics design for student rocket applications. The modular system architecture enables future enhancements and adaptations for subsequent missions while maintaining core reliability improvements achieved through this development effort.
+
+Success of this project will significantly improve mission success probability for the N4 rocket while providing a validated reference design for future student rocketry recovery system development
+    \item MOSFETs for PWM ignition control
+    \item LiPo Battery Packs (Flight-rated)
+    \item Battery Management System (BMS)
+    \item Nichrome Wire (Various gauges)
+    \item GPS Module
+    \item Various passive components (resistors, capacitors, connectors)
+\end{itemize}
+
+\subsection{Mechanical Components}
+
+\begin{itemize}
+    \item 3D Printing Materials (PLA/ABS for prototyping, PETG for flight hardware)
+    \item Crimson Powder (Pyrotechnic charge)
+    \item Explosion Cap Materials
+    \item Shear Pins
+    \item Parachute System (Drogue and Main)
+    \item Mounting Hardware and Fasteners
+\end{itemize}
+
+\subsection{Testing and Development Tools}
+
+\begin{itemize}
+    \item Oscilloscope (PWM signal verification)
+    \item Multimeter and Power Supply
+    \item Thermal Camera (Ignition testing)
+    \item 3D Printer Access
+    \item PCB Design Software (KiCad/Altium)
+    \item CAD Software (SolidWorks/Fusion 360)
+\end{itemize}
+
+\subsection{Budget Considerations}
+
+Items marked with asterisk (*) indicate components already purchased and available for the project, reducing overall project cost and procurement timeline
+\centering
+\caption{Project Timeline and Milestones}
+\label{tab:timeline}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Phase} & \textbf{Duration} & \textbf{Key Activities} \\ \midrule
+Literature Review & Weeks 1-2 & Comprehensive review of telemetry and deployment systems \\
+System Design & Weeks 3-5 & PCB design, CAD modeling of mechanical components \\
+Component Procurement & Weeks 4-6 & Purchase and verification of electronic components \\
+PCB Fabrication & Weeks 6-7 & PCB manufacturing and assembly \\
+Mechanical Fabrication & Weeks 7-9 & 3D printing and assembly of avionics holder \\
+System Integration & Weeks 9-10 & Integration of electrical and mechanical subsystems \\
+Ground Testing & Weeks 10-12 & Static tests, telemetry range tests, deployment tests \\
+System Validation & Weeks 12-13 & Full system validation and documentation \\
+Flight Preparation & Week 14 & Final checks and launch readiness verification \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\section{Resources Required}
+List any resources, tools, or equipment needed.
+
+\section{Expected Outcomes}
+
+\subsection{Operational Reliability}
+
+\textbf{Telemetry Performance:} Continuous data stream capability maintaining operational integrity up to 5 km altitude with verified packet loss rate below 5\% utilizing XBee-PRO 900HP telemetry system. Real-time transmission of GPS position data enabling accurate vehicle tracking throughout flight and recovery phases.
+
+\textbf{Safe Recovery Operations:} Successful parachute deployment achieving zero thermal damage to canopy materials through implementation of sealed explosion cap design and PWM-controlled ignition system. Validated deployment consistency eliminating single-use deployment limitations.
+
+\subsection{System Integrity}
+
+\textbf{Electronics Reliability:} Custom-fabricated PCB architecture eliminating wire fatigue failure modes while ensuring reliable electrical connections under sustained vibration conditions throughout launch and flight phases.
+
+\textbf{Mechanical Robustness:} Vibration-proof 3D-printed avionics holder maintaining center of gravity stability and protecting sensitive electronic components from high-G launch forces and deployment shock loads.
+
+\subsection{Ground Station Capabilities}
+
+\textbf{Real-time Monitoring:} Comprehensive ground station interface providing continuous monitoring of critical parameters including battery voltage, igniter continuity status, and GPS position data.
+
+\textbf{Safety Protocol Implementation:} Automatic "Launch Inhibit" safety system preventing launch operations when main battery voltage drops below 14.0V threshold, eliminating deployment failures due to insufficient power conditions.
+
+\section{Conclusion}
+Summarize the importance and implications of your research.
+
+% Bibliography
+\newpage
+\bibliographystyle{plain}
+\bibliography{references/proposal_references}
+
+\end{document}

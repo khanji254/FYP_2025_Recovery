@@ -1,0 +1,64 @@
+\section{Expected Outcomes and Budget}
+\label{sec:outcomes}
+
+\subsection{Expected Outcomes}
+
+\subsubsection{Operational Reliability}
+
+\textbf{Telemetry Performance:} Continuous data stream capability maintaining operational integrity up to 5 km altitude with verified packet loss rate below 5\% utilizing XBee-PRO 900HP telemetry system. Real-time transmission of GPS position data enabling accurate vehicle tracking throughout flight and recovery phases.
+
+\textbf{Safe Recovery Operations:} Successful parachute deployment achieving zero thermal damage to canopy materials through implementation of sealed explosion cap design and PWM-controlled ignition system. Validated deployment consistency eliminating single-use deployment limitations.
+
+\subsubsection{System Integrity}
+
+\textbf{Electronics Reliability:} Custom-fabricated PCB architecture eliminating wire fatigue failure modes while ensuring reliable electrical connections under sustained vibration conditions throughout launch and flight phases.
+
+\textbf{Mechanical Robustness:} Vibration-proof 3D-printed avionics holder maintaining center of gravity stability and protecting sensitive electronic components from high-G launch forces and deployment shock loads.
+
+\subsubsection{Ground Station Capabilities}
+
+\textbf{Real-time Monitoring:} Comprehensive ground station interface providing continuous monitoring of critical parameters including battery voltage, igniter continuity status, and GPS position data.
+
+\textbf{Safety Protocol Implementation:} Automatic "Launch Inhibit" safety system preventing launch operations when main battery voltage drops below 14.0V threshold, eliminating deployment failures due to insufficient power conditions.
+
+\subsection{Project Timeline}
+
+The project implementation follows a structured timeline ensuring systematic development and validation of all subsystems:
+
+\begin{table}[h]
+\centering
+\caption{Project Timeline and Milestones}
+\label{tab:timeline}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Phase} & \textbf{Duration} & \textbf{Key Activities} \\ \midrule
+Literature Review & Weeks 1-2 & Comprehensive review of systems \\
+System Design & Weeks 3-5 & PCB design, CAD modeling \\
+Component Procurement & Weeks 4-6 & Purchase components \\
+PCB Fabrication & Weeks 6-7 & PCB manufacturing \\
+Mechanical Fabrication & Weeks 7-9 & 3D printing assembly \\
+System Integration & Weeks 9-10 & Integration of subsystems \\
+Ground Testing & Weeks 10-12 & Static tests, range tests \\
+System Validation & Weeks 12-13 & Full system validation \\
+Flight Preparation & Week 14 & Launch readiness \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Budget Considerations}
+
+The project budget encompasses electronic components, mechanical fabrication materials, and testing resources. Items marked with asterisk (*) indicate components already purchased and available, reducing overall project cost.
+
+\subsubsection{Major Component Costs}
+
+\begin{itemize}
+    \item XBee-PRO 900HP Modules (2 units): Approximately KES 15,000
+    \item ESP32 Development Boards: KES 2,000
+    \item Custom PCB Fabrication: KES 5,000
+    \item LiPo Batteries and BMS: KES 8,000*
+    \item 3D Printing Materials: KES 3,000
+    \item Nichrome Wire and Igniters: KES 2,000
+    \item Electronic Components (MOSFETs, passives, connectors): KES 4,000
+    \item Testing Equipment Access: Available through university facilities
+\end{itemize}
+
+Total estimated budget: Approximately KES 39,000 (with some components already available).

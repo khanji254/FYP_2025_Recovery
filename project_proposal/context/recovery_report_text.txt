@@ -1,0 +1,84 @@
+﻿ 
+
+
+--- SLIDE BREAK ---
+
+
+ MethodologyElectricalHardware Architecture:MCU: ESP32 (Selected for high processing speed).Telemetry: Integration of Digi XBee-PRO 900HP for robust long-range communication (&gt;5km).Fabrication: Custom PCB Design and Fabrication to miniaturize the circuit and eliminate loose wire failures.Smart Ignition Control (PWM):Driver: Low-side MOSFET controlled by Pulse Width Modulation (PWM).Logic: precise heating profilePower &amp; Feedback:BMS Integration: Active battery management for safety.Feedback Loop: Real-time monitoring of Battery Voltage and Igniter Continuity transmitted to Ground Station.
+
+
+--- SLIDE BREAK ---
+
+
+ Operational Reliability:Telemetry: Continuous data stream up to 5 km altitude with &lt;5% packet loss using XBee-PRO 900HP.Safe Recovery: Successful parachute deployment with zero thermal damage to the canopy, achieved via the Sealed Explosion Cap and PWM Ignition.System Integrity:Electronics: A custom-fabricated PCB that eliminates wire fatigue and ensures reliable connections under vibration.Mechanical: A vibration-proof, 3D-printed avionics holder that maintains Center of Gravity (CG) stability.User Feedback (Ground Station):Real-time monitoring of Battery Voltage, Igniter Continuity, and GPS Position.Automatic "Launch Inhibit" safety protocol if main battery voltage drops below 14.0V.Expected Outcomes
+
+
+--- SLIDE BREAK ---
+
+
+ Budget Expected OutcomesItems with * Are already Purchased 
+
+
+--- SLIDE BREAK ---
+
+
+ Time planExpected Outcomes
+
+
+--- SLIDE BREAK ---
+
+
+ Thank you for your attention.
+
+
+--- SLIDE BREAK ---
+
+
+ Presentation OutlineBackground of StudyProblem StatementObjectivesKey Literature ReviewProposed Methodology (Mechanical &amp; Electrical)Expected OutcomesProject Time PlanBudget
+
+
+--- SLIDE BREAK ---
+
+
+ Background [http://www.effectofglobalwarming.com/][http://www.iea.org/]Rocket Recovery: The most critical subsystem for preserving flight data and hardware.Evolution of Systems:Single Deployment: Parachute at apogee. Risk: High drift radius.Dual Deployment: Drogue at apogee (stability), Main at low altitude (soft landing). Standard for high-power rocketry .Nakuja Context:Previous N3.5 mission used a basic single-deployment piston based system.Current Uses Dual DeploymentChallenges faced: Reliability of ejection and telemetry signal loss .Image of N4 Recovery tsaken by student Dual recovery system from 
+
+
+--- SLIDE BREAK ---
+
+
+ Problem StatementThe N4 mission faces three critical reliability challenges. First, the telemetry system's current protocol suffers from significant range limitations, leading to signal loss and high risk of vehicle loss. Second, the "DC dump" ignition method for nichrome wire generates uncontrolled heat 1000 degrees, which makes the deployment a one use case. Finally, the lack of real-time pre-flight feedback on battery voltage and igniter continuity leaves ground operators blind to potential power failures, increasing the risk of aborts or deployment malfunctions.Image of N4 charge holder taken by student RSSI data from range test
+
+
+--- SLIDE BREAK ---
+
+
+ ObjectivesMain Objective: To design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range.Specific Objectives:To implement the Digi XBee-PRO 900HP telemetry system for robust long-range data transmission (&gt;5km).To design a PWM-controlled ignition system to regulate Nichrome wire temperature and prevent burnout and one shot use.To develop a feedback monitoring system that transmits real-time battery percentage and deployment pin continuity to the ground station.To implement an Explosion cup reliably so as to have consistent and reliable deployment.
+
+
+--- SLIDE BREAK ---
+
+
+ Literature Review: Telemetry{5940675A-B579-460E-94D1-54222C63F5DA}TechnologyTypical UseRange (LOS)Data CapabilityKey StrengthKey Limitation433 MHz RF BeaconsDIY recovery5–10 km*Very lowSimple, long theoretical rangeNo reliability, no ACKsBeacon Telemetry (This Work)N4 Recovery4 km (75 B) 0.8 km (207 B)Low–MediumSimple, no infrastructureRange drops with packet sizeLoRa (SX1278)Student rockets, CanSat2–15 kmLowHigh sensitivity, low powerLow bandwidth, high latencyXBee 2.4 GHzUAVs, small rockets&lt;2 kmMediumEasy integrationShort range, interferenceXBee-PRO 900HPAdvanced student rockets5–15 kmMedium–HighHigh power, reliable protocolHigher power usageESP-NOWCommand &amp; control&lt;1 kmMediumVery low latencyNot long-rangeCellular (LTE / NB-IoT)High-budget projectsGlobalHighUnlimited rangeNetwork dependent
+
+
+--- SLIDE BREAK ---
+
+
+ Literature Review: DeploymentIgniter Types:Commercial E-Matches: Reliable and fast, but expensive and single-use.Nichrome Wire (DIY): Reusable and cheap. Used by Nakuja.Nakuja N4 Analysis:Method: Direct DC Drive (14.8V dumped into wire)4.Failure Mode: Wire reached 1000+ degrees instantly. Result: "Popped" wiresGap: - No Reusability of the nichrome deployment system making it difficult for tests and adds risks in deployment.- No Battery Monitoring or Continuity Feedback to ground control.Avionics bay from FYP-20-1 Commercial E-Match igniter Test 
+
+
+--- SLIDE BREAK ---
+
+
+ Literature Review: The Crimson Powder ProblemFirst N4 Poptest ImageStructural &amp; Power Failures:Battery Holders: Standard spring-loaded holders suffer mechanical resonance and breakage under high shock loads, leading to momentary power loss (MCU Reset).FC Mounting: Rigid mounting transmits high-frequency vibrations directly to the PCB, causing solder fatigue and sensor noise.Identified Research Gaps:Quantifiable Charge Energy: Lack of empirical data correlating Charge Mass (g) to Ejection Force (N) for the N4 airframe volume.Ruggedized Avionics Structure: Absence of a shock-isolated Flight Computer (FC) Holder designed specifically to withstand the high-impact forces of pyrotechnic deployment.From pop tests it was observed that there is unpredictable pressurization of the explosion chamber leading to unforeseen issues.
+
+
+--- SLIDE BREAK ---
+
+
+ MethodologyDeployment Mechanism (The "Explosion Cap"):Implementation of a Sealed Explosion Cap to house the Crimson Powder charge.Function: Contains the combustion flame to prevent parachute burning while directing the pressure wave to shear pins for reliable ejection.Avionics Bay Structure:Design of a custom 3D-printed Sled/Holder to secure the Flight Computer, LiPo Batteries, and BMS.Key Feature: Engineered to provide mechanical isolation and vibration dampening against high-G launch forces 1.Mechanical
+
+
+--- SLIDE BREAK ---
+
+
