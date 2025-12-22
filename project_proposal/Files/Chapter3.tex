@@ -1,24 +1,80 @@
-\section{Research Objectives}
-\label{sec:objectives}
+\section{Design and Methodology}
+\label{sec:methodology}
 
-\subsection{Main Objective}
+\subsection{Project Objectives}
+
+\subsubsection{Main Objective}
 
 To design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range, ensuring mission success through enhanced communication capabilities, controlled deployment mechanisms, and comprehensive real-time monitoring systems.
 
-\subsection{Specific Objectives}
-
-The main objective will be achieved through the following specific objectives:
+\subsubsection{Specific Objectives}
 
 \begin{enumerate}
-    \item To implement the Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with less than 5\% packet loss.
-    
-    \item To design and validate a PWM-controlled ignition system capable of regulating Nichrome wire temperature, preventing burnout while enabling reusable deployment testing.
-    
-    \item To develop a comprehensive feedback monitoring system that transmits real-time battery percentage and deployment pin continuity status to the ground station.
-    
-    \item To implement a sealed explosion cap design that ensures consistent and reliable parachute deployment while preventing thermal damage to the canopy.
-    
-    \item To design and fabricate a ruggedized 3D-printed avionics holder providing vibration isolation and maintaining center of gravity stability under high-G launch forces.
+    \item Implement Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with <5\% packet loss
+    \item Design and validate PWM-controlled ignition system for regulating nichrome wire temperature
+    \item Develop comprehensive feedback monitoring system for battery percentage and deployment pin continuity
+    \item Implement sealed explosion cap design for consistent parachute deployment
+    \item Design ruggedized 3D-printed avionics holder with vibration isolation
 \end{enumerate}
 
-Each specific objective addresses identified failure modes from previous missions and contributes to the overall system reliability required for successful mission completion.
+\subsection{Design Approach}
+
+The project employs systematic design-build-test methodology \cite{student_rocket_design}:
+
+\begin{enumerate}
+    \item Requirements Analysis: Define system specifications based on N4 mission profile
+    \item Conceptual Design: Develop solution architectures
+    \item Detailed Design: Create CAD models and circuit schematics
+    \item Prototyping: Fabricate components
+    \item Testing and Validation: Conduct ground and flight tests
+    \item Iteration: Refine designs based on results
+\end{enumerate}
+
+\subsection{Implementation Methodology}
+
+\subsubsection{Mechanical System Design}
+
+\paragraph{Sealed Explosion Cap}
+Sealed explosion cap houses Crimson Powder pyrotechnic charge, containing combustion products while directing pressure for deployment \cite{nakka_crimson}. High-temperature resistant materials withstand combustion while enabling multiple test cycles.
+
+\paragraph{Avionics Bay Structure}
+Custom 3D-printed PETG holder secures flight computer, LiPo batteries, and BMS with vibration isolation \cite{avionics_vibration}. Design maintains center of gravity stability under high-G loads.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: PCB Schematic Diagram]\vspace{2.5cm}}}
+\caption{Custom PCB schematic showing ESP32, XBee-PRO 900HP, and PWM driver circuits}
+\label{fig:pcb_schematic}
+\end{figure}
+
+\subsubsection{Electrical System Architecture}
+
+\paragraph{Hardware Components}
+ESP32 dual-core microcontroller processes telemetry data \cite{esp32_datasheet}. XBee-PRO 900HP module provides 5+km range at 900 MHz \cite{xbee_pro_datasheet}. Custom PCB eliminates loose connections \cite{embedded_flight_computers}.
+
+\paragraph{PWM Ignition Control}
+MOSFET-based PWM driver controls nichrome wire heating, preventing burnout while enabling reusable testing \cite{pwm_ignition_systems}.
+
+\paragraph{Power Management}
+BMS monitors LiPo battery health \cite{lipo_aerospace, bms_systems}. Real-time feedback transmits battery voltage and igniter continuity. Launch inhibit activates below 14.0V threshold.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Wiring Diagram]\vspace{2.5cm}}}
+\caption{System wiring diagram showing power distribution and signal connections}
+\label{fig:wiring}
+\end{figure}
+
+\subsection{Testing and Validation Plan}
+
+\subsubsection{Ground Testing Protocol}
+\begin{itemize}
+    \item Telemetry range testing at 5+ km distances
+    \item PWM ignition characterization with thermal imaging
+    \item Explosion cap deployment force measurements
+    \item Vibration testing on shake table (15G+)
+    \item Full system integration verification
+\end{itemize}
+
+\subsubsection{Flight Testing Protocol}
+Progressive testing: low-altitude validation flights before full mission profile.

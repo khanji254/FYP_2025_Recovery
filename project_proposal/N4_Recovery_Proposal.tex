@@ -54,9 +54,6 @@
 \newcommand{\bs}[1]{\mbox{$\boldsymbol{#1}$}}
 \newcommand{\degree}[1]{\mbox{$#1^\circ$}}
 
-%------Bibliography style-----------------------
-\bibliographystyle{IEEEtran}
-
 %-----Table of contents depth---------------
 \setcounter{tocdepth}{3}
 
@@ -90,8 +87,6 @@
 \clearpage
 \input{Files/Chapter3}
 \clearpage
-\input{Files/Chapter4}
-\clearpage
 \input{Files/Chapter5}
 \clearpage
 \input{Files/Summary}
@@ -100,7 +95,11 @@
 %---- Bibliography ----------------------------------------
 \markright{References}
 \addcontentsline{toc}{section}{References}
-\bibliographystyle{Bib/IEEEtran}
+\bibliographystyle{IEEEtran}
 \bibliography{Bib/proposal_references}
+\clearpage
+
+%---- Appendices ------------------------------------------
+\input{Files/Appendices}
 
 \end{document}

@@ -1,0 +1,84 @@
+\appendix
+
+\section{Project Budget}
+\label{appendix:budget}
+
+\begin{table}[h]
+\centering
+\caption{Budget Breakdown}
+\label{tab:budget_detailed}
+\small
+\begin{tabular}{llr}
+\toprule
+\textbf{Component} & \textbf{Specification} & \textbf{Cost (KES)} \\ 
+\midrule
+XBee-PRO 900HP (2 units) & 900 MHz, 15+ km range & 15,000 \\
+ESP32 Development Boards & Dual-core, WiFi/BT & 2,000 \\
+Custom PCB Fabrication & 2-layer, FR4 substrate & 5,000 \\
+LiPo Battery (3S, 2200mAh)* & 11.1V, 25C discharge & 4,000 \\
+BMS* & 3S, 30A continuous & 4,000 \\
+3D Printing Filament & PETG/PLA & 3,000 \\
+Pyrotechnic Components & Nichrome wire, igniters, Crimson powder & 4,000 \\
+Electronics Components & MOSFETs, regulators, passives, connectors & 4,000 \\
+Miscellaneous & Wire, solder, hardware & 1,000 \\ 
+\midrule
+\textbf{Total} & & \textbf{42,000} \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+*Components already available from Nakuja Project inventory, reducing out-of-pocket to ~KES 30,000. Funding: Personal (KES 15,000), Nakuja Project (KES 15,000), university facilities (in-kind).
+
+\section{Project Timeline}
+\label{appendix:timeline}
+
+\begin{table}[h]
+\centering
+\caption{Implementation Schedule}
+\label{tab:timeline_detailed}
+\small
+\begin{tabular}{clc}
+\toprule
+\textbf{Week} & \textbf{Activity} & \textbf{Status} \\ 
+\midrule
+1-2 & Literature review, requirements & Completed \\
+3 & System architecture design & In Progress \\
+4 & PCB schematic design & Planned \\
+5 & 3D CAD modeling & Planned \\
+4-6 & Component procurement & Planned \\
+6-7 & PCB manufacturing, soldering & Planned \\
+7-8 & 3D printing, assembly & Planned \\
+9 & Firmware development & Planned \\
+10 & Telemetry range testing & Planned \\
+11 & PWM ignition tests & Planned \\
+11-12 & Explosion cap deployment tests & Planned \\
+12 & Vibration/environmental testing & Planned \\
+13 & System integration testing & Planned \\
+13-14 & Documentation & Planned \\
+14 & Flight readiness review & Planned \\
+15 & Launch operations & Planned \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+Critical path: PCB fabrication (2-week lead), component procurement (3-week buffer). Risk mitigation: backup components ordered Week 4, 2-week weather buffer for launch.
+
+\section{Component Specifications}
+\label{appendix:specifications}
+
+\textbf{XBee-PRO 900HP}: 902-928 MHz ISM band, up to 200 kbps data rate, 15 km outdoor LOS range, 24 dBm transmit power, -110 dBm sensitivity, 2.1-3.6V operation, -40°C to +85°C, UART interface.
+
+\textbf{ESP32}: Dual-core Xtensa LX6 (240 MHz), 520 KB SRAM, 4 MB flash, WiFi 802.11 b/g/n, BLE 4.2, 34 GPIO, 18-channel 12-bit ADC, 16-channel PWM, 2.2-3.6V operation, -40°C to +85°C.
+
+\textbf{LiPo Battery}: 3S configuration, 11.1V nominal (12.6V max, 9.0V min), 2200 mAh capacity, 25C continuous discharge, 180g weight, XT60 connector.
+
+\section{Testing Protocols}
+\label{appendix:testing}
+
+\textbf{Telemetry Range Test}: Transmit packets at 1 Hz, measure RSSI at 500m increments to 6 km. Success: RSSI > -100 dBm at 5 km, <5\% packet loss.
+
+\textbf{PWM Ignition Test}: Apply PWM at 20-100\% duty cycles, record thermal profile, verify ignition. Success: controlled temperature ramp, no burnout, repeatable 10+ cycles.
+
+\textbf{Explosion Cap Deployment}: Test charge masses (0.5-1.5g), measure deployment force with load cell, inspect parachute. Success: clean separation, zero thermal damage, 200-400 N force, consistent across 5 tests.
+
+\textbf{Vibration/Shock Test}: Shake table 5-500 Hz sweep, 15G shock impulse, verify continuity. Success: zero component displacement, no structural failure, maintained continuity.

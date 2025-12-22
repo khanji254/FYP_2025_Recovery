@@ -1,59 +1,97 @@
 \section{Literature Review}
 \label{sec:review}
 
+\subsection{Recovery Systems in Student Rocketry}
+
+Recovery systems preserve flight hardware and recorded data \cite{nakka_recovery}. Student rocketry projects face budget constraints requiring innovative, cost-effective solutions \cite{student_rocket_design}. Dual-deployment architectures use staged recovery: drogue chute at apogee for stability, main parachute at lower altitude for soft landing \cite{dual_deploy_analysis, parachute_design}.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Dual Deployment Recovery System Diagram]\vspace{3cm}}}
+\caption{Dual deployment recovery system architecture showing drogue and main parachute deployment sequence}
+\label{fig:dual_deploy}
+\end{figure}
+
+The Nakuja Project's progression from N3.5 single-deployment to N4 dual-deployment architecture reflects industry evolution \cite{nakuja_website}. Previous missions identified critical improvements needed in mechanical reliability and telemetry range.
+
 \subsection{Telemetry Systems Analysis}
 
-Comprehensive analysis of telemetry technologies reveals distinct performance characteristics across different platforms. The comparison of various systems used in student rocketry and UAV applications is presented in Table~\ref{tab:telemetry}.
+Table~\ref{tab:telemetry} compares telemetry technologies for student rocketry applications \cite{rf_telemetry_propagation, student_rocketry_telemetry}.
 
 \begin{table}[h]
 \centering
 \caption{Telemetry System Comparison for Student Rocketry Applications}
 \label{tab:telemetry}
-\begin{tabular}{@{}llllll@{}}
+\small
+\begin{tabular}{@{}lllll@{}}
 \toprule
-\textbf{Technology} & \textbf{Typical Use} & \textbf{Range} & \textbf{Data Cap} & \textbf{Strength} & \textbf{Limitation} \\ \midrule
-433 MHz RF & DIY recovery & 5--10 km & Very low & Simple, long range & No ACKs \\
-Beacon & N4 Recovery & 4 km/0.8 km & Low--Med & Simple & Range drops \\
-LoRa SX1278 & Student rockets & 2--15 km & Low & Low power & Low bandwidth \\
-XBee 2.4 GHz & UAVs & $<$2 km & Medium & Easy integration & Short range \\
-\textbf{XBee-PRO 900HP} & \textbf{Advanced rockets} & \textbf{5--15 km} & \textbf{Med--High} & \textbf{Reliable protocol} & \textbf{Higher power} \\
-ESP-NOW & Command control & $<$1 km & Medium & Low latency & Not long-range \\
-Cellular LTE & High-budget & Global & High & Unlimited range & Network dependent \\ \bottomrule
+\textbf{Technology} & \textbf{Range} & \textbf{Data Cap} & \textbf{Strength} & \textbf{Limitation} \\ \midrule
+433 MHz RF & 5--10 km & Very low & Simple, long range & No ACKs \\
+Beacon & 4 km/0.8 km & Low--Med & Simple & Range drops \\
+LoRa SX1278 & 2--15 km & Low & Low power & Low BW \\
+XBee 2.4 GHz & $<$2 km & Medium & Easy integration & Short range \\
+\textbf{XBee-PRO 900HP} & \textbf{5--15 km} & \textbf{Med--High} & \textbf{Reliable} & \textbf{Higher power} \\
+ESP-NOW & $<$1 km & Medium & Low latency & Not long-range \\
+Cellular LTE & Global & High & Unlimited range & Network dep. \\ \bottomrule
 \end{tabular}
 \end{table}
 
-The XBee-PRO 900HP system emerges as the optimal solution for the N4 mission, providing the necessary balance between range, data capacity, and protocol reliability required for critical telemetry operations. Its acknowledgment-based protocol ensures data integrity, while the 900 MHz frequency band provides superior penetration characteristics compared to 2.4 GHz alternatives.
+The XBee-PRO 900HP provides optimal balance between range, data capacity, and protocol reliability \cite{xbee_pro_datasheet}. Its 900 MHz frequency offers superior penetration versus 2.4 GHz alternatives.
 
-\subsection{Deployment Mechanism Literature}
+\subsection{Pyrotechnic Deployment Systems}
 
-\subsubsection{Igniter Technologies}
+Nakka's Crimson Powder research provides baseline data for pyrotechnic charges \cite{nakka_crimson}. Proper formulation generates sufficient pressure while minimizing thermal output \cite{pyrotechnic_safety}. Combustion temperatures exceed 2000°C, requiring thermal isolation to prevent parachute damage \cite{modern_rocketry}.
 
-Commercial E-Match igniters provide reliable and rapid ignition but present significant cost constraints and operate as single-use devices. Each E-Match costs approximately \$5--\$10, making repeated testing prohibitively expensive for student projects. Nichrome wire-based DIY ignition systems offer reusability advantages and substantial cost reduction, making them the preferred choice for the Nakuja project.
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Explosion Cap Cross-Section]\vspace{2.5cm}}}
+\caption{Sealed explosion cap design showing thermal isolation and pressure channeling}
+\label{fig:explosion_cap}
+\end{figure}
 
-\subsubsection{N4 System Analysis}
+\subsection{Electronic Control Systems}
 
-Previous Nakuja N4 implementations utilized a direct DC drive method, applying 14.8V directly to nichrome wire igniters. This approach resulted in instantaneous temperature escalation exceeding 1000 degrees Celsius, causing wire failure and "popped" wire phenomena. Critical gaps identified include:
+The ESP32 platform offers dual-core architecture for parallel sensor processing and communication \cite{esp32_datasheet, embedded_flight_computers}. PWM ignition control enables precise thermal management, preventing wire burnout while enabling multiple tests \cite{pwm_ignition_systems}.
 
-\begin{itemize}
-    \item Absence of deployment system reusability, complicating testing protocols and introducing deployment risk
-    \item Lack of battery monitoring systems to verify sufficient power before launch
-    \item No continuity feedback to ground control systems, preventing verification of igniter circuit integrity
-\end{itemize}
+\subsection{Power and Structural Systems}
 
-\subsection{Structural and Power System Challenges}
+LiPo batteries provide superior energy density but require BMS for safety \cite{lipo_aerospace, bms_systems}. High-G launch loads cause battery disconnection in spring-loaded holders \cite{avionics_vibration}. Custom avionics holders provide vibration isolation and battery retention.
 
-\subsubsection{Crimson Powder Deployment Issues}
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Avionics Bay Assembly]\vspace{3cm}}}
+\caption{3D-printed avionics holder with integrated battery retention and vibration isolation}
+\label{fig:avionics_bay}
+\end{figure}
 
-Empirical testing of the existing system revealed significant structural vulnerabilities. Standard spring-loaded battery holders demonstrate mechanical resonance failure under high shock loads, resulting in momentary power loss and microcontroller reset events. Flight computer mounting systems employing rigid attachment methods transmit high-frequency vibrations directly to PCB assemblies, causing solder fatigue and sensor noise degradation.
+\subsection{Previous Nakuja Mission Analysis}
 
-\subsubsection{Identified Research Gaps}
+Table~\ref{tab:nakuja_missions} summarizes mission outcomes.
 
-\begin{enumerate}
-    \item \textbf{Quantifiable Charge Energy:} Absence of empirical data correlating charge mass (grams) to ejection force (Newtons) for the N4 airframe volume, preventing optimization of deployment energy.
-    
-    \item \textbf{Ruggedized Avionics Structure:} Lack of shock-isolated Flight Computer holder designs specifically engineered to withstand high-impact forces generated during pyrotechnic deployment events.
-    
-    \item \textbf{Pressurization Predictability:} Pop test observations indicate unpredictable pressurization characteristics within the explosion chamber, leading to inconsistent deployment performance and potential thermal damage to recovery systems.
-\end{enumerate}
+\begin{table}[h]
+\centering
+\caption{Nakuja Mission History and Key Findings}
+\label{tab:nakuja_missions}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Mission} & \textbf{Date} & \textbf{System} & \textbf{Key Outcome} \\ \midrule
+N-1 & May 2021 & Single deploy & Baseline established \\
+N-2 & Nov 2022 & Single deploy & Telemetry improved \\
+N-3 & 2024 & Enhanced & Range limits identified \\
+N-3.5 & 2024 & Piston deploy & Thermal damage observed \\
+\textbf{N-4} & \textbf{Proposed} & \textbf{Dual deploy} & \textbf{This project} \\ \bottomrule
+\end{tabular}
+\end{table}
 
-These research gaps provide the foundation for the proposed system improvements, ensuring that solutions address documented failure modes while contributing new knowledge to the student rocketry community.
+Analysis shows telemetry loss at altitudes exceeding 2km \cite{nakuja_website}. The XBee-PRO 900HP directly addresses this limitation.
+
+\subsection{Safety Standards and Guidelines}
+
+Amateur rocketry follows established safety protocols from organizations like Tripoli Rocketry Association \cite{tripoli_standards}. Key safety considerations include proper pyrotechnic handling \cite{pyrotechnic_safety}, adequate descent rates for safe landing \cite{descent_dynamics}, and ground station monitoring capabilities \cite{modern_rocketry}.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}[Placeholder: System Integration Diagram]\vspace{2.5cm}}}
+\caption{Complete N4 recovery system showing integration of all subsystems}
+\label{fig:system_integration}
+\end{figure}
