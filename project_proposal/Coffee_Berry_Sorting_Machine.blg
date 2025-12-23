@@ -10,51 +10,51 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Bib/proposal_references.bib
-Warning--I didn't find a database entry for "coffee_quality_standards"
+Warning--I didn't find a database entry for "szeliski2011"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 38 entries,
+You've used 9 entries,
             4087 wiz_defined-function locations,
-            1030 strings with 13899 characters,
-and the built_in function-call counts, 31079 in all, are:
-= -- 2559
-> -- 669
-< -- 319
-+ -- 376
-- -- 99
-* -- 1477
-:= -- 4542
-add.period$ -- 78
-call.type$ -- 38
-change.case$ -- 37
-chr.to.int$ -- 738
-cite$ -- 38
-duplicate$ -- 2172
-empty$ -- 2458
-format.name$ -- 126
-if$ -- 7308
+            876 strings with 8729 characters,
+and the built_in function-call counts, 6673 in all, are:
+= -- 553
+> -- 152
+< -- 61
++ -- 79
+- -- 25
+* -- 329
+:= -- 1030
+add.period$ -- 18
+call.type$ -- 9
+change.case$ -- 9
+chr.to.int$ -- 132
+cite$ -- 9
+duplicate$ -- 479
+empty$ -- 499
+format.name$ -- 34
+if$ -- 1528
 int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 350
-newline$ -- 137
-num.names$ -- 38
-pop$ -- 751
+int.to.str$ -- 9
+missing$ -- 82
+newline$ -- 50
+num.names$ -- 9
+pop$ -- 180
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2439
+skip$ -- 511
 stack$ -- 0
-substring$ -- 1725
-swap$ -- 1851
-text.length$ -- 73
+substring$ -- 303
+swap$ -- 395
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 38
+type$ -- 9
 warning$ -- 0
-while$ -- 162
-width$ -- 40
-write$ -- 395
+while$ -- 34
+width$ -- 10
+write$ -- 110
 (There was 1 warning)

@@ -3,129 +3,20 @@
 \section{Project Budget}
 \label{appendix:budget}
 
-\begin{table}[h]
+\begin{figure}[h]
 \centering
+\includegraphics[width=0.9\textwidth]{Figures/Budget.jpeg}
 \caption{Budget Breakdown}
-\label{tab:budget_detailed}
-\small
-\begin{tabular}{llr}
-\toprule
-\textbf{Component} & \textbf{Specification} & \textbf{Cost (KES)} \\ 
-\midrule
-\textbf{Mechanical Components} & & \\
-Vibratory Feeder & Electromagnetic, variable frequency & 18,000 \\
-Conveyor Belt & Food-grade PVC, 1.5m x 0.4m & 8,000 \\
-Crowned Pulleys (2) & 100mm diameter, aluminum & 5,000 \\
-VFD Motor Controller & 0.5 HP, 220V AC input & 12,000 \\
-Spring Tensioners (2) & Heavy-duty, adjustable & 2,500 \\
-Aluminum Extrusion & 40x40mm profile, 3m length & 4,000 \\
-Feed Hopper Material & Stainless steel sheet, 1.5mm & 6,000 \\
-Mounting Hardware & Bolts, brackets, bearings & 3,000 \\
-\midrule
-\textbf{Sensor Components} & & \\
-RGB Color Sensors (4) & TCS34725, I2C interface & 8,000 \\
-Photoelectric Sensors (2) & Through-beam, 12V DC & 4,000 \\
-LED Illumination Array & 5500K white LEDs, drivers & 3,500 \\
-Rotary Encoder & For conveyor speed sensing & 2,500 \\
-\midrule
-\textbf{Actuator Components} & & \\
-Push Solenoids (8) & 12V DC, 25mm stroke, 10N & 12,000 \\
-Solenoid Driver Boards & MOSFET-based, 8-channel & 5,000 \\
-Flapper Arms & Aluminum, custom fabricated & 4,000 \\
-\midrule
-\textbf{Control Electronics} & & \\
-ESP32 Development Board & Dual-core, WiFi-enabled & 1,500 \\
-Power Supplies & 12V/5A, 5V/2A regulators & 4,000 \\
-Wiring and Connectors & Industrial-grade, shielded & 3,000 \\
-Emergency Stop Switch & Industrial safety switch & 1,500 \\
-Junction Boxes & IP65-rated enclosures & 2,500 \\
-\midrule
-\textbf{Fabrication and Assembly} & & \\
-Welding and Metalwork & Hopper and frame modifications & 8,000 \\
-Machining Services & Pulley modifications, mounting & 5,000 \\
-Electrical Installation & Wiring, termination, testing & 6,000 \\
-\midrule
-\textbf{Testing Materials} & & \\
-Coffee Berry Samples & 100 kg for validation testing & 3,000 \\
-Calibration Standards & Color reference cards & 1,500 \\
-\midrule
-\textbf{Miscellaneous} & & \\
-Tools and Consumables & Cable ties, solder, tape, etc. & 2,000 \\
-Contingency (10\%) & Buffer for unforeseen costs & 12,500 \\
-\midrule
-\textbf{Total} & & \textbf{147,500} \\ 
-\bottomrule
-\end{tabular}
-\end{table}
-
-Funding sources: University FYP allocation (KES 80,000), Agricultural Processing Facility budget (KES 50,000), student contribution (KES 17,500). Existing facility infrastructure (220V power, compressed air lines, workshop access) provided in-kind.
+\label{fig:budget}
+\end{figure}
 
 \section{Project Timeline}
 \label{appendix:timeline}
 
-\begin{table}[h]
+\begin{figure}[h]
 \centering
+\includegraphics[width=0.95\textwidth]{Figures/Time_Plan.jpeg}
 \caption{Implementation Schedule (16 Weeks)}
-\label{tab:timeline_detailed}
-\small
-\begin{tabular}{clc}
-\toprule
-\textbf{Week} & \textbf{Activity} & \textbf{Deliverable} \\ 
-\midrule
-1 & System analysis and measurements & Baseline performance report \\
-2 & Detailed design and CAD modeling & Design drawings \\
-3 & Component specification and sourcing & Bill of materials \\
-4 & Component procurement (lead items) & Ordered components \\
-5 & Feed hopper fabrication & Modified hopper \\
-6 & Conveyor modifications (pulleys, tensioners) & Upgraded conveyor \\
-7 & Vibratory feeder installation & Installed feeder \\
-8 & Sensor array fabrication & Mounted sensors \\
-9 & Control electronics assembly & Wired control system \\
-10 & Actuator mechanism installation & Operational actuators \\
-11 & Firmware development and sensor calibration & Calibrated system \\
-12 & Component testing (feed, sensors, actuators) & Test reports \\
-13 & System integration and initial testing & Integrated system \\
-14 & Algorithm tuning and optimization & Optimized parameters \\
-15 & Performance validation (5 test batches) & Validation data \\
-16 & Documentation and final presentation & Final report \\ 
-\bottomrule
-\end{tabular}
-\end{table}
+\label{fig:timeline}
+\end{figure}
 
-Critical path: Vibratory feeder procurement (4-week lead time from order), conveyor modifications (2 weeks fabrication), sensor calibration (1 week). Risk mitigation: Early component ordering (Week 3), backup sensor units, parallel fabrication activities.
-
-\section{Component Specifications}
-\label{appendix:specifications}
-
-\textbf{Vibratory Feeder}: Electromagnetic drive, 220V AC, variable frequency control 20-60 Hz, amplitude adjustment 0-5mm, tray dimensions 600mm x 400mm, capacity 25 kg, stainless steel construction.
-
-\textbf{Conveyor Belt}: Food-grade PVC material, dimensions 1500mm x 400mm, textured surface (2mm raised pattern), crowned pulleys 100mm diameter, spring-loaded tensioning 50-100N, VFD speed control 0.3-1.2 m/s.
-
-\textbf{RGB Color Sensors (TCS34725)}: I2C interface, 3.3V operation, 16-bit ADC, programmable gain 1x-60x, integration time 2.4-614 ms, clear/red/green/blue channels, surface mount package, detection range 0-80mm.
-
-\textbf{Push Solenoids}: 12V DC operation, 25mm stroke length, 10N push force, 50ms response time, continuous duty rating 25\%, mounting threads M10x1.0, resistance 8-10 ohms, power consumption 15W.
-
-\textbf{ESP32 Development Board}: Dual-core Xtensa LX6 240 MHz, 520 KB SRAM, 4 MB flash, WiFi 802.11 b/g/n, 34 GPIO pins, I2C/SPI interfaces, 12-bit ADC, 3.3V logic, micro-USB programming, -40°C to +85°C operation.
-
-\section{Testing Protocols}
-\label{appendix:testing}
-
-\textbf{Component-Level Tests}:
-
-\textit{Vibratory Feeder}: Measure berry flow rate at 5 frequency settings (20, 30, 40, 50, 60 Hz) and 3 amplitude settings (low, med, high). Record flow uniformity using high-speed camera. Success criteria: Consistent flow rate ±10\%, minimal berry clustering.
-
-\textit{Conveyor Belt Tracking}: Run conveyor at operational speeds (0.3, 0.6, 0.9, 1.2 m/s) for 30-minute durations. Measure lateral drift with dial indicator. Success: <5mm drift over 30 minutes at all speeds.
-
-\textit{RGB Sensor Calibration}: Present 50 sample berries (known classifications) to each sensor. Record RGB values, establish threshold boundaries. Validate with 50 additional berries. Success: >85\% classification accuracy per sensor.
-
-\textit{Solenoid Actuator}: Conduct 1000-cycle endurance test, measure response time and force output every 100 cycles. Success: Response time <35ms throughout test, force >8N maintained.
-
-\textbf{System Integration Tests}:
-
-\textit{Sensor-Actuator Synchronization}: Mark test berries with known colors, run through system at operational speed. Video record to verify timing accuracy. Success: Actuator fires within ±20ms of optimal timing.
-
-\textit{Throughput Measurement}: Process 10 kg batches, measure completion time. Calculate throughput (kg/hr). Repeat for 5 batches. Success: Average throughput 150-200 kg/hr, consistency ±15\%.
-
-\textbf{Performance Validation}:
-
-\textit{Accuracy Testing}: Prepare test batches (10 kg each) with known berry distributions (40\% ripe, 30\% unripe, 20\% overripe, 10\% defect). Process at operational speed, collect accepted and rejected streams. Manually verify classification for 5\% random sample (minimum 100 berries). Calculate metrics: sorting accuracy, false accept rate, false reject rate. Success: Sorting accuracy >90\%, false accepts <8\%, false rejects <12\%. Repeat for 5 batches to establish consistency.

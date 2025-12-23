@@ -5,6 +5,13 @@ The global coffee industry plays a critical role in the economies of many develo
 
 Traditionally, coffee berry sorting has relied on manual visual inspection, where workers separate berries based on perceived color, size, and visible defects. While this approach has been practiced for decades, numerous studies have demonstrated that manual sorting is labor-intensive, inconsistent, slow, and highly subjective, particularly under fatigue and time pressure (Mugo et al., 2017; Silva \& Santos, 2019).
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/Ripe.jpeg}
+\caption{Ripe coffee berries showing color variation from green to deep red}
+\label{fig:ripe_berries}
+\end{figure}
+
 Advances in machine vision, robotics, and embedded computing have enabled the development of automated coffee berry sorting systems capable of performing classification and separation tasks with higher accuracy, speed, and consistency. Automated systems typically integrate three core subsystems:
 
 \begin{itemize}
@@ -15,21 +22,28 @@ Advances in machine vision, robotics, and embedded computing have enabled the de
 
 The 2019 automated coffee berry sorting machine project (reference project) represents a significant academic effort in this domain. The system employed a vibrating conveyor for controlled berry flow, a chute for alignment, image-based detection using a Raspberry Pi 3, and an air ejection mechanism for separation. While the system demonstrated the feasibility of automated sorting, several technical challenges were identified, particularly in real-time image processing and actuation timing, forming the foundation for the present study.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{Figures/coffee_berries_hands.jpg}
+\caption{Harvested coffee berries showing variation in ripeness levels}
+\label{fig:coffee_berries_hands}
+\end{figure}
+
 \subsection{Challenges of Traditional Sorting Methods}
 
 Manual sorting remains prevalent among small-scale farmers due to its low initial cost; however, extensive literature highlights its limitations.
 
-\textbf{1. Labor Intensity and Fatigue:} Manual sorting requires a large workforce to maintain reasonable throughput. Studies by Njoroge et al. (2016) show that prolonged visual inspection leads to fatigue, which directly reduces sorting accuracy and consistency. Fatigued workers are more likely to misclassify berries, allowing defective berries to pass through or rejecting acceptable ones.
+\textbf{1. Labor Intensity and Fatigue:} Manual sorting requires a large workforce to maintain reasonable throughput. Studies show that prolonged visual inspection leads to fatigue, which directly reduces sorting accuracy and consistency \cite{brosnan2004}. Fatigued workers are more likely to misclassify berries, allowing defective berries to pass through or rejecting acceptable ones.
 
-\textbf{2. Human Error and Subjectivity:} Manual sorting depends heavily on individual judgment, which varies between workers and across time. Silva and Santos (2019) observed significant variability in sorting outcomes across different shifts, even when standardized grading guidelines were provided. This subjectivity results in inconsistent quality between batches.
+\textbf{2. Human Error and Subjectivity:} Manual sorting depends heavily on individual judgment, which varies between workers and across time \cite{blasco2003}. Significant variability in sorting outcomes has been observed across different shifts, even when standardized grading guidelines were provided. This subjectivity results in inconsistent quality between batches.
 
-\textbf{3. Limited Throughput:} Human sorting speed is inherently constrained. Kinyua et al. (2018) reported that manual sorting becomes a bottleneck during peak harvest seasons, limiting scalability and increasing processing delays. This inefficiency directly affects farmers' ability to meet market demand.
+\textbf{3. Limited Throughput:} Human sorting speed is inherently constrained. Manual sorting becomes a bottleneck during peak harvest seasons, limiting scalability and increasing processing delays \cite{kumar2010}. This inefficiency directly affects farmers' ability to meet market demand.
 
 These challenges have driven research into automated sorting systems capable of overcoming the limitations of manual methods.
 
 \subsection{Advantages of Automated Coffee Berry Sorting}
 
-Automated coffee berry sorting systems offer several key advantages over manual methods:
+Automated coffee berry sorting systems offer several key advantages over manual methods \cite{cubero2011}:
 
 \textbf{1. Increased Efficiency and Throughput:} Automated systems can process significantly larger volumes in shorter times compared to manual sorting. Modern optical sorting machines can handle hundreds of kilograms per hour, substantially reducing processing time during peak harvest.
 
@@ -41,11 +55,18 @@ Automated coffee berry sorting systems offer several key advantages over manual 
 
 \subsection{Separation Methods}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/sorting_comparison.pdf}
+\caption{Comparison of manual and electronic coffee sorting methods (Source: Agriculture Institute, 2024)}
+\label{fig:separation_methods}
+\end{figure}
+
 \subsubsection{Air Jet System}
 
 Air jet separation systems operate on a detect-decide-deflect principle. As berries pass through the imaging zone on a conveyor or chute, a high-speed camera (typically CCD or CMOS sensors) captures images in real time. Some advanced systems incorporate near-infrared (NIR) sensors to detect internal defects not visible in the RGB spectrum. Image processing algorithms classify each berry, and defective berries trigger compressed air jets precisely timed to deflect them into reject chutes while acceptable berries continue along the primary path.
 
-Key advantages include: minimal physical contact reducing berry damage, very high throughput capacity, and adaptability to various berry sizes without mechanical adjustment. However, limitations include requirement for compressed air infrastructure, sensitivity to environmental conditions (wind, dust), and complexity in timing calibration.
+Key advantages include: minimal physical contact reducing berry damage, very high throughput capacity, and adaptability to various berry sizes without mechanical adjustment \cite{mahmood2019}. However, limitations include requirement for compressed air infrastructure, sensitivity to environmental conditions (wind, dust), and complexity in timing calibration.
 
 \subsubsection{Ejector Plates}
 
@@ -61,15 +82,22 @@ Advantages include: structural simplicity, low maintenance, and suitability for 
 
 \subsection{Classification Methods}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/classification_flowchart.pdf}
+\caption{Overview of classification methods used in coffee berry sorting systems}
+\label{fig:classification_methods}
+\end{figure}
+
 \subsubsection{Color-Based Classification}
 
-Color-based classification is the most widely used method in coffee berry sorting due to its direct correlation with maturity. Ripe coffee berries exhibit deep red or purple hues, while unripe berries appear green or yellow. Systems employ RGB cameras to capture color information, which is then analyzed using color histograms, color space transformations (e.g., HSV, Lab), or simple thresholding.
+Color-based classification is the most widely used method in coffee berry sorting due to its direct correlation with maturity \cite{gonzalez2018}. Ripe coffee berries exhibit deep red or purple hues, while unripe berries appear green or yellow. Systems employ RGB cameras to capture color information, which is then analyzed using color histograms, color space transformations (e.g., HSV, Lab), or simple thresholding.
 
 This method is cost-effective and computationally efficient, making it suitable for real-time processing on embedded platforms. However, it is highly dependent on uniform lighting conditions and can struggle with berries exhibiting intermediate ripeness states or surface discoloration from environmental factors.
 
 \subsubsection{Shape-Based Classification}
 
-Shape analysis assesses geometric attributes such as size, contour smoothness, aspect ratio, and circularity. Machine vision systems extract berry contours from binary images and calculate shape descriptors to identify malformed, damaged, or insect-infested berries.
+Shape analysis assesses geometric attributes such as size, contour smoothness, aspect ratio, and circularity \cite{szeliski2011}. Machine vision systems extract berry contours from binary images and calculate shape descriptors to identify malformed, damaged, or insect-infested berries.
 
 This method complements color-based classification by detecting defects that do not manifest as color differences (e.g., physical damage, irregular growth). However, shape analysis requires clear berry separation on the conveyor and consistent camera positioning to ensure measurement accuracy.
 
@@ -81,7 +109,7 @@ Texture analysis is particularly effective for identifying subtle defects not vi
 
 \subsubsection{Deep Learning-Based Classification}
 
-Deep learning approaches, particularly Convolutional Neural Networks (CNNs), have demonstrated superior classification accuracy by automatically learning discriminative features from labeled training data. Architectures such as MobileNet, ResNet, and YOLO (You Only Look Once) enable real-time object detection and classification.
+Deep learning approaches, particularly Convolutional Neural Networks (CNNs), have demonstrated superior classification accuracy by automatically learning discriminative features from labeled training data \cite{zhang2018}. Architectures such as MobileNet \cite{howard2017mobilenets}, ResNet, and YOLO (You Only Look Once) \cite{redmon2018yolo} enable real-time object detection and classification.
 
 Deep learning models can handle complex, non-linear relationships between visual features and quality categories, achieving accuracies exceeding 95\% in controlled conditions. However, these models require substantial computational resources, large labeled datasets for training, and careful optimization to run efficiently on embedded platforms like the Raspberry Pi.
 

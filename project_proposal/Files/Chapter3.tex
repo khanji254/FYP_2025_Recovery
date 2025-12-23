@@ -13,6 +13,13 @@ The proposed coffee berry sorting machine will consist of three main modules:
     \item \textbf{Software Module} -- Responsible for image acquisition, processing, classification, tracking, and ejection control
 \end{itemize}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/system_architecture.pdf}
+\caption{Overall system architecture of the improved coffee berry sorting machine}
+\label{fig:system_architecture}
+\end{figure}
+
 Each module will be designed to work in synchronization to enable real-time detection, classification, and rejection of unwanted coffee berries.
 
 \subsection{Mechanical Module Design}
@@ -71,6 +78,13 @@ The proposed electrical and control module will be designed to support high-spee
 The system will employ a Raspberry Pi 3 as the main control and supervisory processing unit. The Raspberry Pi will be responsible for system initialization, user interface handling, data logging, actuator control, and coordination of the sorting process.
 
 To improve throughput and reduce latency in image processing and classification, an additional microprocessor or co-processing unit (such as an ESP32, STM32, or equivalent embedded processor) will be introduced. This secondary processor will handle time-critical and repetitive computational tasks, thereby offloading the Raspberry Pi and enhancing real-time performance.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/coprocessing_architecture.pdf}
+\caption{Co-processing architecture showing task distribution between Raspberry Pi and auxiliary microcontroller}
+\label{fig:coprocessing_architecture}
+\end{figure}
 
 The division of tasks will be implemented as follows: The Raspberry Pi will manage high-level decision making, system synchronization, and communication. The co-processor will handle image pre-processing tasks, object tracking computations, timing calculations for ejection scheduling, and sensor signal conditioning where applicable.
 
