@@ -1,173 +1,128 @@
-\section{Design and Methodology}
+\section{Research Design and Methodology}
 \label{sec:methodology}
 
-\subsection{Project Objectives}
+This study will adopt an experimental and design-based research approach. The research will involve the modification and improvement of an existing image-based coffee berry sorting machine through systematic redesign of its mechanical, electrical, and software subsystems. A functional prototype will be developed and evaluated to determine improvements in sorting accuracy, processing speed, and system reliability. The research design will be iterative, where system performance will be evaluated at each stage, and necessary refinements will be implemented to address identified limitations such as motion blur, processing delays, and ejection timing inaccuracies observed in the previous model.
 
-\subsubsection{Main Objective}
+\subsection{System Overview}
 
-To modify and improve the existing coffee berry sorting machine to achieve enhanced sorting accuracy (>90\%), increased throughput capacity (150-200 kg/hr), and improved mechanical reliability through systematic component upgrades and control system enhancements.
+The proposed coffee berry sorting machine will consist of three main modules:
 
-\subsubsection{Specific Objectives}
-
-\begin{enumerate}
-    \item Redesign feed hopper and vibratory feeder system for consistent, uniform berry presentation to sorting zone
-    \item Upgrade conveyor belt system with improved tracking, tensioning, and speed control for optimal material flow
-    \item Implement color-based optical sensor array with real-time classification algorithms for accurate ripeness detection
-    \item Design and integrate mechanical actuator system (solenoid-driven flapper mechanism) with <30ms response time
-    \item Develop microcontroller-based control system with sensor fusion and adaptive thresholding algorithms
-    \item Implement performance monitoring system with real-time throughput and accuracy metrics
-\end{enumerate}
-
-\subsection{Design Approach}
-
-The project employs systematic modification methodology \cite{mechanical_sorting_actuators}:
-
-\begin{enumerate}
-    \item Current System Analysis: Identify existing machine limitations and failure modes
-    \item Requirements Definition: Establish performance targets for throughput and accuracy
-    \item Component Selection: Specify upgraded components based on performance requirements
-    \item Detailed Design: Create CAD models for mechanical modifications and circuit schematics
-    \item Prototyping and Testing: Fabricate modifications and conduct validation testing
-    \item Integration and Optimization: Install upgrades and tune system parameters
-    \item Performance Validation: Measure sorting accuracy and throughput against targets
-\end{enumerate}
-
-\subsection{Implementation Methodology}
-
-\subsubsection{Mechanical System Modifications}
-
-\paragraph{Feed Hopper Redesign}
-The existing feed hopper produces irregular berry flow causing clustering at the conveyor inlet. Proposed modifications include:
 \begin{itemize}
-    \item Enlarged hopper capacity (15 kg to 25 kg) for continuous operation
-    \item Adjustable gate mechanism for flow rate control
-    \item Sloped walls (45-degree angle) to prevent berry bridging \cite{hopper_design_agricultural}
-    \item Vibratory feeder integration for controlled, uniform berry release
+    \item \textbf{Mechanical Module} -- Responsible for controlled berry feeding, alignment, and physical support
+    \item \textbf{Electrical and Electronic Module} -- Responsible for sensing, actuation, power distribution, and processing
+    \item \textbf{Software Module} -- Responsible for image acquisition, processing, classification, tracking, and ejection control
 \end{itemize}
 
-Vibratory feeder specifications: electromagnetic drive, variable frequency control (20-60 Hz), amplitude adjustment for different berry sizes \cite{vibratory_feeding_systems}.
+Each module will be designed to work in synchronization to enable real-time detection, classification, and rejection of unwanted coffee berries.
 
-\paragraph{Conveyor Belt System Upgrade}
-Current conveyor exhibits belt tracking drift and insufficient speed control. Modifications include:
-\begin{itemize}
-    \item Belt tracking system: crowned pulleys and adjustable idlers \cite{belt_tracking_methods}
-    \item Spring-loaded tensioning mechanism maintaining constant tension across operational conditions \cite{belt_tensioning_systems}
-    \item Variable frequency drive (VFD) for precise speed control (0.3-1.2 m/s range)
-    \item Food-grade PVC belt material with textured surface for berry positioning
-\end{itemize}
+\subsection{Mechanical Module Design}
 
-\paragraph{Sorting Actuator Mechanism}
-New mechanical actuator system employs solenoid-driven flapper design:
-\begin{itemize}
-    \item 12V DC push-type solenoids (25mm stroke, 10N force) \cite{solenoid_applications_agriculture}
-    \item Lightweight aluminum flapper arms (100mm length) for rapid actuation
-    \item Adjustable mounting brackets for precise positioning relative to sensor detection zone
-    \item Modular design enabling individual actuator replacement without system disassembly
-\end{itemize}
+The mechanical module will be designed to ensure consistent berry flow, minimal vibration-induced image distortion, accurate alignment, and precise ejection positioning.
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Mechanical Assembly CAD Model]\vspace{2.5cm}}}
-\caption{CAD model showing upgraded conveyor system, feed hopper, and sorting actuators}
-\label{fig:mechanical_assembly}
-\end{figure}
+\subsubsection{Hopper}
 
-\subsubsection{Sensor System Implementation}
+The hopper will be used to store harvested coffee berries before sorting. It will be designed with sloped walls to allow gravity-assisted flow while preventing clogging and bridging of berries.
 
-\paragraph{Optical Sensor Array}
-Color-based detection employs RGB sensors positioned above conveyor belt:
-\begin{itemize}
-    \item TCS34725 RGB color sensors (4 units distributed across belt width) \cite{color_based_sorting}
-    \item LED illumination array (5500K white LEDs) for consistent lighting conditions
-    \item Sensor height: 50mm above belt surface for optimal detection zone
-    \item Detection resolution: individual berry identification at 0.8 m/s belt speed
-\end{itemize}
+\textbf{Material Selection:} Mild steel sheet or food-grade aluminium will be used due to: structural strength, ease of fabrication, resistance to wear, and suitability for agricultural products. The hopper will feed berries uniformly onto the vibrating feeder.
 
-Sensor calibration procedure:
-\begin{enumerate}
-    \item Establish color thresholds for ripe (red/purple), unripe (green), and overripe (black) berries
-    \item Generate lookup tables mapping RGB values to ripeness classifications
-    \item Implement ambient light compensation algorithms \cite{adaptive_thresholding}
-    \item Validate classification accuracy with known berry samples
-\end{enumerate}
+\subsubsection{Linear Vibrating Feeder}
 
-\paragraph{Position Sensing}
-Photoelectric sensors detect berry presence and trigger position tracking:
-\begin{itemize}
-    \item Through-beam photoelectric sensors at detection zone entrance
-    \item Encoder feedback from conveyor motor for position tracking
-    \item Time-of-flight calculation synchronizing detection with actuator firing
-\end{itemize}
+A linear vibrating feeder will be employed to regulate the flow rate of coffee berries and prevent overlapping during image capture. Controlled vibration will ensure berries are spread into a near-single-file arrangement.
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Sensor Positioning Diagram]\vspace{2.5cm}}}
-\caption{Sensor array positioning showing RGB sensors, LED illumination, and photoelectric sensors}
-\label{fig:sensor_positioning}
-\end{figure}
+\textbf{Justification:} Reduces berry overlap, improves image clarity, minimizes motion blur, and enhances object tracking accuracy.
 
-\subsubsection{Control System Architecture}
+\textbf{Material Selection:} Stainless steel or aluminium tray to reduce corrosion and contamination. Rubber vibration isolators to reduce transmission of vibration to the camera holder.
 
-\paragraph{Microcontroller Platform}
-ESP32 development board provides control system processing:
-\begin{itemize}
-    \item Dual-core architecture: Core 0 for sensor processing, Core 1 for actuator control \cite{esp32_datasheet}
-    \item I2C bus communication with RGB sensors
-    \item GPIO outputs for solenoid driver control
-    \item WiFi connectivity for remote monitoring and parameter adjustment
-\end{itemize}
+\subsubsection{Chute}
 
-\paragraph{Signal Processing and Classification}
-Real-time classification algorithm:
-\begin{enumerate}
-    \item RGB sensor data acquisition at 10 Hz sampling rate
-    \item Digital filtering (moving average, 5-point window) for noise reduction \cite{signal_processing_sensors}
-    \item Threshold comparison: classify as ACCEPT if R $>$ 120 and G $<$ 100, otherwise REJECT
-    \item Position tracking: calculate actuator firing delay based on belt speed and sensor-to-actuator distance
-    \item Actuator command: trigger solenoid pulse (50ms duration) at calculated delay
-\end{enumerate}
+The chute will guide berries from the feeder to the imaging zone while maintaining alignment and spacing.
 
-\paragraph{Power System}
-\begin{itemize}
-    \item Primary power: 220V AC mains via transformer and rectifier
-    \item 12V DC rail: solenoid actuators and sensors (regulated supply, 5A capacity)
-    \item 5V DC rail: ESP32 and signal electronics (buck converter, 2A capacity)
-    \item Emergency stop circuit: hardwired mechanical switch disconnecting solenoid power
-\end{itemize}
+\textbf{Design Considerations:} Inclination angle optimized for gravity flow, smooth surface finish to reduce friction, fixed berry trajectory for predictable motion.
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Control System Block Diagram]\vspace{2.5cm}}}
-\caption{Control system architecture showing sensor inputs, microcontroller processing, and actuator outputs}
-\label{fig:control_system}
-\end{figure}
+\textbf{Material Selection:} Acrylic or aluminium sheet chosen for smoothness, light weight, and ease of modification.
 
-\subsection{Testing and Validation Plan}
+\subsubsection{Camera Holder}
 
-\subsubsection{Component-Level Testing}
-\begin{itemize}
-    \item Vibratory feeder: characterize flow rate vs. frequency and amplitude settings
-    \item Conveyor belt: verify tracking stability across speed range (0.3-1.2 m/s)
-    \item RGB sensors: calibrate color thresholds with sample berries under various lighting conditions
-    \item Solenoid actuators: measure response time and force output, verify actuation reliability (1000+ cycle test)
-    \item Control algorithms: validate classification accuracy with labeled berry dataset (300+ samples)
-\end{itemize}
+The camera holder will support the Raspberry Pi camera directly above the imaging zone. It will be mechanically isolated from vibrations originating from the feeder.
 
-\subsubsection{System Integration Testing}
-\begin{itemize}
-    \item Feed system: verify uniform berry spacing on conveyor belt (visual inspection and high-speed video)
-    \item Sensor-actuator synchronization: confirm timing accuracy by testing with marked berries
-    \item Throughput measurement: process known berry quantities and measure completion time
-    \item Accuracy measurement: manually verify sorted berry classification (100 berry sample minimum)
-\end{itemize}
+\textbf{Design Improvements:} Use of rubber dampers to reduce vibration transmission, rigid frame mounting to maintain fixed focal distance, adjustable height mechanism for calibration.
 
-\subsubsection{Performance Validation Protocol}
-Comprehensive testing procedure:
-\begin{enumerate}
-    \item Prepare test batches: 10 kg mixed berries (known distribution of ripe/unripe/defect)
-    \item Process batches at target operating speed (0.8 m/s belt speed)
-    \item Collect and weigh both accepted and rejected streams
-    \item Manually inspect 5\% random sample from each stream
+\textbf{Material Selection:} Aluminium profile or 3D-printed ABS selected for rigidity and lightweight properties.
+
+\subsubsection{Ejection Holder}
+
+The ejection holder will house the air ejectors responsible for rejecting unwanted berries.
+
+\textbf{Design Considerations:} Precise alignment with berry trajectory, fixed distance from detection zone to allow accurate ejection scheduling, modular design for easy adjustment.
+
+\textbf{Material Selection:} Aluminium brackets resistant to vibration and compressed air forces.
+
+\subsubsection{Frame Structure}
+
+The frame will support all mechanical and electrical components.
+
+\textbf{Material Selection:} Mild steel angle bars or aluminium extrusion selected for strength, stability, and ease of assembly.
+\subsection{Proposed Electrical and Control Module}
+
+The proposed electrical and control module will be designed to support high-speed image acquisition, real-time processing, and precise actuation required for accurate coffee berry sorting. To address the processing bottlenecks identified in the previous system, a co-processing architecture will be introduced.
+
+\subsubsection{Central Processing and Co-Processing Architecture}
+
+The system will employ a Raspberry Pi 3 as the main control and supervisory processing unit. The Raspberry Pi will be responsible for system initialization, user interface handling, data logging, actuator control, and coordination of the sorting process.
+
+To improve throughput and reduce latency in image processing and classification, an additional microprocessor or co-processing unit (such as an ESP32, STM32, or equivalent embedded processor) will be introduced. This secondary processor will handle time-critical and repetitive computational tasks, thereby offloading the Raspberry Pi and enhancing real-time performance.
+
+The division of tasks will be implemented as follows: The Raspberry Pi will manage high-level decision making, system synchronization, and communication. The co-processor will handle image pre-processing tasks, object tracking computations, timing calculations for ejection scheduling, and sensor signal conditioning where applicable.
+
+Communication between the Raspberry Pi and the co-processor will be achieved through high-speed serial communication (UART, SPI, or I²C), ensuring minimal data transfer delay or a flash disk.
+
+\subsubsection{Image Acquisition System}
+
+A Raspberry Pi Camera Module will be mounted above the chute using a rigid camera holder to capture high-resolution images of coffee berries in motion. The camera will operate at an optimized frame rate to balance image clarity and processing speed while minimizing motion blur.
+
+Controlled LED lighting modules will be installed around the imaging zone to provide uniform illumination, reduce shadows, and ensure consistent image quality regardless of ambient lighting conditions.
+
+\subsubsection{Air Ejection and Actuation System}
+
+The berry rejection mechanism will consist of: high-speed air ejectors (solenoid-controlled air nozzles) positioned along the chute, and a compressed air supply system, including a compact air compressor and pressure regulation unit.
+
+The co-processor will compute precise ejection timing based on berry position tracking, while the Raspberry Pi will issue final actuation commands. This approach will ensure accurate rejection of defective or unripe berries without affecting accepted berries.
+
+\subsubsection{Motor Control and Power Supply}
+
+Electric motors used in the linear vibrating feeder will be selected based on vibration frequency requirements, durability, and power efficiency. Motor drivers will be interfaced with the co-processor for precise control of feed rate.
+
+The system will utilize: a regulated 5V DC supply for logic-level electronics (Raspberry Pi, microprocessor, camera), and a 12V DC supply for actuators, air solenoids, and motors.
+
+Power isolation and protection mechanisms will be incorporated to prevent electrical noise from affecting sensitive processing units.
+
+\subsection{Software Architecture and Control Logic}
+
+The software system will be modular and executed in stages as outlined below:
+
+\subsubsection{System Startup}
+
+Upon power-up, the Raspberry Pi will initialize system peripherals, establish communication with the co-processor, and perform system diagnostics.
+
+\subsubsection{Image Pre-Processing}
+
+Captured images will undergo grayscale conversion, noise filtering, normalization, and contrast enhancement. Pre-processing tasks will primarily be executed on the co-processor to reduce computational load on the Raspberry Pi.
+
+\subsubsection{Object Detection}
+
+Coffee berries will be detected using thresholding and contour-based methods or lightweight machine learning models optimized for embedded systems.
+
+\subsubsection{Object Tracking}
+
+Detected berries will be tracked across successive frames to determine velocity and trajectory. Tracking data will be used to predict the precise point of ejection.
+
+\subsubsection{Ejection Scheduling}
+
+Based on classification results, the system will calculate the optimal actuation time for each air ejector to reject unwanted berries while allowing acceptable berries to pass.
+
+\subsubsection{System Flow Control}
+
+The Raspberry Pi will supervise the entire operation, adjusting feed rates, handling exceptions, and logging system performance metrics.
     \item Calculate metrics: sorting accuracy, false accept rate, false reject rate, throughput (kg/hr)
     \item Repeat testing for 5 batches to establish performance consistency
     \item Document failure modes and optimization opportunities

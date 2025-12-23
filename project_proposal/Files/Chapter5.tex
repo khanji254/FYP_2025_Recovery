@@ -1,57 +1,28 @@
 \section{Expected Outcomes}
 \label{sec:outcomes}
 
-\subsection{Technical Performance}
+\subsection{An Improved Coffee Berry Sorting Machine Model}
 
-\begin{itemize}
-    \item \textbf{Sorting Accuracy}: Achievement of $>$90\% classification accuracy, up from current 75-80\% baseline \cite{color_based_sorting}
-    \item \textbf{Throughput Capacity}: 150-200 kg/hr processing capacity, representing 2-2.5x improvement over current 50-75 kg/hr \cite{sorting_system_metrics}
-    \item \textbf{False Accept Rate}: Reduction to $<$8\%, minimizing defects in accepted product stream
-    \item \textbf{False Reject Rate}: Maintained at $<$12\%, optimizing yield while ensuring quality standards
-    \item \textbf{System Reliability}: $>$95\% uptime during 4-hour continuous operation cycles, reducing maintenance interventions
-    \item \textbf{Mechanical Robustness}: Elimination of belt tracking issues through crowned pulley design and spring tensioning \cite{belt_tracking_methods}
-    \item \textbf{Sensor Performance}: Consistent color detection across variable lighting conditions via adaptive thresholding \cite{adaptive_thresholding}
-\end{itemize}
+The outcome of this project will be a modified and improved coffee berry sorting machine that builds upon the existing prototype architecture. The improvements made will address identified limitations in image clarity, processing throughput, and system reliability.
 
-\subsection{Economic Impact}
+\subsection{Enhanced Real-Time Detection and Classification Performance}
 
-The enhanced sorting system will deliver measurable economic benefits:
+The proposed modifications will reduce motion blur and processing delays through an optimized camera configuration, improved lighting, refined image pre-processing methods, and timing-aware ejection scheduling. These enhancements will support classification and sorting at higher throughput levels without compromising accuracy.
 
-\begin{itemize}
-    \item \textbf{Labor Cost Reduction}: Reduced manual re-sorting requirements (50-70\% reduction in sorting labor hours)
-    \item \textbf{Product Quality Improvement}: Higher proportion of premium-grade coffee through consistent defect removal
-    \item \textbf{Processing Efficiency}: Elimination of throughput bottleneck in processing chain
-    \item \textbf{Maintenance Cost Reduction}: Improved mechanical reliability reducing unplanned downtime and repair costs
-    \item \textbf{Return on Investment}: Estimated 18-24 month payback period based on labor savings and quality improvements
-\end{itemize}
+The improved system will employ an efficient sorting algorithm that uses color, shape, and surface quality parameters to categorize coffee berries as acceptable or defective, thereby minimizing misclassification rates and improving overall sorting quality.
 
-\subsection{Project Timeline}
+\subsection{Optimized Ejection Timing and Synchronization}
 
-16-week implementation schedule: System Analysis and Design (Weeks 1-3), Component Procurement (Weeks 2-4), Mechanical Modifications (Weeks 4-7), Sensor and Control System Integration (Weeks 7-10), Component Testing (Weeks 10-12), System Integration and Calibration (Weeks 12-14), Performance Validation (Weeks 14-16). Detailed timeline provided in Appendix B.
+By integrating object tracking into the control logic, the system will achieve better alignment between detection, classification, and actuation. This integration will minimize the occurrence of missed ejections, false rejections, and actuation timing errors, resulting in a more reliable sorting process.
 
-Critical path activities include conveyor system modifications, sensor array fabrication and calibration, and control algorithm development and tuning.
+\subsection{Improved System Stability and Reliability}
 
-\subsection{Knowledge Contribution}
+The refinement of the mechanical and electrical modules will contribute to enhanced system stability. The improved machine will be able to operate continuously without frequent interruptions, contributing to consistent throughput and reduced maintenance downtime.
 
-Project documentation will provide:
-\begin{itemize}
-    \item Validated design specifications for mid-scale coffee berry sorting systems
-    \item Sensor calibration procedures for RGB-based ripeness detection under African agricultural facility conditions
-    \item Performance characterization data for solenoid-driven mechanical actuator sorting mechanisms
-    \item Cost-benefit analysis comparing semi-automated sorting system improvements versus manual methods
-    \item Troubleshooting guide for common failure modes in conveyor-based agricultural sorting systems
-    \item Replicable design methodology applicable to other fruit and vegetable sorting challenges
-\end{itemize}
+\subsection{A Scalable and Cost-Conscious Design Framework}
 
-These outputs will benefit agricultural engineering students, coffee processing cooperatives, and small-scale agricultural equipment manufacturers across Kenya and East Africa.
+The project will demonstrate that it is possible to optimize the use of existing Raspberry Pi 3 resources through strategic task distribution and the introduction of low-cost co-processing elements. This framework will provide pathways for future scalability, whether through hardware upgrades or algorithmic improvements.
 
-\subsection{Educational Value}
+\subsection{Contribution to Agricultural Automation Research}
 
-The project provides hands-on learning experiences in:
-\begin{itemize}
-    \item Mechatronic system integration combining mechanical, electrical, and software engineering
-    \item Agricultural automation technology addressing real-world processing challenges
-    \item Sensor technology application and signal processing algorithm development
-    \item Performance optimization through systematic testing and parameter tuning
-    \item Economic analysis and engineering design decision-making
-\end{itemize}
+This project will contribute to the ongoing development of low-cost, image-based automated sorting systems in agricultural contexts. It will provide a practical case study on how cost-effective embedded systems can be adapted to meet the real-time processing demands of sorting applications in small-scale Kenyan agricultural settings.
