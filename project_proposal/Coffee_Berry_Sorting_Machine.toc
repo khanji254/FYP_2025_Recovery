@@ -9,24 +9,24 @@
 \contentsline {subsubsection}{\numberline {1.3.2}Specific Objectives}{4}{subsubsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.4}Justification}{5}{subsection.1.4}%
 \contentsline {section}{\numberline {2}Literature Review}{6}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Challenges of Traditional Sorting Methods}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Challenges of Traditional Sorting Methods}{7}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Advantages of Automated Coffee Berry Sorting}{8}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Separation Methods}{9}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Air Jet System}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1}Air Jet System}{10}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Ejector Plates}{10}{subsubsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}Diverter Systems}{11}{subsubsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.4}Classification Methods}{11}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Color-Based Classification}{11}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1}Color-Based Classification}{12}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Shape-Based Classification}{12}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Texture-Based Classification}{13}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.3}Texture-Based Classification}{12}{subsubsection.2.4.3}%
 \contentsline {subsubsection}{\numberline {2.4.4}Deep Learning-Based Classification}{13}{subsubsection.2.4.4}%
 \contentsline {subsubsection}{\numberline {2.4.5}Pattern Recognition-Based Classification}{13}{subsubsection.2.4.5}%
 \contentsline {subsubsection}{\numberline {2.4.6}Multispectral and Hyperspectral Imaging-Based Classification}{14}{subsubsection.2.4.6}%
 \contentsline {subsubsection}{\numberline {2.4.7}Three-Dimensional (3D) Object Classification}{14}{subsubsection.2.4.7}%
 \contentsline {subsection}{\numberline {2.5}Gap Analysis}{14}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Real-Time Processing and Throughput Limitations}{15}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.1}Real-Time Processing and Throughput Limitations}{14}{subsubsection.2.5.1}%
 \contentsline {subsubsection}{\numberline {2.5.2}Motion Blur and Image Degradation at Higher Speeds}{15}{subsubsection.2.5.2}%
-\contentsline {subsubsection}{\numberline {2.5.3}Cost-Performance Trade-Off in Hardware Selection}{16}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.3}Cost-Performance Trade-Off in Hardware Selection}{15}{subsubsection.2.5.3}%
 \contentsline {section}{\numberline {3}Research Design and Methodology}{17}{section.3}%
 \contentsline {subsection}{\numberline {3.1}System Overview}{17}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Mechanical Module Design}{17}{subsection.3.2}%
@@ -45,17 +45,18 @@
 \contentsline {subsubsection}{\numberline {3.4.1}System Startup}{22}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Image Pre-Processing}{22}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Object Detection}{22}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Object Tracking}{23}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}Ejection Scheduling}{23}{subsubsection.3.4.5}%
-\contentsline {subsubsection}{\numberline {3.4.6}System Flow Control}{23}{subsubsection.3.4.6}%
-\contentsline {section}{\numberline {4}Expected Outcomes}{25}{section.4}%
-\contentsline {subsection}{\numberline {4.1}An Improved Coffee Berry Sorting Machine Model}{25}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Enhanced Real-Time Detection and Classification Performance}{25}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Optimized Ejection Timing and Synchronization}{25}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Improved System Stability and Reliability}{26}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}A Scalable and Cost-Conscious Design Framework}{26}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Contribution to Agricultural Automation Research}{26}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Conclusion}{27}{section.5}%
-\contentsline {section}{References}{28}{section.5}%
-\contentsline {section}{\numberline {A}Project Budget}{29}{appendix.A}%
-\contentsline {section}{\numberline {B}Project Timeline}{29}{appendix.B}%
+\contentsline {subsubsection}{\numberline {3.4.4}Classification}{23}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Object Tracking}{23}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Ejection Scheduling}{24}{subsubsection.3.4.6}%
+\contentsline {subsubsection}{\numberline {3.4.7}System Flow Control}{24}{subsubsection.3.4.7}%
+\contentsline {section}{\numberline {4}Expected Outcomes}{26}{section.4}%
+\contentsline {subsection}{\numberline {4.1}An Improved Coffee Berry Sorting Machine Model}{26}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Enhanced Real-Time Detection and Classification Performance}{26}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Optimized Ejection Timing and Synchronization}{26}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Improved System Stability and Reliability}{27}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}A Scalable and Cost-Conscious Design Framework}{27}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Contribution to Agricultural Automation Research}{27}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Conclusion}{28}{section.5}%
+\contentsline {section}{References}{29}{section.5}%
+\contentsline {section}{\numberline {A}Project Budget}{30}{appendix.A}%
+\contentsline {section}{\numberline {B}Project Timeline}{30}{appendix.B}%

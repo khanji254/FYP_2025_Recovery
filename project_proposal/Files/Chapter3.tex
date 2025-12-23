@@ -126,6 +126,21 @@ Captured images will undergo grayscale conversion, noise filtering, normalizatio
 
 Coffee berries will be detected using thresholding and contour-based methods or lightweight machine learning models optimized for embedded systems.
 
+\subsubsection{Classification}
+
+The classification system will be designed as a binary classifier to distinguish between **ripe** and **unripe** coffee berries. This simplified two-class approach offers several advantages:
+
+\begin{itemize}
+    \item Reduced computational complexity suitable for real-time processing on embedded platforms
+    \item Faster training convergence with smaller labeled datasets
+    \item Higher classification accuracy due to clearer decision boundaries
+    \item Practical alignment with primary sorting objectives in coffee processing
+\end{itemize}
+
+The model will be trained using a curated dataset of coffee berry images labeled as either ripe (deep red/purple berries suitable for processing) or unripe (green, yellow, or partially colored berries requiring rejection). A lightweight convolutional neural network (CNN) architecture such as MobileNetV2 will be employed and optimized using TensorFlow Lite for deployment on the Raspberry Pi.
+
+Training will involve data augmentation techniques including rotation, brightness adjustment, and horizontal flipping to improve model generalization. The trained model will be quantized to reduce inference time while maintaining classification accuracy above the 90\% threshold.
+
 \subsubsection{Object Tracking}
 
 Detected berries will be tracked across successive frames to determine velocity and trajectory. Tracking data will be used to predict the precise point of ejection.
@@ -137,16 +152,3 @@ Based on classification results, the system will calculate the optimal actuation
 \subsubsection{System Flow Control}
 
 The Raspberry Pi will supervise the entire operation, adjusting feed rates, handling exceptions, and logging system performance metrics.
-    \item Calculate metrics: sorting accuracy, false accept rate, false reject rate, throughput (kg/hr)
-    \item Repeat testing for 5 batches to establish performance consistency
-    \item Document failure modes and optimization opportunities
-\end{enumerate}
-
-Target performance metrics:
-\begin{itemize}
-    \item Sorting accuracy: $>$ 90\% (correctly classified berries / total berries)
-    \item Throughput: 150-200 kg/hr (2.5x improvement over baseline 50-75 kg/hr)
-    \item False accept rate: $<$ 8\% (defects in accepted stream)
-    \item False reject rate: $<$ 12\% (good berries in rejected stream)
-    \item System uptime: $>$ 95\% during 4-hour continuous operation test
-\end{itemize}

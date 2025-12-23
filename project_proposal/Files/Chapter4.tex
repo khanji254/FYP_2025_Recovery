@@ -1,56 +1,78 @@
-\section{Methodology}
-\label{sec:methodology}
+\section{Testing and Validation Methodology}
+\label{sec:testing}
 
-The proposed solution implements a comprehensive dual-subsystem approach integrating mechanical and electrical innovations to address identified system vulnerabilities.
+A comprehensive testing and validation plan will be implemented to evaluate system performance and verify that design objectives are achieved. Testing will be conducted in phases, progressing from component-level validation to full system integration testing.
 
-\subsection{Mechanical System Design}
+\subsection{Component-Level Testing}
 
-\subsubsection{Deployment Mechanism: The Sealed Explosion Cap}
+\subsubsection{Mechanical Subsystem Testing}
 
-Implementation of a sealed explosion cap architecture to house the Crimson Powder pyrotechnic charge. The design serves dual critical functions: containment of combustion flame products to prevent thermal damage to parachute canopy materials, while simultaneously directing pressure wave energy to shear pin interfaces for reliable mechanical ejection. This approach eliminates the thermal damage risk observed in previous deployment attempts while ensuring consistent deployment force application.
+\textbf{Vibrating Feeder Characterization:} The vibrating feeder will be tested to determine optimal amplitude and frequency settings that produce consistent single-file berry flow without excessive bouncing or overlap. Flow rate measurements will be conducted at various vibration levels to establish the operating range.
 
-The explosion cap will be fabricated using high-temperature resistant materials capable of withstanding the combustion process while maintaining structural integrity for multiple test cycles. The internal geometry will be optimized through iterative testing to achieve consistent pressurization characteristics.
+\textbf{Chute Alignment Verification:} Berry trajectory consistency will be verified by tracking berry positions across multiple passes. High-speed video analysis will be used to confirm that berries maintain predictable paths through the imaging zone.
 
-\subsubsection{Avionics Bay Structure}
+\textbf{Mechanical Vibration Isolation:} Accelerometers will be mounted on the camera holder and imaging zone to measure vibration transmission from the feeder. Isolation effectiveness will be quantified by comparing vibration amplitudes with and without damping mechanisms.
 
-Design and fabrication of a custom 3D-printed sled/holder assembly to secure critical flight computer components, LiPo battery packs, and Battery Management System (BMS) modules. The key engineering feature incorporates mechanical isolation and vibration dampening capabilities specifically engineered to withstand high-G launch acceleration forces while maintaining structural integrity throughout flight operations. The design maintains center of gravity stability critical for flight trajectory predictability.
+\subsubsection{Electrical and Control System Testing}
 
-Materials selection will consider the thermal, mechanical, and mass constraints of the N4 airframe. PETG filament has been identified as the primary candidate due to its superior strength and temperature resistance compared to standard PLA.
+\textbf{Co-processor Communication Latency:} Serial communication latency between the Raspberry Pi and co-processing unit will be measured under various data transfer rates. Target latency should remain below 10 ms to maintain real-time performance.
 
-\subsection{Electrical System Architecture}
+\textbf{Air Ejector Response Time:} Solenoid valve actuation time (from trigger signal to full air blast) will be characterized using high-speed video and pressure sensors. Response time consistency will be verified across repeated actuations.
 
-\subsubsection{Hardware Architecture}
+\textbf{Power Supply Stability:} Voltage and current measurements will be taken during peak load conditions (simultaneous image capture, processing, and actuation) to ensure adequate power delivery and minimal voltage sag.
 
-\textbf{Microcontroller Unit:} ESP32 platform selected for high-speed processing capabilities required for real-time telemetry data processing and transmission. The dual-core architecture enables parallel processing of sensor data acquisition and wireless communication tasks.
+\subsubsection{Image Acquisition and Processing Testing}
 
-\textbf{Telemetry System:} Integration of Digi XBee-PRO 900HP module providing robust long-range communication capabilities exceeding 5km operational range with verified packet loss rates below 5\%. The module operates in the 900 MHz ISM band, offering superior range and obstacle penetration compared to 2.4 GHz alternatives.
+\textbf{Lighting Uniformity Analysis:} Light intensity will be measured across the imaging zone using a lux meter to ensure uniform illumination. Shadows and hotspots will be identified and mitigated through LED placement adjustments.
 
-\textbf{PCB Fabrication:} Custom printed circuit board design and fabrication to minimize circuit footprint, eliminate loose wire connection failures, and improve overall system reliability under vibration conditions. The PCB will incorporate proper grounding techniques, decoupling capacitors, and ESD protection for all external interfaces.
+\textbf{Motion Blur Assessment:} Images will be captured at various conveyor speeds to determine the threshold speed at which motion blur degrades classification performance. Shutter speed and exposure adjustments will be tested as mitigation strategies.
 
-\subsubsection{Smart Ignition Control System}
+\textbf{Classification Model Validation:} The trained binary classification model (ripe vs. unripe) will be evaluated using a hold-out test dataset not seen during training. Performance metrics including accuracy, precision, recall, and F1-score will be calculated to assess model robustness.
 
-Implementation of Pulse Width Modulation (PWM) controlled ignition utilizing low-side MOSFET driver architecture. The system implements precise heating profile control logic enabling temperature regulation of nichrome wire deployment igniters. This approach prevents wire burnout while enabling multiple deployment tests, significantly improving pre-flight validation capabilities and reducing deployment risk.
+\subsection{System Integration Testing}
 
-The PWM control algorithm will be developed to deliver controlled current to the nichrome wire, gradually increasing temperature to the ignition threshold while monitoring wire resistance to prevent thermal runaway conditions.
+\subsubsection{End-to-End Sorting Performance Evaluation}
 
-\subsubsection{Power Management and Feedback Systems}
+A standardized test procedure will be developed to evaluate the complete sorting system under controlled conditions:
 
-\textbf{Battery Management System Integration:} Active battery monitoring and management ensuring operational safety through real-time voltage monitoring and protection against over-discharge conditions. The BMS will also provide cell balancing functionality to maximize battery pack longevity and performance.
+\begin{enumerate}
+    \item Prepare test batches containing pre-counted and labeled coffee berries with known ripe/unripe distributions
+    \item Configure system settings (conveyor speed, camera parameters, ejector timing)
+    \item Load test batch into hopper and initiate sorting process
+    \item Collect sorted berries from accept and reject streams
+    \item Count and classify collected berries manually to determine ground truth
+    \item Calculate performance metrics: sorting accuracy, false accept rate, false reject rate, throughput (kg/hr)
+    \item Repeat testing for multiple batches to establish performance consistency
+    \item Document failure modes and optimization opportunities
+\end{enumerate}
 
-\textbf{Feedback Loop Architecture:} Real-time monitoring and transmission of critical system parameters including battery voltage levels and igniter continuity status to ground station operators. Implementation of automatic "Launch Inhibit" safety protocol triggered when main battery voltage drops below 14.0V threshold, preventing launch under insufficient power conditions.
-
-\subsection{Testing and Validation Plan}
-
-\subsubsection{Ground Testing}
-
+Target performance metrics:
 \begin{itemize}
-    \item Telemetry range testing in open field conditions
-    \item PWM ignition profile characterization using thermal imaging
-    \item Explosion cap deployment force measurements
-    \item Avionics holder vibration testing using shake table
-    \item Full system integration testing
+    \item Sorting accuracy: $>$ 90\% (correctly classified berries / total berries)
+    \item Throughput: 150-200 kg/hr (2.5x improvement over baseline 50-75 kg/hr)
+    \item False accept rate (unripe berries in accept stream): $<$ 8\%
+    \item False reject rate (ripe berries in reject stream): $<$ 12\%
+    \item System uptime: $>$ 95\% during 4-hour continuous operation test
 \end{itemize}
 
-\subsubsection{Flight Testing}
+\subsubsection{Stress Testing and Reliability Assessment}
 
-Progressive flight testing approach beginning with low-altitude test flights to validate basic functionality before proceeding to full mission profile testing.
+\textbf{Extended Operation Testing:} The system will be operated continuously for 4-8 hours using realistic berry volumes to assess mechanical wear, thermal stability, and sustained performance levels. Any degradation in accuracy or throughput over time will be documented.
+
+\textbf{Environmental Variation Testing:} System performance will be evaluated under varying ambient lighting conditions, temperature ranges, and humidity levels to verify robustness in real-world agricultural processing environments.
+
+\textbf{Component Failure Mode Analysis:} Deliberate introduction of fault conditions (e.g., compressed air pressure drop, camera obstruction, processor overload) will be used to assess system resilience and identify failure modes requiring additional safeguards.
+
+\subsection{Data Collection and Analysis}
+
+Throughout testing, the following data will be systematically collected:
+
+\begin{itemize}
+    \item Processing frame rates and latency measurements
+    \item Classification confidence scores for each detected berry
+    \item Ejector actuation timing and success rates
+    \item System error logs and exception handling events
+    \item Power consumption profiles during various operating modes
+\end{itemize}
+
+Statistical analysis will be performed on collected data to identify performance trends, correlations between system parameters and sorting accuracy, and areas requiring further optimization. Results will be documented in detailed test reports with supporting charts, tables, and visual evidence.
