@@ -1,0 +1,105 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{Styles/hangcaption}
+\usepackage{Styles/fancyheadings}
+\usepackage{tocloft}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+
+%-----Text width---------------------------------
+\textwidth 16cm
+
+%-----Line spacing-------------------------------
+\renewcommand{\baselinestretch}{1.5}
+
+%---------Add dots in TOC-----------------------
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+%------Paragraph indention-------------------------------
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+
+%-----Prevent indent----------------------
+\setlength{\parindent}{0em}
+
+%-----Definition of the header--------------------
+\pagestyle{fancyplain}
+\renewcommand{\sectionmark}[1]{\markboth{Chapter~\thesection.~#1}{#1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+\rhead[\fancyplain{}{\leftmark}]%
+{\fancyplain{\thepage}{\thepage}} \cfoot{} \plainheadrulewidth 0.4pt
+
+\makeatletter
+\ifcase \@ptsize \relax
+  \addtolength{\headheight}{1\p@}
+\or
+  \addtolength{\headheight}{2\p@}
+\or
+  \addtolength{\headheight}{3\p@}
+\fi \makeatother
+
+%-----Equations / Figures / Tables numbering according to sections
+\makeatletter
+\renewcommand\theequation{\thesection.\arabic{equation}}
+\renewcommand\thefigure{\thesection.\arabic{figure}}
+\renewcommand\thetable{\thesection.\arabic{table}}
+\@addtoreset{equation}{section} \@addtoreset{figure}{section}
+\@addtoreset{table}{section} \makeatother
+
+%-----Useful abbreviations----------------------
+\newcommand{\mr}{\mathrm}
+\newcommand{\bs}[1]{\mbox{$\boldsymbol{#1}$}}
+\newcommand{\degree}[1]{\mbox{$#1^\circ$}}
+
+%-----Table of contents depth---------------
+\setcounter{tocdepth}{3}
+
+% Set graphics path
+\graphicspath{{Figures/}{images/}{diagrams/}}
+
+\begin{document}
+\input{Files/title_page}
+
+\pagenumbering{gobble}
+\pagenumbering{Roman}
+\input{Files/Declaration}
+\clearpage
+\input{Files/Acknowledgment}
+\clearpage
+\input{Files/Abstract}
+\clearpage
+
+\pagenumbering{Roman}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+
+\pagenumbering{arabic}
+\input{Files/Introduction}
+\clearpage
+\input{Files/Chapter2}
+\clearpage
+\input{Files/Chapter3}
+\clearpage
+\input{Files/Chapter5}
+\clearpage
+\input{Files/Summary}
+\clearpage
+
+%---- Bibliography ----------------------------------------
+\markright{References}
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{IEEEtran}
+\bibliography{Bib/proposal_references}
+\clearpage
+
+%---- Appendices ------------------------------------------
+\input{Files/Appendices}
+
+\end{document}

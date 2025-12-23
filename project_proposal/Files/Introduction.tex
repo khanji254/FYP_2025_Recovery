@@ -2,22 +2,69 @@
 
 \subsection{Background of Study}
 
-Rocket recovery systems represent the most critical subsystem for preserving flight data and hardware in high-power rocketry missions. The evolution of recovery systems has progressed from simple single deployment methods to sophisticated dual deployment architectures. Single deployment systems release a parachute at apogee, presenting risks of high drift radius and unpredictable landing zones. In contrast, dual deployment systems utilize a drogue parachute at apogee for stability, followed by a main parachute deployment at lower altitude for controlled soft landing, establishing the standard for modern high-power rocketry operations.
+The global coffee industry remains a significant contributor to the economies of many developing countries, supporting millions of smallholder farmers worldwide. Coffee production involves several critical stages, from cultivation and harvesting to processing and packaging. Among these stages, the sorting of coffee berries is one of the most labor-intensive and quality-sensitive processes. Traditionally, coffee berry sorting has relied heavily on manual visual inspection, where workers separate berries based on ripeness, size, and visible defects. This approach is time-consuming, inconsistent, and costly, often leading to variations in coffee quality and increased operational expenses.
 
-The Nakuja Project N4 mission builds upon previous experiences from the N3.5 mission, which employed a basic single-deployment piston-based system. The current N4 design implements dual deployment architecture but faces significant challenges in deployment reliability and telemetry signal integrity. Previous missions demonstrated critical vulnerabilities in both mechanical deployment mechanisms and communication systems, necessitating a comprehensive redesign approach.
+Manual sorting methods are highly susceptible to human error and fatigue, which can result in misclassification of berries and reduced overall product quality. Furthermore, the labor-intensive nature of manual sorting limits scalability and efficiency, particularly during peak harvest periods when labor shortages are common. These challenges highlight the need for automated sorting solutions capable of performing classification tasks with higher accuracy, consistency, and throughput.
+
+Recent advancements in computer vision, machine learning, and embedded systems have enabled the development of automated coffee berry sorting machines that utilize image-based detection and real-time classification techniques. Previous work by fifth-year mechatronics engineering students resulted in the development of an image-based coffee berry sorting machine incorporating a vibrating conveyor system, optical detection, and air-ejection mechanisms controlled by a Raspberry Pi-based processing unit. While the system successfully demonstrated automated sorting, practical challenges were identified during real-time operation, particularly related to motion blur, processing latency, and limited computational throughput.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Figure 1 - Harvested Coffee Berry Variation]\vspace{3cm}}}
+\caption{Harvested coffee berry variation showing visual diversity in color, size, and surface texture}
+\label{fig:berry_variation}
+\end{figure}
+
+The visual diversity in harvested coffee berries, including variations in color, size, and surface texture, as illustrated in Figure~\\ref{fig:berry_variation}, presents a significant challenge for accurate automated classification.
+
+This project proposes the modification and improvement of the existing coffee berry sorting machine by addressing the identified limitations in image acquisition, processing speed, and real-time classification performance. By enhancing the vision processing pipeline, optimizing algorithms, and evaluating alternative hardware or processing architectures, the project aims to improve sorting accuracy and throughput while maintaining a cost-effective and scalable design suitable for small- and medium-scale coffee processing applications.
 
 \subsection{Problem Statement}
 
-The N4 mission confronts three critical reliability challenges that threaten mission success:
+The global coffee industry plays a vital role in the economic development of many coffee-producing countries, including Kenya, where coffee farming supports a large population of smallholder farmers. The quality of coffee berries at the processing stage directly determines the final product grade, market value, and competitiveness in both local and international markets. One of the most critical and labor-intensive stages in coffee processing is the sorting of coffee berries based on ripeness, color, size, and the presence of defects.
 
-\textbf{Telemetry Range Limitations:} The current telemetry system protocol exhibits significant range constraints, resulting in signal degradation and potential complete signal loss during critical flight phases. This limitation creates substantial risk of vehicle loss and inability to track the rocket post-flight, particularly during descent and landing phases.
+Traditionally, coffee berry sorting has been carried out manually through visual inspection by human operators. While this method requires minimal capital investment, it is inherently inefficient, inconsistent, and highly dependent on human judgment, which varies due to fatigue, experience, and environmental conditions. As a result, manual sorting often leads to misclassification of berries, reduced product quality, and increased operational costs. These challenges become more pronounced during peak harvest seasons, when large volumes of berries must be processed within limited timeframes.
 
-\textbf{Uncontrolled Ignition System:} The existing "DC dump" ignition method for nichrome wire deployment generates uncontrolled temperatures exceeding 1000 degrees Celsius. This excessive heat generation causes wire burnout, creating a single-use deployment system that cannot be tested reliably and introduces significant deployment risk during actual flight operations.
+In response to these limitations, recent final-year mechatronics projects have explored automated coffee berry sorting solutions using machine vision and robotic actuation. One such system employs a vibrating conveyor to ensure consistent berry flow, a chute for alignment, and an image-based detection and tracking system coupled with an air-ejection mechanism for sorting. The system operates under the control of a Raspberry Pi-based processing unit, leveraging computer vision and machine learning techniques to classify individual coffee berries as they move through the sorting process.
 
-\textbf{Absence of Pre-flight Monitoring:} The lack of real-time feedback systems for critical parameters including battery voltage and igniter continuity leaves ground operators without visibility into potential system failures. This blind spot in operational awareness substantially increases the risk of mission aborts or catastrophic deployment malfunctions during critical flight phases.
+Despite the successful demonstration of automated sorting, the existing system exhibits several critical technical limitations that hinder its overall performance and scalability. The natural appearance of harvested coffee berries presents significant visual variability in color, texture, size, and surface defects. These variations, combined with the dynamic motion of berries on the conveyor, introduce challenges such as motion blur, inconsistent illumination, and overlapping objects, which negatively affect image clarity and classification accuracy.
+
+Furthermore, the reliance on real-time image processing using a Raspberry Pi introduces processing bottlenecks. The limited computational capacity of the platform results in delays during frame acquisition, preprocessing, classification, and decision execution. Although the previous implementation attempted to mitigate these issues through optimization techniques such as TensorFlow Lite and multithreading, the system still struggles to achieve higher throughput without compromising accuracy. This limitation directly affects sorting speed and reduces the system's suitability for larger processing volumes.
+
+The core problem, therefore, lies not in the mechanical handling of coffee berries but in the limitations of the vision system, processing architecture, and real-time control strategy used in the existing model. There is a clear need to improve the system's ability to accurately and consistently classify visually diverse coffee berries at higher speeds while maintaining affordability and practicality for small-scale agricultural applications.
+
+This project seeks to address these challenges through the modification and improvement of the existing automated coffee berry sorting system. By enhancing the image acquisition strategy, optimizing or upgrading the processing architecture, and refining the detection-to-actuation pipeline, the project aims to achieve higher throughput, reduced latency, and improved classification accuracy.
+
+\subsection{Objectives}
+
+\subsubsection{Main Objective}
+
+To modify and improve an existing automated coffee berry sorting machine to achieve enhanced sorting accuracy, increased throughput, and improved real-time processing performance.
+
+\subsubsection{Specific Objectives}
+
+\begin{enumerate}
+    \item To analyze the performance limitations of the existing image-based coffee berry sorting system, with emphasis on motion blur, processing latency, and classification accuracy
+    \item To improve the sorting mechanism and berry handling system for consistent material flow
+    \item To evaluate alternative or upgraded processing hardware capable of supporting higher frame rates and faster inference
+    \item To implement a co-processing architecture to offload time-critical tasks from the main controller
+    \item To optimize image preprocessing and classification algorithms for embedded deployment
+    \item To enhance ejection timing synchronization for accurate berry rejection
+\end{enumerate}
 
 \subsection{Justification}
 
-The development of a reliable recovery system is paramount to mission success. Loss of the rocket vehicle results not only in hardware loss but also complete loss of flight data critical for mission analysis and future design improvements. The proposed improvements address documented failure modes from previous missions and implement industry-standard practices adapted for student rocketry applications.
+Coffee remains one of Kenya's most valuable agricultural exports, and quality grading plays a major role in determining its economic value. Automated coffee berry sorting systems offer a practical solution for improving quality consistency and reducing labor dependency. However, many advanced commercial systems are prohibitively expensive and unsuitable for adoption by small-scale processors and cooperatives.
 
-The Nakuja Project represents a significant investment in student engineering education and practical aerospace systems development. Ensuring mission success through robust recovery systems validates this investment and provides valuable learning opportunities for future engineering professionals.
+Improving an existing image-based coffee berry sorting model provides a cost-effective pathway toward practical automation by building upon already validated concepts while addressing observed technical shortcomings. By focusing on real-time processing efficiency, motion-related detection challenges, and system responsiveness, this study aims to bridge the gap between prototype-level demonstrations and deployable solutions.
+
+The proposed improvements contribute to:
+
+\begin{enumerate}
+    \item Enhanced accuracy and throughput in coffee berry sorting
+    \item Better utilization of affordable embedded vision technologies
+    \item Increased feasibility of locally developed agri-tech solutions
+    \item Practical learning and innovation in mechatronics system integration
+\end{enumerate}
+
+Furthermore, incorporating real harvested coffee berries into testing and demonstration provides a realistic visual and operational representation of actual field conditions, strengthening the relevance and credibility of the system. The outcomes of this project are expected to support the development of scalable, affordable, and locally adaptable coffee processing technologies aligned with Kenya's agricultural and technological development goals.

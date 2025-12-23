@@ -1,0 +1,52 @@
+\contentsline {section}{Declaration}{I}{section*.1}%
+\contentsline {section}{Acknowledgment}{II}{section*.2}%
+\contentsline {section}{Abstract}{III}{section*.3}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Background of Study}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problem Statement}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Objectives}{4}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Main Objective}{4}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Specific Objectives}{4}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Justification}{5}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Literature Review}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Coffee Berry Processing and Quality Control}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Mechanical Sorting Technologies}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Sensor Technologies for Berry Classification}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Conveyor Systems and Material Handling}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Sorting Actuator Mechanisms}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Control Systems and Signal Processing}{10}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Performance Metrics and Optimization}{11}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Existing Coffee Sorting Machines in Kenya}{12}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Design and Methodology}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Project Objectives}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Main Objective}{13}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Specific Objectives}{13}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Design Approach}{14}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Implementation Methodology}{14}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Mechanical System Modifications}{14}{subsubsection.3.3.1}%
+\contentsline {paragraph}{Feed Hopper Redesign}{14}{section*.4}%
+\contentsline {paragraph}{Conveyor Belt System Upgrade}{15}{section*.5}%
+\contentsline {paragraph}{Sorting Actuator Mechanism}{15}{section*.6}%
+\contentsline {subsubsection}{\numberline {3.3.2}Sensor System Implementation}{15}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Optical Sensor Array}{15}{section*.7}%
+\contentsline {paragraph}{Position Sensing}{16}{section*.8}%
+\contentsline {subsubsection}{\numberline {3.3.3}Control System Architecture}{17}{subsubsection.3.3.3}%
+\contentsline {paragraph}{Microcontroller Platform}{17}{section*.9}%
+\contentsline {paragraph}{Signal Processing and Classification}{17}{section*.10}%
+\contentsline {paragraph}{Power System}{18}{section*.11}%
+\contentsline {subsection}{\numberline {3.4}Testing and Validation Plan}{18}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Component-Level Testing}{18}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}System Integration Testing}{19}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Performance Validation Protocol}{19}{subsubsection.3.4.3}%
+\contentsline {section}{\numberline {4}Expected Outcomes}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Technical Performance}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Economic Impact}{21}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Project Timeline}{22}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Knowledge Contribution}{22}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Educational Value}{23}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Conclusion}{24}{section.5}%
+\contentsline {section}{References}{26}{section.5}%
+\contentsline {section}{\numberline {A}Project Budget}{30}{appendix.A}%
+\contentsline {section}{\numberline {B}Project Timeline}{30}{appendix.B}%
+\contentsline {section}{\numberline {C}Component Specifications}{30}{appendix.C}%
+\contentsline {section}{\numberline {D}Testing Protocols}{31}{appendix.D}%

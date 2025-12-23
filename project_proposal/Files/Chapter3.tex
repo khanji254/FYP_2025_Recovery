@@ -5,76 +5,179 @@
 
 \subsubsection{Main Objective}
 
-To design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range, ensuring mission success through enhanced communication capabilities, controlled deployment mechanisms, and comprehensive real-time monitoring systems.
+To modify and improve the existing coffee berry sorting machine to achieve enhanced sorting accuracy (>90\%), increased throughput capacity (150-200 kg/hr), and improved mechanical reliability through systematic component upgrades and control system enhancements.
 
 \subsubsection{Specific Objectives}
 
 \begin{enumerate}
-    \item Implement Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with <5\% packet loss
-    \item Design and validate PWM-controlled ignition system for regulating nichrome wire temperature
-    \item Develop comprehensive feedback monitoring system for battery percentage and deployment pin continuity
-    \item Implement sealed explosion cap design for consistent parachute deployment
-    \item Design ruggedized 3D-printed avionics holder with vibration isolation
+    \item Redesign feed hopper and vibratory feeder system for consistent, uniform berry presentation to sorting zone
+    \item Upgrade conveyor belt system with improved tracking, tensioning, and speed control for optimal material flow
+    \item Implement color-based optical sensor array with real-time classification algorithms for accurate ripeness detection
+    \item Design and integrate mechanical actuator system (solenoid-driven flapper mechanism) with <30ms response time
+    \item Develop microcontroller-based control system with sensor fusion and adaptive thresholding algorithms
+    \item Implement performance monitoring system with real-time throughput and accuracy metrics
 \end{enumerate}
 
 \subsection{Design Approach}
 
-The project employs systematic design-build-test methodology \cite{student_rocket_design}:
+The project employs systematic modification methodology \cite{mechanical_sorting_actuators}:
 
 \begin{enumerate}
-    \item Requirements Analysis: Define system specifications based on N4 mission profile
-    \item Conceptual Design: Develop solution architectures
-    \item Detailed Design: Create CAD models and circuit schematics
-    \item Prototyping: Fabricate components
-    \item Testing and Validation: Conduct ground and flight tests
-    \item Iteration: Refine designs based on results
+    \item Current System Analysis: Identify existing machine limitations and failure modes
+    \item Requirements Definition: Establish performance targets for throughput and accuracy
+    \item Component Selection: Specify upgraded components based on performance requirements
+    \item Detailed Design: Create CAD models for mechanical modifications and circuit schematics
+    \item Prototyping and Testing: Fabricate modifications and conduct validation testing
+    \item Integration and Optimization: Install upgrades and tune system parameters
+    \item Performance Validation: Measure sorting accuracy and throughput against targets
 \end{enumerate}
 
 \subsection{Implementation Methodology}
 
-\subsubsection{Mechanical System Design}
+\subsubsection{Mechanical System Modifications}
 
-\paragraph{Sealed Explosion Cap}
-Sealed explosion cap houses Crimson Powder pyrotechnic charge, containing combustion products while directing pressure for deployment \cite{nakka_crimson}. High-temperature resistant materials withstand combustion while enabling multiple test cycles.
+\paragraph{Feed Hopper Redesign}
+The existing feed hopper produces irregular berry flow causing clustering at the conveyor inlet. Proposed modifications include:
+\begin{itemize}
+    \item Enlarged hopper capacity (15 kg to 25 kg) for continuous operation
+    \item Adjustable gate mechanism for flow rate control
+    \item Sloped walls (45-degree angle) to prevent berry bridging \cite{hopper_design_agricultural}
+    \item Vibratory feeder integration for controlled, uniform berry release
+\end{itemize}
 
-\paragraph{Avionics Bay Structure}
-Custom 3D-printed PETG holder secures flight computer, LiPo batteries, and BMS with vibration isolation \cite{avionics_vibration}. Design maintains center of gravity stability under high-G loads.
+Vibratory feeder specifications: electromagnetic drive, variable frequency control (20-60 Hz), amplitude adjustment for different berry sizes \cite{vibratory_feeding_systems}.
+
+\paragraph{Conveyor Belt System Upgrade}
+Current conveyor exhibits belt tracking drift and insufficient speed control. Modifications include:
+\begin{itemize}
+    \item Belt tracking system: crowned pulleys and adjustable idlers \cite{belt_tracking_methods}
+    \item Spring-loaded tensioning mechanism maintaining constant tension across operational conditions \cite{belt_tensioning_systems}
+    \item Variable frequency drive (VFD) for precise speed control (0.3-1.2 m/s range)
+    \item Food-grade PVC belt material with textured surface for berry positioning
+\end{itemize}
+
+\paragraph{Sorting Actuator Mechanism}
+New mechanical actuator system employs solenoid-driven flapper design:
+\begin{itemize}
+    \item 12V DC push-type solenoids (25mm stroke, 10N force) \cite{solenoid_applications_agriculture}
+    \item Lightweight aluminum flapper arms (100mm length) for rapid actuation
+    \item Adjustable mounting brackets for precise positioning relative to sensor detection zone
+    \item Modular design enabling individual actuator replacement without system disassembly
+\end{itemize}
 
 \begin{figure}[h]
 \centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: PCB Schematic Diagram]\vspace{2.5cm}}}
-\caption{Custom PCB schematic showing ESP32, XBee-PRO 900HP, and PWM driver circuits}
-\label{fig:pcb_schematic}
+\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Mechanical Assembly CAD Model]\vspace{2.5cm}}}
+\caption{CAD model showing upgraded conveyor system, feed hopper, and sorting actuators}
+\label{fig:mechanical_assembly}
 \end{figure}
 
-\subsubsection{Electrical System Architecture}
+\subsubsection{Sensor System Implementation}
 
-\paragraph{Hardware Components}
-ESP32 dual-core microcontroller processes telemetry data \cite{esp32_datasheet}. XBee-PRO 900HP module provides 5+km range at 900 MHz \cite{xbee_pro_datasheet}. Custom PCB eliminates loose connections \cite{embedded_flight_computers}.
+\paragraph{Optical Sensor Array}
+Color-based detection employs RGB sensors positioned above conveyor belt:
+\begin{itemize}
+    \item TCS34725 RGB color sensors (4 units distributed across belt width) \cite{color_based_sorting}
+    \item LED illumination array (5500K white LEDs) for consistent lighting conditions
+    \item Sensor height: 50mm above belt surface for optimal detection zone
+    \item Detection resolution: individual berry identification at 0.8 m/s belt speed
+\end{itemize}
 
-\paragraph{PWM Ignition Control}
-MOSFET-based PWM driver controls nichrome wire heating, preventing burnout while enabling reusable testing \cite{pwm_ignition_systems}.
+Sensor calibration procedure:
+\begin{enumerate}
+    \item Establish color thresholds for ripe (red/purple), unripe (green), and overripe (black) berries
+    \item Generate lookup tables mapping RGB values to ripeness classifications
+    \item Implement ambient light compensation algorithms \cite{adaptive_thresholding}
+    \item Validate classification accuracy with known berry samples
+\end{enumerate}
 
-\paragraph{Power Management}
-BMS monitors LiPo battery health \cite{lipo_aerospace, bms_systems}. Real-time feedback transmits battery voltage and igniter continuity. Launch inhibit activates below 14.0V threshold.
+\paragraph{Position Sensing}
+Photoelectric sensors detect berry presence and trigger position tracking:
+\begin{itemize}
+    \item Through-beam photoelectric sensors at detection zone entrance
+    \item Encoder feedback from conveyor motor for position tracking
+    \item Time-of-flight calculation synchronizing detection with actuator firing
+\end{itemize}
 
 \begin{figure}[h]
 \centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Wiring Diagram]\vspace{2.5cm}}}
-\caption{System wiring diagram showing power distribution and signal connections}
-\label{fig:wiring}
+\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Sensor Positioning Diagram]\vspace{2.5cm}}}
+\caption{Sensor array positioning showing RGB sensors, LED illumination, and photoelectric sensors}
+\label{fig:sensor_positioning}
+\end{figure}
+
+\subsubsection{Control System Architecture}
+
+\paragraph{Microcontroller Platform}
+ESP32 development board provides control system processing:
+\begin{itemize}
+    \item Dual-core architecture: Core 0 for sensor processing, Core 1 for actuator control \cite{esp32_datasheet}
+    \item I2C bus communication with RGB sensors
+    \item GPIO outputs for solenoid driver control
+    \item WiFi connectivity for remote monitoring and parameter adjustment
+\end{itemize}
+
+\paragraph{Signal Processing and Classification}
+Real-time classification algorithm:
+\begin{enumerate}
+    \item RGB sensor data acquisition at 10 Hz sampling rate
+    \item Digital filtering (moving average, 5-point window) for noise reduction \cite{signal_processing_sensors}
+    \item Threshold comparison: classify as ACCEPT if R $>$ 120 and G $<$ 100, otherwise REJECT
+    \item Position tracking: calculate actuator firing delay based on belt speed and sensor-to-actuator distance
+    \item Actuator command: trigger solenoid pulse (50ms duration) at calculated delay
+\end{enumerate}
+
+\paragraph{Power System}
+\begin{itemize}
+    \item Primary power: 220V AC mains via transformer and rectifier
+    \item 12V DC rail: solenoid actuators and sensors (regulated supply, 5A capacity)
+    \item 5V DC rail: ESP32 and signal electronics (buck converter, 2A capacity)
+    \item Emergency stop circuit: hardwired mechanical switch disconnecting solenoid power
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Control System Block Diagram]\vspace{2.5cm}}}
+\caption{Control system architecture showing sensor inputs, microcontroller processing, and actuator outputs}
+\label{fig:control_system}
 \end{figure}
 
 \subsection{Testing and Validation Plan}
 
-\subsubsection{Ground Testing Protocol}
+\subsubsection{Component-Level Testing}
 \begin{itemize}
-    \item Telemetry range testing at 5+ km distances
-    \item PWM ignition characterization with thermal imaging
-    \item Explosion cap deployment force measurements
-    \item Vibration testing on shake table (15G+)
-    \item Full system integration verification
+    \item Vibratory feeder: characterize flow rate vs. frequency and amplitude settings
+    \item Conveyor belt: verify tracking stability across speed range (0.3-1.2 m/s)
+    \item RGB sensors: calibrate color thresholds with sample berries under various lighting conditions
+    \item Solenoid actuators: measure response time and force output, verify actuation reliability (1000+ cycle test)
+    \item Control algorithms: validate classification accuracy with labeled berry dataset (300+ samples)
 \end{itemize}
 
-\subsubsection{Flight Testing Protocol}
-Progressive testing: low-altitude validation flights before full mission profile.
+\subsubsection{System Integration Testing}
+\begin{itemize}
+    \item Feed system: verify uniform berry spacing on conveyor belt (visual inspection and high-speed video)
+    \item Sensor-actuator synchronization: confirm timing accuracy by testing with marked berries
+    \item Throughput measurement: process known berry quantities and measure completion time
+    \item Accuracy measurement: manually verify sorted berry classification (100 berry sample minimum)
+\end{itemize}
+
+\subsubsection{Performance Validation Protocol}
+Comprehensive testing procedure:
+\begin{enumerate}
+    \item Prepare test batches: 10 kg mixed berries (known distribution of ripe/unripe/defect)
+    \item Process batches at target operating speed (0.8 m/s belt speed)
+    \item Collect and weigh both accepted and rejected streams
+    \item Manually inspect 5\% random sample from each stream
+    \item Calculate metrics: sorting accuracy, false accept rate, false reject rate, throughput (kg/hr)
+    \item Repeat testing for 5 batches to establish performance consistency
+    \item Document failure modes and optimization opportunities
+\end{enumerate}
+
+Target performance metrics:
+\begin{itemize}
+    \item Sorting accuracy: $>$ 90\% (correctly classified berries / total berries)
+    \item Throughput: 150-200 kg/hr (2.5x improvement over baseline 50-75 kg/hr)
+    \item False accept rate: $<$ 8\% (defects in accepted stream)
+    \item False reject rate: $<$ 12\% (good berries in rejected stream)
+    \item System uptime: $>$ 95\% during 4-hour continuous operation test
+\end{itemize}

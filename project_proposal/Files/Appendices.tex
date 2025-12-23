@@ -12,73 +12,120 @@
 \toprule
 \textbf{Component} & \textbf{Specification} & \textbf{Cost (KES)} \\ 
 \midrule
-XBee-PRO 900HP (2 units) & 900 MHz, 15+ km range & 15,000 \\
-ESP32 Development Boards & Dual-core, WiFi/BT & 2,000 \\
-Custom PCB Fabrication & 2-layer, FR4 substrate & 5,000 \\
-LiPo Battery (3S, 2200mAh)* & 11.1V, 25C discharge & 4,000 \\
-BMS* & 3S, 30A continuous & 4,000 \\
-3D Printing Filament & PETG/PLA & 3,000 \\
-Pyrotechnic Components & Nichrome wire, igniters, Crimson powder & 4,000 \\
-Electronics Components & MOSFETs, regulators, passives, connectors & 4,000 \\
-Miscellaneous & Wire, solder, hardware & 1,000 \\ 
+\textbf{Mechanical Components} & & \\
+Vibratory Feeder & Electromagnetic, variable frequency & 18,000 \\
+Conveyor Belt & Food-grade PVC, 1.5m x 0.4m & 8,000 \\
+Crowned Pulleys (2) & 100mm diameter, aluminum & 5,000 \\
+VFD Motor Controller & 0.5 HP, 220V AC input & 12,000 \\
+Spring Tensioners (2) & Heavy-duty, adjustable & 2,500 \\
+Aluminum Extrusion & 40x40mm profile, 3m length & 4,000 \\
+Feed Hopper Material & Stainless steel sheet, 1.5mm & 6,000 \\
+Mounting Hardware & Bolts, brackets, bearings & 3,000 \\
 \midrule
-\textbf{Total} & & \textbf{42,000} \\ 
+\textbf{Sensor Components} & & \\
+RGB Color Sensors (4) & TCS34725, I2C interface & 8,000 \\
+Photoelectric Sensors (2) & Through-beam, 12V DC & 4,000 \\
+LED Illumination Array & 5500K white LEDs, drivers & 3,500 \\
+Rotary Encoder & For conveyor speed sensing & 2,500 \\
+\midrule
+\textbf{Actuator Components} & & \\
+Push Solenoids (8) & 12V DC, 25mm stroke, 10N & 12,000 \\
+Solenoid Driver Boards & MOSFET-based, 8-channel & 5,000 \\
+Flapper Arms & Aluminum, custom fabricated & 4,000 \\
+\midrule
+\textbf{Control Electronics} & & \\
+ESP32 Development Board & Dual-core, WiFi-enabled & 1,500 \\
+Power Supplies & 12V/5A, 5V/2A regulators & 4,000 \\
+Wiring and Connectors & Industrial-grade, shielded & 3,000 \\
+Emergency Stop Switch & Industrial safety switch & 1,500 \\
+Junction Boxes & IP65-rated enclosures & 2,500 \\
+\midrule
+\textbf{Fabrication and Assembly} & & \\
+Welding and Metalwork & Hopper and frame modifications & 8,000 \\
+Machining Services & Pulley modifications, mounting & 5,000 \\
+Electrical Installation & Wiring, termination, testing & 6,000 \\
+\midrule
+\textbf{Testing Materials} & & \\
+Coffee Berry Samples & 100 kg for validation testing & 3,000 \\
+Calibration Standards & Color reference cards & 1,500 \\
+\midrule
+\textbf{Miscellaneous} & & \\
+Tools and Consumables & Cable ties, solder, tape, etc. & 2,000 \\
+Contingency (10\%) & Buffer for unforeseen costs & 12,500 \\
+\midrule
+\textbf{Total} & & \textbf{147,500} \\ 
 \bottomrule
 \end{tabular}
 \end{table}
 
-*Components already available from Nakuja Project inventory, reducing out-of-pocket to ~KES 30,000. Funding: Personal (KES 15,000), Nakuja Project (KES 15,000), university facilities (in-kind).
+Funding sources: University FYP allocation (KES 80,000), Agricultural Processing Facility budget (KES 50,000), student contribution (KES 17,500). Existing facility infrastructure (220V power, compressed air lines, workshop access) provided in-kind.
 
 \section{Project Timeline}
 \label{appendix:timeline}
 
 \begin{table}[h]
 \centering
-\caption{Implementation Schedule}
+\caption{Implementation Schedule (16 Weeks)}
 \label{tab:timeline_detailed}
 \small
 \begin{tabular}{clc}
 \toprule
-\textbf{Week} & \textbf{Activity} & \textbf{Status} \\ 
+\textbf{Week} & \textbf{Activity} & \textbf{Deliverable} \\ 
 \midrule
-1-2 & Literature review, requirements & Completed \\
-3 & System architecture design & In Progress \\
-4 & PCB schematic design & Planned \\
-5 & 3D CAD modeling & Planned \\
-4-6 & Component procurement & Planned \\
-6-7 & PCB manufacturing, soldering & Planned \\
-7-8 & 3D printing, assembly & Planned \\
-9 & Firmware development & Planned \\
-10 & Telemetry range testing & Planned \\
-11 & PWM ignition tests & Planned \\
-11-12 & Explosion cap deployment tests & Planned \\
-12 & Vibration/environmental testing & Planned \\
-13 & System integration testing & Planned \\
-13-14 & Documentation & Planned \\
-14 & Flight readiness review & Planned \\
-15 & Launch operations & Planned \\ 
+1 & System analysis and measurements & Baseline performance report \\
+2 & Detailed design and CAD modeling & Design drawings \\
+3 & Component specification and sourcing & Bill of materials \\
+4 & Component procurement (lead items) & Ordered components \\
+5 & Feed hopper fabrication & Modified hopper \\
+6 & Conveyor modifications (pulleys, tensioners) & Upgraded conveyor \\
+7 & Vibratory feeder installation & Installed feeder \\
+8 & Sensor array fabrication & Mounted sensors \\
+9 & Control electronics assembly & Wired control system \\
+10 & Actuator mechanism installation & Operational actuators \\
+11 & Firmware development and sensor calibration & Calibrated system \\
+12 & Component testing (feed, sensors, actuators) & Test reports \\
+13 & System integration and initial testing & Integrated system \\
+14 & Algorithm tuning and optimization & Optimized parameters \\
+15 & Performance validation (5 test batches) & Validation data \\
+16 & Documentation and final presentation & Final report \\ 
 \bottomrule
 \end{tabular}
 \end{table}
 
-Critical path: PCB fabrication (2-week lead), component procurement (3-week buffer). Risk mitigation: backup components ordered Week 4, 2-week weather buffer for launch.
+Critical path: Vibratory feeder procurement (4-week lead time from order), conveyor modifications (2 weeks fabrication), sensor calibration (1 week). Risk mitigation: Early component ordering (Week 3), backup sensor units, parallel fabrication activities.
 
 \section{Component Specifications}
 \label{appendix:specifications}
 
-\textbf{XBee-PRO 900HP}: 902-928 MHz ISM band, up to 200 kbps data rate, 15 km outdoor LOS range, 24 dBm transmit power, -110 dBm sensitivity, 2.1-3.6V operation, -40°C to +85°C, UART interface.
+\textbf{Vibratory Feeder}: Electromagnetic drive, 220V AC, variable frequency control 20-60 Hz, amplitude adjustment 0-5mm, tray dimensions 600mm x 400mm, capacity 25 kg, stainless steel construction.
 
-\textbf{ESP32}: Dual-core Xtensa LX6 (240 MHz), 520 KB SRAM, 4 MB flash, WiFi 802.11 b/g/n, BLE 4.2, 34 GPIO, 18-channel 12-bit ADC, 16-channel PWM, 2.2-3.6V operation, -40°C to +85°C.
+\textbf{Conveyor Belt}: Food-grade PVC material, dimensions 1500mm x 400mm, textured surface (2mm raised pattern), crowned pulleys 100mm diameter, spring-loaded tensioning 50-100N, VFD speed control 0.3-1.2 m/s.
 
-\textbf{LiPo Battery}: 3S configuration, 11.1V nominal (12.6V max, 9.0V min), 2200 mAh capacity, 25C continuous discharge, 180g weight, XT60 connector.
+\textbf{RGB Color Sensors (TCS34725)}: I2C interface, 3.3V operation, 16-bit ADC, programmable gain 1x-60x, integration time 2.4-614 ms, clear/red/green/blue channels, surface mount package, detection range 0-80mm.
+
+\textbf{Push Solenoids}: 12V DC operation, 25mm stroke length, 10N push force, 50ms response time, continuous duty rating 25\%, mounting threads M10x1.0, resistance 8-10 ohms, power consumption 15W.
+
+\textbf{ESP32 Development Board}: Dual-core Xtensa LX6 240 MHz, 520 KB SRAM, 4 MB flash, WiFi 802.11 b/g/n, 34 GPIO pins, I2C/SPI interfaces, 12-bit ADC, 3.3V logic, micro-USB programming, -40°C to +85°C operation.
 
 \section{Testing Protocols}
 \label{appendix:testing}
 
-\textbf{Telemetry Range Test}: Transmit packets at 1 Hz, measure RSSI at 500m increments to 6 km. Success: RSSI > -100 dBm at 5 km, <5\% packet loss.
+\textbf{Component-Level Tests}:
 
-\textbf{PWM Ignition Test}: Apply PWM at 20-100\% duty cycles, record thermal profile, verify ignition. Success: controlled temperature ramp, no burnout, repeatable 10+ cycles.
+\textit{Vibratory Feeder}: Measure berry flow rate at 5 frequency settings (20, 30, 40, 50, 60 Hz) and 3 amplitude settings (low, med, high). Record flow uniformity using high-speed camera. Success criteria: Consistent flow rate ±10\%, minimal berry clustering.
 
-\textbf{Explosion Cap Deployment}: Test charge masses (0.5-1.5g), measure deployment force with load cell, inspect parachute. Success: clean separation, zero thermal damage, 200-400 N force, consistent across 5 tests.
+\textit{Conveyor Belt Tracking}: Run conveyor at operational speeds (0.3, 0.6, 0.9, 1.2 m/s) for 30-minute durations. Measure lateral drift with dial indicator. Success: <5mm drift over 30 minutes at all speeds.
 
-\textbf{Vibration/Shock Test}: Shake table 5-500 Hz sweep, 15G shock impulse, verify continuity. Success: zero component displacement, no structural failure, maintained continuity.
+\textit{RGB Sensor Calibration}: Present 50 sample berries (known classifications) to each sensor. Record RGB values, establish threshold boundaries. Validate with 50 additional berries. Success: >85\% classification accuracy per sensor.
+
+\textit{Solenoid Actuator}: Conduct 1000-cycle endurance test, measure response time and force output every 100 cycles. Success: Response time <35ms throughout test, force >8N maintained.
+
+\textbf{System Integration Tests}:
+
+\textit{Sensor-Actuator Synchronization}: Mark test berries with known colors, run through system at operational speed. Video record to verify timing accuracy. Success: Actuator fires within ±20ms of optimal timing.
+
+\textit{Throughput Measurement}: Process 10 kg batches, measure completion time. Calculate throughput (kg/hr). Repeat for 5 batches. Success: Average throughput 150-200 kg/hr, consistency ±15\%.
+
+\textbf{Performance Validation}:
+
+\textit{Accuracy Testing}: Prepare test batches (10 kg each) with known berry distributions (40\% ripe, 30\% unripe, 20\% overripe, 10\% defect). Process at operational speed, collect accepted and rejected streams. Manually verify classification for 5\% random sample (minimum 100 berries). Calculate metrics: sorting accuracy, false accept rate, false reject rate. Success: Sorting accuracy >90\%, false accepts <8\%, false rejects <12\%. Repeat for 5 batches to establish consistency.

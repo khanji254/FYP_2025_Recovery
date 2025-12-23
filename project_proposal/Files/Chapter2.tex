@@ -1,97 +1,123 @@
 \section{Literature Review}
 \label{sec:review}
 
-\subsection{Recovery Systems in Student Rocketry}
+\subsection{Coffee Berry Processing and Quality Control}
 
-Recovery systems preserve flight hardware and recorded data \cite{nakka_recovery}. Student rocketry projects face budget constraints requiring innovative, cost-effective solutions \cite{student_rocket_design}. Dual-deployment architectures use staged recovery: drogue chute at apogee for stability, main parachute at lower altitude for soft landing \cite{dual_deploy_analysis, parachute_design}.
+Coffee cherry quality directly influences final cup quality and market value \cite{coffee_quality_standards}. Post-harvest processing begins with sorting to separate ripe cherries (red/purple) from unripe (green), overripe (black), and defective berries \cite{coffee_processing_methods}. Sorting accuracy impacts subsequent processing steps including pulping, fermentation, and drying, with higher initial sorting quality reducing defect rates in final products.
+
+Traditional manual sorting relies on visual inspection and manual separation, achieving 85-95\% accuracy under optimal conditions \cite{manual_coffee_sorting}. However, manual methods face scalability limitations, high labor costs, and operator fatigue-induced accuracy degradation during extended operations \cite{agricultural_labor_efficiency}.
 
 \begin{figure}[h]
 \centering
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Dual Deployment Recovery System Diagram]\vspace{3cm}}}
-\caption{Dual deployment recovery system architecture showing drogue and main parachute deployment sequence}
-\label{fig:dual_deploy}
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Coffee Berry Classification Chart]\vspace{3cm}}}
+\caption{Coffee berry classification showing ripe, unripe, overripe, and defective categories}
+\label{fig:berry_classification}
 \end{figure}
 
-The Nakuja Project's progression from N3.5 single-deployment to N4 dual-deployment architecture reflects industry evolution \cite{nakuja_website}. Previous missions identified critical improvements needed in mechanical reliability and telemetry range.
+\subsection{Mechanical Sorting Technologies}
 
-\subsection{Telemetry Systems Analysis}
-
-Table~\ref{tab:telemetry} compares telemetry technologies for student rocketry applications \cite{rf_telemetry_propagation, student_rocketry_telemetry}.
+Mechanical coffee sorting systems employ various separation principles. Table~\ref{tab:sorting_tech} compares major sorting technologies.
 
 \begin{table}[h]
 \centering
-\caption{Telemetry System Comparison for Student Rocketry Applications}
-\label{tab:telemetry}
+\caption{Coffee Berry Sorting Technology Comparison}
+\label{tab:sorting_tech}
 \small
 \begin{tabular}{@{}lllll@{}}
 \toprule
-\textbf{Technology} & \textbf{Range} & \textbf{Data Cap} & \textbf{Strength} & \textbf{Limitation} \\ \midrule
-433 MHz RF & 5--10 km & Very low & Simple, long range & No ACKs \\
-Beacon & 4 km/0.8 km & Low--Med & Simple & Range drops \\
-LoRa SX1278 & 2--15 km & Low & Low power & Low BW \\
-XBee 2.4 GHz & $<$2 km & Medium & Easy integration & Short range \\
-\textbf{XBee-PRO 900HP} & \textbf{5--15 km} & \textbf{Med--High} & \textbf{Reliable} & \textbf{Higher power} \\
-ESP-NOW & $<$1 km & Medium & Low latency & Not long-range \\
-Cellular LTE & Global & High & Unlimited range & Network dep. \\ \bottomrule
+\textbf{Technology} & \textbf{Accuracy} & \textbf{Throughput} & \textbf{Cost} & \textbf{Complexity} \\ \midrule
+Flotation & 70--80\% & High & Low & Simple \\
+Density separation & 75--85\% & Medium & Low--Med & Medium \\
+Vibration table & 80--88\% & Medium & Medium & Medium \\
+Mechanical actuator & 85--92\% & Med--High & Medium & High \\
+\textbf{Optical sensor} & \textbf{90--98\%} & \textbf{High} & \textbf{High} & \textbf{High} \\
+Air jet & 88--95\% & Very High & High & High \\ \bottomrule
 \end{tabular}
 \end{table}
 
-The XBee-PRO 900HP provides optimal balance between range, data capacity, and protocol reliability \cite{xbee_pro_datasheet}. Its 900 MHz frequency offers superior penetration versus 2.4 GHz alternatives.
+Flotation-based systems utilize density differences between ripe and unripe berries \cite{flotation_separation}. While simple and cost-effective, accuracy limitations restrict applications to preliminary sorting stages. Density separation systems improve accuracy but require precise calibration for different coffee varieties \cite{density_sorting_systems}.
 
-\subsection{Pyrotechnic Deployment Systems}
+Mechanical actuator systems employ physical separation mechanisms triggered by sensor detection \cite{mechanical_sorting_actuators}. These systems offer balance between cost and performance, making them suitable for mid-scale operations \cite{small_scale_coffee_processing}.
 
-Nakka's Crimson Powder research provides baseline data for pyrotechnic charges \cite{nakka_crimson}. Proper formulation generates sufficient pressure while minimizing thermal output \cite{pyrotechnic_safety}. Combustion temperatures exceed 2000°C, requiring thermal isolation to prevent parachute damage \cite{modern_rocketry}.
+\subsection{Sensor Technologies for Berry Classification}
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Explosion Cap Cross-Section]\vspace{2.5cm}}}
-\caption{Sealed explosion cap design showing thermal isolation and pressure channeling}
-\label{fig:explosion_cap}
-\end{figure}
-
-\subsection{Electronic Control Systems}
-
-The ESP32 platform offers dual-core architecture for parallel sensor processing and communication \cite{esp32_datasheet, embedded_flight_computers}. PWM ignition control enables precise thermal management, preventing wire burnout while enabling multiple tests \cite{pwm_ignition_systems}.
-
-\subsection{Power and Structural Systems}
-
-LiPo batteries provide superior energy density but require BMS for safety \cite{lipo_aerospace, bms_systems}. High-G launch loads cause battery disconnection in spring-loaded holders \cite{avionics_vibration}. Custom avionics holders provide vibration isolation and battery retention.
+Color detection represents the primary classification criterion for coffee berry maturity \cite{color_based_sorting}. RGB sensors detect color differences between ripe (red/purple) and unripe (green) berries, while more sophisticated systems employ spectral analysis for enhanced discrimination \cite{spectral_analysis_agriculture}.
 
 \begin{figure}[h]
 \centering
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Avionics Bay Assembly]\vspace{3cm}}}
-\caption{3D-printed avionics holder with integrated battery retention and vibration isolation}
-\label{fig:avionics_bay}
+\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Color Sensor Detection Principle]\vspace{2.5cm}}}
+\caption{Color sensor detection principle showing RGB response to berry maturity levels}
+\label{fig:color_sensor}
 \end{figure}
 
-\subsection{Previous Nakuja Mission Analysis}
+Near-infrared (NIR) spectroscopy provides additional classification dimensions by analyzing internal berry composition \cite{nir_coffee_sorting}. However, NIR systems introduce significant cost increases, limiting adoption to large-scale industrial operations.
 
-Table~\ref{tab:nakuja_missions} summarizes mission outcomes.
+Photoelectric sensors offer cost-effective alternatives for binary classification (accept/reject) based on reflectance characteristics \cite{photoelectric_sensors_agriculture}. Integration with mechanical actuators enables real-time sorting decisions at high throughput rates \cite{automated_sorting_systems}.
+
+\subsection{Conveyor Systems and Material Handling}
+
+Conveyor design significantly impacts sorting system performance \cite{conveyor_design_principles}. Belt conveyors provide smooth, continuous material flow essential for optical detection systems \cite{belt_conveyor_applications}. Critical parameters include belt speed, material spacing, and vibration isolation.
+
+Feed hopper design influences berry flow characteristics \cite{hopper_design_agricultural}. Irregular feeding patterns cause berry clustering, overwhelming sorting mechanisms and reducing accuracy \cite{material_flow_optimization}. Vibratory feeders provide controlled, uniform material presentation to sorting zones \cite{vibratory_feeding_systems}.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Conveyor System Design]\vspace{3cm}}}
+\caption{Coffee berry conveyor system showing feed hopper, belt conveyor, and sorting mechanism}
+\label{fig:conveyor_system}
+\end{figure}
+
+Belt tracking systems prevent lateral drift that misaligns berries with detection sensors \cite{belt_tracking_methods}. Spring-loaded tensioning maintains consistent belt tension across operational conditions \cite{belt_tensioning_systems}.
+
+\subsection{Sorting Actuator Mechanisms}
+
+Pneumatic actuators dominate high-speed sorting applications due to rapid response times (5-15 ms) \cite{pneumatic_actuators_sorting}. Air jet systems eject individual berries from product streams with precise timing \cite{air_jet_sorting}. However, pneumatic systems require compressed air infrastructure and continuous air supply \cite{pneumatic_system_design}.
+
+Mechanical flapper actuators provide cost-effective alternatives for medium-speed operations \cite{mechanical_actuator_design}. Solenoid-driven flappers deflect berries into reject chutes based on sensor signals \cite{solenoid_applications_agriculture}. Response times of 20-40 ms limit maximum throughput but reduce infrastructure requirements.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Actuator Mechanism Diagram]\vspace{2.5cm}}}
+\caption{Mechanical sorting actuator showing solenoid drive and flapper mechanism}
+\label{fig:actuator_mechanism}
+\end{figure}
+
+\subsection{Control Systems and Signal Processing}
+
+Microcontroller-based control systems enable real-time processing of sensor data and actuator coordination \cite{microcontroller_agriculture}. Arduino and ESP32 platforms offer sufficient processing power for sensor fusion and decision algorithms \cite{embedded_systems_sorting}.
+
+Signal processing algorithms filter noise and implement classification logic \cite{signal_processing_sensors}. Threshold-based classification provides simplicity but requires calibration for different lighting conditions and berry varieties \cite{adaptive_thresholding}. Machine learning approaches improve classification accuracy through adaptive learning \cite{ml_agricultural_sorting}, though implementation complexity increases significantly.
+
+\subsection{Performance Metrics and Optimization}
+
+Sorting system performance evaluation employs multiple metrics. Sorting accuracy measures percentage of correctly classified berries, while throughput quantifies processing capacity (kg/hr) \cite{sorting_system_metrics}. Misclassification rates distinguish between false accepts (defects in accepted stream) and false rejects (good berries in reject stream) \cite{quality_control_metrics}.
 
 \begin{table}[h]
 \centering
-\caption{Nakuja Mission History and Key Findings}
-\label{tab:nakuja_missions}
-\begin{tabular}{@{}llll@{}}
+\caption{Typical Sorting System Performance Benchmarks}
+\label{tab:performance_metrics}
+\begin{tabular}{@{}lll@{}}
 \toprule
-\textbf{Mission} & \textbf{Date} & \textbf{System} & \textbf{Key Outcome} \\ \midrule
-N-1 & May 2021 & Single deploy & Baseline established \\
-N-2 & Nov 2022 & Single deploy & Telemetry improved \\
-N-3 & 2024 & Enhanced & Range limits identified \\
-N-3.5 & 2024 & Piston deploy & Thermal damage observed \\
-\textbf{N-4} & \textbf{Proposed} & \textbf{Dual deploy} & \textbf{This project} \\ \bottomrule
+\textbf{System Type} & \textbf{Accuracy} & \textbf{Throughput (kg/hr)} \\ \midrule
+Manual sorting & 85--95\% & 20--40 \\
+Basic mechanical & 75--85\% & 80--120 \\
+Enhanced mechanical & 85--92\% & 120--180 \\
+Optical commercial & 92--98\% & 200--500 \\
+Industrial optical & 95--99\% & 500--2000 \\ \bottomrule
 \end{tabular}
 \end{table}
 
-Analysis shows telemetry loss at altitudes exceeding 2km \cite{nakuja_website}. The XBee-PRO 900HP directly addresses this limitation.
+Optimization strategies address trade-offs between accuracy and throughput \cite{sorting_optimization}. Reduced conveyor speed improves sensor detection time but decreases throughput. Multi-stage sorting combines rapid primary sorting with slower secondary re-sorting to balance performance \cite{multi_stage_sorting}.
 
-\subsection{Safety Standards and Guidelines}
+\subsection{Existing Coffee Sorting Machines in Kenya}
 
-Amateur rocketry follows established safety protocols from organizations like Tripoli Rocketry Association \cite{tripoli_standards}. Key safety considerations include proper pyrotechnic handling \cite{pyrotechnic_safety}, adequate descent rates for safe landing \cite{descent_dynamics}, and ground station monitoring capabilities \cite{modern_rocketry}.
+Previous research on Kenyan coffee processing facilities identified common limitations in existing sorting equipment \cite{kenya_coffee_processing}. Mechanical wear in conveyor systems, sensor contamination from coffee pulp, and inconsistent power supply represent recurring challenges \cite{agricultural_machinery_kenya}.
+
+Locally manufactured sorting machines demonstrate cost advantages but often compromise on component quality and sensor precision \cite{local_agricultural_equipment}. Imported commercial systems offer superior performance but face sustainability challenges due to parts availability and maintenance expertise requirements \cite{imported_machinery_challenges}.
 
 \begin{figure}[h]
 \centering
-\fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}[Placeholder: System Integration Diagram]\vspace{2.5cm}}}
-\caption{Complete N4 recovery system showing integration of all subsystems}
+\fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}[Placeholder: Complete System Integration]\vspace{2.5cm}}}
+\caption{Complete coffee berry sorting machine showing integrated subsystems}
 \label{fig:system_integration}
 \end{figure}
