@@ -1,123 +1,126 @@
 \section{Literature Review}
 \label{sec:review}
 
-\subsection{Coffee Berry Processing and Quality Control}
+The global coffee industry plays a critical role in the economies of many developing countries, including Kenya, by providing livelihoods to millions of smallholder farmers. Coffee processing involves several stages, among which sorting of coffee berries is one of the most critical for determining final product quality and market value. The presence of unripe, overripe, damaged, or defective berries significantly affects cup quality, leading to reduced prices and rejection in premium markets.
 
-Coffee cherry quality directly influences final cup quality and market value \cite{coffee_quality_standards}. Post-harvest processing begins with sorting to separate ripe cherries (red/purple) from unripe (green), overripe (black), and defective berries \cite{coffee_processing_methods}. Sorting accuracy impacts subsequent processing steps including pulping, fermentation, and drying, with higher initial sorting quality reducing defect rates in final products.
+Traditionally, coffee berry sorting has relied on manual visual inspection, where workers separate berries based on perceived color, size, and visible defects. While this approach has been practiced for decades, numerous studies have demonstrated that manual sorting is labor-intensive, inconsistent, slow, and highly subjective, particularly under fatigue and time pressure (Mugo et al., 2017; Silva \& Santos, 2019).
 
-Traditional manual sorting relies on visual inspection and manual separation, achieving 85-95\% accuracy under optimal conditions \cite{manual_coffee_sorting}. However, manual methods face scalability limitations, high labor costs, and operator fatigue-induced accuracy degradation during extended operations \cite{agricultural_labor_efficiency}.
+Advances in machine vision, robotics, and embedded computing have enabled the development of automated coffee berry sorting systems capable of performing classification and separation tasks with higher accuracy, speed, and consistency. Automated systems typically integrate three core subsystems:
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Coffee Berry Classification Chart]\vspace{3cm}}}
-\caption{Coffee berry classification showing ripe, unripe, overripe, and defective categories}
-\label{fig:berry_classification}
-\end{figure}
+\begin{itemize}
+    \item A material handling mechanism (vibrating conveyor or chute)
+    \item A sensing and classification unit (camera and image processing algorithms)
+    \item A separation mechanism (air jets, ejector plates, or diverters)
+\end{itemize}
 
-\subsection{Mechanical Sorting Technologies}
+The 2019 automated coffee berry sorting machine project (reference project) represents a significant academic effort in this domain. The system employed a vibrating conveyor for controlled berry flow, a chute for alignment, image-based detection using a Raspberry Pi 3, and an air ejection mechanism for separation. While the system demonstrated the feasibility of automated sorting, several technical challenges were identified, particularly in real-time image processing and actuation timing, forming the foundation for the present study.
 
-Mechanical coffee sorting systems employ various separation principles. Table~\ref{tab:sorting_tech} compares major sorting technologies.
+\subsection{Challenges of Traditional Sorting Methods}
 
-\begin{table}[h]
-\centering
-\caption{Coffee Berry Sorting Technology Comparison}
-\label{tab:sorting_tech}
-\small
-\begin{tabular}{@{}lllll@{}}
-\toprule
-\textbf{Technology} & \textbf{Accuracy} & \textbf{Throughput} & \textbf{Cost} & \textbf{Complexity} \\ \midrule
-Flotation & 70--80\% & High & Low & Simple \\
-Density separation & 75--85\% & Medium & Low--Med & Medium \\
-Vibration table & 80--88\% & Medium & Medium & Medium \\
-Mechanical actuator & 85--92\% & Med--High & Medium & High \\
-\textbf{Optical sensor} & \textbf{90--98\%} & \textbf{High} & \textbf{High} & \textbf{High} \\
-Air jet & 88--95\% & Very High & High & High \\ \bottomrule
-\end{tabular}
-\end{table}
+Manual sorting remains prevalent among small-scale farmers due to its low initial cost; however, extensive literature highlights its limitations.
 
-Flotation-based systems utilize density differences between ripe and unripe berries \cite{flotation_separation}. While simple and cost-effective, accuracy limitations restrict applications to preliminary sorting stages. Density separation systems improve accuracy but require precise calibration for different coffee varieties \cite{density_sorting_systems}.
+\textbf{1. Labor Intensity and Fatigue:} Manual sorting requires a large workforce to maintain reasonable throughput. Studies by Njoroge et al. (2016) show that prolonged visual inspection leads to fatigue, which directly reduces sorting accuracy and consistency. Fatigued workers are more likely to misclassify berries, allowing defective berries to pass through or rejecting acceptable ones.
 
-Mechanical actuator systems employ physical separation mechanisms triggered by sensor detection \cite{mechanical_sorting_actuators}. These systems offer balance between cost and performance, making them suitable for mid-scale operations \cite{small_scale_coffee_processing}.
+\textbf{2. Human Error and Subjectivity:} Manual sorting depends heavily on individual judgment, which varies between workers and across time. Silva and Santos (2019) observed significant variability in sorting outcomes across different shifts, even when standardized grading guidelines were provided. This subjectivity results in inconsistent quality between batches.
 
-\subsection{Sensor Technologies for Berry Classification}
+\textbf{3. Limited Throughput:} Human sorting speed is inherently constrained. Kinyua et al. (2018) reported that manual sorting becomes a bottleneck during peak harvest seasons, limiting scalability and increasing processing delays. This inefficiency directly affects farmers' ability to meet market demand.
 
-Color detection represents the primary classification criterion for coffee berry maturity \cite{color_based_sorting}. RGB sensors detect color differences between ripe (red/purple) and unripe (green) berries, while more sophisticated systems employ spectral analysis for enhanced discrimination \cite{spectral_analysis_agriculture}.
+These challenges have driven research into automated sorting systems capable of overcoming the limitations of manual methods.
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Color Sensor Detection Principle]\vspace{2.5cm}}}
-\caption{Color sensor detection principle showing RGB response to berry maturity levels}
-\label{fig:color_sensor}
-\end{figure}
+\subsection{Advantages of Automated Coffee Berry Sorting}
 
-Near-infrared (NIR) spectroscopy provides additional classification dimensions by analyzing internal berry composition \cite{nir_coffee_sorting}. However, NIR systems introduce significant cost increases, limiting adoption to large-scale industrial operations.
+Automated coffee berry sorting systems offer several key advantages over manual methods:
 
-Photoelectric sensors offer cost-effective alternatives for binary classification (accept/reject) based on reflectance characteristics \cite{photoelectric_sensors_agriculture}. Integration with mechanical actuators enables real-time sorting decisions at high throughput rates \cite{automated_sorting_systems}.
+\textbf{1. Increased Efficiency and Throughput:} Automated systems can process significantly larger volumes in shorter times compared to manual sorting. Modern optical sorting machines can handle hundreds of kilograms per hour, substantially reducing processing time during peak harvest.
 
-\subsection{Conveyor Systems and Material Handling}
+\textbf{2. Improved Consistency and Accuracy:} Machine-based systems apply uniform classification criteria across all berries, eliminating subjective variation. Studies by Perez et al. (2020) demonstrate that automated systems maintain stable accuracy levels exceeding 92\%, even during extended operation periods.
 
-Conveyor design significantly impacts sorting system performance \cite{conveyor_design_principles}. Belt conveyors provide smooth, continuous material flow essential for optical detection systems \cite{belt_conveyor_applications}. Critical parameters include belt speed, material spacing, and vibration isolation.
+\textbf{3. Reduced Labour Costs:} While requiring initial capital investment, automated sorting reduces ongoing labor requirements. Economic analysis by Mashauri et al. (2021) indicates that medium-scale processors can achieve cost recovery within 2--3 seasons through labor savings alone.
 
-Feed hopper design influences berry flow characteristics \cite{hopper_design_agricultural}. Irregular feeding patterns cause berry clustering, overwhelming sorting mechanisms and reducing accuracy \cite{material_flow_optimization}. Vibratory feeders provide controlled, uniform material presentation to sorting zones \cite{vibratory_feeding_systems}.
+\textbf{4. Data Collection and Traceability:} Automated systems enable collection of processing statistics, including throughput rates, defect percentages, and batch-level quality metrics. This data supports quality management systems and provides traceability demanded by premium export markets.
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Conveyor System Design]\vspace{3cm}}}
-\caption{Coffee berry conveyor system showing feed hopper, belt conveyor, and sorting mechanism}
-\label{fig:conveyor_system}
-\end{figure}
+\subsection{Separation Methods}
 
-Belt tracking systems prevent lateral drift that misaligns berries with detection sensors \cite{belt_tracking_methods}. Spring-loaded tensioning maintains consistent belt tension across operational conditions \cite{belt_tensioning_systems}.
+\subsubsection{Air Jet System}
 
-\subsection{Sorting Actuator Mechanisms}
+Air jet separation systems operate on a detect-decide-deflect principle. As berries pass through the imaging zone on a conveyor or chute, a high-speed camera (typically CCD or CMOS sensors) captures images in real time. Some advanced systems incorporate near-infrared (NIR) sensors to detect internal defects not visible in the RGB spectrum. Image processing algorithms classify each berry, and defective berries trigger compressed air jets precisely timed to deflect them into reject chutes while acceptable berries continue along the primary path.
 
-Pneumatic actuators dominate high-speed sorting applications due to rapid response times (5-15 ms) \cite{pneumatic_actuators_sorting}. Air jet systems eject individual berries from product streams with precise timing \cite{air_jet_sorting}. However, pneumatic systems require compressed air infrastructure and continuous air supply \cite{pneumatic_system_design}.
+Key advantages include: minimal physical contact reducing berry damage, very high throughput capacity, and adaptability to various berry sizes without mechanical adjustment. However, limitations include requirement for compressed air infrastructure, sensitivity to environmental conditions (wind, dust), and complexity in timing calibration.
 
-Mechanical flapper actuators provide cost-effective alternatives for medium-speed operations \cite{mechanical_actuator_design}. Solenoid-driven flappers deflect berries into reject chutes based on sensor signals \cite{solenoid_applications_agriculture}. Response times of 20-40 ms limit maximum throughput but reduce infrastructure requirements.
+\subsubsection{Ejector Plates}
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Actuator Mechanism Diagram]\vspace{2.5cm}}}
-\caption{Mechanical sorting actuator showing solenoid drive and flapper mechanism}
-\label{fig:actuator_mechanism}
-\end{figure}
+Ejector plate systems employ mechanical actuation to physically separate undesirable berries. When a defect is detected by upstream sensors, a solenoid or pneumatic actuator extends a small plate or paddle that pushes the target berry into a reject stream. This method ensures positive separation, meaning that once actuated, the berry is definitively moved to the reject pathway.
 
-\subsection{Control Systems and Signal Processing}
+Advantages include: high reliability in separation (no missed deflections due to air pressure variation), suitability for larger or heavier objects, and lower compressed air consumption. Limitations include: mechanical wear on actuators and contact surfaces, slower response times compared to air jets (20--50 ms), and potential for berry bruising at the contact point.
 
-Microcontroller-based control systems enable real-time processing of sensor data and actuator coordination \cite{microcontroller_agriculture}. Arduino and ESP32 platforms offer sufficient processing power for sensor fusion and decision algorithms \cite{embedded_systems_sorting}.
+\subsubsection{Diverter Systems}
 
-Signal processing algorithms filter noise and implement classification logic \cite{signal_processing_sensors}. Threshold-based classification provides simplicity but requires calibration for different lighting conditions and berry varieties \cite{adaptive_thresholding}. Machine learning approaches improve classification accuracy through adaptive learning \cite{ml_agricultural_sorting}, though implementation complexity increases significantly.
+Diverter systems redirect entire groups or batches of berries rather than individual units. When a sensor detects a defective berry, a mechanical gate or diverter flap reroutes the material stream into a reject bin. This approach is typically used in lower-precision, bulk sorting scenarios where strict unit-level separation is not required.
 
-\subsection{Performance Metrics and Optimization}
+Advantages include: structural simplicity, low maintenance, and suitability for high-volume, low-cost operations. Disadvantages include: lower precision (acceptable berries in the same batch may be rejected), inability to handle single-file streams, and inefficiency when defect rates are low.
 
-Sorting system performance evaluation employs multiple metrics. Sorting accuracy measures percentage of correctly classified berries, while throughput quantifies processing capacity (kg/hr) \cite{sorting_system_metrics}. Misclassification rates distinguish between false accepts (defects in accepted stream) and false rejects (good berries in reject stream) \cite{quality_control_metrics}.
+\subsection{Classification Methods}
 
-\begin{table}[h]
-\centering
-\caption{Typical Sorting System Performance Benchmarks}
-\label{tab:performance_metrics}
-\begin{tabular}{@{}lll@{}}
-\toprule
-\textbf{System Type} & \textbf{Accuracy} & \textbf{Throughput (kg/hr)} \\ \midrule
-Manual sorting & 85--95\% & 20--40 \\
-Basic mechanical & 75--85\% & 80--120 \\
-Enhanced mechanical & 85--92\% & 120--180 \\
-Optical commercial & 92--98\% & 200--500 \\
-Industrial optical & 95--99\% & 500--2000 \\ \bottomrule
-\end{tabular}
-\end{table}
+\subsubsection{Color-Based Classification}
 
-Optimization strategies address trade-offs between accuracy and throughput \cite{sorting_optimization}. Reduced conveyor speed improves sensor detection time but decreases throughput. Multi-stage sorting combines rapid primary sorting with slower secondary re-sorting to balance performance \cite{multi_stage_sorting}.
+Color-based classification is the most widely used method in coffee berry sorting due to its direct correlation with maturity. Ripe coffee berries exhibit deep red or purple hues, while unripe berries appear green or yellow. Systems employ RGB cameras to capture color information, which is then analyzed using color histograms, color space transformations (e.g., HSV, Lab), or simple thresholding.
 
-\subsection{Existing Coffee Sorting Machines in Kenya}
+This method is cost-effective and computationally efficient, making it suitable for real-time processing on embedded platforms. However, it is highly dependent on uniform lighting conditions and can struggle with berries exhibiting intermediate ripeness states or surface discoloration from environmental factors.
 
-Previous research on Kenyan coffee processing facilities identified common limitations in existing sorting equipment \cite{kenya_coffee_processing}. Mechanical wear in conveyor systems, sensor contamination from coffee pulp, and inconsistent power supply represent recurring challenges \cite{agricultural_machinery_kenya}.
+\subsubsection{Shape-Based Classification}
 
-Locally manufactured sorting machines demonstrate cost advantages but often compromise on component quality and sensor precision \cite{local_agricultural_equipment}. Imported commercial systems offer superior performance but face sustainability challenges due to parts availability and maintenance expertise requirements \cite{imported_machinery_challenges}.
+Shape analysis assesses geometric attributes such as size, contour smoothness, aspect ratio, and circularity. Machine vision systems extract berry contours from binary images and calculate shape descriptors to identify malformed, damaged, or insect-infested berries.
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}[Placeholder: Complete System Integration]\vspace{2.5cm}}}
-\caption{Complete coffee berry sorting machine showing integrated subsystems}
-\label{fig:system_integration}
-\end{figure}
+This method complements color-based classification by detecting defects that do not manifest as color differences (e.g., physical damage, irregular growth). However, shape analysis requires clear berry separation on the conveyor and consistent camera positioning to ensure measurement accuracy.
+
+\subsubsection{Texture-Based Classification}
+
+Texture-based methods analyze surface patterns using techniques such as Gray-Level Co-Occurrence Matrix (GLCM), Local Binary Patterns (LBP), or Gabor filters. These approaches can detect surface defects like insect bites, mold growth, or drying-induced wrinkling.
+
+Texture analysis is particularly effective for identifying subtle defects not visible through color or shape alone. However, texture features are more computationally expensive to extract and may require higher-resolution imaging, which can limit real-time throughput on low-cost hardware.
+
+\subsubsection{Deep Learning-Based Classification}
+
+Deep learning approaches, particularly Convolutional Neural Networks (CNNs), have demonstrated superior classification accuracy by automatically learning discriminative features from labeled training data. Architectures such as MobileNet, ResNet, and YOLO (You Only Look Once) enable real-time object detection and classification.
+
+Deep learning models can handle complex, non-linear relationships between visual features and quality categories, achieving accuracies exceeding 95\% in controlled conditions. However, these models require substantial computational resources, large labeled datasets for training, and careful optimization to run efficiently on embedded platforms like the Raspberry Pi.
+
+\subsubsection{Pattern Recognition-Based Classification}
+
+Traditional pattern recognition methods employ supervised learning algorithms such as k-Nearest Neighbors (k-NN), Support Vector Machines (SVMs), or decision trees. These classifiers use hand-crafted features (color, shape, texture) as input and learn decision boundaries from training samples.
+
+Pattern recognition methods offer a balance between performance and computational efficiency. They are less demanding than deep learning approaches and more robust than simple thresholding, making them well-suited for embedded systems with limited processing power.
+
+\subsubsection{Multispectral and Hyperspectral Imaging-Based Classification}
+
+Multispectral and hyperspectral imaging capture information across multiple wavelengths, including visible and non-visible spectra (e.g., near-infrared, short-wave infrared). This allows detection of internal defects, moisture content variations, and chemical composition differences not visible to standard RGB cameras.
+
+These methods provide the highest classification accuracy and defect detection capability. However, the high cost of specialized cameras, the large data volumes requiring processing, and the complexity of spectral analysis limit their adoption primarily to high-value, large-scale industrial operations.
+
+\subsubsection{Three-Dimensional (3D) Object Classification}
+
+3D imaging systems use stereo vision, structured light, or time-of-flight sensors to capture depth information alongside 2D images. This enables measurement of berry volume, surface irregularities, and three-dimensional shape descriptors.
+
+3D classification is valuable for detecting internal voids, volume-based sorting, and identifying deformities. However, 3D imaging systems are more expensive, require more complex calibration, and impose higher computational loads compared to 2D methods.
+
+\subsection{Gap Analysis}
+
+Despite significant advances in automated coffee berry sorting, several critical gaps remain, particularly in the context of cost-effective, scalable solutions suitable for small-to-medium processors and university research environments.
+
+\subsubsection{Real-Time Processing and Throughput Limitations}
+
+The 5th-year project identified that the Raspberry Pi 3, while cost-effective, struggles to maintain real-time classification performance at higher throughput rates. The system experienced difficulties processing high frame rates, performing simultaneous object tracking and classification, and maintaining synchronization with real-time actuation signals. Although optimizations such as TensorFlow Lite deployment and multithreading were attempted, performance remained below the levels required for practical deployment.
+
+Current literature predominantly focuses on either high-performance industrial systems using GPUs or field-programmable gate arrays (FPGAs), which are cost-prohibitive, or low-throughput academic prototypes that do not address scalability. There is insufficient exploration of hybrid processing architectures where time-critical tasks are offloaded to co-processors (e.g., ESP32, STM32, or similar microcontrollers), allowing algorithm restructuring and task division between layers to achieve both cost efficiency and acceptable performance.
+
+\subsubsection{Motion Blur and Image Degradation at Higher Speeds}
+
+As conveyor speeds increase to meet higher throughput demands, image quality degrades due to motion blur, reducing classification accuracy. The 5th-year project explicitly identified motion blur as a major limitation, particularly at speeds exceeding certain thresholds.
+
+Existing solutions typically involve either reducing conveyor speed (sacrificing throughput) or increasing camera shutter speed and lighting intensity (increasing cost and power consumption). However, there is limited research on integrated approaches that combine algorithmic and mechanical mitigation strategies—such as adaptive frame capture triggering, region-of-interest (ROI) selective processing, and timing-aware rejection logic—that could address motion blur without disproportionately sacrificing speed or cost.
+
+\subsubsection{Cost-Performance Trade-Off in Hardware Selection}
+
+There exists a notable gap in the literature regarding optimal hardware configurations for mid-scale sorting operations. High-performance systems using industrial-grade GPUs or dedicated vision processors offer excellent performance but are financially inaccessible to smallholder cooperatives and university prototypes. Conversely, ultra-low-cost platforms (e.g., Raspberry Pi alone) demonstrate limited processing speed and reduced scalability.
+
+Few studies systematically investigate cost-optimized improvements that maintain affordability while achieving meaningful performance gains. Strategies such as algorithm restructuring, selective processing pipelines, and intelligent task division between processing layers are underexplored. The current project aims to address this gap by evaluating hybrid processing architectures and system-level optimizations tailored to resource-constrained environments.

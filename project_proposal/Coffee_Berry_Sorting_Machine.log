@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  23 DEC 2025 07:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  23 DEC 2025 08:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,7 +401,7 @@ Package hyperref Info: Link coloring OFF on input line 63.
 
 
 (Files/title_page.tex
-<Figures/Jomo_logo.pdf, id=178, 249.93375pt x 185.69376pt>
+<Figures/Jomo_logo.pdf, id=254, 249.93375pt x 185.69376pt>
 File: Figures/Jomo_logo.pdf Graphic file (type pdf)
 <use Figures/Jomo_logo.pdf>
 Package pdftex.def Info: Figures/Jomo_logo.pdf  used on input line 6.
@@ -439,39 +439,39 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.26 ...em Modifications}{14}{subsubsection.3.3.1}
+l.27 ...hput Limitations}{12}{subsubsection.2.5.1}
                                                   % [1
 
-])
-\tf@toc=\write4
-\openout4 = `Coffee_Berry_Sorting_Machine.toc'.
-
-
+]
 pdfTeX warning (ext4): destination with the same identifier (name{page.II}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.77 \clearpage
-                [2] (Coffee_Berry_Sorting_Machine.lof)
-\tf@lof=\write5
-\openout5 = `Coffee_Berry_Sorting_Machine.lof'.
+l.54 ...g and Synchronization}{22}{subsection.4.3}
+                                                  % [2])
+\tf@toc=\write4
+\openout4 = `Coffee_Berry_Sorting_Machine.toc'.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.III}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.79 \clearpage
-                [3
-
-] (Coffee_Berry_Sorting_Machine.lot)
-\tf@lot=\write6
-\openout6 = `Coffee_Berry_Sorting_Machine.lot'.
+l.77 \clearpage
+                [3] (Coffee_Berry_Sorting_Machine.lof)
+\tf@lof=\write5
+\openout5 = `Coffee_Berry_Sorting_Machine.lof'.
 
  [4
 
 ]
-(Files/Introduction.tex
+(Coffee_Berry_Sorting_Machine.lot)
+\tf@lot=\write6
+\openout6 = `Coffee_Berry_Sorting_Machine.lot'.
+
+ [5
+
+] (Files/Introduction.tex
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -514,266 +514,107 @@ been already used, duplicate ignored
 l.19 
       [1
 
-] [2] [3] [4]) [5] [6] (Files/Chapter2.tex
+] [2] [3] [4]) [5] (Files/Chapter2.tex [6
 
-LaTeX Warning: Citation `coffee_quality_standards' on page 7 undefined on input
- line 6.
-
-
-LaTeX Warning: Citation `coffee_processing_methods' on page 7 undefined on inpu
-t line 6.
-
-
-LaTeX Warning: Citation `manual_coffee_sorting' on page 7 undefined on input li
-ne 8.
-
-
-LaTeX Warning: Citation `agricultural_labor_efficiency' on page 7 undefined on 
-input line 8.
-
-[7
-
-]
-
-LaTeX Warning: Citation `flotation_separation' on page 8 undefined on input lin
-e 38.
-
-
-LaTeX Warning: Citation `density_sorting_systems' on page 8 undefined on input 
-line 38.
-
-
-LaTeX Warning: Citation `mechanical_sorting_actuators' on page 8 undefined on i
-nput line 40.
-
-
-LaTeX Warning: Citation `small_scale_coffee_processing' on page 8 undefined on 
-input line 40.
-
-
-LaTeX Warning: Citation `color_based_sorting' on page 8 undefined on input line
- 44.
-
-
-LaTeX Warning: Citation `spectral_analysis_agriculture' on page 8 undefined on 
-input line 44.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation `nir_coffee_sorting' on page 8 undefined on input line 
-53.
-
-
-LaTeX Warning: Citation `photoelectric_sensors_agriculture' on page 8 undefined
- on input line 55.
-
-
-LaTeX Warning: Citation `automated_sorting_systems' on page 8 undefined on inpu
-t line 55.
-
-
-Overfull \hbox (4.92476pt too wide) in paragraph at lines 55--56
-[]\OT1/cmr/m/n/12 Photoelectric sen-sors of-fer cost-effective al-ter-na-tives 
-for bi-nary clas-si-fi-ca-tion (ac-cept/reject)
+] [7] [8] [9] [10] [11]
+[12] [13]) [14] (Files/Chapter3.tex
+Overfull \hbox (2.21783pt too wide) in paragraph at lines 20--21
+\OT1/cmr/m/n/12 The me-chan-i-cal mod-ule will be de-signed to en-sure con-sis-
+tent berry flow, min-i-mal vibration-
  []
 
-[8]
+[15
 
-LaTeX Warning: Citation `conveyor_design_principles' on page 9 undefined on inp
-ut line 59.
-
-
-LaTeX Warning: Citation `belt_conveyor_applications' on page 9 undefined on inp
-ut line 59.
-
-
-LaTeX Warning: Citation `hopper_design_agricultural' on page 9 undefined on inp
-ut line 61.
-
-
-LaTeX Warning: Citation `material_flow_optimization' on page 9 undefined on inp
-ut line 61.
-
-
-LaTeX Warning: Citation `vibratory_feeding_systems' on page 9 undefined on inpu
-t line 61.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation `belt_tracking_methods' on page 9 undefined on input li
-ne 70.
-
-
-LaTeX Warning: Citation `belt_tensioning_systems' on page 9 undefined on input 
-line 70.
-
-
-LaTeX Warning: Citation `pneumatic_actuators_sorting' on page 9 undefined on in
-put line 74.
-
-
-LaTeX Warning: Citation `air_jet_sorting' on page 9 undefined on input line 74.
-
-
-
-LaTeX Warning: Citation `pneumatic_system_design' on page 9 undefined on input 
-line 74.
-
-[9]
-
-LaTeX Warning: Citation `mechanical_actuator_design' on page 10 undefined on in
-put line 76.
-
-
-LaTeX Warning: Citation `solenoid_applications_agriculture' on page 10 undefine
-d on input line 76.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation `microcontroller_agriculture' on page 10 undefined on i
-nput line 87.
-
-
-LaTeX Warning: Citation `embedded_systems_sorting' on page 10 undefined on inpu
-t line 87.
-
-
-LaTeX Warning: Citation `signal_processing_sensors' on page 10 undefined on inp
-ut line 89.
-
-
-LaTeX Warning: Citation `adaptive_thresholding' on page 10 undefined on input l
-ine 89.
-
-
-LaTeX Warning: Citation `ml_agricultural_sorting' on page 10 undefined on input
- line 89.
-
-[10]
-
-LaTeX Warning: Citation `sorting_system_metrics' on page 11 undefined on input 
-line 93.
-
-
-LaTeX Warning: Citation `quality_control_metrics' on page 11 undefined on input
- line 93.
-
-
-LaTeX Warning: Citation `sorting_optimization' on page 11 undefined on input li
-ne 110.
-
-
-LaTeX Warning: Citation `multi_stage_sorting' on page 11 undefined on input lin
-e 110.
-
-[11]
-
-LaTeX Warning: Citation `kenya_coffee_processing' on page 12 undefined on input
- line 114.
-
-
-LaTeX Warning: Citation `agricultural_machinery_kenya' on page 12 undefined on 
-input line 114.
-
-
-LaTeX Warning: Citation `local_agricultural_equipment' on page 12 undefined on 
-input line 116.
-
-
-LaTeX Warning: Citation `imported_machinery_challenges' on page 12 undefined on
- input line 116.
-
-) [12] (Files/Chapter3.tex
-Overfull \hbox (2.96645pt too wide) in paragraph at lines 17--18
-[]\OT1/cmr/m/n/12 Develop microcontroller-based con-trol sys-tem with sen-sor f
-u-sion and adap-tive thresh-
+] [16] [17] [18] [19]
+Overfull \hbox (3.65393pt too wide) in paragraph at lines 113--114
+\OT1/cmr/m/n/12 Coffee berries will be de-tected us-ing thresh-old-ing and cont
+our-based meth-ods or lightweight
  []
 
 
-LaTeX Warning: Citation `mechanical_sorting_actuators' on page 13 undefined on 
-input line 23.
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
 
-[13
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126     \item C
+                 alculate metrics: sorting accuracy, false accept rate, fals...
 
-]
-
-LaTeX Warning: Citation `hopper_design_agricultural' on page 14 undefined on in
-put line 44.
-
-
-LaTeX Warning: Citation `vibratory_feeding_systems' on page 14 undefined on inp
-ut line 48.
-
-[14]
-
-LaTeX Warning: Citation `belt_tracking_methods' on page 15 undefined on input l
-ine 53.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Citation `belt_tensioning_systems' on page 15 undefined on input
- line 54.
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127     \item R
+                 epeat testing for 5 batches to establish performance consis...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[20]
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128     \item D
+                 ocument failure modes and optimization opportunities
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Citation `solenoid_applications_agriculture' on page 15 undefine
-d on input line 62.
+! LaTeX Error: \begin{document} ended by \end{enumerate}.
 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 \end{enumerate}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! Missing } inserted.
+<inserted text> 
+                }
+l.129 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.129 \end{enumerate}
+                     
+Things are pretty mixed up, but I think the worst is over.
 
-LaTeX Warning: Citation `color_based_sorting' on page 15 undefined on input lin
-e 80.
+) [21] (Files/Chapter5.tex [22
 
-[15]
-
-LaTeX Warning: Citation `adaptive_thresholding' on page 16 undefined on input l
-ine 90.
-
-[16]
-
-LaTeX Warning: Citation `esp32_datasheet' on page 17 undefined on input line 11
-4.
-
-
-LaTeX Warning: Citation `signal_processing_sensors' on page 17 undefined on inp
-ut line 124.
-
-[17] [18]
-Overfull \hbox (0.65118pt too wide) in paragraph at lines 153--154
-[]\OT1/cmr/m/n/12 Control al-go-rithms: val-i-date clas-si-fi-ca-tion ac-cu-rac
-y with la-beled berry dataset (300+
+]) [23] (Files/Summary.tex)
+Overfull \hbox (9.20248pt too wide) in paragraph at lines 6--93
+[]\OT1/cmr/m/n/12 The project em-pha-sizes a bal-ance be-tween tech-no-log-i-ca
+l ad-vance-ment and cost-effectiveness,
  []
 
-[19]) [20] (Files/Chapter5.tex
+[24
 
-LaTeX Warning: Citation `color_based_sorting' on page 21 undefined on input lin
-e 7.
+] (Coffee_Berry_Sorting_Machine.bbl [25
 
-
-LaTeX Warning: Citation `sorting_system_metrics' on page 21 undefined on input 
-line 8.
-
-
-LaTeX Warning: Citation `belt_tracking_methods' on page 21 undefined on input l
-ine 12.
-
-
-LaTeX Warning: Citation `adaptive_thresholding' on page 21 undefined on input l
-ine 13.
-
-[21
-
-] [22]) [23] (Files/Summary.tex) [24
-
-] [25] (Coffee_Berry_Sorting_Machine.bbl [26
-
-] [27] [28]) [29] (Files/Appendices.tex
+] [26] [27]) [28]
+(Files/Appendices.tex
 
 LaTeX Warning: Float too large for page by 190.47095pt on input line 59.
 
@@ -783,50 +624,38 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30
+[29
 
-] [31]) [32] [33] [34] (Coffee_Berry_Sorting_Machine.aux)
+] [30]) [31] [32] [33] (Coffee_Berry_Sorting_Machine.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Coffee_Berry_Sorting_Machine.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 1905D68A7E928CF743A6908A728904F5;7451.
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 18 ({)
-### bottom level 
+(rerunfilecheck)             Checksum: E3101B4E2692E668BC941C891851049A;12128.
+ ) 
 Here is how much of TeX's memory you used:
- 10641 strings out of 467870
- 166710 string characters out of 5418838
- 578183 words of memory out of 5000000
- 39171 multiletter control sequences out of 15000+600000
+ 10620 strings out of 467870
+ 166859 string characters out of 5418838
+ 577985 words of memory out of 5000000
+ 39181 multiletter control sequences out of 15000+600000
  637382 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,810b,713s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
-c/dpi600\tcrm1200.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmbx10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/user/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/use
-r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/U
-sers/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.p
-fb>
-Output written on Coffee_Berry_Sorting_Machine.pdf (42 pages, 312872 bytes).
+ 75i,12n,79p,810b,572s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
+200.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/user/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/user/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Coffee_Berry_Sorting_Machine.pdf (42 pages, 319963 bytes).
 PDF statistics:
- 614 PDF objects out of 1000 (max. 8388607)
- 181 named destinations out of 1000 (max. 500000)
- 358 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 150 named destinations out of 1000 (max. 500000)
+ 510 words of extra memory for PDF output out of 10000 (max. 10000000)
 
