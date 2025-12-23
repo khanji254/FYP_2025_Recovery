@@ -3,82 +3,98 @@
 \section{Project Budget}
 \label{appendix:budget}
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
-\caption{Budget Breakdown}
-\label{tab:budget_detailed}
-\small
-\begin{tabular}{llr}
+\caption{N4 Recovery System Budget Breakdown}
+\label{tab:budget}
+\footnotesize
+\begin{tabular}{@{}llccc@{}}
 \toprule
-\textbf{Component} & \textbf{Specification} & \textbf{Cost (KES)} \\ 
+\textbf{Item} & \textbf{Description} & \textbf{Qty} & \textbf{Cost/Unit (KES)} & \textbf{Total (KES)} \\
 \midrule
-XBee-PRO 900HP (2 units) & 900 MHz, 15+ km range & 15,000 \\
-ESP32 Development Boards & Dual-core, WiFi/BT & 2,000 \\
-Custom PCB Fabrication & 2-layer, FR4 substrate & 5,000 \\
-LiPo Battery (3S, 2200mAh)* & 11.1V, 25C discharge & 4,000 \\
-BMS* & 3S, 30A continuous & 4,000 \\
-3D Printing Filament & PETG/PLA & 3,000 \\
-Pyrotechnic Components & Nichrome wire, igniters, Crimson powder & 4,000 \\
-Electronics Components & MOSFETs, regulators, passives, connectors & 4,000 \\
-Miscellaneous & Wire, solder, hardware & 1,000 \\ 
+Telemetry Modules* & Digi XBee-PRO 900HP & 2 & 15,000 & 30,000 \\
+Antennas & 900MHz High Gain Antenna & 2 & 2,000 & 4,000 \\
+Copper Cladding & PCB Board (15 x 20 cm) & 3 & 200 & 600 \\
+Microcontroller & ESP32 Development Board & 1 & 1,800 & 1,800 \\
+Sensors & BMP180 + MPU6050 Module & 1 & 4,710 & 4,710 \\
+Mosfets & IRL244N (Pack of 5) & 1 & 1,000 & 1,000 \\
 \midrule
-\textbf{Total} & & \textbf{42,000} \\ 
+Pyrotechnics* & Black/Crimson Powder & 1 & 1,600 & 1,600 \\
+Mechanical Parts* & Threaded Rods \& Hardware & 1 & 1,000 & 1,000 \\
+Filament & PLA (1kg Roll) & 1 & 3,000 & 3,000 \\
+Batteries & Lithium-Ion Cells (18650) & 4 & 500 & 2,000 \\
+\midrule
+\multicolumn{4}{l}{\textbf{Total (With Purchased)}} & \textbf{49,710} \\
+\multicolumn{4}{l}{\textbf{Total (Without Purchased)}} & \textbf{13,110} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-*Components already available from Nakuja Project inventory, reducing out-of-pocket to ~KES 30,000. Funding: Personal (KES 15,000), Nakuja Project (KES 15,000), university facilities (in-kind).
+*Components already available from Nakuja Project inventory. Out-of-pocket expenses: KES 13,110. Funding sources: Personal contribution (KES 7,000), Nakuja Project allocation (KES 6,110), university facilities for fabrication (in-kind).
 
 \section{Project Timeline}
 \label{appendix:timeline}
 
-\begin{table}[h]
+\begin{figure}[h]
 \centering
-\caption{Implementation Schedule}
-\label{tab:timeline_detailed}
-\small
-\begin{tabular}{clc}
-\toprule
-\textbf{Week} & \textbf{Activity} & \textbf{Status} \\ 
-\midrule
-1-2 & Literature review, requirements & Completed \\
-3 & System architecture design & In Progress \\
-4 & PCB schematic design & Planned \\
-5 & 3D CAD modeling & Planned \\
-4-6 & Component procurement & Planned \\
-6-7 & PCB manufacturing, soldering & Planned \\
-7-8 & 3D printing, assembly & Planned \\
-9 & Firmware development & Planned \\
-10 & Telemetry range testing & Planned \\
-11 & PWM ignition tests & Planned \\
-11-12 & Explosion cap deployment tests & Planned \\
-12 & Vibration/environmental testing & Planned \\
-13 & System integration testing & Planned \\
-13-14 & Documentation & Planned \\
-14 & Flight readiness review & Planned \\
-15 & Launch operations & Planned \\ 
-\bottomrule
-\end{tabular}
-\end{table}
+\includegraphics[width=0.95\textwidth]{images/Timeplan.PNG}
+\caption{15-week project timeline showing task dependencies and critical path through design, fabrication, and testing phases}
+\label{fig:timeline_gantt}
+\end{figure}
 
-Critical path: PCB fabrication (2-week lead), component procurement (3-week buffer). Risk mitigation: backup components ordered Week 4, 2-week weather buffer for launch.
+Implementation follows a 15-week schedule with critical milestones:
+\begin{itemize}
+    \item \textbf{Weeks 1-4:} Proposal presentation, continuous presentation, literature review and design phase
+    \item \textbf{Weeks 5-8:} Mechanical, electrical, and control design with interim report submission
+    \item \textbf{Weeks 9-11:} Material requisition, fabrication, and programming
+    \item \textbf{Weeks 12-14:} Testing, demonstration, and final report preparation
+    \item \textbf{Week 15:} Final report submission and project closeout
+\end{itemize}
 
-\section{Component Specifications}
-\label{appendix:specifications}
+Critical path: PCB fabrication (2-week lead time), component procurement (3-week buffer). Risk mitigation: backup components ordered Week 4, 2-week weather contingency for launch operations.
 
-\textbf{XBee-PRO 900HP}: 902-928 MHz ISM band, up to 200 kbps data rate, 15 km outdoor LOS range, 24 dBm transmit power, -110 dBm sensitivity, 2.1-3.6V operation, -40°C to +85°C, UART interface.
+\section{Previous N4 Design References}
+\label{appendix:previous_designs}
 
-\textbf{ESP32}: Dual-core Xtensa LX6 (240 MHz), 520 KB SRAM, 4 MB flash, WiFi 802.11 b/g/n, BLE 4.2, 34 GPIO, 18-channel 12-bit ADC, 16-channel PWM, 2.2-3.6V operation, -40°C to +85°C.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{images/Nakuja_N3_Rocket.PNG}
+\caption{Nakuja N3 rocket showing avionics bay configuration (reference design for N4 dual deployment architecture)}
+\label{fig:n3_reference}
+\end{figure}
 
-\textbf{LiPo Battery}: 3S configuration, 11.1V nominal (12.6V max, 9.0V min), 2200 mAh capacity, 25C continuous discharge, 180g weight, XT60 connector.
+Previous Nakuja missions (N1, N2, N3, N3.5) provide critical design heritage and lessons learned. The N3 single-deployment system identified key improvements needed for the N4 dual-deployment architecture, particularly in telemetry range extension (from 2km to 5+km) and pyrotechnic deployment reliability (see Figures~\ref{fig:current_circuit} and \ref{fig:current_fc_holder}).
 
-\section{Testing Protocols}
-\label{appendix:testing}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{images/Current_Circuit_Design.png}
+\caption{Current N4 flight computer circuit design showing ESP32 microcontroller integration, XBee telemetry module, sensor interfaces (BMP180/MPU6050), MOSFET-based PWM ignition drivers, and power management circuitry}
+\label{fig:current_circuit}
+\end{figure}
 
-\textbf{Telemetry Range Test}: Transmit packets at 1 Hz, measure RSSI at 500m increments to 6 km. Success: RSSI > -100 dBm at 5 km, <5\% packet loss.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{images/Current_FC_Holder.png}
+\caption{Current flight computer holder design featuring 3D-printed PETG construction with integrated battery retention mechanism, vibration isolation mounts, and modular component placement for easy assembly and maintenance}
+\label{fig:current_fc_holder}
+\end{figure}
 
-\textbf{PWM Ignition Test}: Apply PWM at 20-100\% duty cycles, record thermal profile, verify ignition. Success: controlled temperature ramp, no burnout, repeatable 10+ cycles.
+The current design iterations (Figures~\ref{fig:current_circuit} and \ref{fig:current_fc_holder}) represent the latest improvements incorporating lessons from previous test campaigns, with enhanced vibration isolation and optimized circuit layout for reliability.
 
-\textbf{Explosion Cap Deployment}: Test charge masses (0.5-1.5g), measure deployment force with load cell, inspect parachute. Success: clean separation, zero thermal damage, 200-400 N force, consistent across 5 tests.
+\section{Nakuja Project Resources}
+\label{appendix:nakuja_resources}
 
-\textbf{Vibration/Shock Test}: Shake table 5-500 Hz sweep, 15G shock impulse, verify continuity. Success: zero component displacement, no structural failure, maintained continuity.
+\textbf{Project Website}: \url{https://nakujaproject.com/}
+
+\textbf{GitHub Repository}: \url{https://github.com/nakujaproject}
+
+The Nakuja Project maintains open-source repositories for:
+\begin{itemize}
+    \item Flight computer firmware (ESP32-based)
+    \item Ground station telemetry software
+    \item PCB design files (KiCAD format)
+    \item Simulation and trajectory analysis tools
+    \item Recovery system control algorithms
+\end{itemize}
+
+All documentation is available under open-source licenses to support the student rocketry community.

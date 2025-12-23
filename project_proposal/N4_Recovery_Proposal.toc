@@ -11,31 +11,29 @@
 \contentsline {subsection}{\numberline {2.3}Pyrotechnic Deployment Systems}{4}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Electronic Control Systems}{5}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Power and Structural Systems}{5}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Previous Nakuja Mission Analysis}{5}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Safety Standards and Guidelines}{6}{subsection.2.7}%
-\contentsline {section}{\numberline {3}Design and Methodology}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Project Objectives}{7}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Main Objective}{7}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Specific Objectives}{7}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Design Approach}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Implementation Methodology}{8}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Mechanical System Design}{8}{subsubsection.3.3.1}%
-\contentsline {paragraph}{Sealed Explosion Cap}{8}{section*.4}%
-\contentsline {paragraph}{Avionics Bay Structure}{8}{section*.5}%
-\contentsline {subsubsection}{\numberline {3.3.2}Electrical System Architecture}{9}{subsubsection.3.3.2}%
-\contentsline {paragraph}{Hardware Components}{9}{section*.6}%
-\contentsline {paragraph}{PWM Ignition Control}{9}{section*.7}%
-\contentsline {paragraph}{Power Management}{9}{section*.8}%
-\contentsline {subsection}{\numberline {3.4}Testing and Validation Plan}{9}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Ground Testing Protocol}{9}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Flight Testing Protocol}{10}{subsubsection.3.4.2}%
-\contentsline {section}{\numberline {4}Expected Outcomes}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Technical Performance}{11}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Project Timeline}{11}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Knowledge Contribution}{11}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion}{12}{section.5}%
-\contentsline {section}{References}{13}{section.5}%
-\contentsline {section}{\numberline {A}Project Budget}{15}{appendix.A}%
-\contentsline {section}{\numberline {B}Project Timeline}{15}{appendix.B}%
-\contentsline {section}{\numberline {C}Component Specifications}{15}{appendix.C}%
-\contentsline {section}{\numberline {D}Testing Protocols}{17}{appendix.D}%
+\contentsline {subsection}{\numberline {2.6}Previous Nakuja Mission Analysis}{6}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Safety Standards and Guidelines}{8}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Design and Methodology}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Main Objectives}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Design Approach}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Implementation Methodology}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Mechanical System Design}{11}{subsubsection.3.3.1}%
+\contentsline {paragraph}{Sealed Explosion Cap}{11}{section*.4}%
+\contentsline {paragraph}{Avionics Bay Structure}{11}{section*.5}%
+\contentsline {subsubsection}{\numberline {3.3.2}Electrical System Architecture}{11}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Hardware Components}{11}{section*.6}%
+\contentsline {paragraph}{PWM Ignition Control}{11}{section*.7}%
+\contentsline {paragraph}{Power Management}{13}{section*.8}%
+\contentsline {subsection}{\numberline {3.4}Testing and Validation Plan}{13}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Ground Testing Protocol}{13}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Flight Testing Protocol}{13}{subsubsection.3.4.2}%
+\contentsline {section}{\numberline {4}Expected Outcomes}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Technical Performance}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Project Timeline}{14}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Knowledge Contribution}{14}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusion}{15}{section.5}%
+\contentsline {section}{References}{16}{section.5}%
+\contentsline {section}{\numberline {A}Project Budget}{18}{appendix.A}%
+\contentsline {section}{\numberline {B}Project Timeline}{18}{appendix.B}%
+\contentsline {section}{\numberline {C}Previous N4 Design References}{20}{appendix.C}%
+\contentsline {section}{\numberline {D}Nakuja Project Resources}{20}{appendix.D}%

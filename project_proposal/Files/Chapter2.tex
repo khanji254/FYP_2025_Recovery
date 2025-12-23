@@ -5,10 +5,10 @@
 
 Recovery systems preserve flight hardware and recorded data \cite{nakka_recovery}. Student rocketry projects face budget constraints requiring innovative, cost-effective solutions \cite{student_rocket_design}. Dual-deployment architectures use staged recovery: drogue chute at apogee for stability, main parachute at lower altitude for soft landing \cite{dual_deploy_analysis, parachute_design}.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Dual Deployment Recovery System Diagram]\vspace{3cm}}}
-\caption{Dual deployment recovery system architecture showing drogue and main parachute deployment sequence}
+\includegraphics[width=0.7\textwidth]{images/Nakuja_N3_Rocket.PNG}
+\caption{Dual deployment recovery system showing drogue parachute deployment at apogee and main parachute deployment at lower altitude for controlled descent}
 \label{fig:dual_deploy}
 \end{figure}
 
@@ -38,15 +38,36 @@ Cellular LTE & Global & High & Unlimited range & Network dep. \\ \bottomrule
 
 The XBee-PRO 900HP provides optimal balance between range, data capacity, and protocol reliability \cite{xbee_pro_datasheet}. Its 900 MHz frequency offers superior penetration versus 2.4 GHz alternatives.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{images/Beacon_RSSI_Decay_Plot.PNG}
+\caption{Beacon RSSI decay analysis showing signal degradation with distance and altitude}
+\label{fig:rssi_decay}
+\end{figure}
+
 \subsection{Pyrotechnic Deployment Systems}
 
-Nakka's Crimson Powder research provides baseline data for pyrotechnic charges \cite{nakka_crimson}. Proper formulation generates sufficient pressure while minimizing thermal output \cite{pyrotechnic_safety}. Combustion temperatures exceed 2000°C, requiring thermal isolation to prevent parachute damage \cite{modern_rocketry}.
+Nakka's Crimson Powder research provides baseline data for pyrotechnic charges \cite{nakka_crimson}. Proper formulation generates sufficient pressure while minimizing thermal output. Combustion temperatures exceed 2000°C, requiring thermal isolation to prevent parachute damage.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Explosion Cap Cross-Section]\vspace{2.5cm}}}
-\caption{Sealed explosion cap design showing thermal isolation and pressure channeling}
-\label{fig:explosion_cap}
+\includegraphics[width=0.6\textwidth]{images/The Crimson Powder Problem_Excessive_Pop.PNG}
+\caption{Excessive crimson powder deployment showing the need for precise charge control}
+\label{fig:excessive_pop}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{images/CHarge_Holder_Melted_From_Explosion.jpeg}
+\caption{Charge holder thermal damage from explosion highlighting thermal isolation requirements}
+\label{fig:thermal_damage}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{images/Post_PopTest_Charring_And_Leak_Image.jpeg}
+\caption{Post-deployment test showing charring effects and the importance of sealed containment}
+\label{fig:post_test_charring}
 \end{figure}
 
 \subsection{Electronic Control Systems}
@@ -55,12 +76,12 @@ The ESP32 platform offers dual-core architecture for parallel sensor processing 
 
 \subsection{Power and Structural Systems}
 
-LiPo batteries provide superior energy density but require BMS for safety \cite{lipo_aerospace, bms_systems}. High-G launch loads cause battery disconnection in spring-loaded holders \cite{avionics_vibration}. Custom avionics holders provide vibration isolation and battery retention.
+LiPo batteries provide superior energy density but require BMS for safety. High-G launch loads cause battery disconnection in spring-loaded holders \cite{avionics_vibration}. Custom avionics holders provide vibration isolation and battery retention.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Placeholder: Avionics Bay Assembly]\vspace{3cm}}}
-\caption{3D-printed avionics holder with integrated battery retention and vibration isolation}
+\includegraphics[width=0.65\textwidth]{images/Assembled_Avionics_Bay.jpeg}
+\caption{Assembled avionics bay with integrated battery retention and vibration isolation}
 \label{fig:avionics_bay}
 \end{figure}
 
@@ -85,13 +106,20 @@ N-3.5 & 2024 & Piston deploy & Thermal damage observed \\
 
 Analysis shows telemetry loss at altitudes exceeding 2km \cite{nakuja_website}. The XBee-PRO 900HP directly addresses this limitation.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{images/XBeeDiagram.png}
+\caption{XBee-PRO 900HP telemetry system integration showing complete signal path}
+\label{fig:xbee_integration}
+\end{figure}
+
 \subsection{Safety Standards and Guidelines}
 
-Amateur rocketry follows established safety protocols from organizations like Tripoli Rocketry Association \cite{tripoli_standards}. Key safety considerations include proper pyrotechnic handling \cite{pyrotechnic_safety}, adequate descent rates for safe landing \cite{descent_dynamics}, and ground station monitoring capabilities \cite{modern_rocketry}.
+Amateur rocketry follows established safety protocols from organizations like Tripoli Rocketry Association. Key safety considerations include proper pyrotechnic handling, adequate descent rates for safe landing, and ground station monitoring capabilities.
 
 \begin{figure}[h]
 \centering
-\fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}[Placeholder: System Integration Diagram]\vspace{2.5cm}}}
-\caption{Complete N4 recovery system showing integration of all subsystems}
-\label{fig:system_integration}
+\includegraphics[width=0.75\textwidth]{images/aduiabatic curve.png}
+\caption{Adiabatic expansion analysis for parachute deployment system design}
+\label{fig:adiabatic}
 \end{figure}

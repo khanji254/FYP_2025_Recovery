@@ -1,6 +1,14 @@
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Dual deployment recovery system architecture showing drogue and main parachute deployment sequence}}{3}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Sealed explosion cap design showing thermal isolation and pressure channeling}}{4}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces 3D-printed avionics holder with integrated battery retention and vibration isolation}}{5}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Complete N4 recovery system showing integration of all subsystems}}{6}{figure.2.4}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Custom PCB schematic showing ESP32, XBee-PRO 900HP, and PWM driver circuits}}{8}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces System wiring diagram showing power distribution and signal connections}}{9}{figure.3.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Dual deployment recovery system showing drogue parachute deployment at apogee and main parachute deployment at lower altitude for controlled descent}}{3}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Beacon RSSI decay analysis showing signal degradation with distance and altitude}}{4}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Excessive crimson powder deployment showing the need for precise charge control}}{5}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Charge holder thermal damage from explosion highlighting thermal isolation requirements}}{6}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Post-deployment test showing charring effects and the importance of sealed containment}}{7}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Assembled avionics bay with integrated battery retention and vibration isolation}}{8}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces XBee-PRO 900HP telemetry system integration showing complete signal path}}{9}{figure.2.7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Adiabatic expansion analysis for parachute deployment system design}}{9}{figure.2.8}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Proposed XBee-PRO 900HP telemetry system architecture }}{12}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Nichrome wire demonstration showing thermal melting and cutting mechanism - illustrating the one-shot deployment characteristic}}{12}{figure.3.2}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces 15-week project timeline showing task dependencies and critical path through design, fabrication, and testing phases}}{19}{figure.B.1}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Nakuja N3 rocket showing avionics bay configuration (reference design for N4 dual deployment architecture)}}{20}{figure.C.1}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Current N4 flight computer circuit design showing ESP32 microcontroller integration, XBee telemetry module, sensor interfaces (BMP180/MPU6050), MOSFET-based PWM ignition drivers, and power management circuitry}}{21}{figure.C.2}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Current flight computer holder design featuring 3D-printed PETG construction with integrated battery retention mechanism, vibration isolation mounts, and modular component placement for easy assembly and maintenance}}{21}{figure.C.3}%

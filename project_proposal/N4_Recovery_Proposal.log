@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  22 DEC 2025 20:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  23 DEC 2025 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -400,7 +400,7 @@ Package hyperref Info: Link coloring OFF on input line 63.
 \openout3 = `N4_Recovery_Proposal.out'.
 
  (Files/title_page.tex
-<Figures/Jomo_logo.pdf, id=146, 249.93375pt x 185.69376pt>
+<Figures/Jomo_logo.pdf, id=138, 249.93375pt x 185.69376pt>
 File: Figures/Jomo_logo.pdf Graphic file (type pdf)
 <use Figures/Jomo_logo.pdf>
 Package pdftex.def Info: Figures/Jomo_logo.pdf  used on input line 6.
@@ -438,7 +438,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 ...Testing Protocol}{10}{subsubsection.3.4.2}
+l.31 ...Technical Performance}{14}{subsection.4.1}
                                                   % [1
 
 ])
@@ -451,23 +451,42 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.II}) has
 <to be read again> 
                    \relax 
 l.77 \clearpage
-                [2] (N4_Recovery_Proposal.lof)
-\tf@lof=\write5
-\openout5 = `N4_Recovery_Proposal.lof'.
+                [2] (N4_Recovery_Proposal.lof
+Overfull \hbox (4.11093pt too wide) in paragraph at lines 9--9
+ \OT1/cmr/m/n/12 in-te-gra-tion, an-tenna con-fig-u-ra-tion, and ground sta-tio
+n com-mu-ni-ca-tion path- 
+ []
+
+
+Overfull \hbox (7.96228pt too wide) in paragraph at lines 11--11
+ [][] [][]\OT1/cmr/m/n/12 15-week project time-line show-ing task de-pen-den-ci
+es and crit-i-cal path through 
+ []
+
+
+Overfull \hbox (5.52206pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/n/12 in-te-gra-tion, XBee teleme-try mod-ule, sen-sor in-ter-faces 
+(BMP180/MPU6050), 
+ []
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.III}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.79 \clearpage
-                [3
+l.14 ...assembly and maintenance}}{21}{figure.C.3}
+                                                  % [3
 
-] (N4_Recovery_Proposal.lot)
+])
+\tf@lof=\write5
+\openout5 = `N4_Recovery_Proposal.lof'.
+
+ [4]
+(N4_Recovery_Proposal.lot)
 \tf@lot=\write6
 \openout6 = `N4_Recovery_Proposal.lot'.
 
- [4
+ [5
 
 ] (Files/Introduction.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
@@ -478,64 +497,168 @@ l.16
       [1
 
 ]) [2] (Files/Chapter2.tex
+<images/Nakuja_N3_Rocket.PNG, id=282, 297.36093pt x 198.7425pt>
+File: images/Nakuja_N3_Rocket.PNG Graphic file (type png)
+<use images/Nakuja_N3_Rocket.PNG>
+Package pdftex.def Info: images/Nakuja_N3_Rocket.PNG  used on input line 10.
+(pdftex.def)             Requested size: 318.66946pt x 212.99504pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3
 
-] [4]
+ <./images/Nakuja_N3_Rocket.PNG>]
+<images/Beacon_RSSI_Decay_Plot.PNG, id=301, 998.22937pt x 420.06938pt>
+File: images/Beacon_RSSI_Decay_Plot.PNG Graphic file (type png)
+<use images/Beacon_RSSI_Decay_Plot.PNG>
+Package pdftex.def Info: images/Beacon_RSSI_Decay_Plot.PNG  used on input line 
+43.
+(pdftex.def)             Requested size: 318.66946pt x 134.09805pt.
+<images/The Crimson Powder Problem_Excessive_Pop.PNG, id=303, 228.10219pt x 245
+.41687pt>
+File: images/The Crimson Powder Problem_Excessive_Pop.PNG Graphic file (type pn
+g)
+<use images/The Crimson Powder Problem_Excessive_Pop.PNG>
+Package pdftex.def Info: images/The Crimson Powder Problem_Excessive_Pop.PNG  u
+sed on input line 54.
+(pdftex.def)             Requested size: 273.14922pt x 293.8921pt.
+ [4 <./images/Beacon_RSSI_Decay_Plot.PNG>]
+<images/CHarge_Holder_Melted_From_Explosion.jpeg, id=316, 433.62pt x 374.14781p
+t>
+File: images/CHarge_Holder_Melted_From_Explosion.jpeg Graphic file (type jpg)
+<use images/CHarge_Holder_Melted_From_Explosion.jpeg>
+Package pdftex.def Info: images/CHarge_Holder_Melted_From_Explosion.jpeg  used 
+on input line 61.
+(pdftex.def)             Requested size: 250.38562pt x 216.04675pt.
+<images/Post_PopTest_Charring_And_Leak_Image.jpeg, id=317, 432.86719pt x 667.74
+469pt>
+File: images/Post_PopTest_Charring_And_Leak_Image.jpeg Graphic file (type jpg)
+<use images/Post_PopTest_Charring_And_Leak_Image.jpeg>
+Package pdftex.def Info: images/Post_PopTest_Charring_And_Leak_Image.jpeg  used
+ on input line 68.
+(pdftex.def)             Requested size: 250.38562pt x 386.25291pt.
+<images/Assembled_Avionics_Bay.jpeg, id=322, 963.6pt x 444.15938pt>
+File: images/Assembled_Avionics_Bay.jpeg Graphic file (type jpg)
+<use images/Assembled_Avionics_Bay.jpeg>
+Package pdftex.def Info: images/Assembled_Avionics_Bay.jpeg  used on input line
+ 83.
+(pdftex.def)             Requested size: 295.90587pt x 136.39351pt.
+
+[5 <./images/The Crimson Powder Problem_Excessive_Pop.PNG>]
+<images/XBeeDiagram.png, id=334, 799.98875pt x 466.74374pt>
+File: images/XBeeDiagram.png Graphic file (type png)
+<use images/XBeeDiagram.png>
+Package pdftex.def Info: images/XBeeDiagram.png  used on input line 111.
+(pdftex.def)             Requested size: 364.19664pt x 212.4898pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5]) [6] (Files/Chapter3.tex [7
+[6 <./images/CHarge_Holder_Melted_From_Explosion.jpeg>] [7 <./images/Post_PopTe
+st_Charring_And_Leak_Image.jpeg>]
+<images/aduiabatic curve.png, id=343, 451.32616pt x 342.19846pt>
+File: images/aduiabatic curve.png Graphic file (type png)
+<use images/aduiabatic curve.png>
+Package pdftex.def Info: images/aduiabatic curve.png  used on input line 122.
+(pdftex.def)             Requested size: 341.43306pt x 258.88301pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [8 <./images/Assembled_Avionics_Bay.jpeg>] [9 <./images/XBeeDiagram.png> <./i
+mages/aduiabatic curve.png>] (Files/Chapter3.tex
+Overfull \hbox (0.4652pt too wide) in paragraph at lines 15--16
+\OT1/cmr/m/n/12 printed PETG avion-ics holder with vi-bra-tion iso-la-tion, bat
+-tery re-ten-tion, and center-
+ []
+
+[10
 
 ]
-Overfull \hbox (7.08992pt too wide) in paragraph at lines 38--39
+Overfull \hbox (7.08992pt too wide) in paragraph at lines 36--37
  []\OT1/cmr/bx/n/12 Sealed Ex-plo-sion Cap[] \OT1/cmr/m/n/12 Sealed ex-plo-sion
  cap houses Crim-son Pow-der py-rotech-nic charge,
  []
 
 
-Overfull \hbox (20.77412pt too wide) in paragraph at lines 38--39
+Overfull \hbox (20.77412pt too wide) in paragraph at lines 36--37
 \OT1/cmr/m/n/12 con-tain-ing com-bus-tion prod-ucts while di-rect-ing pres-sure
  for de-ploy-ment [[]9[]]. High-temperature
  []
 
-[8] [9]) [10] (Files/Chapter5.tex
+File: images/XBeeDiagram.png Graphic file (type png)
+<use images/XBeeDiagram.png>
+Package pdftex.def Info: images/XBeeDiagram.png  used on input line 50.
+(pdftex.def)             Requested size: 318.66946pt x 185.92502pt.
+<images/Cut_Nichrome_Wire.PNG, id=372, 243.15843pt x 241.65282pt>
+File: images/Cut_Nichrome_Wire.PNG Graphic file (type png)
+<use images/Cut_Nichrome_Wire.PNG>
+Package pdftex.def Info: images/Cut_Nichrome_Wire.PNG  used on input line 60.
+(pdftex.def)             Requested size: 227.62204pt x 226.21341pt.
+[11] [12 <./images/Cut_Nichrome_Wire.PNG>]) [13] (Files/Chapter5.tex
 Overfull \hbox (0.17761pt too wide) in paragraph at lines 16--17
 \OT1/cmr/m/n/12 15-week im-ple-men-ta-tion: Plan-ning/Design (Weeks 1-5), Pro-c
 ure-ment/Fabrication (Weeks
  []
 
-) [11
+) [14
 
-] (Files/Summary.tex) [12
+] (Files/Summary.tex) [15
 
-] (N4_Recovery_Proposal.bbl [13
+] (N4_Recovery_Proposal.bbl [16
 
-]) [14]
+]) [17]
 (Files/Appendices.tex
+<images/Timeplan.PNG, id=429, 673.01437pt x 502.87875pt>
+File: images/Timeplan.PNG Graphic file (type png)
+<use images/Timeplan.PNG>
+Package pdftex.def Info: images/Timeplan.PNG  used on input line 40.
+(pdftex.def)             Requested size: 432.48048pt x 323.15343pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15
+[18
 
-] [16]) [17] (N4_Recovery_Proposal.aux)
+]
+File: images/Nakuja_N3_Rocket.PNG Graphic file (type png)
+<use images/Nakuja_N3_Rocket.PNG>
+Package pdftex.def Info: images/Nakuja_N3_Rocket.PNG  used on input line 61.
+(pdftex.def)             Requested size: 318.66946pt x 212.99504pt.
+ [19 <./images/Timeplan.PNG>]
+<images/Current_Circuit_Design.png, id=441, 736.25063pt x 344.03531pt>
+File: images/Current_Circuit_Design.png Graphic file (type png)
+<use images/Current_Circuit_Design.png>
+Package pdftex.def Info: images/Current_Circuit_Design.png  used on input line 
+70.
+(pdftex.def)             Requested size: 341.43306pt x 159.54955pt.
+<images/Current_FC_Holder.png, id=442, 870.25125pt x 618.81187pt>
+File: images/Current_FC_Holder.png Graphic file (type png)
+<use images/Current_FC_Holder.png>
+Package pdftex.def Info: images/Current_FC_Holder.png  used on input line 77.
+(pdftex.def)             Requested size: 273.14922pt x 194.22804pt.
+ [20] [21 <./images/Current_Circuit_Design.png> <./images/Current_FC_Holder.png
+>]) [22] (N4_Recovery_Proposal.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `N4_Recovery_Proposal.out' has not changed.
-(rerunfilecheck)             Checksum: C8FE6E691BE50F2C187CFA04DBD196C0;5751.
+(rerunfilecheck)             Checksum: 4DAB3553BA1A23E82B0C940FAC27435B;5498.
  ) 
 Here is how much of TeX's memory you used:
- 10528 strings out of 467870
- 164262 string characters out of 5418838
- 571543 words of memory out of 5000000
- 39136 multiletter control sequences out of 15000+600000
- 637382 words of font info for 75 fonts, out of 8000000 for 9000
+ 10635 strings out of 467870
+ 167813 string characters out of 5418838
+ 573821 words of memory out of 5000000
+ 39233 multiletter control sequences out of 15000+600000
+ 639558 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,717b,573s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,717b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 200.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -544,10 +667,11 @@ amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1
 ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users/user/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on N4_Recovery_Proposal.pdf (25 pages, 255223 bytes).
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/user/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on N4_Recovery_Proposal.pdf (31 pages, 1856417 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 528 PDF objects out of 1000 (max. 8388607)
+ 110 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 

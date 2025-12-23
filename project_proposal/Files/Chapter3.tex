@@ -1,20 +1,18 @@
 \section{Design and Methodology}
 \label{sec:methodology}
 
-\subsection{Project Objectives}
+\subsection{Main Objectives}
 
-\subsubsection{Main Objective}
-
-To design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range, ensuring mission success through enhanced communication capabilities, controlled deployment mechanisms, and comprehensive real-time monitoring systems.
-
-\subsubsection{Specific Objectives}
+The project aims to design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range. The following four objectives encapsulate the technical requirements:
 
 \begin{enumerate}
-    \item Implement Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with <5\% packet loss
-    \item Design and validate PWM-controlled ignition system for regulating nichrome wire temperature
-    \item Develop comprehensive feedback monitoring system for battery percentage and deployment pin continuity
-    \item Implement sealed explosion cap design for consistent parachute deployment
-    \item Design ruggedized 3D-printed avionics holder with vibration isolation
+    \item \textbf{Long-Range Telemetry Implementation:} Implement Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with less than 5\% packet loss, enabling real-time monitoring throughout the flight envelope.
+    
+    \item \textbf{Pyrotechnic Deployment System:} Design and validate PWM-controlled ignition system for regulating nichrome wire temperature, coupled with sealed explosion cap design for consistent and reliable parachute deployment at apogee and main deployment altitudes.
+    
+    \item \textbf{Comprehensive Monitoring and Safety:} Develop comprehensive feedback monitoring system for battery voltage, deployment pin continuity, and system health diagnostics with launch inhibit functionality activating below critical voltage thresholds.
+    
+    \item \textbf{Ruggedized Mechanical Integration:} Design and fabricate ruggedized 3D-printed PETG avionics holder with vibration isolation, battery retention, and center-of-gravity optimization to withstand high-G launch loads while maintaining structural integrity.
 \end{enumerate}
 
 \subsection{Design Approach}
@@ -38,32 +36,36 @@ The project employs systematic design-build-test methodology \cite{student_rocke
 Sealed explosion cap houses Crimson Powder pyrotechnic charge, containing combustion products while directing pressure for deployment \cite{nakka_crimson}. High-temperature resistant materials withstand combustion while enabling multiple test cycles.
 
 \paragraph{Avionics Bay Structure}
-Custom 3D-printed PETG holder secures flight computer, LiPo batteries, and BMS with vibration isolation \cite{avionics_vibration}. Design maintains center of gravity stability under high-G loads.
+Custom 3D-printed PETG holder secures flight computer, LiPo batteries, and BMS with vibration isolation \cite{avionics_vibration}. Design maintains center of gravity stability under high-G loads (see current design in Appendix~\ref{fig:current_fc_holder}).
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: PCB Schematic Diagram]\vspace{2.5cm}}}
-\caption{Custom PCB schematic showing ESP32, XBee-PRO 900HP, and PWM driver circuits}
-\label{fig:pcb_schematic}
-\end{figure}
+
 
 \subsubsection{Electrical System Architecture}
 
 \paragraph{Hardware Components}
-ESP32 dual-core microcontroller processes telemetry data \cite{esp32_datasheet}. XBee-PRO 900HP module provides 5+km range at 900 MHz \cite{xbee_pro_datasheet}. Custom PCB eliminates loose connections \cite{embedded_flight_computers}.
+ESP32 dual-core microcontroller processes telemetry data \cite{esp32_datasheet}. XBee-PRO 900HP module provides 5+km range at 900 MHz \cite{xbee_pro_datasheet}. Custom PCB eliminates loose connections \cite{embedded_flight_computers}. Current circuit implementation is detailed in Appendix~\ref{fig:current_circuit}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{images/XBeeDiagram.png}
+\caption{Proposed XBee-PRO 900HP telemetry system architecture }
+\label{fig:xbee_proposed}
+\end{figure}
 
 \paragraph{PWM Ignition Control}
 MOSFET-based PWM driver controls nichrome wire heating, preventing burnout while enabling reusable testing \cite{pwm_ignition_systems}.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{images/Cut_Nichrome_Wire.PNG}
+\caption{Nichrome wire demonstration showing thermal melting and cutting mechanism - illustrating the one-shot deployment characteristic}
+\label{fig:nichrome_wire}
+\end{figure}
+
 \paragraph{Power Management}
 BMS monitors LiPo battery health \cite{lipo_aerospace, bms_systems}. Real-time feedback transmits battery voltage and igniter continuity. Launch inhibit activates below 14.0V threshold.
 
-\begin{figure}[h]
-\centering
-\fbox{\parbox{0.7\textwidth}{\centering\vspace{2.5cm}[Placeholder: Wiring Diagram]\vspace{2.5cm}}}
-\caption{System wiring diagram showing power distribution and signal connections}
-\label{fig:wiring}
-\end{figure}
+
 
 \subsection{Testing and Validation Plan}
 

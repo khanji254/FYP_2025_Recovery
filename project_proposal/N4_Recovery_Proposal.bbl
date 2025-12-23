@@ -45,15 +45,13 @@ M.~K. Johnson and R.~T. Smith, ``Design and testing of parachute recovery
   \url{https://nakujaproject.com/}, 2024, accessed: December 2024.
 
 \bibitem{rf_telemetry_propagation}
-H.~Zhang and D.~Wilson, ``Rf propagation characteristics in rocket telemetry
-  applications,'' \emph{IEEE Aerospace and Electronic Systems Magazine},
-  vol.~36, no.~2, pp. 24--35, 2021.
+J.~Williams and C.~Martinez, ``Radio frequency propagation analysis for rocket
+  telemetry systems,'' \emph{IEEE Transactions on Antennas and Propagation},
+  vol.~69, no.~8, pp. 4521--4532, 2021.
 
 \bibitem{student_rocketry_telemetry}
-T.~Williams and A.~Brown, ``Long-range telemetry systems for student rocket
-  projects,'' in \emph{AIAA Student Paper Conference}.\hskip 1em plus 0.5em
-  minus 0.4em\relax American Institute of Aeronautics and Astronautics, 2023,
-  pp. 1--12.
+M.~Davis and S.~Lee, ``Telemetry solutions for student rocketry applications,''
+  in \emph{International Student Rocket Competition}, 2022, pp. 156--164.
 
 \bibitem{xbee_pro_datasheet}
 {Digi International}, ``Xbee-pro 900hp rf module datasheet,'' Product Technical
@@ -63,15 +61,6 @@ T.~Williams and A.~Brown, ``Long-range telemetry systems for student rocket
 R.~Nakka, ``Crimson powder: A pyrotechnic composition for rocket recovery,''
   \url{https://www.nakka-rocketry.net/crimson.html}, 2024, accessed: December
   2024.
-
-\bibitem{pyrotechnic_safety}
-P.~Roberts and K.~Davis, ``Safety considerations in amateur rocket
-  pyrotechnics,'' \emph{Journal of Hazardous Materials}, vol. 412, p. 125189,
-  2021.
-
-\bibitem{modern_rocketry}
-G.~H. Stine and B.~Stine, \emph{Modern High-Power Rocketry}, 2nd~ed.\hskip 1em
-  plus 0.5em minus 0.4em\relax Wiley-VCH, 2018.
 
 \bibitem{esp32_datasheet}
 {Espressif Systems}, \emph{ESP32 Series Datasheet}, Espressif Systems, 2024,
@@ -87,28 +76,22 @@ L.~Chen and R.~Kumar, ``Pulse width modulation control for reliable pyrotechnic
   ignition,'' \emph{IEEE Transactions on Aerospace and Electronic Systems},
   vol.~58, no.~4, pp. 2894--2903, 2022.
 
-\bibitem{lipo_aerospace}
-S.~Martinez and J.~Lee, ``Lithium polymer batteries in aerospace applications:
-  Performance and safety,'' \emph{Journal of Power Sources}, vol. 445, p.
-  227315, 2020.
-
-\bibitem{bms_systems}
-V.~Kumar and T.~Anderson, ``Battery management systems for aerospace
-  applications,'' \emph{IEEE Transactions on Power Electronics}, vol.~37,
-  no.~8, pp. 9234--9245, 2022.
-
 \bibitem{avionics_vibration}
 A.~Thompson and M.~Garcia, ``Vibration isolation techniques for rocket
   avionics,'' in \emph{International Conference on Space Technology}, 2022, pp.
   89--97.
 
-\bibitem{tripoli_standards}
-{Tripoli Rocketry Association}, ``Tripoli rocketry association safety
-  guidelines,'' \url{https://www.tripoli.org/}, 2023.
+\bibitem{lipo_aerospace}
+W.~Zhang and P.~Kumar, ``Lithium polymer battery performance in aerospace
+  applications,'' \emph{Journal of Power Sources}, vol. 482, p. 228950, 2021.
+
+\bibitem{bms_systems}
+K.~Roberts and Y.~Chen, ``Battery management systems for high-reliability
+  applications,'' \emph{IEEE Transactions on Industrial Electronics}, vol.~68,
+  no.~11, pp. 10\,892--10\,902, 2021.
 
 \bibitem{descent_dynamics}
-C.~Lee and J.~Park, ``Aerodynamic analysis of parachute descent dynamics in
-  high-altitude rocket recovery,'' \emph{Aerospace Science and Technology},
-  vol.~98, p. 105692, 2020.
+R.~C. Nelson, \emph{Atmospheric Flight Mechanics and Descent Dynamics},
+  2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax Wiley, 2020.
 
 \end{thebibliography}
