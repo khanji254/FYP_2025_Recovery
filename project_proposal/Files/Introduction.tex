@@ -8,13 +8,25 @@ The Nakuja Project N4 mission builds upon previous experiences from the N3.5 mis
 
 \subsection{Problem Statement}
 
-The N4 mission confronts three critical reliability challenges that threaten mission success:
+The N4 mission's recovery system faces critical reliability challenges including telemetry range limitations causing signal degradation during critical flight phases, uncontrolled ignition system temperatures exceeding 1000 degrees Celsius that create unreliable single-use deployment mechanisms, and absence of real-time pre-flight monitoring systems for battery voltage and igniter continuity, collectively threatening mission success through potential vehicle loss, deployment failures, and inability to validate system readiness before launch.
 
-\textbf{Telemetry Range Limitations:} The current telemetry system protocol exhibits significant range constraints, resulting in signal degradation and potential complete signal loss during critical flight phases. This limitation creates substantial risk of vehicle loss and inability to track the rocket post-flight, particularly during descent and landing phases.
+\subsection{Aim}
 
-\textbf{Uncontrolled Ignition System:} The existing "DC dump" ignition method for nichrome wire deployment generates uncontrolled temperatures exceeding 1000 degrees Celsius. This excessive heat generation causes wire burnout, creating a single-use deployment system that cannot be tested reliably and introduces significant deployment risk during actual flight operations.
+To design, fabricate, and validate a reliable dual deployment recovery system for the N4 rocket with extended telemetry range and comprehensive pre-flight monitoring capabilities.
 
-\textbf{Absence of Pre-flight Monitoring:} The lack of real-time feedback systems for critical parameters including battery voltage and igniter continuity leaves ground operators without visibility into potential system failures. This blind spot in operational awareness substantially increases the risk of mission aborts or catastrophic deployment malfunctions during critical flight phases.
+\subsection{Specific Objectives}
+
+The following four objectives address the identified challenges:
+
+\begin{enumerate}
+    \item \textbf{Long-Range Telemetry Implementation:} Implement Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with less than 5\% packet loss, enabling real-time monitoring throughout the flight envelope.
+    
+    \item \textbf{Pyrotechnic Deployment System:} Design and validate PWM-controlled ignition system for regulating nichrome wire temperature, coupled with sealed explosion cap design for consistent and reliable parachute deployment at apogee and main deployment altitudes.
+    
+    \item \textbf{Integrated Mechanical and Monitoring System:} Develop ruggedized 3D-printed PETG avionics holder with vibration isolation and battery retention, integrated with comprehensive feedback monitoring for battery voltage, deployment pin continuity, and system health diagnostics with launch inhibit functionality.
+    
+    \item \textbf{System Validation through Testing:} Conduct comprehensive pop tests to validate explosion cap deployment force and thermal containment, and execute range tests to verify telemetry performance at distances exceeding 5km under field conditions.
+\end{enumerate}
 
 \subsection{Justification}
 
