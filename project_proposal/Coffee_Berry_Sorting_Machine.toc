@@ -38,25 +38,24 @@
 \contentsline {subsubsection}{\numberline {3.2.6}Frame Structure}{20}{subsubsection.3.2.6}%
 \contentsline {subsection}{\numberline {3.3}Proposed Electrical and Control Module}{20}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Central Processing and Co-Processing Architecture}{20}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Image Acquisition System}{21}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Air Ejection and Actuation System}{21}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Motor Control and Power Supply}{22}{subsubsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.4}Software Architecture and Control Logic}{22}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}System Startup}{22}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Image Pre-Processing}{22}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Object Detection}{22}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Classification}{23}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}Object Tracking}{23}{subsubsection.3.4.5}%
-\contentsline {subsubsection}{\numberline {3.4.6}Ejection Scheduling}{24}{subsubsection.3.4.6}%
-\contentsline {subsubsection}{\numberline {3.4.7}System Flow Control}{24}{subsubsection.3.4.7}%
-\contentsline {section}{\numberline {4}Expected Outcomes}{26}{section.4}%
-\contentsline {subsection}{\numberline {4.1}An Improved Coffee Berry Sorting Machine Model}{26}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Enhanced Real-Time Detection and Classification Performance}{26}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Optimized Ejection Timing and Synchronization}{26}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Improved System Stability and Reliability}{27}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}A Scalable and Cost-Conscious Design Framework}{27}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Contribution to Agricultural Automation Research}{27}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Conclusion}{28}{section.5}%
-\contentsline {section}{References}{29}{section.5}%
-\contentsline {section}{\numberline {A}Project Budget}{30}{appendix.A}%
-\contentsline {section}{\numberline {B}Project Timeline}{30}{appendix.B}%
+\contentsline {subsubsection}{\numberline {3.3.2}Image Acquisition System}{22}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Air Ejection and Actuation System}{22}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Motor Control and Power Supply}{23}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Software Architecture and Control Logic}{23}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}System Startup}{23}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Image Acquisition and Processing}{23}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Object Detection and Classification}{23}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Object Tracking}{24}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Control and Ejection}{24}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}System Flow Control}{24}{subsubsection.3.4.6}%
+\contentsline {section}{\numberline {4}Expected Outcomes}{27}{section.4}%
+\contentsline {subsection}{\numberline {4.1}An Improved Coffee Berry Sorting Machine Model}{27}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Enhanced Real-Time Detection and Classification Performance}{27}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Optimized Ejection Timing and Synchronization}{27}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Improved System Stability and Reliability}{28}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}A Scalable and Cost-Conscious Design Framework}{28}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Contribution to Agricultural Automation Research}{28}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Conclusion}{29}{section.5}%
+\contentsline {section}{References}{30}{section.5}%
+\contentsline {section}{\numberline {A}Project Budget}{31}{appendix.A}%
+\contentsline {section}{\numberline {B}Project Timeline}{31}{appendix.B}%

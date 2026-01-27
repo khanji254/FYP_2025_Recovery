@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  27 JAN 2026 12:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  27 JAN 2026 12:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./coprocessing_architecture.tex
-(coprocessing_architecture.tex
+**./processing_flow.tex
+(processing_flow.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
 
@@ -496,16 +496,12 @@ File: pgflibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 /libraries\tikzlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
-/libraries\tikzlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count307
-) (coprocessing_architecture.aux)
-\openout1 = `coprocessing_architecture.aux'.
+) (processing_flow.aux)
+\openout1 = `processing_flow.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -550,34 +546,31 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 
 
 Non-PDF special ignored!
-<special> papersize=522.43015pt,469.00078pt
+<special> papersize=386.54308pt,1238.31253pt
 {C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-(coprocessing_architecture.aux)
+(processing_flow.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15180 strings out of 467870
- 341210 string characters out of 5418838
- 754541 words of memory out of 5000000
- 43799 multiletter control sequences out of 15000+600000
- 629914 words of font info for 47 fonts, out of 8000000 for 9000
+ 15177 strings out of 467870
+ 341159 string characters out of 5418838
+ 759070 words of memory out of 5000000
+ 43800 multiletter control sequences out of 15000+600000
+ 629551 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,7n,121p,429b,820s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0
-900.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm1000.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmbx10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/user/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on coprocessing_architecture.pdf (1 page, 93178 bytes).
+ 117i,7n,121p,419b,825s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmbx8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmbx9.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on processing_flow.pdf (1 page, 82496 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
+ 58 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

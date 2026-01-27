@@ -4,6 +4,8 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Comparison of manual and electronic coffee sorting methods (Source: Agriculture Institute, 2024)}}{9}{figure.2.3}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Overview of classification methods used in coffee berry sorting systems}}{11}{figure.2.4}%
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Overall system architecture of the improved coffee berry sorting machine}}{18}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Co-processing architecture showing task distribution between Raspberry Pi and auxiliary microcontroller}}{25}{figure.3.2}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Budget Breakdown}}{30}{figure.A.1}%
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Implementation Schedule (16 Weeks)}}{31}{figure.B.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Co-processing architecture showing task distribution: Raspberry Pi handles image processing, classification, and tracking; ESP32 handles motor control, actuator interfacing, and timing}}{21}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces System control flow showing task distribution between Raspberry Pi 3 (image processing, classification, tracking) and ESP32 (motor control, timing, actuation)}}{25}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}}{26}{figure.3.4}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Budget Breakdown}}{31}{figure.A.1}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Implementation Schedule (16 Weeks)}}{32}{figure.B.1}%

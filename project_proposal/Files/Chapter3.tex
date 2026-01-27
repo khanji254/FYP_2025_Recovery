@@ -75,20 +75,20 @@ The proposed electrical and control module will be designed to support high-spee
 
 \subsubsection{Central Processing and Co-Processing Architecture}
 
-The system will employ a Raspberry Pi 3 as the main control and supervisory processing unit. The Raspberry Pi will be responsible for system initialization, user interface handling, data logging, actuator control, and coordination of the sorting process.
+The system will employ a Raspberry Pi 3 as the main processing unit responsible for computationally intensive tasks. The Raspberry Pi will handle image acquisition, image processing, classification using machine learning models, and object tracking across frames. These operations require significant computational resources and are best suited to the Raspberry Pi's processing capabilities.
 
-To improve throughput and reduce latency in image processing and classification, an additional microprocessor or co-processing unit (such as an ESP32, STM32, or equivalent embedded processor) will be introduced. This secondary processor will handle time-critical and repetitive computational tasks, thereby offloading the Raspberry Pi and enhancing real-time performance.
+To improve system responsiveness and reduce latency in real-time control operations, an ESP32 microcontroller will be introduced as a co-processing unit. This secondary processor will handle motor control for the vibrating feeder, timing calculations for ejection scheduling, direct interfacing with solenoid actuators, and sensor signal conditioning. By offloading these real-time control tasks from the Raspberry Pi, the system achieves better parallel processing and enhanced real-time performance.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.95\textwidth]{Figures/coprocessing_architecture.pdf}
-\caption{Co-processing architecture showing task distribution between Raspberry Pi and auxiliary microcontroller}
+\caption{Co-processing architecture showing task distribution: Raspberry Pi handles image processing, classification, and tracking; ESP32 handles motor control, actuator interfacing, and timing}
 \label{fig:coprocessing_architecture}
 \end{figure}
 
-The division of tasks will be implemented as follows: The Raspberry Pi will manage high-level decision making, system synchronization, and communication. The co-processor will handle image pre-processing tasks, object tracking computations, timing calculations for ejection scheduling, and sensor signal conditioning where applicable.
+The division of tasks will be implemented as follows: The Raspberry Pi will execute all image processing operations including pre-processing, feature extraction, CNN-based classification, and multi-frame object tracking. The ESP32 co-processor will manage motor speed control for the vibrating feeder, calculate precise timing for ejection based on berry position data received from the Raspberry Pi, directly trigger solenoid actuators, and condition sensor signals before transmission.
 
-Communication between the Raspberry Pi and the co-processor will be achieved through high-speed serial communication (UART, SPI, or I²C), ensuring minimal data transfer delay or a flash disk.
+Communication between the Raspberry Pi and the ESP32 will be achieved through high-speed UART serial communication, ensuring minimal data transfer delay. The Raspberry Pi will transmit classification results and position data to the ESP32, which will then execute the corresponding actuation commands.
 
 \subsubsection{Image Acquisition System}
 
@@ -100,13 +100,13 @@ Controlled LED lighting modules will be installed around the imaging zone to pro
 
 The berry rejection mechanism will consist of: high-speed air ejectors (solenoid-controlled air nozzles) positioned along the chute, and a compressed air supply system, including a compact air compressor and pressure regulation unit.
 
-The co-processor will compute precise ejection timing based on berry position tracking, while the Raspberry Pi will issue final actuation commands. This approach will ensure accurate rejection of defective or unripe berries without affecting accepted berries.
+The Raspberry Pi will perform real-time classification and tracking of berries, computing their positions and velocities. This information will be transmitted to the ESP32, which will calculate precise ejection timing and directly trigger the solenoid actuators. This distributed approach ensures accurate rejection of defective or unripe berries without affecting accepted berries.
 
 \subsubsection{Motor Control and Power Supply}
 
-Electric motors used in the linear vibrating feeder will be selected based on vibration frequency requirements, durability, and power efficiency. Motor drivers will be interfaced with the co-processor for precise control of feed rate.
+Electric motors used in the linear vibrating feeder will be selected based on vibration frequency requirements, durability, and power efficiency. The ESP32 will control motor drivers to enable precise adjustment of feed rate, ensuring optimal berry spacing for image capture.
 
-The system will utilize: a regulated 5V DC supply for logic-level electronics (Raspberry Pi, microprocessor, camera), and a 12V DC supply for actuators, air solenoids, and motors.
+The system will utilize: a regulated 5V DC supply for logic-level electronics (Raspberry Pi, ESP32, camera), and a 12V DC supply for actuators, air solenoids, and motors.
 
 Power isolation and protection mechanisms will be incorporated to prevent electrical noise from affecting sensitive processing units.
 
@@ -116,39 +116,40 @@ The software system will be modular and executed in stages as outlined below:
 
 \subsubsection{System Startup}
 
-Upon power-up, the Raspberry Pi will initialize system peripherals, establish communication with the co-processor, and perform system diagnostics.
+Upon power-up, the Raspberry Pi will initialize system peripherals, establish UART communication with the ESP32, and perform system diagnostics.
 
-\subsubsection{Image Pre-Processing}
+\subsubsection{Image Acquisition and Processing}
 
-Captured images will undergo grayscale conversion, noise filtering, normalization, and contrast enhancement. Pre-processing tasks will primarily be executed on the co-processor to reduce computational load on the Raspberry Pi.
+The Raspberry Pi Camera Module will capture images of berries in motion. Captured images will undergo pre-processing on the Raspberry Pi, including grayscale conversion, noise filtering, normalization, and contrast enhancement.
 
-\subsubsection{Object Detection}
+\subsubsection{Object Detection and Classification}
 
-Coffee berries will be detected using thresholding and contour-based methods or lightweight machine learning models optimized for embedded systems.
-
-\subsubsection{Classification}
-
-The classification system will be designed as a binary classifier to distinguish between **ripe** and **unripe** coffee berries. This simplified two-class approach offers several advantages:
-
-\begin{itemize}
-    \item Reduced computational complexity suitable for real-time processing on embedded platforms
-    \item Faster training convergence with smaller labeled datasets
-    \item Higher classification accuracy due to clearer decision boundaries
-    \item Practical alignment with primary sorting objectives in coffee processing
-\end{itemize}
-
-The model will be trained using a curated dataset of coffee berry images labeled as either ripe (deep red/purple berries suitable for processing) or unripe (green, yellow, or partially colored berries requiring rejection). A lightweight convolutional neural network (CNN) architecture such as MobileNetV2 will be employed and optimized using TensorFlow Lite for deployment on the Raspberry Pi.
-
-Training will involve data augmentation techniques including rotation, brightness adjustment, and horizontal flipping to improve model generalization. The trained model will be quantized to reduce inference time while maintaining classification accuracy above the 90\% threshold.
+Coffee berries will be detected using contour-based methods executed on the Raspberry Pi. The classification system will employ a binary classifier (ripe vs. unripe) using a lightweight CNN model optimized with TensorFlow Lite, running on the Raspberry Pi.
 
 \subsubsection{Object Tracking}
 
-Detected berries will be tracked across successive frames to determine velocity and trajectory. Tracking data will be used to predict the precise point of ejection.
+The Raspberry Pi will track detected berries across successive frames to determine velocity and trajectory. Tracking data will be used to compute berry positions and predict ejection points.
 
-\subsubsection{Ejection Scheduling}
+\subsubsection{Control and Ejection}
 
-Based on classification results, the system will calculate the optimal actuation time for each air ejector to reject unwanted berries while allowing acceptable berries to pass.
+Based on classification and tracking results, the Raspberry Pi will transmit berry position and classification data to the ESP32 via UART. The ESP32 will calculate optimal actuation timing and trigger the appropriate air ejectors to reject unwanted berries.
+
+The binary classification model (ripe vs. unripe) will be trained using MobileNetV2 architecture, optimized with TensorFlow Lite for efficient deployment on the Raspberry Pi. The model will be trained with data augmentation techniques and quantized to maintain classification accuracy above 90\% while minimizing inference time.
 
 \subsubsection{System Flow Control}
 
-The Raspberry Pi will supervise the entire operation, adjusting feed rates, handling exceptions, and logging system performance metrics.
+The Raspberry Pi will supervise the entire operation, adjusting system parameters, handling exceptions, and logging performance metrics. Figure~\ref{fig:control_flow} shows the overall control flow, while Figure~\ref{fig:processing_flow} illustrates the image processing pipeline.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\textwidth]{Figures/control_flow.pdf}
+\caption{System control flow showing task distribution between Raspberry Pi 3 (image processing, classification, tracking) and ESP32 (motor control, timing, actuation)}
+\label{fig:control_flow}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.55\textwidth]{Figures/processing_flow.pdf}
+\caption{Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}
+\label{fig:processing_flow}
+\end{figure}

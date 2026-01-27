@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  23 DEC 2025 15:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  27 JAN 2026 12:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,7 +401,7 @@ Package hyperref Info: Link coloring OFF on input line 63.
 
 
 (Files/title_page.tex
-<Figures/Jomo_logo.pdf, id=250, 249.93375pt x 185.69376pt>
+<Figures/Jomo_logo.pdf, id=246, 249.93375pt x 185.69376pt>
 File: Figures/Jomo_logo.pdf Graphic file (type pdf)
 <use Figures/Jomo_logo.pdf>
 Package pdftex.def Info: Figures/Jomo_logo.pdf  used on input line 6.
@@ -447,7 +447,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.II}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.54 ...ification Performance}{26}{subsection.4.2}
+l.54 ...g and Synchronization}{27}{subsection.4.3}
                                                   % [2])
 \tf@toc=\write4
 \openout4 = `Coffee_Berry_Sorting_Machine.toc'.
@@ -477,7 +477,7 @@ fer-ences be-tween ripe (red/purple)
  [5
 
 ] (Files/Introduction.tex
-<Figures/harvested coffee berry variation.jpeg, id=380, 451.6875pt x 301.125pt>
+<Figures/harvested coffee berry variation.jpeg, id=384, 451.6875pt x 301.125pt>
 
 File: Figures/harvested coffee berry variation.jpeg Graphic file (type jpg)
 <use Figures/harvested coffee berry variation.jpeg>
@@ -498,7 +498,7 @@ l.19
 
 ] [2 <./Figures/harvested coffee berry variation.jpeg>] [3] [4])
 [5] (Files/Chapter2.tex
-<Figures/Ripe.jpeg, id=409, 517.935pt x 351.3125pt>
+<Figures/Ripe.jpeg, id=413, 517.935pt x 351.3125pt>
 File: Figures/Ripe.jpeg Graphic file (type jpg)
 <use Figures/Ripe.jpeg>
 Package pdftex.def Info: Figures/Ripe.jpeg  used on input line 10.
@@ -506,21 +506,21 @@ Package pdftex.def Info: Figures/Ripe.jpeg  used on input line 10.
  [6
 
  <./Figures/Ripe.jpeg>]
-<images/coffee_berry_comparison.png, id=414, 1093.08376pt x 456.95718pt>
+<images/coffee_berry_comparison.png, id=418, 1093.08376pt x 456.95718pt>
 File: images/coffee_berry_comparison.png Graphic file (type png)
 <use images/coffee_berry_comparison.png>
 Package pdftex.def Info: images/coffee_berry_comparison.png  used on input line
  27.
 (pdftex.def)             Requested size: 318.66946pt x 133.21841pt.
  [7 <./images/coffee_berry_comparison.png>] [8]
-<Figures/sorting_comparison.pdf, id=434, 596.12108pt x 338.2216pt>
+<Figures/sorting_comparison.pdf, id=438, 596.12108pt x 338.2216pt>
 File: Figures/sorting_comparison.pdf Graphic file (type pdf)
 <use Figures/sorting_comparison.pdf>
 Package pdftex.def Info: Figures/sorting_comparison.pdf  used on input line 60.
 
 (pdftex.def)             Requested size: 432.48048pt x 245.38242pt.
  [9 <./Figures/sorting_comparison.pdf>] [10]
-<Figures/classification_flowchart.pdf, id=482, 712.49384pt x 495.98802pt>
+<Figures/classification_flowchart.pdf, id=486, 712.49384pt x 495.98802pt>
 File: Figures/classification_flowchart.pdf Graphic file (type pdf)
 <use Figures/classification_flowchart.pdf>
 Package pdftex.def Info: Figures/classification_flowchart.pdf  used on input li
@@ -528,7 +528,7 @@ ne 87.
 (pdftex.def)             Requested size: 432.48048pt x 301.06888pt.
  [11 <./Figures/classification_flowchart.pdf>] [12] [13] [14] [15]) [16] (Files
 /Chapter3.tex
-<Figures/system_architecture.pdf, id=531, 547.9341pt x 350.0528pt>
+<Figures/system_architecture.pdf, id=535, 547.9341pt x 350.0528pt>
 File: Figures/system_architecture.pdf Graphic file (type pdf)
 <use Figures/system_architecture.pdf>
 Package pdftex.def Info: Figures/system_architecture.pdf  used on input line 18
@@ -546,43 +546,57 @@ tent berry flow, min-i-mal vibration-
 
 [17
 
-] [18 <./Figures/system_architecture.pdf>] [19]
-<Figures/coprocessing_architecture.pdf, id=569, 522.42982pt x 469.00117pt>
+] [18 <./Figures/system_architecture.pdf>] [19] [20]
+<Figures/coprocessing_architecture.pdf, id=577, 522.42982pt x 469.00117pt>
 File: Figures/coprocessing_architecture.pdf Graphic file (type pdf)
 <use Figures/coprocessing_architecture.pdf>
 Package pdftex.def Info: Figures/coprocessing_architecture.pdf  used on input l
 ine 84.
 (pdftex.def)             Requested size: 432.48048pt x 388.26181pt.
+ [21 <./Figures/coprocessing_architecture.pdf>] [22] [23]
+<Figures/control_flow.pdf, id=630, 536.64589pt x 1051.45618pt>
+File: Figures/control_flow.pdf Graphic file (type pdf)
+<use Figures/control_flow.pdf>
+Package pdftex.def Info: Figures/control_flow.pdf  used on input line 145.
+(pdftex.def)             Requested size: 295.90587pt x 579.77873pt.
+
+
+LaTeX Warning: Float too large for page by 15.27873pt on input line 148.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21]
-Overfull \hbox (3.65393pt too wide) in paragraph at lines 127--128
-\OT1/cmr/m/n/12 Coffee berries will be de-tected us-ing thresh-old-ing and cont
-our-based meth-ods or lightweight
- []
+<Figures/processing_flow.pdf, id=631, 386.54312pt x 1238.31236pt>
+File: Figures/processing_flow.pdf Graphic file (type pdf)
+<use Figures/processing_flow.pdf>
+Package pdftex.def Info: Figures/processing_flow.pdf  used on input line 152.
+(pdftex.def)             Requested size: 250.38562pt x 802.13483pt.
 
-[22] [23]) [24] [25 <./Figures/coprocessing_architecture.pdf>]
-(Files/Chapter5.tex [26
+LaTeX Warning: Float too large for page by 258.71814pt on input line 155.
 
-]) [27] (Files/Summary.tex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [24] [25 <./Figures/control_flow.pdf>] [26 <./Figures/processing_flow.pdf>]
+(Files/Chapter5.tex [27
+
+]) [28] (Files/Summary.tex)
 Overfull \hbox (9.20248pt too wide) in paragraph at lines 6--93
 []\OT1/cmr/m/n/12 The project em-pha-sizes a bal-ance be-tween tech-no-log-i-ca
 l ad-vance-ment and cost-effectiveness,
  []
 
-[28
+[29
 
-] (Coffee_Berry_Sorting_Machine.bbl) [29
+] (Coffee_Berry_Sorting_Machine.bbl) [30
 
 ] (Files/Appendices.tex
-<Figures/Budget.jpeg, id=651, 702.625pt x 538.01pt>
+<Figures/Budget.jpeg, id=699, 702.625pt x 538.01pt>
 File: Figures/Budget.jpeg Graphic file (type jpg)
 <use Figures/Budget.jpeg>
 Package pdftex.def Info: Figures/Budget.jpeg  used on input line 8.
 (pdftex.def)             Requested size: 409.71689pt x 313.73714pt.
-<Figures/Time_Plan.jpeg, id=652, 894.34125pt x 514.92375pt>
+<Figures/Time_Plan.jpeg, id=700, 894.34125pt x 514.92375pt>
 File: Figures/Time_Plan.jpeg Graphic file (type jpg)
 <use Figures/Time_Plan.jpeg>
 Package pdftex.def Info: Figures/Time_Plan.jpeg  used on input line 18.
@@ -591,9 +605,9 @@ Package pdftex.def Info: Figures/Time_Plan.jpeg  used on input line 18.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [30
+) [31
 
- <./Figures/Budget.jpeg>] [31 <./Figures/Time_Plan.jpeg>]
+ <./Figures/Budget.jpeg>] [32 <./Figures/Time_Plan.jpeg>]
 (Coffee_Berry_Sorting_Machine.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -601,13 +615,13 @@ L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `Coffee_Berry_Sorting_Machine.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 3921673B7092A8ED1B8E5B7FBC106A7C;11965.
+(rerunfilecheck)             Checksum: 620D14840F9C0870C147B83BD2463396;12002.
  ) 
 Here is how much of TeX's memory you used:
- 10616 strings out of 467870
- 167331 string characters out of 5418838
- 571165 words of memory out of 5000000
- 39203 multiletter control sequences out of 15000+600000
+ 10632 strings out of 467870
+ 167839 string characters out of 5418838
+ 571656 words of memory out of 5000000
+ 39217 multiletter control sequences out of 15000+600000
  635526 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,810b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -615,19 +629,20 @@ Here is how much of TeX's memory you used:
 200.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmbx9.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/user/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/user/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/user/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Users
-/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><
-C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti
-8.pfb>
-Output written on Coffee_Berry_Sorting_Machine.pdf (40 pages, 2823097 bytes).
+/public/amsfonts/cm/cmbx8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/user/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/user/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/user/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/
+user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C
+:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti1
+2.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmti8.pfb>
+Output written on Coffee_Berry_Sorting_Machine.pdf (41 pages, 2867545 bytes).
 PDF statistics:
- 720 PDF objects out of 1000 (max. 8388607)
- 125 named destinations out of 1000 (max. 500000)
- 547 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 769 PDF objects out of 1000 (max. 8388607)
+ 127 named destinations out of 1000 (max. 500000)
+ 549 words of extra memory for PDF output out of 10000 (max. 10000000)
 

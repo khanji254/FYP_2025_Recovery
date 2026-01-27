@@ -21,21 +21,21 @@
 \node[processor, below left=1cm and 1.5cm of title] (rpi) {\textbf{Raspberry Pi 3}\\Main Controller};
 
 % Raspberry Pi tasks
-\node[task, below=0.3cm of rpi] (rpi1) {System Initialization};
-\node[task, below=0.1cm of rpi1] (rpi2) {User Interface};
-\node[task, below=0.1cm of rpi2] (rpi3) {Data Logging};
-\node[task, below=0.1cm of rpi3] (rpi4) {Actuator Control};
-\node[task, below=0.1cm of rpi4] (rpi5) {Coordination};
+\node[task, below=0.3cm of rpi] (rpi1) {Image Processing};
+\node[task, below=0.1cm of rpi1] (rpi2) {Classification (CNN)};
+\node[task, below=0.1cm of rpi2] (rpi3) {Object Tracking};
+\node[task, below=0.1cm of rpi3] (rpi4) {Data Logging};
+\node[task, below=0.1cm of rpi4] (rpi5) {System Supervision};
 
 % ESP32/STM32 Co-Processor
-\node[processor, below right=1cm and 1.5cm of title, fill=orange!40] (esp) {\textbf{ESP32/STM32}\\Co-Processor};
+\node[processor, below right=1cm and 1.5cm of title, fill=orange!40] (esp) {\textbf{ESP32}\\Co-Processor};
 
 % Co-Processor tasks
-\node[task, below=0.3cm of esp] (esp1) {Image Pre-Processing};
-\node[task, below=0.1cm of esp1] (esp2) {Object Tracking};
-\node[task, below=0.1cm of esp2] (esp3) {Timing Calculations};
-\node[task, below=0.1cm of esp3] (esp4) {Ejection Scheduling};
-\node[task, below=0.1cm of esp4] (esp5) {Signal Conditioning};
+\node[task, below=0.3cm of esp] (esp1) {Motor Control};
+\node[task, below=0.1cm of esp1] (esp2) {Timing Calculations};
+\node[task, below=0.1cm of esp2] (esp3) {Actuator Interfacing};
+\node[task, below=0.1cm of esp3] (esp4) {Sensor Conditioning};
+\node[task, below=0.1cm of esp4] (esp5) {Ejection Triggers};
 
 % Communication channel
 \node[comm, below=8cm of title] (comm) {UART/SPI/I²C\\Communication};
@@ -65,8 +65,8 @@
 \draw[arrow] (sensors) -- (comm);
 
 % Processing load indicators
-\node[above=0.2cm of rpi, fill=blue!20, draw, rounded corners, font=\footnotesize] (load1) {High-level Processing};
-\node[above=0.2cm of esp, fill=orange!20, draw, rounded corners, font=\footnotesize] (load2) {Time-critical Tasks};
+\node[above=0.2cm of rpi, fill=blue!20, draw, rounded corners, font=\footnotesize] (load1) {Heavy Processing};
+\node[above=0.2cm of esp, fill=orange!20, draw, rounded corners, font=\footnotesize] (load2) {Real-time Control Tasks};
 
 % Benefits box
 \node[below=1cm of actuators, text width=6cm, fill=green!10, draw=green!50, rounded corners, inner sep=0.3cm, font=\small] (benefits) {
