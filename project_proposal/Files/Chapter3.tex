@@ -110,6 +110,70 @@ The system will utilize: a regulated 5V DC supply for logic-level electronics (R
 
 Power isolation and protection mechanisms will be incorporated to prevent electrical noise from affecting sensitive processing units.
 
+\subsubsection{Electrical Wiring and Pin Assignment}
+
+Figure~\ref{fig:electrical_schematic} illustrates the electrical system architecture and power distribution. All signal lines operate at 3.3V logic levels between the Raspberry Pi and ESP32. The 12V solenoid and motor supplies are isolated with a common ground return to all control electronics.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/electrical_schematic.pdf}
+\caption{Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}
+\label{fig:electrical_schematic}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Raspberry Pi 3, ESP32, and Peripheral Wiring Assignment}
+\label{tab:wiring}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Function} & \textbf{Device} & \textbf{Pin/Port} & \textbf{Notes} \\
+\midrule
+\multicolumn{4}{l}{\textbf{UART Communication (Pi <-> ESP32)}} \\
+UART TX & Raspberry Pi & GPIO 14 (TXD) & 3.3V, transmit to ESP32 RX \\
+UART RX & Raspberry Pi & GPIO 15 (RXD) & 3.3V, receive from ESP32 TX \\
+UART RX & ESP32 & GPIO 16 & Receive from Pi TXD \\
+UART TX & ESP32 & GPIO 17 & Transmit to Pi RXD \\
+Baud Rate & Both & 115200 bps, 8N1 & Serial protocol parameters \\
+\midrule
+\multicolumn{4}{l}{\textbf{Ejector Solenoid Control (ESP32)}} \\
+Ejector 1 & ESP32 & GPIO 4 & MOSFET gate + 220Ohm series resistor \\
+Ejector 2 & ESP32 & GPIO 5 & Flyback diode across solenoid \\
+Ejector 3 & ESP32 & GPIO 12 & 1N4007 or 1N5819 (cathode to +12V) \\
+Ejector 4 & ESP32 & GPIO 13 & 100kOhm pull-down for safety \\
+\midrule
+\multicolumn{4}{l}{\textbf{Vibrating Motor (ESP32)}} \\
+Motor PWM & ESP32 & GPIO 14 (PWM) & MOSFET gate driver with 220Ohm resistor \\
+Motor Supply & Battery & +12V, GND & 12V rail with flyback diode protection \\
+\midrule
+\multicolumn{4}{l}{\textbf{Pneumatic Compressor (ESP32)}} \\
+Compressor Control & ESP32 & GPIO 21 (relay) & Relay driver circuit for on/off switching \\
+Compressor Supply & Battery & +12V, GND & 12V rail with relay coil protection \\
+\midrule
+\multicolumn{4}{l}{\textbf{LED Status Strip (ESP32)}} \\
+LED PWM & ESP32 & GPIO 22 (PWM) & MOSFET gate driver with 220Ohm resistor \\
+LED Supply & Battery & +12V, GND & 12V rail with flyback diode protection \\
+\midrule
+\multicolumn{4}{l}{\textbf{Power Supply}} \\
+Logic Supply & 5V Buck & Raspberry Pi (5V) & 3A+ recommended \\
+Logic Supply & 5V Rail & ESP32 VIN & Via dev board regulator to 3.3V \\
+Motor Supply & 12V Battery & Main fused supply & 10A main fuse recommended \\
+Common GND & All devices & Star ground point & All GND returns tied together \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each ejector solenoid circuit includes a gate drive resistor (220Ohm) for current limiting and a 100kOhm pull-down resistor to GND to prevent false solenoid firing during power-up. A flyback diode (1N4007, cathode to +12V) is connected across each solenoid to suppress inductive transient kickback when the MOSFET switches off. These protection measures ensure reliable and safe operation of the ejection system.
+
+\subsubsection{Actuator Control Circuits}
+
+\textbf{Vibrating Motor (GPIO 14 - PWM Control):} The vibrating motor is controlled via pulse-width modulation (PWM) on GPIO 14. An N-channel MOSFET driver circuit amplifies the 3.3V GPIO signal to drive the 12V motor coil. A 220Ohm gate resistor limits current to the MOSFET gate, and a flyback diode (1N4007) suppresses inductive kickback when the MOSFET switches off. The PWM frequency allows variable speed control of the vibrating feeder mechanism, enabling adjustment of berry flow rate through the sorting chamber.
+
+\textbf{Pneumatic Compressor (GPIO 21 - Relay Control):} The air compressor is controlled via a relay driver circuit on GPIO 21. Unlike the PWM-controlled motor, the compressor uses simple on/off relay switching since it operates at discrete on/full-power states. The relay coil is driven by a low-current transistor circuit, isolating the low-power GPIO signal from the high-current compressor load. A protection diode across the relay coil prevents voltage spikes when the relay switches off. The compressor supplies pressurized air to the ejector pneumatic circuits.
+
+\textbf{LED Status Indicator Strip (GPIO 22 - PWM Control):} An RGB or monochromatic LED strip provides visual status indication and system feedback. GPIO 22 provides PWM control to a MOSFET driver circuit similar to the motor driver, enabling brightness modulation from 0\% to 100\%. The LED strip displays system state (operational, ready, error, sorting status) and aids in real-time system monitoring and debugging.
+
 \subsection{Software Architecture and Control Logic}
 
 The software system will be modular and executed in stages as outlined below:
@@ -152,4 +216,15 @@ The Raspberry Pi will supervise the entire operation, adjusting system parameter
 \includegraphics[width=0.55\textwidth]{Figures/processing_flow.pdf}
 \caption{Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}
 \label{fig:processing_flow}
+\end{figure}
+
+\subsubsection{Inter-Processor Communication Protocol}
+
+The Raspberry Pi and ESP32 communicate via UART serial connection at 115,200 baud. Figure~\ref{fig:uart_communication} illustrates the data flow and connection between the two processors. The Raspberry Pi sends motor control and ejection commands to the ESP32, which processes these commands in real-time to trigger the appropriate actuators. The ESP32 responds with acknowledgments to confirm command receipt and execution.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{Figures/uart_communication.pdf}
+\caption{UART communication and data flow between Raspberry Pi 3 and ESP32 co-processor showing GPIO pin assignments and connection protocol}
+\label{fig:uart_communication}
 \end{figure}
