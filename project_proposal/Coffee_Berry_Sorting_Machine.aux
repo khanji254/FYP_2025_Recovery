@@ -72,36 +72,41 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Image Acquisition System}{22}{subsubsection.3.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Air Ejection and Actuation System}{22}{subsubsection.3.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Motor Control and Power Supply}{23}{subsubsection.3.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}Electrical Wiring and Pin Assignment}{23}{subsubsection.3.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.6}Actuator Control Circuits}{23}{subsubsection.3.3.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}}{24}{figure.3.3}\protected@file@percent }
-\newlabel{fig:electrical_schematic}{{3.3}{24}{Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}{figure.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Software Architecture and Control Logic}{25}{subsection.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}System Startup}{25}{subsubsection.3.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Image Acquisition and Processing}{25}{subsubsection.3.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Object Detection and Classification}{25}{subsubsection.3.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}Object Tracking}{25}{subsubsection.3.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.5}Control and Ejection}{26}{subsubsection.3.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.6}System Flow Control}{26}{subsubsection.3.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.7}Inter-Processor Communication Protocol}{26}{subsubsection.3.4.7}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Raspberry Pi 3, ESP32, and Peripheral Wiring Assignment}}{27}{table.3.1}\protected@file@percent }
-\newlabel{tab:wiring}{{3.1}{27}{Raspberry Pi 3, ESP32, and Peripheral Wiring Assignment}{table.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces System control flow showing task distribution between Raspberry Pi 3 (image processing, classification, tracking) and ESP32 (motor control, timing, actuation)}}{28}{figure.3.4}\protected@file@percent }
-\newlabel{fig:control_flow}{{3.4}{28}{System control flow showing task distribution between Raspberry Pi 3 (image processing, classification, tracking) and ESP32 (motor control, timing, actuation)}{figure.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}}{29}{figure.3.5}\protected@file@percent }
-\newlabel{fig:processing_flow}{{3.5}{29}{Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}{figure.3.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces UART communication and data flow between Raspberry Pi 3 and ESP32 co-processor showing GPIO pin assignments and connection protocol}}{30}{figure.3.6}\protected@file@percent }
-\newlabel{fig:uart_communication}{{3.6}{30}{UART communication and data flow between Raspberry Pi 3 and ESP32 co-processor showing GPIO pin assignments and connection protocol}{figure.3.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Expected Outcomes}{31}{section.4}\protected@file@percent }
-\newlabel{sec:outcomes}{{4}{31}{Expected Outcomes}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}An Improved Coffee Berry Sorting Machine Model}{31}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Enhanced Real-Time Detection and Classification Performance}{31}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Optimized Ejection Timing and Synchronization}{31}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Improved System Stability and Reliability}{32}{subsection.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}A Scalable and Cost-Conscious Design Framework}{32}{subsection.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Contribution to Agricultural Automation Research}{32}{subsection.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{33}{section.5}\protected@file@percent }
-\newlabel{sec:conclusion}{{5}{33}{Conclusion}{section.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}System Overview}{23}{subsubsection.3.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.6}Electrical Wiring and Pin Assignment}{23}{subsubsection.3.3.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces System block diagram showing processor hierarchy, communication links, and actuator outputs with power distribution}}{24}{figure.3.3}\protected@file@percent }
+\newlabel{fig:system_block_diagram}{{3.3}{24}{System block diagram showing processor hierarchy, communication links, and actuator outputs with power distribution}{figure.3.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.7}Actuator Control Circuits}{24}{subsubsection.3.3.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}}{25}{figure.3.4}\protected@file@percent }
+\newlabel{fig:electrical_schematic}{{3.4}{25}{Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}{figure.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Physical breadboard circuit implementation showing Raspberry Pi 3, ESP32 co-processor, relay module, and all peripheral connections (LED, motor, pneumatic compressor, ejector valves)}}{26}{figure.3.5}\protected@file@percent }
+\newlabel{fig:circuit_implementation}{{3.5}{26}{Physical breadboard circuit implementation showing Raspberry Pi 3, ESP32 co-processor, relay module, and all peripheral connections (LED, motor, pneumatic compressor, ejector valves)}{figure.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Software Architecture and Control Logic}{26}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}System Startup}{26}{subsubsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Image Acquisition and Processing}{27}{subsubsection.3.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Object Detection and Classification}{27}{subsubsection.3.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}Object Tracking}{27}{subsubsection.3.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.5}Control and Ejection}{27}{subsubsection.3.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.6}System Flow Control}{28}{subsubsection.3.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.7}Inter-Processor Communication Protocol}{28}{subsubsection.3.4.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Raspberry Pi 3, ESP32, and Peripheral Wiring Assignment}}{29}{table.3.1}\protected@file@percent }
+\newlabel{tab:wiring}{{3.1}{29}{Raspberry Pi 3, ESP32, and Peripheral Wiring Assignment}{table.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces System control flow showing task distribution between Raspberry Pi 3 (image processing, classification, tracking) and ESP32 (motor control, timing, actuation)}}{30}{figure.3.6}\protected@file@percent }
+\newlabel{fig:control_flow}{{3.6}{30}{System control flow showing task distribution between Raspberry Pi 3 (image processing, classification, tracking) and ESP32 (motor control, timing, actuation)}{figure.3.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}}{31}{figure.3.7}\protected@file@percent }
+\newlabel{fig:processing_flow}{{3.7}{31}{Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}{figure.3.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces UART communication and data flow between Raspberry Pi 3 and ESP32 co-processor showing GPIO pin assignments and connection protocol}}{32}{figure.3.8}\protected@file@percent }
+\newlabel{fig:uart_communication}{{3.8}{32}{UART communication and data flow between Raspberry Pi 3 and ESP32 co-processor showing GPIO pin assignments and connection protocol}{figure.3.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Expected Outcomes}{33}{section.4}\protected@file@percent }
+\newlabel{sec:outcomes}{{4}{33}{Expected Outcomes}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}An Improved Coffee Berry Sorting Machine Model}{33}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Enhanced Real-Time Detection and Classification Performance}{33}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Optimized Ejection Timing and Synchronization}{33}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Improved System Stability and Reliability}{34}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}A Scalable and Cost-Conscious Design Framework}{34}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Contribution to Agricultural Automation Research}{34}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{35}{section.5}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{35}{Conclusion}{section.5}{}}
 \bibstyle{IEEEtran}
 \bibdata{Bib/proposal_references}
 \bibcite{brosnan2004}{1}
@@ -114,13 +119,13 @@
 \bibcite{zhang2018}{8}
 \bibcite{howard2017mobilenets}{9}
 \bibcite{redmon2018yolo}{10}
-\@writefile{toc}{\contentsline {section}{References}{34}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Project Budget}{35}{appendix.A}\protected@file@percent }
-\newlabel{appendix:budget}{{A}{35}{Project Budget}{appendix.A}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Budget Breakdown}}{35}{figure.A.1}\protected@file@percent }
-\newlabel{fig:budget}{{A.1}{35}{Budget Breakdown}{figure.A.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Project Timeline}{35}{appendix.B}\protected@file@percent }
-\newlabel{appendix:timeline}{{B}{35}{Project Timeline}{appendix.B}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces Implementation Schedule (16 Weeks)}}{36}{figure.B.1}\protected@file@percent }
-\newlabel{fig:timeline}{{B.1}{36}{Implementation Schedule (16 Weeks)}{figure.B.1}{}}
-\gdef \@abspage@last{45}
+\@writefile{toc}{\contentsline {section}{References}{36}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Project Budget}{37}{appendix.A}\protected@file@percent }
+\newlabel{appendix:budget}{{A}{37}{Project Budget}{appendix.A}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Budget Breakdown}}{37}{figure.A.1}\protected@file@percent }
+\newlabel{fig:budget}{{A.1}{37}{Budget Breakdown}{figure.A.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Project Timeline}{37}{appendix.B}\protected@file@percent }
+\newlabel{appendix:timeline}{{B}{37}{Project Timeline}{appendix.B}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces Implementation Schedule (16 Weeks)}}{38}{figure.B.1}\protected@file@percent }
+\newlabel{fig:timeline}{{B.1}{38}{Implementation Schedule (16 Weeks)}{figure.B.1}{}}
+\gdef \@abspage@last{48}

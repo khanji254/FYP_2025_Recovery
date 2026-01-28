@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  27 JAN 2026 19:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  28 JAN 2026 09:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,7 +401,7 @@ Package hyperref Info: Link coloring OFF on input line 63.
 
 
 (Files/title_page.tex
-<Figures/Jomo_logo.pdf, id=258, 249.93375pt x 185.69376pt>
+<Figures/Jomo_logo.pdf, id=262, 249.93375pt x 185.69376pt>
 File: Figures/Jomo_logo.pdf Graphic file (type pdf)
 <use Figures/Jomo_logo.pdf>
 Package pdftex.def Info: Figures/Jomo_logo.pdf  used on input line 6.
@@ -447,7 +447,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.II}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.55 ...Sorting Machine Model}{31}{subsection.4.1}
+l.55 ...rline {4}Expected Outcomes}{33}{section.4}
                                                   % [2])
 \tf@toc=\write4
 \openout4 = `Coffee_Berry_Sorting_Machine.toc'.
@@ -464,20 +464,26 @@ Overfull \hbox (29.69955pt too wide) in paragraph at lines 3--3
 fer-ences be-tween ripe (red/purple) 
  []
 
-)
+
+Overfull \hbox (2.82765pt too wide) in paragraph at lines 10--10
+ [][] [][]\OT1/cmr/m/n/12 Physical bread-board cir-cuit im-ple-men-ta-tion show
+-ing Rasp-berry Pi 3, ESP32 
+ []
+
+[4
+
+])
 \tf@lof=\write5
 \openout5 = `Coffee_Berry_Sorting_Machine.lof'.
 
- [4
-
-] (Coffee_Berry_Sorting_Machine.lot)
+ [5] (Coffee_Berry_Sorting_Machine.lot)
 \tf@lot=\write6
 \openout6 = `Coffee_Berry_Sorting_Machine.lot'.
 
- [5
+ [6
 
 ] (Files/Introduction.tex
-<Figures/harvested coffee berry variation.jpeg, id=407, 451.6875pt x 301.125pt>
+<Figures/harvested coffee berry variation.jpeg, id=423, 451.6875pt x 301.125pt>
 
 File: Figures/harvested coffee berry variation.jpeg Graphic file (type jpg)
 <use Figures/harvested coffee berry variation.jpeg>
@@ -498,7 +504,7 @@ l.19
 
 ] [2 <./Figures/harvested coffee berry variation.jpeg>] [3] [4])
 [5] (Files/Chapter2.tex
-<Figures/Ripe.jpeg, id=436, 517.935pt x 351.3125pt>
+<Figures/Ripe.jpeg, id=452, 517.935pt x 351.3125pt>
 File: Figures/Ripe.jpeg Graphic file (type jpg)
 <use Figures/Ripe.jpeg>
 Package pdftex.def Info: Figures/Ripe.jpeg  used on input line 10.
@@ -506,21 +512,21 @@ Package pdftex.def Info: Figures/Ripe.jpeg  used on input line 10.
  [6
 
  <./Figures/Ripe.jpeg>]
-<images/coffee_berry_comparison.png, id=441, 1093.08376pt x 456.95718pt>
+<images/coffee_berry_comparison.png, id=457, 1093.08376pt x 456.95718pt>
 File: images/coffee_berry_comparison.png Graphic file (type png)
 <use images/coffee_berry_comparison.png>
 Package pdftex.def Info: images/coffee_berry_comparison.png  used on input line
  27.
 (pdftex.def)             Requested size: 318.66946pt x 133.21841pt.
  [7 <./images/coffee_berry_comparison.png>] [8]
-<Figures/sorting_comparison.pdf, id=461, 596.12108pt x 338.2216pt>
+<Figures/sorting_comparison.pdf, id=477, 596.12108pt x 338.2216pt>
 File: Figures/sorting_comparison.pdf Graphic file (type pdf)
 <use Figures/sorting_comparison.pdf>
 Package pdftex.def Info: Figures/sorting_comparison.pdf  used on input line 60.
 
 (pdftex.def)             Requested size: 432.48048pt x 245.38242pt.
  [9 <./Figures/sorting_comparison.pdf>] [10]
-<Figures/classification_flowchart.pdf, id=509, 712.49384pt x 495.98802pt>
+<Figures/classification_flowchart.pdf, id=525, 712.49384pt x 495.98802pt>
 File: Figures/classification_flowchart.pdf Graphic file (type pdf)
 <use Figures/classification_flowchart.pdf>
 Package pdftex.def Info: Figures/classification_flowchart.pdf  used on input li
@@ -528,7 +534,7 @@ ne 87.
 (pdftex.def)             Requested size: 432.48048pt x 301.06888pt.
  [11 <./Figures/classification_flowchart.pdf>] [12] [13] [14] [15]) [16] (Files
 /Chapter3.tex
-<Figures/system_architecture.pdf, id=558, 547.9341pt x 350.0528pt>
+<Figures/system_architecture.pdf, id=574, 547.9341pt x 350.0528pt>
 File: Figures/system_architecture.pdf Graphic file (type pdf)
 <use Figures/system_architecture.pdf>
 Package pdftex.def Info: Figures/system_architecture.pdf  used on input line 18
@@ -547,85 +553,104 @@ tent berry flow, min-i-mal vibration-
 [17
 
 ] [18 <./Figures/system_architecture.pdf>] [19] [20]
-<Figures/coprocessing_architecture.pdf, id=600, 522.42982pt x 469.00117pt>
+<Figures/coprocessing_architecture.pdf, id=616, 522.42982pt x 469.00117pt>
 File: Figures/coprocessing_architecture.pdf Graphic file (type pdf)
 <use Figures/coprocessing_architecture.pdf>
 Package pdftex.def Info: Figures/coprocessing_architecture.pdf  used on input l
 ine 84.
 (pdftex.def)             Requested size: 432.48048pt x 388.26181pt.
  [21 <./Figures/coprocessing_architecture.pdf>] [22]
-<Figures/electrical_schematic.pdf, id=648, 656.39731pt x 354.54056pt>
-File: Figures/electrical_schematic.pdf Graphic file (type pdf)
-<use Figures/electrical_schematic.pdf>
-Package pdftex.def Info: Figures/electrical_schematic.pdf  used on input line 1
+<Figures/system_block_diagram.pdf, id=664, 582.42691pt x 452.95122pt>
+File: Figures/system_block_diagram.pdf Graphic file (type pdf)
+<use Figures/system_block_diagram.pdf>
+Package pdftex.def Info: Figures/system_block_diagram.pdf  used on input line 1
 19.
-(pdftex.def)             Requested size: 432.48048pt x 233.60257pt.
+(pdftex.def)             Requested size: 432.48048pt x 336.34668pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<Figures/electrical_schematic.pdf, id=666, 656.39731pt x 354.54056pt>
+File: Figures/electrical_schematic.pdf Graphic file (type pdf)
+<use Figures/electrical_schematic.pdf>
+Package pdftex.def Info: Figures/electrical_schematic.pdf  used on input line 1
+30.
+(pdftex.def)             Requested size: 432.48048pt x 233.60257pt.
 
-Overfull \hbox (39.8353pt too wide) in paragraph at lines 129--165
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Figures/circuit_implementation.png, id=669, 872.50969pt x 588.69937pt>
+File: Figures/circuit_implementation.png Graphic file (type png)
+<use Figures/circuit_implementation.png>
+Package pdftex.def Info: Figures/circuit_implementation.png  used on input line
+ 139.
+(pdftex.def)             Requested size: 432.48048pt x 291.79784pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (40.01776pt too wide) in paragraph at lines 149--185
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24 <./Figures/electrical_schematic.pdf>] [25]
-<Figures/control_flow.pdf, id=686, 536.64589pt x 1051.45618pt>
+[23] [24 <./Figures/system_block_diagram.pdf>] [25 <./Figures/electrical_schema
+tic.pdf>] [26 <./Figures/circuit_implementation.png>] [27]
+<Figures/control_flow.pdf, id=742, 536.64589pt x 1051.45618pt>
 File: Figures/control_flow.pdf Graphic file (type pdf)
 <use Figures/control_flow.pdf>
-Package pdftex.def Info: Figures/control_flow.pdf  used on input line 209.
+Package pdftex.def Info: Figures/control_flow.pdf  used on input line 229.
 (pdftex.def)             Requested size: 295.90587pt x 579.77873pt.
 
 
-LaTeX Warning: Float too large for page by 15.27873pt on input line 212.
+LaTeX Warning: Float too large for page by 15.27873pt on input line 232.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/processing_flow.pdf, id=687, 386.54312pt x 1238.31236pt>
+<Figures/processing_flow.pdf, id=743, 386.54312pt x 1238.31236pt>
 File: Figures/processing_flow.pdf Graphic file (type pdf)
 <use Figures/processing_flow.pdf>
-Package pdftex.def Info: Figures/processing_flow.pdf  used on input line 216.
+Package pdftex.def Info: Figures/processing_flow.pdf  used on input line 236.
 (pdftex.def)             Requested size: 250.38562pt x 802.13483pt.
 
-LaTeX Warning: Float too large for page by 258.71814pt on input line 219.
+LaTeX Warning: Float too large for page by 258.71814pt on input line 239.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/uart_communication.pdf, id=689, 477.81612pt x 721.31181pt>
+<Figures/uart_communication.pdf, id=745, 477.81612pt x 721.31181pt>
 File: Figures/uart_communication.pdf Graphic file (type pdf)
 <use Figures/uart_communication.pdf>
-Package pdftex.def Info: Figures/uart_communication.pdf  used on input line 227
+Package pdftex.def Info: Figures/uart_communication.pdf  used on input line 247
 .
 (pdftex.def)             Requested size: 364.19664pt x 549.78758pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [26] [27] [28 <./Figures/control_flow.pdf>] [29 <./Figures/processing_flow.pd
-f>] [30 <./Figures/uart_communication.pdf>] (Files/Chapter5.tex [31
+) [28] [29] [30 <./Figures/control_flow.pdf>] [31 <./Figures/processing_flow.pd
+f>] [32 <./Figures/uart_communication.pdf>] (Files/Chapter5.tex [33
 
-]) [32]
+]) [34]
 (Files/Summary.tex)
 Overfull \hbox (9.20248pt too wide) in paragraph at lines 6--93
 []\OT1/cmr/m/n/12 The project em-pha-sizes a bal-ance be-tween tech-no-log-i-ca
 l ad-vance-ment and cost-effectiveness,
  []
 
-[33
+[35
 
-] (Coffee_Berry_Sorting_Machine.bbl) [34
+] (Coffee_Berry_Sorting_Machine.bbl) [36
 
 ] (Files/Appendices.tex
-<Figures/Budget.jpeg, id=785, 702.625pt x 538.01pt>
+<Figures/Budget.jpeg, id=840, 702.625pt x 538.01pt>
 File: Figures/Budget.jpeg Graphic file (type jpg)
 <use Figures/Budget.jpeg>
 Package pdftex.def Info: Figures/Budget.jpeg  used on input line 8.
 (pdftex.def)             Requested size: 409.71689pt x 313.73714pt.
-<Figures/Time_Plan.jpeg, id=786, 894.34125pt x 514.92375pt>
+<Figures/Time_Plan.jpeg, id=841, 894.34125pt x 514.92375pt>
 File: Figures/Time_Plan.jpeg Graphic file (type jpg)
 <use Figures/Time_Plan.jpeg>
 Package pdftex.def Info: Figures/Time_Plan.jpeg  used on input line 18.
@@ -634,9 +659,9 @@ Package pdftex.def Info: Figures/Time_Plan.jpeg  used on input line 18.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [35
+) [37
 
- <./Figures/Budget.jpeg>] [36 <./Figures/Time_Plan.jpeg>]
+ <./Figures/Budget.jpeg>] [38 <./Figures/Time_Plan.jpeg>]
 (Coffee_Berry_Sorting_Machine.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -644,13 +669,13 @@ L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `Coffee_Berry_Sorting_Machine.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 741C4D1A02CEB279C28FB5F857CB2146;12725.
+(rerunfilecheck)             Checksum: E5F6F06E9F7E2F507CAA6BDD45092735;12871.
  ) 
 Here is how much of TeX's memory you used:
- 10674 strings out of 467870
- 168893 string characters out of 5418838
- 575035 words of memory out of 5000000
- 39248 multiletter control sequences out of 15000+600000
+ 10697 strings out of 467870
+ 169610 string characters out of 5418838
+ 576386 words of memory out of 5000000
+ 39265 multiletter control sequences out of 15000+600000
  637382 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,810b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -670,9 +695,9 @@ user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C
 .pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmti12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmti8.pfb>
-Output written on Coffee_Berry_Sorting_Machine.pdf (45 pages, 2930223 bytes).
+Output written on Coffee_Berry_Sorting_Machine.pdf (48 pages, 3125511 bytes).
 PDF statistics:
- 861 PDF objects out of 1000 (max. 8388607)
- 137 named destinations out of 1000 (max. 500000)
- 583 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 917 PDF objects out of 1000 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 601 words of extra memory for PDF output out of 10000 (max. 10000000)
 

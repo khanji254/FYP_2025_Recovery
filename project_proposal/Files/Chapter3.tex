@@ -110,6 +110,17 @@ The system will utilize: a regulated 5V DC supply for logic-level electronics (R
 
 Power isolation and protection mechanisms will be incorporated to prevent electrical noise from affecting sensitive processing units.
 
+\subsubsection{System Overview}
+
+Figure~\ref{fig:system_block_diagram} provides a high-level overview of the complete system architecture, showing the processor hierarchy, communication links, power distribution, and all actuator outputs.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/system_block_diagram.pdf}
+\caption{System block diagram showing processor hierarchy, communication links, and actuator outputs with power distribution}
+\label{fig:system_block_diagram}
+\end{figure}
+
 \subsubsection{Electrical Wiring and Pin Assignment}
 
 Figure~\ref{fig:electrical_schematic} illustrates the electrical system architecture and power distribution. All signal lines operate at 3.3V logic levels between the Raspberry Pi and ESP32. The 12V solenoid and motor supplies are isolated with a common ground return to all control electronics.
@@ -119,6 +130,15 @@ Figure~\ref{fig:electrical_schematic} illustrates the electrical system architec
 \includegraphics[width=0.95\textwidth]{Figures/electrical_schematic.pdf}
 \caption{Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}
 \label{fig:electrical_schematic}
+\end{figure}
+
+Figure~\ref{fig:circuit_implementation} shows the physical breadboard implementation of the control circuit, with the Raspberry Pi 3, ESP32 microcontroller, relay module, and all peripheral connections clearly wired according to the specifications in Table~\ref{tab:wiring}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{Figures/circuit_implementation.png}
+\caption{Physical breadboard circuit implementation showing Raspberry Pi 3, ESP32 co-processor, relay module, and all peripheral connections (LED, motor, pneumatic compressor, ejector valves)}
+\label{fig:circuit_implementation}
 \end{figure}
 
 \begin{table}[h]
@@ -157,7 +177,7 @@ LED Supply & Battery & +12V, GND & 12V rail with flyback diode protection \\
 \midrule
 \multicolumn{4}{l}{\textbf{Power Supply}} \\
 Logic Supply & 5V Buck & Raspberry Pi (5V) & 3A+ recommended \\
-Logic Supply & 5V Rail & ESP32 VIN & Via dev board regulator to 3.3V \\
+Logic Supply & 5V Buck & ESP32 (5V VIN) & 2A+ recommended, onboard 3.3V regulator \\
 Motor Supply & 12V Battery & Main fused supply & 10A main fuse recommended \\
 Common GND & All devices & Star ground point & All GND returns tied together \\
 \bottomrule
