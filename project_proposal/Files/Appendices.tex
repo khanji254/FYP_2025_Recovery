@@ -53,6 +53,35 @@ Implementation follows a 15-week schedule with critical milestones:
 
 Critical path: PCB fabrication (2-week lead time), component procurement (3-week buffer). Risk mitigation: backup components ordered Week 4, 2-week weather contingency for launch operations.
 
+\section{Antenna and RF Design Analysis}
+\label{appendix:antenna_design}
+
+\subsection{Null Space Signal Pattern}
+
+The XBee-PRO 900HP antenna radiation pattern exhibits directional characteristics with null spaces in certain directions. Understanding these null spaces is critical for ground station placement and receiver diversity architecture.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{images/donut_pattern.png}
+\caption{XBee-PRO 900HP antenna radiation pattern showing signal strength distribution and null space regions. The pattern demonstrates approximate omnidirectional coverage in the horizontal plane with defined null zones in vertical extremes}
+\label{fig:antenna_null_pattern}
+\end{figure}
+
+The null space analysis informs receiver antenna placement strategy, requiring minimum two-antenna diversity system at ground station to maintain continuous signal lock during all phases of the mission profile.
+
+\subsection{RSSI Signal Decay Characterization}
+
+Figure~\ref{fig:rssi_decay} presents empirical Received Signal Strength Indicator (RSSI) measurements at various distances from the airborne transmitter. This data validates the 5+km effective range specification for the XBee-PRO 900HP system and informs link budget calculations for launch site selection.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{images/Beacon_RSSI_Decay_Plot.PNG}
+\caption{RSSI signal decay plot showing measured signal strength attenuation with distance. Data confirms 5+km operational range with sufficient link margin (minimum -100 dBm receiver sensitivity) throughout nominal flight profile}
+\label{fig:rssi_decay}
+\end{figure}
+
+The empirical RSSI decay curve provides quantitative validation for the telemetry system design and supports risk mitigation planning for boundary conditions (high-altitude drift, magnetic anomaly zones, etc.).
+
 \section{Previous N4 Design References}
 \label{appendix:previous_designs}
 

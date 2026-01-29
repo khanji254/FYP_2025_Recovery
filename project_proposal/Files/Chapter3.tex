@@ -24,6 +24,15 @@ Sealed explosion cap houses Crimson Powder pyrotechnic charge, containing combus
 \paragraph{Avionics Bay Structure}
 Custom 3D-printed PETG holder secures flight computer, LiPo batteries, and BMS with vibration isolation \cite{avionics_vibration}. Design maintains center of gravity stability under high-G loads (see current design in Appendix~\ref{fig:current_fc_holder}).
 
+Figure~\ref{fig:cad_holder} shows the CAD rendering of the avionics bay assembly with precise mounting features and component spacing requirements.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{images/Current_CAD.PNG}
+\caption{CAD rendering of the avionics bay assembly showing component layout, mounting features, and dimensional constraints}
+\label{fig:cad_holder}
+\end{figure}
+
 
 
 \subsubsection{Electrical System Architecture}
@@ -50,6 +59,39 @@ MOSFET-based PWM driver controls nichrome wire heating, preventing burnout while
 
 \paragraph{Power Management}
 BMS monitors LiPo battery health \cite{lipo_aerospace, bms_systems}. Real-time feedback transmits battery voltage and igniter continuity. Launch inhibit activates below 14.0V threshold.
+
+The battery management system employs an ADS1115 16-bit analog-to-digital converter for precise voltage and chute state monitoring. Battery voltage is acquired through a 47k$\Omega$ / 10k$\Omega$ voltage divider network providing a measurement range of 12V to 16.8V. The voltage measurement formula is calibrated as: $V_{battery} = V_{ADC} \times \frac{57.0}{10.0}$.
+
+Chute detection utilizes dual analog inputs (channels 1 and 2) to monitor sensor states. Signals exceeding 1000 counts indicate deployment readiness. The ADS1115 is configured with ±4.096V full-scale range gain for optimal resolution across all measured channels.
+
+\subsubsection{Electrical Design Concepts and Simulations}
+
+Figure~\ref{fig:base_station_design} presents the conceptual design of the ground base station RF receiver architecture, integrating XBee-PRO telemetry with local data logging.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{images/Base_Station_Design.jpeg}
+\caption{Base station receiver circuit concept showing XBee-PRO 900HP integration, RF filtering, and ground control processing elements}
+\label{fig:base_station_design}
+\end{figure}
+
+Figure~\ref{fig:rocket_xbee_extension} shows the XBee extension circuit design for the rocket avionics bay, demonstrating signal routing and antenna connection topology.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{images/Rocket_Extension_Design.jpeg}
+\caption{Rocket XBee extension circuit pinout and Fritzing layout illustrating power conditioning, antenna interface, and signal routing}
+\label{fig:rocket_xbee_extension}
+\end{figure}
+
+Figure~\ref{fig:bms_proteus_design} illustrates the detailed Proteus schematic and simulation of the battery management system, showing the ADS1115 ADC configuration, voltage divider network, chute detection circuits, and power distribution.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{images/Battery _Monitoring_Proteus_Design.PNG}
+\caption{Battery Management System Proteus design showing ADS1115 ADC with voltage divider (47k$\Omega$/10k$\Omega$), dual chute detection inputs, and power distribution topology}
+\label{fig:bms_proteus_design}
+\end{figure}
 
 
 
