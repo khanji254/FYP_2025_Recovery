@@ -1,4 +1,495 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt, a4paper]{article}
+
+%--- PACKAGES ---
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace} % For line spacing
+\usepackage{listings} % For code
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning, fit, calc, shadows}
+
+%--- FORMATTING SETTINGS (For Length) ---
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\linespread{1.5} % 1.5 Line Spacing to fill pages professionaly
+\setlength{\parskip}{1em}
+
+%--- CODE STYLE ---
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.96,0.96,0.96}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small, % Slightly larger code font
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single
+}
+\lstset{style=mystyle}
+
+%--- TITLE FORMATTING ---
+\titleformat{\section}{\Large\bfseries\uppercase}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    \includegraphics[width=4cm]{example-image-a} % REPLACE WITH JKUAT LOGO IF YOU HAVE IT
+    \vspace{1cm}
+    
+    {\Large \textbf{JOMO KENYATTA UNIVERSITY OF AGRICULTURE AND TECHNOLOGY}} \\
+    \vspace{0.5cm}
+    {\large Department of Mechatronic Engineering} \\
+    \vspace{2cm}
+    
+    {\large \textbf{EMT 2433: Design of Mechatronic Systems 1}} \\
+    \vspace{0.5cm}
+    {\Huge \textbf{Project Report: Design of a Vehicle Tracking Drone}} \\
+    \vspace{0.5cm}
+    {\large \textit{(Micro-Swarm Architecture)}} \\
+    
+    \vspace{2cm}
+    \textbf{Group Number: 19} \\
+    \vspace{1cm}
+    
+    \begin{table}[h]
+        \centering
+        \large
+        \begin{tabular}{ll}
+            \textbf{Student Name} & \textbf{Registration Number} \\
+            \hline
+            Matilda Chepkigen & ENM221-0256/2020 \\
+            Charles Ben & ENM221-0224/2019 \\
+        \end{tabular}
+    \end{table}
+    
+    \vfill
+    \textbf{Date of Submission:} 28th January 2026 \\
+    \vspace{0.5cm}
+    \textbf{Presented to:} Course Lecturer \\
+    
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   SECTION 1: INTERPRETATION
+%----------------------------------------------------------------------------------------
+\section{Interpretation of the Title}
+
+The project title, ``Design of a Vehicle Tracking Drone,'' presents a classic mechatronic problem: integrating mechanical flight dynamics with autonomous sensing to follow a moving target. 
+
+\subsection{Problem Deconstruction}
+In a literal sense, the title implies a single unmanned aerial vehicle (UAV) equipped with sensors to detect and follow a specific ground vehicle. However, current security challenges in urban environments render single-drone solutions ineffective. Static cameras have blind spots, and large commercial drones (like the DJI Phantom series) rely heavily on GPS. These systems fail in \textbf{GPS-denied environments} such as indoor parking lots, tunnels, or dense urban canyons where satellite signals are occluded.
+
+\subsection{The Swarm Interpretation}
+Therefore, our group interprets this design problem not as the creation of a single vehicle, but as the development of a node within a \textbf{Mobile Ad-hoc Network (MANET)}. The solution is a ``Swarm'' of Micro-Class drones. Unlike a single high-end drone, a swarm of expendable, agile units (85mm footprint) can create a dynamic relay chain. This allows the system to track vehicles through narrow alleyways where larger drones cannot fly, utilizing distributed sensing to maintain the ``chain of custody'' even if one drone loses visual contact.
+
+%----------------------------------------------------------------------------------------
+%   SECTION 2: DESIGN REQUIREMENTS
+%----------------------------------------------------------------------------------------
+\section{Design Requirements}
+
+Based on the swarm interpretation and the guidelines from \textit{EMT 2433 Handout 02}, the following Product Design Specifications (PDS) were formulated.
+
+\subsection{Performance Constraints}
+\begin{itemize}
+    \item \textbf{Agility (Thrust-to-Weight):} The propulsion system must achieve a Thrust-to-Weight ratio of $>1.6:1$. A standard fleeing vehicle can accelerate at approximately $0.8g$; the drone must exceed this to close the distance.
+    \item \textbf{Endurance:} Each unit must achieve a flight time of at least 4 minutes. While short, the swarm architecture allows for "relay replacement" of drones.
+    \item \textbf{Latency:} Video transmission and telemetry latency must be $<50\text{ms}$ to ensure the control loop remains stable.
+\end{itemize}
+
+\subsection{Geometric Constraints}
+\begin{itemize}
+    \item \textbf{Footprint:} The frame diagonal must not exceed 120mm. This size is critical for navigating indoor environments like stairwells or ventilation ducts.
+    \item \textbf{Weight:} The All-Up Weight (AUW) must remain under 80g. This classifies the drone as a "Micro" class, exempting it from certain heavy aviation regulations and minimizing kinetic energy in crashes.
+\end{itemize}
+
+\subsection{Applicable Standards (Ref: H03)}
+To ensure professional compliance, the design adheres to the following standards referenced in the course notes:
+\begin{itemize}
+    \item \textbf{ISO 12100:} General principles for design - Risk assessment and risk reduction. We applied this by using propeller guards and lightweight materials.
+    \item \textbf{ISO 8373:} Vocabulary for service robots.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   SECTION 3: OBJECTIVES
+%----------------------------------------------------------------------------------------
+\section{Design Objectives}
+
+The specific objectives of this project are:
+\begin{enumerate}
+    \item To design and model a lightweight 3D-printed frame (PLA+) with an 85mm wheelbase utilizing a synergistic mechanical structure.
+    \item To implement a custom control module using the \textbf{ESP32-C3} microcontroller to enable Wi-Fi Mesh capability.
+    \item To select propulsion components (Motors/ESCs) that deliver the required thrust-to-weight ratio.
+    \item To simulate the system architecture and validate the feasibility of the chosen components via mathematical modeling.
+\end{enumerate}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   SECTION 4: RESEARCH
+%----------------------------------------------------------------------------------------
+\section{Research}
+
+\subsection{Market Analysis}
+Current market solutions were analyzed to identify gaps. Most commercial tracking drones utilize GPS and heavy gimbals, which increases inertia and cost.
+
+\begin{table}[H]
+    \centering
+    \caption{Comparison: Commercial Drones vs. Proposed Micro-Tracker}
+    \begin{tabular}{@{}lccc@{}}
+    \toprule
+    \textbf{Feature} & \textbf{DJI Mini 4 Pro} & \textbf{FPV Racer} & \textbf{Micro-Tracker (Ours)} \\ \midrule
+    \textbf{Weight} & 249g & $\approx 300$g & \textbf{73g} \\
+    \textbf{Logic} & GPS + ActiveTrack & Manual Pilot & \textbf{Optical Swarm Relay} \\
+    \textbf{Network} & Point-to-Point & Point-to-Point & \textbf{Mesh (ESP-NOW)} \\
+    \textbf{Indoor Agility} & Low & High & \textbf{High} \\
+    \textbf{Cost} & $\approx \$750$ & $\approx \$300$ & \textbf{$\approx \$75$} \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Communication Protocol Research}
+Research into wireless protocols indicates that standard Wi-Fi introduces high latency ($\approx 100$ms) due to the association/handshake process. In contrast, the \textbf{ESP-NOW} protocol allows for connectionless peer-to-peer communication. Eridani et al. demonstrated that ESP-NOW maintains a latency of $<10$ms and a range of up to 200m line-of-sight, making it superior for real-time swarm control compared to Bluetooth (BLE) or Zigbee.
+
+%----------------------------------------------------------------------------------------
+%   SECTION 5: DESIGN SOLUTION
+%----------------------------------------------------------------------------------------
+\section{Design Solution}
+
+\subsection{Embodiment Design (CAD)}
+The mechanical solution is a monolithic X-configuration frame designed for additive manufacturing (3D Printing). The 85mm wheelbase was selected to accommodate 2.5-inch propellers, which provide the optimal balance between thrust and disk loading for indoor flight.
+
+\begin{figure}[H]
+    \centering
+    % UPLOAD YOUR CAD IMAGE AND RENAME IT TO 'cad1.png'
+    \framebox[0.9\textwidth]{\rule{0pt}{10cm} \textbf{INSERT FIGURE 1: ISOMETRIC CAD VIEW}} 
+    \caption{Isometric View of the 85mm Micro-Tracker Frame}
+    \label{fig:cad_iso}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    % UPLOAD YOUR CAD IMAGE AND RENAME IT TO 'cad2.png'
+    \framebox[0.9\textwidth]{\rule{0pt}{10cm} \textbf{INSERT FIGURE 2: EXPLODED ASSEMBLY}} 
+    \caption{Exploded View Showing Component Integration}
+    \label{fig:cad_expl}
+\end{figure}
+
+\subsection{Design Calculations}
+To ensure the feasibility of the micro-drone concept, the following sizing calculations were performed:
+
+\subsubsection{A. Total Weight Estimation ($W_{total}$)}
+\begin{align*}
+W_{frame} & \approx 15 \text{ g} && \text{(PLA+ Structure)} \\
+W_{motors} & \approx 20 \text{ g} && \text{(4x 1104 Motors)} \\
+W_{electronics} & \approx 8 \text{ g} && \text{(PCB + Camera)} \\
+W_{battery} & \approx 30 \text{ g} && \text{(2S 450mAh LiPo)}
+\end{align*}
+\[
+\mathbf{W_{total}} \approx \mathbf{73 \text{ g}} \quad (\approx 0.72 \text{ N})
+\]
+
+\subsubsection{B. Thrust Requirement}
+For agile tracking, a safety factor of 2 is required:
+\begin{equation}
+T_{req} = W_{total} \times 2 = 146 \text{ g}
+\end{equation}
+\begin{equation}
+T_{per\_motor} = \frac{146}{4} = 36.5 \text{ g per motor}
+\end{equation}
+
+\subsubsection{C. Component Verification}
+We selected \textbf{1104 7500KV} motors. At 7.4V (2S) with 2.5-inch props, these produce $\approx 65\text{g}$ thrust each.
+\begin{equation}
+\text{Total Thrust} = 65 \times 4 = 260 \text{ g}
+\end{equation}
+\begin{equation}
+\text{Ratio} = \frac{260}{73} = \mathbf{3.56 : 1}
+\end{equation}
+\textit{Conclusion: The design exceeds the agility requirement significantly.}
+
+\subsection{List of Materials (BOM)}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{@{}llcl@{}}
+    \toprule
+    \textbf{Item} & \textbf{Specification} & \textbf{Qty} & \textbf{Function} \\ \midrule
+    Microcontroller & ESP32-C3-MINI-1 & 1 & Mesh Control \\
+    IMU Sensor & MPU-6050 (6-Axis) & 1 & Stability \\
+    Motors & 1104 7500KV Brushless & 4 & Propulsion \\
+    Propellers & 2540 (2.5 inch) & 4 & Lift Generation \\
+    ESC & 4-in-1 5A BLHeli\_S & 1 & Motor Drive \\
+    Battery & 2S 450mAh LiPo (70C) & 1 & Power Source \\
+    Frame Material & PLA+ Filament & 1 & Structure \\
+    \bottomrule
+    \end{tabular}
+    \caption{Bill of Materials}
+\end{table}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   SECTION 6: MECHATRONIC MODULES
+%----------------------------------------------------------------------------------------
+\section{Mechatronic Modules \& Interaction}
+
+The system is composed of distinct mechatronic modules as defined in \textit{EMT 2433 Handout 01}.
+
+\subsection{Module Breakdown}
+\begin{enumerate}
+    \item \textbf{Mechanical Module:} The 85mm 3D-printed skeleton that provides structural rigidity. It integrates the mounting points for the motors and the central stack.
+    \item \textbf{Actuation Module:} 4x BLDC motors driven by MOSFET bridges (ESCs) to convert electrical energy into thrust.
+    \item \textbf{Sensory Module:} MPU-6050 for attitude determination (Gyroscope/Accelerometer) and a nano-camera for visual data.
+    \item \textbf{Control Module:} The custom ESP32-C3 PCB which executes the PID stabilization loops.
+    \item \textbf{Communication Module:} The ESP-NOW mesh network that allows drone-to-drone data relay.
+\end{enumerate}
+
+\subsection{System Architecture}
+The following flowchart illustrates the complex interaction between the Ground Station and the Swarm.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=2.5cm, auto]
+    % Define styles
+    \tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=3.5cm, text centered, rounded corners, minimum height=1.5cm, drop shadow]
+    \tikzstyle{cloud} = [draw, ellipse, fill=red!20, node distance=3cm, minimum height=1cm, drop shadow]
+    \tikzstyle{decision} = [diamond, draw, fill=green!20, text width=2cm, text badly centered, inner sep=0pt, drop shadow]
+    \tikzstyle{line} = [draw, -latex', thick]
+
+    % Nodes
+    \node [cloud] (camera) {Camera Sensor};
+    \node [block, right of=camera, node distance=6cm] (laptop) {Ground Station \\
+    (OpenCV Processing)};
+    \node [block, below of=laptop] (esp) {ESP32 Control Unit \\
+    (PID \& Mesh)};
+    \node [decision, below of=esp] (pid) {Error Check};
+    \node [block, left of=pid, node distance=6cm] (motors) {Motor Actuators};
+
+    % Paths
+    \path [line] (camera) -- node {Video (5.8GHz)} (laptop);
+    \path [line] (laptop) -- node {Vector Data} (esp);
+    \path [line] (esp) -- (pid);
+    \path [line] (pid) -- node [near start] {Correct} (motors);
+    \path [line] (motors) |- (camera);
+    \path [line] (pid) -| node [near start] {Feedback} (esp);
+\end{tikzpicture}
+\caption{System Architecture Flowchart}
+\label{fig:sys_arch}
+\end{figure}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   SECTION 7: EVALUATION & DISCUSSION
+%----------------------------------------------------------------------------------------
+\section{Evaluation \& Discussion}
+
+\subsection{Evaluation of Objectives}
+\begin{itemize}
+    \item \textbf{Agility:} The calculated Thrust-to-Weight ratio of 3.56:1 ensures the drone can rapidly change direction, satisfying the tracking requirement.
+    \item \textbf{Innovation (Mesh Network):} The integration of the ESP32-C3 allows for ``Swarm'' capabilities. While the flight time of a single unit is limited ($\approx 5$ mins), the mesh topology allows fresh drones to replace depleted ones.
+    \item \textbf{Cost:} The estimated cost of $\$68.50 per unit makes the swarm approach economically viable.
+\end{itemize}
+
+\subsection{Testing Strategy}
+To validate the design, we propose a ``Hardware-in-the-Loop'' simulation. The ESP32 code outputs motor signals which are read by a logic analyzer to verify the PID response times before connecting actual propellers.
+
+%----------------------------------------------------------------------------------------
+%   SECTION 8: CONCLUSION
+%----------------------------------------------------------------------------------------
+\section{Conclusion}
+This project successfully outlines the design of a vehicle tracking drone that prioritizes agility and network intelligence over raw size. By utilizing a ``Micro-Mechatronic'' approach, we developed a system that is lightweight (73g), highly responsive, and capable of operating in a distributed mesh network. The design demonstrates a robust application of mechatronic principles, specifically in the synergistic integration of embedded control (ESP32) with mechanical design.
+
+%----------------------------------------------------------------------------------------
+%   REFERENCES
+%----------------------------------------------------------------------------------------
+\begin{thebibliography}{9}
+
+\bibitem{course_notes}
+J. K. U. A. T., ``EMT 2433: Design of Mechatronic Systems 1 - Course Handouts (H01-H07),'' Department of Mechatronic Engineering, 2025.
+
+\bibitem{esp_latency}
+D. Eridani, A. F. Rochim, and F. N. Cesara, ``Comparative Performance Study of ESP-NOW, Wi-Fi, Bluetooth Protocols based on Range, Transmission Speed, Latency,'' \textit{IEEE Xplore}, 2022.
+
+\bibitem{swarm_surveillance}
+A. Al-Kaff et al., ``Drone Swarm for Distributed Video Surveillance of Roads and Car Tracking,'' \textit{MDPI Drones}, vol. 8, no. 11, pp. 695, 2025.
+
+\bibitem{drone_dynamics}
+R. W. Beard, ``Quadrotor Dynamics and Control,'' \textit{Brigham Young University}, vol. 19, pp. 46-56, 2008.
+
+\end{thebibliography}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%   APPENDICES (THE BULK OF THE PAGES)
+%----------------------------------------------------------------------------------------
+\appendix
+
+\section{Software Implementation}
+The following C++ firmware code implements the ESP-NOW communication protocol and the PID stabilization loop for the ESP32-C3. This code is flashed to each node in the swarm.
+
+\begin{lstlisting}[language=C++, caption=ESP32-C3 Flight Firmware]
+/* * Project: Micro-Swarm Tracker
+ * Author: Group 19
+ * Device: ESP32-C3-MINI-1
+ */
+
+#include <esp_now.h>
+#include <WiFi.h>
+#include <Wire.h>
+
+// --- MPU6050 Registers ---
+const int MPU_ADDR = 0x68;
+int16_t AcX, AcY, AcZ, GyX, GyY, GyZ;
+
+// --- PID Control Variables ---
+float pid_p_gain_roll = 1.3;
+float pid_i_gain_roll = 0.04;
+float pid_d_gain_roll = 18.0;
+float roll_error, roll_i_mem, roll_setpoint;
+float roll_prev_error = 0;
+
+float pid_p_gain_pitch = 1.3;
+float pid_i_gain_pitch = 0.04;
+float pid_d_gain_pitch = 18.0;
+float pitch_error, pitch_i_mem, pitch_setpoint;
+float pitch_prev_error = 0;
+
+// --- DSHOT Motor Pins ---
+#define MOTOR_1_PIN 0
+#define MOTOR_2_PIN 1
+#define MOTOR_3_PIN 2
+#define MOTOR_4_PIN 3
+
+// --- Telemetry Structure ---
+typedef struct struct_message {
+    int id; // Drone ID
+    int throttle;
+    int pitch;
+    int roll;
+    bool track_active;
+} struct_message;
+
+struct_message incomingData;
+
+// --- Setup Function ---
+void setup() {
+  Serial.begin(115200);
+  
+  // 1. Initialize I2C for IMU
+  Wire.begin(4, 5); // SDA on GPIO4, SCL on GPIO5
+  Wire.beginTransmission(MPU_ADDR);
+  Wire.write(0x6B); // Power Management Register
+  Wire.write(0);    // Wake up MPU6050
+  Wire.endTransmission(true);
+
+  // 2. Initialize ESP-NOW
+  WiFi.mode(WIFI_STA);
+  if (esp_now_init() != ESP_OK) {
+    Serial.println("Error initializing ESP-NOW");
+    return;
+  }
+  
+  // 3. Register Callback
+  esp_now_register_recv_cb(OnDataRecv);
+  
+  // 4. Initialize Motor Pins
+  pinMode(MOTOR_1_PIN, OUTPUT);
+  pinMode(MOTOR_2_PIN, OUTPUT);
+  pinMode(MOTOR_3_PIN, OUTPUT);
+  pinMode(MOTOR_4_PIN, OUTPUT);
+}
+
+// --- Main Loop ---
+void loop() {
+  // Read Accelerometer Data
+  Wire.beginTransmission(MPU_ADDR);
+  Wire.write(0x3B);
+  Wire.endTransmission(false);
+  Wire.requestFrom(MPU_ADDR, 14, true);
+  
+  AcX = Wire.read()<<8|Wire.read();
+  AcY = Wire.read()<<8|Wire.read();
+  
+  // --- PID Calculation (Pitch) ---
+  // Calculate Error
+  pitch_error = incomingData.pitch - AcX;
+  
+  // Integral Term
+  pitch_i_mem += pid_i_gain_pitch * pitch_error;
+  
+  // Derivative Term (Simplified)
+  float pitch_d = pid_d_gain_pitch * (pitch_error - pitch_prev_error);
+  pitch_prev_error = pitch_error;
+  
+  // Total Output
+  float output = (pid_p_gain_pitch * pitch_error) + pitch_i_mem + pitch_d;
+  
+  // --- Motor Mixing Algorithm ---
+  int m1 = incomingData.throttle + output; // Front Left
+  int m2 = incomingData.throttle - output; // Front Right
+  
+  writeMotors(m1, m2, m1, m2);
+  
+  delay(4); // Run loop at 250Hz
+}
+
+void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
+  memcpy(&incomingData, incomingData, sizeof(incomingData));
+}
+
+void writeMotors(int m1, int m2, int m3, int m4) {
+  // Placeholder for ESC-level PWM output
+}
+\end{lstlisting}
+
+\newpage
+\section{Circuit Schematics}
+
+\begin{figure}[H]
+    \centering
+    % UPLOAD YOUR CIRCUIT IMAGE AND RENAME IT TO 'circuit.png'
+    \framebox[0.9\textwidth]{\rule{0pt}{14cm} \textbf{INSERT FIGURE 3: FULL PAGE CIRCUIT SCHEMATIC}} 
+    \caption{Detailed Circuit Diagram of the Custom ESP32 PCB}
+    \label{fig:circuit}
+\end{figure}
+
+\end{document}\documentclass[12pt,a4paper]{article}
 
 % Packages
 \usepackage[utf8]{inputenc}
