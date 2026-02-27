@@ -1,0 +1,141 @@
+\section{Literature Review}
+\label{sec:literature}
+
+\subsection{Telemetry Systems Analysis}
+
+Comprehensive analysis of telemetry technologies reveals distinct performance characteristics across different platforms. The selection of appropriate telemetry systems is crucial for mission success in high-power rocketry applications.
+
+\subsubsection{Telemetry System Comparison}
+
+The comparison of various telemetry systems is presented in Table~\ref{tab:telemetry}, highlighting key performance parameters relevant to the N4 mission requirements.
+
+\begin{table}[H]
+\centering
+\caption{Telemetry System Comparison}
+\label{tab:telemetry}
+\small
+\begin{tabular}{@{}p{2.5cm}p{2cm}p{1.5cm}p{1.8cm}p{2.2cm}p{2.5cm}@{}}
+\toprule
+\textbf{Technology} & \textbf{Typical Use} & \textbf{Range} & \textbf{Data Cap} & \textbf{Strength} & \textbf{Limitation} \\ \midrule
+433 MHz RF & DIY recovery & 5--10 km & Very low & Simple, long range & No ACKs \\
+Beacon & N4 Recovery & 4 km/0.8 km & Low--Med & Simple & Range drops \\
+LoRa SX1278 & Student rockets & 2--15 km & Low & Low power & Low bandwidth \\
+XBee 2.4 GHz & UAVs & $<$2 km & Medium & Easy integration & Short range \\
+\textbf{XBee-PRO 900HP} & \textbf{Advanced rockets} & \textbf{5--15 km} & \textbf{Med--High} & \textbf{Reliable protocol} & \textbf{Higher power} \\
+ESP-NOW & Command control & $<$1 km & Medium & Low latency & Not long-range \\
+Cellular LTE & High-budget & Global & High & Unlimited range & Network dependent \\ \bottomrule
+\end{tabular}
+\end{table}
+
+The XBee-PRO 900HP system emerges as the optimal solution for the N4 mission, providing the necessary balance between range, data capacity, and protocol reliability required for critical telemetry operations. Operating in the 900 MHz ISM band, the system offers superior propagation characteristics compared to 2.4 GHz alternatives, with significantly improved non-line-of-sight performance crucial for tracking rockets during descent phases.
+
+\subsubsection{XBee-PRO 900HP Technical Specifications}
+
+The Digi XBee-PRO 900HP module provides several critical advantages for rocket telemetry applications:
+
+\begin{itemize}
+    \item \textbf{Operating Frequency:} 900 MHz ISM band (902--928 MHz)
+    \item \textbf{RF Data Rate:} Up to 200 kbps
+    \item \textbf{Outdoor Line-of-Sight Range:} Up to 15 km
+    \item \textbf{Transmit Power:} Up to 250 mW (+24 dBm)
+    \item \textbf{Receiver Sensitivity:} -110 dBm at 10 kbps
+    \item \textbf{Operating Voltage:} 2.1--3.6 V
+    \item \textbf{Network Topology:} Point-to-point, point-to-multipoint, peer-to-peer
+\end{itemize}
+
+The system implements DigiMesh networking protocol, enabling reliable packet delivery with automatic route discovery and self-healing mesh capabilities. This architecture provides redundancy critical for mission-critical telemetry applications.
+
+\subsection{Deployment Mechanism Literature}
+
+\subsubsection{Igniter Technologies}
+
+Two primary igniter technologies dominate current rocket deployment systems:
+
+\textbf{Commercial E-Match Igniters:} E-match devices utilize pyrotechnic compositions triggered by electrical current, providing rapid and reliable ignition. These devices operate on low voltage (typically 5--12V) and draw current in the range of 1--3 amperes. While highly reliable, e-matches present significant cost constraints (\$5--15 per unit) and operate as single-use devices, complicating pre-flight testing protocols.
+
+\textbf{Nichrome Wire-Based DIY Ignition Systems:} Nichrome wire igniters leverage the material's high electrical resistivity and temperature coefficient to generate localized heating when electrical current flows through the wire. The wire directly ignites pyrotechnic charges through resistive heating. This approach offers reusability advantages and substantial cost reduction (\$0.50--2 per deployment), making them the preferred choice for student rocketry applications \cite{nakuja\_website}.
+
+\subsubsection{Thermal Management in Nichrome Wire Systems}
+
+Nichrome wire (typically NiCr 80/20 alloy) exhibits electrical resistivity of approximately 1.10 $\mu\Omega\cdot$m at room temperature. When current flows through the wire, power dissipation follows the relationship:
+
+\begin{equation}
+P = I^2 R = \frac{V^2}{R}
+\end{equation}
+
+Where $P$ is power dissipated (Watts), $I$ is current (Amperes), $V$ is applied voltage (Volts), and $R$ is wire resistance (Ohms).
+
+Temperature rise in the wire is governed by thermal capacity and heat transfer characteristics. Uncontrolled DC dump methods result in instantaneous temperature escalation, often exceeding the melting point of nichrome ($\sim$1400°C), causing catastrophic wire failure.
+
+\subsubsection{Previous Nakuja N4 Implementation Analysis}
+
+Previous Nakuja N4 implementations utilized a direct DC drive method, applying 14.8V directly to nichrome wire. This approach resulted in instantaneous temperature escalation exceeding 1000 degrees Celsius, causing wire failure and "popped" wire phenomena documented in previous mission reports. Critical gaps identified include:
+
+\begin{itemize}
+    \item Absence of deployment system reusability, complicating testing protocols and introducing deployment risk
+    \item Lack of battery monitoring systems preventing detection of power degradation
+    \item No continuity feedback to ground control systems
+    \item Unpredictable deployment force characteristics
+\end{itemize}
+
+\subsection{PWM Control for Resistive Heating}
+
+Pulse Width Modulation (PWM) provides precise control of average power delivery to resistive loads through high-frequency switching. The average power delivered to the load is:
+
+\begin{equation}
+P_{avg} = D \cdot P_{max} = D \cdot \frac{V_{supply}^2}{R}
+\end{equation}
+
+Where $D$ is the duty cycle (0 to 1) and $P_{max}$ is maximum power at 100\% duty cycle.
+
+By controlling the duty cycle, the heating rate of nichrome wire can be precisely regulated, enabling controlled temperature ramp profiles that prevent wire burnout while ensuring reliable ignition of pyrotechnic charges. Literature indicates optimal heating rates of 50--100°C/second for black powder ignition \cite{rocketry\_handbook}.
+
+\subsection{Structural and Power System Challenges}
+
+\subsubsection{High-G Environment Considerations}
+
+Rocket launch environments subject avionics systems to sustained accelerations exceeding 15G during powered ascent, followed by impulsive shock loads of 50--100G during parachute deployment events \cite{nakuja\_website}. These loading conditions present significant challenges for component mounting and structural integrity.
+
+\textbf{Common Failure Modes:}
+\begin{itemize}
+    \item Solder joint fatigue on PCB assemblies
+    \item Battery connection failures due to insufficient mechanical constraint
+    \item Sensor noise degradation from vibration coupling
+    \item Connector disengagement under shock loading
+\end{itemize}
+
+\subsubsection{Crimson Powder Deployment Issues}
+
+Empirical testing of the existing system revealed significant structural vulnerabilities. Standard spring-loaded battery holders demonstrate mechanical resonance failure under high shock loads, resulting in momentary power loss and microcontroller reset events. Flight computer mounting systems employing rigid attachment methods transmit high-frequency vibrations directly to PCB assemblies, causing solder fatigue and sensor noise degradation.
+
+\subsubsection{Vibration Isolation Strategies}
+
+Literature on avionic mounting systems identifies three primary vibration isolation approaches:
+
+\begin{enumerate}
+    \item \textbf{Elastomeric Mounts:} Rubber or silicone dampers providing frequency-dependent isolation (effective above resonant frequency)
+    \item \textbf{Compliant Structures:} 3D-printed flexible geometry enabling mechanical decoupling
+    \item \textbf{Mass Damping:} Strategic mass placement to reduce structural transmissibility
+\end{enumerate}
+
+For the N4 application, elastomeric isolation is contraindicated due to temperature sensitivity and outgassing concerns. Compliant 3D-printed structures offer the optimal solution for the mission requirements.
+
+\subsection{Identified Research Gaps}
+
+Comprehensive literature review reveals three critical gaps relevant to the N4 mission:
+
+\begin{enumerate}
+    \item \textbf{Quantifiable Charge Energy:} Absence of empirical data correlating charge mass (grams) to ejection force (Newtons) for the N4 airframe volume, preventing optimization of deployment energy and risking over-pressurization or incomplete deployment.
+    
+    \item \textbf{Ruggedized Avionics Structure:} Lack of shock-isolated Flight Computer holder designs specifically engineered to withstand high-impact forces generated during pyrotechnic deployment events while maintaining center of gravity constraints.
+    
+    \item \textbf{Pressurization Predictability:} Pop test observations indicate unpredictable pressurization characteristics within the explosion chamber, leading to inconsistent deployment performance and difficulty in establishing reliable deployment timing.
+    
+    \item \textbf{Integrated Feedback Systems:} Student rocket systems typically lack comprehensive real-time monitoring of critical parameters (battery voltage, igniter continuity) during pre-flight operations, increasing abort risk.
+\end{enumerate}
+
+These gaps represent fundamental challenges that must be addressed to achieve reliable dual deployment operations for the N4 mission.
+
+\subsection{Summary}
+
+The literature review establishes the technical foundation for the proposed dual recovery system. The XBee-PRO 900HP telemetry system provides the required long-range communication capabilities, while PWM-controlled nichrome ignition addresses thermal management challenges. Structural design must account for high-G loading conditions through appropriate vibration isolation strategies. The identified research gaps provide clear focus areas for the experimental and design work presented in subsequent chapters.

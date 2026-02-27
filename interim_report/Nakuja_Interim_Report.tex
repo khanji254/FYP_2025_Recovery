@@ -1,0 +1,105 @@
+\documentclass[12pt,fleqn,a4paper]{article}
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{Styles/hangcaption}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{booktabs}
+\usepackage[nottoc]{tocbibind}
+\usepackage{cite}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+
+%----------------------------------------------------------------------------------------
+%   SETTINGS
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0.5cm}
+\setlength{\mathindent}{1cm}
+\renewcommand{\baselinestretch}{1.5}
+
+% Set graphics path
+\graphicspath{{Figures/}{images/}{diagrams/}{../project_proposal/images/}{../project_proposal/diagrams/}}
+
+%----------------------------------------------------------------------------------------
+%   HEADER/FOOTER SETTINGS
+%----------------------------------------------------------------------------------------
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\rightmark}}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{}
+
+%----------------------------------------------------------------------------------------
+%   CUSTOM COMMANDS
+%----------------------------------------------------------------------------------------
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\degree}[1]{\mbox{$#1^\circ$}}
+
+%----------------------------------------------------------------------------------------
+%   TABLE OF CONTENTS DEPTH
+%----------------------------------------------------------------------------------------
+\setcounter{tocdepth}{3}
+
+%----------------------------------------------------------------------------------------
+%   DOCUMENT BEGIN
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\input{Files/title_page}
+
+\pagenumbering{gobble}
+\pagenumbering{Roman}
+\input{Files/Declaration}
+\clearpage
+\input{Files/Acknowledgment}
+\clearpage
+\input{Files/Abstract}
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%   TABLE OF CONTENTS, FIGURES, TABLES
+%----------------------------------------------------------------------------------------
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%   MAIN CONTENT
+%----------------------------------------------------------------------------------------
+\pagenumbering{arabic}
+
+\input{Files/Chapter1_Introduction}
+\input{Files/Chapter2_LiteratureReview}
+\input{Files/Chapter3_Methodology}
+\input{Files/Chapter4_ResultsDiscussion}
+\input{Files/Chapter5_RemainingWork}
+
+%----------------------------------------------------------------------------------------
+%   BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\clearpage
+\bibliographystyle{IEEEtran}
+\bibliography{Bib/interim_references}
+
+%----------------------------------------------------------------------------------------
+%   APPENDICES
+%----------------------------------------------------------------------------------------
+\clearpage
+\input{Files/Appendices}
+
+\end{document}
+\input{Files/Appendices}
+
+\end{document}

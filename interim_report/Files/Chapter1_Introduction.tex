@@ -1,0 +1,56 @@
+\section{Introduction}
+\label{sec:introduction}
+
+\subsection{Background of Study}
+
+Rocket recovery systems represent the most critical subsystem for preserving flight data and hardware in high-power rocketry missions. The evolution of recovery systems has progressed from simple single deployment methods to sophisticated dual deployment architectures. Single deployment systems release a parachute at apogee, presenting risks of high drift radius and unpredictable landing zones. In contrast, dual deployment systems utilize a drogue parachute at apogee for stability, followed by a main parachute deployment at lower altitude for controlled soft landing, establishing the standard for modern high-power rocketry operations.
+
+The Nakuja Project N4 mission builds upon previous experiences from the N3.5 mission, which employed a basic single-deployment piston-based system. The current N4 design implements dual deployment architecture but faces significant challenges in deployment reliability and telemetry signal integrity. Previous missions demonstrated critical vulnerabilities in both mechanical deployment mechanisms and communication systems, necessitating a comprehensive redesign approach.
+
+\subsection{Problem Statement}
+
+The N4 mission confronts three critical reliability challenges that threaten mission success:
+
+\textbf{Telemetry Range Limitations:} The current telemetry system protocol exhibits significant range constraints, resulting in signal degradation and potential complete signal loss during critical flight phases. This limitation creates substantial risk of vehicle loss and inability to track the rocket post-flight, particularly during descent and landing phases.
+
+\textbf{Uncontrolled Ignition System:} The existing "DC dump" ignition method for nichrome wire deployment generates uncontrolled temperatures exceeding 1000 degrees Celsius. This excessive heat generation causes wire burnout, creating a single-use deployment system that cannot be tested reliably and introduces significant deployment risk during actual flight operations.
+
+\textbf{Absence of Pre-flight Monitoring:} The lack of real-time feedback systems for critical parameters including battery voltage and igniter continuity leaves ground operators without visibility into potential system failures. This blind spot in operational awareness substantially increases the risk of mission aborts or catastrophic deployment malfunctions during critical flight phases.
+
+\subsection{Research Objectives}
+
+\subsubsection{Main Objective}
+
+To design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range, ensuring mission success through enhanced communication capabilities, controlled deployment mechanisms, and comprehensive real-time monitoring systems.
+
+\subsubsection{Specific Objectives}
+
+\begin{enumerate}
+    \item To implement the Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with less than 5\% packet loss.
+    
+    \item To design and validate a PWM-controlled ignition system capable of regulating Nichrome wire temperature, preventing burnout while enabling reusable deployment testing.
+    
+    \item To develop a comprehensive feedback monitoring system that transmits real-time battery percentage and deployment pin continuity status to the ground station.
+    
+    \item To implement a sealed explosion cap design that ensures consistent and reliable parachute deployment while preventing thermal damage to the canopy.
+    
+    \item To design and fabricate a ruggedized 3D-printed avionics holder providing vibration isolation and maintaining center of gravity stability under high-G launch forces.
+\end{enumerate}
+
+\subsection{Scope of Work}
+
+This project focuses on the design, fabrication, and testing of a complete dual recovery system for the Nakuja N4 rocket. The scope encompasses:
+
+\begin{itemize}
+    \item Hardware design and fabrication of electronic and mechanical subsystems
+    \item Software development for telemetry and control systems
+    \item Laboratory testing and validation of individual components
+    \item System integration and comprehensive ground testing
+    \item Documentation of design processes and test results
+\end{itemize}
+
+The project addresses the complete recovery system lifecycle from initial concept through ground testing, with flight readiness assessment as the final deliverable.
+
+\subsection{Report Organization}
+
+This interim report is organized as follows: Chapter 2 presents a comprehensive literature review of relevant technologies and systems. Chapter 3 details the methodology and design approach for both electrical and mechanical subsystems. Chapter 4 presents results and discussions of work completed to date. Chapter 5 outlines remaining work and the path forward to project completion.

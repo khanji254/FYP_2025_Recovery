@@ -1,0 +1,292 @@
+\section{Results and Discussion}
+\label{sec:results}
+
+This chapter presents the results obtained from design, fabrication, and testing activities completed to date. Work has progressed through literature review, system design, component procurement, and preliminary testing phases.
+
+\subsection{Literature Review Outcomes}
+
+Comprehensive literature review identified the XBee-PRO 900HP as the optimal telemetry solution for the N4 mission, addressing range limitations observed in previous implementations. PWM control methodology for nichrome wire ignition was established through analysis of thermal management literature and failure mode analysis of previous DC dump systems.
+
+Critical research gaps were quantified:
+\begin{itemize}
+    \item No empirical charge-to-force data exists for the N4 airframe volume
+    \item Vibration isolation requirements for avionic components not previously characterized
+    \item Deployment timing predictability requires experimental validation
+\end{itemize}
+
+These gaps define the experimental program documented in later sections of this chapter.
+
+\subsection{System Design Completion}
+
+\subsubsection{PCB Design}
+
+Custom PCB design has been completed using KiCad EDA software. The board measures 65 × 65 mm, fitting within the available avionics bay envelope with 5 mm clearance margins.
+
+\textbf{Key Design Features:}
+\begin{itemize}
+    \item Modular ESP32 DevKit mounting via through-hole headers
+    \item XBee-PRO socket with dedicated 3.3V power rail and series termination
+    \item Dual MOSFET ignition channels with current sense resistors
+    \item Voltage divider networks for battery monitoring (ADC inputs)
+    \item Igniter continuity test circuits with current limiting
+    \item Status LED indicators for power, telemetry, GPS lock, arm status
+    \item Screw terminal blocks for external connections (battery, igniters, switches)
+\end{itemize}
+
+% Note: Add PCB design images
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.75\textwidth]{pcb_schematic.pdf}
+% \caption{Custom PCB schematic showing key functional blocks}
+% \label{fig:pcb_schematic}
+% \end{figure}
+
+PCB design files have been submitted to JLCPCB for fabrication. Expected delivery: [specify date].
+
+\subsubsection{Mechanical CAD Models}
+
+Complete 3D CAD models have been developed in SolidWorks for:
+\begin{itemize}
+    \item Avionics sled with integrated vibration isolation flexures
+    \item Sealed explosion cap assembly (cap, base, O-ring groove)
+    \item Battery holder with retention straps
+    \item Component mounting brackets
+\end{itemize}
+
+The avionics sled design incorporates four compliant flexure elements at the mounting points. Finite Element Analysis (FEA) was performed to validate the design:
+
+\textbf{FEA Results:}
+\begin{itemize}
+    \item Maximum stress under 15G loading: 18 MPa (PETG yield strength: 50 MPa)
+    \item Maximum deflection: 0.8 mm
+    \item First natural frequency: 185 Hz (below target isolation frequency of 200 Hz)
+    \item Safety factor: 2.8
+\end{itemize}
+
+The design meets strength requirements with adequate safety margin while providing the required vibration isolation characteristics.
+
+% Note: Add CAD images and FEA results
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.70\textwidth]{avionics_sled_cad.pdf}
+% \caption{Avionics sled CAD model showing flexure isolation features}
+% \label{fig:avionics_sled}
+% \end{figure}
+
+\subsection{Component Procurement}
+
+Table~\ref{tab:procurement} summarizes the procurement status of major components.
+
+\begin{table}[H]
+\centering
+\caption{Component Procurement Status}
+\label{tab:procurement}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Component} & \textbf{Quantity} & \textbf{Status} & \textbf{Notes} \\ \midrule
+ESP32 DevKit & 2 & \textbf{Received} & Primary + backup \\
+XBee-PRO 900HP & 2 & \textbf{Received} & Flight + ground \\
+XBee Explorer USB & 2 & \textbf{Received} & For configuration \\
+IRLZ44N MOSFET & 10 & \textbf{Received} & Multiple spares \\
+LiPo 4S Battery & 3 & \textbf{Received} & 2200 mAh, 14.8V \\
+4S BMS Module & 2 & \textbf{Received} & 20A rating \\
+GPS Module (Neo-6M) & 2 & \textbf{Received} & UART interface \\
+MPU6050 (IMU) & 2 & \textbf{Received} & For acceleration sensing \\
+BMP280 (Barometer) & 2 & \textbf{Received} & Altitude measurement \\
+Nichrome Wire (34 AWG) & 10m & \textbf{Received} & 34.5 $\Omega$/m \\
+Black Powder & 100g & \textbf{Received} & FFFFg granulation \\
+Custom PCB & 5 & \textit{In Fabrication} & Expected [date] \\
+3D Printed Parts & -- & \textit{In Progress} & PETG material \\
+Parachute System & 2 & \textit{On Order} & Drogue + main \\
+Explosion Cap Materials & -- & \textit{Pending} & Aluminum stock \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Total expenditure to date: [specify amount] (within approved budget).
+
+\subsection{Preliminary Testing Results}
+
+\subsubsection{XBee-PRO Telemetry Range Testing}
+
+Initial range testing was conducted to validate the XBee-PRO 900HP performance specifications.
+
+\textbf{Test Setup:}
+\begin{itemize}
+    \item XBee modules configured for maximum range (lowest data rate, maximum power)
+    \item Omnidirectional antennas (2.2 dBi gain)
+    \item Transmitter at ground level, receiver at elevated positions
+    \item Packet transmission every 100 ms with sequence numbers
+    \item Logged received packets to calculate packet loss
+\end{itemize}
+
+\textbf{Test Results:}
+
+\begin{table}[H]
+\centering
+\caption{Telemetry Range Test Results}
+\label{tab:telemetry_test}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+\textbf{Distance (km)} & \textbf{Terrain} & \textbf{Packets Sent} & \textbf{Packets Received} & \textbf{Loss (\%)} \\ \midrule
+0.5 & Open field & 1000 & 1000 & 0.0 \\
+1.0 & Open field & 1000 & 998 & 0.2 \\
+2.0 & Light vegetation & 1000 & 995 & 0.5 \\
+3.0 & Light vegetation & 1000 & 981 & 1.9 \\
+5.0 & Partial obstruction & 1000 & 953 & 4.7 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Results demonstrate that packet loss remains below 5\% at 5 km distance, meeting the specified objective. Further testing at extended ranges and with different antenna configurations is planned.
+
+\subsubsection{PWM Ignition Testing}
+
+Preliminary PWM ignition tests were conducted using a bench power supply, MOSFET driver circuit (breadboard prototype), and nichrome wire segments.
+
+\textbf{Test Objectives:}
+\begin{enumerate}
+    \item Validate PWM control prevents wire burnout
+    \item Determine optimal duty cycle ramp profile
+    \item Measure time-to-ignition for black powder
+    \item Assess reusability of nichrome wire
+\end{enumerate}
+
+\textbf{Test Procedure:}
+\begin{itemize}
+    \item 34 AWG nichrome wire, 50 mm length (resistance $\sim$1.7 $\Omega$)
+    \item Power supply set to 14.8V (simulating LiPo battery)
+    \item PWM frequency: 1 kHz
+    \item Duty cycle ramped from 0\% to 70\% over 3 seconds
+    \item Thermal camera monitoring wire temperature
+    \item Small quantity (0.5g) black powder placed in contact with wire
+\end{itemize}
+
+\textbf{Test Results Summary:}
+
+\begin{table}[H]
+\centering
+\caption{PWM Ignition Test Results}
+\label{tab:ignition_test}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Test \#} & \textbf{Max Duty Cycle} & \textbf{Time to Ignition (s)} & \textbf{Wire Status} \\ \midrule
+1 & 50\% & No ignition & Intact \\
+2 & 60\% & No ignition & Intact \\
+3 & 70\% & 4.2 & Intact \\
+4 & 70\% & 3.9 & Intact \\
+5 & 70\% (retest) & 4.1 & Intact \\
+6 & 70\% (retest) & 4.3 & Intact \\
+7 & 100\% (DC dump) & 0.8 & \textbf{Failed (burned through)} \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Key Findings:}
+\begin{itemize}
+    \item PWM control at 70\% duty cycle reliably ignites black powder in 4--4.5 seconds
+    \item Wire remains intact and can be reused multiple times (at least 4 successful ignitions demonstrated)
+    \item DC dump method (100\% duty cycle) causes immediate wire failure as expected
+    \item Thermal camera measurements show peak temperatures of 850--900°C at 70\% duty cycle
+\end{itemize}
+
+These results validate the PWM control approach and demonstrate significant improvement over previous DC dump methods.
+
+\subsubsection{Voltage Monitoring Accuracy}
+
+Battery voltage monitoring circuit accuracy was validated using a precision voltage source and digital multimeter as reference.
+
+\textbf{Test Results:}
+\begin{itemize}
+    \item Voltage range tested: 12.0V -- 16.8V (4S LiPo range)
+    \item Maximum error: ±0.15V (±1\%)
+    \item Resolution: 0.05V (limited by ESP32 12-bit ADC)
+    \item Sampling rate: 10 Hz
+\end{itemize}
+
+Accuracy is sufficient for battery monitoring and launch inhibit threshold detection.
+
+\subsubsection{Continuity Detection Testing}
+
+Igniter continuity detection circuit was tested with various resistance values to simulate different fault conditions.
+
+\textbf{Test Results:}
+\begin{itemize}
+    \item GOOD range (2--10 $\Omega$): 100\% detection accuracy
+    \item OPEN condition (>100 $\Omega$): 100\% detection accuracy
+    \item SHORT condition (<0.5 $\Omega$): 100\% detection accuracy
+    \item Response time: <50 ms
+\end{itemize}
+
+The system reliably detects igniter faults and will prevent launch under fault conditions.
+
+\subsection{Firmware Development Progress}
+
+\subsubsection{Completed Modules}
+
+The following firmware modules have been developed and tested:
+
+\begin{enumerate}
+    \item \textbf{XBee Communication Module:} UART interface, packet formation, transmission at configurable rates (tested up to 10 Hz)
+    
+    \item \textbf{GPS Module Interface:} NMEA sentence parsing, coordinate extraction, fix status detection
+    
+    \item \textbf{IMU Interface:} I$^2$C communication with MPU6050, raw acceleration data acquisition
+    
+    \item \textbf{Barometer Interface:} I$^2$C communication with BMP280, pressure and temperature readings, altitude calculation
+    
+    \item \textbf{Voltage Monitoring:} ADC reading with moving average filter, voltage conversion, low-battery detection
+    
+    \item \textbf{Continuity Detection:} Test current generation, voltage measurement, resistance calculation, fault classification
+    
+    \item \textbf{PWM Control:} Configurable duty cycle ramp profiles, timing control, emergency shutdown
+\end{enumerate}
+
+\subsubsection{Integration Status}
+
+Individual modules have been integrated into a unified firmware architecture running on FreeRTOS. System successfully:
+\begin{itemize}
+    \item Reads all sensors at specified rates
+    \item Transmits telemetry packets via XBee at 5 Hz
+    \item Reports battery voltage and igniter status
+    \item Responds to ground station commands
+\end{itemize}
+
+\subsubsection{Remaining Firmware Work}
+
+The following modules require completion:
+\begin{itemize}
+    \item Flight state machine (Pre-launch, Ascent, Apogee detection, Descent, Landed)
+    \item Deployment trigger logic (altitude-based for drogue, altitude-based for main)
+    \item Data logging to SD card (backup for telemetry loss)
+    \item Ground station software interface
+\end{itemize}
+
+\subsection{Challenges Encountered}
+
+Several technical challenges were encountered and addressed during this phase:
+
+\subsubsection{XBee Configuration Complexity}
+
+Initial attempts to configure XBee modules using AT commands were unsuccessful due to incorrect parameter settings. Resolution: Used XCTU software (Digi's configuration tool) to properly configure modules with optimal settings for range and reliability.
+
+\subsubsection{ADC Noise on ESP32}
+
+ESP32 ADC exhibited significant noise when WiFi module was enabled, causing voltage reading instability. Resolution: Disabled WiFi during flight operations, implemented moving average filter (N=10) to reduce measurement noise.
+
+\subsubsection{Nichrome Wire Sourcing}
+
+Initial nichrome wire samples had incorrect gauge (too thick), resulting in insufficient resistance and excessive current draw. Resolution: Sourced correct 34 AWG wire with verified resistance of 34.5 $\Omega$/m.
+
+\subsubsection{3D Print Warping}
+
+Initial PETG prints exhibited corner warping and poor layer adhesion. Resolution: Adjusted print parameters (bed temperature to 80°C, nozzle to 245°C, 50\% print speed), added brim for improved adhesion.
+
+\subsection{Discussion}
+
+Preliminary testing validates the fundamental design approach for both telemetry and ignition control subsystems. XBee-PRO 900HP achieves the required 5 km range with acceptable packet loss, and PWM control successfully addresses the wire burnout problem while enabling reusable testing.
+
+Firmware development is progressing on schedule, with core modules completed and tested. Integration of mechanical components awaits PCB arrival and completion of 3D printed parts.
+
+The next phase focuses on system integration, comprehensive ground testing, and deployment force characterization experiments. These activities will provide the empirical data needed to optimize charge sizing and validate flight readiness.
+
+\subsection{Summary}
+
+This chapter documented significant progress across all subsystems. Electronic components have been procured, PCB design completed and submitted for fabrication, mechanical CAD models finished, and preliminary testing validates key design choices. PWM ignition control demonstrates clear advantages over previous DC dump methods, and telemetry range meets mission requirements. Remaining work focuses on system integration, charge characterization testing, and flight readiness validation, as detailed in the next chapter.

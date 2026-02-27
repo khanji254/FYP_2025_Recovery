@@ -1,0 +1,317 @@
+\appendix
+\section{Appendix A: Component Specifications}
+\label{app:components}
+
+\subsection{ESP32 Microcontroller}
+\begin{itemize}
+    \item Model: ESP32-WROOM-32
+    \item CPU: Dual-core Xtensa LX6, 240 MHz
+    \item Memory: 520 KB SRAM, 4 MB Flash
+    \item Interfaces: 3× UART, 2× I$^2$C, 3× SPI, 18× ADC (12-bit)
+    \item Power: 3.3V operation, 80--260 mA active current
+    \item Operating Temperature: -40 to +85°C
+\end{itemize}
+
+\subsection{XBee-PRO 900HP}
+\begin{itemize}
+    \item Frequency: 902--928 MHz (ISM band)
+    \item RF Power: Up to 250 mW (+24 dBm)
+    \item Receiver Sensitivity: -110 dBm (at 10 kbps)
+    \item Range: Up to 15 km line-of-sight
+    \item Data Rate: 10 kbps to 200 kbps (configurable)
+    \item Interface: UART (3.3V logic)
+    \item Power: 3.3V, 215 mA TX, 35 mA RX
+\end{itemize}
+
+\subsection{BMS Board (4S LiPo)}
+\begin{itemize}
+    \item Configuration: 4S (14.8V nominal)
+    \item Charge Current: Up to 15A
+    \item Discharge Current: 30A continuous, 40A peak
+    \item Over-voltage Protection: 4.25V per cell
+    \item Under-voltage Protection: 3.0V per cell
+    \item Balance Tolerance: ±0.05V
+\end{itemize}
+
+\subsection{IRLZ44N MOSFET}
+\begin{itemize}
+    \item Type: N-channel enhancement mode
+    \item Voltage Rating: 55V
+    \item Current Rating: 47A continuous
+    \item On-Resistance: 22 m$\Omega$ @ 10V $V_{GS}$
+    \item Gate Threshold: 1--2V (logic-level)
+    \item Package: TO-220AB
+\end{itemize}
+
+\subsection{Nichrome Wire (Igniter)}
+\begin{itemize}
+    \item Type: Nichrome A (80\% Ni, 20\% Cr)
+    \item Gauge: 34 AWG (0.16 mm diameter)
+    \item Resistance: 34.5 $\Omega$/meter
+    \item Operating Temperature: Up to 1150°C
+    \item Wire Length per Igniter: 0.15--0.20 m
+    \item Total Resistance per Igniter: 5--7 $\Omega$
+\end{itemize}
+
+\section{Appendix B: PCB Design Details}
+\label{app:pcb}
+
+\subsection{PCB Specifications}
+\begin{itemize}
+    \item Dimensions: 65 mm × 65 mm
+    \item Layers: 2 (top and bottom copper)
+    \item Copper Weight: 2 oz (70 $\mu$m)
+    \item Material: FR-4, 1.6 mm thickness
+    \item Surface Finish: ENIG (Electroless Nickel Immersion Gold)
+    \item Via Size: 0.4 mm drill, 0.8 mm pad
+    \item Trace Width: 0.25 mm minimum, 1.0 mm for high-current paths
+\end{itemize}
+
+\subsection{Power Distribution}
+\begin{itemize}
+    \item Input: 14.8V from 4S LiPo via XT60 connector
+    \item 5V Rail: LM2596 buck converter, 3A capacity
+    \item 3.3V Rail: AMS1117-3.3 LDO, 1A capacity
+    \item Power Planes: Dedicated ground plane on bottom layer
+    \item Decoupling: 100 nF ceramic capacitors on all ICs, 100 $\mu$F electrolytic on power inputs
+\end{itemize}
+
+\subsection{Circuit Protection}
+\begin{itemize}
+    \item Input Protection: Reverse polarity protection diode (Schottky, 40V, 5A)
+    \item Over-current: Self-resetting fuses (PTC) on 5V and 3.3V rails
+    \item MOSFET Protection: Flyback diodes on inductive loads
+    \item ESD Protection: TVS diodes on communication lines
+\end{itemize}
+
+\section{Appendix C: Test Data}
+\label{app:testdata}
+
+\subsection{Telemetry Range Testing}
+Testing conducted on open field with clear line of sight. Transmitter at ground level, receiver elevated 2 m. 1000 packets transmitted per test point.
+
+\begin{table}[H]
+\centering
+\caption{Extended Telemetry Test Results}
+\small
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+\textbf{Distance (km)} & \textbf{Packets Sent} & \textbf{Packets Received} & \textbf{Loss (\%)} & \textbf{RSSI (dBm)} \\ \midrule
+0.5 & 1000 & 1000 & 0.0 & -45 \\
+1.0 & 1000 & 998 & 0.2 & -58 \\
+2.0 & 1000 & 995 & 0.5 & -72 \\
+3.0 & 1000 & 981 & 1.9 & -84 \\
+4.0 & 1000 & 966 & 3.4 & -92 \\
+5.0 & 1000 & 953 & 4.7 & -98 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{PWM Ignition Testing}
+Testing conducted with 0.18 m nichrome wire (6.2 $\Omega$), 14.8V LiPo battery, room temperature (22°C).
+
+\begin{table}[H]
+\centering
+\caption{PWM Duty Cycle Ignition Tests}
+\small
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+\textbf{Duty Cycle (\%)} & \textbf{Ignition Time (s)} & \textbf{Temperature (°C)} & \textbf{Wire Status} & \textbf{Replicates} \\ \midrule
+50 & No ignition & 620 & Intact & 3 \\
+60 & No ignition & 750 & Intact & 3 \\
+70 & 4.2 ± 0.3 & 875 ± 25 & Intact & 5 \\
+80 & 2.8 ± 0.2 & 950 ± 30 & Intact & 3 \\
+100 (DC) & 0.8 ± 0.1 & >1000 & Failed & 2 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Note: 70\% duty cycle selected as optimal balance between ignition reliability and wire reusability.
+
+\subsection{Voltage Monitoring Accuracy}
+Comparison between multimeter reference and ADC reading. 10 measurements per voltage point.
+
+\begin{table}[H]
+\centering
+\caption{Voltage Monitoring Calibration}
+\small
+\begin{tabular}{@{}cccc@{}}
+\toprule
+\textbf{Reference (V)} & \textbf{ADC Reading (V)} & \textbf{Error (V)} & \textbf{Error (\%)} \\ \midrule
+12.00 & 11.88 & -0.12 & -1.0 \\
+13.00 & 12.92 & -0.08 & -0.6 \\
+14.00 & 13.95 & -0.05 & -0.4 \\
+14.80 & 14.73 & -0.07 & -0.5 \\
+15.60 & 15.68 & +0.08 & +0.5 \\
+16.40 & 16.52 & +0.12 & +0.7 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Maximum absolute error: ±0.12V (±0.8\%). Meets ±1\% accuracy requirement.
+
+\section{Appendix D: Project Budget}
+\label{app:budget}
+
+\begin{table}[H]
+\centering
+\caption{Project Budget Breakdown}
+\small
+\begin{tabular}{@{}p{4cm}ccp{2cm}c@{}}
+\toprule
+\textbf{Item} & \textbf{Qty} & \textbf{Unit Cost (KES)} & \textbf{Total (KES)} & \textbf{Status} \\ \midrule
+ESP32-WROOM-32 & 2 & 850 & 1,700 & Received \\
+XBee-PRO 900HP & 2 & 4,500 & 9,000 & Received \\
+4S LiPo Battery (2200 mAh) & 3 & 3,200 & 9,600 & Received \\
+BMS Board (4S) & 3 & 650 & 1,950 & Received \\
+IRLZ44N MOSFET & 10 & 45 & 450 & Received \\
+Nichrome Wire (10 m) & 1 & 800 & 800 & Received \\
+PCB Fabrication (5 pcs) & 1 & 4,500 & 4,500 & Fabrication \\
+PCB Components (resistors, caps, etc.) & 1 & 2,000 & 2,000 & Partial \\
+Aluminum Stock (6061-T6) & 1 & 1,500 & 1,500 & Pending \\
+PETG Filament (1 kg) & 1 & 1,800 & 1,800 & Received \\
+Black Powder (100 g) & 1 & 500 & 500 & Pending \\
+Connectors (XT60, JST, etc.) & 1 & 1,200 & 1,200 & Received \\
+Fasteners and Hardware & 1 & 800 & 800 & Partial \\
+Miscellaneous & 1 & 1,500 & 1,500 & -- \\ \midrule
+\multicolumn{3}{r}{\textbf{Total Estimated Cost:}} & \textbf{37,300} & -- \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\section{Appendix E: Software Architecture}
+\label{app:software}
+
+\subsection{FreeRTOS Task Structure}
+
+\begin{enumerate}
+    \item \textbf{Sensor Task (10 Hz):} Reads GPS, IMU, barometer. Updates shared state variables via mutex.
+    
+    \item \textbf{Telemetry Task (5 Hz):} Formats telemetry packet, transmits via XBee UART, receives ground commands.
+    
+    \item \textbf{State Machine Task (20 Hz):} Manages flight phases, triggers deployment events, implements safety checks.
+    
+    \item \textbf{Deployment Task (Event-driven):} Executes deployment sequence when triggered by state machine. Activates PWM, monitors current.
+    
+    \item \textbf{Ignition Task (50 Hz):} Real-time PWM control with closed-loop current monitoring and thermal protection.
+    
+    \item \textbf{Logging Task (10 Hz):} Writes sensor data and events to SD card in CSV format.
+    
+    \item \textbf{Monitoring Task (1 Hz):} Checks battery voltage, igniter continuity, telemetry link health. Sets launch inhibit flags.
+\end{enumerate}
+
+\subsection{Telemetry Packet Format}
+
+Packet size: 64 bytes, transmitted at 5 Hz (320 bytes/s, well within XBee 10 kbps minimum).
+
+\begin{table}[H]
+\centering
+\caption{Telemetry Packet Structure}
+\small
+\begin{tabular}{@{}llcc@{}}
+\toprule
+\textbf{Field} & \textbf{Type} & \textbf{Bytes} & \textbf{Range/Notes} \\ \midrule
+Header & uint16 & 2 & 0xAA55 sync pattern \\
+Timestamp & uint32 & 4 & Milliseconds since boot \\
+GPS Latitude & float & 4 & Decimal degrees \\
+GPS Longitude & float & 4 & Decimal degrees \\
+GPS Altitude & float & 4 & Meters MSL \\
+Barometric Altitude & float & 4 & Meters AGL \\
+Velocity (vertical) & float & 4 & m/s \\
+Acceleration X & int16 & 2 & m/s$^2$ × 100 \\
+Acceleration Y & int16 & 2 & m/s$^2$ × 100 \\
+Acceleration Z & int16 & 2 & m/s$^2$ × 100 \\
+Battery Voltage & uint16 & 2 & mV \\
+State & uint8 & 1 & Flight state enum \\
+Igniter Status & uint8 & 1 & Bitfield: continuity, fired \\
+Deployment Flags & uint8 & 1 & Bitfield: drogue, main \\
+Error Flags & uint8 & 1 & Bitfield: sensor, battery, etc. \\
+RSSI & int8 & 1 & XBee RSSI \\
+CRC & uint16 & 2 & CRC-16 checksum \\ \midrule
+\multicolumn{2}{r}{\textbf{Total:}} & \textbf{45} & Padded to 64 bytes \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Deployment Sequence Flowchart}
+
+\begin{enumerate}
+    \item \textbf{Trigger Condition Detected:} Apogee or main altitude threshold
+    \item \textbf{Check Safety Conditions:} Minimum altitude, minimum time, no previous deployment
+    \item \textbf{Safety Checks Passed?}
+    \begin{itemize}
+        \item No: Abort, log error
+        \item Yes: Continue
+    \end{itemize}
+    \item \textbf{Check Igniter Continuity:} Read continuity status
+    \item \textbf{Continuity Good?}
+    \begin{itemize}
+        \item No: Abort, log error, trigger backup timer
+        \item Yes: Continue
+    \end{itemize}
+    \item \textbf{Activate PWM:} Start at 10\% duty cycle
+    \item \textbf{Ramp PWM:} Linear ramp to 70\% over 2 seconds
+    \item \textbf{Hold PWM:} Maintain 70\% for 3 seconds
+    \item \textbf{Monitor Current:} Verify expected current draw
+    \item \textbf{Current Normal?}
+    \begin{itemize}
+        \item No: Log warning, continue
+        \item Yes: Continue
+    \end{itemize}
+    \item \textbf{Disable PWM:} Turn off after ignition window
+    \item \textbf{Mark Deployment Complete:} Set deployment flag, prevent re-trigger
+    \item \textbf{Log Event:} Record deployment event with timestamp
+    \item \textbf{Continue Telemetry:} Monitor descent
+\end{enumerate}
+
+\section{Appendix F: Safety Protocols}
+\label{app:safety}
+
+\subsection{Pre-Launch Safety Checklist}
+
+\begin{enumerate}
+    \item Battery fully charged and voltage >14.5V
+    \item All igniters installed and continuity verified
+    \item Telemetry link established with <5\% packet loss
+    \item GPS lock acquired (>6 satellites)
+    \item Parachutes properly packed with shock cord attached
+    \item Explosion caps secured with O-rings installed
+    \item All airframe connections tight and verified
+    \item Launch site clear of personnel (>100 m radius)
+    \item Ground station operational with clear data display
+    \item Weather conditions acceptable (wind <10 m/s, no precipitation)
+    \item Launch inhibit released only when ready for ignition
+    \item Recovery team briefed and positioned
+\end{enumerate}
+
+\subsection{Launch Inhibit Conditions}
+
+System will refuse to arm igniters if ANY of the following conditions exist:
+\begin{itemize}
+    \item Battery voltage <14.0V
+    \item Igniter continuity not detected (drogue or main)
+    \item Telemetry link not established
+    \item GPS lock not acquired
+    \item Barometer failure detected
+    \item IMU failure detected
+    \item Ground station command inhibit active
+\end{itemize}
+
+\subsection{Emergency Procedures}
+
+\textbf{Lost Telemetry Link:}
+\begin{itemize}
+    \item System continues autonomous operation using onboard sensors
+    \item Backup timer-based deployment activates if altitude data lost
+    \item SD card logging continues for post-flight analysis
+    \item GPS coordinates in last telemetry packet guide recovery
+\end{itemize}
+
+\textbf{Igniter Failure:}
+\begin{itemize}
+    \item Backup timer-based deployment triggers at T+[time] or altitude threshold
+    \item Manual deployment via ground command (if telemetry available)
+    \item Parachute extraction via motor ejection (if available on airframe)
+\end{itemize}
+
+\textbf{Premature Deployment:}
+\begin{itemize}
+    \item State machine guard prevents deployment below minimum altitude (100 m AGL)
+    \item State machine guard prevents deployment before minimum time (10 seconds from liftoff)
+    \item Dual-switch safety requires both software enable and hardware enable
+\end{itemize}
