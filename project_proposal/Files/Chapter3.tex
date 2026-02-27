@@ -15,7 +15,7 @@ The proposed coffee berry sorting machine will consist of three main modules:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/system_architecture.pdf}
+\includegraphics[width=0.82\textwidth]{Figures/system_architecture.pdf}
 \caption{Overall system architecture of the improved coffee berry sorting machine}
 \label{fig:system_architecture}
 \end{figure}
@@ -69,6 +69,194 @@ The ejection holder will house the air ejectors responsible for rejecting unwant
 The frame will support all mechanical and electrical components.
 
 \textbf{Material Selection:} Mild steel angle bars or aluminium extrusion selected for strength, stability, and ease of assembly.
+
+\subsection{Mechanical Design Calculations}
+
+The mechanical subsystem design was adapted from the previous implementation by Mugo et al. (2017) \cite{mugo2017}, who conducted detailed engineering calculations for the vibrating feeder, hopper capacity, chute dimensions, and frame assembly. The following calculations establish the key design parameters for the mechanical module.
+
+\subsubsection{Vibrating Feeder Design}
+
+The vibrating feeder system requires precise calculation of spring stiffness, resonant frequency, amplitude, and excitation force to achieve the desired feed rate while maintaining controlled berry flow.
+
+\textbf{Spring Stiffness:}
+Based on the mechanical design by \cite{mugo2017}, the total spring constant for the dual-spring vibrating system is:
+\begin{equation}
+K = 13960 + 13960 = 27920 \, \text{N/m}
+\end{equation}
+
+\textbf{Resonant Frequency:}
+The resonant frequency is calculated as:
+\begin{equation}
+f_r = \frac{1}{2\pi}\sqrt{\frac{K}{m}} = 26.5396 \, \text{Hz}
+\end{equation}
+
+\textbf{Motor Speed Requirement:}
+At maximum feeding rate, the motor rotational speed (in RPM) is:
+\begin{equation}
+N = f_r \times 60 = 26.5396 \times 60 = 1596 \, \text{rpm}
+\end{equation}
+
+\textbf{Feed Rate and Amplitude:}
+For a target feed rate of 500 g/min (8.33 g/s), given an average coffee berry density of 1 g/cm$^3$, the desired amplitude is:
+\begin{equation}
+A = \frac{\sqrt{8.33 \, \text{cm}^3}}{26.5396} = 0.761 \, \text{mm}
+\end{equation}
+
+\textbf{Maximum Acceleration:}
+Using the sinusoidal displacement equation $A = A_0 \sin(\omega t)$, the acceleration is:
+\begin{equation}
+a'' = -A_0 \omega^2 \cos(\omega t)
+\end{equation}
+
+Maximum acceleration occurs at peak displacement:
+\begin{equation}
+a_{\text{max}} = A_0 \omega^2
+\end{equation}
+
+where $\omega = 2\pi f = 167.132$ rad/s. Therefore:
+\begin{equation}
+a_{\text{max}} = 0.000761 \times (167.132)^2 = 21.257 \, \text{m/s}^2
+\end{equation}
+
+\textbf{Excitation Force:}
+The excitation force is given by:
+\begin{equation}
+F_e = m \times a = m \times A_0 \omega^2
+\end{equation}
+
+This excitation force equals the centrifugal force:
+\begin{equation}
+F_e = F_c = m_e r \omega^2
+\end{equation}
+
+where $m_e$ is the eccentric mass and $r$ is the eccentricity radius.
+
+\textbf{Eccentric Torque:}
+The eccentric torque required is:
+\begin{equation}
+M_e = m_e r = 0.769 \, \text{Nm}
+\end{equation}
+
+Applying a safety factor of 1.5, a motor with at least 1 Nm torque at 2000 rpm was selected.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{Feeder_Without_Title_block.PNG}
+\caption{Vibrating feeder assembly showing tray and spring mounting (adapted from \cite{mugo2017})}
+\label{fig:feeder_assembly}
+\end{figure}
+
+\subsubsection{Hopper Design}
+
+\textbf{Hopper Capacity:}
+The hopper was designed to hold 5 kg of coffee berries to maintain continuous flow onto the feeder.
+
+\textbf{Opening Diameter:}
+Based on hopper design standards for bulk materials, the opening diameter should be:
+\begin{equation}
+D_{\text{opening}} = 4 \times w
+\end{equation}
+where $w = 20$ mm is the maximum berry width.
+
+\textbf{Opening Height:}
+The height of the opening is determined by:
+\begin{equation}
+h_{\text{opening}} = 1.5 \times D_{\text{opening}}
+\end{equation}
+
+\textbf{Flow Angle:}
+An angle of 45 degrees was selected as the optimum angle for bulk flow in hoppers \cite{mugo2017}.
+
+\textbf{Volume Calculation:}
+For 5 kg of coffee berries with average density of 1 g/cm$^3$, the total volume required is approximately 5000 cm$^3$.
+
+\textbf{Bottom Channel Volume:}
+\begin{equation}
+V_{\text{channel}} = \pi r^2 h = \pi (40)^2 (40) = 201 \, \text{cm}^3
+\end{equation}
+
+\textbf{Conical Frustum Design:}
+A conical frustum shape was selected for:
+\begin{itemize}
+    \item Flow dynamics: sloping walls facilitate smooth and continuous flow
+    \item Optimized for round objects: gradual slope channels berries towards the center
+    \item Reduced clogging: natural funneling effect maintains consistent flow
+\end{itemize}
+
+The remaining volume of 4800 cm$^3$ uses a conical frustum with:
+\begin{equation}
+V_{\text{frustum}} = \frac{1}{3}\pi h (R_1^2 + R_1 R_2 + R_2^2)
+\end{equation}
+
+\textbf{Diameter Ratio:}
+To ensure proper flow, the ratio $R_1/R_2$ typically falls between 2:1 and 4:1. A median ratio of 3:1 was selected, giving a base diameter of 120 mm.
+
+With a hopper angle of 45 degrees, $h = 120$ mm, yielding a frustum volume of 2611.4 cm$^3$. The remaining 2200 cm$^3$ is provided by a cylindrical section with $R = 120$ mm and height $h = 50$ mm.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{Hopper_Without_Title_block.PNG}
+\caption{Hopper design with conical frustum geometry (adapted from \cite{mugo2017})}
+\label{fig:hopper_design}
+\end{figure}
+
+\textbf{Flow Control Mechanism:}
+A motorized gate mechanism was developed to regulate berry flow into the sorting machine. From the CAD model properties, the lid plate has a mass of 0.093 kg with center of gravity at 58.728 mm.
+
+Required torque:
+\begin{equation}
+\tau_{\text{required}} = m \times r_g = 0.093 \times 5.8728 = 0.546 \, \text{kg·cm}
+\end{equation}
+
+Applying a safety factor of 1.5:
+\begin{equation}
+\tau_{\text{motor}} = 1.5 \times 0.546 = 0.819 \, \text{kg·cm}
+\end{equation}
+
+An SG90 servo motor was selected, delivering 1.6 kg·cm torque with 180-degree motion and PWM positional control, making it the most cost-effective solution.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{Bottop_PlatE_Without_Title_block.PNG}
+\caption{Hopper lid mechanism for flow control (adapted from \cite{mugo2017})}
+\label{fig:hopper_lid}
+\end{figure}
+
+\subsubsection{Chute Design}
+
+\textbf{Chute Shape:}
+The chute was designed to channel berries from the feeder in a single layer with minimal bumping. A tapered design with smooth transitions was selected. Channels were added to align berries with the ejector system in four columns, each 30 mm wide.
+
+\textbf{Inclination Angle:}
+The chute angle was set at 45 degrees to ensure maximum flow rate. The angle is adjustable to control berry velocity based on imaging station performance.
+
+\textbf{Chute Dimensions:}
+A length-to-width ratio of 2.5:1 yielded a chute length of 300 mm, providing adequate imaging zone coverage while maintaining controlled berry velocity.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{The_Chute_Without_Title_block.PNG}
+\caption{Chute assembly with alignment channels (adapted from \cite{mugo2017})}
+\label{fig:chute_assembly}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{Chute_bracket_Without_Title_block.PNG}
+\caption{Chute mounting bracket for angle adjustment (adapted from \cite{mugo2017})}
+\label{fig:chute_bracket}
+\end{figure}
+
+\subsubsection{Frame Integration and Assembly}
+
+\textbf{Frame Material:}
+Mild steel was selected for the frame structure due to its strength and cost-effectiveness. Angle sections were used for ease of bolting with other body components.
+
+\textbf{Positioning and Alignment:}
+Positioning and alignment of the hopper, chute, and feeder was achieved using trigonometric equations with a mid-point angle of 45 degrees at initial assembly points, enabling adjustments in both directions for the chute.
+
+This mechanical design, based on the calculations by \cite{mugo2017}, provides a robust foundation for the improved coffee berry sorting system.
+
 \subsection{Proposed Electrical and Control Module}
 
 The proposed electrical and control module will be designed to support high-speed image acquisition, real-time processing, and precise actuation required for accurate coffee berry sorting. To address the processing bottlenecks identified in the previous system, a co-processing architecture will be introduced.
@@ -81,7 +269,7 @@ To improve system responsiveness and reduce latency in real-time control operati
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/coprocessing_architecture.pdf}
+\includegraphics[width=0.80\textwidth]{Figures/coprocessing_architecture.pdf}
 \caption{Co-processing architecture showing task distribution: Raspberry Pi handles image processing, classification, and tracking; ESP32 handles motor control, actuator interfacing, and timing}
 \label{fig:coprocessing_architecture}
 \end{figure}
@@ -116,7 +304,7 @@ Figure~\ref{fig:system_block_diagram} provides a high-level overview of the comp
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/system_block_diagram.pdf}
+\includegraphics[width=0.82\textwidth]{Figures/system_block_diagram.pdf}
 \caption{System block diagram showing processor hierarchy, communication links, and actuator outputs with power distribution}
 \label{fig:system_block_diagram}
 \end{figure}
@@ -127,7 +315,7 @@ Figure~\ref{fig:electrical_schematic} illustrates the electrical system architec
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/electrical_schematic.pdf}
+\includegraphics[width=0.82\textwidth]{Figures/electrical_schematic.pdf}
 \caption{Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}
 \label{fig:electrical_schematic}
 \end{figure}
@@ -136,7 +324,7 @@ Figure~\ref{fig:circuit_implementation} shows the physical breadboard implementa
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/circuit_implementation.png}
+\includegraphics[width=0.82\textwidth]{Figures/circuit_implementation.png}
 \caption{Physical breadboard circuit implementation showing Raspberry Pi 3, ESP32 co-processor, relay module, and all peripheral connections (LED, motor, pneumatic compressor, ejector valves)}
 \label{fig:circuit_implementation}
 \end{figure}

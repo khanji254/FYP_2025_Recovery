@@ -1,0 +1,43 @@
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Harvested coffee berry variation showing visual diversity in colour, size, and surface texture}}{2}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Ripe coffee berries showing colour variation from green to deep red}}{6}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Reference model validation predictions showing four-class classification (unripe, semi-ripe, ripe, overripe) with visible confusion between visually similar categories}}{9}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Reference model F1-score performance across the four ripeness categories, highlighting the classification difficulty at the semi-ripe/ripe boundary}}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparison of manual and electronic coffee sorting methods}}{11}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Fully fabricated mechanical assembly from the reference implementation \cite {mugo2017}, showing integrated hopper, vibrating feeder, chute, and frame structure. This mechanical subsystem forms the foundation upon which the improved imaging and control systems are built.}}{12}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces CAD drawing of the air-ejector nozzle assembly from the reference sorting machine showing solenoid valve, nozzle orientation, and berry deflection trajectory \cite {mugo2017}}}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Image processing pipeline for YOLOv11-based sorter on Raspberry Pi~4: frame capture (global shutter) $\rightarrow $ pre-processing $\rightarrow $ YOLOv11 inference $\rightarrow $ classification (accept/reject) $\rightarrow $ ejection control}}{16}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Overview of classification approaches considered: classical machine learning, CNN-based models, and single-stage detectors (YOLO family)}}{17}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Visual comparison of ripe (\texttt {accept}) and unripe/semi-ripe (\texttt {reject}) coffee berries. The binary classification boundary maps to the deep-red colour transition.}}{18}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Proposed co-processing architecture: Raspberry Pi~4 handles inference; ESP32-WROOM-32 manages all hard real-time actuation via UART.}}{20}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Overall architecture of the improved coffee berry sorting machine: global-shutter camera, Raspberry Pi~4 inference engine, ESP32 real-time co-processor, and MOSFET solenoid driver stages}}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Co-processing architecture: Raspberry Pi~4 handles image processing and YOLOv11 classification; ESP32 handles motor control, actuator interfacing, and timing}}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces System control flow: task distribution between Raspberry Pi~4 (inference and tracking) and ESP32 (actuation, timing, and PWM control)}}{29}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Image processing pipeline for the YOLOv11-based sorter: frame capture (global shutter) $\rightarrow $ pre-processing $\rightarrow $ YOLOv11 inference on Raspberry Pi~4 $\rightarrow $ tracking $\rightarrow $ UART command to ESP32}}{31}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces UART communication and data flow between Raspberry Pi and ESP32}}{32}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Fritzing circuit diagram of the ESP32 solenoid driver implementation: IRLZ44N MOSFET switching stages, flyback diodes, gate resistors, and Raspberry Pi UART connection}}{37}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Electrical schematic: power distribution, processor connections, actuator outputs, and communication links}}{42}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces System block diagram: processor hierarchy, communication links, and actuator outputs with power distribution}}{43}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Complete Proteus ISIS simulation: ESP32 with four IRLZ44N solenoid driver channels, vibrating motor PWM, LED strip driver, 2-channel optocoupler relay, and UART virtual terminal}}{44}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Proteus oscilloscope: MOSFET turn-ON --- gate rises to 3.3\,V and drain falls from 12\,V to $\approx $0\,V with no ringing (IRLZ44N, 220\,$\Omega $ gate resistor, 100\,k$\Omega $ pull-down)}}{45}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Proteus oscilloscope: MOSFET turn-OFF --- drain recovers to 12\,V; 1N5819 clamps inductive kickback spike within 0.5\,V of the supply rail}}{45}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces YOLOv11n comprehensive training metrics over 100 epochs showing convergence of loss, precision, recall, and mAP on the binary coffee berry dataset}}{47}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces F1-score vs. confidence threshold curve for the YOLOv11n binary classifier, showing optimal operating point for accept/reject classification}}{48}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Precision-Recall curve demonstrating the trade-off between precision and recall across confidence thresholds for both accept and reject classes}}{49}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Normalised confusion matrix on the test split showing classification accuracy for accept (ripe) and reject (unripe/semi-ripe/overripe) categories}}{50}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Ground truth label distribution visualisation showing the spatial distribution and class balance of accept and reject instances across the training dataset}}{51}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Validation batch 0 with ground-truth bounding box annotations for accept (ripe) and reject (unripe/semi-ripe) berries}}{52}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces YOLOv11n inference output on validation batch 0: predicted accept/reject bounding boxes with confidence scores demonstrating the model's classification performance on unseen test images}}{53}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces System control flow: Pi~4 handles image processing and YOLOv11 inference; ESP32 handles motor control, timing, and actuation}}{55}{figure.caption.46}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Electrical schematic}}{61}{figure.caption.49}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces ESP32 pin mapping schematic}}{62}{figure.caption.50}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Circuit implementation layout (Fritzing)}}{63}{figure.caption.51}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Proteus full-circuit simulation}}{63}{figure.caption.52}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Project schedule from the approved proposal}}{64}{figure.caption.53}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Project budget from the approved proposal}}{64}{figure.caption.54}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Reference model F1 curve}}{65}{figure.caption.55}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Reference model validation batch labels}}{66}{figure.caption.56}%
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Bottom plate technical drawing with dimensions and specifications}}{67}{figure.caption.57}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Chute assembly technical drawing with dimensions and specifications}}{68}{figure.caption.58}%
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Chute mounting bracket technical drawing with dimensions and specifications}}{69}{figure.caption.59}%
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Vibrating feeder trough technical drawing with dimensions and specifications}}{70}{figure.caption.60}%
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Hopper assembly technical drawing with dimensions and specifications}}{71}{figure.caption.61}%

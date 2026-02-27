@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  28 JAN 2026 09:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  27 FEB 2026 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,7 +401,7 @@ Package hyperref Info: Link coloring OFF on input line 63.
 
 
 (Files/title_page.tex
-<Figures/Jomo_logo.pdf, id=262, 249.93375pt x 185.69376pt>
+<Figures/Jomo_logo.pdf, id=286, 249.93375pt x 185.69376pt>
 File: Figures/Jomo_logo.pdf Graphic file (type pdf)
 <use Figures/Jomo_logo.pdf>
 Package pdftex.def Info: Figures/Jomo_logo.pdf  used on input line 6.
@@ -439,7 +439,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 ...hput Limitations}{14}{subsubsection.2.5.1}
+l.27 ...hput Limitations}{16}{subsubsection.2.5.1}
                                                   % [1
 
 ]
@@ -447,7 +447,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.II}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.55 ...rline {4}Expected Outcomes}{33}{section.4}
+l.55 ...d Classification}{35}{subsubsection.3.5.3}
                                                   % [2])
 \tf@toc=\write4
 \openout4 = `Coffee_Berry_Sorting_Machine.toc'.
@@ -465,14 +465,38 @@ fer-ences be-tween ripe (red/purple)
  []
 
 
-Overfull \hbox (2.82765pt too wide) in paragraph at lines 10--10
+Overfull \hbox (0.15959pt too wide) in paragraph at lines 4--4
+ [][] [][]\OT1/cmr/m/n/12 Reference model val-i-da-tion pre-dic-tions show-ing 
+four-class clas-si-fi-ca-tion (un- 
+ []
+
+
+LaTeX Warning: Citation `mugo2017' on page IV undefined on input line 7.
+
+
+LaTeX Warning: Citation `mugo2017' on page IV undefined on input line 10.
+
+
+LaTeX Warning: Citation `mugo2017' on page IV undefined on input line 11.
+
+
+LaTeX Warning: Citation `mugo2017' on page IV undefined on input line 12.
+
+
+LaTeX Warning: Citation `mugo2017' on page IV undefined on input line 13.
+
+
+LaTeX Warning: Citation `mugo2017' on page IV undefined on input line 14.
+
+[4
+
+]
+Overfull \hbox (2.82765pt too wide) in paragraph at lines 18--18
  [][] [][]\OT1/cmr/m/n/12 Physical bread-board cir-cuit im-ple-men-ta-tion show
 -ing Rasp-berry Pi 3, ESP32 
  []
 
-[4
-
-])
+)
 \tf@lof=\write5
 \openout5 = `Coffee_Berry_Sorting_Machine.lof'.
 
@@ -483,7 +507,7 @@ Overfull \hbox (2.82765pt too wide) in paragraph at lines 10--10
  [6
 
 ] (Files/Introduction.tex
-<Figures/harvested coffee berry variation.jpeg, id=423, 451.6875pt x 301.125pt>
+<Figures/harvested coffee berry variation.jpeg, id=484, 451.6875pt x 301.125pt>
 
 File: Figures/harvested coffee berry variation.jpeg Graphic file (type jpg)
 <use Figures/harvested coffee berry variation.jpeg>
@@ -504,7 +528,7 @@ l.19
 
 ] [2 <./Figures/harvested coffee berry variation.jpeg>] [3] [4])
 [5] (Files/Chapter2.tex
-<Figures/Ripe.jpeg, id=452, 517.935pt x 351.3125pt>
+<Figures/Ripe.jpeg, id=513, 517.935pt x 351.3125pt>
 File: Figures/Ripe.jpeg Graphic file (type jpg)
 <use Figures/Ripe.jpeg>
 Package pdftex.def Info: Figures/Ripe.jpeg  used on input line 10.
@@ -512,34 +536,82 @@ Package pdftex.def Info: Figures/Ripe.jpeg  used on input line 10.
  [6
 
  <./Figures/Ripe.jpeg>]
-<images/coffee_berry_comparison.png, id=457, 1093.08376pt x 456.95718pt>
+<images/coffee_berry_comparison.png, id=518, 1093.08376pt x 456.95718pt>
 File: images/coffee_berry_comparison.png Graphic file (type png)
 <use images/coffee_berry_comparison.png>
 Package pdftex.def Info: images/coffee_berry_comparison.png  used on input line
  27.
 (pdftex.def)             Requested size: 318.66946pt x 133.21841pt.
- [7 <./images/coffee_berry_comparison.png>] [8]
-<Figures/sorting_comparison.pdf, id=477, 596.12108pt x 338.2216pt>
+<../interim_report/context/Old_val_batch2_labels.jpg, id=520, 1927.2pt x 1927.2
+pt>
+File: ../interim_report/context/Old_val_batch2_labels.jpg Graphic file (type jp
+g)
+<use ../interim_report/context/Old_val_batch2_labels.jpg>
+Package pdftex.def Info: ../interim_report/context/Old_val_batch2_labels.jpg  u
+sed on input line 34.
+(pdftex.def)             Requested size: 355.08981pt x 355.0855pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../interim_report/images/Previous_Model_F1__score.PNG, id=521, 331.2375pt x 26
+5.74281pt>
+File: ../interim_report/images/Previous_Model_F1__score.PNG Graphic file (type 
+png)
+<use ../interim_report/images/Previous_Model_F1__score.PNG>
+Package pdftex.def Info: ../interim_report/images/Previous_Model_F1__score.PNG 
+ used on input line 41.
+(pdftex.def)             Requested size: 318.66946pt x 255.66977pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./images/coffee_berry_comparison.png>] [8 <../interim_report/context/Old_va
+l_batch2_labels.jpg>] [9 <../interim_report/images/Previous_Model_F1__score.PNG
+>]
+<Figures/sorting_comparison.pdf, id=546, 596.12108pt x 338.2216pt>
 File: Figures/sorting_comparison.pdf Graphic file (type pdf)
 <use Figures/sorting_comparison.pdf>
-Package pdftex.def Info: Figures/sorting_comparison.pdf  used on input line 60.
+Package pdftex.def Info: Figures/sorting_comparison.pdf  used on input line 74.
 
-(pdftex.def)             Requested size: 432.48048pt x 245.38242pt.
- [9 <./Figures/sorting_comparison.pdf>] [10]
-<Figures/classification_flowchart.pdf, id=525, 712.49384pt x 495.98802pt>
+(pdftex.def)             Requested size: 373.30347pt x 211.806pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../interim_report/images/Mechanical_Images/Fully_Fabricated_Assembbly_From_Pre
+vious_Group.PNG, id=547, 645.91313pt x 474.27188pt>
+File: ../interim_report/images/Mechanical_Images/Fully_Fabricated_Assembbly_Fro
+m_Previous_Group.PNG Graphic file (type png)
+<use ../interim_report/images/Mechanical_Images/Fully_Fabricated_Assembbly_From
+_Previous_Group.PNG>
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Fully_Fabri
+cated_Assembbly_From_Previous_Group.PNG  used on input line 81.
+(pdftex.def)             Requested size: 364.19664pt x 267.41411pt.
+
+LaTeX Warning: Citation `mugo2017' on page 10 undefined on input line 82.
+
+
+LaTeX Warning: Citation `mugo2017' on page 10 undefined on input line 82.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10] [11 <./Figures/sorting_comparison.pdf>] [12 <../interim_report/images/Mech
+anical_Images/Fully_Fabricated_Assembbly_From_Previous_Group.PNG>]
+<Figures/classification_flowchart.pdf, id=599, 712.49384pt x 495.98802pt>
 File: Figures/classification_flowchart.pdf Graphic file (type pdf)
 <use Figures/classification_flowchart.pdf>
 Package pdftex.def Info: Figures/classification_flowchart.pdf  used on input li
-ne 87.
-(pdftex.def)             Requested size: 432.48048pt x 301.06888pt.
- [11 <./Figures/classification_flowchart.pdf>] [12] [13] [14] [15]) [16] (Files
-/Chapter3.tex
-<Figures/system_architecture.pdf, id=574, 547.9341pt x 350.0528pt>
+ne 108.
+(pdftex.def)             Requested size: 373.30347pt x 259.8754pt.
+ [13 <./Figures/classification_flowchart.pdf>] [14] [15] [16]) [17] (Files/Chap
+ter3.tex
+<Figures/system_architecture.pdf, id=644, 547.9341pt x 350.0528pt>
 File: Figures/system_architecture.pdf Graphic file (type pdf)
 <use Figures/system_architecture.pdf>
 Package pdftex.def Info: Figures/system_architecture.pdf  used on input line 18
 .
-(pdftex.def)             Requested size: 432.48048pt x 276.30365pt.
+(pdftex.def)             Requested size: 373.30347pt x 238.49745pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -550,107 +622,207 @@ Overfull \hbox (2.21783pt too wide) in paragraph at lines 27--28
 tent berry flow, min-i-mal vibration-
  []
 
-[17
+[18
 
-] [18 <./Figures/system_architecture.pdf>] [19] [20]
-<Figures/coprocessing_architecture.pdf, id=616, 522.42982pt x 469.00117pt>
+] [19 <./Figures/system_architecture.pdf>] [20]
+
+LaTeX Warning: Citation `mugo2017' on page 21 undefined on input line 75.
+
+
+LaTeX Warning: Citation `mugo2017' on page 21 undefined on input line 82.
+
+[21] [22]
+<../interim_report/images/Mechanical_Images/Feeder_Without_Title_block.PNG, id=
+706, 679.03688pt x 415.5525pt>
+File: ../interim_report/images/Mechanical_Images/Feeder_Without_Title_block.PNG
+ Graphic file (type png)
+<use ../interim_report/images/Mechanical_Images/Feeder_Without_Title_block.PNG>
+
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Feeder_With
+out_Title_block.PNG  used on input line 144.
+(pdftex.def)             Requested size: 318.66946pt x 195.01802pt.
+
+
+LaTeX Warning: Citation `mugo2017' on page 23 undefined on input line 145.
+
+
+LaTeX Warning: Citation `mugo2017' on page 23 undefined on input line 145.
+
+[23 <../interim_report/images/Mechanical_Images/Feeder_Without_Title_block.PNG>
+]
+
+LaTeX Warning: Citation `mugo2017' on page 24 undefined on input line 168.
+
+<../interim_report/images/Mechanical_Images/Hopper_Without_Title_block.PNG, id=
+714, 686.565pt x 455.45157pt>
+File: ../interim_report/images/Mechanical_Images/Hopper_Without_Title_block.PNG
+ Graphic file (type png)
+<use ../interim_report/images/Mechanical_Images/Hopper_Without_Title_block.PNG>
+
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Hopper_With
+out_Title_block.PNG  used on input line 198.
+(pdftex.def)             Requested size: 273.14922pt x 181.1975pt.
+
+LaTeX Warning: Citation `mugo2017' on page 24 undefined on input line 199.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24]
+<../interim_report/images/Mechanical_Images/Bottop_PlatE_Without_Title_block.PN
+G, id=722, 763.35187pt x 458.46281pt>
+File: ../interim_report/images/Mechanical_Images/Bottop_PlatE_Without_Title_blo
+ck.PNG Graphic file (type png)
+<use ../interim_report/images/Mechanical_Images/Bottop_PlatE_Without_Title_bloc
+k.PNG>
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Bottop_Plat
+E_Without_Title_block.PNG  used on input line 220.
+(pdftex.def)             Requested size: 273.14922pt x 164.04611pt.
+
+
+LaTeX Warning: Citation `mugo2017' on page 25 undefined on input line 221.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../interim_report/images/Mechanical_Images/The_Chute_Without_Title_block.PNG, 
+id=723, 780.66656pt x 417.81094pt>
+File: ../interim_report/images/Mechanical_Images/The_Chute_Without_Title_block.
+PNG Graphic file (type png)
+<use ../interim_report/images/Mechanical_Images/The_Chute_Without_Title_block.P
+NG>
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/The_Chute_W
+ithout_Title_block.PNG  used on input line 238.
+(pdftex.def)             Requested size: 318.66946pt x 170.55132pt.
+
+LaTeX Warning: Citation `mugo2017' on page 25 undefined on input line 239.
+
+[25 <../interim_report/images/Mechanical_Images/Hopper_Without_Title_block.PNG>
+]
+<../interim_report/images/Mechanical_Images/Chute_bracket_Without_Title_block.P
+NG, id=731, 628.59843pt x 419.31656pt>
+File: ../interim_report/images/Mechanical_Images/Chute_bracket_Without_Title_bl
+ock.PNG Graphic file (type png)
+<use ../interim_report/images/Mechanical_Images/Chute_bracket_Without_Title_blo
+ck.PNG>
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Chute_brack
+et_Without_Title_block.PNG  used on input line 245.
+(pdftex.def)             Requested size: 273.14922pt x 182.20927pt.
+
+
+LaTeX Warning: Citation `mugo2017' on page 26 undefined on input line 246.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26 <../interim_report/images/Mechanical_Images/Bottop_PlatE_Without_Title_bloc
+k.PNG> <../interim_report/images/Mechanical_Images/The_Chute_Without_Title_bloc
+k.PNG>]
+
+LaTeX Warning: Citation `mugo2017' on page 27 undefined on input line 258.
+
+[27 <../interim_report/images/Mechanical_Images/Chute_bracket_Without_Title_blo
+ck.PNG>]
+<Figures/coprocessing_architecture.pdf, id=744, 522.42982pt x 469.00117pt>
 File: Figures/coprocessing_architecture.pdf Graphic file (type pdf)
 <use Figures/coprocessing_architecture.pdf>
 Package pdftex.def Info: Figures/coprocessing_architecture.pdf  used on input l
-ine 84.
-(pdftex.def)             Requested size: 432.48048pt x 388.26181pt.
- [21 <./Figures/coprocessing_architecture.pdf>] [22]
-<Figures/system_block_diagram.pdf, id=664, 582.42691pt x 452.95122pt>
+ine 272.
+(pdftex.def)             Requested size: 364.19664pt x 326.96033pt.
+ [28 <./Figures/coprocessing_architecture.pdf>] [29]
+<Figures/system_block_diagram.pdf, id=791, 582.42691pt x 452.95122pt>
 File: Figures/system_block_diagram.pdf Graphic file (type pdf)
 <use Figures/system_block_diagram.pdf>
-Package pdftex.def Info: Figures/system_block_diagram.pdf  used on input line 1
-19.
-(pdftex.def)             Requested size: 432.48048pt x 336.34668pt.
+Package pdftex.def Info: Figures/system_block_diagram.pdf  used on input line 3
+07.
+(pdftex.def)             Requested size: 373.30347pt x 290.32321pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/electrical_schematic.pdf, id=666, 656.39731pt x 354.54056pt>
+<Figures/electrical_schematic.pdf, id=793, 656.39731pt x 354.54056pt>
 File: Figures/electrical_schematic.pdf Graphic file (type pdf)
 <use Figures/electrical_schematic.pdf>
-Package pdftex.def Info: Figures/electrical_schematic.pdf  used on input line 1
-30.
-(pdftex.def)             Requested size: 432.48048pt x 233.60257pt.
+Package pdftex.def Info: Figures/electrical_schematic.pdf  used on input line 3
+18.
+(pdftex.def)             Requested size: 373.30347pt x 201.63579pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/circuit_implementation.png, id=669, 872.50969pt x 588.69937pt>
+<Figures/circuit_implementation.png, id=796, 872.50969pt x 588.69937pt>
 File: Figures/circuit_implementation.png Graphic file (type png)
 <use Figures/circuit_implementation.png>
 Package pdftex.def Info: Figures/circuit_implementation.png  used on input line
- 139.
-(pdftex.def)             Requested size: 432.48048pt x 291.79784pt.
+ 327.
+(pdftex.def)             Requested size: 373.30347pt x 251.86922pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (40.01776pt too wide) in paragraph at lines 149--185
+Overfull \hbox (40.01776pt too wide) in paragraph at lines 337--373
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24 <./Figures/system_block_diagram.pdf>] [25 <./Figures/electrical_schema
-tic.pdf>] [26 <./Figures/circuit_implementation.png>] [27]
-<Figures/control_flow.pdf, id=742, 536.64589pt x 1051.45618pt>
+[30] [31 <./Figures/system_block_diagram.pdf>] [32 <./Figures/electrical_schema
+tic.pdf>] [33 <./Figures/circuit_implementation.png>]
+<Figures/control_flow.pdf, id=865, 536.64589pt x 1051.45618pt>
 File: Figures/control_flow.pdf Graphic file (type pdf)
 <use Figures/control_flow.pdf>
-Package pdftex.def Info: Figures/control_flow.pdf  used on input line 229.
+Package pdftex.def Info: Figures/control_flow.pdf  used on input line 417.
 (pdftex.def)             Requested size: 295.90587pt x 579.77873pt.
 
 
-LaTeX Warning: Float too large for page by 15.27873pt on input line 232.
+LaTeX Warning: Float too large for page by 15.27873pt on input line 420.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/processing_flow.pdf, id=743, 386.54312pt x 1238.31236pt>
+<Figures/processing_flow.pdf, id=866, 386.54312pt x 1238.31236pt>
 File: Figures/processing_flow.pdf Graphic file (type pdf)
 <use Figures/processing_flow.pdf>
-Package pdftex.def Info: Figures/processing_flow.pdf  used on input line 236.
+Package pdftex.def Info: Figures/processing_flow.pdf  used on input line 424.
 (pdftex.def)             Requested size: 250.38562pt x 802.13483pt.
 
-LaTeX Warning: Float too large for page by 258.71814pt on input line 239.
+LaTeX Warning: Float too large for page by 258.71814pt on input line 427.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Figures/uart_communication.pdf, id=745, 477.81612pt x 721.31181pt>
+[34]
+<Figures/uart_communication.pdf, id=872, 477.81612pt x 721.31181pt>
 File: Figures/uart_communication.pdf Graphic file (type pdf)
 <use Figures/uart_communication.pdf>
-Package pdftex.def Info: Figures/uart_communication.pdf  used on input line 247
+Package pdftex.def Info: Figures/uart_communication.pdf  used on input line 435
 .
 (pdftex.def)             Requested size: 364.19664pt x 549.78758pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [28] [29] [30 <./Figures/control_flow.pdf>] [31 <./Figures/processing_flow.pd
-f>] [32 <./Figures/uart_communication.pdf>] (Files/Chapter5.tex [33
+) [35] [36] [37 <./Figures/control_flow.pdf>] [38 <./Figures/processing_flow.pd
+f>] [39 <./Figures/uart_communication.pdf>] (Files/Chapter5.tex [40
 
-]) [34]
+]) [41]
 (Files/Summary.tex)
 Overfull \hbox (9.20248pt too wide) in paragraph at lines 6--93
 []\OT1/cmr/m/n/12 The project em-pha-sizes a bal-ance be-tween tech-no-log-i-ca
 l ad-vance-ment and cost-effectiveness,
  []
 
-[35
+[42
 
-] (Coffee_Berry_Sorting_Machine.bbl) [36
+] (Coffee_Berry_Sorting_Machine.bbl) [43
 
 ] (Files/Appendices.tex
-<Figures/Budget.jpeg, id=840, 702.625pt x 538.01pt>
+<Figures/Budget.jpeg, id=967, 702.625pt x 538.01pt>
 File: Figures/Budget.jpeg Graphic file (type jpg)
 <use Figures/Budget.jpeg>
 Package pdftex.def Info: Figures/Budget.jpeg  used on input line 8.
 (pdftex.def)             Requested size: 409.71689pt x 313.73714pt.
-<Figures/Time_Plan.jpeg, id=841, 894.34125pt x 514.92375pt>
+<Figures/Time_Plan.jpeg, id=968, 894.34125pt x 514.92375pt>
 File: Figures/Time_Plan.jpeg Graphic file (type jpg)
 <use Figures/Time_Plan.jpeg>
 Package pdftex.def Info: Figures/Time_Plan.jpeg  used on input line 18.
@@ -659,24 +831,119 @@ Package pdftex.def Info: Figures/Time_Plan.jpeg  used on input line 18.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [37
 
- <./Figures/Budget.jpeg>] [38 <./Figures/Time_Plan.jpeg>]
-(Coffee_Berry_Sorting_Machine.aux)
+LaTeX Warning: Citation `mugo2017' on page 44 undefined on input line 26.
+
+
+
+pdfTeX warning: pdflatex.exe (file ../interim_report/images/Mechanical_Images/B
+ottom plate.pdf): PDF inclusion: found PDF version <1.6>, but at most version <
+1.5> allowed
+<../interim_report/images/Mechanical_Images/Bottom plate.pdf, id=969, 1195.4662
+5pt x 845.1575pt>
+File: ../interim_report/images/Mechanical_Images/Bottom plate.pdf Graphic file 
+(type pdf)
+<use ../interim_report/images/Mechanical_Images/Bottom plate.pdf>
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Bottom plat
+e.pdf  used on input line 30.
+(pdftex.def)             Requested size: 409.71689pt x 289.65814pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: File `Chute.pdf' not found on input line 37.
+
+
+! Package pdftex.def Error: File `Chute.pdf' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 ...degraphics[width=0.9\textwidth]{Chute.pdf}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+pdfTeX warning: pdflatex.exe (file ../interim_report/images/Mechanical_Images/C
+hute bracket.pdf): PDF inclusion: found PDF version <1.6>, but at most version 
+<1.5> allowed
+<../interim_report/images/Mechanical_Images/Chute bracket.pdf, id=970, 1195.466
+25pt x 845.1575pt>
+File: ../interim_report/images/Mechanical_Images/Chute bracket.pdf Graphic file
+ (type pdf)
+<use ../interim_report/images/Mechanical_Images/Chute bracket.pdf>
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Chute brack
+et.pdf  used on input line 44.
+(pdftex.def)             Requested size: 409.71689pt x 289.65814pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+pdfTeX warning: pdflatex.exe (file ../interim_report/images/Mechanical_Images/F
+eeder trough.pdf): PDF inclusion: found PDF version <1.6>, but at most version 
+<1.5> allowed
+<../interim_report/images/Mechanical_Images/Feeder trough.pdf, id=971, 1195.466
+25pt x 845.1575pt>
+File: ../interim_report/images/Mechanical_Images/Feeder trough.pdf Graphic file
+ (type pdf)
+<use ../interim_report/images/Mechanical_Images/Feeder trough.pdf>
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Feeder trou
+gh.pdf  used on input line 51.
+(pdftex.def)             Requested size: 409.71689pt x 289.65814pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+pdfTeX warning: pdflatex.exe (file ../interim_report/images/Mechanical_Images/H
+opper.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1.5> a
+llowed
+<../interim_report/images/Mechanical_Images/Hopper.pdf, id=972, 1195.46625pt x 
+845.1575pt>
+File: ../interim_report/images/Mechanical_Images/Hopper.pdf Graphic file (type 
+pdf)
+<use ../interim_report/images/Mechanical_Images/Hopper.pdf>
+Package pdftex.def Info: ../interim_report/images/Mechanical_Images/Hopper.pdf 
+ used on input line 58.
+(pdftex.def)             Requested size: 409.71689pt x 289.65814pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [44
+
+ <./Figures/Budget.jpeg>] [45 <./Figures/Time_Plan.jpeg> <../interim_report/ima
+ges/Mechanical_Images/Bottom plate.pdf>] [46] [47 <../interim_report/images/Mec
+hanical_Images/Chute bracket.pdf>] [48 <../interim_report/images/Mechanical_Ima
+ges/Feeder trough.pdf>] [49 <../interim_report/images/Mechanical_Images/Hopper.
+pdf>] (Coffee_Berry_Sorting_Machine.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Coffee_Berry_Sorting_Machine.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: E5F6F06E9F7E2F507CAA6BDD45092735;12871.
+(rerunfilecheck)             Checksum: 95B5C2AA2B7AB8AE27EC7155F5563535;13959.
  ) 
 Here is how much of TeX's memory you used:
- 10697 strings out of 467870
- 169610 string characters out of 5418838
- 576386 words of memory out of 5000000
- 39265 multiletter control sequences out of 15000+600000
- 637382 words of font info for 75 fonts, out of 8000000 for 9000
+ 10914 strings out of 467870
+ 178499 string characters out of 5418838
+ 577120 words of memory out of 5000000
+ 39433 multiletter control sequences out of 15000+600000
+ 638228 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,810b,542s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
@@ -685,19 +952,25 @@ Here is how much of TeX's memory you used:
 amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmbx8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/font
 s/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/user/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/user/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/user/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/user/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/
-user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C
-:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9
-.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmti12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmti8.pfb>
-Output written on Coffee_Berry_Sorting_Machine.pdf (48 pages, 3125511 bytes).
+eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/user/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/user/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/us
+er/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/U
+sers/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb
+><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr9.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsl12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/user/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/user/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/user/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/user/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Coffee_Berry_Sorting_Machine.pdf (59 pages, 5483705 bytes).
 PDF statistics:
- 917 PDF objects out of 1000 (max. 8388607)
- 143 named destinations out of 1000 (max. 500000)
- 601 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1200 PDF objects out of 1200 (max. 8388607)
+ 189 named destinations out of 1000 (max. 500000)
+ 709 words of extra memory for PDF output out of 10000 (max. 10000000)
 

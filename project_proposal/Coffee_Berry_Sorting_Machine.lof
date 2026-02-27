@@ -1,15 +1,28 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Harvested coffee berry variation showing visual diversity in color, size, and surface texture}}{2}{figure.1.1}%
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Ripe coffee berries showing color variation from green to deep red}}{6}{figure.2.1}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Coffee berry samples showing distinct visual differences between ripe (red/purple) and unripe (green/yellow) berries targeted for binary classification}}{7}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Comparison of manual and electronic coffee sorting methods (Source: Agriculture Institute, 2024)}}{9}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Overview of classification methods used in coffee berry sorting systems}}{11}{figure.2.4}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Overall system architecture of the improved coffee berry sorting machine}}{18}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Co-processing architecture showing task distribution: Raspberry Pi handles image processing, classification, and tracking; ESP32 handles motor control, actuator interfacing, and timing}}{21}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces System block diagram showing processor hierarchy, communication links, and actuator outputs with power distribution}}{24}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}}{25}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Physical breadboard circuit implementation showing Raspberry Pi 3, ESP32 co-processor, relay module, and all peripheral connections (LED, motor, pneumatic compressor, ejector valves)}}{26}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces System control flow showing task distribution between Raspberry Pi 3 (image processing, classification, tracking) and ESP32 (motor control, timing, actuation)}}{30}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}}{31}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces UART communication and data flow between Raspberry Pi 3 and ESP32 co-processor showing GPIO pin assignments and connection protocol}}{32}{figure.3.8}%
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Budget Breakdown}}{37}{figure.A.1}%
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Implementation Schedule (16 Weeks)}}{38}{figure.B.1}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Reference model validation predictions showing four-class classification (unripe, semi-ripe, ripe, overripe) with visible confusion between visually similar categories}}{8}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Reference model F1-score performance across the four ripeness categories, highlighting the classification difficulty at the semi-ripe/ripe boundary}}{9}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Comparison of manual and electronic coffee sorting methods (Source: Agriculture Institute, 2024)}}{11}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Fully fabricated mechanical assembly from previous implementation \cite {mugo2017}, showing integrated hopper, vibrating feeder, chute, and frame structure}}{12}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Overview of classification methods used in coffee berry sorting systems}}{13}{figure.2.7}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Overall system architecture of the improved coffee berry sorting machine}}{19}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Vibrating feeder assembly showing tray and spring mounting (adapted from \cite {mugo2017})}}{23}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Hopper design with conical frustum geometry (adapted from \cite {mugo2017})}}{25}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Hopper lid mechanism for flow control (adapted from \cite {mugo2017})}}{26}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Chute assembly with alignment channels (adapted from \cite {mugo2017})}}{26}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Chute mounting bracket for angle adjustment (adapted from \cite {mugo2017})}}{27}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Co-processing architecture showing task distribution: Raspberry Pi handles image processing, classification, and tracking; ESP32 handles motor control, actuator interfacing, and timing}}{28}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces System block diagram showing processor hierarchy, communication links, and actuator outputs with power distribution}}{31}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Electrical schematic showing power distribution, processor connections, actuator outputs, and communication links}}{32}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Physical breadboard circuit implementation showing Raspberry Pi 3, ESP32 co-processor, relay module, and all peripheral connections (LED, motor, pneumatic compressor, ejector valves)}}{33}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces System control flow showing task distribution between Raspberry Pi 3 (image processing, classification, tracking) and ESP32 (motor control, timing, actuation)}}{37}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Image processing pipeline executed on Raspberry Pi 3, showing stages from raw image capture through pre-processing, detection, classification (CNN), and tracking to final output transmitted to ESP32}}{38}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces UART communication and data flow between Raspberry Pi 3 and ESP32 co-processor showing GPIO pin assignments and connection protocol}}{39}{figure.3.13}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Budget Breakdown}}{44}{figure.A.1}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Implementation Schedule (16 Weeks)}}{45}{figure.B.1}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Bottom plate technical drawing with dimensions and specifications}}{45}{figure.C.1}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Chute assembly technical drawing with dimensions and specifications}}{46}{figure.C.2}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Chute mounting bracket technical drawing with dimensions and specifications}}{47}{figure.C.3}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Vibrating feeder trough technical drawing with dimensions and specifications}}{48}{figure.C.4}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Hopper assembly technical drawing with dimensions and specifications}}{49}{figure.C.5}%

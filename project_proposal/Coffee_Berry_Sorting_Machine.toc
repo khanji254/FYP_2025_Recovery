@@ -10,56 +10,62 @@
 \contentsline {subsection}{\numberline {1.4}Justification}{5}{subsection.1.4}%
 \contentsline {section}{\numberline {2}Literature Review}{6}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Challenges of Traditional Sorting Methods}{7}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Advantages of Automated Coffee Berry Sorting}{8}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Separation Methods}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.2}Advantages of Automated Coffee Berry Sorting}{9}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Separation Methods}{10}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Air Jet System}{10}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Ejector Plates}{10}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Diverter Systems}{11}{subsubsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.4}Classification Methods}{11}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Color-Based Classification}{12}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Shape-Based Classification}{12}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Texture-Based Classification}{12}{subsubsection.2.4.3}%
-\contentsline {subsubsection}{\numberline {2.4.4}Deep Learning-Based Classification}{13}{subsubsection.2.4.4}%
-\contentsline {subsubsection}{\numberline {2.4.5}Pattern Recognition-Based Classification}{13}{subsubsection.2.4.5}%
-\contentsline {subsubsection}{\numberline {2.4.6}Multispectral and Hyperspectral Imaging-Based Classification}{14}{subsubsection.2.4.6}%
-\contentsline {subsubsection}{\numberline {2.4.7}Three-Dimensional (3D) Object Classification}{14}{subsubsection.2.4.7}%
-\contentsline {subsection}{\numberline {2.5}Gap Analysis}{14}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Real-Time Processing and Throughput Limitations}{14}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Motion Blur and Image Degradation at Higher Speeds}{15}{subsubsection.2.5.2}%
-\contentsline {subsubsection}{\numberline {2.5.3}Cost-Performance Trade-Off in Hardware Selection}{15}{subsubsection.2.5.3}%
-\contentsline {section}{\numberline {3}Research Design and Methodology}{17}{section.3}%
-\contentsline {subsection}{\numberline {3.1}System Overview}{17}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Mechanical Module Design}{17}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Hopper}{18}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Linear Vibrating Feeder}{18}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Chute}{19}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Camera Holder}{19}{subsubsection.3.2.4}%
-\contentsline {subsubsection}{\numberline {3.2.5}Ejection Holder}{19}{subsubsection.3.2.5}%
-\contentsline {subsubsection}{\numberline {3.2.6}Frame Structure}{20}{subsubsection.3.2.6}%
-\contentsline {subsection}{\numberline {3.3}Proposed Electrical and Control Module}{20}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Central Processing and Co-Processing Architecture}{20}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Image Acquisition System}{22}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Air Ejection and Actuation System}{22}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Motor Control and Power Supply}{23}{subsubsection.3.3.4}%
-\contentsline {subsubsection}{\numberline {3.3.5}System Overview}{23}{subsubsection.3.3.5}%
-\contentsline {subsubsection}{\numberline {3.3.6}Electrical Wiring and Pin Assignment}{23}{subsubsection.3.3.6}%
-\contentsline {subsubsection}{\numberline {3.3.7}Actuator Control Circuits}{24}{subsubsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.4}Software Architecture and Control Logic}{26}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}System Startup}{26}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Image Acquisition and Processing}{27}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Object Detection and Classification}{27}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Object Tracking}{27}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}Control and Ejection}{27}{subsubsection.3.4.5}%
-\contentsline {subsubsection}{\numberline {3.4.6}System Flow Control}{28}{subsubsection.3.4.6}%
-\contentsline {subsubsection}{\numberline {3.4.7}Inter-Processor Communication Protocol}{28}{subsubsection.3.4.7}%
-\contentsline {section}{\numberline {4}Expected Outcomes}{33}{section.4}%
-\contentsline {subsection}{\numberline {4.1}An Improved Coffee Berry Sorting Machine Model}{33}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Enhanced Real-Time Detection and Classification Performance}{33}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Optimized Ejection Timing and Synchronization}{33}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Improved System Stability and Reliability}{34}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}A Scalable and Cost-Conscious Design Framework}{34}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Contribution to Agricultural Automation Research}{34}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Conclusion}{35}{section.5}%
-\contentsline {section}{References}{36}{section.5}%
-\contentsline {section}{\numberline {A}Project Budget}{37}{appendix.A}%
-\contentsline {section}{\numberline {B}Project Timeline}{37}{appendix.B}%
+\contentsline {subsubsection}{\numberline {2.3.2}Ejector Plates}{11}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Diverter Systems}{12}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Classification Methods}{13}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Color-Based Classification}{13}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Shape-Based Classification}{14}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Texture-Based Classification}{14}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Deep Learning-Based Classification}{14}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Pattern Recognition-Based Classification}{15}{subsubsection.2.4.5}%
+\contentsline {subsubsection}{\numberline {2.4.6}Multispectral and Hyperspectral Imaging-Based Classification}{15}{subsubsection.2.4.6}%
+\contentsline {subsubsection}{\numberline {2.4.7}Three-Dimensional (3D) Object Classification}{16}{subsubsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.5}Gap Analysis}{16}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Real-Time Processing and Throughput Limitations}{16}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Motion Blur and Image Degradation at Higher Speeds}{17}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Cost-Performance Trade-Off in Hardware Selection}{17}{subsubsection.2.5.3}%
+\contentsline {section}{\numberline {3}Research Design and Methodology}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}System Overview}{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Mechanical Module Design}{18}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Hopper}{19}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Linear Vibrating Feeder}{19}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Chute}{20}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Camera Holder}{20}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Ejection Holder}{20}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}Frame Structure}{21}{subsubsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.3}Mechanical Design Calculations}{21}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Vibrating Feeder Design}{21}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Hopper Design}{23}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Chute Design}{25}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Frame Integration and Assembly}{26}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Proposed Electrical and Control Module}{27}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Central Processing and Co-Processing Architecture}{27}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Image Acquisition System}{29}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Air Ejection and Actuation System}{29}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Motor Control and Power Supply}{30}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}System Overview}{30}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Electrical Wiring and Pin Assignment}{30}{subsubsection.3.4.6}%
+\contentsline {subsubsection}{\numberline {3.4.7}Actuator Control Circuits}{31}{subsubsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.5}Software Architecture and Control Logic}{33}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}System Startup}{33}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Image Acquisition and Processing}{33}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Object Detection and Classification}{34}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Object Tracking}{34}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Control and Ejection}{34}{subsubsection.3.5.5}%
+\contentsline {subsubsection}{\numberline {3.5.6}System Flow Control}{34}{subsubsection.3.5.6}%
+\contentsline {subsubsection}{\numberline {3.5.7}Inter-Processor Communication Protocol}{35}{subsubsection.3.5.7}%
+\contentsline {section}{\numberline {4}Expected Outcomes}{40}{section.4}%
+\contentsline {subsection}{\numberline {4.1}An Improved Coffee Berry Sorting Machine Model}{40}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Enhanced Real-Time Detection and Classification Performance}{40}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Optimized Ejection Timing and Synchronization}{40}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Improved System Stability and Reliability}{41}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}A Scalable and Cost-Conscious Design Framework}{41}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Contribution to Agricultural Automation Research}{41}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Conclusion}{42}{section.5}%
+\contentsline {section}{References}{43}{section.5}%
+\contentsline {section}{\numberline {A}Project Budget}{44}{appendix.A}%
+\contentsline {section}{\numberline {B}Project Timeline}{44}{appendix.B}%
+\contentsline {section}{\numberline {C}Mechanical Design Schematics}{44}{appendix.C}%

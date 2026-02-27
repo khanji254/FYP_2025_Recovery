@@ -20,13 +20,27 @@ Advances in machine vision, robotics, and embedded computing have enabled the de
     \item A separation mechanism (air jets, ejector plates, or diverters)
 \end{itemize}
 
-The 2019 automated coffee berry sorting machine project (reference project) represents a significant academic effort in this domain. The system employed a vibrating conveyor for controlled berry flow, a chute for alignment, image-based detection using a Raspberry Pi 3, and an air ejection mechanism for separation. While the system demonstrated the feasibility of automated sorting, several technical challenges were identified, particularly in real-time image processing and actuation timing, forming the foundation for the present study.
+The 2019 automated coffee berry sorting machine project (reference project) represents a significant academic effort in this domain. The system employed a vibrating conveyor for controlled berry flow, a chute for alignment, image-based detection using a Raspberry Pi 3, and an air ejection mechanism for separation. While the system demonstrated the feasibility of automated sorting, several technical challenges were identified, particularly in real-time image processing and actuation timing, forming the foundation for the present study. The reference system used a four-class classification model (unripe, semi-ripe, ripe, overripe) based on MobileNetV2 architecture.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{images/coffee_berry_comparison.png}
+\includegraphics[width=0.7\textwidth]{coffee_berry_comparison.png}
 \caption{Coffee berry samples showing distinct visual differences between ripe (red/purple) and unripe (green/yellow) berries targeted for binary classification}
 \label{fig:coffee_berries_hands}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.78\textwidth]{Old_val_batch2_labels.jpg}
+\caption{Reference model validation predictions showing four-class classification (unripe, semi-ripe, ripe, overripe) with visible confusion between visually similar categories}
+\label{fig:old_model_predictions}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.70\textwidth]{Previous_Model_F1__score.PNG}
+\caption{Reference model F1-score performance across the four ripeness categories, highlighting the classification difficulty at the semi-ripe/ripe boundary}
+\label{fig:old_model_f1}
 \end{figure}
 
 \subsection{Challenges of Traditional Sorting Methods}
@@ -57,9 +71,16 @@ Automated coffee berry sorting systems offer several key advantages over manual 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/sorting_comparison.pdf}
+\includegraphics[width=0.82\textwidth]{Figures/sorting_comparison.pdf}
 \caption{Comparison of manual and electronic coffee sorting methods (Source: Agriculture Institute, 2024)}
 \label{fig:separation_methods}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{Fully_Fabricated_Assembbly_From_Previous_Group.PNG}
+\caption{Fully fabricated mechanical assembly from previous implementation \cite{mugo2017}, showing integrated hopper, vibrating feeder, chute, and frame structure}
+\label{fig:fabricated_assembly}
 \end{figure}
 
 \subsubsection{Air Jet System}
@@ -84,7 +105,7 @@ Advantages include: structural simplicity, low maintenance, and suitability for 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/classification_flowchart.pdf}
+\includegraphics[width=0.82\textwidth]{Figures/classification_flowchart.pdf}
 \caption{Overview of classification methods used in coffee berry sorting systems}
 \label{fig:classification_methods}
 \end{figure}

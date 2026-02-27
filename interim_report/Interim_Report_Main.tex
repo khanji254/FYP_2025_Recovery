@@ -1,0 +1,129 @@
+\documentclass[12pt,fleqn]{article}
+
+%--- PACKAGES ---
+\usepackage{a4}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{pgfgantt}          % Gantt chart
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning, calc}
+\usepackage{tocloft}
+\usepackage[hidelinks]{hyperref}
+\usepackage{Styles/hangcaption}
+\usepackage{Styles/fancyheadings}
+
+%--- PAGE GEOMETRY ---
+\textwidth 16cm
+\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\parskip}{1.5ex plus0.5ex minus0.5ex}
+\setlength{\parindent}{0em}
+
+%--- HEADERS ---
+\pagestyle{fancyplain}
+\renewcommand{\sectionmark}[1]{\markboth{Chapter~\thesection.~#1}{#1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+\rhead[\fancyplain{}{\leftmark}]{\fancyplain{\thepage}{\thepage}}
+\cfoot{}
+\plainheadrulewidth 0.4pt
+
+\makeatletter
+\ifcase \@ptsize \relax
+  \addtolength{\headheight}{1\p@}
+\or
+  \addtolength{\headheight}{2\p@}
+\or
+  \addtolength{\headheight}{3\p@}
+\fi
+\makeatother
+
+%--- NUMBERING BY SECTION ---
+\makeatletter
+\renewcommand\theequation{\thesection.\arabic{equation}}
+\renewcommand\thefigure{\thesection.\arabic{figure}}
+\renewcommand\thetable{\thesection.\arabic{table}}
+\@addtoreset{equation}{section}
+\@addtoreset{figure}{section}
+\@addtoreset{table}{section}
+\makeatother
+
+%--- CODE STYLE ---
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{backcolour}{rgb}{0.96,0.96,0.96}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    numberstyle=\tiny\color{codegray},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    numbers=left,
+    numbersep=5pt,
+    frame=single
+}
+\lstset{style=mystyle}
+
+%--- ABBREVIATIONS ---
+\newcommand{\mr}{\mathrm}
+\newcommand{\bs}[1]{\mbox{$\boldsymbol{#1}$}}
+\newcommand{\degree}[1]{\mbox{$#1^\circ$}}
+\setcounter{tocdepth}{3}
+
+\graphicspath{{Figures/}{Figures/Figures/}{../project_proposal/Figures/}{../project_proposal/images/}{../project_proposal/diagrams/}{context/}{images/}{images/Mechanical_Images/}{images/model__Training_Results/}}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+\input{Files/title_page}
+
+\pagenumbering{gobble}
+\pagenumbering{Roman}
+
+\input{Files/Declaration}
+\clearpage
+\input{Files/Acknowledgment}
+\clearpage
+\input{Files/Abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+
+\pagenumbering{arabic}
+
+\input{Files/Chapter1_Introduction}
+\clearpage
+\input{Files/Chapter2_LiteratureReview}
+\clearpage
+\input{Files/Chapter3_Methodology}
+\clearpage
+\input{Files/Chapter4_ResultsDiscussion}
+\clearpage
+\input{Files/Chapter5_Conclusion}
+\clearpage
+
+%--- REFERENCES ---
+\bibliographystyle{IEEEtran}
+\bibliography{Bib/interim_references}
+\clearpage
+
+\appendix
+\input{Files/Appendices}
+
+\end{document}

@@ -1,0 +1,327 @@
+\section{Literature Review}
+\label{sec:review}
+
+The global coffee industry plays a critical role in the economies of many developing
+countries, including Kenya, where it provides livelihoods to millions of smallholder
+farmers. Coffee processing involves several critical stages, among which the sorting
+of coffee berries determines final product quality and market value. The presence of
+unripe, overripe, or defective berries significantly degrades cup quality, leading to
+price penalties and rejection by premium buyers \cite{brosnan2004}.
+
+Automated sorting systems based on machine vision offer a path to consistent,
+high-throughput grading. A previous fifth-year project at this institution developed
+an image-based coffee berry sorting machine that demonstrated the feasibility of
+automated sorting but revealed significant technical gaps in real-time performance.
+This review surveys the relevant literature, documents the previous system and its
+known limitations, and identifies the specific gaps addressed by this work.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.70\textwidth]{Ripe.jpeg}
+  \caption{Ripe coffee berries showing colour variation from green to deep red}
+  \label{fig:ripe_berries}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{The Reference Project: Previous Coffee Berry Sorting Machine}
+\label{subsec:ref_project}
+
+The foundation of this work is a fifth-year mechatronics engineering project that
+developed an automated coffee berry sorting machine \cite{mugo2017}. That system
+established the core mechanical and electronic architecture on which this project builds.
+
+\subsubsection{System Architecture of the Reference Machine}
+
+The reference system integrated four main subsystems:
+\begin{enumerate}
+  \item \textbf{Mechanical handling:} A vibrating eccentric-motor tray singulated berries
+        from a hopper onto an inclined chute. Gravity and vibration aligned berries into
+        a near-single-file stream before the imaging zone.
+  \item \textbf{Image acquisition:} A Raspberry Pi Camera Module V2 (rolling shutter,
+        8\,MP Sony IMX219) captured frames above the chute at fixed intervals.
+  \item \textbf{Classification:} A MobileNetV2-derived model \cite{sandler2018},
+        deployed as a TensorFlow Lite INT8 quantised file on the Raspberry Pi~3B+,
+        performed per-frame berry classification.
+  \item \textbf{Actuation:} Compressed-air solenoid jets, triggered by the Pi's GPIO
+        pins, deflected reject-class berries into separate chutes; accepted berries
+        continued to the accept bin under gravity.
+\end{enumerate}
+
+The mechanical chute and vibrating feeder proved robust and reliable in field testing.
+This project retains that mechanical subsystem unchanged, focusing improvements
+exclusively on the electronics, vision, and software layers.
+
+\subsubsection{Identified Limitations of the Reference Machine}
+
+Post-build evaluation of the reference machine identified three critical performance
+bottlenecks \cite{mugo2017}:
+
+\begin{enumerate}
+  \item \textbf{Motion blur:} The rolling-shutter sensor read out rows sequentially
+        over a $\sim$30\,ms window. At operating chute speeds of 0.4--0.6\,m\,s$^{-1}$,
+        berries translated 12--18\,mm per frame, producing visible smearing that
+        degraded classification confidence, particularly at the semi-ripe/ripe colour
+        boundary.
+  \item \textbf{Processing latency:} Running MobileNetV2 inference, GPIO triggering,
+        and camera I/O on a single Raspberry Pi~3B+ core produced end-to-end latency
+        of 280--400\,ms per berry. This limited practical throughput to approximately
+        35 berries per minute---far below the commercial target of $>$150 per minute.
+  \item \textbf{Fine-grained class confusion:} The four-class model (unripe,
+        semi-ripe, ripe, overripe) struggled with the visually similar semi-ripe and
+        ripe classes. This confusion produced mis-ejections: commercially acceptable
+        red berries were rejected and semi-ripe berries were accepted into the output
+        stream, reducing economic yield.
+\end{enumerate}
+
+Figures~\ref{fig:old_model_predictions} and~\ref{fig:old_model_f1} illustrate the
+performance characteristics of the reference four-class MobileNetV2 model, showing
+the classification challenges across the four categories.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{Old_val_batch2_labels.jpg}
+  \caption{Reference model validation predictions showing four-class classification (unripe, semi-ripe, ripe, overripe) with visible confusion between visually similar categories}
+  \label{fig:old_model_predictions}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Previous_Model_F1__score.PNG}
+  \caption{Reference model F1-score performance across the four ripeness categories, highlighting the classification difficulty at the semi-ripe/ripe boundary}
+  \label{fig:old_model_f1}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Challenges of Manual and Early Automated Sorting}
+
+\textbf{1. Labour Intensity and Fatigue:} Prolonged visual inspection leads to fatigue,
+reducing sorting accuracy and consistency \cite{brosnan2004}. Fatigued workers are
+more likely to misclassify berries, allowing defective berries to pass or rejecting
+acceptable ones.
+
+\textbf{2. Human Error and Subjectivity:} Significant variability in sorting outcomes
+has been observed across different shifts, even when standardised grading guidelines
+were provided \cite{blasco2003}. This subjectivity results in inconsistent quality between
+batches.
+
+\textbf{3. Limited Throughput:} Human sorting speed becomes a bottleneck during peak
+harvest seasons \cite{kumar2010}. Automated systems address this but introduce the
+challenges of motion blur, latency, and fine-grained class confusion documented above.
+
+% ---------------------------------------------------------------
+\subsection{Mechanical Material Handling}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{sorting_comparison.pdf}
+  \caption{Comparison of manual and electronic coffee sorting methods}
+  \label{fig:sorting_comparison}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{Fully_Fabricated_Assembbly_From_Previous_Group.PNG}
+  \caption{Fully fabricated mechanical assembly from the reference implementation \cite{mugo2017}, showing integrated hopper, vibrating feeder, chute, and frame structure. This mechanical subsystem forms the foundation upon which the improved imaging and control systems are built.}
+  \label{fig:fabricated_assembly}
+\end{figure}
+
+Vibrating feeder-chute systems are standard in agricultural sorting. The amplitude
+and frequency of an eccentric motor are tuned to prevent bridging while maintaining
+adequate throughput and berry singulation. Chute inclination angle and surface finish
+further influence flow rate and separation. Literature confirms that this approach
+produces reliably consistent berry spacing at throughputs of 100--300 berries per
+minute in laboratory prototypes \cite{cubero2011}.
+
+The air-jet deflection mechanism, which the reference system uses for separation,
+operates on a detect-decide-deflect principle. Berries passing the imaging zone
+trigger compressed-air jets timed to deflect reject-class berries into separate chutes
+while accepted berries continue by gravity. Key advantages include minimal physical
+contact and high speed; limitations include compressed-air infrastructure requirements
+and tight timing constraints \cite{mahmood2019}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth, trim=10 10 10 10, clip]{Air_ejector_design.pdf}
+  \caption{CAD drawing of the air-ejector nozzle assembly from the reference sorting
+  machine showing solenoid valve, nozzle orientation, and berry deflection trajectory
+  \cite{mugo2017}}
+  \label{fig:air_ejector_cad}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Camera Technology: Rolling Shutter vs.\ Global Shutter}
+\label{subsec:shutter}
+
+Conventional CMOS cameras read out pixel rows sequentially (rolling shutter). For
+static scenes this is adequate, but when objects move faster than the sensor readout
+time, each row captures a slightly different object position, producing a characteristic
+shear distortion (jello effect) and edge smearing \cite{ramos2017}. In the reference
+machine this was identified as the primary source of image degradation.
+
+A \textbf{global-shutter} sensor exposes all pixels simultaneously, eliminating
+motion-induced distortion entirely. Global-shutter CMOS sensors (e.g., Sony IMX296,
+Omnivision OV9281) achieve effective shutter times of $<$1\,ms at full resolution.
+At 0.5\,m\,s$^{-1}$ chute speed, a 1\,ms exposure limits berry translation to
+0.5\,mm per frame---approximately 40$\times$ less motion blur than the reference
+camera. This improvement is critical for reliable colour and texture classification
+at the ripe/reject boundary.
+
+For this project, the \textbf{Arducam OV9281 global-shutter camera module}
+(Raspberry Pi CSI-compatible, 1\,MP, monochrome/colour variants) is proposed as
+the replacement imaging sensor, providing freeze-frame clarity even at the target
+operating chute speed.
+
+% ---------------------------------------------------------------
+\subsection{Deep Learning Object Detection for Sorting}
+
+\subsubsection{CNN-Based Feature Extraction}
+
+Deep convolutional neural networks (CNNs) automatically learn hierarchical features
+from labelled image data, eliminating the need for hand-crafted descriptors. For
+agricultural sorting, CNNs have consistently outperformed classical colour-histogram
+and SVM-based approaches \cite{noble2006}, particularly under variable illumination
+\cite{ramos2017}. Zhang et al.\ \cite{zhang2018} demonstrated that improved deep
+convolutional architectures could identify disease symptoms on maize leaves with
+high accuracy under field conditions, highlighting the robustness of learned features
+across agricultural imaging tasks. A comprehensive review by Li et al.\ \cite{li2022}
+further confirms that deep learning now dominates agricultural product quality grading,
+consistently outperforming traditional machine-learning pipelines on colour, texture,
+and shape discrimination tasks.
+
+\subsubsection{MobileNetV2 and its Limitations}
+
+MobileNetV2 \cite{sandler2018,howard2017} uses inverted residual bottleneck blocks with
+depthwise-separable convolutions to minimise parameter count for mobile deployment.
+When quantised to INT8 and exported as TFLite, it achieves inference times of
+80--120\,ms on the Raspberry Pi~3B+. While fast enough in isolation, the reference
+system could not overlap inference with the next frame capture, making the pipeline
+strictly sequential and throughput-limited. Additionally, MobileNetV2 is a whole-image
+classifier: it does not produce bounding boxes, so when multiple berries appear in one
+frame the system assigns a single class label to the entire image, causing mixed-berry
+frames to be misclassified.
+
+\subsubsection{YOLO Family: Real-Time Detection with Localisation}
+
+YOLO (You Only Look Once) \cite{redmon2016} reformulated object detection as a
+single regression problem, outputting bounding-box coordinates and class probabilities
+in a single forward pass. Successive versions (YOLOv3 \cite{redmon2018},
+YOLOv8) progressively improved small-object recall and speed.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.68\textwidth]{processing_flow.pdf}
+  \caption{Image processing pipeline for YOLOv11-based sorter on Raspberry Pi~4: frame capture (global shutter) $\rightarrow$ pre-processing $\rightarrow$ YOLOv11 inference $\rightarrow$ classification (accept/reject) $\rightarrow$ ejection control}
+  \label{fig:processing_flow_lit}
+\end{figure}
+
+\subsubsection{YOLOv11 on Embedded Platforms}
+
+YOLOv11, released by Ultralytics in late 2024, introduces architectural improvements
+to the C2f backbone and neck that improve small-object detection and reduce parameter
+count by $\approx$22\% compared to YOLOv8n \cite{ultralytics2024}. Critically, it
+supports ONNX and TFLite export paths optimised for ARM Cortex-A72 (Raspberry
+Pi~4), enabling inference at 25--40\,fps within a 1.5\,W power envelope. Its
+bounding-box output makes it suitable for tracking individual berries across frames,
+overcoming the whole-image classification limitation of MobileNetV2.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{classification_flowchart.pdf}
+  \caption{Overview of classification approaches considered: classical machine learning,
+           CNN-based models, and single-stage detectors (YOLO family)}
+  \label{fig:classification_flowchart}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Binary (Accept/Reject) vs.\ Fine-Grained Classification}
+\label{subsec:binary}
+
+Industry coffee-sorting practice distinguishes primarily between \textit{acceptable}
+(fully ripe, uniform red) and \textit{unacceptable} (green, yellow, overripe, defective)
+berries \cite{blasco2003,cubero2011}. Semi-ripe berries---those in transitional
+yellow-orange states---do not meet premium export grading standards and are
+classified as rejects in all major Kenyan cooperative protocols.
+
+Fine-grained models that distinguish four or more intermediate classes amplify the
+confusion between visually similar categories (e.g., semi-ripe and ripe), as documented
+in the reference project. Binary classification, by contrast, reduces the decision
+boundary to a single threshold in feature space: berries are labelled
+\textbf{ACCEPT} (uniform deep-red, ripe) or \textbf{REJECT} (all other states:
+green, yellow-orange, overripe, defective). This aligns with real-world sorting
+practice and substantially reduces label ambiguity in the training set \cite{kumar2010}.
+
+This project adopts the binary scheme. The YOLOv11 model is trained and evaluated
+on two classes only: \texttt{accept} and \texttt{reject}. Semi-ripe, overripe, unripe,
+and visibly defective berries all map to the \texttt{reject} class.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.80\textwidth]{coffee_berries_hands.jpg}
+  \caption{Visual comparison of ripe (\texttt{accept}) and unripe/semi-ripe
+           (\texttt{reject}) coffee berries. The binary classification boundary
+           maps to the deep-red colour transition.}
+  \label{fig:berry_comparison}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Embedded Co-Processor Architectures}
+\label{subsec:coprocessor}
+
+Offloading time-critical real-time tasks to a dedicated microcontroller has been shown
+to significantly improve throughput on single-board computer (SBC) vision systems
+\cite{espressif2023}. In multi-tier architectures, the SBC (Raspberry Pi) handles
+computationally heavy tasks (frame capture, neural network inference, object tracking)
+while a microcontroller (e.g., ESP32, STM32) is responsible for hard real-time
+operations: solenoid pulse timing, PWM motor control, and relay switching.
+
+The \textbf{ESP32-WROOM-32} \cite{espressif2023} is a dual-core 240\,MHz
+Xtensa LX6 microcontroller with native UART, SPI, I\textsuperscript{2}C, and 16
+configurable PWM channels. Its deterministic ISR latency ($<$5\,\textmu{}s) and
+hardware-timer-based solenoid firing eliminate the scheduling jitter inherent in
+Linux-based Pi GPIO control. This is essential for accurate berry ejection timing
+at conveyor speeds above 0.3\,m\,s$^{-1}$.
+
+The proposed co-processing architecture assigns the Pi~4 to neural-network inference
+and tracking, while the ESP32 exclusively handles solenoid, motor, and compressor
+control. The two devices communicate over a UART link at 115\,200\,baud, with the
+Pi transmitting short ASCII commands (e.g., \texttt{REJECT:2}) upon each ejection
+decision.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{coprocessing_architecture.pdf}
+  \caption{Proposed co-processing architecture: Raspberry Pi~4 handles inference;
+           ESP32-WROOM-32 manages all hard real-time actuation via UART.}
+  \label{fig:coprocessing_arch}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Summary of Literature Gaps Addressed by This Project}
+\label{subsec:gaps}
+
+Table~\ref{tab:gaps} summarises the three specific technical gaps identified in the
+literature and the previous project, and maps each to the corresponding improvement
+proposed in this work.
+
+\begin{table}[H]
+  \centering
+  \caption{Literature gaps and corresponding improvements in this project}
+  \label{tab:gaps}
+  \small
+  \begin{tabular}{@{}p{4cm}p{4.5cm}p{5.5cm}@{}}
+    \toprule
+    \textbf{Gap identified} & \textbf{Root cause} & \textbf{This project's solution} \\ \midrule
+    Motion blur at operating speed (reference machine) &
+      Rolling-shutter sensor with $\sim$30\,ms readout smears fast-moving berries &
+      Replace with global-shutter Arducam OV9281 module; $<$1\,ms full-frame exposure eliminates motion artefacts \\
+    \addlinespace
+    High end-to-end latency (280--400\,ms); throughput limited to $\sim$35 berries/min &
+      Single-core Pi~3B+ handles inference, GPIO, and camera I/O serially &
+      Pi~4 + ESP32 co-processor: Pi handles inference; ESP32 handles hard real-time solenoid timing; target $<$100\,ms \\
+    \addlinespace
+    Fine-grained class confusion (semi-ripe/ripe boundary) reduces economic yield &
+      Four-class model amplifies label ambiguity at visually similar boundaries &
+      Binary ACCEPT/REJECT scheme aligned with industry practice; YOLOv11 trained on two classes eliminates boundary confusion \\
+    \bottomrule
+  \end{tabular}
+\end{table}

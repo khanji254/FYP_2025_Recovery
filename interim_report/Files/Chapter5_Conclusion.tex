@@ -1,0 +1,38 @@
+\section{Conclusion}\label{sec:conclusion}
+
+% ---------------------------------------------------------------
+\subsection{Summary}
+
+This interim report documents the progress made to date on the modification and improvement of the existing automated coffee berry sorting machine. The work carried out has addressed the first four specific objectives defined in Chapter~\ref{sec:introduction}.
+
+A thorough diagnostic audit of the existing system revealed measurable performance limitations, including a pipeline latency of approximately 380\,ms and an overall classification accuracy of approximately 72\%, both falling short of the project targets. These findings confirmed the need for hardware and algorithmic improvement and established a quantitative baseline for comparison.
+
+The YOLOv11n deep learning model was selected and the training pipeline was developed, with a labelled dataset compiled under a binary \textbf{accept/reject} classification scheme: the \texttt{accept} class covers fully ripe (deep-red) berries; the \texttt{reject} class consolidates unripe, semi-ripe, overripe, and damaged berries. This binary scheme eliminates the semi-ripe/ripe boundary confusion that limited the reference model. Initial training has been conducted; evaluation is ongoing. % TODO: update with actual mAP values once evaluation is finalised
+
+Hardware procurement is complete. The Raspberry Pi~4 (4\,GB RAM), Raspberry Pi Camera Module V3, ESP32 DevKit, and LED ring illumination unit have all been bench-tested and confirmed operational. The electrical schematic and system block diagram have been produced and are presented in Chapter~\ref{sec:results}.
+
+Software development is advancing: training, evaluation, and inference scripts have been written and are tracked in the \texttt{CoffeeBerry\_YOLO} repository. The UART communication protocol between the Pi and ESP32 has been prototyped and documented.
+
+% ---------------------------------------------------------------
+\subsection{Future Work}
+
+The following tasks remain to complete the project by the final submission deadline:
+
+\begin{enumerate}
+  \item \textbf{Model optimisation:} Export the trained YOLOv11n model to ONNX / TFLite format and benchmark inference speed on the Raspberry Pi~4. Apply quantisation if necessary to achieve $<100$\,ms per frame.
+  \item \textbf{Centroid tracking integration:} Implement a lightweight centroid tracker to associate detections across frames and calculate berry position on the belt relative to the ejection zone.
+  \item \textbf{UART communication protocol:} Finalise the Pi $\leftrightarrow$ ESP32 messaging protocol for solenoid trigger commands, including robust error handling and retransmission logic.
+  \item \textbf{Physical integration:} Mount the Pi Camera above the conveyor detection window, calibrate belt-speed-to-timing offset, and wire the solenoid driver circuits.
+  \item \textbf{Throughput benchmarking:} Measure berries per minute at several belt speeds and identify the optimal operating point.
+  \item \textbf{Documentation and final report:} Write up final results, update design drawings, and compile the complete project report.
+\end{enumerate}
+
+% ---------------------------------------------------------------
+\subsection{Project Schedule}
+
+The project schedule is provided in Appendix~\ref{app:schedule_budget}.
+
+% ---------------------------------------------------------------
+\subsection{Risk Assessment}
+
+The budget summary is provided in Appendix~\ref{app:schedule_budget}.

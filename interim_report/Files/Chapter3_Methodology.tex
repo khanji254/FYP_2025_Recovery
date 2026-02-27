@@ -1,0 +1,353 @@
+\section{Methodology}\label{sec:methodology}
+
+This chapter outlines the approach taken to improve upon the existing coffee berry
+sorting machine. The work spans three areas: a performance audit of the original
+system, targeted improvements to the sorting mechanism, and evaluation of upgraded
+processing hardware with a retrained classification model.
+Figure~\ref{fig:sys_arch} shows the overall architecture of the improved system.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{system_architecture.pdf}
+  \caption{Overall architecture of the improved coffee berry sorting machine:
+  global-shutter camera, Raspberry Pi~4 inference engine, ESP32 real-time
+  co-processor, and MOSFET solenoid driver stages}
+  \label{fig:sys_arch}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Performance Analysis of Existing Machine}
+\label{subsec:sysanalysis}
+
+A structured performance audit of the existing sorting machine was conducted to quantify the root causes of its three documented limitations: motion blur, processing latency, and classification accuracy. The audit included:
+
+\begin{itemize}
+  \item Measuring end-to-end pipeline latency (frame capture $\rightarrow$ inference $\rightarrow$ actuation trigger) under realistic operating conditions.
+  \item Evaluating classification accuracy on a held-out set of berry images collected directly from the machine at operating speed, where motion blur was most evident.
+  \item Characterising the rolling-shutter distortion of the original Raspberry Pi Camera V2 at chute speeds of 0.4--0.6\,m\,s$^{-1}$.
+  \item Identifying the contribution of the single-core Raspberry Pi~3B+ to pipeline serialisation and throughput bottlenecks.
+\end{itemize}
+
+These findings directly informed the improvements described in the following sections.
+
+% ---------------------------------------------------------------
+\subsection{Dataset Collection and Model Training}
+\label{subsec:dataset}
+
+The classification model was rebuilt from the ground up using upgraded hardware and a purpose-built binary dataset. The Raspberry Pi~3B+ was replaced with the \textbf{Raspberry Pi~4 (4\,GB RAM)}, providing a quad-core Cortex-A72 at 1.5\,GHz and approximately 3$\times$ the memory bandwidth, allowing inference to run concurrently with frame capture. The MobileNetV2 TFLite classifier was replaced with \textbf{YOLOv11n}, retrained on a new binary dataset that consolidates the original four ambiguous ripeness classes into two well-separated outcomes.
+
+\subsubsection{Image Acquisition}
+
+A dataset of \textbf{2{,}000} annotated images was compiled, balanced across the
+\texttt{accept} and \texttt{reject} classes. Images were sourced from:
+\begin{enumerate}
+  \item Static tabletop photographs taken under controlled LED lighting (multiple angles and distances).
+  \item In-situ frames extracted from video captured on the actual chute at operational speed.
+\end{enumerate}
+
+Images were captured using the \textbf{Arducam OV9281 Global-Shutter Camera Module}
+(Raspberry Pi CSI-2 interface, 1\,MP, 1280\,\texttimes{}800 native resolution, Sony OV9281 sensor).
+The global-shutter sensor exposes all pixels simultaneously, eliminating the rolling-shutter
+motion smear that degraded classification in the reference system (see Section~\ref{subsec:shutter}).
+Images were saved at $1280 \times 800$ and subsequently centre-cropped and resized to
+$640 \times 640$ for training.
+
+\textit{Note: The mechanical chute and vibrating eccentric-motor feeder are retained unchanged
+from the reference machine \cite{mugo2017}. Improvements in this project are confined to
+the electronics, imaging, and software sub-systems.}
+
+\subsubsection{Annotation}
+
+All images were annotated with bounding boxes and class labels using the Roboflow annotation platform.
+A \textbf{binary} classification scheme is adopted (see Section~\ref{subsec:binary}): berries are
+labelled as either \texttt{accept} (commercially ripe, uniform deep-red) or \texttt{reject}
+(all other states: unripe green, semi-ripe yellow/orange, overripe dark/black, physically damaged).
+This aligns with Kenyan cooperative grading standards and eliminates the semi-ripe/ripe
+boundary confusion that degraded the reference model.
+
+\begin{table}[H]
+  \centering
+  \caption{Binary coffee berry classification scheme}
+  \begin{tabular}{@{}cllp{5.5cm}@{}}
+    \toprule
+    \textbf{Class ID} & \textbf{Label} & \textbf{Action} & \textbf{Berry states included} \\ \midrule
+    0 & \texttt{accept}  & Pass to accept bin  & Uniform deep-red ripe berries \\
+    1 & \texttt{reject}  & Fire ejector jet    & Unripe (green), semi-ripe (yellow/orange), overripe (dark/black), and damaged berries \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:classes}
+\end{table}
+
+\subsubsection{Dataset Split}
+
+The annotated dataset was split 70\% train / 15\% validation / 15\% test using the \texttt{split\_dataset.py} utility developed as part of this project.
+
+% ---------------------------------------------------------------
+\subsection{YOLOv11 Model Training}
+\label{subsec:training}
+
+\subsubsection{Framework and Backbone}
+
+The Ultralytics YOLOv11 Nano (\texttt{yolo11n.pt}) pre-trained on COCO was selected as the backbone. This was fine-tuned using transfer learning on the coffee berry dataset.
+
+\subsubsection{Training Configuration}
+
+\begin{table}[H]
+  \centering
+  \caption{YOLOv11 training hyperparameters}
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    \textbf{Parameter} & \textbf{Value} \\ \midrule
+    Epochs      & 100 \\
+    Image size  & 640 $\times$ 640 \\
+    Batch size  & 16 \\
+    Optimizer   & SGD (default Ultralytics) \\
+    Learning rate & 0.01 \\
+    Data augmentation & Mosaic, flip, HSV jitter \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:hyperparams}
+\end{table}
+
+\subsubsection{Evaluation Metrics}
+
+Model performance was evaluated using:
+\begin{itemize}
+  \item \textbf{mAP@0.5} and \textbf{mAP@0.5:0.95} on the test split.
+  \item Per-class precision and recall.
+  \item Inference time (ms per frame) on both the training machine and the Raspberry Pi 4.
+\end{itemize}
+
+% ---------------------------------------------------------------
+\subsection{Sorting Mechanism Improvements}
+\label{subsec:integration}
+
+Based on the performance audit findings, three targeted upgrades were designed and implemented to address the root causes of poor sorting performance:
+
+\begin{enumerate}
+  \item \textbf{Camera replacement:} The rolling-shutter Raspberry Pi Camera V2 was
+        replaced with the Arducam OV9281 global-shutter module to eliminate motion blur.
+  \item \textbf{Ejector driver upgrade:} The PN2222A BJT transistors in the solenoid
+        driver stages were replaced with IRLZ44N logic-level MOSFETs to improve
+        switching speed and reliability at 3.3\,V ESP32 drive levels.
+  \item \textbf{ESP32 co-processor:} An ESP32 microcontroller was introduced between
+        the Raspberry Pi and the actuators to take over all hard real-time
+        tasks --- solenoid timing, motor PWM, relay switching --- relieving the Pi's
+        Linux scheduler from deterministic GPIO control.
+\end{enumerate}
+
+\subsubsection{Hardware Platform}
+
+The system employs a co-processing architecture. The Raspberry Pi~4 (4\,GB RAM)
+acts as the main inference engine handling image acquisition, YOLOv11 inference, and
+object tracking. The ESP32 microcontroller handles time-critical real-time tasks:
+solenoid trigger timing, motor PWM, and compressor control. Communication between
+the two processors is over UART at 115\,200\,baud.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{coprocessing_architecture.pdf}
+  \caption{Co-processing architecture: Raspberry Pi~4 handles image processing and
+  YOLOv11 classification; ESP32 handles motor control, actuator interfacing, and timing}
+  \label{fig:coprocessing}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{control_flow.pdf}
+  \caption{System control flow: task distribution between Raspberry Pi~4
+  (inference and tracking) and ESP32 (actuation, timing, and PWM control)}
+  \label{fig:ctrl_flow_ch3}
+\end{figure}
+
+\subsubsection{Detection-to-Actuation Pipeline}
+
+The pipeline operates as follows:
+\begin{enumerate}
+  \item Pi Camera captures a frame from the detection zone.
+  \item YOLOv11 performs inference to detect and classify berries in the frame
+        (Figure~\ref{fig:processing_flow}).
+  \item Detected berry positions are tracked across frames using a centroid tracker.
+  \item When a tracked berry reaches the ejection zone, the Pi sends a binary decision
+        (\texttt{ACCEPT} or \texttt{REJECT:n} where $n$ is the ejector index) to the
+        ESP32 via UART (Figure~\ref{fig:uart_flow}).
+  \item ESP32 fires the corresponding solenoid jet for a calibrated pulse duration;
+        \texttt{ACCEPT} commands generate no solenoid activation.
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.65\textwidth]{processing_flow.pdf}
+  \caption{Image processing pipeline for the YOLOv11-based sorter:
+  frame capture (global shutter) $\rightarrow$ pre-processing $\rightarrow$
+  YOLOv11 inference on Raspberry Pi~4 $\rightarrow$ tracking $\rightarrow$
+  UART command to ESP32}
+  \label{fig:processing_flow}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.80\textwidth]{uart_communication.pdf}
+  \caption{UART communication and data flow between Raspberry Pi and ESP32}
+  \label{fig:uart_flow}
+\end{figure}
+
+\subsubsection{ESP32 Pin Assignment and Wiring}
+
+Table~\ref{tab:wiring} defines the pin assignments for the ESP32 microcontroller and its connections to the Raspberry Pi, solenoid drivers, vibrating motor, pneumatic compressor, and LED status indicator. All signal lines between the Pi and the ESP32 operate at 3.3\,V logic. The 12\,V solenoid and motor supplies are isolated with a common ground return tied back to all control electronics.
+
+\begin{table}[H]
+  \centering
+  \caption{Raspberry Pi, ESP32, and Peripheral Wiring Assignment}
+  \label{tab:wiring}
+  \small
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    \textbf{Function} & \textbf{Device} & \textbf{Pin/Port} & \textbf{Notes} \\
+    \midrule
+    \multicolumn{4}{l}{\textbf{UART Communication (Pi $\leftrightarrow$ ESP32)}} \\
+    UART TX & Raspberry Pi & GPIO 14 (TXD) & 3.3\,V; transmit to ESP32 RX \\
+    UART RX & Raspberry Pi & GPIO 15 (RXD) & 3.3\,V; receive from ESP32 TX \\
+    UART RX & ESP32 & GPIO 16 & Receive from Pi TXD \\
+    UART TX & ESP32 & GPIO 17 & Transmit to Pi RXD \\
+    Baud rate & Both & 115\,200 bps, 8N1 & Serial protocol parameters \\
+    \midrule
+    \multicolumn{4}{l}{\textbf{Ejector Solenoid Control (ESP32)}} \\
+    Ejector 1 & ESP32 & GPIO 4 & MOSFET gate + 220\,$\Omega$ resistor \\
+    Ejector 2 & ESP32 & GPIO 5 & Flyback diode across solenoid \\
+    Ejector 3 & ESP32 & GPIO 12 & 1N4007 (cathode to +12\,V) \\
+    Ejector 4 & ESP32 & GPIO 13 & 100\,k$\Omega$ pull-down for safety \\
+    \midrule
+    \multicolumn{4}{l}{\textbf{Vibrating Motor (ESP32)}} \\
+    Motor PWM & ESP32 & GPIO 14 (PWM) & MOSFET gate driver \\
+    Motor supply & 12\,V rail & +12\,V, GND & Flyback diode protection \\
+    \midrule
+    \multicolumn{4}{l}{\textbf{Pneumatic Compressor (ESP32)}} \\
+    Compressor & ESP32 & GPIO 21 (relay) & Relay driver; on/off switching \\
+    Compressor supply & 12\,V rail & +12\,V, GND & Relay coil protection diode \\
+    \midrule
+    \multicolumn{4}{l}{\textbf{LED Status Indicator (ESP32)}} \\
+    LED PWM & ESP32 & GPIO 22 (PWM) & MOSFET gate driver \\
+    LED supply & 12\,V rail & +12\,V, GND & Flyback diode protection \\
+    \midrule
+    \multicolumn{4}{l}{\textbf{Power Supply}} \\
+    Logic 5\,V & Buck converter & Pi 5\,V, 3\,A+ & Raspberry Pi~4 supply \\
+    Logic 5\,V & Buck converter & ESP32 5\,V, 2\,A+ & Onboard 3.3\,V regulator \\
+    Motor/actuator 12\,V & Battery/adapter & 10\,A fused & Main actuator supply \\
+    Common GND & All devices & Star ground point & All GND returns tied together \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Each ejector solenoid circuit includes a 220\,$\Omega$ gate resistor for current limiting and a 100\,k$\Omega$ pull-down to prevent false firing on power-up. A flyback diode (1N4007, cathode to +12\,V) across each solenoid suppresses inductive transient kickback when the MOSFET switch opens.
+
+\subsubsection{Transistor Technology Selection: BJT vs.\ Logic-Level MOSFET}
+\label{subsubsec:bjt_vs_mosfet}
+
+The reference machine used bipolar junction transistors (BJTs --- PN2222A / BC547)
+as the switching elements in the ejector solenoid driver stages. While BJTs are
+cheap and widely available, they impose a fundamental switching-speed penalty that
+becomes critical in a timer-sensitive ejection circuit.
+
+\begin{table}[H]
+  \centering
+  \caption{BJT (PN2222A) vs.\ Logic-Level MOSFET (IRLZ44N) switching comparison}
+  \label{tab:bjt_vs_mosfet}
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    \textbf{Parameter} & \textbf{BJT (PN2222A)} & \textbf{MOSFET (IRLZ44N)} \\ \midrule
+    Control mechanism & Current-controlled ($I_B$) & Voltage-controlled ($V_{GS}$) \\
+    Drive voltage from ESP32 & Must source $\sim$5\,mA base current & Gate capacitance only; $<$1\,mA \\
+    Turn-on threshold & $V_{BE} \approx 0.7$\,V (forward bias) & $V_{GS(th)} = 1$--$2$\,V (logic-level gate) \\
+    Storage time (turn-off delay) & $t_{stg} = 200$--$600$\,ns & None (no minority carrier storage) \\
+    Turn-on time $t_r$ & $\approx 100$\,ns & $< 20$\,ns (gate charge limited) \\
+    Turn-off time $t_f$ & $\approx 250$\,ns + storage time & $< 50$\,ns \\
+    On-state voltage drop & $V_{CE(sat)} \approx 0.3$\,V & $V_{DS(on)} = I_D \times R_{DS(on)} \approx 50$\,mV at 1\,A \\
+    Maximum current (continuous) & 600\,mA & 47\,A \\
+    Suitability at 3.3\,V gate/base & Marginal ($V_{BE}$ barely saturates) & Full enhancement; specified at 3.3\,V \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The critical advantage of the MOSFET for this application is the absence of
+\textbf{minority carrier storage time}. A BJT in saturation accumulates charge
+carriers in the base region; when the switching signal is removed these must
+recombine before the transistor turns off, adding 200--600\,ns of
+unavoidable delay. For a solenoid fired within a 45\,ms timing window at a
+chute speed of 0.5\,m\,s$^{-1}$, this is negligible in isolation, but when
+combined with upstream inference latency any additional margin matters.
+
+The MOSFET also operates with negligible gate drive current from the ESP32
+3.3\,V rail, whereas the BJT requires the GPIO to source $\approx$5\,mA of
+base current. With four simultaneous ejectors the BJT design loads the
+microcontroller's output stage; the MOSFET design imposes essentially zero
+steady-state GPIO load.
+
+For these reasons the IRLZ44N logic-level MOSFET replaces the PN2222A BJT
+across all four ejector channels, the motor driver, and the LED strip driver.
+
+% ---------------------------------------------------------------
+\subsubsection{Solenoid Driver Circuit}
+
+Each of the four ejector channels uses an identical N-channel MOSFET stage. The
+ESP32 GPIO output (3.3\,V logic) drives the IRLZ44N gate through a 220\,$\Omega$
+series resistor, which limits gate-charge current and damps any parasitic resonance
+with the gate capacitance. A 100\,k$\Omega$ pull-down resistor between gate and source
+holds the MOSFET firmly off during ESP32 power-up and reset, preventing false
+solenoid firing. The solenoid coil (12\,V, $\approx$22\,$\Omega$ DC resistance) is
+connected between the drain and the 12\,V supply rail. A 1N5819 Schottky flyback
+diode, cathode to +12\,V and anode to the drain, clamps the inductive back-EMF spike
+to within the diode's forward voltage (0.3--0.5\,V) above the rail when the MOSFET
+turns off. The source is tied directly to the common ground reference that connects
+the 12\,V actuator supply and the ESP32 logic supply, ensuring no ground-loop offset
+between the control and power sections. This circuit topology corresponds directly to
+the design verified in Proteus and tabulated in Table~\ref{tab:wiring}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth, trim=15 15 15 15, clip]{circuit_implementation.png}
+  \caption{Fritzing circuit diagram of the ESP32 solenoid driver implementation:
+  IRLZ44N MOSFET switching stages, flyback diodes, gate resistors, and
+  Raspberry Pi UART connection}
+  \label{fig:fritzing_circuit}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Circuit Simulation in Proteus}
+\label{subsec:proteus}
+
+Prior to physical breadboard construction, the ESP32-based control circuit was
+designed and verified using \textbf{Proteus ISIS} (Labcenter Electronics).
+Proteus supports simulation of the ESP32 microcontroller alongside IRLZ44N MOSFET
+drivers, relay circuits, solenoid load models, and UART virtual terminals, enabling
+full functional verification before any hardware was procured.
+Figure~\ref{fig:proteus_full} in Chapter~4 shows the complete Proteus schematic.
+
+\subsubsection{Simulation Scope}
+
+The simulation covered the following subsystems:
+\begin{itemize}
+  \item \textbf{UART communication:} Simulated serial exchange between a virtual UART terminal (representing the Raspberry Pi) and the ESP32. Correct baud rate, 8N1 frame format at 115\,200\,bps, and message parsing logic were verified using Virtual Serial Port instruments.
+  \item \textbf{Solenoid ejector drivers:} Four N-channel MOSFET switching stages (one per ejector), each with 220\,$\Omega$ gate resistor, 1N4007 flyback diode, and 100\,k$\Omega$ pull-down, were simulated and switching waveforms verified against the specification in Table~\ref{tab:wiring}.
+  \item \textbf{Vibrating motor PWM control:} GPIO~14 PWM output was simulated into a motor load model; variable duty cycle confirmed correct speed control behaviour.
+  \item \textbf{Relay-based compressor control:} GPIO~21 relay circuit verified for correct ON/OFF sequencing and protection diode operation under simulated load.
+  \item \textbf{LED status indicator:} GPIO~22 PWM dimming into an LED model confirmed brightness control from 0\% to 100\%.
+\end{itemize}
+
+\subsubsection{Simulation Methodology}
+
+The ESP32 firmware was compiled (Arduino framework) and loaded into the Proteus virtual ESP32-WROOM-32 component. Input stimuli consisting of binary classification command strings (e.g., \texttt{REJECT:1}, \texttt{REJECT:3}, \texttt{ACCEPT}) were injected via a virtual serial terminal scripted to replicate Raspberry Pi UART output. Oscilloscope probes were placed on each MOSFET gate pin and solenoid node to capture switching waveforms. The simulation confirmed correct actuation of all four ejector channels, motor PWM
+behaviour, compressor relay switching, and UART framing before physical construction
+commenced. The complete Proteus schematic and waveform captures from this simulation
+are presented as results in Section~\ref{subsec:obj2results}.
+
+% ---------------------------------------------------------------
+\subsection{Validation Strategy}
+
+System performance will be validated through:
+\begin{itemize}
+  \item \textbf{image test:} Run the YOLOv11 model on the held-out test set and report mAP@0.5, mAP@0.5:0.95, per-class precision and recall.
+  \item \textbf{Throughput test:} Measure berries processed per minute at several belt speeds and identify the optimal operating point.
+  \item \textbf{Latency test:} Measure end-to-end pipeline time from frame capture through YOLOv11 inference to UART solenoid trigger on the Pi~4 + ESP32 hardware.
+\end{itemize}

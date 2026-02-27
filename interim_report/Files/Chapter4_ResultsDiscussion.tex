@@ -1,0 +1,314 @@
+\section{Results and Discussion}\label{sec:results}
+
+% ---------------------------------------------------------------
+\subsection{Overview}
+
+This chapter presents the results obtained during the current phase of the project and discusses their implications. Work completed to date covers: a performance audit of the baseline system that established the root causes of its limitations; targeted improvements to the sorting mechanism including a camera replacement, transistor upgrades, and ESP32 co-processor integration; circuit verification by Proteus simulation; and initial model development using a newly compiled binary dataset on the upgraded Raspberry Pi~4 platform.
+
+% ---------------------------------------------------------------
+\subsection{Performance Analysis of Existing System}
+\label{subsec:obj1results}
+
+A detailed performance audit of the existing sorting machine was conducted to establish a baseline and identify the root causes of its documented limitations. The key findings are presented in Table~\ref{tab:baseline}:
+
+\begin{table}[H]
+  \centering
+  \caption{Measured baseline performance of existing sorting machine}
+  \begin{tabular}{@{}lcc@{}}
+    \toprule
+    \textbf{Metric} & \textbf{Measured Value} & \textbf{Target} \\ \midrule
+    End-to-end pipeline latency & $\approx 380$\,ms & $<100$\,ms \\
+    Overall classification accuracy & $\approx 72\%$ & $>90\%$ \\
+    Throughput (berries/min) & $\approx 35$ & $>80$ \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:baseline}
+\end{table}
+
+The dominant contribution to latency was the serialised inference on the Pi~3
+($\approx 310$\,ms per frame using TensorFlow Lite MobileNet). Motion blur from
+the rolling-shutter camera degraded image quality at operating chute speed, reducing
+classification confidence. Misclassification was concentrated at the semi-ripe/ripe
+boundary in the four-class model, where visually similar colours produced ambiguous
+predictions. These findings directly motivated the improvements described in the
+following sections.
+
+% ---------------------------------------------------------------
+\subsection{Sorting Mechanism Improvements}
+\label{subsec:obj2results}
+
+Three targeted upgrades were implemented to address the root causes identified in the performance audit:
+
+\begin{enumerate}
+  \item \textbf{Camera replacement:} The rolling-shutter Raspberry Pi Camera V2 was
+        replaced with the \textbf{Arducam OV9281 Global-Shutter Module} (CSI-2,
+        1\,MP, Sony OV9281). Simultaneous pixel exposure eliminates the 12--18\,mm
+        per-frame smear that degraded colour classification at operating chute speed.
+  \item \textbf{Ejector driver transistor upgrade:} PN2222A BJTs were replaced with
+        \textbf{IRLZ44N logic-level MOSFETs}. The MOSFET has no minority-carrier
+        storage time, giving sub-20\,ns turn-on versus $\approx$100\,ns + 200--600\,ns
+        storage for the BJT. Full drive is achieved direct from the ESP32 3.3\,V GPIO
+        with negligible steady-state gate current.
+  \item \textbf{ESP32 co-processor:} An ESP32 microcontroller was introduced to handle
+        all hard real-time tasks---solenoid pulse timing, motor PWM, relay switching---via
+        deterministic hardware timers ($<$5\,\textmu{}s ISR latency), relieving the
+        Raspberry Pi Linux scheduler from GPIO-critical paths.
+\end{enumerate}
+
+\subsubsection{Procured and Verified Hardware}
+
+The following components have been procured, bench-tested, and verified for compatibility:
+
+\begin{itemize}
+  \item Raspberry Pi~4 (4\,GB RAM): upgraded main inference platform.
+  \item \textbf{Arducam OV9281 Global-Shutter Camera Module}: replacement imaging sensor.
+  \item ESP32 DevKit: real-time actuation controller.
+  \item LED ring light: consistent illumination above the detection zone.
+  \item 2-channel optocoupler relay module (PC817 + SRD-05VDC): compressor and auxiliary switching.
+  \item IRLZ44N MOSFETs (×4), 1N5819 Schottky diodes, 220\,$\Omega$ and 100\,k$\Omega$ resistors.
+\end{itemize}
+
+The electrical design including power distribution and solenoid driver circuits is
+documented in Figure~\ref{fig:elec_schematic}, and the high-level system block
+diagram in Figure~\ref{fig:sys_block}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{electrical_schematic.pdf}
+  \caption{Electrical schematic: power distribution, processor connections, actuator
+  outputs, and communication links}
+  \label{fig:elec_schematic}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.80\textwidth]{system_block_diagram.pdf}
+  \caption{System block diagram: processor hierarchy, communication links, and
+  actuator outputs with power distribution}
+  \label{fig:sys_block}
+\end{figure}
+
+\subsubsection{Proteus Circuit Simulation Results}
+
+Prior to physical construction, the ESP32 control circuit was fully simulated in
+Proteus ISIS to verify all subsystems before hardware was assembled.
+
+\paragraph{Full Circuit Overview}
+
+Figure~\ref{fig:proteus_full} shows the complete Proteus schematic: four IRLZ44N
+ejector channels, vibrating motor PWM stage, LED strip driver, 2-channel optocoupler
+relay module, and UART virtual terminal representing the Raspberry Pi link.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{Full_proteus_circuit.pdf}
+  \caption{Complete Proteus ISIS simulation: ESP32 with four IRLZ44N solenoid driver
+  channels, vibrating motor PWM, LED strip driver, 2-channel optocoupler relay, and
+  UART virtual terminal}
+  \label{fig:proteus_full}
+\end{figure}
+
+\paragraph{UART Communication Verification}
+
+The serial link between the virtual Raspberry Pi terminal and the ESP32 was verified at
+115\,200\,bps (8N1). Binary command strings (\texttt{REJECT:1}---\texttt{REJECT:4},
+\texttt{ACCEPT}) injected via the virtual terminal were correctly parsed by the ESP32
+firmware. Acknowledgement responses were returned within the simulated 10\,ms target
+latency.
+
+\paragraph{Solenoid Driver Switching Waveforms}
+
+Figures~\ref{fig:trig_on} and~\ref{fig:trig_off} show oscilloscope captures of the
+MOSFET turn-on and turn-off events respectively.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{Trigger_ON.PNG}
+  \caption{Proteus oscilloscope: MOSFET turn-ON --- gate rises to 3.3\,V and drain
+  falls from 12\,V to $\approx$0\,V with no ringing (IRLZ44N, 220\,$\Omega$ gate
+  resistor, 100\,k$\Omega$ pull-down)}
+  \label{fig:trig_on}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{Trigger_OFF.PNG}
+  \caption{Proteus oscilloscope: MOSFET turn-OFF --- drain recovers to 12\,V;
+  1N5819 clamps inductive kickback spike within 0.5\,V of the supply rail}
+  \label{fig:trig_off}
+\end{figure}
+
+Key results from the waveform analysis:
+\begin{itemize}
+  \item All four MOSFET channels switched correctly on receipt of \texttt{REJECT:n} commands.
+  \item No gate ringing observed; 220\,$\Omega$ series resistor adequately damped parasitic oscillation.
+  \item Flyback diode clamped solenoid turn-off spike to +12.5\,V (0.5\,V above rail).
+  \item 100\,k$\Omega$ pull-down confirmed zero false firing during ESP32 power-on reset.
+\end{itemize}
+
+\paragraph{Motor PWM and Compressor Relay}
+
+PWM on GPIO~14 swept 0--100\% produced proportional average voltage across the motor
+load, confirming correct vibrating-feeder speed control. The GPIO~21 relay cycled the
+compressor load ON/OFF with clean switching and correct protection diode behaviour.
+
+% ---------------------------------------------------------------
+\subsection{Hardware Upgrade and Model Development}
+\label{subsec:obj3results}
+
+With the mechanism improvements validated, work shifted to upgrading the processing
+platform and classification model. The \textbf{Raspberry Pi~4 (4\,GB RAM)}
+replaces the Pi~3B+, providing $\approx$3$\times$ memory bandwidth and enabling
+YOLOv11 inference to overlap with the next frame capture. In parallel, the
+MobileNetV2 four-class classifier was retired; \textbf{YOLOv11n} was retrained
+on a new 2{,}000-image binary dataset, eliminating the semi-ripe/ripe boundary
+confusion that limited the original system. The performance shortcomings of the reference four-class model that directly motivated this dataset redesign are documented in Appendix~\ref{app:dataset}, Figures~\ref{fig:app_old_f1} and~\ref{fig:app_old_val}.
+
+\subsubsection{Dataset and Class Reduction}
+
+The original four-class dataset was discarded and a new \textbf{2{,}000-image binary
+dataset} was compiled. Images were captured on the physical chute under operational
+illumination and annotated on Roboflow with two labels only: \texttt{accept}
+(fully ripe, deep-red) and \texttt{reject} (all other states). Consolidating four
+ambiguous classes into two eliminates the dominant misclassification boundary.
+
+\begin{table}[H]
+  \centering
+  \caption{Dataset split summary (2{,}000-image binary dataset)}
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    \textbf{Split} & \textbf{Images} & \textbf{\texttt{accept} instances} & \textbf{\texttt{reject} instances} \\ \midrule
+    Train      & 1{,}400 & TODO & TODO \\
+    Validation &   300   & TODO & TODO \\
+    Test       &   300   & TODO & TODO \\
+    \midrule
+    \textbf{Total} & \textbf{2{,}000} & \textbf{TODO} & \textbf{TODO} \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:dataset_split}
+\end{table}
+
+\subsubsection{YOLOv11n Training Results}
+
+The YOLOv11n model was trained for 100 epochs on the Pi~4 accelerated by the binary
+dataset. Figure~\ref{fig:training_curves} shows the comprehensive training results including loss curves, precision, recall, and mAP metrics across all epochs.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{model__Training_Results/results.png}
+  \caption{YOLOv11n comprehensive training metrics over 100 epochs showing convergence of loss, precision, recall, and mAP on the binary coffee berry dataset}
+  \label{fig:training_curves}
+\end{figure}
+
+Figure~\ref{fig:f1_curve} presents the F1-confidence curve demonstrating the model's classification performance at various confidence thresholds.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{model__Training_Results/F1_curve.png}
+  \caption{F1-score vs. confidence threshold curve for the YOLOv11n binary classifier, showing optimal operating point for accept/reject classification}
+  \label{fig:f1_curve}
+\end{figure}
+
+Figure~\ref{fig:pr_curve} shows the precision-recall curve, and Figure~\ref{fig:confusion_matrix} presents the normalised confusion matrix on the test split.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{model__Training_Results/PR_curve.png}
+  \caption{Precision-Recall curve demonstrating the trade-off between precision and recall across confidence thresholds for both accept and reject classes}
+  \label{fig:pr_curve}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{model__Training_Results/confusion_matrix_normalized.png}
+  \caption{Normalised confusion matrix on the test split showing classification accuracy for accept (ripe) and reject (unripe/semi-ripe/overripe) categories}
+  \label{fig:confusion_matrix}
+\end{figure}
+
+Table~\ref{tab:results} summarises the final evaluation metrics on the test split.
+
+\begin{table}[H]
+  \centering
+  \caption{YOLOv11n evaluation results on test split}
+  \begin{tabular}{@{}lcccc@{}}
+    \toprule
+    \textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{mAP@0.5} & \textbf{mAP@0.5:0.95} \\ \midrule
+    \texttt{accept} (ripe)             & TODO & TODO & TODO & TODO \\
+    \texttt{reject} (all other states) & TODO & TODO & TODO & TODO \\
+    \midrule
+    \textbf{Overall (binary mean)} & \textbf{TODO} & \textbf{TODO} & \textbf{TODO} & \textbf{TODO} \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:results}
+\end{table}
+
+\subsubsection{Dataset Visualisations}
+
+Figure~\ref{fig:labels_viz} shows the ground truth label distribution across the training dataset, and Figure~\ref{fig:val_batch_labels} presents a validation batch with ground-truth annotations.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{model__Training_Results/labels.jpg}
+  \caption{Ground truth label distribution visualisation showing the spatial distribution and class balance of accept and reject instances across the training dataset}
+  \label{fig:labels_viz}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{model__Training_Results/val_batch0_labels.jpg}
+  \caption{Validation batch 0 with ground-truth bounding box annotations for accept (ripe) and reject (unripe/semi-ripe) berries}
+  \label{fig:val_batch_labels}
+\end{figure}
+
+\subsubsection{Sample Detection Output}
+
+Figure~\ref{fig:sample_detect} demonstrates the trained model's inference performance on a validation batch, showing predicted bounding boxes and confidence scores.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.78\textwidth]{model__Training_Results/val_batch0_pred.jpg}
+  \caption{YOLOv11n inference output on validation batch 0: predicted accept/reject bounding boxes with confidence scores demonstrating the model's classification performance on unseen test images}
+  \label{fig:sample_detect}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Software Development}
+
+The following software modules have been developed and are tracked in the
+\texttt{CoffeeBerry\_YOLO} Git repository:
+
+\begin{itemize}
+  \item \texttt{code/training/train.py} --- YOLOv11 fine-tuning script.
+  \item \texttt{code/training/evaluate.py} --- test-split evaluation.
+  \item \texttt{code/inference/predict\_camera.py} --- live camera inference with global-shutter capture.
+  \item \texttt{code/utils/split\_dataset.py} --- 70/15/15 dataset splitter.
+  \item \texttt{code/utils/visualize\_results.py} --- training curve plotter.
+\end{itemize}
+
+Figure~\ref{fig:control_flow} shows the overall control flow illustrating task
+distribution between the Raspberry Pi and ESP32.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.76\textwidth]{control_flow.pdf}
+  \caption{System control flow: Pi~4 handles image processing and YOLOv11 inference;
+  ESP32 handles motor control, timing, and actuation}
+  \label{fig:control_flow}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Discussion: Progress Against Objectives}
+
+\begin{table}[H]
+  \centering
+  \caption{Progress summary against specific objectives}
+  \begin{tabular}{@{}clp{5.5cm}l@{}}
+    \toprule
+    \textbf{Obj.} & \textbf{Description} & \textbf{Status} & \textbf{\% Complete} \\ \midrule
+    1 & Analyse performance limitations & Completed: motion blur, latency (380\,ms), and classification accuracy quantified & 100\% \\
+    2 & Improve the sorting mechanism & Completed: global-shutter camera, MOSFET drivers, ESP32 co-processor, Proteus verified & 90\% \\
+    3 & Evaluate upgraded processing hardware & In progress: Pi~4 procured, binary dataset compiled, YOLOv11 training ongoing & 70\% \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:progress}
+\end{table}
