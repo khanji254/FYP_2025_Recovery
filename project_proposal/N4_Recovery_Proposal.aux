@@ -12,8 +12,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Aim}{2}{subsection.1.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Specific Objectives}{2}{subsection.1.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.5}Justification}{2}{subsection.1.5}\protected@file@percent }
-\citation{nakka_recovery}
-\citation{student_rocket_design}
+\citation{nakka_recovery,student_rocket_design}
 \citation{dual_deploy_analysis,parachute_design}
 \citation{nakuja_website}
 \citation{rf_telemetry_propagation,student_rocketry_telemetry}
@@ -24,81 +23,101 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Full Nakuja N3 rocket showing the dual-deployment recovery configuration and component layout}}{4}{figure.2.1}\protected@file@percent }
 \newlabel{fig:dual_deploy}{{2.1}{4}{Full Nakuja N3 rocket showing the dual-deployment recovery configuration and component layout}{figure.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Telemetry Systems Analysis}{4}{subsection.2.2}\protected@file@percent }
-\citation{nakka_crimson}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Rocket in flight demonstrating the dual-deployment sequence and aerodynamic stability during ascent}}{5}{figure.2.2}\protected@file@percent }
 \newlabel{fig:dual_deploy_flight}{{2.2}{5}{Rocket in flight demonstrating the dual-deployment sequence and aerodynamic stability during ascent}{figure.2.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Beacon RSSI decay analysis showing signal degradation with distance and altitude}}{5}{figure.2.3}\protected@file@percent }
 \newlabel{fig:rssi_decay}{{2.3}{5}{Beacon RSSI decay analysis showing signal degradation with distance and altitude}{figure.2.3}{}}
-\citation{esp32_datasheet,embedded_flight_computers}
-\citation{pwm_ignition_systems}
-\citation{avionics_vibration}
+\citation{xbee_pro_datasheet,pozar_microwave}
+\citation{arrl_antenna_book}
+\citation{nakka_crimson}
 \@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Telemetry System Comparison for Student Rocketry Applications}}{6}{table.2.1}\protected@file@percent }
 \newlabel{tab:telemetry}{{2.1}{6}{Telemetry System Comparison for Student Rocketry Applications}{table.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Pyrotechnic Deployment Systems}{6}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Electronic Control Systems}{6}{subsection.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Power and Structural Systems}{6}{subsection.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Excessive crimson powder deployment showing the need for precise charge control}}{7}{figure.2.4}\protected@file@percent }
-\newlabel{fig:excessive_pop}{{2.4}{7}{Excessive crimson powder deployment showing the need for precise charge control}{figure.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Antenna Link-Budget Justification}{6}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces 900 MHz duck antenna used in the N4 telemetry configuration}}{7}{figure.2.4}\protected@file@percent }
+\newlabel{fig:duck_antenna}{{2.4}{7}{900 MHz duck antenna used in the N4 telemetry configuration}{figure.2.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Dipole radiation pattern illustrating axis nulls that can cause overhead signal dropouts}}{7}{figure.2.5}\protected@file@percent }
+\newlabel{fig:donut_pattern}{{2.5}{7}{Dipole radiation pattern illustrating axis nulls that can cause overhead signal dropouts}{figure.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Example 900 MHz Bi-Quad ground-station antenna option for increased link margin}}{7}{figure.2.6}\protected@file@percent }
+\newlabel{fig:biquad}{{2.6}{7}{Example 900 MHz Bi-Quad ground-station antenna option for increased link margin}{figure.2.6}{}}
+\citation{pwm_ignition_systems,barr_pwm}
+\citation{esp32_datasheet,embedded_flight_computers}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Pyrotechnic Deployment Systems}{8}{subsection.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Excessive crimson powder deployment showing the need for precise charge control}}{8}{figure.2.7}\protected@file@percent }
+\newlabel{fig:excessive_pop}{{2.7}{8}{Excessive crimson powder deployment showing the need for precise charge control}{figure.2.7}{}}
+\citation{avionics_vibration}
+\citation{petg_mechanical,petg_review_2020,petg_fdm_impact,petg_process_structure}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Charge holder thermal damage from explosion highlighting thermal isolation requirements}}{9}{figure.2.8}\protected@file@percent }
+\newlabel{fig:thermal_damage}{{2.8}{9}{Charge holder thermal damage from explosion highlighting thermal isolation requirements}{figure.2.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Electronic Control Systems}{9}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Power and Structural Systems}{9}{subsection.2.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Post-deployment test showing charring effects and the importance of sealed containment}}{10}{figure.2.9}\protected@file@percent }
+\newlabel{fig:post_test_charring}{{2.9}{10}{Post-deployment test showing charring effects and the importance of sealed containment}{figure.2.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Assembled avionics bay with integrated battery retention and vibration isolation}}{11}{figure.2.10}\protected@file@percent }
+\newlabel{fig:avionics_bay}{{2.10}{11}{Assembled avionics bay with integrated battery retention and vibration isolation}{figure.2.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Current flight-computer holder geometry used for mechanical integration studies}}{11}{figure.2.11}\protected@file@percent }
+\newlabel{fig:full_integration_mech}{{2.11}{11}{Current flight-computer holder geometry used for mechanical integration studies}{figure.2.11}{}}
 \citation{nakuja_website}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Charge holder thermal damage from explosion highlighting thermal isolation requirements}}{8}{figure.2.5}\protected@file@percent }
-\newlabel{fig:thermal_damage}{{2.5}{8}{Charge holder thermal damage from explosion highlighting thermal isolation requirements}{figure.2.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Previous Nakuja Mission Analysis}{8}{subsection.2.6}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Nakuja Mission History and Key Findings}}{8}{table.2.2}\protected@file@percent }
-\newlabel{tab:nakuja_missions}{{2.2}{8}{Nakuja Mission History and Key Findings}{table.2.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Post-deployment test showing charring effects and the importance of sealed containment}}{9}{figure.2.6}\protected@file@percent }
-\newlabel{fig:post_test_charring}{{2.6}{9}{Post-deployment test showing charring effects and the importance of sealed containment}{figure.2.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Assembled avionics bay with integrated battery retention and vibration isolation}}{10}{figure.2.7}\protected@file@percent }
-\newlabel{fig:avionics_bay}{{2.7}{10}{Assembled avionics bay with integrated battery retention and vibration isolation}{figure.2.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Safety Standards and Guidelines}{10}{subsection.2.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces XBee-PRO 900HP telemetry system integration showing complete signal path}}{11}{figure.2.8}\protected@file@percent }
-\newlabel{fig:xbee_integration}{{2.8}{11}{XBee-PRO 900HP telemetry system integration showing complete signal path}{figure.2.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Adiabatic expansion analysis for parachute deployment system design}}{11}{figure.2.9}\protected@file@percent }
-\newlabel{fig:adiabatic}{{2.9}{11}{Adiabatic expansion analysis for parachute deployment system design}{figure.2.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Previous Nakuja Mission Analysis}{12}{subsection.2.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Nakuja Mission History and Key Findings}}{12}{table.2.2}\protected@file@percent }
+\newlabel{tab:nakuja_missions}{{2.2}{12}{Nakuja Mission History and Key Findings}{table.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Safety Standards and Guidelines}{12}{subsection.2.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.8}Identified Research Gaps}{12}{subsection.2.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces XBee-PRO 900HP telemetry system integration showing complete signal path}}{13}{figure.2.12}\protected@file@percent }
+\newlabel{fig:xbee_integration}{{2.12}{13}{XBee-PRO 900HP telemetry system integration showing complete signal path}{figure.2.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Adiabatic expansion analysis for parachute deployment system design}}{14}{figure.2.13}\protected@file@percent }
+\newlabel{fig:adiabatic}{{2.13}{14}{Adiabatic expansion analysis for parachute deployment system design}{figure.2.13}{}}
 \citation{student_rocket_design}
 \citation{nakka_crimson}
 \citation{avionics_vibration}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Design and Methodology}{15}{section.3}\protected@file@percent }
+\newlabel{sec:methodology}{{3}{15}{Design and Methodology}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Design Approach}{15}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Implementation Methodology}{15}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Mechanical System Design}{15}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sealed Explosion Cap}{15}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Avionics Bay Structure}{15}{section*.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces CAD rendering of the avionics bay assembly showing component layout, mounting features, and dimensional constraints}}{16}{figure.3.1}\protected@file@percent }
+\newlabel{fig:cad_holder}{{3.1}{16}{CAD rendering of the avionics bay assembly showing component layout, mounting features, and dimensional constraints}{figure.3.1}{}}
 \citation{esp32_datasheet}
 \citation{xbee_pro_datasheet}
 \citation{embedded_flight_computers}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Design and Methodology}{12}{section.3}\protected@file@percent }
-\newlabel{sec:methodology}{{3}{12}{Design and Methodology}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Design Approach}{12}{subsection.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Implementation Methodology}{12}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Mechanical System Design}{12}{subsubsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Sealed Explosion Cap}{12}{section*.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Avionics Bay Structure}{12}{section*.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces CAD rendering of the avionics bay assembly showing component layout, mounting features, and dimensional constraints}}{13}{figure.3.1}\protected@file@percent }
-\newlabel{fig:cad_holder}{{3.1}{13}{CAD rendering of the avionics bay assembly showing component layout, mounting features, and dimensional constraints}{figure.3.1}{}}
 \citation{pwm_ignition_systems}
 \citation{lipo_aerospace,bms_systems}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Electrical System Architecture}{14}{subsubsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Hardware Components}{14}{section*.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed XBee-PRO 900HP telemetry system architecture }}{14}{figure.3.2}\protected@file@percent }
-\newlabel{fig:xbee_proposed}{{3.2}{14}{Proposed XBee-PRO 900HP telemetry system architecture}{figure.3.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{PWM Ignition Control}{14}{section*.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Power Management}{14}{section*.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Nichrome wire demonstration showing thermal melting and cutting mechanism - illustrating the one-shot deployment characteristic}}{15}{figure.3.3}\protected@file@percent }
-\newlabel{fig:nichrome_wire}{{3.3}{15}{Nichrome wire demonstration showing thermal melting and cutting mechanism - illustrating the one-shot deployment characteristic}{figure.3.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Electrical Design Concepts and Simulations}{15}{subsubsection.3.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Base station receiver circuit concept showing XBee-PRO 900HP integration, RF filtering, and ground control processing elements}}{16}{figure.3.4}\protected@file@percent }
-\newlabel{fig:base_station_design}{{3.4}{16}{Base station receiver circuit concept showing XBee-PRO 900HP integration, RF filtering, and ground control processing elements}{figure.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Rocket XBee extension circuit pinout and Fritzing layout illustrating power conditioning, antenna interface, and signal routing}}{16}{figure.3.5}\protected@file@percent }
-\newlabel{fig:rocket_xbee_extension}{{3.5}{16}{Rocket XBee extension circuit pinout and Fritzing layout illustrating power conditioning, antenna interface, and signal routing}{figure.3.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Battery Management System Proteus design showing ADS1115 ADC with voltage divider (47k$\Omega $/10k$\Omega $), dual chute detection inputs, and power distribution topology}}{17}{figure.3.6}\protected@file@percent }
-\newlabel{fig:bms_proteus_design}{{3.6}{17}{Battery Management System Proteus design showing ADS1115 ADC with voltage divider (47k$\Omega $/10k$\Omega $), dual chute detection inputs, and power distribution topology}{figure.3.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Testing and Validation Plan}{18}{subsection.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Ground Testing Protocol}{18}{subsubsection.3.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Flight Testing Protocol}{18}{subsubsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mechanical Design Integration (Updated Models)}{17}{section*.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Updated flight-computer holder CAD model showing revised mounting and battery seating features}}{17}{figure.3.2}\protected@file@percent }
+\newlabel{fig:fc_holder_cad_updated}{{3.2}{17}{Updated flight-computer holder CAD model showing revised mounting and battery seating features}{figure.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Electrical System Architecture}{17}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hardware Components}{17}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{PWM Ignition Control}{17}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Power Management}{17}{section*.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Cross-sectional view of the avionics bay indicating internal clearances and component stacking}}{18}{figure.3.3}\protected@file@percent }
+\newlabel{fig:cross_section_avionics}{{3.3}{18}{Cross-sectional view of the avionics bay indicating internal clearances and component stacking}{figure.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Threaded-rod integration with raised battery cells to preserve structural alignment and wiring space}}{18}{figure.3.4}\protected@file@percent }
+\newlabel{fig:threaded_rod_integration}{{3.4}{18}{Threaded-rod integration with raised battery cells to preserve structural alignment and wiring space}{figure.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Proposed XBee-PRO 900HP telemetry system architecture }}{19}{figure.3.5}\protected@file@percent }
+\newlabel{fig:xbee_proposed}{{3.5}{19}{Proposed XBee-PRO 900HP telemetry system architecture}{figure.3.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Nichrome wire demonstration showing thermal melting and cutting mechanism - illustrating the one-shot deployment characteristic}}{19}{figure.3.6}\protected@file@percent }
+\newlabel{fig:nichrome_wire}{{3.6}{19}{Nichrome wire demonstration showing thermal melting and cutting mechanism - illustrating the one-shot deployment characteristic}{figure.3.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Electrical Design Concepts and Simulations}{20}{subsubsection.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Testing and Validation Plan}{20}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Ground Testing Protocol}{20}{subsubsection.3.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Base station receiver circuit concept showing XBee-PRO 900HP integration, RF filtering, and ground control processing elements}}{21}{figure.3.7}\protected@file@percent }
+\newlabel{fig:base_station_design}{{3.7}{21}{Base station receiver circuit concept showing XBee-PRO 900HP integration, RF filtering, and ground control processing elements}{figure.3.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Rocket XBee extension circuit pinout and Fritzing layout illustrating power conditioning, antenna interface, and signal routing}}{21}{figure.3.8}\protected@file@percent }
+\newlabel{fig:rocket_xbee_extension}{{3.8}{21}{Rocket XBee extension circuit pinout and Fritzing layout illustrating power conditioning, antenna interface, and signal routing}{figure.3.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Battery Management System Proteus design showing ADS1115 ADC with voltage divider (47k$\Omega $/10k$\Omega $), dual chute detection inputs, and power distribution topology}}{22}{figure.3.9}\protected@file@percent }
+\newlabel{fig:bms_proteus_design}{{3.9}{22}{Battery Management System Proteus design showing ADS1115 ADC with voltage divider (47k$\Omega $/10k$\Omega $), dual chute detection inputs, and power distribution topology}{figure.3.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Flight Testing Protocol}{23}{subsubsection.3.3.2}\protected@file@percent }
 \citation{xbee_pro_datasheet}
 \citation{descent_dynamics}
 \citation{avionics_vibration}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Expected Outcomes}{19}{section.4}\protected@file@percent }
-\newlabel{sec:outcomes}{{4}{19}{Expected Outcomes}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Technical Performance}{19}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Project Timeline}{19}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Knowledge Contribution}{19}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{20}{section.5}\protected@file@percent }
-\newlabel{sec:conclusion}{{5}{20}{Conclusion}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Expected Outcomes}{24}{section.4}\protected@file@percent }
+\newlabel{sec:outcomes}{{4}{24}{Expected Outcomes}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Technical Performance}{24}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Project Timeline}{24}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Knowledge Contribution}{24}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{25}{section.5}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{25}{Conclusion}{section.5}{}}
 \bibstyle{IEEEtran}
 \bibdata{Bib/proposal_references}
 \bibcite{nakka_recovery}{1}
@@ -109,39 +128,56 @@
 \bibcite{rf_telemetry_propagation}{6}
 \bibcite{student_rocketry_telemetry}{7}
 \bibcite{xbee_pro_datasheet}{8}
-\bibcite{nakka_crimson}{9}
-\bibcite{esp32_datasheet}{10}
-\bibcite{embedded_flight_computers}{11}
+\bibcite{pozar_microwave}{9}
+\bibcite{arrl_antenna_book}{10}
+\bibcite{nakka_crimson}{11}
 \bibcite{pwm_ignition_systems}{12}
-\@writefile{toc}{\contentsline {section}{References}{21}{section.5}\protected@file@percent }
-\bibcite{avionics_vibration}{13}
-\bibcite{lipo_aerospace}{14}
-\bibcite{bms_systems}{15}
-\bibcite{descent_dynamics}{16}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Project Budget}{23}{appendix.A}\protected@file@percent }
-\newlabel{appendix:budget}{{A}{23}{Project Budget}{appendix.A}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces N4 Recovery System Budget Breakdown}}{23}{table.A.1}\protected@file@percent }
-\newlabel{tab:budget}{{A.1}{23}{N4 Recovery System Budget Breakdown}{table.A.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Project Timeline}{23}{appendix.B}\protected@file@percent }
-\newlabel{appendix:timeline}{{B}{23}{Project Timeline}{appendix.B}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces 15-week project timeline showing task dependencies and critical path through design, fabrication, and testing phases}}{24}{figure.B.1}\protected@file@percent }
-\newlabel{fig:timeline_gantt}{{B.1}{24}{15-week project timeline showing task dependencies and critical path through design, fabrication, and testing phases}{figure.B.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Antenna and RF Design Analysis}{25}{appendix.C}\protected@file@percent }
-\newlabel{appendix:antenna_design}{{C}{25}{Antenna and RF Design Analysis}{appendix.C}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Null Space Signal Pattern}{25}{subsection.C.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {C.1}{\ignorespaces XBee-PRO 900HP antenna radiation pattern showing signal strength distribution and null space regions. The pattern demonstrates approximate omnidirectional coverage in the horizontal plane with defined null zones in vertical extremes}}{25}{figure.C.1}\protected@file@percent }
-\newlabel{fig:antenna_null_pattern}{{C.1}{25}{XBee-PRO 900HP antenna radiation pattern showing signal strength distribution and null space regions. The pattern demonstrates approximate omnidirectional coverage in the horizontal plane with defined null zones in vertical extremes}{figure.C.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}RSSI Signal Decay Characterization}{26}{subsection.C.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {C.2}{\ignorespaces RSSI signal decay plot showing measured signal strength attenuation with distance. Data confirms 5+km operational range with sufficient link margin (minimum -100 dBm receiver sensitivity) throughout nominal flight profile}}{26}{figure.C.2}\protected@file@percent }
-\newlabel{fig:rssi_decay}{{C.2}{26}{RSSI signal decay plot showing measured signal strength attenuation with distance. Data confirms 5+km operational range with sufficient link margin (minimum -100 dBm receiver sensitivity) throughout nominal flight profile}{figure.C.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Previous N4 Design References}{26}{appendix.D}\protected@file@percent }
-\newlabel{appendix:previous_designs}{{D}{26}{Previous N4 Design References}{appendix.D}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {D.1}{\ignorespaces Nakuja N3 rocket showing avionics bay configuration (reference design for N4 dual deployment architecture)}}{27}{figure.D.1}\protected@file@percent }
-\newlabel{fig:n3_reference}{{D.1}{27}{Nakuja N3 rocket showing avionics bay configuration (reference design for N4 dual deployment architecture)}{figure.D.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {D.2}{\ignorespaces Current N4 flight computer circuit design showing ESP32 microcontroller integration, XBee telemetry module, sensor interfaces (BMP180/MPU6050), MOSFET-based PWM ignition drivers, and power management circuitry}}{27}{figure.D.2}\protected@file@percent }
-\newlabel{fig:current_circuit}{{D.2}{27}{Current N4 flight computer circuit design showing ESP32 microcontroller integration, XBee telemetry module, sensor interfaces (BMP180/MPU6050), MOSFET-based PWM ignition drivers, and power management circuitry}{figure.D.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {D.3}{\ignorespaces Current flight computer holder design featuring 3D-printed PETG construction with integrated battery retention mechanism, vibration isolation mounts, and modular component placement for easy assembly and maintenance}}{28}{figure.D.3}\protected@file@percent }
-\newlabel{fig:current_fc_holder}{{D.3}{28}{Current flight computer holder design featuring 3D-printed PETG construction with integrated battery retention mechanism, vibration isolation mounts, and modular component placement for easy assembly and maintenance}{figure.D.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {E}Nakuja Project Resources}{28}{appendix.E}\protected@file@percent }
-\newlabel{appendix:nakuja_resources}{{E}{28}{Nakuja Project Resources}{appendix.E}{}}
-\gdef \@abspage@last{38}
+\@writefile{toc}{\contentsline {section}{References}{26}{section.5}\protected@file@percent }
+\bibcite{barr_pwm}{13}
+\bibcite{esp32_datasheet}{14}
+\bibcite{embedded_flight_computers}{15}
+\bibcite{avionics_vibration}{16}
+\bibcite{petg_mechanical}{17}
+\bibcite{petg_review_2020}{18}
+\bibcite{petg_fdm_impact}{19}
+\bibcite{petg_process_structure}{20}
+\bibcite{lipo_aerospace}{21}
+\bibcite{bms_systems}{22}
+\bibcite{descent_dynamics}{23}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Project Budget}{29}{appendix.A}\protected@file@percent }
+\newlabel{appendix:budget}{{A}{29}{Project Budget}{appendix.A}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces N4 Recovery System Budget Breakdown}}{29}{table.A.1}\protected@file@percent }
+\newlabel{tab:budget}{{A.1}{29}{N4 Recovery System Budget Breakdown}{table.A.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Project Timeline}{29}{appendix.B}\protected@file@percent }
+\newlabel{appendix:timeline}{{B}{29}{Project Timeline}{appendix.B}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces 15-week project timeline showing task dependencies and critical path through design, fabrication, and testing phases}}{30}{figure.B.1}\protected@file@percent }
+\newlabel{fig:timeline_gantt}{{B.1}{30}{15-week project timeline showing task dependencies and critical path through design, fabrication, and testing phases}{figure.B.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Antenna and RF Design Analysis}{31}{appendix.C}\protected@file@percent }
+\newlabel{appendix:antenna_design}{{C}{31}{Antenna and RF Design Analysis}{appendix.C}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Null Space Signal Pattern}{31}{subsection.C.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {C.1}{\ignorespaces XBee-PRO 900HP antenna radiation pattern showing signal strength distribution and null space regions. The pattern demonstrates approximate omnidirectional coverage in the horizontal plane with defined null zones in vertical extremes}}{31}{figure.C.1}\protected@file@percent }
+\newlabel{fig:antenna_null_pattern}{{C.1}{31}{XBee-PRO 900HP antenna radiation pattern showing signal strength distribution and null space regions. The pattern demonstrates approximate omnidirectional coverage in the horizontal plane with defined null zones in vertical extremes}{figure.C.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}RSSI Signal Decay Characterization}{32}{subsection.C.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {C.2}{\ignorespaces RSSI signal decay plot showing measured signal strength attenuation with distance. Data confirms 5+km operational range with sufficient link margin (minimum -100 dBm receiver sensitivity) throughout nominal flight profile}}{32}{figure.C.2}\protected@file@percent }
+\newlabel{fig:rssi_decay}{{C.2}{32}{RSSI signal decay plot showing measured signal strength attenuation with distance. Data confirms 5+km operational range with sufficient link margin (minimum -100 dBm receiver sensitivity) throughout nominal flight profile}{figure.C.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Previous N4 Design References}{32}{appendix.D}\protected@file@percent }
+\newlabel{appendix:previous_designs}{{D}{32}{Previous N4 Design References}{appendix.D}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {D.1}{\ignorespaces Nakuja N3 rocket showing avionics bay configuration (reference design for N4 dual deployment architecture)}}{33}{figure.D.1}\protected@file@percent }
+\newlabel{fig:n3_reference}{{D.1}{33}{Nakuja N3 rocket showing avionics bay configuration (reference design for N4 dual deployment architecture)}{figure.D.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {D.2}{\ignorespaces Current N4 flight computer circuit design showing ESP32 microcontroller integration, XBee telemetry module, sensor interfaces (BMP180/MPU6050), MOSFET-based PWM ignition drivers, and power management circuitry}}{33}{figure.D.2}\protected@file@percent }
+\newlabel{fig:current_circuit}{{D.2}{33}{Current N4 flight computer circuit design showing ESP32 microcontroller integration, XBee telemetry module, sensor interfaces (BMP180/MPU6050), MOSFET-based PWM ignition drivers, and power management circuitry}{figure.D.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {D.3}{\ignorespaces Current flight computer holder design featuring 3D-printed PETG construction with integrated battery retention mechanism, vibration isolation mounts, and modular component placement for easy assembly and maintenance}}{34}{figure.D.3}\protected@file@percent }
+\newlabel{fig:current_fc_holder}{{D.3}{34}{Current flight computer holder design featuring 3D-printed PETG construction with integrated battery retention mechanism, vibration isolation mounts, and modular component placement for easy assembly and maintenance}{figure.D.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}Nakuja Project Resources}{34}{appendix.E}\protected@file@percent }
+\newlabel{appendix:nakuja_resources}{{E}{34}{Nakuja Project Resources}{appendix.E}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Mechanical Design Drawings (Current Iteration)}{35}{appendix.F}\protected@file@percent }
+\newlabel{appendix:mechanical_drawings}{{F}{35}{Mechanical Design Drawings (Current Iteration)}{appendix.F}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {F.1}{\ignorespaces 18650 battery case cover drawing (current revision)}}{35}{figure.F.1}\protected@file@percent }
+\newlabel{fig:mech_case_cover}{{F.1}{35}{18650 battery case cover drawing (current revision)}{figure.F.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {F.2}{\ignorespaces Edge battery support plate drawing}}{36}{figure.F.2}\protected@file@percent }
+\newlabel{fig:mech_edge_batt}{{F.2}{36}{Edge battery support plate drawing}{figure.F.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {F.3}{\ignorespaces Mid battery support plate drawing}}{37}{figure.F.3}\protected@file@percent }
+\newlabel{fig:mech_mid_batt}{{F.3}{37}{Mid battery support plate drawing}{figure.F.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {F.4}{\ignorespaces Avionics assembly integration view}}{37}{figure.F.4}\protected@file@percent }
+\newlabel{fig:mech_avionics_assembly}{{F.4}{37}{Avionics assembly integration view}{figure.F.4}{}}
+\gdef \@abspage@last{47}

@@ -3,7 +3,7 @@
 
 \subsection{Recovery Systems in Student Rocketry}
 
-Recovery systems preserve flight hardware and recorded data \cite{nakka_recovery}. Student rocketry projects face budget constraints requiring innovative, cost-effective solutions \cite{student_rocket_design}. Dual-deployment architectures use staged recovery: drogue chute at apogee for stability, main parachute at lower altitude for soft landing \cite{dual_deploy_analysis, parachute_design}.
+Recovery systems preserve flight hardware and recorded data, and are therefore mission-critical in university rocketry projects \cite{nakka_recovery, student_rocket_design}. In dual-deployment recovery, a drogue parachute is deployed near apogee for stabilization and drift control, followed by a main parachute at lower altitude for safe touchdown \cite{dual_deploy_analysis, parachute_design}. This staged architecture is widely adopted in high-altitude student missions because it improves landing safety and reduces downrange drift.
 
 \begin{figure}[htbp]
 \centering
@@ -19,7 +19,7 @@ Recovery systems preserve flight hardware and recorded data \cite{nakka_recovery
 \label{fig:dual_deploy_flight}
 \end{figure}
 
-The Nakuja Project's progression from N3.5 single-deployment to N4 dual-deployment architecture reflects industry evolution \cite{nakuja_website}. Previous missions identified critical improvements needed in mechanical reliability and telemetry range.
+The Nakuja project's progression from earlier single-deployment flights to the N4 dual-deployment objective reflects this broader trend and responds directly to observed issues in deployment consistency, telemetry robustness, and avionics survivability \cite{nakuja_website}.
 
 \subsection{Telemetry Systems Analysis}
 
@@ -43,7 +43,7 @@ Cellular LTE & Global & High & Unlimited range & Network dep. \\ \bottomrule
 \end{tabular}
 \end{table}
 
-The XBee-PRO 900HP provides optimal balance between range, data capacity, and protocol reliability \cite{xbee_pro_datasheet}. Its 900 MHz frequency offers superior penetration versus 2.4 GHz alternatives.
+The XBee-PRO 900HP provides the best balance between practical range, packet reliability, and integration complexity for N4 \cite{xbee_pro_datasheet}. Its 900 MHz operation provides better propagation in non-ideal field conditions compared with 2.4 GHz systems.
 
 \begin{figure}[htbp]
 \centering
@@ -52,9 +52,48 @@ The XBee-PRO 900HP provides optimal balance between range, data capacity, and pr
 \label{fig:rssi_decay}
 \end{figure}
 
+\subsubsection{Antenna Link-Budget Justification}
+
+From local N4 antenna justification analysis, the free-space path loss for a 900 MHz link can be modeled using:
+
+\begin{equation}
+FSPL(dB) = 20\log_{10}(d) + 20\log_{10}(f) - 147.55
+\end{equation}
+
+At $f \approx 915$ MHz and $d=5000$ m, $FSPL \approx 105.66$ dB. The received power estimate is:
+
+\begin{equation}
+P_{rx} = P_{tx} + G_{tx} + G_{rx} - FSPL
+\end{equation}
+
+For $P_{tx}=24$ dBm and approximately +2 dBi gain at each end, $P_{rx} \approx -77.66$ dBm, yielding a margin of roughly +32 dB relative to a $-110$ dBm sensitivity in long-range mode \cite{xbee_pro_datasheet, pozar_microwave}. This supports the feasibility of the target range under near line-of-sight conditions.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.38\textwidth]{images/duck_antenna.jpg}
+\caption{900 MHz duck antenna used in the N4 telemetry configuration}
+\label{fig:duck_antenna}
+\end{figure}
+
+Dipole antennas exhibit radiation nulls along the antenna axis (the ``donut'' effect), so link quality can degrade sharply when antenna orientation is unfavorable. Practical mitigation includes deliberate ground-station antenna tilt toward the expected trajectory and, where possible, higher-gain directional ground antennas \cite{arrl_antenna_book}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.45\textwidth]{images/donut_pattern.png}
+\caption{Dipole radiation pattern illustrating axis nulls that can cause overhead signal dropouts}
+\label{fig:donut_pattern}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.45\textwidth]{images/BiQuadPic.jpg}
+\caption{Example 900 MHz Bi-Quad ground-station antenna option for increased link margin}
+\label{fig:biquad}
+\end{figure}
+
 \subsection{Pyrotechnic Deployment Systems}
 
-Nakka's Crimson Powder research provides baseline data for pyrotechnic charges \cite{nakka_crimson}. Proper formulation generates sufficient pressure while minimizing thermal output. Combustion temperatures exceed 2000°C, requiring thermal isolation to prevent parachute damage.
+Nakka's Crimson Powder research provides baseline context for pyrotechnic charge behavior \cite{nakka_crimson}. Practical student implementations must balance sufficient pressure generation against thermal and structural risks in the recovery bay.
 
 \begin{figure}[htbp]
 \centering
@@ -77,13 +116,21 @@ Nakka's Crimson Powder research provides baseline data for pyrotechnic charges \
 \label{fig:post_test_charring}
 \end{figure}
 
+For nichrome-wire ignition, direct battery dump can cause uncontrolled heating, burnout, and low test repeatability. PWM-based drive regulates average resistive-load power:
+
+\begin{equation}
+P_{avg} = D\,\frac{V^2}{R}
+\end{equation}
+
+where $D$ is duty cycle. This supports controlled thermal ramping and improves reusable pre-flight testing workflows \cite{pwm_ignition_systems, barr_pwm}.
+
 \subsection{Electronic Control Systems}
 
-The ESP32 platform offers dual-core architecture for parallel sensor processing and communication \cite{esp32_datasheet, embedded_flight_computers}. PWM ignition control enables precise thermal management, preventing wire burnout while enabling multiple tests \cite{pwm_ignition_systems}.
+The ESP32 platform offers dual-core architecture suitable for concurrent state estimation, deployment logic, and telemetry tasks \cite{esp32_datasheet, embedded_flight_computers}. In this project, it also enables deterministic PWM ignition control and integrated health telemetry.
 
 \subsection{Power and Structural Systems}
 
-LiPo batteries provide superior energy density but require BMS for safety. High-G launch loads cause battery disconnection in spring-loaded holders \cite{avionics_vibration}. Custom avionics holders provide vibration isolation and battery retention.
+LiPo batteries provide favorable energy density but require robust management and mechanical retention. High-G launch and deployment events can trigger intermittent connections in insufficiently constrained holders \cite{avionics_vibration}. Therefore, rigid-constrained and vibration-tolerant avionics integration is required.
 
 \begin{figure}[htbp]
 \centering
@@ -91,6 +138,15 @@ LiPo batteries provide superior energy density but require BMS for safety. High-
 \caption{Assembled avionics bay with integrated battery retention and vibration isolation}
 \label{fig:avionics_bay}
 \end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\textwidth]{images/Current_FC_Holder.png}
+\caption{Current flight-computer holder geometry used for mechanical integration studies}
+\label{fig:full_integration_mech}
+\end{figure}
+
+PETG is frequently selected for functional 3D-printed aerospace support parts because it offers improved ductility and impact tolerance compared with more brittle alternatives, while retaining practical manufacturability. However, mechanical integrity is strongly dependent on layer adhesion, print orientation, and process settings, requiring conservative design and test validation for flight use \cite{petg_mechanical, petg_review_2020, petg_fdm_impact, petg_process_structure}.
 
 \subsection{Previous Nakuja Mission Analysis}
 
@@ -111,7 +167,7 @@ N-3.5 & 2024 & Piston deploy & Thermal damage observed \\
 \end{tabular}
 \end{table}
 
-Analysis shows telemetry loss at altitudes exceeding 2km \cite{nakuja_website}. The XBee-PRO 900HP directly addresses this limitation.
+Analysis shows telemetry degradation risks at higher altitudes and adverse orientation conditions \cite{nakuja_website}. The XBee-PRO 900HP plus explicit antenna-alignment strategy directly addresses this limitation.
 
 \begin{figure}[h]
 \centering
@@ -130,3 +186,16 @@ Amateur rocketry follows established safety protocols from organizations like Tr
 \caption{Adiabatic expansion analysis for parachute deployment system design}
 \label{fig:adiabatic}
 \end{figure}
+
+\subsection{Identified Research Gaps}
+
+The reviewed literature and Nakuja evidence highlight four unresolved gaps for N4:
+
+\begin{enumerate}
+	\item \textbf{Charge-energy quantification gap:} limited N4-specific data linking charge mass to pressure and deployment reliability.
+	\item \textbf{Ignition repeatability gap:} limited validation of reusable PWM-controlled nichrome workflows in student-rocketry deployment bays.
+	\item \textbf{Telemetry-geometry gap:} strong theoretical link budget can still fail in practice without antenna-null mitigation strategy.
+	\item \textbf{Structural validation gap:} PETG avionics support parts are common but often lack shock-profile validation for launch/deployment loads.
+\end{enumerate}
+
+These gaps define the contribution scope of this project: robust long-range telemetry, controlled ignition energy delivery, and mechanically resilient avionics integration.

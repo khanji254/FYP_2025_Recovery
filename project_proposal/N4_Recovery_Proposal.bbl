@@ -57,10 +57,29 @@ M.~Davis and S.~Lee, ``Telemetry solutions for student rocketry applications,''
 {Digi International}, ``Xbee-pro 900hp rf module datasheet,'' Product Technical
   Specification, 2024, accessed: December 2024.
 
+\bibitem{pozar_microwave}
+D.~M. Pozar, \emph{Microwave Engineering}, 4th~ed.\hskip 1em plus 0.5em minus
+  0.4em\relax John Wiley \& Sons, 2011.
+
+\bibitem{arrl_antenna_book}
+H.~W. Silver, Ed., \emph{The ARRL Antenna Book for Radio Communications},
+  24th~ed.\hskip 1em plus 0.5em minus 0.4em\relax ARRL, the National
+  Association for Amateur Radio, 2019.
+
 \bibitem{nakka_crimson}
 R.~Nakka, ``Crimson powder: A pyrotechnic composition for rocket recovery,''
   \url{https://www.nakka-rocketry.net/crimson.html}, 2024, accessed: December
   2024.
+
+\bibitem{pwm_ignition_systems}
+L.~Chen and R.~Kumar, ``Pulse width modulation control for reliable pyrotechnic
+  ignition,'' \emph{IEEE Transactions on Aerospace and Electronic Systems},
+  vol.~58, no.~4, pp. 2894--2903, 2022.
+
+\bibitem{barr_pwm}
+M.~Barr, ``Introduction to pulse width modulation (pwm),'' Barr Group, 2001,
+  accessed: 2026,
+  \url{https://barrgroup.com/embedded-systems/how-to/pwm-pulse-width-modulation}.
 
 \bibitem{esp32_datasheet}
 {Espressif Systems}, \emph{ESP32 Series Datasheet}, Espressif Systems, 2024,
@@ -71,15 +90,31 @@ R.~Peterson and D.~Walsh, ``Embedded flight computer design for amateur
   rocketry,'' \emph{Journal of Embedded Systems}, vol.~15, no.~2, pp. 112--125,
   2021.
 
-\bibitem{pwm_ignition_systems}
-L.~Chen and R.~Kumar, ``Pulse width modulation control for reliable pyrotechnic
-  ignition,'' \emph{IEEE Transactions on Aerospace and Electronic Systems},
-  vol.~58, no.~4, pp. 2894--2903, 2022.
-
 \bibitem{avionics_vibration}
 A.~Thompson and M.~Garcia, ``Vibration isolation techniques for rocket
   avionics,'' in \emph{International Conference on Space Technology}, 2022, pp.
   89--97.
+
+\bibitem{petg_mechanical}
+L.~Santana and J.~L. Alves, ``Mechanical properties of petg parts manufactured
+  by fused deposition modeling,'' \emph{Polymer Testing}, vol.~93, p. 106991,
+  2021.
+
+\bibitem{petg_review_2020}
+M.~Yuan, X.~Cui, W.~Zhu, and H.~Tang, ``Development of environmentally friendly
+  atom transfer radical polymerization,'' \emph{Polymers}, vol.~12, no.~9, p.
+  1987, 2020.
+
+\bibitem{petg_fdm_impact}
+T.~Yao, Z.~Deng, K.~Zhang, and S.~Li, ``A method to predict the ultimate
+  tensile strength of 3d printed polymeric parts under different printing
+  conditions,'' \emph{Materials}, vol.~13, no.~20, p. 4701, 2020.
+
+\bibitem{petg_process_structure}
+R.~T.~L. Ferreira, I.~C. Amatte, T.~A. Dutra, and D.~Burger, ``Experimental
+  characterization and micrography of 3d printed pla and petg with different
+  raster angles and infill patterns,'' \emph{Polymers}, vol.~13, no.~8, p.
+  1318, 2021.
 
 \bibitem{lipo_aerospace}
 W.~Zhang and P.~Kumar, ``Lithium polymer battery performance in aerospace

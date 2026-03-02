@@ -10,35 +10,39 @@
 \contentsline {section}{\numberline {2}Literature Review}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Recovery Systems in Student Rocketry}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Telemetry Systems Analysis}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Pyrotechnic Deployment Systems}{6}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Electronic Control Systems}{6}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Power and Structural Systems}{6}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Previous Nakuja Mission Analysis}{8}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Safety Standards and Guidelines}{10}{subsection.2.7}%
-\contentsline {section}{\numberline {3}Design and Methodology}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Design Approach}{12}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Implementation Methodology}{12}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Mechanical System Design}{12}{subsubsection.3.2.1}%
-\contentsline {paragraph}{Sealed Explosion Cap}{12}{section*.4}%
-\contentsline {paragraph}{Avionics Bay Structure}{12}{section*.5}%
-\contentsline {subsubsection}{\numberline {3.2.2}Electrical System Architecture}{14}{subsubsection.3.2.2}%
-\contentsline {paragraph}{Hardware Components}{14}{section*.6}%
-\contentsline {paragraph}{PWM Ignition Control}{14}{section*.7}%
-\contentsline {paragraph}{Power Management}{14}{section*.8}%
-\contentsline {subsubsection}{\numberline {3.2.3}Electrical Design Concepts and Simulations}{15}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Testing and Validation Plan}{18}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Ground Testing Protocol}{18}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Flight Testing Protocol}{18}{subsubsection.3.3.2}%
-\contentsline {section}{\numberline {4}Expected Outcomes}{19}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Technical Performance}{19}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Project Timeline}{19}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Knowledge Contribution}{19}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion}{20}{section.5}%
-\contentsline {section}{References}{21}{section.5}%
-\contentsline {section}{\numberline {A}Project Budget}{23}{appendix.A}%
-\contentsline {section}{\numberline {B}Project Timeline}{23}{appendix.B}%
-\contentsline {section}{\numberline {C}Antenna and RF Design Analysis}{25}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Null Space Signal Pattern}{25}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}RSSI Signal Decay Characterization}{26}{subsection.C.2}%
-\contentsline {section}{\numberline {D}Previous N4 Design References}{26}{appendix.D}%
-\contentsline {section}{\numberline {E}Nakuja Project Resources}{28}{appendix.E}%
+\contentsline {subsubsection}{\numberline {2.2.1}Antenna Link-Budget Justification}{6}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Pyrotechnic Deployment Systems}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Electronic Control Systems}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Power and Structural Systems}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Previous Nakuja Mission Analysis}{12}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Safety Standards and Guidelines}{12}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Identified Research Gaps}{12}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Design and Methodology}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Design Approach}{15}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Implementation Methodology}{15}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Mechanical System Design}{15}{subsubsection.3.2.1}%
+\contentsline {paragraph}{Sealed Explosion Cap}{15}{section*.4}%
+\contentsline {paragraph}{Avionics Bay Structure}{15}{section*.5}%
+\contentsline {paragraph}{Mechanical Design Integration (Updated Models)}{17}{section*.6}%
+\contentsline {subsubsection}{\numberline {3.2.2}Electrical System Architecture}{17}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Hardware Components}{17}{section*.7}%
+\contentsline {paragraph}{PWM Ignition Control}{17}{section*.8}%
+\contentsline {paragraph}{Power Management}{17}{section*.9}%
+\contentsline {subsubsection}{\numberline {3.2.3}Electrical Design Concepts and Simulations}{20}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Testing and Validation Plan}{20}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Ground Testing Protocol}{20}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Flight Testing Protocol}{23}{subsubsection.3.3.2}%
+\contentsline {section}{\numberline {4}Expected Outcomes}{24}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Technical Performance}{24}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Project Timeline}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Knowledge Contribution}{24}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusion}{25}{section.5}%
+\contentsline {section}{References}{26}{section.5}%
+\contentsline {section}{\numberline {A}Project Budget}{29}{appendix.A}%
+\contentsline {section}{\numberline {B}Project Timeline}{29}{appendix.B}%
+\contentsline {section}{\numberline {C}Antenna and RF Design Analysis}{31}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Null Space Signal Pattern}{31}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}RSSI Signal Decay Characterization}{32}{subsection.C.2}%
+\contentsline {section}{\numberline {D}Previous N4 Design References}{32}{appendix.D}%
+\contentsline {section}{\numberline {E}Nakuja Project Resources}{34}{appendix.E}%
+\contentsline {section}{\numberline {F}Mechanical Design Drawings (Current Iteration)}{35}{appendix.F}%

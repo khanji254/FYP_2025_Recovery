@@ -1,21 +1,32 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Full Nakuja N3 rocket showing the dual-deployment recovery configuration and component layout}}{4}{figure.2.1}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Rocket in flight demonstrating the dual-deployment sequence and aerodynamic stability during ascent}}{5}{figure.2.2}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Beacon RSSI decay analysis showing signal degradation with distance and altitude}}{5}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Excessive crimson powder deployment showing the need for precise charge control}}{7}{figure.2.4}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Charge holder thermal damage from explosion highlighting thermal isolation requirements}}{8}{figure.2.5}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Post-deployment test showing charring effects and the importance of sealed containment}}{9}{figure.2.6}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Assembled avionics bay with integrated battery retention and vibration isolation}}{10}{figure.2.7}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces XBee-PRO 900HP telemetry system integration showing complete signal path}}{11}{figure.2.8}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Adiabatic expansion analysis for parachute deployment system design}}{11}{figure.2.9}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces CAD rendering of the avionics bay assembly showing component layout, mounting features, and dimensional constraints}}{13}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Proposed XBee-PRO 900HP telemetry system architecture }}{14}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Nichrome wire demonstration showing thermal melting and cutting mechanism - illustrating the one-shot deployment characteristic}}{15}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Base station receiver circuit concept showing XBee-PRO 900HP integration, RF filtering, and ground control processing elements}}{16}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Rocket XBee extension circuit pinout and Fritzing layout illustrating power conditioning, antenna interface, and signal routing}}{16}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Battery Management System Proteus design showing ADS1115 ADC with voltage divider (47k$\Omega $/10k$\Omega $), dual chute detection inputs, and power distribution topology}}{17}{figure.3.6}%
-\contentsline {figure}{\numberline {B.1}{\ignorespaces 15-week project timeline showing task dependencies and critical path through design, fabrication, and testing phases}}{24}{figure.B.1}%
-\contentsline {figure}{\numberline {C.1}{\ignorespaces XBee-PRO 900HP antenna radiation pattern showing signal strength distribution and null space regions. The pattern demonstrates approximate omnidirectional coverage in the horizontal plane with defined null zones in vertical extremes}}{25}{figure.C.1}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces RSSI signal decay plot showing measured signal strength attenuation with distance. Data confirms 5+km operational range with sufficient link margin (minimum -100 dBm receiver sensitivity) throughout nominal flight profile}}{26}{figure.C.2}%
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Nakuja N3 rocket showing avionics bay configuration (reference design for N4 dual deployment architecture)}}{27}{figure.D.1}%
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Current N4 flight computer circuit design showing ESP32 microcontroller integration, XBee telemetry module, sensor interfaces (BMP180/MPU6050), MOSFET-based PWM ignition drivers, and power management circuitry}}{27}{figure.D.2}%
-\contentsline {figure}{\numberline {D.3}{\ignorespaces Current flight computer holder design featuring 3D-printed PETG construction with integrated battery retention mechanism, vibration isolation mounts, and modular component placement for easy assembly and maintenance}}{28}{figure.D.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces 900 MHz duck antenna used in the N4 telemetry configuration}}{7}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Dipole radiation pattern illustrating axis nulls that can cause overhead signal dropouts}}{7}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Example 900 MHz Bi-Quad ground-station antenna option for increased link margin}}{7}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Excessive crimson powder deployment showing the need for precise charge control}}{8}{figure.2.7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Charge holder thermal damage from explosion highlighting thermal isolation requirements}}{9}{figure.2.8}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Post-deployment test showing charring effects and the importance of sealed containment}}{10}{figure.2.9}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Assembled avionics bay with integrated battery retention and vibration isolation}}{11}{figure.2.10}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Current flight-computer holder geometry used for mechanical integration studies}}{11}{figure.2.11}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces XBee-PRO 900HP telemetry system integration showing complete signal path}}{13}{figure.2.12}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Adiabatic expansion analysis for parachute deployment system design}}{14}{figure.2.13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces CAD rendering of the avionics bay assembly showing component layout, mounting features, and dimensional constraints}}{16}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Updated flight-computer holder CAD model showing revised mounting and battery seating features}}{17}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Cross-sectional view of the avionics bay indicating internal clearances and component stacking}}{18}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Threaded-rod integration with raised battery cells to preserve structural alignment and wiring space}}{18}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Proposed XBee-PRO 900HP telemetry system architecture }}{19}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Nichrome wire demonstration showing thermal melting and cutting mechanism - illustrating the one-shot deployment characteristic}}{19}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Base station receiver circuit concept showing XBee-PRO 900HP integration, RF filtering, and ground control processing elements}}{21}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Rocket XBee extension circuit pinout and Fritzing layout illustrating power conditioning, antenna interface, and signal routing}}{21}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Battery Management System Proteus design showing ADS1115 ADC with voltage divider (47k$\Omega $/10k$\Omega $), dual chute detection inputs, and power distribution topology}}{22}{figure.3.9}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces 15-week project timeline showing task dependencies and critical path through design, fabrication, and testing phases}}{30}{figure.B.1}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces XBee-PRO 900HP antenna radiation pattern showing signal strength distribution and null space regions. The pattern demonstrates approximate omnidirectional coverage in the horizontal plane with defined null zones in vertical extremes}}{31}{figure.C.1}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces RSSI signal decay plot showing measured signal strength attenuation with distance. Data confirms 5+km operational range with sufficient link margin (minimum -100 dBm receiver sensitivity) throughout nominal flight profile}}{32}{figure.C.2}%
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Nakuja N3 rocket showing avionics bay configuration (reference design for N4 dual deployment architecture)}}{33}{figure.D.1}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Current N4 flight computer circuit design showing ESP32 microcontroller integration, XBee telemetry module, sensor interfaces (BMP180/MPU6050), MOSFET-based PWM ignition drivers, and power management circuitry}}{33}{figure.D.2}%
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Current flight computer holder design featuring 3D-printed PETG construction with integrated battery retention mechanism, vibration isolation mounts, and modular component placement for easy assembly and maintenance}}{34}{figure.D.3}%
+\contentsline {figure}{\numberline {F.1}{\ignorespaces 18650 battery case cover drawing (current revision)}}{35}{figure.F.1}%
+\contentsline {figure}{\numberline {F.2}{\ignorespaces Edge battery support plate drawing}}{36}{figure.F.2}%
+\contentsline {figure}{\numberline {F.3}{\ignorespaces Mid battery support plate drawing}}{37}{figure.F.3}%
+\contentsline {figure}{\numberline {F.4}{\ignorespaces Avionics assembly integration view}}{37}{figure.F.4}%
