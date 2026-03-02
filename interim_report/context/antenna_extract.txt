@@ -1,0 +1,113 @@
+Link Budget Justification & Operational
+Strategy for N4 Rocket Telemetry
+Telemetry Systems Design Team
+January 12, 2026
+1 Executive Summary
+This document outlines the theoretical justification for achieving a telemetry link exceeding
+5km range for a high-powered rocket flight. The system utilizes the Digi XBee-PRO
+900HP (S3B) radio modules and standard 900MHz dipole “duck” antennas. Based on the
+link budget calculations presented below, the specified hardware possesses sufficient power
+margins to establish reliable communication at the target distance, provided that critical
+operational alignments are maintained to mitigate antenna radiation pattern limitations
+[1].
+2 System Specifications
+The core components of the telemetry link are defined by the following specifications.
+Parameter Value Note
+Frequency Band (f) 902–928 MHz ISM Band (Center ≈ 915 MHz)
+Transmitter Power (Ptx) +24 dBm 250 mW (XBee Pro S3B)
+Receiver Sensitivity (Rx) -110 dBm At 10 Kbps Data Rate (Long Range Mode)
+Tx Antenna Gain ( Gtx) +2.0 dBi SparkFun Duck Antenna
+Rx Antenna Gain ( Grx) +2.0 dBi SparkFun Duck Antenna
+Target Distance (d) 5000 m 5 km Line of Sight
+Table 1: System Link Parameters
+1
+Figure 1: XBee-PRO 900HP S3B
+ Figure 2: 900MHz Duck Antenna
+3 Theoretical Link Budget Calculation
+To determine the viability of the link, we calculate the expected received signal strength
+(Prx) using the Friis Transmission Equation [2].
+3.1 Free Space Path Loss (FSPL)
+The primary loss factor is the signal attenuation over distance in open air.
+F SP L(dB) = 20 log10(d) + 20 log10(f) − 147.55 (1)
+Substituting our target parameters ( d = 5000m, f = 915 × 106Hz):
+F SP L ≈ 105.66 dB
+3.2 Link Margin Calculation
+The expected received power ( Prx) is calculated by summing gains and subtracting losses:
+Prx = Ptx + Gtx + Grx − F SP L (2)
+Prx = 24 dBm + 2 dBi + 2 dBi − 105.66 dB
+Prx ≈ −77.66 dBm
+The Link Margin is the safety buffer between the received signal and the receiver
+sensitivity (−110 dBm).
+Margin = −77.66 dBm − (−110 dBm) ≈ +32.34 dB
+A margin of +32.34 dB justifies that the hardware is capable of distances significantly
+greater than 5km under ideal conditions [3].
+4 Operational Challenges: The “Donut” Effect
+Dipole antennas have significant nulls (blind spots) along their vertical axis. The radiation
+pattern resembles a donut, with the antenna sitting in the hole [4].
+2
+Figure 3: Typical 3D Radiation Pattern of a Dipole Antenna. Note the “nulls” along the
+Z-axis (Source: ResearchGate [4]).
+The Risk: If the ground station antenna points vertically, and the rocket is overhead,
+the “nulls” align, causing signal loss.
+5 Operational Strategy: Ground Station Alignment
+To mitigate the null, the ground antenna should be tilted roughly 45 ◦ from vertical
+toward the launch pad.
+Ground
+Launch Pad (0,0)
+Rocket Apogee (≈ 3.6km)
+Line of Sight (
+≈3.63km)
+≈ 82◦
+Base Station(500m Standoff)
+Antenna Tilted≈45◦
+to avoid null
+Figure 4: Ground Station Alignment Diagram. Tilting the base antenna ensures the
+rocket remains in the main radiation lobe during high-altitude flight.
+3
+A Post-Document Summary & Recommendations
+A.1 Current Setup Issues
+Despite the calculated 32dB margin, real-world factors can degrade performance:
+• The Nulls: As detailed in Section 4, aligning the tips of the antennas causes signal
+dropout.
+• Polarization Mismatch: The rocket antenna is vertically polarized. If the rocket
+tilts or spins during descent, polarization mismatch can cause losses of 3dB to 20dB
+[2].
+• Wasted Energy: Omnidirectional antennas radiate energy into the ground and
+behind the station, wasting power that could be directed at the rocket.
+A.2 Recommendations for Ground Station Upgrade
+To ensure a robust 5km link, we recommend upgrading the Ground Station antenna
+while keeping the duck antenna on the rocket for aerodynamic efficiency.
+Option 1: 900MHz Bi-Quad (Highly Recommended)
+The Bi-Quad is often preferred by hobbyists over patch antennas because it is easier to
+build with standard tools and less sensitive to material errors.
+• Pros: Excellent gain ( ≈ 11 dBi), wide beamwidth ( ≈ 60◦), forgiving fabrication
+tolerances.
+• Reference: Changpuak Bi-Quad Calculator [6].
+Figure 5: Example of a Homebrew 915MHz Bi-Quad Antenna.
+Option 2: 900MHz Patch Antenna
+The Patch Antenna is a strong candidate for this application due to its directional gain
+and flat form factor.
+• Pros: Good gain ( ≈ 7 dBi), robust flat form factor, easier to mount on a tripod
+than a Yagi.
+4
+• Cons: Extremely sensitive to material variations (FR-4 fiberglass quality).
+• Design Resource: See Phil’s Lab for detailed PCB patch design procedures [5].
+A.3 Crucial Tooling
+For any DIY antenna build (Patch or Bi-Quad), a NanoVNA is mandatory. Without
+verifying the resonant frequency, the antenna may be tuned to the wrong frequency (e.g.,
+880MHz), significantly reducing range.
+References
+[1] Digi International, “XBee-PRO 900HP RF Modules User Guide,” 2016.
+[Online]. Available: https://hub.digi.com/dp/path=/support/asset/
+xbee-pro-900hp-user-guide/
+[2] D. M. Pozar, Microwave Engineering, 4th ed., Wiley, 2011, pp. 600-605.
+[3] H. Ward Silver, Ed., The ARRL Antenna Book for Radio Communications , 24th ed.,
+ARRL, 2019, ch. 4.
+[4] P. Muthu Kannan, et al., “3D Radiation pattern of normal dipole antenna,” Re-
+searchGate, 2020. [Online]. Available: https://www.researchgate.net/figure/
+D-Radiation-pattern-of-normal-dipole-antenna_fig2_347276602
+[5] Phil’s Lab, “PCB Antenna Design, Simulation, and Fabrication,” YouTube, 2021.
+[Online]. Available: https://www.youtube.com/watch?v=UQBMROv7Dy4
+[6] Changpuak.ch, “Bi-Quad Antenna Calculator,” [Online]. Available: https://www.
+changpuak.ch/electronics/bi_quad_antenna_designer.php
+5

@@ -1,5 +1,4 @@
-\section{Introduction}
-\label{sec:introduction}
+\section{Introduction}\label{sec:introduction}
 
 \subsection{Background of Study}
 
@@ -9,48 +8,45 @@ The Nakuja Project N4 mission builds upon previous experiences from the N3.5 mis
 
 \subsection{Problem Statement}
 
-The N4 mission confronts three critical reliability challenges that threaten mission success:
+The N4 mission's recovery system faces critical reliability challenges including telemetry range limitations causing signal degradation during critical flight phases, uncontrolled ignition system temperatures exceeding 1000 degrees Celsius that create unreliable single-use deployment mechanisms, and absence of real-time pre-flight monitoring systems for battery voltage and igniter continuity, collectively threatening mission success through potential vehicle loss, deployment failures, and inability to validate system readiness before launch.
 
-\textbf{Telemetry Range Limitations:} The current telemetry system protocol exhibits significant range constraints, resulting in signal degradation and potential complete signal loss during critical flight phases. This limitation creates substantial risk of vehicle loss and inability to track the rocket post-flight, particularly during descent and landing phases.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.62\textwidth]{images/XBeeDiagram.png}
+\caption{XBee-PRO 900HP telemetry integration architecture used to improve end-to-end link reliability}
+\label{fig:intro_xbee_architecture}
+\end{figure}
 
-\textbf{Uncontrolled Ignition System:} The existing "DC dump" ignition method for nichrome wire deployment generates uncontrolled temperatures exceeding 1000 degrees Celsius. This excessive heat generation causes wire burnout, creating a single-use deployment system that cannot be tested reliably and introduces significant deployment risk during actual flight operations.
+\subsection{Objectives}
 
-\textbf{Absence of Pre-flight Monitoring:} The lack of real-time feedback systems for critical parameters including battery voltage and igniter continuity leaves ground operators without visibility into potential system failures. This blind spot in operational awareness substantially increases the risk of mission aborts or catastrophic deployment malfunctions during critical flight phases.
+\textbf{Main Objective:} To design, fabricate, and validate a reliable dual deployment recovery system for the N4 rocket with extended telemetry range and comprehensive pre-flight monitoring capabilities.
 
-\subsection{Research Objectives}
-
-\subsubsection{Main Objective}
-
-To design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range, ensuring mission success through enhanced communication capabilities, controlled deployment mechanisms, and comprehensive real-time monitoring systems.
-
-\subsubsection{Specific Objectives}
-
+\textbf{Specific Objectives:}
 \begin{enumerate}
-    \item To implement the Digi XBee-PRO 900HP telemetry system for robust long-range data transmission exceeding 5km with less than 5\% packet loss.
-    
-    \item To design and validate a PWM-controlled ignition system capable of regulating Nichrome wire temperature, preventing burnout while enabling reusable deployment testing.
-    
-    \item To develop a comprehensive feedback monitoring system that transmits real-time battery percentage and deployment pin continuity status to the ground station.
-    
-    \item To implement a sealed explosion cap design that ensures consistent and reliable parachute deployment while preventing thermal damage to the canopy.
-    
-    \item To design and fabricate a ruggedized 3D-printed avionics holder providing vibration isolation and maintaining center of gravity stability under high-G launch forces.
+    \item Implement the Digi XBee-PRO 900HP telemetry system for long-range communication.
+    \item Develop a controlled ignition system for consistent parachute deployment.
+    \item Implement an explosion-cap assisted deployment arrangement to improve pop-test repeatability and deployment reliability.
+    \item Establish thermochemical verification curves to justify adiabatic explosion behavior and motivate contained deployment design.
+    \item Integrate real-time pre-flight monitoring for battery and igniter continuity status.
+    \item Validate the integrated recovery subsystem through ground-based testing.
 \end{enumerate}
 
-\subsection{Scope of Work}
+\subsection{Justification}
 
-This project focuses on the design, fabrication, and testing of a complete dual recovery system for the Nakuja N4 rocket. The scope encompasses:
+The development of a reliable recovery system is paramount to mission success. Loss of the rocket vehicle results not only in hardware loss but also complete loss of flight data critical for mission analysis and future design improvements. The proposed improvements address documented failure modes from previous missions and implement industry-standard practices adapted for student rocketry applications.
 
-\begin{itemize}
-    \item Hardware design and fabrication of electronic and mechanical subsystems
-    \item Software development for telemetry and control systems
-    \item Laboratory testing and validation of individual components
-    \item System integration and comprehensive ground testing
-    \item Documentation of design processes and test results
-\end{itemize}
+The Nakuja Project represents a significant investment in student engineering education and practical aerospace systems development. Ensuring mission success through robust recovery systems validates this investment and provides valuable learning opportunities for future engineering professionals.
 
-The project addresses the complete recovery system lifecycle from initial concept through ground testing, with flight readiness assessment as the final deliverable.
+\subsection{Expected Outcomes}
 
-\subsection{Report Organization}
+The expected outcomes of this study are:
+\begin{enumerate}
+    \item Reliable telemetry performance beyond 5 km with packet loss maintained below 5\%.
+    \item Controlled PWM-based igniter operation that prevents nichrome burnout and supports repeated ground testing.
+    \item Improved deployment repeatability from an explosion-cap based pop-test method with reduced ignition variability.
+    \item Thermochemical evidence curves showing near-adiabatic charge behavior to support contained deployment requirements.
+    \item Verified real-time pre-flight status monitoring for battery health and igniter continuity.
+    \item Improved deployment reliability through a sealed explosion-cap arrangement and ruggedized avionics mounting.
+    \item A validated subsystem integration and test framework to support final flight-readiness evaluation.
+\end{enumerate}
 
-This interim report is organized as follows: Chapter 2 presents a comprehensive literature review of relevant technologies and systems. Chapter 3 details the methodology and design approach for both electrical and mechanical subsystems. Chapter 4 presents results and discussions of work completed to date. Chapter 5 outlines remaining work and the path forward to project completion.

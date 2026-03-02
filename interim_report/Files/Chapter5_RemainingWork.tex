@@ -1,291 +1,35 @@
-\section{Remaining Work and Timeline}
-\label{sec:remaining}
+\section{Conclusion}
+\label{sec:conclusion}
 
-This chapter outlines the remaining tasks required to complete the project, along with the proposed timeline for completion. Work is organized into major phases with clear milestones and deliverables.
+This interim report presented the development progress of a reliable dual recovery system for the N4 rocket mission. The work addressed the three core problem areas established in the proposal: telemetry range limitations, uncontrolled deployment-wire heating, and lack of pre-flight status visibility.
 
-\subsection{Outstanding Tasks}
+\subsection{Summary of Achievements}
 
-\subsubsection{Mechanical System Completion}
-
-\textbf{Avionics Sled Fabrication:}
+The following milestones have been achieved during the interim phase:
 \begin{itemize}
-    \item Complete 3D printing of avionics sled in PETG
-    \item Post-processing (deburring, dimensional verification)
-    \item Fit-check with electronic components
-    \item Integration with airframe mounting points
-    \item Vibration isolation validation testing
+    \item Completion of literature review and identification of critical research and implementation gaps relevant to the N4 mission.
+    \item Completion of subsystem-level design for the electrical and mechanical architecture, including telemetry, ignition control, feedback monitoring, and deployment hardware.
+    \item XBee-PRO 900HP hardware configured and bench-validated via XCTU pre-flight procedure; open-field range testing is scheduled for the next phase.
+    \item Successful PWM ignition bench testing demonstrating reliable black-powder ignition at 70\% duty cycle without nichrome burnout under repeated tests.
+    \item Proteus BMS simulation validating voltage-monitoring circuit design; hardware accuracy testing pending PCB delivery.
+    \item Procurement of major electronic components and progression of PCB/mechanical fabrication activities.
 \end{itemize}
 
-\textbf{Explosion Cap Fabrication:}
-\begin{itemize}
-    \item Machine aluminum explosion cap components
-    \item Install O-ring sealing
-    \item Pressure testing to validate containment (5--10 bar)
-    \item Integration with airframe bulkhead
-    \item Static fire testing with various charge masses
-\end{itemize}
+These achievements confirm that the design direction selected in the proposal is technically feasible and suitable for mission-level implementation.
 
-\textbf{Battery Holder and Mounting Hardware:}
-\begin{itemize}
-    \item 3D print battery holder with retention straps
-    \item Fabricate cable management brackets
-    \item Assemble complete mechanical system
-    \item Weight and center-of-gravity verification
-\end{itemize}
+\subsection{Interim Findings}
 
-\subsubsection{Electrical System Completion}
-
-\textbf{PCB Assembly and Testing:}
-\begin{itemize}
-    \item Receive PCBs from fabrication house (expected [date])
-    \item Visual inspection and continuity testing
-    \item Component soldering (surface mount and through-hole)
-    \item Power-on testing (voltage rails, current consumption)
-    \item Functional testing of all circuits (PWM, ADC, UART, I$^2$C)
-    \item Integration with ESP32 and XBee modules
-\end{itemize}
-
-\textbf{System Integration:}
-\begin{itemize}
-    \item Install PCB in avionics sled
-    \item Route and secure all wiring (battery, igniters, sensors)
-    \item Install antennas (XBee, GPS) with optimal placement
-    \item Secure GPS and IMU modules
-    \item Final mechanical integration with airframe
-\end{itemize}
-
-\subsubsection{Firmware Completion}
-
-\textbf{Flight State Machine:}
-Implement complete state machine managing flight phases:
-\begin{itemize}
-    \item \textbf{Pre-launch State:} Battery monitoring, continuity checks, GPS lock, telemetry link verification
-    \item \textbf{Ready State:} Armed for launch, awaiting liftoff detection
-    \item \textbf{Powered Ascent:} Detect motor burnout, transition to coasting
-    \item \textbf{Coasting:} Monitor altitude, detect apogee
-    \item \textbf{Apogee Detection:} Trigger drogue deployment
-    \item \textbf{Descent:} Monitor altitude for main deployment altitude
-    \item \textbf{Main Deployment:} Trigger main parachute at 300--500 m AGL
-    \item \textbf{Landed:} Continue telemetry for vehicle location
-\end{itemize}
-
-\textbf{Apogee Detection Algorithm:}
-Implement robust apogee detection using sensor fusion:
-\begin{itemize}
-    \item Barometric altitude rate-of-change (primary method)
-    \item Accelerometer velocity integration (backup method)
-    \item Timing guard (minimum time from liftoff: 10 seconds)
-    \item Altitude guard (minimum altitude: 100 m AGL)
-\end{itemize}
-
-\textbf{Deployment Trigger Logic:}
-\begin{itemize}
-    \item Drogue deployment: At apogee detection
-    \item Main deployment: At 300--500 m AGL (configurable threshold)
-    \item Manual override capability via ground station command
-    \item Backup timer-based deployment (if sensors fail)
-\end{itemize}
-
-\textbf{Data Logging:}
-\begin{itemize}
-    \item Implement SD card logging subsystem
-    \item Log all sensor data at 10 Hz throughout flight
-    \item Log state transitions and deployment events
-    \item File management (pre-flight, flight, post-flight files)
-\end{itemize}
-
-\textbf{Ground Station Software:}
-\begin{itemize}
-    \item Develop ground station GUI (Python + PyQt or similar)
-    \item Real-time telemetry display (altitude, velocity, GPS, battery status)
-    \item Launch inhibit status indicators
-    \item Deployment command interface
-    \item Data logging and post-flight analysis tools
-\end{itemize}
-
-\subsubsection{Testing and Validation}
-
-\textbf{Charge Characterization Testing:}
-Critical experimental work to establish charge-to-force relationships:
-\begin{itemize}
-    \item Design and fabricate test fixture with load cell
-    \item Test varying charge masses (1--5 grams, 0.5 gram increments)
-    \item Record peak force, rise time, pressure-time profiles
-    \item Statistical analysis with multiple replicates per charge mass
-    \item Determine optimal charge sizing for reliable deployment without over-stress
-\end{itemize}
-
-\textbf{System Integration Testing:}
-\begin{itemize}
-    \item Complete electrical system functionality test
-    \item Telemetry link verification at extended range
-    \item GPS tracking accuracy validation
-    \item Battery endurance testing (power consumption profiling)
-    \item Continuity detection under various fault scenarios
-\end{itemize}
-
-\textbf{Ignition System Validation:}
-\begin{itemize}
-    \item Multiple PWM ignition tests with flight-configuration wiring
-    \item Verify reliable ignition with flight battery under load
-    \item Test ignition reliability after mechanical shock/vibration
-    \item Validate ignition timing repeatability
-\end{itemize}
-
-\textbf{Mechanical Validation:}
-\begin{itemize}
-    \item Drop testing to simulate deployment shock (50--100G)
-    \item Verify avionics mounting integrity after shock
-    \item Check for loose connections or component damage
-    \item Vibration table testing (if equipment available)
-\end{itemize}
-
-\textbf{Full System Ground Tests:}
-\begin{itemize}
-    \item Complete integrated system test with all subsystems
-    \item Simulated flight profile test (software-triggered deployment sequence)
-    \item Telemetry range validation with flight antenna configuration
-    \item Deployment force testing with final charge sizing
-    \item Multiple successful deployment tests required for flight qualification
-\end{itemize}
-
-\textbf{Flight Readiness Review:}
-\begin{itemize}
-    \item Document all test results
-    \item Risk assessment and mitigation strategies
-    \item Final pre-flight checklist development
-    \item Safety review with Nakuja team and launch authority
-    \item Go/No-go decision criteria
-\end{itemize}
-
-\subsection{Proposed Timeline}
-
-Table~\ref{tab:remaining_timeline} presents the proposed timeline for completing remaining work.
-
-\begin{table}[H]
-\centering
-\caption{Remaining Work Timeline}
-\label{tab:remaining_timeline}
-\small
-\begin{tabular}{@{}p{1cm}p{3.5cm}p{8cm}@{}}
-\toprule
-\textbf{Week} & \textbf{Phase} & \textbf{Key Activities} \\ \midrule
-1--2 & PCB Assembly & Receive PCBs, assemble and test, integrate with microcontroller and modules \\
-3--4 & Mechanical Fabrication & 3D print avionics sled, machine explosion cap, assemble mechanical system \\
-5--6 & Firmware Completion & Complete state machine, deployment logic, data logging, ground station software \\
-7--8 & Charge Characterization & Build test fixture, conduct charge-to-force experiments, analyze data \\
-9--10 & System Integration & Install electronics in mechanical system, complete wiring, preliminary integration tests \\
-11--12 & Component Validation & PWM ignition testing, telemetry range testing, sensor validation, drop testing \\
-13--14 & System-Level Testing & Full integrated system tests, multiple deployment tests, telemetry validation \\
-15 & Flight Readiness & Documentation, flight readiness review, pre-flight checklist, safety briefing \\
-16 & Launch Operations & Final pre-flight checks, launch operations, post-flight data recovery \\ \bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Risk Assessment and Mitigation}
-
-\subsubsection{Technical Risks}
-
-\textbf{Risk 1: PCB Fabrication Defects}
-\begin{itemize}
-    \item \textit{Probability:} Low
-    \item \textit{Impact:} High (project delays)
-    \item \textit{Mitigation:} Thorough inspection on receipt, order spare PCBs, maintain breadboard backup for testing
-\end{itemize}
-
-\textbf{Risk 2: Deployment Force Unpredictability}
-\begin{itemize}
-    \item \textit{Probability:} Medium
-    \item \textit{Impact:} High (failed deployment or airframe damage)
-    \item \textit{Mitigation:} Comprehensive charge characterization testing, multiple test deployments, conservative charge sizing with safety margin
-\end{itemize}
-
-\textbf{Risk 3: Telemetry Link Loss}
-\begin{itemize}
-    \item \textit{Probability:} Low--Medium
-    \item \textit{Impact:} Medium (loss of real-time data, vehicle harder to locate)
-    \item \textit{Mitigation:} SD card data logging backup, GPS coordinates in last telemetry packet, audible beacon for locating
-\end{itemize}
-
-\textbf{Risk 4: Software Bugs in Flight Code}
-\begin{itemize}
-    \item \textit{Probability:} Medium
-    \item \textit{Impact:} High (failed deployment, mission loss)
-    \item \textit{Mitigation:} Extensive ground testing, simulated flight profiles, code review, backup timer-based deployment
-\end{itemize}
-
-\textbf{Risk 5: Mechanical Failure Under Launch Loads}
-\begin{itemize}
-    \item \textit{Probability:} Low
-    \item \textit{Impact:} High (electronics damage, mission failure)
-    \item \textit{Mitigation:} FEA validation, drop testing, vibration testing if available, redundant fastening
-\end{itemize}
-
-\subsubsection{Schedule Risks}
-
-\textbf{Risk 1: PCB Delivery Delays}
-\begin{itemize}
-    \item \textit{Probability:} Medium
-    \item \textit{Impact:} Medium (schedule delay)
-    \item \textit{Mitigation:} Place PCB order early, maintain breadboard prototype for continued development
-\end{itemize}
-
-\textbf{Risk 2: Component Procurement Delays}
-\begin{itemize}
-    \item \textit{Probability:} Low (most components already received)
-    \item \textit{Impact:} Medium
-    \item \textit{Mitigation:} Order remaining components immediately, identify alternative suppliers
-\end{itemize}
-
-\textbf{Risk 3: Test Facility Availability}
-\begin{itemize}
-    \item \textit{Probability:} Medium
-    \item \textit{Impact:} Low--Medium
-    \item \textit{Mitigation:} Schedule test facility access early, coordinate with Nakuja team
-\end{itemize}
-
-\subsection{Expected Final Outcomes}
-
-Upon completion of remaining work, the project will deliver:
-
+The evidence obtained so far supports three important findings:
 \begin{enumerate}
-    \item \textbf{Hardware Deliverable:} Fully integrated, flight-ready dual recovery system for N4 rocket with:
-    \begin{itemize}
-        \item XBee-PRO 900HP telemetry with verified 5 km range and <5\% packet loss
-        \item PWM-controlled ignition system enabling reusable deployment testing
-        \item Real-time battery and igniter status monitoring
-        \item Sealed explosion cap preventing thermal damage to parachutes
-        \item Ruggedized avionics bay with vibration isolation
-    \end{itemize}
-    
-    \item \textbf{Software Deliverable:} Complete firmware and ground station software with:
-    \begin{itemize}
-        \item Autonomous flight state management
-        \item Robust apogee detection and deployment triggering
-        \item Real-time telemetry transmission and ground station display
-        \item Data logging for post-flight analysis
-        \item Safety interlocks and launch inhibit protocols
-    \end{itemize}
-    
-    \item \textbf{Documentation Deliverable:}
-    \begin{itemize}
-        \item Complete system design documentation
-        \item Test reports and validation data
-        \item Empirical charge-to-force characterization data
-        \item Flight operations manual and pre-flight checklist
-        \item Final project report
-    \end{itemize}
-    
-    \item \textbf{Performance Targets:} System will meet or exceed:
-    \begin{itemize}
-        \item Telemetry range: >5 km with <5\% packet loss
-        \item Ignition reliability: >95\% across multiple tests
-        \item Deployment success: 100\% in ground tests
-        \item Battery monitoring accuracy: ±1\%
-        \item Launch inhibit detection: 100\% fault detection
-    \end{itemize}
+    \item The XBee-PRO 900HP platform is suitable for long-range N4 recovery telemetry requirements at the design and bench-configuration level; full range verification at 5~km will be completed during field-testing in the next phase.
+    \item PWM-based ignition provides a practical and safer alternative to direct DC dump for nichrome activation.
+    \item Integrating continuity and battery-status feedback is essential for launch-inhibit safety logic and operational readiness checks.
 \end{enumerate}
 
-\subsection{Conclusion}
+\subsection{Project Status and Next Phase}
 
-Significant progress has been achieved to date, with system design completed, components procured, and preliminary testing validating key design choices. Remaining work focuses on system integration, comprehensive testing, and flight qualification. The proposed timeline allows adequate time for thorough validation before launch operations. Risk mitigation strategies address identified technical and schedule risks. Upon completion, the project will deliver a reliable dual recovery system addressing all identified N4 mission requirements.
+At the close of this interim phase, the project has completed design and preliminary subsystem validation, with the next phase focusing on full integration, comprehensive ground testing, and flight-readiness verification. This progression is consistent with the original proposal objectives and keeps the project on track toward a validated N4 dual recovery system.
+
+\subsection{Overall Conclusion}
+
+The interim work demonstrates meaningful technical progress toward a robust and testable recovery system for the N4 rocket. The results to date indicate that the proposed architecture can meet mission performance and safety targets, subject to final integrated-system validation in the remaining project phase.

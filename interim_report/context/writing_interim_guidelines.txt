@@ -1,0 +1,1064 @@
+2/19/2026
+
+Writing an Interim Project Report
+
+Dr. (Eng.) Anthony Muchiri
+19.02.2026
+
+Update on Semester schedule
+
+Presentation date: 6th March 2025 (TBC)
+Submit your draft reports to your supervisors by
+27th February 2026
+Final report (2 copies) should be printed, bound,
+signed by students and supervisors by
+5th March 2026
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+1
+
+1
+
+2/19/2026
+
+Outline – Interim Report
+ Format
+ Abstract
+ Introduction (Chapter 1)
+ Literature Review (Chapter 2)
+ Methodology (Chapter 3)
+ Results & Discussion (Chapter 4)
+ Conclusion: (Chapter 5)
+ References
+ Formating: Equations, Figures, Tables
+ Some Do’s and Don’ts
+ Oral Presentation assessment
+ Mark sheet templates
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+2
+
+Report Format
+ Title Page
+ Declaration
+ Abstract
+ TOC
+ Nomenclature
+ Introduction
+ Literature Review
+ Methodology
+ Results and Discussion
+ Conclusion
+ References
+ Appendices
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+3
+
+2
+
+2/19/2026
+
+Report Format
+Title Page
+ University Logo (the correct one!!!),
+College/School/Department
+
+ Title: Brief and suitable for indexing
+ Project Code: FYP-19-xx
+ Authors
+ Supervisors
+ Date
+ Statement on fulfilment of degree requirements
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+4
+
+Report Format
+Title Page
+
+Note the order
+
+Project title
+Project Code
+Type of report
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+5
+
+3
+
+2/19/2026
+
+Report Format
+Declaration
+ Statement of originality, duly signed by the
+students, and countersigned by the supervisors.
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+6
+
+Abstract
+ A very precise introduction, approach
+
+(methodology), results and conclusion
+ No referencing
+ No un-identified abbreviations: e.g. SI units are
+okay. PWM not okay.
+ No words or abbreviations in brackets
+NOTE
+ This is NOT your project proposal. DO NOT use
+the same abstract you used in the proposal.
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+7
+
+4
+
+2/19/2026
+
+Table of Contents
+
+ Chapter, sections, subsections (1, 1.1, 1.1.1)
+ A Table of Figure is optional
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+8
+
+Nomenclature
+ Abbreviations and Symbols, arranged
+alphabetically.
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+9
+
+5
+
+2/19/2026
+
+Pagination
+ Roman (i, ii,…)before introduction, Arabic (1, 2, …)
+thereafter
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+10
+
+Introduction
+
+ What is the problem?
+ What is the background information?
+
+ Introduce the problem and what it aims to achieve
+ State the problem
+ State the objectives (Main, Specific)
+ State what you intend to achieve (Expected Outcomes)
+ Justification
+NOTE:
+Expected outcomes are listed here, not in Chapter 4!!!
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+11
+
+6
+
+2/19/2026
+
+Chapter 2: Literature review
+
+ How is the problem described in literature (If at all?)
+ What are the current practices?
+(Bean-planting robots in existence are made out of
+5-7
+
+subsystems:…
+
+control
+
+unit:
+
+aduinos…
+
+Actuation: stepper motors, DC motors…)
+
+ How much is already known?
+ Conclusion? What are the gaps?
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+12
+
+Chapter 2: Literature review
+
+ Literature review is NOT about selecting solutions,
+or describing your solution in detail. That goes into
+
+the methodology
+
+ Literature review is NOT A SUMMARY of what
+appears in literature!
+
+ GAPS!!!
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+13
+
+7
+
+2/19/2026
+
+Chapter 3: Methodology
+
+• What? Why? How?
+• Design considerations
+• Design
+
+considerations:
+
+per
+
+sub-system,
+
+then
+
+selection of optimal solution
+
+• Implementation of design considerations
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+15
+
+Chapter 3: Methodology
+ How did I do the design?
+Be as detailed as possible
+
+ Part drawings, part circuits, evaluation tables etc.
+are critical in this section
+
+ Design calculations should feature here. So NOT in
+the literature review, and NOT in the results
+
+ Any Finite Element Analysis setup should be done
+here. The results of the calculations should be
+presented and discussed in Chapter Four
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+16
+
+8
+
+2/19/2026
+
+Chapter 3: Methodology
+ Part drawings,
+
+No frame or Title blocks!
+White background
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+17
+
+Chapter 3: Methodology
+ FEA Setup,
+Pre-processing: Input
+
+The seven nodes of the
+structure are defined as
+follows:
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+18
+
+9
+
+2/19/2026
+
+Chapter 3: Methodology
+ FEA Setup,
+Pre-processing: Input
+
+Mesh
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+19
+
+Chapter 4: Results and Discussion
+ What did I do (come up with)?
+Present representative data, final detailed designs
+with parts lists, budgets. Do not repeat drawing
+already in the previous chapter. Finer design details,
+codes can be included in the Appendix.
+
+ DO NOT put figures/drawings with no explanations.
+Results is NOT about design drawings or 3D models!
+ Do NOT put calculations in the results!
+Results should be enough to draw conclusions from
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+20
+
+10
+
+2/19/2026
+
+Chapter 4: Results and Discussion
+ What did I do (come up with)?
+ Start with the 2D Drawings, WITH dimensions.
+ Front, End and Top View
+ Isometric View, labelled parts
+
+ The 3D model should only come AFTER the 2D
+drawings with dimensions
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+21
+
+Chapter 4: Results and Discussion
+ What did I do (come up with)?
+
+This is a design.
+It has views and
+dimensions
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+22
+
+11
+
+2/19/2026
+
+Chapter 4: Results and Discussion
+ What did I do (come up with)?
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+23
+
+Chapter 4: Results and Discussion
+ What did I do (come up with)?
+
+This is a 3D view/model.
+It should only come AFTER
+the 2D designs, with
+dimensions
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+24
+
+12
+
+2/19/2026
+
+Chapter 4: Results and Discussion
+ What did I do (come up with)?
+FEA results
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+25
+
+Chapter 4: Results and Discussion
+ What did I do (come up with)?
+FEA results
+
+Auto scale (73x)
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+26
+
+13
+
+2/19/2026
+
+Chapter 4: Results and Discussion
+Discussion
+ What do the results mean?
+
+ Are there any new significant results?
+ Are there unexpected values?
+ How does the design compare with previous/existing
+designs?
+
+ Do not restate the results!
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+27
+
+Chapter 5: Conclusion
+
+ What did you set out to do?
+ What did you achieve?
+ Was the design process completed?
+ Where am I going from here? Next steps? Pending
+work?
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+28
+
+14
+
+2/19/2026
+
+References
+ Source of your information.
+ Make sure that it is accurate.
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+29
+
+Appendices
+
+ Time plan
+ Part Drawings
+ Production plans
+ Programming codes
+ Design reference tables, charts
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+30
+
+15
+
+2/19/2026
+
+Important to Note:
+
+The output of your first semester
+work (the design) should be such
+that a production technician can
+implement your work without much
+reference to you.
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+31
+
+Equations:
+ Equations must be clear
+ Numbering of equations consistent
+Poor formatting
+L=2*C+(D-d)2/4C+/2*(D+d)
+Correct formatting
+
+(D  d ) 2 
+L  2C 
+ (D  d )
+4C
+2
+
+(2.7)
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+32
+
+16
+
+2/19/2026
+
+Equations:
+Correct formatting
+
+X  l1 cos   l 2 cos(   )cos 
+
+Y  l1 cos   l 2 cos(   )sin  
+
+Z  l1 sin   l 2 sin(   )
+
+
+(2.8)
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+33
+
+Equations:
+ An equation may be part of a sentence, e.g.,
+The coordinates for the end effector of a spherical robot are
+obtained from the joint variables as
+X  a cos cos  
+
+Y  a sin  cos  
+
+Z  a sin 
+
+
+(2.9)
+
+where the symbols carry usual meanings.
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+34
+
+17
+
+2/19/2026
+
+Figures:
+ Must be clear
+ Captions at bottom
+ Numbering consistent
+
+Figure 3.8 A DNC system
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+35
+
+Figures:
+ Must be clear
+ Captions at bottom
+ Numbering consistent
+
+Figure 3.9 An aircraft on final
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+36
+
+18
+
+2/19/2026
+
+Figures:
+ Must be clear
+ Captions at bottom
+ Numbering consistent
+
+Figure 3.10 Experimental setup
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+37
+
+Figures:
+ Must be clear
+ Captions at bottom
+ Numbering consistent
+
+Figure. 3.11 Cutting model
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+38
+
+19
+
+2/19/2026
+
+Tables:
+ Must be clear
+ Captions at the top
+ Numbering consistent
+Table. 4.2 Budget
+No.
+
+Item
+
+Description
+
+1.
+
+Motor
+
+2.
+
+Bearings
+
+3.
+
+Fasteners Rivets Sz18
+
+Total
+
+Qty
+
+Cost per unit
+(KShs)
+
+Total Cost
+(KShs)
+
+DC motor 6V, 5A
+
+2
+
+2,500
+
+5,000
+
+Linear bearings
+
+2
+
+3,300
+
+6,600
+
+1pkt
+
+250
+
+250
+11,750
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+39
+
+Timeplan:
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+40
+
+20
+
+2/19/2026
+
+Check points
+
+ Why did you start?
+ What did you do?
+ What answer(s) did you get?
+ What does it mean, anyway?
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+41
+
+Some do‘s and donts
+Check points:
+
+ Originality vs Plagiarism
+ Fraud
+ Inconsistencies
+ Blaming others
+ Generalities
+ etc
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+42
+
+21
+
+2/19/2026
+
+Finally,
+
+Aim to finish
+positively,
+decisively, and
+forcefully
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+43
+
+Presentation
+ Presentation done before a panel of examiners:
+teaching and technical staff members
+
+ Note: It is an examination!!!
+ 10 minute presentation, followed by questions from
+the panel
+
+ Time is never added. You will be cut short if you
+attempt to continue with the presentation
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+44
+
+22
+
+2/19/2026
+
+Presentation
+Required before the presentation:
+
+ Two signed copies of your reports (you must have
+signed, and your supervisors must have signed).
+This is mandatory
+
+ Your supervision cards
+ A cheerful spirit
+ A smile!
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+Presentation
+ Dress appropriately
+
+Official/smart casual.
+
+for
+
+the
+
+45
+
+presentation:
+
+Remember:
+You are engineers in the making (almost ready!).
+You cannot defend your work half-dressed (!),
+dressed in faded clothes, T-shirts with slogans,
+sandals/slippers, unkempt hair… etc.
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+46
+
+23
+
+2/19/2026
+
+Presentation
+ Each students presents individually
+ You may develop your unique slides or share with
+your project mates
+
+ Stick to the template provided
+ Ensure your slides are as brief as possible and to
+the point
+
+ NO PARAGRAPHS!!! Present in point form
+ Do not cut & paste paragraphs from your
+report. Present points in bullet form
+
+ Figures, Tables and Flow charts work very well…
+ Do not use any font smaller than this (Verdana 20)
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+47
+
+Presentation
+ DO NOT READ FROM THE SLIDES
+ Address your audience
+ Project your voice properly: No shouting, no whispering
+ Do not attempt to make your presentation on the same
+morning
+
+ Go over your presentation
+ Rehearse your presentation
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+48
+
+24
+
+2/19/2026
+
+Interim Presentation
+
+Time management – 15 Minutes!
+
+1. Title slide
+2. Outline
+3. Intro = Background (include image of problem or existing
+solution) (1 slide)
+4. Problem statement (1 slide)
+5. Main objective and specific objectives (1 slide)
+6. Literature review – a summary of literature you have looked
+at, tabulated. (2 slides max)
+7. Gaps identified & possible approaches
+8. **Methodology – Max 6 slides – No calculations!!!
+9. Results – images, tables. Limit text and explanations (2 slides
+max)
+10.Budget
+11.Conclusion and Way forward
+12.Time plan
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+49
+
+Presentation
+**Methodology(6 slides)
+Approach = Subdivision of your project into 3-4 logical
+modules:
+(i) Purpose of Each module
+(ii)
+
+Design
+
+considerations
+
+per
+
+module,
+
+possible
+
+design
+
+solutions, and design solution you are gravitating towards,
+and why.
+
+(iii) Designs in CAD – Your Designs, not concepts!!!
+Remember: 2D, 3D Models, Isometric views, Parts
+(iv) Circuit designs
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+50
+
+25
+
+2/19/2026
+
+Mark sheets:
+Project Coordinator
+MAX.
+MARK
+
+ITEM
+ATTENDANCE
+
+5
+
+SUPERVISION
+
+5
+
+CONTINUOUS ASSESSMENT
+
+10
+
+ASSESSMENT OF KEY PRESENTATIONS
+
+10
+
+PROJECT PROPOSAL
+
+15
+
+OTHER SUBMISSIONS
+
+5
+
+TOTAL
+
+50
+
+MARK COMMENTS
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+51
+
+Mark sheets:
+
+Oral Examination
+ITEM
+
+PRESENTATION
+
+MAX. MARK
+Organization
+
+3
+
+Visual Aids
+
+4
+
+Clarity
+
+3
+
+Confidence
+
+2
+
+Response to questions
+
+3
+
+PROBLEM DEFINITION
+
+4
+
+LITERATURE REVIEW
+
+5
+
+ACADEMIC SCOPE
+
+5
+
+PROJECT DESIGN
+
+10
+
+WORK PLAN
+
+3
+
+DRAWINGS/FIGURES
+
+3
+
+RESULTS & RECOMMENDATIONS
+
+5
+
+MARK COMMENTS
+
+TOTAL
+50
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+52
+
+26
+
+2/19/2026
+
+Mark sheets:
+Panel Examiner
+MAX.
+MARK
+
+ITEM
+NEATNESS & LAYOUT
+
+2
+
+INTRODUCTION
+
+4
+
+LITERATURE REVIEW
+
+4
+
+METHODOLOGY
+
+10
+
+RESULTS & DISCUSSION
+
+5
+
+CONCLUSION
+
+4
+
+DRAWINGS/FIGURES
+
+3
+
+NUMBERING (Sections, eqns., figs…)
+
+3
+
+REFERENCES
+
+3
+
+WORK PLAN
+
+2
+
+TOTAL
+
+40
+
+MARK COMMENTS
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+53
+
+Mark sheets:
+Supervisor
+ITEM
+
+MAX. MARK MARK
+
+CONTINUOUS ASSESSMENT
+
+10
+
+NEATNESS AND LAYOUT
+
+4
+
+LITERATURE REVIEW
+
+6
+
+METHODOLOGY :
+
+DESIGN APPROACH
+CONSIDERATIONS &
+SELECTION
+
+5
+
+CALCULATIONS
+
+4
+
+ORIGINALITY
+
+3
+
+COMMENTS
+
+6
+
+RESULTS & RECOMMENDATIONS
+
+5
+
+DRAWINGS & FIGURES
+
+5
+
+NUMBERING: sections, equations, figures…
+
+4
+
+WORK PLAN: MATERIALS SPECIFICATION etc.
+
+4
+
+REFERENCES
+
+4
+
+TOTAL
+
+60
+
+A.K. Muchiri : Writing an Interim Project Report – Mechatronic Engineering © 2026
+
+54
+
+27
+
+2/19/2026
+
+Thank you for your attention.
+
+28
+
+

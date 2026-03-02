@@ -1,103 +1,92 @@
 \contentsline {section}{Declaration}{I}{section*.1}%
 \contentsline {section}{Acknowledgment}{II}{section*.2}%
 \contentsline {section}{Abstract}{III}{section*.3}%
-\contentsline {section}{List of Figures}{VI}{section*.4}%
-\contentsline {section}{List of Tables}{VII}{section*.5}%
+\contentsline {section}{Nomenclature}{IX}{section*.4}%
+\contentsline {section}{List of Figures}{XI}{section*.5}%
+\contentsline {section}{List of Tables}{XV}{section*.6}%
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Background of Study}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Problem Statement}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Research Objectives}{2}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}Main Objective}{2}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}Specific Objectives}{2}{subsubsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.4}Scope of Work}{3}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Report Organization}{3}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Literature Review}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Telemetry Systems Analysis}{4}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Telemetry System Comparison}{4}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}XBee-PRO 900HP Technical Specifications}{5}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Deployment Mechanism Literature}{5}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Igniter Technologies}{5}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Thermal Management in Nichrome Wire Systems}{6}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Previous Nakuja N4 Implementation Analysis}{7}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}PWM Control for Resistive Heating}{7}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Structural and Power System Challenges}{8}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}High-G Environment Considerations}{8}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Crimson Powder Deployment Issues}{8}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Vibration Isolation Strategies}{8}{subsubsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.5}Identified Research Gaps}{9}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Summary}{10}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Methodology}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}System Architecture Overview}{10}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Mechanical System Design}{11}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Deployment Mechanism: The Sealed Explosion Cap}{11}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Charge Sizing and Ejection Force Characterization}{12}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Avionics Bay Structure}{12}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Electrical System Architecture}{13}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Hardware Architecture}{13}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}PCB Design}{14}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Smart Ignition Control System}{15}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Power Management and Feedback Systems}{16}{subsubsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.4}Software Architecture}{17}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Flight Computer Firmware}{17}{subsubsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.5}Testing Methodology}{17}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Component-Level Testing}{18}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Subsystem Integration Testing}{18}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}System-Level Testing}{18}{subsubsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.6}Summary}{18}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Results and Discussion}{19}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Literature Review Outcomes}{19}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}System Design Completion}{20}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}PCB Design}{20}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Mechanical CAD Models}{20}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}Component Procurement}{21}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Preliminary Testing Results}{22}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}XBee-PRO Telemetry Range Testing}{22}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}PWM Ignition Testing}{23}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Voltage Monitoring Accuracy}{25}{subsubsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.4}Continuity Detection Testing}{25}{subsubsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.5}Firmware Development Progress}{26}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Completed Modules}{26}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Integration Status}{27}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}Remaining Firmware Work}{27}{subsubsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.6}Challenges Encountered}{27}{subsection.4.6}%
-\contentsline {subsubsection}{\numberline {4.6.1}XBee Configuration Complexity}{27}{subsubsection.4.6.1}%
-\contentsline {subsubsection}{\numberline {4.6.2}ADC Noise on ESP32}{28}{subsubsection.4.6.2}%
-\contentsline {subsubsection}{\numberline {4.6.3}Nichrome Wire Sourcing}{28}{subsubsection.4.6.3}%
-\contentsline {subsubsection}{\numberline {4.6.4}3D Print Warping}{28}{subsubsection.4.6.4}%
-\contentsline {subsection}{\numberline {4.7}Discussion}{28}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Summary}{29}{subsection.4.8}%
-\contentsline {section}{\numberline {5}Remaining Work and Timeline}{29}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Outstanding Tasks}{29}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Mechanical System Completion}{29}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Electrical System Completion}{30}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}Firmware Completion}{31}{subsubsection.5.1.3}%
-\contentsline {subsubsection}{\numberline {5.1.4}Testing and Validation}{32}{subsubsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.2}Proposed Timeline}{34}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Risk Assessment and Mitigation}{35}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Technical Risks}{35}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Schedule Risks}{37}{subsubsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.4}Expected Final Outcomes}{37}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Conclusion}{39}{subsection.5.5}%
-\contentsline {section}{\numberline {A}Appendix A: Component Specifications}{40}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}ESP32 Microcontroller}{40}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}XBee-PRO 900HP}{40}{subsection.A.2}%
-\contentsline {subsection}{\numberline {A.3}BMS Board (4S LiPo)}{40}{subsection.A.3}%
-\contentsline {subsection}{\numberline {A.4}IRLZ44N MOSFET}{41}{subsection.A.4}%
-\contentsline {subsection}{\numberline {A.5}Nichrome Wire (Igniter)}{41}{subsection.A.5}%
-\contentsline {section}{\numberline {B}Appendix B: PCB Design Details}{42}{appendix.B}%
-\contentsline {subsection}{\numberline {B.1}PCB Specifications}{42}{subsection.B.1}%
-\contentsline {subsection}{\numberline {B.2}Power Distribution}{42}{subsection.B.2}%
-\contentsline {subsection}{\numberline {B.3}Circuit Protection}{42}{subsection.B.3}%
-\contentsline {section}{\numberline {C}Appendix C: Test Data}{43}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Telemetry Range Testing}{43}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}PWM Ignition Testing}{43}{subsection.C.2}%
-\contentsline {subsection}{\numberline {C.3}Voltage Monitoring Accuracy}{44}{subsection.C.3}%
-\contentsline {section}{\numberline {D}Appendix D: Project Budget}{45}{appendix.D}%
-\contentsline {section}{\numberline {E}Appendix E: Software Architecture}{46}{appendix.E}%
-\contentsline {subsection}{\numberline {E.1}FreeRTOS Task Structure}{46}{subsection.E.1}%
-\contentsline {subsection}{\numberline {E.2}Telemetry Packet Format}{46}{subsection.E.2}%
-\contentsline {subsection}{\numberline {E.3}Deployment Sequence Flowchart}{47}{subsection.E.3}%
-\contentsline {section}{\numberline {F}Appendix F: Safety Protocols}{48}{appendix.F}%
-\contentsline {subsection}{\numberline {F.1}Pre-Launch Safety Checklist}{48}{subsection.F.1}%
-\contentsline {subsection}{\numberline {F.2}Launch Inhibit Conditions}{49}{subsection.F.2}%
-\contentsline {subsection}{\numberline {F.3}Emergency Procedures}{50}{subsection.F.3}%
+\contentsline {subsection}{\numberline {1.3}Objectives}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Justification}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Expected Outcomes}{3}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Literature Review}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Recovery Systems in Student Rocketry}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Telemetry Systems Analysis}{5}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Antenna Options in Recovery Telemetry}{7}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Pyrotechnic Deployment and Ignition Control}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Power and Structural Integrity in High-G Flight}{13}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}PETG for Flight-Structure Components}{13}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Flight-Computer Holder Design Progression}{14}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Previous Nakuja Mission Evidence}{15}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Safety Standards and Reporting Practice}{16}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Research Gaps}{16}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Methodology}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Design Approach and Subsystem Decomposition}{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Telemetry Module Design Methodology}{19}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Telemetry Module Scope}{19}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Telemetry Design Considerations}{19}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Telemetry Parts List}{19}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Telemetry Design-Option Comparison}{19}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Chosen Telemetry Design and Justification}{19}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}Antenna Options and Selection Using Link-Budget Math}{22}{subsubsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.3}Electrical Module with Deployment Submodule Methodology}{24}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Electrical + Deployment Module Scope}{24}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Design Considerations}{24}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Protocol and Interface Option Comparison}{26}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Chosen Electrical Architecture}{26}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Dimensional Constraints and Power Requirements}{26}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Electrical Materials List}{28}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.7}Circuit Development Workflow}{28}{subsubsection.3.3.7}%
+\contentsline {subsubsection}{\numberline {3.3.8}Power-Monitoring Calculations (ADS1115)}{29}{subsubsection.3.3.8}%
+\contentsline {subsubsection}{\numberline {3.3.9}Deployment PWM and MOSFET Selection}{30}{subsubsection.3.3.9}%
+\contentsline {subsubsection}{\numberline {3.3.10}Additional Implementation Details}{31}{subsubsection.3.3.10}%
+\contentsline {subsection}{\numberline {3.4}Structural (Mechanical) Module Design Methodology}{32}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Structural Module Scope}{32}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Structural Design Considerations}{32}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Structural Parts List}{33}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Structural Design Option Comparison}{33}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Chosen Structural Design and Implementation}{33}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Structural Load Calculations}{33}{subsubsection.3.4.6}%
+\contentsline {paragraph}{(a) 18650 battery mass and weight}{33}{section*.7}%
+\contentsline {paragraph}{(b) Launch inertial force (4g design case)}{38}{section*.8}%
+\contentsline {paragraph}{(c) Pop-test pressure-driven force (188~kPa reference)}{38}{section*.9}%
+\contentsline {paragraph}{(d) Impulse estimate for pop transient}{38}{section*.10}%
+\contentsline {paragraph}{(e) Load distribution through fasteners and supports}{38}{section*.11}%
+\contentsline {subsection}{\numberline {3.5}Embedded Software Methodology}{39}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Software Module Scope}{39}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Software Design Considerations}{39}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}XBee Communication Interface: SPI vs UART}{40}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Radio Pre-Flight Configuration via XCTU}{41}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Firmware State Machine Architecture}{41}{subsubsection.3.5.5}%
+\contentsline {subsubsection}{\numberline {3.5.6}Pyrotechnic Deployment Software Flow}{42}{subsubsection.3.5.6}%
+\contentsline {subsubsection}{\numberline {3.5.7}Power Monitoring Software Integration (In Progress)}{42}{subsubsection.3.5.7}%
+\contentsline {subsection}{\numberline {3.6}Validation and Test Method}{44}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Results and Discussion}{46}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Literature Review Outcomes}{46}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}System Design Completion}{46}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Mechanical Structural Design}{46}{subsubsection.4.2.1}%
+\contentsline {paragraph}{2D Dimensioned Drawings}{47}{section*.12}%
+\contentsline {paragraph}{3D CAD Models and Assembly}{48}{section*.13}%
+\contentsline {subsubsection}{\numberline {4.2.2}Electrical Circuit Design}{50}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Power Monitoring Simulation}{51}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Fabricated PCB}{51}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}Component Procurement}{53}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Preliminary Testing Results}{54}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Pending Tests --- Scheduled for Next Phase}{54}{subsubsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.5}Firmware Development Progress}{55}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Completed Modules}{55}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Integration Status}{56}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Remaining Firmware Work}{56}{subsubsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.6}Challenges Encountered}{56}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Discussion}{57}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Conclusion}{58}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Summary of Achievements}{58}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Interim Findings}{59}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Project Status and Next Phase}{59}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Overall Conclusion}{59}{subsection.5.4}%
+\contentsline {section}{References}{60}{section*.14}%
+\contentsline {section}{\numberline {A}Appendix A: CAD Drawings with Title Blocks}{64}{appendix.A}%
+\contentsline {section}{\numberline {B}Appendix B: Flight Computer Circuit Design Reference}{67}{appendix.B}%
+\contentsline {section}{\numberline {C}Appendix C: Project Budget}{69}{appendix.C}%
+\contentsline {section}{\numberline {D}Appendix D: Project Timeplan}{70}{appendix.D}%

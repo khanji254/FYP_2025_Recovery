@@ -11,10 +11,15 @@
 \usepackage{fancyhdr}
 \usepackage{tocloft}
 \usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{etoolbox}
 \usepackage[nottoc]{tocbibind}
 \usepackage{cite}
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+\usepackage{grffile}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,calc}
 
 %----------------------------------------------------------------------------------------
 %   SETTINGS
@@ -22,6 +27,15 @@
 \setlength{\parindent}{0.5cm}
 \setlength{\mathindent}{1cm}
 \renewcommand{\baselinestretch}{1.5}
+
+% Global table styling
+\setlength{\heavyrulewidth}{1.2pt}
+\setlength{\lightrulewidth}{0.8pt}
+\setlength{\cmidrulewidth}{0.8pt}
+\setlength{\arrayrulewidth}{0.8pt}
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.18}
+\AtBeginEnvironment{tabular}{\rowcolors{2}{gray!06}{white}}
 
 % Set graphics path
 \graphicspath{{Figures/}{images/}{diagrams/}{../project_proposal/images/}{../project_proposal/diagrams/}}
@@ -56,7 +70,6 @@
 
 \input{Files/title_page}
 
-\pagenumbering{gobble}
 \pagenumbering{Roman}
 \input{Files/Declaration}
 \clearpage
@@ -70,6 +83,8 @@
 %----------------------------------------------------------------------------------------
 \tableofcontents
 \clearpage
+\input{Files/Nomenclature}
+\clearpage
 \listoffigures
 \clearpage
 \listoftables
@@ -81,9 +96,13 @@
 \pagenumbering{arabic}
 
 \input{Files/Chapter1_Introduction}
+\clearpage
 \input{Files/Chapter2_LiteratureReview}
+\clearpage
 \input{Files/Chapter3_Methodology}
+\clearpage
 \input{Files/Chapter4_ResultsDiscussion}
+\clearpage
 \input{Files/Chapter5_RemainingWork}
 
 %----------------------------------------------------------------------------------------
@@ -97,9 +116,6 @@
 %   APPENDICES
 %----------------------------------------------------------------------------------------
 \clearpage
-\input{Files/Appendices}
-
-\end{document}
 \input{Files/Appendices}
 
 \end{document}

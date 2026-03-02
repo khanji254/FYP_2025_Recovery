@@ -1,0 +1,3037 @@
+Jomo Kenyatta University of Agriculture and Technology
+College of Engineering and Technology
+School of Mechanical, Materials, and Manufacturing Engineering
+Department of Mechatronic Engineering
+————————————————————————————————
+
+Design and Fabrication of an 8-point UAV
+Testing Rig
+FYP-20-08
+Interim Report
+Mbugua Edmund Munene (ENM221-0054/2019)
+Gitonga Christian Kimathi (ENM221-0055/2019)
+Supervisors
+Dr. Eng. Anthony Muchiri
+Dr. Rehema Ndeda
+October 5, 2024
+
+————————————————————————————————
+
+I
+
+Declaration
+We hereby declare that the work contained in this report is original; researched and
+documented by the undersigned students. It has not been used or presented elsewhere
+in any form for award of any academic qualification or otherwise. Any material obtained
+from other parties have been duly acknowledged. We have ensured that no violation of
+copyright or intellectual property rights have been committed.
+1. Mbugua Edmund R. Munene
+Signature. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Date. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2. Gitonga Christian Kimathi
+Signature. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Date. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+Approved by supervisors:
+1. Dr. Rehema Ndeda
+Signature. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Date. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2. Dr. Eng. Anthony Muchiri
+Signature. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . Date. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+II
+
+Abstract
+Unmanned Aerial Vehicles are aircrafts that can be piloted remotely to perform certain
+tasks. Testing of these Unmanned Aerial Vehicles remains crucial to ensure safety in
+operation and the accuracy of processing the commands given to the UAV by its user.
+Several methods of testing UAVs have been developed such as the Gimbal Test Rig and the
+Column Test Stand. However, the testing methods are relatively expensive to acquire,
+with locally manufactured options being unavailable which makes it difficult for local
+UAV manufacturers to compete in the global market. This project aims to develop a
+locally available Unmanned Aerial Vehicle testing rig for the measurement of desired
+UAV parameters. The mechanical structure, the electrical circuit and the control system
+of the test rig have been designed. The next phase of the study is the fabrication and
+testing of the test bed. It is expected that the test bed will be able to accurately measure
+set UAV parameters for tests conducted on it. The rig is aimed at providing a budgetfriendly option for the testing that will be available locally for those venturing into the
+study of UAVs and general enthusiasts.
+
+III
+
+Contents
+Declaration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+I
+
+Abstract . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+II
+
+Table of Contents . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . III
+List of Figures . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . VI
+List of Tables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .VIII
+List of Abbreviations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . IX
+1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+1
+
+1.1
+
+Background . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+1
+
+1.2
+
+Problem statement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3
+
+1.3
+
+Objectives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3
+
+1.4
+
+Expected outcomes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+4
+
+1.5
+
+Justification of the study . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+4
+
+2 Literature Review . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.1
+
+UAV overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.2
+
+UAV Design and Development . . . . . . . . . . . . . . . . . . . . . . . . .
+
+7
+
+2.2.1
+
+Open Field Testing . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+7
+
+2.2.2
+
+Closed environment testing
+
+. . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+2.2.3
+
+Use of simulations
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+9
+
+2.3
+
+2.4
+
+Test bed parameters . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.3.1
+
+Orientation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+
+2.3.2
+
+Force . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+
+2.3.3
+
+Acceleration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+
+Gap analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+
+CONTENTS
+
+IV
+
+3 Methodology . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+3.1
+
+3.2
+
+3.3
+
+Mechanical module . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+3.1.1
+
+Test Rig Frame . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+
+3.1.2
+
+Test Rig support . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+
+3.1.3
+
+Sensor Plate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+
+3.1.4
+
+UAV plate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+
+3.1.5
+
+UAV Holding Mechanism . . . . . . . . . . . . . . . . . . . . . . . . 24
+
+3.1.6
+
+UAV Holding Mechanism simulation . . . . . . . . . . . . . . . . . 26
+
+3.1.7
+
+Springs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+
+3.1.8
+
+Sensor Plate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+
+3.1.9
+
+Material consideration for Mechanical Design . . . . . . . . . . . . 31
+
+Electrical module . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+3.2.1
+
+Power supply requirements . . . . . . . . . . . . . . . . . . . . . . . 32
+
+3.2.2
+
+Strain gauge configuration . . . . . . . . . . . . . . . . . . . . . . . 33
+
+Control module . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+3.3.1
+
+Measurement methods . . . . . . . . . . . . . . . . . . . . . . . . . 34
+
+3.3.2
+
+Communication protocol . . . . . . . . . . . . . . . . . . . . . . . . 36
+
+3.3.3
+
+Data processing and display . . . . . . . . . . . . . . . . . . . . . . 37
+
+3.3.4
+
+Micro-controller selection . . . . . . . . . . . . . . . . . . . . . . . . 38
+
+4 Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+4.1
+
+Mechanical module . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+
+4.2
+
+Stress Analysis Results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+
+4.3
+
+Electrical module . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+4.3.1
+
+Strain gauge circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+
+4.3.2
+
+Powering circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+
+4.4
+
+Control module . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+
+4.5
+
+Preliminary Budget . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+
+CONTENTS
+
+V
+
+5 Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+A Preliminary Budget . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 56
+B Time Plan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+C Mechanical module . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+C.1 Final assembly . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+C.2 Octagon frame assembly . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60
+C.2.1 Frame Apex . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+C.2.2 Frame Diagonal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
+C.2.3 Frame Stand
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+
+C.2.4 Support Base . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+C.3 Plate Assembly . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+C.3.1 UAV plate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 66
+D Electrical Circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+
+VI
+
+List of Figures
+Figure 2.1
+
+Fixed wing UAV . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+Figure 2.3
+
+Types of rotor UAVs . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6
+
+Figure 2.5
+
+Types of UAV test stands . . . . . . . . . . . . . . . . . . . . . . .
+
+9
+
+Figure 2.6
+
+Orientation of a UAV . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+
+Figure 2.7
+
+Axis-angle representation . . . . . . . . . . . . . . . . . . . . . . . . 12
+
+Figure 2.8
+
+Euler’s angles representation . . . . . . . . . . . . . . . . . . . . . . 13
+
+Figure 2.10 Strain Gauge . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+Figure 3.1
+
+Octagonal Frame . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+
+Figure 3.2
+
+Support Frame . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+
+Figure 3.3
+
+Support Base . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+
+Figure 3.4
+
+UAV Plate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+
+Figure 3.5
+
+Sliding supports . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+
+Figure 3.6
+
+Slider Holder . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+
+Figure 3.7
+
+Simulation setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+
+Figure 3.8
+
+Sensor plate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+
+Figure 3.9
+
+The strain gauge Circuit . . . . . . . . . . . . . . . . . . . . . . . . 33
+
+Figure 4.1
+
+UAV Plate Assembly Model . . . . . . . . . . . . . . . . . . . . . . 40
+
+Figure 4.2
+
+UAV test rig assembly . . . . . . . . . . . . . . . . . . . . . . . . . 41
+
+Figure 4.3
+
+UAV test rig assembly model with parts list . . . . . . . . . . . . . 41
+
+Figure 4.4
+
+UAV plate simulation results . . . . . . . . . . . . . . . . . . . . . . 42
+
+Figure 4.5
+
+Strain gauge circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+
+Figure 4.6
+
+Powering circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+
+Figure 4.7
+
+Control flowchart (initialization) . . . . . . . . . . . . . . . . . . . . 45
+
+Figure 4.8
+
+Control flowchart (Testing) . . . . . . . . . . . . . . . . . . . . . . . 46
+
+Figure B.1 Timeplan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+Figure C.1 Detailed test rig assembly . . . . . . . . . . . . . . . . . . . . . . . 58
+Figure C.2 Parts List . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
+
+LIST OF FIGURES
+
+VII
+
+Figure C.3 Octagon frame assembly . . . . . . . . . . . . . . . . . . . . . . . . 60
+Figure C.4 Frame apex . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+Figure C.5 Frame diagonal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
+Figure C.6 Frame stand . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+Figure C.7 Support Base . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+Figure C.8 Plate assembly . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+Figure C.9 UAV plate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 66
+Figure D.1 Electrical Circuit . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+
+VIII
+
+List of Tables
+Table 2.1
+
+Load cell and strain-gauge comparison . . . . . . . . . . . . . . . . . 15
+
+Table 3.1
+
+Shape design considerations . . . . . . . . . . . . . . . . . . . . . . . 19
+
+Table 3.2
+
+Frame material considerations . . . . . . . . . . . . . . . . . . . . . 20
+
+Table 3.3
+
+UAV Plate Material considerations . . . . . . . . . . . . . . . . . . . 24
+
+Table 3.4
+
+Mounting Support Material Considerations . . . . . . . . . . . . . . 26
+
+Table 3.5
+
+Spring parameters . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+
+Table 3.6
+
+Material comparison summary . . . . . . . . . . . . . . . . . . . . . 31
+
+Table 3.7
+
+Components power requirements . . . . . . . . . . . . . . . . . . . . 32
+
+Table 3.8
+
+Gyroscopes and accelerometers comparison . . . . . . . . . . . . . . 35
+
+Table 3.9
+
+Force measuring instrument comparisons
+
+. . . . . . . . . . . . . . . 36
+
+Table 3.10 Wireless Technology comparison . . . . . . . . . . . . . . . . . . . . 37
+Table 3.11 Micro-controller considerations . . . . . . . . . . . . . . . . . . . . . 39
+Table 4.1
+
+Preliminary budget . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+
+Table A.1 Preliminary budget . . . . . . . . . . . . . . . . . . . . . . . . . . . 56
+
+IX
+
+List of Abbreviations
+BLE
+
+Bluetooth Low Energy
+
+CFD
+
+Computational Fluid Analysis
+
+CSV
+
+Comma Separated values
+
+DOF
+
+Degree of Freedom
+
+FEM
+
+Finite Element Method
+
+JSON
+
+Javascript Object Notation
+
+UAV
+
+Unmanned Aerial Vehicle
+
+VTOL
+
+Vertical Take-off and Landing
+
+Chapter 1. Introduction
+
+1
+
+Introduction
+
+1.1
+
+Background
+
+1
+
+The first Unmanned Aerial Vehicle (UAV), developed by Joseph-Michel and JacquesEtienne Montgolfier, was a hot-air balloon as this does not require a human to pilot [1].
+The balloon was modified to carry bombs and used by lieutenant Franz Von Uchatius in
+1849 to attack Venice. Later on, other uses were found for UAVs such as aerial photography in 1896, surveillance in 1973, personal use in 2006 and delivery in non-accessible areas
+in 2013 [1]. The latter was highly adopted by major companies such as UPS, Amazon
+and Google. UAV usage has been rapidly expanding ever since and was widely adopted
+during the COVID-19 pandemic in 2020 for the delivery of medical supplies [1].
+UAV technology has expanded in terms of size and capability, with the era of miniaturization technology allowing developers to create increasingly smaller UAVs able to fit in on
+one’s palm such as the DJI Mini 2 SE that has overall dimensions of 138 × 81 × 58 mm [2].
+Larger UAVs have greater endurance and payload capacity and have helped revolutionize
+industries such as the agricultural and surveillance industries in Kenya. KenDrone is an
+example of a UAV company founded in Kenya that provides UAV services including film,
+thermal inspection, security and training [3].
+With the increase in the use of UAVs came the need to test them. The reasons for the
+testing of UAVs are the need to ensure reliability of the UAVs made by manufacturers, the
+safety of consumers and for research in various institutions. The increase in regulations
+set by the authorities on the making and use of UAVs has also driven the design and
+capabilities of these aircraft [3].
+The parameters tested in UAVs range from the mechanical attributes of the UAV such
+as the thrust of the UAV and the structural integrity of the body of the UAV to the
+electrical and control features such as the power requirements of the UAV, the accuracy
+and reliability of the sensors and the communication strength of the UAV [4].
+
+Chapter 1. Introduction
+
+2
+
+Several methods have been developed for the testing of UAVs. These include the openfield tests, the use of UAV testing rigs and the use of simulations. Open-field tests involve
+the flying of UAVs in the open environment and is preferred for testing parameters such
+as communication range that cannot be easily modelled. Simulations involve the building
+of models of both the UAV and its expected environment and observing their interactions
+that can either be a physical representation of the system to be tested or a computer
+model that is taken through analyses of various parameters. They are mostly used in the
+design phase for optimization purposes or for tests that may be too dangerous or costly
+to conduct using the other methods [4]. Testing rigs involve constraining the UAV, in
+part or whole, for the tests and is preferred when the UAV test is to be conducted in a
+controlled environment.
+Test beds are specialized equipment that allow intricate measurement of desired UAV
+parameters such as motor and propeller performance for lift and movement that would
+aid in ensuring the reliability of UAVs if they are in the hands of consumers and encourage companies to implement this technology in their everyday operations to make
+work easier. These methods have been implemented by each manufacturer for testing and
+commissioning of their UAVs.
+
+Chapter 1. Introduction
+
+1.2
+
+3
+
+Problem statement
+
+Increase in the use of UAVs has come with the increase in the need to test them reliably.
+UAV implementation in Kenya has allowed industrial revolution such as transportation
+in agricultural farms and surveillance in the security industry, to creating our own UAVs.
+This increase has led to the need for different means of testing the reliability of UAVs,
+among them being the use of testing rigs.
+In spite of the development of different UAV testing rigs, these rigs remain specialized
+and expensive as most companies develop rigs for in-house testing of their UAVs as most
+of them are catered for specific UAVs leaving them rather inflexible. A need, therefore,
+arises to design and fabricate a reliable testing rig for the research and development of
+UAVs
+
+1.3
+
+Objectives
+
+Main objective
+The main objective of the study is design and fabricate an experimental platform for the
+measurement and testing of UAV thrust parameters.
+
+Specific objectives
+1. To design and fabricate a UAV testing rig that will facilitate UAV parameter measurement
+2. To develop a control system that will control the collection and processing of data
+from the rig.
+3. To calibrate and test the UAV testing rig for accuracy and repeatability
+
+Chapter 1. Introduction
+
+1.4
+
+4
+
+Expected outcomes
+
+The following are the expected outcomes of the UAV testing rig:
+1. Successful fabrication of the UAV measurement system
+2. Seamless recording and processing of data obtained from the UAV testing rig
+3. Successful calibration and testing of the rig for accuracy and repeatability
+
+1.5
+
+Justification of the study
+
+Unmanned Aerial Vehicles are an emergent technology that has found use in areas such
+as surveillance, commercial deliveries and even in the medical field. With the rise of the
+implementation of UAV technology, there is need to test them for assurance in quality
+of production by the manufacturing company that meets regulatory standards set by
+the government. Consumers such as the government would profit from reliable UAV
+technology and implement further advances in the security of a nation keeping its people
+safe.
+
+Chapter 2. Literature Review
+
+2
+
+Literature Review
+
+2.1
+
+UAV overview
+
+5
+
+The UAV is an unmanned aerial vehicle that can be flown remotely. It may be broadly
+classified using the following criteria [5]:
+1. Build: This mainly concerns the way in which the UAV gets its lift. This classification gives rises to two main types of UAVs [6]. Fixed-wing UAVs, shown on Figure
+2.1, have builds similar to those of a typical aeroplane and generating lift from their
+wings and propellers. They are known as fixed wings UAVs since they have rigid
+wings as major feature of their structure [7]. UAVs of this type are mainly used in
+military applications.
+
+Figure 2.1: Fixed wing UAV [8]
+
+Rotor UAVs are the most common types of domestic UAVs. They generate their
+lift from the use of rotors in designed in their builds. They may further be classified
+according to the number of rotors in their design. Common types include: Single-
+
+Chapter 2. Literature Review
+
+6
+
+rotor UAVs Figure 2.3 (a), quad-copters (four rotors) Figure 2.3(b) and the tricopter UAVs (three rotors).
+
+(a)
+
+(b)
+
+Figure 2.3: Types of rotor UAVs (a) Single Rotor UAVs [9] (b) Quad-copter UAVs [10]
+
+Hybrid UAVs are UAVs that have both rotors and fixed-wings in their design, also
+known as the VTOL UAVs. The UAVs under this classification use the rotors for
+take-off and landing and use the wings for flight [6].
+2. Function: The functions of UAVs range from military uses (combat UAVs), delivery
+UAVs, surveillance UAVs, photography UAVs, toy UAVs and racing UAVs. The
+UAVs, classified by their functions all fall under the aforementioned categories,
+with changes made to their designs to suit the required functions. For instance
+photography UAVs are mainly multi-rotor UAVs due to their ability to hover over a
+place and the mapping UAVs used for geographical mapping that are mainly fixed
+wing UAVs due to their relative long flight times [11].
+
+Chapter 2. Literature Review
+
+2.2
+
+7
+
+UAV Design and Development
+
+With the increase in the manufacture of UAVs, there has arisen a need to reliably test
+them [12]. UAV technology is constantly changing and improving. Testing provides useful
+data on the underlying technology in UAVs in order to improve on the UAVs. Regulatory
+bodies also require UAV tests to ensure that they comply with the safety standards set.
+In addition to these, UAV tests are made to ensure safety for the consumer by ensuring
+that the UAVs meet safety thresholds. Testing also ensures that the design of the UAV
+is sufficient to carry out the function intended for it in the environment the UAV is to be
+used in.
+UAV testing is the measurement of various parameters of the UAV and its parts e.g.
+communication range. UAV testing can be divided into three categories:
+
+2.2.1
+
+Open Field Testing
+
+Open field tests are done mostly outdoors. These tests involve flying of the UAV in
+an uncontrolled environment while measuring the intended parameters. For instance,
+Cwiakala [13] used open field testing to test the accuracy of drones autonomous systems
+in comparison with the manufacturer’s specifications, with the conclusion being that the
+standardization of these tests for application in various is required. The test is relatively
+easy to set-up and carry out and can provide a quick overview of the UAV [14]. These
+tests are suitable for measuring the behaviour of the UAV under different environmental
+conditions, the reliability of its location and communication systems, its landing and takeoff behaviour, and other aspects of the UAV that can not be sufficiently measured in a
+closed environment or cannot be sufficiently be modelled for use in simulations [15]. Since
+the test may be relatively unsafe for both the UAV and its operator, extra precaution
+should be undertaken when conducting UAV tests in the open environment.
+
+Chapter 2. Literature Review
+
+2.2.2
+
+8
+
+Closed environment testing
+
+These tests involve constraining either a UAV model or the actual UAV to a closed
+environment system and carrying out the test. These tests are suitable for testing a
+particular system of the UAV e.g. propulsion system or the electrical system, especially
+where the environment for the test can easily be replicated. UAV Tests in controlled
+environments, specifically the wind tunnel, have been conducted by Forster et al. [16]
+to assess the accuracy of a flight dynamics simulation made from previous experimental
+data. While the simulations were accurate, they had to be updated to match the data
+found in the current tests. Closed environment testing is relatively safer than the open-air
+tests as everything is held down for the test. It, however, has the limitation not being
+able to completely replicate real world conditions.
+Closed environment testing can be classified into wind tunnels and test rigs. Wind tunnels
+are used to simulate flight on an article in addition to showing the interaction of air with
+the model. Sensors are placed on the model to monitor its interaction with the airflow by
+measuring parameters such as pressure along the surface, lateral force and orientation of
+the model in the tunnel [17]. Test rigs are used for testing of the parts or whole UAVs in
+a closed system [18]. Some of the common testing rigs designs are the column test rigs,
+the gimbal test rigs and thrust stands.
+A Column test rig is a 4 degree of freedom system where the UAV is mounted at its top
+for the test. The column is mounted onto its base by means of springs in addition to its
+base having a ball joint to ensure free movement of the UAV during testing [19]. The
+column system has the benefit of allowing for free movement of the UAV during the test.
+The system, however, is limited to the testing of whole UAVs as opposed to UAV parts.
+This is in addition to only having one point of measurement, making it relatively difficult
+to tell the distribution of forces in the UAV.
+A gimbal system, Figure 2.5 (b), is a 3 degree of freedom system where the UAV is
+attached to a gimbal platform that can rotate to all orientations. The gimbal system has
+
+Chapter 2. Literature Review
+
+9
+
+an inertial measurement system i.e. IMU incorporated to its design for the measurement
+of the orientation, acceleration and forces on the UAV in the three axes. The gimbal
+system can be used to test the UAV as a whole or just its control unit [20]. A major
+advantage of the gimbal test rig is its ability to allow free movement of the UAV in all
+the three-axes. The gimbal rig can also be used to test only the control unit making the
+rig valuable in the design phase. The limitations of the rig include the limitations of the
+sizes of UAVs to be tested to the size if the rings used for the gimbal. The rig is also
+susceptible to a phenomenon known as gimbal lock, that happens when all the three axes
+of the gimbal align.
+Thrust stands (Figure 2.5 (a)) have also been used for the testing of UAVs. They provide
+the advantage of being able to test UAV parts i.e. the propellers and motors. However,
+this is also their major limitation as the stands cannot be used for whole UAVs.
+
+(a)
+
+(b)
+
+Figure 2.5: Types of UAV test stands (a) Thrust stand [21] (b) Gimbal test rig [22]
+
+2.2.3
+
+Use of simulations
+
+Simulations are research method technique that imitates an actual or theoretical system by
+means of an analogous mathematical model [23]. This is done with the aim of visualizing
+the behaviour of the part under test under a set of environmental conditions [15].
+Computational Fluid Dynamics (CFD) is a branch of fluid mechanics that uses numerical
+
+Chapter 2. Literature Review
+
+10
+
+analysis and data structures to solve problems that involve fluid flow. CFD software can
+be used together with other techniques such as the use of wind-tunnels for validation
+of data obtained from the method. There has been work done using CFD analysis for
+the analysis of the propellers of a quadcopter by Saleh and Abdelrady [24]. The results
+obtained especially for the wake structures of the UAV model were consistent with those
+obtained by experiment.
+Finite Element Method (FEM) is most often used for structural analysis to show the
+effects of loads in a dynamic environment. Zhang et al [25]. used FEM analysis to do a
+drop analysis for small, light UAVs. The work done was on the comparison of simplified
+UAV models to both the highly detailed UAV models and experimental processes. The
+results were that even the simplified models gave results that were accurate enough for
+the acceptance of the simplified models.
+
+The parameters tested in a UAV range from its performance characteristics i.e maximum
+speed, range of flight, maximum thrust and payload, electrical characteristics such as the
+power consumption, sensor reliability and battery levels to the communication protocols
+of the UAV. This, however, is not an exhaustive list and other tests depending on the
+intended function of the UAV can also be designed e.g. image quality test for UAVs
+used for photography [26]. The cost of testing UAVs, especially in closed controlled
+environments has been a challenge. This is because commercial test rigs are expensive
+with the cost of thrust stands being about Kes. 350,000 (LY-10KGF Thrust Stand) [27].
+Wind tunnels are also quite costly. There is also a challenge of procuring test services
+locally with few recognised developers in the country [3] [28].
+
+2.3
+
+Test bed parameters
+
+UAV test of choice depends on the parameter of interest. For example, a thrust stand is
+used to determine the aerodynamic properties of UAV propellers during the design phase
+
+Chapter 2. Literature Review
+
+11
+
+[29] and the navigation properties of a drone tested as a measure of the synergy of the
+UAV hardware and software elements [30].
+
+2.3.1
+
+Orientation
+
+Orientation is the angular displacement of an object from a certain reference (axis) [31].
+Orientation is important to a UAV since it determines the path to the UAV is going
+to take during flight. The sensors used to estimate the orientation of an object are the
+gyroscope sensors that measure the angular velocity of an object [32]. The result from
+the gyroscope is then mathematically integrated to obtain the orientation of the object.
+The orientation measured by gyroscopes, as shown on Figure 2.6, can be classified as yaw,
+pitch and roll. Yaw is the horizontal rotation of an object as seen from above, roll is the
+horizontal rotation of an object as seen from the front and pitch is the vertical rotation
+of an object as seen from the top. Orientation of a UAV can be represented as axis-angle
+
+Figure 2.6: Orientation of a UAV [33]
+
+representation, quaternions or Euler’s angles representations.
+Axis-angle Representation representation uses two parameters i.e a unit vector that defines
+the reference axis and the angle of rotation about the axis [34]. Thus in this system any
+orientation, as shown in Figure 2.7, can be represented by four parameters i.e. Θ, x̂, ŷ, ẑ
+where (Θ) is the amount of rotation about the axis (x̂, ŷ, ẑ). Axis-angle representations
+
+Chapter 2. Literature Review
+
+12
+
+have a major limitation of being computationally unstable when x-axis and the y-axis
+align, also known as gimbal lock [36].
+
+Figure 2.7: Axis-angle representation [35]
+
+Quaternions use four components for orientation representation [35]. The components are
+composed of one real component and three imaginary components that represent the unit
+vectors shown on Equation 2.1.
+q = q0 + iq1 + jq2 + kq3
+
+(2.1)
+
+The real part represents the magnitude of rotation and the other three represent the axis
+about which the rotation takes place. Quaternions are suitable for UAV testing when the
+calculating of rotation transformations is required as it is computationally faster than the
+other methods described. They are, however, more complex to quickly interpret [36].
+Euler’s angles define an orientation represented as a series of three rotations α, β and γ
+about x, y and z axes [37] as shown on Figure 2.8. This representation is suitable for
+UAV testing to quickly tell the orientation of an UAV, since the three angles given by the
+representation give the roll, pitch and yaw of the UAV under test.
+Electrical gyroscopes can either be analogue or digital in terms of their output and can be
+further classified in terms of the number of axes they can provide per measurement [38].
+
+Chapter 2. Literature Review
+
+13
+
+Figure 2.8: Euler’s angles representation [37]
+
+The gimbal rig features a gyroscope attached to the holding platform, in addition to the
+column stand, also having a gyroscope at the top of the column system. The gyroscopes
+in these systems are used to measure the angular velocity and the orientation of the UAV
+during the test.
+
+2.3.2
+
+Force
+
+For a UAV to achieve flight, it must exert some thrust force. Forces of these nature as
+studied by Novotnak et al. [39] can be measured by the use of test rigs by the use of force
+sensitive resistors, strain gauges and load cells.
+Force-sensitive resistors are measurement devices that convert the force applied to them
+to a change in their resistance.
+Strain gauges, shown on Figure 2.10 (a), are used to measure the strain on objects and by
+extension the force on the object. Strain is the deformation on an object due to applied
+stress and, by extension, force. The gauges work by converting a tensile or compression
+force acting on a test material that results in a change in resistance of the gauge and
+
+Chapter 2. Literature Review
+
+14
+
+this change in resistance is what is used to determine the amount of force acting on the
+material. This change is then read off from the sensor, and since the force applied is
+directly proportional to the strain on the object, the force on the object can be obtained
+[40]. A Wheatstone bridge, as shown on 2.10 (b), may be used to read from the strain
+gauge due to its sensitivity to low electrical signals. After reading the electrical signal,
+the signal may be further amplified and conditioned to remove noise from the signal.
+
+(a)
+
+(b)
+
+Figure 2.10: Strain Gauge (a) Strain Gauge Exterior [41] (b) Quarter Bridge Circuit [42]
+
+Strain gauges have been used on UAV test rigs to test the thrust parameters of UAVs.
+This has been done by attaching the strain gauges to the structures holding the UAV
+during flight [39].
+Load cells are measurement devices that convert mechanical force to another measurable
+output. The load cells may be classified based on the force they measure e.g. tensile
+and compressive force or the output they produce e.g. hydraulic, pneumatic and electric.
+Electrical load cells, most commonly work by the use multiple strain gauges bonded to
+a structure that deforms when force is applied. The force applied is then converted to
+electrical signals by the strain gauges and read off the instrument [43]. Load cells in test
+rigs are used in the measurement of the thrust parameters of UAVs on the test beds by
+using them as the attachment point between the UAV holding platform and the rest of
+the rig structure [44].
+A comparison between the load cells and the strain gauges is shown in Table 2.1 [45].
+
+Chapter 2. Literature Review
+
+15
+
+Table 2.1: Load cells and strain-gauges
+
+Measurement Range
+
+Environmental Considerations
+
+Load Cell
+
+Strain Gauge
+
+Few grams of force to hun-
+
+Up to a few thousand kilo-
+
+dreds of tonnes
+
+grams
+
+Robust and resistant to
+
+Sensitive to environmental
+
+harsh environmental condi-
+
+conditions
+
+tions
+Cost
+
+Comparatively more expen- Are more cost-effective and
+
+Maintenance and Lifespan
+
+sive from their complex de-
+
+thus suitable for budget-
+
+signs and higher accuracy
+
+oriented applications
+
+Longer lifespan with rela-
+
+Requires occasional calibra-
+
+tively little maintenance re- tion and maintenance due
+quired
+
+2.3.3
+
+to their volatility.
+
+Acceleration
+
+Linear acceleration is the rate of change of the linear speed of an object. This parameter
+is measured by accelerometers, that produce electrical signals proportional to the acceleration on the sensor [46]. The accelerometer uses spring-mass system, which produces
+a force based on the acceleration or vibration experienced on the device. The force is
+converted to an electrical signal as the output of the sensor. Accelerometers in testing
+rigs are used to measure the acceleration of UAVs on the rigs. The acceleration can be
+used as a measure of the rate of ascent and descent of the UAV, in addition to being
+used as a quick overview of the responsiveness of the UAV under measurement [44]. Depending on the means of conversion, accelerometers may be divided into groups such as
+capacitive, Hall-effect and piezo-electric accelerometers [38]. Accelerometers may also be
+
+Chapter 2. Literature Review
+
+16
+
+classified according to the number of axes covered simultaneously, giving rise to one-axis
+and three-axes accelerometers.
+There has been work done by JKUAT students, Hunja and Nduati [44] on the making of a
+UAV testing rig . The testing rig made was a test bed, that was used to measure force due
+to the UAV by means of load cells, the orientation of the UAV using a gyroscope and the
+acceleration of the UAV using an accelerometer. The strain gauges were mounted along
+the support frame of the bed and the rest of the sensors at the holding area of the UAV.
+The results of the sensors were then posted to a simple interface made on the computer
+for visualisation. The bed was also able to measure the orientation of the UAV by means
+of accelerometers. The design, however, had the limitation of the load cells being used
+being prone to failure and were thus unreliable for the measurement of force during the
+test period. The supports for the UAVs were also relatively stiff hindering the movement
+of the UAV. This was due to the springs used to attach the UAV mounting plate being
+too stiff for the rig.
+
+2.4
+
+Gap analysis
+
+Based on the literature review, the following gaps in the UAV testing area were seen:
+1. There are inadequate locally made reliable UAV testing rigs in the market forcing
+institutions and other clients to source the required equipment from outside the
+country.
+2. The cost of acquiring UAV testing rigs is relatively high. These costs range in
+the hundreds to thousands of dollars, which is unaffordable for most institutions or
+individuals. There is therefore need for a locally fabricated and reliable UAV testing
+rig at an affordable price.
+
+Chapter 3. Methodology
+
+3
+
+17
+
+Methodology
+
+The UAV testing rig has been designed to measure the orientation, thrust and acceleration
+of a UAV fastened onto the system. We chose a closed test mode of measurement in order
+to avoid any environmental interference such as air drag interfering with the system during
+measurement.
+Applying a modular approach to the design, the mechanical module focuses on the physical
+structure for the UAV testing rig, the electrical module will tackle the power circuitry
+required by the rig while the control module will interpret and present the values to the
+users.
+For this project, the general procedure for the use of the testing rig is as follows:
+1. The UAV being tested is loaded onto the testing plate and fastened.
+2. Sensors are initialized and zeroed to compensate for the added weight of the UAV
+on the system.
+3. The UAV is turned on and oriented in a desired direction as it manipulates the
+plate to move along with it and the sensors measure their configured parameters
+(strain gauges for force, the gyroscope for orientation and the accelerometer for
+acceleration).
+4. The data from the sensors is collected and displayed on the user interface.
+5. The UAV may be unloaded if the test is complete or another run be performed if
+any changes are made.
+
+Chapter 3. Methodology
+
+3.1
+
+18
+
+Mechanical module
+
+The following are the general considerations made in the design of the mechanical structure
+of this project:
+1. A geometric shape that would evenly distribute forces from the UAV holder for
+accurate measurements
+2. A hydraulic diameter of 1000 mm to accomodate different UAV sizes for testing.
+The UAV sizes range from diagonal wingspans of 378 mm (e.g a DJI Mini 2 SE [2])
+to 1172 mm (e.g an EFT G06 V2 UAV Agricultural Spraying Drone [47])
+3. Rigid supports around the frame to withstand the forces involved in addition to
+minimization of clutter in the design
+4. Low weight for portability
+The mechanical module design is thus divided into the following main parts:
+1. Test Rig Frame
+2. Test Rig Support
+3. UAV Plate
+4. Springs
+5. Material Considerations
+
+3.1.1
+
+Test Rig Frame
+
+Its geometry was driven by the number of strain gauges that would be utilized in the
+system and the need to obtain accurate readings without additional calculations i.e. all
+eight strain gauges should give the same readings for a uniformly distributed load. Circular
+and octagonal frames were evaluated as shown on Table 3.1.
+
+Chapter 3. Methodology
+
+19
+
+Table 3.1: Shape design considerations
+Design requirement
+
+Circular frame
+
+Octagonal frame
+
+Mounting
+
+This mostly relies on cylindrical Can be achieved by the use of anrods that require bending in or-
+
+gle lines cut at specific dimensions
+
+der to achieve the circular ge-
+
+to achieve the required hydraulic
+
+ometry.
+
+diameter. This will also provide
+
+The circular geometry
+
+does not provide suitable mount- a flat surface for the mounting of
+ing surfaces for the plates, due to
+
+the aluminium plates
+
+the plates only having tangential
+points of contact with the plates
+Stress points
+
+They
+
+have
+
+induced
+
+stressed Stress is distributed more evenly
+
+points that may lead to mechani- across adjoining metal pieces
+cal failure with repeated use
+Cost
+
+Bending a metal sheet/rod into a Relatively less expensive in comcircular shape is costlier
+
+parison as all that would be required is cutting and welding
+
+Looking at the considerations on Table 3.1, an octagonal frame was chosen for the project
+as shown on Figure 3.1.
+
+Chapter 3. Methodology
+
+20
+
+Figure 3.1: Octagonal Frame
+
+The joining technique that was chosen for the frame is arc welding. This is because of its
+widespread use and availability as well as its ability to make permanent rigid joints.
+Three materials, Aluminium, Mild steel and Stainless steel, were considered for the octagonal frame. The factors considered for material selection of the Test Rig frame are
+shown on Table 3.2.
+
+Table 3.2: Frame material considerations
+Property
+
+Mild steel
+
+Strength
+
+High
+
+Aluminium
+
+Impact Low
+
+strength
+
+Stainless steel
+
+impact Excellent impact
+
+strength
+
+strength
+
+Density (g/cm3 ) 7.85
+
+2.7
+
+8
+
+Cost
+
+Moderately ex- Expensive
+
+Inexpensive
+
+pensive
+
+Chapter 3. Methodology
+
+21
+
+By comparing the three, Stainless steel outweighs the mechanical properties of Mild Steel
+with stainless steel also having a shiny finish thus also aesthetically pleasing. Stainless
+steel is however more expensive than aluminium or mild steel. Aluminium, although
+lighter than stainless steel and mild steel, is also weaker than the two metals as it is more
+susceptible to physical alterations from a moderate force applied.
+Mild steel was thus chosen for the frame as it was both strong enough while remaining
+affordable. The octagonal frame would be made up of angle lines with 60 × 60 × 6 mm
+for weight reduction, and ease of attachment with the rest of the system
+
+3.1.2
+
+Test Rig support
+
+Since the frame of the testing rig is octagonal in shape, angle lines with 135◦ will be
+required to interface with the edges of the frame. Four supports were chosen to reduce
+the clutter on the design, as shown on Figure 3.2, while maintaining strength and balance
+on the rig. A height of 300 mm for the supports was chosen to ensure the suspended UAV
+does not touch the ground during testing.
+The supports will be mounted on a square metal sheet with dimensions of 150 × 150 × 5
+mm to improve the stability and the rigidity of the test rig. This is shown on Figure 3.3.
+The four support assemblies will be joined to the frame using arc welding.
+
+Chapter 3. Methodology
+
+22
+
+Figure 3.2: Support Frame
+
+Figure 3.3: Support Base
+
+3.1.3
+
+Sensor Plate
+
+Strain gauges require a surface to be mounted on for accurate measurement that is also
+flexible enough to have some strain imparted on it. Therefore, an aluminium strip would
+
+Chapter 3. Methodology
+
+23
+
+suit for this application as it is malleable as compared to mild steel. It has dimensions
+of 15 × 8 × 2 mm making it thin enough to strain under load. It also has two 10 mm
+holes in diameter, one which will be used to fasten the strip to the frame by screws and
+the other to hook an extension spring that goes to the plate of the mechanism.
+
+3.1.4
+
+UAV plate
+
+The plate will be used to hold the UAV during the test. Its design was based on the
+number of measuring points to be utilized by the system, the shape of the frame, its
+weight to reduce its effect on the UAV movement and the reduction of the downwash
+exerted by the UAV propellers during the test. This resulted in a star-shaped plate,
+shown on Figure 3.4, with eight points that have holes of 20 mm in diameter each to
+be attached with extension springs to the sensor holders making it suspended in air like
+a trampoline. The plate has an overall dimension of 700 mm hydraulic diameter and a
+thickness of 9 mm. The middle section has a rectangular hole of 240 × 200 mm for the
+UAV mounting mechanism with four 10 mm diameter holes for mounting the holding
+mechanism as shown on Figure 3.4. The material considerations made for the part are
+
+Figure 3.4: UAV Plate
+
+Chapter 3. Methodology
+
+24
+
+summarised on Table 3.4.
+
+Table 3.3: UAV Plate Material considerations
+Property
+
+Aluminium
+
+Plywood
+
+Strength (MPa)
+
+32
+
+13.8
+
+Density (g/cm3 )
+
+2.7
+
+0.63
+
+Plywood was thus chosen for the UAV plate due to its sufficient strength with an expected
+maximum force of 60N applied on the test bed for the UAV tests to be conducted, while
+still being lighter than aluminium.
+
+3.1.5
+
+UAV Holding Mechanism
+
+This comprises of three slider designs coupled with a sliding support that will be used to
+hold the UAV in place during parameter measurement fitting at the centre square hole
+of the plate. Two sliders have an overall dimension of 192 × 25 × 9 mm with threaded
+through holes of 8 mm such that the tightening of these sliders will be done by stud
+screws. One of these two has the hole at the centre (centre slider) while the other has its
+hole near one of its ends (end slider). The third slider has an added lip of 5 × 2 mm on
+one long edge such that when paired with a centre hole slider, the lip will act as a base
+support for the UAV so that its landing gear does not protrude below leading to incorrect
+measurement as the UAV slides up and down (lip slider). The correct arrangement of
+sliders for mounting from each end will be as follows: centre slider to lip slider to end
+slider from each end. The centre slider also has 10 mm in diameter threaded through
+holes that will be used to fasten it in place with the sliding support. The supports are
+shown on Figure 3.5
+
+Chapter 3. Methodology
+
+25
+
+Figure 3.5: Sliding supports
+
+The slider holder, shown on Figure 3.6 will hold the sliders to the plate using screws to
+keep the UAV in place. It has dimensions of 200 × 52 × 13 mm with a cross-sectional
+design based off a cantilever rack. It has four through holes that will be used to keep the
+centre sliders in place and mount them to the plate.
+
+Figure 3.6: Slider Holder
+
+Chapter 3. Methodology
+
+26
+
+Table 3.4: Mounting Support Material Considerations
+Property
+
+PLA Plastic
+
+Plywood
+
+Strength (MPa)
+
+26.082
+
+13.8
+
+Density (g/cm3 )
+
+1.25
+
+0.63
+
+PLA plastic was chosen for the part due to its low density, affordability and the ability
+to 3-D print it. 3-D printing was chosen for production of the part due to the complexity
+of the holding mechanism in addition to the relatively small size of the same.
+
+3.1.6
+
+UAV Holding Mechanism simulation
+
+Finite Element Analysis, as shown on Figure 3.7, was performed on the UAV plate assembly i.e. the UAV plate and holding mechanism to test the strength of the structure in
+addition to determining the suitability of the materials chosen for the sliding mechanism
+(PLA plastic) and UAV plate (plywood) while working with a total load of 60 N separated
+into two 30 N point loads placed on the point of attachment of the UAV landing gears to
+the holding mechanism.
+
+Chapter 3. Methodology
+
+27
+
+Figure 3.7: Simulation setup
+
+3.1.7
+
+Springs
+
+Springs were incorporated into the design of the test rig to allow free movement of the
+UAV on its platform during testing and to transmit force from the platform to the strain
+gauges for the measurement of force. The following were the main considerations in the
+design of the spring:
+1. The spring should be a maximum of 100 mm long to fit in the space between the
+holder platform and outer structure of the rig with minimal extension.
+2. The spring should have a maximum extension of about 5 mm, when the UAV is at
+its maximum thrust, to prevent too much play on the holder during the test
+3. The attachments at the end of the springs should be easily attachable to the holder
+platform during assembly.
+4. The spring should be locally available.
+
+Chapter 3. Methodology
+
+28
+
+With an expected extension of 5 mm, and an expected load of about 29.43 N (13.84 N
+for the holder platform and 15.59 N for maximum weight of the UAV), k was calculated
+using Equation 3.1.
+(3.1)
+
+F = k∆x
+Where:
+F = force on one spring. The force is applied equally on eight springs,
+thus for one spring the force is equal to 3.67875 N
+k = spring constant
+x = extension of 0.05 m
+
+The spring constant is obtained as 73.575 N/m
+The wire diameter and mean diameter were calculated using Equation 3.2.
+k=
+
+G d4
+8D3 Na
+
+(3.2)
+
+Where:
+G − shear modulus (79 × 109 GP a)
+d − Wire diameter
+D − mean diameter
+Na − Number of active coils
+k − Spring constant
+
+73.575 =
+
+79 × 109 × d4
+8 × D3 × Na
+
+After substituting the known values to Equation 3.2, Equation 3.3 was obtained.
+73.575 × 8 × Na
+d4
+=
+79 × 109
+D3
+
+(3.3)
+
+Chapter 3. Methodology
+
+29
+
+Equation 3.4 was used to relate the number of active coils to the wire diameter and length
+of the spring.
+Lo
+− d = Na
+d
+
+(3.4)
+
+Where:
+Lo = length of spring obtained as 100 mm from the design requirements
+d = Wire diameter
+Na = Number of active coils
+The wire diameter was determined by by linearly varying the wire diameter, in steps of
+0.05 mm from 0 - 0.4 mm, and obtaining both the c, required to be a value between 5-10
+for ease of manufacture, and the number of active coils for ease of handling in Equation
+3.2 and 3.3 as shown on Equation 2.4. 0.04 mm was thus seen as a compromise between
+the two factors i.e. mean index of 5.988 and number of active coils of 250. Calculating D
+(mean diameter), using c (spring index) and d (wire diameter) gives a mean diameter of
+2.4 mm
+The spring parameters are thus shown on Table 3.5
+
+Table 3.5: Spring parameters
+Parameter
+
+Value
+
+Mean diameter
+
+2.4 mm
+
+Wire diameter
+
+0.4 mm
+
+Spring Constant
+
+73.575 N/m
+
+Material
+
+Mild steel
+
+Unloaded length
+
+100 mm
+
+Chapter 3. Methodology
+
+3.1.8
+
+30
+
+Sensor Plate
+
+A sensor plate, Figure 3.8 was designed for attaching the UAV platform to the surrounding structure and act as a measuring point for the strain gauges used in the rig.
+
+Figure 3.8: Sensor plate
+
+Chapter 3. Methodology
+
+3.1.9
+
+31
+
+Material consideration for Mechanical Design
+
+A summary of the properties of the materials considered is shown in Table 3.6.
+
+Table 3.6: Material comparison summary
+Part
+
+Material
+
+Frame, Main sup- Mild Steel
+
+Density
+
+Yield Stength
+
+(g/cm3 )
+
+(MPa)
+
+7.85
+
+250-650
+
+port
+Plate
+
+Advantages
+
+Affordable,
+
+High
+
+Strength
+Plywood
+
+0.68
+
+13.8
+
+(Birch)
+
+Lightweight, Rigid
+for
+
+the
+
+intended
+
+purpose
+Sensor bar
+
+Aluminium 2.7
+
+32
+
+Flexible,
+Lightweight
+
+Mounting Supports
+
+Plastic
+(PLA)
+
+1.24
+
+26
+
+Easy to print, Sufficient strength for
+the intended purpose
+
+3.2
+
+Electrical module
+
+The electrical module comprises of the electrical components that will make up the testing
+rig and the considerations that went into choosing the electrical system. The power
+requirements of each component chosen and the means by which the components will be
+powered is considered.
+
+Chapter 3. Methodology
+
+3.2.1
+
+32
+
+Power supply requirements
+
+For the power supply, the main consideration were as follows:
+1. The power supply should be able to supply all the components reliably, giving a
+voltage of 5V.
+2. The power supply chosen, should be built into the system.
+3. The power supply, should provide a constant current and voltage. This is required
+to supply the strain gauge with constant power for accurate measurements.
+The overall power requirements for the system are shown on Table 3.7
+
+Table 3.7: Power requirements for electrical components
+Component
+
+Number Power requirement
+
+ESP32 Micro-controller
+
+1
+
+3.3-3.6 V, 500 mA
+
+HX-711 amplifier
+
+8
+
+5 V,1.6 mA each
+
+Strain Gauge
+
+8
+
+5 V, 1.6 mA each
+
+MPU-6050 gyroscope
+
+1
+
+3.3-5 V 3.9 mA
+
+LM2596 Buck Converter
+
+1
+
+3-40 V input, 1.5-35 V output at 2 A
+
+LM044L LCD screen with I2C adapter
+
+1
+
+2.4-5 V 100 µA
+
+Total
+
+5 V, 518.7 mA
+
+The total power consumption was to 2.6 W. Two 9V rechargeable dry cells were chosen
+as the main power source. They were chosen due to their current rating of 300 mAh, that
+would provide enough current for the device for about 2 hours before needing a recharge
+[48]. The batteries are also portable and can be re-charged making them economical.
+A battery was considered to cater for portability and measurement in areas without
+
+Chapter 3. Methodology
+
+33
+
+electricity. An adjustable buck converter was also incorporated into the circuit to step
+down the voltage to 5V, acting as a voltage regulator for the circuit.
+
+3.2.2
+
+Strain gauge configuration
+
+The main consideration for the use of strain gauge was the ability to accurately measure
+the change in resistance. The strain gauge will be connected in a Wheatstone bridge configuration in the quarter bridge configuration, as shown in Figure 3.9. The quarter-bridge
+circuit was chosen mainly because of its relatively easy implementation while providing
+accurate measurements. A variable resistor will be used on one side of the bridge to
+balance the bridge during fabrication.
+
+Figure 3.9: Strain Gauge circuit
+
+The provision of a constant current and the ability to read the output of the bridge were
+also considered for the design. The solution to both these challenges was the use of the
+HX711 A/D converter to both power and recieve input from the strain gauges used.
+
+Chapter 3. Methodology
+
+3.3
+
+34
+
+Control module
+
+The control module involves the logic for running the testing rig in addition collecting
+and processing of data from the rig. The user interface and its various functions is also
+included in the module.
+
+3.3.1
+
+Measurement methods
+
+Acceleration, force and orientation of the UAV are the parameters the rig will measure.
+Linear acceleration is the measure of the change of speed per unit time. The factors
+considered for the choice of the accelerometer for use are:
+1. A sensor with power requirements that can be supplied by a microcontroller i.e 3.3
+- 5 V and 0 - 400 mA.
+2. A sensor that measures the acceleration in the three-axes for the movement of the
+UAV.
+3. A sensor that is relatively easy to interface with common micro-controllers i.e. a
+digital output or an analog value of between 0 - 5volts.
+4. A sensor that is relatively small and can easily be embedded onto the UAV holder.
+5. The accelerometer should preferably have a gyroscope attached to the chip.
+Based on these factors the sensors in Table 3.8 were considered [49][50][51]:
+
+Chapter 3. Methodology
+
+35
+
+Table 3.8: Design considerations for accelerometers and gyroscopes
+MPU6050
+Power
+
+require- 2.4 - 3.5 V 3.9 mA
+
+ADXL335
+
+ADXL1001
+
+1.8 - 3.6 V 350 µA
+
+3.0 - 5.25 V 1.15
+
+ments
+
+mA
+
+Measurement Axes
+
+3 axes
+
+3 axes
+
+1 axis
+
+Output
+
+I2C format
+
+Analog 0 - 3.3 V
+
+Analog 0 - 2.5 V
+
+Dimensions
+
+21 mm × 16 mm × 19 mm × 19 mm ×
+
+5 mm × 5 mm ×
+
+8.76 mm
+
+3.14 mm
+
+1.8 mm
+
+Yes
+
+Yes
+
+Yes
+
+Gyroscope presence
+
+The MPU6050 was chosen due to its small size, the number of axes it can measure
+simultaneously and its digital output. The chip has an added advantage of having a
+gyroscope attached to it
+Orientation is the angular positioning of the UAV with respect to the reference frame
+of the rig. This parameter will be measured by the use of a gyroscope that measures
+angular velocity. The angular velocity will then be mathematically integrated to obtain
+the orientation of the UAV in all the three axes. The representation chosen for this
+parameter is the Euler’s angles representation, due to its intuitive nature and the little
+computation required in the test [37].
+The force to be measured by the rig is the weight and thrust of the UAV. The thrust of
+the UAV includes its distribution between the four motors. The following considerations
+were made in the measurement of force in the rig:
+1. High sensitivity of the measurement
+2. Ability to measure both compressive and tensile forces on the UAV
+3. Relative ease of integration of the measurement devices with the micro-controller
+4. The cost of the instrument
+
+Chapter 3. Methodology
+
+36
+
+Table 3.9 shows the instruments considered for force measurement on the rig [45].
+Table 3.9: Comparison of force measuring instruments
+Strain gauge
+
+Load-cell
+
+Force-dependent
+resistor
+
+Power
+
+require- 3.3 - 5 V , for the 3.3 - 5 V, for the about 5 V
+
+ments
+
+amplifier
+
+amplifier
+
+Tensile and com-
+
+Tensile and com-
+
+measured
+
+pressive force
+
+pressive force
+
+Range of mea-
+
+Upto a few thou-
+
+Upto hundreds of
+
+upto 100N (FSR
+
+surement
+
+sand kilograms
+
+tonnes
+
+402)
+
+Kes. 300
+
+Kes. 3500
+
+Kes. 300
+
+Type
+
+Cost
+
+of
+
+of
+
+force
+
+im-
+
+Compressive force
+
+plemetation
+The strain gauge was chosen due to its affordability over the strain gauge and its ability
+to measure both compressive and tensile forces.
+
+3.3.2
+
+Communication protocol
+
+Wireless communication would be required between the UAV rig, the micro-controller and
+the user interface for ease of use of the rig during normal operation. Serial communication
+would be implemented for debugging the rig and for diagnostic purposes.
+The wireless technologies considered for the rig were bluetooth and wireless fidelity (WiFi). Table 3.10 shows the comparison between the two technologies [52].
+
+Chapter 3. Methodology
+
+37
+
+Table 3.10: Comparisons of wireless communication technologies
+
+Frequency Bands
+
+Wi-Fi
+
+Bluetooth
+
+2.4 GHz and 5 GHz
+
+2.4 GHz (from 2402 MHz to
+2480 MHz for BLE)
+
+Data rates
+
+Max speeds of about 9.6 2 Mbps
+Gbps
+
+Power consumption
+
+Low energy required, espe-
+
+High energy consumption
+
+cially for BLE
+
+Wi-Fi was chosen for the communication between the rig. In addition to this Wi-Fi
+technology was deemed as easier to implement due to the ease of use of its libraries, its
+integration with the user interface to be made and wireless communication between the
+system and the dtabase.
+
+3.3.3
+
+Data processing and display
+
+This module involves the data handling once it has been acquired from the sensors, data
+storage for further processing and its display during the test.
+The user interface was divided into two:
+1. A 20 column by 4 row LCD interface that would be attached to the rig for off-line
+support of the machine. This is mainly to aid in the initialization phase, to display
+the general status of the machine and to aid in the correction of any errors should
+they occur.
+2. A web-page, hosted on the user’s computer, will display the measurements from
+the sensors. The user will be able to send commands for the zeroing of the sensors
+before the test can begin, the test start and the test end.
+
+Chapter 3. Methodology
+
+38
+
+Data from the test-rig would be stored in a time-series database, since time is important in
+the analysis of the UAV parameters. The database would implement a comma-separated
+value (.csv) file format as opposed to other formats like JavaScript Object notation (.json).
+This is because the csv format is relatively more efficient to store large amounts of data
+with little hierarchical structure to them, which is our expected data format. The CSV
+format can also be imported into many computer applications, for example Matlab and
+Excel, for further analysis of the recorded data.
+
+3.3.4
+
+Micro-controller selection
+
+A micro-controller is a programmable electric component used for the implementation
+of some logic in a circuit. The micro-controller for the rig would be responsible for the
+reading of all the sensor input to the system, the control of the LCD and communication
+between the user interface and the rig.
+The design considerations for the micro-controller selection were:
+1. A relatively high processing speed due to the tasks of the micro-controller in the rig
+2. A large number of I/O pins to accomdate the large number of sensors in the design
+3. Built-in wireless communication for the micro-controller
+4. Affordability of the micro-controller
+5. Presence of developer support for the micro-controller
+The microcontrollers considered for the rig were the Arduino Mega , ESP32 and the
+Raspberry Pico. Table 3.11 shows the differences between the three microcontrollers
+[54][55][56].
+
+Chapter 3. Methodology
+
+39
+
+Table 3.11: Micro-controller considerations
+Arduino-Mega
+
+Raspberry Pico
+
+ESP-32
+
+Clock speed
+
+16 MHz
+
+133 MHz
+
+80-240 MHz
+
+General I/O pins
+
+54
+
+36
+
+26
+
+Wireless communi- No built-in support No built-in support Supports
+
+both
+
+cation
+
+and
+
+Bluetooth
+Wi-Fi
+
+Cost
+
+Kes. 2000
+
+Kes 1200
+
+Kes 1000
+
+Developer support
+
+Well supported
+
+Limited support
+
+Limited support
+
+Based on the comparisons on Table 3.10, the ESP32 board was selected due to its relatively
+large number of I/O pins, wireless communication capability and affordability.
+
+Chapter 4. Results
+
+40
+
+4
+
+Results
+
+4.1
+
+Mechanical module
+
+The overall assembly is as shown in Figure 4.2 depicting the final look of the rig after the
+final assembly.
+
+Figure 4.1: UAV test rig assembly model
+
+This octagon frame was selected to provide equal distance from the center to each edge
+with a hydraulic length of 1000 mm to accomodate UAVs of different sizes. Mild steel
+was selected to provide both strength and rigidity to the frame. The total mass of the
+rig was 29 kgs for portability reasons. The assembly, shown on Figure 4.2 and Figure 4.3,
+had the UAV plate assembly and sensor plate as its main parts.
+
+Chapter 4. Results
+
+41
+
+Figure 4.2: UAV test rig assembly
+
+Figure 4.3: UAV test rig assembly model with parts list
+
+Chapter 4. Results
+
+42
+
+UAV Plate Assembly
+This structure, shown on Figure 4.1 is used to mainly used to constrain the UAV to the
+rig during the test process, while allowing free movement of the UAV. It is made up of
+the UAV plate, shown in 4.1, and the mounting assembly for the UAV.
+
+4.2
+
+Stress Analysis Results
+
+Simulations were done on the UAV mounting plate. This was done by applying two point
+loads of 30 N on the mounting points for the UAV. The results of this are shown on
+Figure: 4.4.
+
+Figure 4.4: UAV plate simulation results
+
+The stress obtained from the simulation was relatively equally distributed throughout the
+holder with its maximum value being 83.3385 MPa. A maximum deflection of 0.253 mm
+was also obtained. The materials, plywood, for the UAV plate, and PLA plastic, for the
+mounting assembly, were thus deemed sufficient for this application. The combined mass
+of the UAV plate and mounting supports was also an important design consideration.
+This mass came to 0.825 kg.
+
+Chapter 4. Results
+
+43
+
+The detailed technical drawings for the rig, including the remaining sub-assemblies and
+individual parts, have been attached to Appendix B.
+
+4.3
+
+Electrical module
+
+Given the design considerations and choice of electrical components, an electrical circuit
+was designed for use in the rig.
+The rig will have a total power consumption of about 2.6 W, with two - 9 V batteries
+used to provide power for the rig. The major sub assemblies for the circuit are the strain
+gauge circuit and powering circuit.
+
+4.3.1
+
+Strain gauge circuit
+
+The main considerations for the strain gauge connections was the ability to provide a
+constant current to the gauges and the amplification of the signals from the gauges.
+Based on the above considerations the circuit on Figure 4.5 was designed.
+
+Figure 4.5: Strain gauge circuit
+
+Chapter 4. Results
+
+4.3.2
+
+44
+
+Powering circuit
+
+The ability to provide reliable power to all the electrical components in the testing rig
+was the main consideration in the design of this circuit. The circuit, shown on Figure 4.6
+was thus designed. A switch was also incorporated to the design for turning the rig on
+and off.
+
+Figure 4.6: Powering circuit
+
+The detailed circuit has been attached to Appendix D.
+
+4.4
+
+Control module
+
+The control module consists of the logic of the testing rig, the programme implementation
+and the user interface for interaction with the UAV rig.
+The control module design yielded the logic flowchart shown in Figures 4.7 and 4.8 in
+addition to a preliminary user interface.
+
+Chapter 4. Results
+
+45
+
+Figure 4.7: Control flowchart (Initialization)
+
+Chapter 4. Results
+
+46
+
+Figure 4.8: Control flowchart (Testing)
+
+Chapter 4. Results
+
+4.5
+
+47
+
+Preliminary Budget
+
+Table 4.1: Preliminary budget
+Number Item
+
+Description
+
+1
+
+2” by 2” by 0.25 (3
+
+Angle-line
+
+Quantity
+
+Unit Price
+
+Total (Kes)
+3550
+
+m)
+2
+
+Aluminium-6061
+
+Sheet
+
+0.25
+
+350 per kg
+
+88
+
+3
+
+PLA Roll
+
+1.75 mm (1 kg)
+
+1 kg
+
+3500
+
+3500
+
+per
+
+kg
+4
+
+Springs (mild steel)
+
+100 mm unloaded
+
+8
+
+500
+
+length
+5
+
+Strain-Gauge
+
+BF-350-3AA
+
+8
+
+150
+
+1200
+
+6
+
+Amplifier + A/D HX-711 amplifier
+
+8
+
+200
+
+1600
+
++ MPU-6050
+
+1
+
+400
+
+400
+
+Converter
+7
+
+Accelerometer
+Gyroscope
+
+8
+
+Micro-controller
+
+ESP32
+
+1
+
+1500
+
+1500
+
+9
+
+LCD
+
+LM044 (2004)
+
+1
+
+700
+
+700
+
+10
+
+Buck Converter
+
+LM2596
+
+1
+
+500
+
+500
+
+11
+
+Batteries
+
+9 V (2-Pack Ener-
+
+2
+
+500
+
+1000
+
+cells)
+TOTAL
+
+(Dry-
+
+giser)
+14,538
+
+Chapter 5. Conclusion
+
+5
+
+48
+
+Conclusion
+
+The mechanical, electrical and control design of the test rig has been presented. This is in
+addition to the design considerations and component selection process. The mechanical
+design for the rig comprises an octagon-shaped frame that uses angle lines in its build
+and supports, with an eight-point star-shaped plate for mounting the UAV onto. The
+electrical design comprises the electronic components used to power the rig and achieve
+functionality based on requirements, with components selected such as the types of sensors
+to be implemented and the power delivery system. The control design comprises the
+micro-controller choice that will enable logic control over the rig as well as the system
+flow chart illustrating how the rig will operate.
+
+REFERENCES
+
+49
+
+References
+[1] Consortiq ”A Not-So-Short History of Unmanned Aerial Vehicles (UAV),” Consortiq, Available:
+
+https://consortiq.com/uas-resources/short-history-unmanned-
+
+aerial-vehicles-uavs [Accessed June. 20,2024].
+[2] DJI Official Website Available:
+
+https://www.dji.com/global/mobile/mini-2-se-
+
+specs [Accessed August. 20,2024].
+[3] KenDrone
+
+”Commercial
+
+Drone
+
+Services”
+
+KenDrone
+
+Available:
+
+-
+
+https://www.kendrone.co.ke/ [Accessed August. 20,2024].
+[4] Dynotis ”The Importance of Test Stands for Drone Efficiency Testing” Dynotis,
+Available: https:// dynotis.semai.com.tr/the-importance-of-test-stands-for-droneefficiency-testing [Accessed June. 30,2024].
+[5] Drone Academy-Asia “What is the difference between a Drone, a UAV and a UAS,”
+Drone Academy-Asia, Available: https://www.droneacademy-asia.com/post/whatis-the difference-between-a-drone-a-uav-and-a-uas [Accessed June. 20, 2023].
+[6] Built In ”Types of Drones” Built In, Available: www.builtin.com/articles/types-ofdrones [Accessed Jun. 20,2024].
+[7] ScienceDirect
+
+”Fixed
+
+Wing
+
+Drone,”
+
+ScienceDirect,
+
+Available:https://www.sciencedirect.com/topics/computer-science/fixed-wingdrone [Accessed August. 20,2024].
+[8] AirSight
+
+”Types
+
+of
+
+Drones
+
+-
+
+Fixed
+
+Wing,”
+
+AirSight,
+
+Available:
+
+https://www.airsight.com/learn/airspace-security/drone-fundamentals/typesof-drones-fixed-wing [Accessed June. 20,2024].
+[9] Unmanned
+licopter
+
+Systems
+
+Technology
+
+”Unmanned
+
+Helicopters
+
+Drones,”
+
+Unmanned
+
+Systems
+
+Technology,
+
+and
+
+He-
+
+Available:
+
+REFERENCES
+
+50
+
+https://www.unmannedsystemstechnology.com/company/alpha-unmannedsystems/alpha-800-uav-helicopter/ [Accessed August. 20,2024].
+[10] D-shop.com ”4K HD Wide-angle Quadcopter Remote Control Drone with Camera,” D-shop.com , Available: https://www.dshop.com.au/buy/4k-hd-wide-anglequadcopter-remote-control-drone-w/E88PRO-B [Accessed June. 20,2024].
+[11] Umiles ”Types of drones. Classification by use and characteristics” Umiles,
+Available:
+
+https://umilesgroup.com/en/types-of-drones-classification-by-use-and-
+
+characteristics [Accessed August. 20,2024]
+[12] Dekra ”Drone and Unmanned Aerial Vehicle Testing and Certification,” Dekra,
+Available:
+
+https://www.dekra.com/en/drones-and-unmanned-aerial-vehicle-
+
+testing-and-certification/ [Accessed June. 20,2024].
+[13] M Vierhauser K Meixner S Biffl ”Scenario-Based Field Testing of Drone Missions”
+Euromicro Conference on Software Engineering and Advanced Applications (SEEA)
+2024
+[14] Pawel Cwiakala ”Assessment of accuracy of basic maneuvers performed by an unmanned aerial vehicle during autonomus flight,” Faculty of Mining Surveying and
+Environmental Engineering, AGH University of Science and Technology, August.
+2017.
+[15] Kate M. Pavlock ”AeroSpace Engineering Handbook: Chapter 2(v): Flight Test
+Engineering” National Aeronautics and Space Administration, Dryden Flight Research Center
+[16] J. Foster L. Miller R. Busan S. Langston ”Recent NASA Wind Tunnel Free-Flight
+Testing of A Multirotor Unmanned Aircraft System Vehicle” NASA Langley Research Center, Hampton
+
+REFERENCES
+
+51
+
+[17] V. Pandey ”Wind Tunnel: A Review,” International Journal of Innovative Research
+in Science Engineering and Technology, Department of Mechanical Engineering,
+Vivekanada Global University, Jaipur India, February. 2017.
+[18] Medium ”How crucial is a drone test stand in UAV development,” Medium,
+Available: https://medium.com/@shimanshiji22/how-crucial-is-a-drone-test-standin-uav-development-26c759325888/ [Accessed June. 30,2024].
+[19] Choi Hyo-seon, ”Testing bed for drone,” South Korea Patent KR101853623B1,
+June. 08,2018.
+[20] VectorNav ”What is an Inertial Measurement Unit,” VectorNav,
+able:
+
+Avail-
+
+https://www.vectornav.com/resources/inertial-navigation-articles/what-is-
+
+an-inertial-measurement-unit-imu [Accessed June. 20,2024].
+[21] Klein Educational Systems ”What is an Inertial Measurement Unit,” Klein Educational Systems, Available: https://www.kleineducational.com/blog/102-minds-idrone-gimbal-rig-perfect-for-testing-indoors [Accessed June. 20,2024].
+[22] Wing Flying Tech ”LY-30KGF Thrust Stand,” Wing Flying Tech, Available:
+https://www.wingflyingtech.com/motor-test/ly-30kgf-thrust-stand [Accessed June.
+20,2024].
+[23] IGI Global ”What is Scientific Simulation” Available:
+
+https://www.igi-
+
+global.com/dictionary/scientific-simulation
+[24] A. Saleh, E. Abelrady ”CFD analysis of full quadcopter” International Journal of
+Advanced Multidisciplinary Research and Studies, Department of Mechatronics,
+Faculty of Engineering, November 2022.
+[25] Y. Zhang, Y. Huang, Z. Li, K. Cao ”A Simplified FE Modelling Strategy for the
+Drop Process Simulation Analysis of Light and Small Drone” Aerospace 2021, 8, 387.
+Available ”https://doi.org/10.3390/aerospace8120387 [Accessed August. 20,2024]
+
+REFERENCES
+
+[26] Biokinetics
+
+52
+
+”What
+
+Factors
+
+are
+
+assessed
+
+with
+
+drone
+
+testing,”Biokinetics,
+
+Available:https://biokinetics.com/what-factors-are-assessed-with-drone-testing
+[Accessed August. 20,2024].
+[27] FoxTech ”LY-10KGF Thrust Stand” FoxTech Available:https://www.foxtechfpv.com/ly10kgf-propulsion-system-test-platform.html [Accessed August 20. 2024]
+[28] DroneSpace ” Home Page” DroneSpace Available: https://www.dronespace.co.ke/
+[Accessed August.21 2024]
+[29] P. Kosa, M. Kisev, L. Vacho, L. Toth, M. Olejar, M. Harnicariva, J. Valicek, H.
+Tozan ”Experimental Measurement of a UAV Propeller’s Thrust” Technical Gazette
+29, 1(2022) Available https://doi.org/10.17559/TV-20201212185220 [Accessed August 21. 2024]
+[30] Andrzej Tomczyk ”In-flight tests of navigation and control system of unmanned
+aerial vehicle” Aircraft Engineering and Aerospace Technology December 2003
+[31] DBpedia
+
+”Orientation
+
+(geometry),”
+
+DBpedia,
+
+Available:
+
+https://www.dbpedia.org/page/Orientation(geometry) [Accessed June. 25,2024].
+[32] Elprocus ”Gyroscope Sensor Working and its Applications” Elprocus, Available:
+https://www.elprocus.com/gyroscope-sensor [Accessed June. 25,2024].
+[33] The Droning Company ”Drone Flying for Dummies,” The Droning Company, Available: https://www.thedroningcompany.com/blog/drone-flying-for-dummies
+[34] CueMath
+
+”Rotation
+
+Matrix,”
+
+CueMath,
+
+Available:
+
+https://www.cuemath.com/algebra/rotation-matrix/ [Accessed June. 25,2024].
+[35] DancewithCode ”Rotation Quaternions , and How to Use Them,” DancewithCode,
+Available: https://danceswithcode.net/engineeringnotes/quaternions/quaternions.html
+[Accessed June. 25,2024].
+
+REFERENCES
+
+[36] Hughes
+tages
+
+53
+
+Noel,
+of
+
+”
+
+What
+
+representing
+
+Gate
+
+are
+
+the
+
+advantages
+
+and
+
+disadvan-
+
+in
+
+different
+
+ways”
+
+Research-
+
+orientation
+
+Available:https://www.researchgate.net/post/What-are-the-
+
+advantages-and-disadvantages-of-representing-orientations-in-differentways/63b7ffdfe62569b205098a55/citation/download [Accessed August. 20,2024]
+[37] EasySpin
+
+”Rotation
+
+and
+
+Euler
+
+angles”
+
+EasySpin
+
+Avail-
+
+able:https://easyspin.org/documentation/eulerangles.html
+
+[Accessed
+
+August.
+
+21,2024]
+[38] Mouser Electronics ”Gyroscope Types, Selection” Mouser Electronics Available:
+https://eu.mouser.com/applications/gyroscope-types-selection/ [Accessed August.
+21,2024]
+[39] J. Novotnak M. Firko P. Lipovsky and M.Smelko ”Design of the system for Measuring UAV Parameters” Drones6,
+
+no 8:
+
+213 Available:
+
+https://doi.org/10.3390/drones6080213 [Accessed August. 21,2024]
+[40] Michigan Scientific Corporation ”What is a Strain Gauge and How Does it Work,”
+Michigan Scientific Corporation, Available: https://www.michsci.com/what-is-astrain-gauge/ [Accessed June. 25,2024].
+[41] Medium ”Strain Gauge:
+Medium, Available:
+
+Principle,
+
+Types,
+
+Features and Applications”
+
+https://encardio.medium.com/strain-gauge-principle-types-
+
+features-and-applications-357f6fed86af [Accessed June. 26,2024]
+[42] All
+
+About
+
+Circuits
+
+”Strain
+
+Gauges,”
+
+All
+
+About
+
+Circuits,
+
+Available:
+
+https://www.allaboutcircuits.com/textbook/direct-current/chpt-9/strain-gauges/
+[43] Omega
+
+”Load
+
+Cells:
+
+Introduction
+
+to
+
+Load
+
+Cells”
+
+Omega,
+
+Available:
+
+https://www.sea.omega.com/tw/prodinfo/loadcells.html [Accessed June. 25,2024].
+[44] F. Hunja and L. Nduati,”Design and Fabrication of a Drone Test Bed,” Jomo Kenyatta University of Agriculture and Technology,December 2022.
+
+REFERENCES
+
+54
+
+[45] Measurex ”Load Cells vs. Strain Gauges: Exploring the Differences and Benefits,” Measurex, Available:
+
+https://www.measurex.com.au/load-cells-vs-strain-
+
+gauges [Accessed June. 20,2024]
+[46] Bruel
+sors”
+
+and
+
+Kjaer
+
+Sound
+
+and
+
+Vibration
+
+Bruel
+
+and
+
+Kjaer
+
+Sound
+
+and
+
+Movement
+Vibration
+
+”Accelerometer
+
+Movement,
+
+sen-
+
+Available:
+
+https://www.bksv.com/en/transducers/vibration/accelerometers [Accessed June.
+25,2024].
+[47] RC-Wing ”EFT G06 V2 EFT G06 V2 4 AXIS 6L UAV Agricultural Spraying Drone
+Farm Sprayer,” RC-Wing Available: EFT G06 V2 4 AXIS 6L UAV Agricultural
+Spraying Drone Farm Sprayer [Accessed August. 20,2024]
+[48] Nerokas ”Energizer Recharge 9V Rechargeable Battery” Nerokas, Available:
+https://store.nerokas.co.ke/SKU-1373 [Accessed August.10 ,2024]
+[49] Last
+
+Minute
+
+roscope
+
+Sensor
+
+Engineers
+with
+
+”Interface
+Arduino”
+
+MPU6050
+Last
+
+Accelerometer
+
+Minute
+
+Engineers,
+
+and
+
+Gy-
+
+Available:
+
+https://lastminuteengineers.com/mpu6050-accel-gyro-arduino-tutorial/ [Accessed
+August.10,2024]
+[50] Last Minute Engineers ”How Accelerometer works?
+Accelerometer
+
+with
+
+Arduino”
+
+Last
+
+Minute
+
+Interface ADXL335
+Engineers,
+
+Available:
+
+https://lastminuteengineers.com/adxl335-accelerometer-arduino-tutorial/
+
+[Ac-
+
+cessed August.10,2024]
+[51] Seeeds Studio ”ADXL1001/ADXL1002 Datasheet” Seeeds Studio, Available:
+https://www.seeedstudio.com/Grove-Single-Axis-Analog-Accelerometer-100gADXL1001-p-4035.html [Accessed August. 10,2024]
+[52] Moko Smart ”Bluetooth Vs WiFi Vs ZigBee: Which Wireless Technology is better”
+Moko Smart Available: https://www.mokosmart.com/bluetooth-vs-wifi-vs-zigbeewhich-is-better [Accessed August. 10,2024]
+
+REFERENCES
+
+55
+
+[53] RcBeacon
+
+”Microcontroller
+
+Power
+
+Supplies,”
+
+RcBeacon,
+
+Available:
+
+https://www.rcbeacon.com/pmb/psu general 1 [Accessed June. 26,2024]
+[54] Arduino
+
+Store
+
+”Arduino
+
+Mega
+
+2560
+
+Rev3”
+
+Arduino
+
+Store
+
+Available:
+
+https://store.arduino.cc/products/arduino-mega-2560 [Accessed August. 20,2024]
+[55] rfsolutions
+
+”ESP32
+
+WIFI
+
+MODULE”
+
+rfsolutions
+
+Available:
+
+https://www.rfsolutions.co.uk/downloads/6253ea295dd0e843DS-ESP32-1.pdf
+[Accessed August. 20,2024]
+[56] M.
+berry
+
+Claussen,
+Pi
+
+Pico
+
+”Pico
+board
+
+Power.Get
+and
+
+to
+
+RP2040”
+
+know
+rfsolutions
+
+the
+
+RaspAvailable:
+
+https://www.rfsolutions.co.uk/downloads/6253ea295dd0e843DS-ESP32-1.pdf
+[Accessed August. 20,2024]
+
+Chapter A. Preliminary Budget
+
+A
+
+56
+
+Preliminary Budget
+Table A.1: Preliminary budget
+
+Number Item
+
+Description
+
+1
+
+2” by 2” by 0.25 (3
+
+Angle-line
+
+Quantity
+
+Unit Price
+
+Total (Kes)
+3550
+
+m)
+2
+
+Aluminium-6061
+
+Sheet
+
+0.25
+
+350 per kg
+
+88
+
+3
+
+PLA Roll
+
+1.75 mm (1 kg)
+
+1 kg
+
+3500
+
+3500
+
+per
+
+kg
+4
+
+Springs (mild steel)
+
+100 mm unloaded
+
+8
+
+500
+
+length
+5
+
+Strain-Gauge
+
+BF-350-3AA
+
+8
+
+150
+
+1200
+
+6
+
+Amplifier + A/D HX-711 amplifier
+
+8
+
+200
+
+1600
+
++ MPU-6050
+
+1
+
+400
+
+400
+
+Converter
+7
+
+Accelerometer
+Gyroscope
+
+8
+
+Micro-controller
+
+ESP32
+
+1
+
+1500
+
+1500
+
+9
+
+LCD
+
+LM044 (2004)
+
+1
+
+700
+
+700
+
+10
+
+Buck Converter
+
+LM2596
+
+1
+
+500
+
+500
+
+11
+
+Batteries
+
+9 V (2-Pack Ener-
+
+2
+
+500
+
+1000
+
+cells)
+TOTAL
+
+(Dry-
+
+giser)
+14,538
+
+B
+
+Time Plan
+
+Figure B.1: Timeplan
+
+Chapter B. Time Plan
+57
+
+Mechanical module
+
+Final assembly
+
+C
+
+C.1
+
+Figure C.1: Detailed test rig assembly
+
+Chapter C. Mechanical module
+58
+
+59
+
+Figure C.2: Parts List
+
+Chapter C. Mechanical module
+
+C.2
+
+Octagon frame assembly
+
+Figure C.3: Octagon frame assembly
+
+Chapter C. Mechanical module
+60
+
+C.2.1
+
+Frame Apex
+
+Figure C.4: Frame apex
+
+Chapter C. Mechanical module
+61
+
+C.2.2
+
+Frame Diagonal
+
+Figure C.5: Frame diagonal
+
+Chapter C. Mechanical module
+62
+
+C.2.3
+
+Frame Stand
+
+Figure C.6: Frame stand
+
+Chapter C. Mechanical module
+63
+
+C.2.4
+
+Support Base
+
+Figure C.7: Support base
+
+Chapter C. Mechanical module
+64
+
+C.3
+
+Plate Assembly
+
+Figure C.8: Plate assembly
+
+Chapter C. Mechanical module
+65
+
+C.3.1
+
+UAV plate
+
+Figure C.9: UAV plate
+
+Chapter C. Mechanical module
+66
+
+D
+
+Electrical Circuit
+
+Figure D.1: Electrical Circuit
+
+Chapter D. Electrical Circuit
+67
+
+
