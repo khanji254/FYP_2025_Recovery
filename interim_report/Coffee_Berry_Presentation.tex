@@ -1,0 +1,364 @@
+%% ============================================================
+%%  Coffee Berry Sorting Machine — Continuous Assessment Presentation
+%%  Beamer, metropolis theme
+%% ============================================================
+\documentclass[aspectratio=169, 11pt]{beamer}
+
+\usetheme{metropolis}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+\usepackage{grffile}   % handles spaces in filenames
+
+% ---- colour palette ----
+\definecolor{coffeeBrown}{RGB}{101,45,10}
+\definecolor{coffeeGold}{RGB}{195,140,60}
+\definecolor{coffeeLight}{RGB}{240,225,200}
+
+\setbeamercolor{frametitle}{bg=coffeeBrown, fg=white}
+\setbeamercolor{progress bar}{fg=coffeeGold}
+\setbeamercolor{alerted text}{fg=coffeeBrown}
+\setbeamercolor{block title}{bg=coffeeBrown!15, fg=coffeeBrown}
+\setbeamercolor{block body}{bg=coffeeBrown!5}
+\setbeamercolor{normal text}{fg=black}
+
+\metroset{sectionpage=none, subsectionpage=none, progressbar=frametitle}
+
+\graphicspath{{images/}{images/Mechanical_Images/}{images/model__Training_Results/}}
+
+% ---- title info ----
+\title{Modification and Improvement of a\\Coffee Berry Sorting Machine}
+\subtitle{Continuous Assessment Presentation \quad | \quad FYP 22-22}
+\author{Joe Annel \quad Prosper Muuo}
+\institute{Dept.\ of Mechatronic Engineering, JKUAT \\ Supervisor: Ms.\ Maureen Andanje}
+\date{March 2026}
+
+%% ============================================================
+\begin{document}
+
+% ------------------------------------------------------------------
+% SLIDE 1 – TITLE
+% ------------------------------------------------------------------
+\begin{frame}[plain]
+\maketitle
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 2 – OBJECTIVES
+% ------------------------------------------------------------------
+\begin{frame}{Objectives}
+
+\begin{block}{Main Objective}
+To modify and improve an existing automated coffee berry sorting machine.
+\end{block}
+
+\vspace{0.5em}
+\textbf{Specific Objectives:}
+\begin{enumerate}
+  \item To analyse the performance limitations of the existing image-based coffee berry
+        sorting system, with emphasis on motion blur, processing latency, and
+        classification accuracy.
+  \item To improve on the sorting mechanism.
+  \item To evaluate alternative or upgraded processing hardware capable of supporting
+        higher frame rates and faster inference.
+\end{enumerate}
+
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 3 – METHODOLOGY: Design Approach
+% ------------------------------------------------------------------
+\begin{frame}{Methodology — Design Approach}
+\begin{columns}[T]
+  \begin{column}{0.52\textwidth}
+    \textbf{Three-area improvement strategy:}
+    \begin{enumerate}
+      \item Performance audit of the original system
+      \item Targeted hardware and mechanism upgrades
+      \item Upgraded processing platform with retrained model
+    \end{enumerate}
+    \vspace{0.6em}
+    \textbf{Key design decisions:}
+    \begin{itemize}
+      \item Binary \texttt{accept}/\texttt{reject} classification —
+            eliminates semi-ripe/ripe boundary confusion
+      \item Global-shutter camera — eliminates rolling-shutter motion blur
+      \item Pi~4 + ESP32 co-processing — offloads real-time actuation from Linux scheduler
+      \item YOLOv11n replacing MobileNetV2 TFLite
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.44\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{{harvested coffee berry variation.jpeg}}\\[4pt]
+    {\small Visual diversity demanding robust classification}\\[6pt]
+    \includegraphics[width=\textwidth]{coffee_berry_comparison.png}\\[2pt]
+    {\small Accept (deep-red) vs.\ reject (all other states)}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 4 – METHODOLOGY: Dataset and Model Training
+% ------------------------------------------------------------------
+\begin{frame}{Methodology — Dataset \& YOLOv11 Model Training}
+\begin{columns}[T]
+  \begin{column}{0.50\textwidth}
+    \textbf{Dataset:}
+    \begin{itemize}
+      \item 2{,}000 images annotated on Roboflow
+      \item Split: 70\% train / 15\% val / 15\% test
+      \item Sources: controlled LED tabletop + in-situ chute frames
+      \item Camera: Arducam OV9281 (global shutter, 1\,MP)
+      \item Resized to $640 \times 640$ for training
+    \end{itemize}
+    \vspace{0.4em}
+    \textbf{YOLOv11n Training Config:}
+    \begin{itemize}
+      \item Backbone: \texttt{yolo11n.pt} (COCO pre-trained, fine-tuned)
+      \item 100 epochs, batch 16, SGD lr = 0.01
+      \item Augmentation: mosaic, flip, HSV jitter
+      \item Evaluated on mAP@0.5, mAP@0.5:0.95, precision, recall
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.46\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{val_batch0_pred.jpg}\\[3pt]
+    {\small YOLOv11 validation batch predictions}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 5 – METHODOLOGY: Hardware Upgrades
+% ------------------------------------------------------------------
+\begin{frame}[shrink=5]{Methodology — Hardware Upgrades}
+\begin{columns}[T]
+  \begin{column}{0.50\textwidth}
+    \textbf{Three targeted mechanism upgrades:}\\[2pt]
+    \small
+    \textbf{1. Camera:} Pi Camera V2 $\rightarrow$ \alert{Arducam OV9281 (global shutter)}\\
+    \hspace*{1em}Eliminates motion blur at 0.5\,m/s chute speed\\[4pt]
+    \textbf{2. Ejector driver:} PN2222A BJT $\rightarrow$ \alert{IRLZ44N MOSFET}\\
+    \hspace*{1em}No storage time; full drive from 3.3\,V ESP32 GPIO\\[4pt]
+    \textbf{3. Co-processor:} ESP32 added\\
+    \hspace*{1em}Handles solenoid timing, motor PWM, relay switching\\[-2pt]
+    \hspace*{1em}with $<$5\,\textmu{}s ISR latency
+  \end{column}
+  \begin{column}{0.46\textwidth}
+    \small\textbf{Components procured \& bench-verified:}
+    \begin{itemize}\setlength{\itemsep}{1pt}
+      \item Raspberry Pi~4 (4\,GB RAM)
+      \item Arducam OV9281 global-shutter module
+      \item ESP32 DevKit
+      \item LED ring light
+      \item 2-channel optocoupler relay (PC817)
+      \item IRLZ44N MOSFETs ×4, 1N5819 diodes
+    \end{itemize}
+    \vspace{0.3em}
+    \textbf{Co-processing:}\\
+    Pi~4 $\xrightarrow{\text{UART 115200}}$ ESP32 $\rightarrow$ solenoids / PWM / relay
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 6 – METHODOLOGY: Circuit Simulation (Proteus)
+% ------------------------------------------------------------------
+\begin{frame}{Methodology — Circuit Verification in Proteus}
+\begin{columns}[T]
+  \begin{column}{0.38\textwidth}
+    \textbf{Simulation scope:}
+    \begin{itemize}
+      \item 4× IRLZ44N solenoid driver channels
+      \item Motor PWM stage (GPIO~14)
+      \item Compressor relay (GPIO~21)
+      \item LED strip driver (GPIO~22)
+      \item UART virtual terminal (Pi link at 115\,200\,bps, 8N1)
+    \end{itemize}
+    \vspace{0.4em}
+    \textbf{Before any hardware built:}\\
+    ESP32 firmware loaded into virtual ESP32-WROOM-32; classification commands
+    (\texttt{REJECT:1}--\texttt{REJECT:4}, \texttt{ACCEPT}) injected via
+    virtual serial terminal; switching waveforms captured on virtual oscilloscope.
+  \end{column}
+  \begin{column}{0.58\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Proteus_Full_Circuit.PNG}\\[3pt]
+    {\small Complete Proteus ISIS schematic: ESP32, 4× MOSFET ejector channels, relay, and UART terminal}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 7 – METHODOLOGY: Detection-to-Actuation Pipeline
+% ------------------------------------------------------------------
+\begin{frame}{Methodology — Detection-to-Actuation Pipeline}
+\begin{columns}[T]
+  \begin{column}{0.52\textwidth}
+    \textbf{End-to-end pipeline flow:}
+    \begin{enumerate}
+      \item Global-shutter frame capture (detection zone)
+      \item YOLOv11 inference on Raspberry Pi~4
+      \item Centroid tracker associates detections across frames
+      \item Berry reaches ejection zone $\rightarrow$ Pi sends\\
+            \texttt{ACCEPT} or \texttt{REJECT:\textit{n}} via UART
+      \item ESP32 fires solenoid jet for calibrated pulse duration
+    \end{enumerate}
+    \vspace{0.4em}
+    \textbf{Target latency:} \(<\)100\,ms frame-capture to solenoid trigger\\
+    \textbf{Baseline (existing):} $\approx$380\,ms\\
+    \textbf{Target throughput:} \(>\)150 berries/min
+  \end{column}
+  \begin{column}{0.44\textwidth}
+    \centering
+    % TikZ pipeline diagram
+    \begin{tikzpicture}[
+      >=Latex, scale=0.78, transform shape,
+      box/.style={draw, rectangle, rounded corners=4pt, fill=coffeeBrown!10,
+                  minimum width=3.2cm, minimum height=0.65cm,
+                  align=center, font=\small, text width=3.0cm},
+      arr/.style={->, thick}
+    ]
+      \node[box] (cam)   {Global-Shutter\\Camera};
+      \node[box, below=0.55cm of cam]  (inf)   {YOLOv11 Inference\\(Raspberry Pi 4)};
+      \node[box, below=0.55cm of inf]  (trk)   {Centroid Tracker};
+      \node[box, below=0.55cm of trk]  (uart)  {UART Command\\to ESP32};
+      \node[box, below=0.55cm of uart] (sol)   {Solenoid Fire\\(Ejection)};
+      \draw[arr] (cam)  -- (inf);
+      \draw[arr] (inf)  -- (trk);
+      \draw[arr] (trk)  -- (uart);
+      \draw[arr] (uart) -- (sol);
+    \end{tikzpicture}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 8 – RESULTS: Baseline Performance Audit
+% ------------------------------------------------------------------
+\begin{frame}{Results — Baseline Performance Audit}
+\begin{columns}[T]
+  \begin{column}{0.50\textwidth}
+    \textbf{Existing system measured:}
+    \begin{itemize}
+      \item End-to-end latency: \(\approx\)380\,ms \quad (target \(<\)100\,ms)
+      \item Classification accuracy: \(\approx\)72\% \quad (target \(>\)90\%)
+      \item Throughput: \(\approx\)35 berries/min \quad (target \(>\)150)
+    \end{itemize}
+
+    \vspace{0.5em}
+    \textbf{Root causes identified:}
+    \begin{itemize}
+      \item \alert{310\,ms} serialised TFLite inference on Pi~3B+
+      \item Rolling-shutter smear degrading colour classification at chute speed
+      \item Four-class model — semi-ripe/ripe boundary confusion caused
+            commercially acceptable red berries to be rejected
+    \end{itemize}
+
+    \vspace{0.4em}
+    Previous model F1 score shown right — class confusion evident at
+    semi-ripe/ripe boundary:
+  \end{column}
+  \begin{column}{0.46\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Previous_Model_F1__score.PNG}\\[3pt]
+    {\small Previous 4-class model F1 score — misclassification at semi-ripe/ripe boundary}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 9 – RESULTS: Model Training
+% ------------------------------------------------------------------
+\begin{frame}{Results — YOLOv11n Training \& Validation}
+\begin{columns}[T]
+  \begin{column}{0.55\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=5.8cm, keepaspectratio]{results.png}\\[2pt]
+    {\small Training curves: loss, precision, recall, mAP@0.5 over 100 epochs}
+  \end{column}
+  \begin{column}{0.42\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=2.7cm, keepaspectratio]{confusion_matrix_normalized.png}\\[2pt]
+    {\small Normalised confusion matrix}\\[4pt]
+    \includegraphics[width=\textwidth, height=2.7cm, keepaspectratio]{F1_curve.png}\\[2pt]
+    {\small F1-confidence curve}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 10 – RESULTS: Proteus Simulation
+% ------------------------------------------------------------------
+\begin{frame}{Results — Proteus Circuit Simulation}
+\begin{columns}[T]
+  \begin{column}{0.50\textwidth}
+    \textbf{Key verified results:}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+      \item All 4 MOSFET channels fired correctly on \texttt{REJECT:n} commands
+      \item UART parsed at 115\,200\,bps within 10\,ms simulated latency
+      \item No gate ringing — 220\,\(\Omega\) gate resistor effective
+      \item Flyback diode clamped spike to \(+12.5\)\,V (0.5\,V above rail)
+      \item 100\,k\(\Omega\) pull-down: zero false firing at power-on reset
+      \item Motor PWM 0--100\% confirmed proportional voltage control
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=2.8cm, keepaspectratio]{Trigger_ON.PNG}\\[2pt]
+    {\small MOSFET turn-ON: gate 3.3\,V, drain falls to \(\approx\)0\,V}\\[5pt]
+    \includegraphics[width=\textwidth, height=2.8cm, keepaspectratio]{Trigger_OFF.PNG}\\[2pt]
+    {\small MOSFET turn-OFF: flyback diode clamps inductive spike}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% SLIDE 11 – PENDING WORK
+% ------------------------------------------------------------------
+\begin{frame}[shrink=8]{Pending Work}
+\begin{columns}[T]
+  \begin{column}{0.52\textwidth}
+    \small
+    \begin{block}{Model \& Software}
+      \begin{itemize}\setlength{\itemsep}{1pt}
+        \item Export YOLOv11n to ONNX/TFLite; benchmark on Pi~4
+        \item Quantise if needed to achieve \(<\)100\,ms per frame
+        \item Implement centroid tracker for cross-frame detection
+        \item Finalise Pi $\leftrightarrow$ ESP32 UART protocol
+      \end{itemize}
+    \end{block}
+    \begin{block}{Hardware \& Integration}
+      \begin{itemize}\setlength{\itemsep}{1pt}
+        \item Mount OV9281 camera above conveyor detection window
+        \item Calibrate belt-speed-to-ejection-timing offset
+        \item Wire solenoid drivers; full system integration
+      \end{itemize}
+    \end{block}
+    \begin{block}{Validation}
+      \begin{itemize}\setlength{\itemsep}{1pt}
+        \item Latency measurement (target \(<\)100\,ms)
+        \item Throughput at multiple belt speeds (target \(>\)150 berries/min)
+        \item Accuracy on test set (target mAP@0.5 \(>\)90\%)
+      \end{itemize}
+    \end{block}
+  \end{column}
+  \begin{column}{0.44\textwidth}
+    \includegraphics[width=\textwidth]{Time_Plan.jpeg}\\
+    {\small\centering Project Gantt chart}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------
+% CLOSING
+% ------------------------------------------------------------------
+\begin{frame}[standout]
+  Thank you\\[0.5em]
+  {\normalsize Questions?}
+\end{frame}
+
+\end{document}
