@@ -39,16 +39,23 @@ The engineering drawings below were produced in SolidWorks and include the insti
 \end{figure}
 
 % ------------------------------------------------------------
-\section{Appendix B: Flight Computer Circuit Design Reference}
+\section{Appendix B: Flight Computer and Base Station Circuit Design Reference}
 \label{app:fc_schematic}
 
-Figure~\ref{fig:app_fc_easyeda} shows the current EasyEDA schematic for the flight computer, used as the design reference for PCB layout and component placement.
+Figure~\ref{fig:app_fc_easyeda} shows the current EasyEDA schematic for the flight computer and Figure~\ref{fig:app_bs_easyeda} shows the base station schematic, both used as the design reference for PCB layout and component placement.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/FC_Xbee_Design__easyDA.PNG}
-\caption{Current flight computer EasyEDA schematic -- design reference for PCB fabrication (ESP32, XBee-PRO 900HP, power management, deployment circuitry)}
+\includegraphics[width=\textwidth]{images/FC_Xbee_Design__easyDA_White_Background.PNG}
+\caption{Flight computer EasyEDA schematic: ESP32, XBee-PRO 900HP UART interface, IRLZ44N MOSFET ignition channels, and ADS1115 power monitoring. Authors' own design.}
 \label{fig:app_fc_easyeda}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/Basestation_Circuit_Design_White_Background.png}
+\caption{Base station EasyEDA schematic: XBee UART interface, ESP32 receiver, and Bluetooth passthrough. Authors' own design.}
+\label{fig:app_bs_easyeda}
 \end{figure}
 
 % ------------------------------------------------------------
@@ -89,6 +96,166 @@ Miscellaneous               & 1  & 1,500 & 1,500  & --          \\ \midrule
 \caption{N4 recovery system project Gantt chart showing planned phases, milestones, and current progress}
 \label{fig:app_timeplan}
 \end{figure}
+
+% ------------------------------------------------------------
+\section{Appendix E: Labelled Assembly Reference Photographs}
+\label{app:labeled}
+
+The labelled images below serve as fabrication and assembly references, identifying all physical components and their spatial relationships within the avionics bay.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{images/Labeled/Assembly_Cross_section.PNG}
+\caption{Labelled cross-sectional view of the avionics bay showing component stacking order, threaded-rod paths, and internal clearance zones. Authors' own CAD.}
+\label{fig:app_cross_section}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{images/Labeled/Full_assemly_Parts_List.PNG}
+\caption{Full avionics bay assembly parts list with annotated component identifications and sub-assembly references. Authors' own CAD.}
+\label{fig:app_parts_list}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{images/Labeled/Avionics_Bay.PNG}
+\caption{Labelled avionics bay photograph identifying the battery pack, FC sled, retention rods, and deployment channel connectors. Authors' own fabrication.}
+\label{fig:app_avionics_bay}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.80\textwidth]{images/Labeled/Soldered_FC.PNG}
+\caption{Labelled flight-computer PCB photograph identifying the ESP32, XBee module, IRLZ44N MOSFETs, ADS1115, and passive components. Authors' own fabrication.}
+\label{fig:app_soldered_fc}
+\end{figure}
+
+% ------------------------------------------------------------
+\section{Appendix F: Firmware Code Snippets and Repository}
+\label{app:firmware}
+
+The N4 flight software is version-controlled and publicly available at:
+\begin{center}
+  \url{https://github.com/nakujaproject/N4-Flight-Software} \cite{n4_github}
+\end{center}
+
+Representative excerpts illustrating the four primary firmware modules are shown below.
+
+\subsection*{F.1\quad XBee UART Initialisation Task}
+\begin{lstlisting}[language=C, caption={XBee UART initialisation and AT-command configuration (excerpt from \texttt{xbee\_task.c}) \cite{n4_github}}]
+void xbee_init_task(void *pvParameters) {
+    // Configure UART2 for XBee at 9600 baud
+    uart_config_t uart_cfg = {
+        .baud_rate  = 9600,
+        .data_bits  = UART_DATA_8_BITS,
+        .parity     = UART_PARITY_DISABLE,
+        .stop_bits  = UART_STOP_BITS_1,
+        .flow_ctrl  = UART_HW_FLOWCTRL_DISABLE,
+    };
+    uart_param_config(UART_NUM_2, &uart_cfg);
+    uart_set_pin(UART_NUM_2, TX2_PIN, RX2_PIN,
+                 UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+    uart_driver_install(UART_NUM_2, BUF_SIZE, 0, 0, NULL, 0);
+
+    // Enter AT command mode and set destination address
+    xbee_send_at("+++");           vTaskDelay(pdMS_TO_TICKS(1200));
+    xbee_send_at("ATDH 0013A200"); vTaskDelay(pdMS_TO_TICKS(100));
+    xbee_send_at("ATDL 41B5C2F3"); vTaskDelay(pdMS_TO_TICKS(100));
+    xbee_send_at("ATWR");          vTaskDelay(pdMS_TO_TICKS(200));
+    xbee_send_at("ATCN");          // Exit command mode
+    vTaskDelete(NULL);
+}
+\end{lstlisting}
+
+\subsection*{F.2\quad ADS1115 Battery Monitoring Task}
+\begin{lstlisting}[language=C, caption={ADS1115 I\textsuperscript{2}C voltage monitoring and launch-inhibit logic (excerpt from \texttt{power\_monitor.c}) \cite{n4_github}}]
+void power_monitor_task(void *pvParameters) {
+    ads1115_t ads = ads1115_init(I2C_NUM_0, ADS1115_ADDR_GND);
+    while (1) {
+        int16_t raw = ads1115_read_channel(&ads, ADS1115_MUX_AIN0);
+        // Reconstruct voltage: Vbus = raw * (4.096/32768) * (R1+R2)/R2
+        float v_sense = raw * (4.096f / 32768.0f);
+        float v_bus   = v_sense * ((47000.0f + 10000.0f) / 10000.0f);
+
+        if (v_bus < VBUS_MIN_V) {
+            launch_inhibit_set(INHIBIT_LOW_BATT);
+        } else {
+            launch_inhibit_clear(INHIBIT_LOW_BATT);
+        }
+        telemetry_packet.battery_mv = (uint16_t)(v_bus * 1000.0f);
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
+}
+\end{lstlisting}
+
+\subsection*{F.3\quad PWM Deployment Task}
+\begin{lstlisting}[language=C, caption={IRLZ44N MOSFET PWM deployment channel control (excerpt from \texttt{pyro\_task.c}) \cite{n4_github}}]
+#define LEDC_CHANNEL_DROGUE  LEDC_CHANNEL_0
+#define LEDC_CHANNEL_MAIN    LEDC_CHANNEL_1
+#define PWM_FREQ_HZ          1000
+#define PWM_DUTY_PCT         70          // 70 % validated duty cycle
+
+void pyro_task(void *pvParameters) {
+    ledc_timer_config_t timer = {
+        .speed_mode      = LEDC_LOW_SPEED_MODE,
+        .duty_resolution = LEDC_TIMER_8_BIT,
+        .timer_num       = LEDC_TIMER_0,
+        .freq_hz         = PWM_FREQ_HZ,
+    };
+    ledc_timer_config(&timer);
+    uint32_t duty = (PWM_DUTY_PCT * 255) / 100;  // = 178
+    while (1) {
+        EventBits_t ev = xEventGroupWaitBits(
+            deploy_event_group,
+            DEPLOY_DROGUE_BIT | DEPLOY_MAIN_BIT,
+            pdFALSE, pdFALSE, portMAX_DELAY);
+        if (ev & DEPLOY_DROGUE_BIT)
+            ledc_set_duty_and_update(LEDC_LOW_SPEED_MODE,
+                                     LEDC_CHANNEL_DROGUE, duty, 0);
+        if (ev & DEPLOY_MAIN_BIT)
+            ledc_set_duty_and_update(LEDC_LOW_SPEED_MODE,
+                                     LEDC_CHANNEL_MAIN, duty, 0);
+        vTaskDelay(pdMS_TO_TICKS(3000));   // fire window
+        ledc_set_duty_and_update(LEDC_LOW_SPEED_MODE,
+                                  LEDC_CHANNEL_DROGUE, 0, 0);
+        ledc_set_duty_and_update(LEDC_LOW_SPEED_MODE,
+                                  LEDC_CHANNEL_MAIN, 0, 0);
+    }
+}
+\end{lstlisting}
+
+\subsection*{F.4\quad Finite-State Machine Transition Logic}
+\begin{lstlisting}[language=C, caption={FSM state transition logic for flight phase detection (excerpt from \texttt{state\_machine.c}) \cite{n4_github}}]
+typedef enum {
+    STATE_PAD, STATE_ARMED, STATE_BOOST,
+    STATE_APOGEE, STATE_DROGUE, STATE_MAIN, STATE_LANDED
+} flight_state_t;
+
+flight_state_t fsm_update(flight_state_t current,
+                           sensor_data_t  *s) {
+    switch (current) {
+        case STATE_PAD:
+            return (s->armed_flag) ? STATE_ARMED : STATE_PAD;
+        case STATE_ARMED:
+            return (s->accel_z > LAUNCH_THRESH_G) ? STATE_BOOST
+                                                   : STATE_ARMED;
+        case STATE_BOOST:
+            return (s->accel_z < BURNOUT_THRESH_G) ? STATE_APOGEE
+                                                    : STATE_BOOST;
+        case STATE_APOGEE:
+            xEventGroupSetBits(deploy_event_group, DEPLOY_DROGUE_BIT);
+            return STATE_DROGUE;
+        case STATE_DROGUE:
+            return (s->altitude_m < MAIN_DEPLOY_ALT_M) ? STATE_MAIN
+                                                        : STATE_DROGUE;
+        case STATE_MAIN:
+            xEventGroupSetBits(deploy_event_group, DEPLOY_MAIN_BIT);
+            return STATE_LANDED;
+        default: return STATE_LANDED;
+    }
+}
+\end{lstlisting}
 
 % ============================================================
 %  END OF APPENDICES

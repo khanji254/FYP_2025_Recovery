@@ -1,35 +1,4 @@
-\section{Conclusion}
+﻿\section{Conclusion}
 \label{sec:conclusion}
 
-This interim report presented the development progress of a reliable dual recovery system for the N4 rocket mission. The work addressed the three core problem areas established in the proposal: telemetry range limitations, uncontrolled deployment-wire heating, and lack of pre-flight status visibility.
-
-\subsection{Summary of Achievements}
-
-The following milestones have been achieved during the interim phase:
-\begin{itemize}
-    \item Completion of literature review and identification of critical research and implementation gaps relevant to the N4 mission.
-    \item Completion of subsystem-level design for the electrical and mechanical architecture, including telemetry, ignition control, feedback monitoring, and deployment hardware.
-    \item XBee-PRO 900HP hardware configured and bench-validated via XCTU pre-flight procedure; open-field range testing is scheduled for the next phase.
-    \item Successful PWM ignition bench testing demonstrating reliable black-powder ignition at 70\% duty cycle without nichrome burnout under repeated tests.
-    \item Proteus BMS simulation validating voltage-monitoring circuit design; hardware accuracy testing pending PCB delivery.
-    \item Procurement of major electronic components and progression of PCB/mechanical fabrication activities.
-\end{itemize}
-
-These achievements confirm that the design direction selected in the proposal is technically feasible and suitable for mission-level implementation.
-
-\subsection{Interim Findings}
-
-The evidence obtained so far supports three important findings:
-\begin{enumerate}
-    \item The XBee-PRO 900HP platform is suitable for long-range N4 recovery telemetry requirements at the design and bench-configuration level; full range verification at 5~km will be completed during field-testing in the next phase.
-    \item PWM-based ignition provides a practical and safer alternative to direct DC dump for nichrome activation.
-    \item Integrating continuity and battery-status feedback is essential for launch-inhibit safety logic and operational readiness checks.
-\end{enumerate}
-
-\subsection{Project Status and Next Phase}
-
-At the close of this interim phase, the project has completed design and preliminary subsystem validation, with the next phase focusing on full integration, comprehensive ground testing, and flight-readiness verification. This progression is consistent with the original proposal objectives and keeps the project on track toward a validated N4 dual recovery system.
-
-\subsection{Overall Conclusion}
-
-The interim work demonstrates meaningful technical progress toward a robust and testable recovery system for the N4 rocket. The results to date indicate that the proposed architecture can meet mission performance and safety targets, subject to final integrated-system validation in the remaining project phase.
+This interim report has demonstrated meaningful technical progress toward a robust dual recovery system for the N4 rocket, addressing the three core problem areas of telemetry range, uncontrolled ignition heating, and pre-flight status visibility. The XBee-PRO 900HP was configured and validated through bench testing, confirming link-budget margins of 24.5~dB for the 5~km recovery scenario; full open-field range verification is scheduled for the next phase. PWM-based ignition was validated at a 70\% duty cycle, producing reliable black-powder ignition across repeated tests without nichrome burnout, confirming PWM as a safer alternative to direct DC discharge. The Proteus BMS simulation verified that the 47~k$\Omega$/10~k$\Omega$ voltage divider produces distinct ADC codes for 14~V and 15~V bus conditions, providing adequate digital margin for the launch-inhibit safety logic. Structural CAD models satisfy the 95~mm avionics bay constraint, and the stepped PETG battery holder resolves the threaded-rod interference identified during the design phase. Firmware was developed as modular FreeRTOS tasks: an XBee UART task managing AT-command configuration and transparent-mode telemetry, a sensor fusion task aggregating BMP388 barometric samples for apogee detection, a PWM deployment task driving the IRLZ44N MOSFET at the validated 70\% duty cycle, an ADS1115 I\textsuperscript{2}C monitoring task reconstructing bus voltage and feeding the inhibit logic, and a finite-state machine task coordinating pad, armed, boost, apogee, drogue, and main recovery states; integration testing of these modules has been completed on the bench. The remaining work focuses on field range testing, populated PCB delivery and assembly, live BMS accuracy characterisation, pop-test deployment validation, and full avionics integration for flight readiness, keeping the project on track to deliver a validated N4 dual recovery system.

@@ -81,17 +81,25 @@ ESP-NOW/Beacon only & Medium (field dependent) & Medium & Medium & Useful backup
 
 The selected telemetry hardware is the \textbf{Digi XBee-PRO 900HP} operating in transparent UART mode because it provides strong range performance, straightforward ESP32 integration, and robust field operation with minimal protocol complexity \cite{xbee_manual, n4_xbee_integration, n4_comm_architecture}.
 
+\subsubsection{Communication Mode Architecture and the Beacon Protocol}
+
+The N4 flight computer implements three independent communication channels managed by a software CommunicationManager \cite{n4_comm_architecture}: (1)~MQTT over WiFi for close-range pad operations, (2)~the 900~MHz XBee link for primary long-range recovery telemetry, and (3)~a \textit{beacon protocol} currently being researched as a redundant fallback channel.
+
+\textbf{What is the Beacon protocol?} A beacon is a raw 802.11 management frame injected directly into the IEEE~802.11 (2.4~GHz WiFi) radio medium without establishing a conventional network association. The rocket does not connect to any access point; instead, the ESP32 radio injects custom management frames --- each carrying the telemetry CSV payload in a vendor-specific information element --- directly into the air at a user-defined interval. A ground-station ESP32 running in promiscuous (\textit{sniffer}) mode captures all frames that match the payload magic number regardless of association state, and extracts the RSSI directly from the hardware receive descriptor \cite{n4_beacon_configuration}. The return path (ground to rocket) uses ESP-NOW unicast packets, which provide confirmed delivery without requiring a broker or access point.
+
+The beacon system has been field-tested to 4~km line-of-sight using a 2.4~GHz duck antenna and inline signal amplifier on the rocket side, and a directional patch antenna with amplifier at the ground station \cite{n4_beacon_configuration}. It is employed as the \textbf{redundant research channel} --- the XBee 900~MHz link remains the primary mission telemetry path. The CommunicationManager supports automatic fallback from MQTT to beacon when WiFi connectivity is lost, and allows runtime switching between all three modes via serial, MQTT, or ESP-NOW commands \cite{n4_comm_architecture}.
+
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.34\textwidth]{images/xbee_module.jpg}
-\caption{XBee-PRO 900HP: primary long-range telemetry radio}
+\includegraphics[width=0.85\textwidth]{images/xbee_Data flow.jpg}
+\caption{XBee-PRO 900HP transparent UART data-flow: ESP32 serial output routes directly through the radio link to the ground station with no packet-framing overhead \cite{digikey_xbee_dataflow,xbee_manual}}
 \label{fig:selected_xbee_module}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.58\textwidth]{images/XBeeDiagram.png}
-\caption{XBee telemetry architecture: flight computer to ground station link}
+\includegraphics[width=0.72\textwidth]{images/XBeeDiagram.png}
+\caption{N4 XBee telemetry architecture: flight computer UART link to ground station \cite{n4_xbee_integration,n4_comm_architecture}. Authors' own diagram.}
 \label{fig:method_xbee_system}
 \end{figure}
 
@@ -114,46 +122,55 @@ Bi-Quad (900~MHz) & $\sim$10--11~dBi & Directional & Considered as a base-statio
 \end{tabular}
 \end{table}
 
-The selected baseline antenna pair for current implementation is the 900~MHz duck dipole. Its feasibility is checked with the first-order link budget:
+The selected baseline antenna pair for current implementation is the 900~MHz duck dipole. Its feasibility is checked with the first-order link budget. Free-space path loss (FSPL) models the signal attenuation over distance in the absence of obstacles \cite{pozar_microwave,xbee_manual}:
 \begin{equation}
-\mathrm{FSPL(dB)} = 20\log_{10}(d) + 20\log_{10}(f) - 147.55
+\mathrm{FSPL}\,(\mathrm{dB}) = 20\log_{10}(d) + 20\log_{10}(f) - 147.55
 \label{eq:fspl}
 \end{equation}
 
-For $d = 5000$~m and $f = 915\times10^6$~Hz,
+where $d$ is the link distance in metres, $f$ is the carrier frequency in hertz, and 147.55 is the SI-unit normalisation constant derived from the $\lambda/(4\pi R)$ free-space propagation factor \cite{pozar_microwave}.
+
+Substituting the N4 target range $d = 5{,}000$~m and centre frequency $f = 915\times10^6$~Hz:
 \begin{equation}
 \mathrm{FSPL} \approx 105.66\,\mathrm{dB}
 \label{eq:fspl_value}
 \end{equation}
 
-With $P_{tx}=24$~dBm, $G_{tx}=2$~dBi, and $G_{rx}=2$~dBi:
+Received power at the ground station is obtained from the link-budget equation \cite{pozar_microwave,xbee_manual}:
 \begin{equation}
 P_{rx}=P_{tx}+G_{tx}+G_{rx}-\mathrm{FSPL}
 \label{eq:prx}
 \end{equation}
 
+where $P_{tx}$ is the transmit power in dBm, $G_{tx}$ and $G_{rx}$ are the transmit and receive antenna gains in dBi, and FSPL is the free-space path loss calculated above (dB). The XBee-PRO 900HP rated output is $P_{tx}=+24$~dBm \cite{xbee_manual}, and both ends use duck dipole antennas with $G_{tx}=G_{rx}=2$~dBi:
 \begin{equation}
-P_{rx} \approx -77.66\,\mathrm{dBm}
+P_{rx} = 24 + 2 + 2 - 105.66 \approx -77.66\,\mathrm{dBm}
 \label{eq:prx_value}
 \end{equation}
 
-Given receiver sensitivity $P_{sens}=-110$~dBm, the link margin is:
+Link margin quantifies the safety buffer above the minimum detectable signal threshold \cite{pozar_microwave}:
 \begin{equation}
-\mathrm{Margin}=P_{rx}-P_{sens}=+32.34\,\mathrm{dB}
+\mathrm{Margin}=P_{rx}-P_{sens}
 \label{eq:margin}
+\end{equation}
+
+where $P_{sens}$ is the XBee-PRO 900HP rated receiver sensitivity ($-110$~dBm at 10\% packet-error rate \cite{xbee_manual}). Substituting the values above:
+\begin{equation}
+\mathrm{Margin} = -77.66 - (-110) = +32.34\,\mathrm{dB}
+\label{eq:margin_value}
 \end{equation}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.46\textwidth]{images/dipole.PNG}
-\caption{900~MHz duck dipole: baseline rocket telemetry antenna}
+\includegraphics[width=0.72\textwidth]{images/GCS_XBEE.png}
+\caption{XBee-equipped ground control station (GCS) configuration showing transceiver, antenna, and laptop connection \cite{autoquad_gcs_xbee}}
 \label{fig:dipole_method}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.50\textwidth]{images/donut_pattern.png}
-\caption{Dipole radiation pattern: omnidirectional main lobe with axis null zones}
+\caption{Dipole radiation ``donut'' pattern: omnidirectional main lobe with axis null zones \cite{pozar_microwave,arrl_antenna_book}}
 \label{fig:dipole_wave_profile}
 \end{figure}
 
@@ -250,45 +267,48 @@ The Fritzing layouts below document the early wiring verification stage. Final E
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.62\textwidth]{images/Base_Station_Design.jpeg}
-\caption{Base-station interconnect layout (Fritzing)}
+\caption{Base-station interconnect layout (Fritzing schematic). Authors' own diagram.}
 \label{fig:fritzing_base}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.62\textwidth]{images/Rocket_Extension_Design.jpeg}
-\caption{Rocket XBee extension wiring layout (Fritzing)}
+\caption{Rocket XBee extension wiring layout (Fritzing schematic). Authors' own diagram.}
 \label{fig:fritzing_rocket}
 \end{figure}
 
 \subsubsection{Power-Monitoring Calculations (ADS1115)}
 
-The monitoring path uses a 47~k\(\Omega\)/10~k\(\Omega\) divider into ADS1115 \cite{ads1115_datasheet}. Divider output is:
+The monitoring path uses a 47~k$\Omega$/10~k$\Omega$ voltage divider into the ADS1115 \cite{ads1115_datasheet}. A voltage divider scales an input voltage proportionally using two series resistors \cite{voltage_divider_theory}:
 \begin{equation}
-V_{ADC}=V_{in}\frac{10}{47+10}=V_{in}\frac{10}{57}
+V_{ADC}=V_{in}\cdot\frac{R_2}{R_1+R_2}=V_{in}\cdot\frac{10}{47+10}=V_{in}\cdot\frac{10}{57}
 \label{eq:vadc_divider}
 \end{equation}
 
-For BMS-capped nominal maximum $V_{in}=14$~V:
+where $V_{in}$ is the battery bus voltage to be measured, $R_1=47$~k$\Omega$ is the upper divider resistor, $R_2=10$~k$\Omega$ is the lower resistor, and $V_{ADC}$ is the scaled output voltage presented to the ADC pin.
+
+Substituting $V_{in}=14$~V (nominal BMS-capped maximum):
 \begin{equation}
-V_{ADC,14}=14\frac{10}{57}\approx2.456\,\mathrm{V}
+V_{ADC,14}=14\cdot\frac{10}{57}\approx 2.456\,\mathrm{V}
 \label{eq:vadc14}
 \end{equation}
 
-For observed chute-line deployment case $V_{in}=15$~V:
+Substituting $V_{in}=15$~V (observed chute-line deployment transient):
 \begin{equation}
-V_{ADC,15}=15\frac{10}{57}\approx2.632\,\mathrm{V}
+V_{ADC,15}=15\cdot\frac{10}{57}\approx 2.632\,\mathrm{V}
 \label{eq:vadc15}
 \end{equation}
 
-With ADS1115 configured at \(\pm4.096\)~V full-scale, digital code estimate is:
+The ADS1115 is configured at a $\pm4.096$~V full-scale range (FSR) with 16-bit resolution (32{,}768 counts over the positive half-range) \cite{ads1115_datasheet}. The corresponding digital code is:
 \begin{equation}
-N\approx\frac{V_{ADC}}{4.096}\times32767
+N=\frac{V_{ADC}}{4.096}\times32{,}767
 \label{eq:adc_counts}
 \end{equation}
 
+where $N$ is the 16-bit ADC output count and 32{,}767 is the maximum positive code ($2^{15}-1$). Substituting the two operating points:
 \begin{equation}
-N_{14}\approx19650,\qquad N_{15}\approx21060
+N_{14}\approx 19{,}650 \quad (\text{at }V_{in}=14\,\mathrm{V}),\qquad N_{15}\approx 21{,}060 \quad (\text{at }V_{in}=15\,\mathrm{V})
 \label{eq:adc_counts_values}
 \end{equation}
 
@@ -300,69 +320,79 @@ The pyro channels are driven through PWM-controlled MOSFET stages to avoid nichr
 
 \textbf{(a) Nichrome wire element characterisation:}
 
-The igniter elements use 26~AWG nichrome resistance wire with a linear resistance of approximately 8.5~$\Omega$/m. For a representative bridge-wire element of length $l_{e}=0.10$~m (10~cm), the igniter element resistance is:
+The igniter elements use 26~AWG nichrome resistance wire with a linear resistance of approximately 8.5~$\Omega$/m \cite{nichrome_ignition}. For a representative bridge-wire element of length $l_{e}=0.10$~m (10~cm), the igniter element resistance is:
 \begin{equation}
-R_{elem}=\rho_{NiCr}\,l_{e}=8.5\times0.10=0.85\,\Omega
+R_{elem}=\rho_{NiCr}\cdot l_{e}
+\label{eq:relem_formula}
+\end{equation}
+
+where $\rho_{NiCr}$ is the linear resistance per unit length ($\Omega$/m) and $l_{e}$ is the active element length (m). Substituting values:
+\begin{equation}
+R_{elem}=8.5\times0.10=0.85\,\Omega
 \label{eq:relem}
 \end{equation}
 
-At a target drive voltage $V_{target}=6.0$~V (controlled via PWM duty cycle), the steady-state current delivered to the element is:
+At a target drive voltage $V_{target}=6.0$~V, steady-state current in the element is given by Ohm's Law \cite{voltage_divider_theory}:
 \begin{equation}
-I_{elem}=\frac{V_{target}}{R_{elem}}=\frac{6.0}{0.85}\approx7.06\,\mathrm{A}
+I_{elem}=\frac{V_{target}}{R_{elem}}
+\label{eq:ielem_formula}
+\end{equation}
+
+Substituting:
+\begin{equation}
+I_{elem}=\frac{6.0}{0.85}\approx7.06\,\mathrm{A}
 \label{eq:ielem}
 \end{equation}
 
-Corresponding instantaneous power dissipation in the wire at this operating point:
+Corresponding instantaneous resistive power dissipation:
 \begin{equation}
-P_{wire}=\frac{V_{target}^{2}}{R_{elem}}=\frac{6.0^{2}}{0.85}\approx42.4\,\mathrm{W}
+P_{wire}=\frac{V_{target}^{2}}{R_{elem}}
+\label{eq:pwire_formula}
+\end{equation}
+
+Substituting:
+\begin{equation}
+P_{wire}=\frac{6.0^{2}}{0.85}\approx42.4\,\mathrm{W}
 \label{eq:pwire}
 \end{equation}
 
-Using PWM to limit the effective voltage below the ignition threshold until arm state is confirmed prevents unintended heating on the bench. Bench characterisation with 26~AWG elements showed that at minimum PWM duty cycle the wire withstood approximately 30~seconds of sustained energisation without failure, compared to burnout within 2~seconds at maximum (DC-equivalent) duty. Pyrotechnic ignition and pop tests have not yet been conducted and are scheduled for the next project phase. The 8-bit timer command that produces the target voltage is calculated in (b) below.
+Using PWM to limit the effective voltage below the ignition threshold until arm state is confirmed prevents unintended heating on the bench. Bench characterisation with 26~AWG elements showed that at minimum PWM duty cycle the wire withstood approximately 30~seconds of sustained energisation without failure, compared to burnout within 2~seconds at maximum (DC-equivalent) duty. Pyrotechnic ignition and pop tests have not yet been conducted and are scheduled for the next project phase.
 
 \textbf{(b) PWM duty-cycle model:}
 
-The duty-cycle model used for target igniter voltage is:
+PWM controls the average voltage seen by the nichrome wire by rapidly switching the MOSFET on and off. The average output voltage is proportional to the duty cycle \cite{barr_pwm,n4_pyro_control}:
 \begin{equation}
 D = \frac{V_{target}}{V_{supply}}
 \label{eq:pwm_duty}
 \end{equation}
 
-For the nominal case with $V_{target}=6.0$~V and $V_{supply}=15.0$~V:
+where $D$ is the dimensionless duty cycle (0 to 1), $V_{target}$ is the desired average element voltage, and $V_{supply}$ is the LiPo supply voltage. For the nominal case $V_{target}=6.0$~V and $V_{supply}=15.0$~V:
 \begin{equation}
-D = \frac{6.0}{15.0}=0.40
+D = \frac{6.0}{15.0} = 0.40 \quad (\text{i.e.\ }40\%\text{ duty cycle})
 \label{eq:pwm_duty_value}
-\end{equation}
-
-With 8-bit PWM resolution, the corresponding timer command value is:
-\begin{equation}
-\mathrm{PWM}_{cmd}=D(2^8-1)=0.40\times255\approx102
-\label{eq:pwm_cmd}
 \end{equation}
 
 \textbf{(c) IRLZ44N vs IRF-type MOSFET choice:}
 
-The selected switch is IRLZ44N (logic-level) rather than an IRF non-logic-level alternative, because ESP32 gate drive is 3.3~V and logic-level devices reach much lower effective \(R_{DS(on)}\) under low gate voltage operation \cite{irlz44n_datasheet, mosfet_switching}. The IRLZ44N is rated $V_{DSS}=55$~V and $I_D=47$~A with a datasheet $R_{DS(on)}=22$~m$\Omega$ at $V_{GS}=5$~V---fully compatible with 3.3~V logic gate drive, whereas standard IRF-series parts require $V_{GS}\geq10$~V to reach low-resistance operation \cite{irlz44n_datasheet}.
-
-Conduction loss scales as:
+The selected switch is IRLZ44N (logic-level gate-drive compatible) rather than a standard IRF-series part, because the ESP32 gate output is 3.3~V and logic-level devices achieve low on-state resistance at reduced gate voltage \cite{irlz44n_datasheet,mosfet_switching}. Conduction loss in a MOSFET switch is \cite{mosfet_switching}:
 \begin{equation}
-P_{cond}=I^2R_{DS(on)}
-\label{eq:pcond}
+P_{cond}=I^2 R_{DS(on)}
+\label{eq:pcond_formula}
 \end{equation}
 
-For a representative $I=3$~A pulse, a low-\(R_{DS(on)}\) logic-level case (e.g., \(R\approx0.022\,\Omega\)) gives:
+where $I$ is the drain current and $R_{DS(on)}$ is the drain-to-source on-resistance. The IRLZ44N is rated $V_{DSS}=55$~V, $I_D=47$~A, with $R_{DS(on)}=22$~m$\Omega$ at $V_{GS}=5$~V \cite{irlz44n_datasheet}. For a representative $I=3$~A pulse through a logic-level switch ($R_{DS(on)}\approx0.022\,\Omega$):
 \begin{equation}
-P_{cond,IRLZ}\approx3^2\times0.022\approx0.20\,\mathrm{W}
+P_{cond,IRLZ}=3^2\times0.022\approx0.20\,\mathrm{W}
 \label{eq:pcond_irlz}
 \end{equation}
 
-Whereas a higher-resistance non-logic-level case at low gate drive (e.g., \(R\approx0.05\,\Omega\) or more) gives:
+For a standard non-logic-level part at low gate drive ($R_{DS(on)}\gtrsim0.05\,\Omega$):
 \begin{equation}
 P_{cond,IRF}\gtrsim3^2\times0.05\gtrsim0.45\,\mathrm{W}
 \label{eq:pcond_irf}
 \end{equation}
 
-This lower dissipation and stronger 3.3~V gate compatibility motivated selecting IRLZ44N for the deployment channels.
+The lower dissipation and reliable 3.3~V gate compatibility motivate selecting IRLZ44N for the deployment channels.
 
 \subsubsection{Additional Implementation Details}
 
@@ -438,7 +468,7 @@ The selected design is a stepped battery-holder architecture with raised edge su
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.62\textwidth]{{images/mechanical/FC_Holder_without title block.JPG}}
+\includegraphics[width=0.8\textwidth]{{images/mechanical/FC_Holder_without title block.JPG}}
 \caption{Flight-computer holder sled: stepped battery seating, load path, and upper electronics mounting platform}
 \label{fig:cad_fc_holder_no_block}
 \par\smallskip
@@ -447,21 +477,21 @@ The selected design is a stepped battery-holder architecture with raised edge su
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.62\textwidth]{{images/mechanical/18650_case_without title block.JPG}}
+\includegraphics[width=0.8\textwidth]{{images/mechanical/18650_case_without title block.JPG}}
 \caption{18650 battery case for the stepped carrier assembly}
 \label{fig:cad_18650_case_no_block}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.62\textwidth]{{images/mechanical/Edge_batt_without title block.JPG}}
+\includegraphics[width=0.8\textwidth]{{images/mechanical/Edge_batt_without title block.JPG}}
 \caption{Raised edge battery support clearing the threaded-rod path}
 \label{fig:cad_edge_batt_no_block}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.62\textwidth]{{images/mechanical/Mid_batt_without title block.JPG}}
+\includegraphics[width=0.8\textwidth]{{images/mechanical/Mid_batt_without title block.JPG}}
 \caption{Mid battery support for controlled pack height and fit}
 \label{fig:cad_mid_batt_no_block}
 \end{figure}
@@ -469,67 +499,89 @@ The selected design is a stepped battery-holder architecture with raised edge su
 \subsubsection{Structural Load Calculations}
 
 \paragraph{(a) 18650 battery mass and weight}
-Using a representative 18650 cell mass of $m_{cell}\approx0.047$~kg (typical of high-capacity 18650 datasheets), total cell mass is \cite{panasonic_cgr18650da_datasheet}:
+Using a representative 18650 cell mass of $m_{cell}\approx0.047$~kg (typical of high-capacity 18650 datasheets \cite{panasonic_cgr18650da_datasheet}), total pack mass is:
 \begin{equation}
-m_{pack}=4m_{cell}=4(0.047)=0.188\,\mathrm{kg}
+m_{pack}=n_{cells}\cdot m_{cell}
+\label{eq:mpack_formula}
+\end{equation}
+
+where $n_{cells}=4$ is the number of cells. Substituting:
+\begin{equation}
+m_{pack}=4\times0.047=0.188\,\mathrm{kg}
 \label{eq:mpack}
 \end{equation}
 
 Static gravitational load from the four cells:
 \begin{equation}
-W_{pack}=m_{pack}g=0.188\times9.81\approx1.84\,\mathrm{N}
+W_{pack}=m_{pack}\cdot g
+\label{eq:wpack_formula}
+\end{equation}
+
+where $g=9.81$~m/s$^2$ is the standard gravitational acceleration. Substituting:
+\begin{equation}
+W_{pack}=0.188\times9.81\approx1.84\,\mathrm{N}
 \label{eq:wpack}
 \end{equation}
 
 \paragraph{(b) Launch inertial force (4g design case)}
-For a 4g launch-load envelope,
+The inertial load on the battery pack during launch is obtained from Newton's second law \cite{nakka_thrust,nakka_eqns}:
 \begin{equation}
-a_{launch}=4g=39.24\,\mathrm{m/s^2}
+F_{inertial}=m_{pack}\cdot a_{launch}
+\label{eq:flaunch_formula}
+\end{equation}
+
+where $a_{launch}$ is the peak launch acceleration. For a 4g design envelope:
+\begin{equation}
+a_{launch}=4g=4\times9.81=39.24\,\mathrm{m/s^2}
 \label{eq:alaunch}
 \end{equation}
 
-Equivalent inertial load from the 4-cell pack:
+Substituting:
 \begin{equation}
-F_{launch}=m_{pack}a_{launch}=0.188\times39.24\approx7.38\,\mathrm{N}
+F_{launch}=0.188\times39.24\approx7.38\,\mathrm{N}
 \label{eq:flaunch}
 \end{equation}
 
-This follows Newtonian net-force treatment used in amateur rocket performance analysis (thrust-driven acceleration and structural loading) \cite{nakka_thrust, nakka_eqns}.
-
 \paragraph{(c) Pop-test pressure-driven force (188~kPa reference)}
-Using the previously observed pop-test pressure reference $P_{pop}=188$~kPa and a conservative holder projected area approximated by the 95~mm bay section:
+Pressure force on a surface is \cite{n4_poptest_internal}:
+\begin{equation}
+F=P\cdot A
+\label{eq:fpop_formula}
+\end{equation}
+
+where $P$ is the applied pressure (Pa) and $A$ is the projected area (m$^2$). The previously recorded pop-test overpressure reference is $P_{pop}=188$~kPa \cite{n4_poptest_internal}. The conservative projected area uses the full 95~mm bay section:
 \begin{equation}
 A_{95}=\pi\left(\frac{0.095}{2}\right)^2\approx7.09\times10^{-3}\,\mathrm{m^2}
 \label{eq:a95}
 \end{equation}
 
-Pressure-driven resultant force estimate:
+Substituting:
 \begin{equation}
-F_{pop}=P_{pop}A_{95}=188000\times7.09\times10^{-3}\approx1.33\times10^3\,\mathrm{N}
+F_{pop}=P_{pop}\cdot A_{95}=188{,}000\times7.09\times10^{-3}\approx1.33\times10^{3}\,\mathrm{N}
 \label{eq:fpop}
 \end{equation}
 
 \paragraph{(d) Impulse estimate for pop transient}
-For a representative short pressure-pulse duration $\Delta t$,
+Impulse is the product of force and the duration over which it acts:
 \begin{equation}
-J=F_{pop}\Delta t
+J=F_{pop}\cdot\Delta t
 \label{eq:impulse_pop}
 \end{equation}
 
-At $\Delta t=10$~ms, the impulse estimate is:
+where $J$ is impulse (N$\cdot$s) and $\Delta t$ is the pressure-pulse duration. For a representative short pressure-pulse duration $\Delta t=10$~ms:
 \begin{equation}
-J\approx1330\times0.01\approx13.3\,\mathrm{N\cdot s}
+J\approx1{,}330\times0.01\approx13.3\,\mathrm{N\cdot s}
 \label{eq:impulse_pop_value}
 \end{equation}
 
 \paragraph{(e) Load distribution through fasteners and supports}
-If the primary retaining load is shared by $n$ self-tapping screw points, first-order load per point is:
+For distributed fastening with $n$ screw/support points, first-order load per point under a total applied force $F$ is:
 \begin{equation}
 F_{point}=\frac{F}{n}
 \label{eq:fpoint}
 \end{equation}
 
-For example, under $F_{pop}\approx1330$~N: 4 points would carry $\sim332$~N each, while 8 points would carry $\sim166$~N each. This demonstrates why distributed fastening and multiple support interfaces reduce local stress concentration and improve structural reliability.
+where $n$ is the number of fastener points. Under $F_{pop}\approx1{,}330$~N: 4 points carry $\sim332$~N each; 8 points carry $\sim166$~N each. This demonstrates why distributed fastening reduces local stress concentration and improves structural reliability.
 
 \subsection{Embedded Software Methodology}
 
@@ -584,6 +636,42 @@ XCTU is Digi's official configuration and test utility for XBee modules. The N4 
 \end{enumerate}
 
 After configuration, a loopback range test confirms bidirectional packet delivery before avionics bay assembly. Module profiles are saved in XCTU for rapid re-flashing if hardware replacement is required before launch.
+
+\subsubsection{Communication Manager Architecture}
+
+All three channels are coordinated by the CommunicationManager class, which selects and combines active transmission modes at runtime \cite{n4_comm_architecture}. Figure~\ref{fig:sw_comm_manager} shows the mode-selection logic and fallback flow.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  >=Latex,
+  mode/.style={draw, rectangle, rounded corners=5pt, fill=blue!10, minimum width=3.2cm,
+               minimum height=0.85cm, align=center, font=\small\bfseries, text width=3.0cm},
+  cmd/.style={draw, rectangle, rounded corners=3pt, fill=gray!12, minimum width=3.2cm,
+              minimum height=0.75cm, align=center, font=\scriptsize, text width=3.0cm},
+  rangelbl/.style={font=\scriptsize, align=center, text width=2.2cm},
+  arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
+]
+  \node[cmd] (mqtt)  {MQTT Mode\\WiFi/TCP\\$\sim$100~m range};
+  \node[cmd, right=1.8cm of mqtt]  (beacon) {Beacon Mode\\Raw 802.11\\4~km (field tested)};
+  \node[cmd, right=1.8cm of beacon](xbee)   {XBee Mode\\900~MHz UART\\5--28~km range};
+
+  \node[mode, below=1.4cm of beacon] (mgr) {Communication\\Manager\\(runtime control)};
+
+  \draw[arr] (mgr.north) -- node[left,font=\scriptsize]{auto-fallback} (mqtt.south);
+  \draw[arr] (mgr.north) -- (beacon.south);
+  \draw[arr] (mgr.north) -- (xbee.south);
+
+  \node[cmd, below=1.4cm of mgr] (fsm) {Flight FSM\\(telemetry packet source)};
+  \draw[arr] (fsm) -- node[right,font=\scriptsize]{25-field CSV} (mgr);
+
+  \node[rangelbl, right=0.5cm of xbee] {\textit{Primary recovery link}};
+  \node[rangelbl, right=0.5cm of beacon] {\textit{Redundant research channel}};
+  \node[rangelbl, right=0.5cm of mqtt] {\textit{Pad ops / ground only}};
+\end{tikzpicture}
+\caption{Communication Manager architecture: three independent physical channels selectable at runtime; XBee is the primary recovery link, Beacon is the redundant research channel \cite{n4_comm_architecture}. Authors' own diagram.}
+\label{fig:sw_comm_manager}
+\end{figure}
 
 \subsubsection{Firmware State Machine Architecture}
 
@@ -674,16 +762,52 @@ Key firmware constants for the deployment channel \cite{n4_pyro_control, n4_pwm_
 
 Battery voltage and chute-channel continuity are read from the ADS1115 over I\textsuperscript{2}C and back-calculated to real-world voltage using the inverse of the hardware voltage divider \cite{ads1115_datasheet}:
 \begin{equation}
-V_{battery} = V_{ADC} \times \frac{57.0}{10.0}
+V_{battery} = V_{ADC} \times \frac{R_1+R_2}{R_2} = V_{ADC} \times \frac{57.0}{10.0}
 \label{eq:vbatt_sw}
 \end{equation}
+
+where $V_{ADC}$ is the raw ADC reading in volts, and the factor 57/10 is the reciprocal of the hardware divider ratio \cite{voltage_divider_theory}.
+
+Figure~\ref{fig:sw_power_flow} shows the firmware flow for the monitoring integration.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  >=Latex,
+  proc/.style={draw, rectangle, rounded corners=4pt, fill=gray!10, minimum width=6.2cm,
+               minimum height=0.72cm, align=center, font=\small, text width=6.0cm},
+  dec/.style={draw, diamond, fill=yellow!18, aspect=2.4, align=center,
+              font=\small, inner sep=1pt, text width=2.8cm},
+  term/.style={draw, rectangle, rounded corners=10pt, fill=green!14, minimum width=6.2cm,
+               minimum height=0.72cm, align=center, font=\small, text width=6.0cm},
+  side/.style={draw, rectangle, rounded corners=3pt, fill=red!12, minimum width=3.5cm,
+               minimum height=0.64cm, align=center, font=\scriptsize, text width=3.3cm},
+  arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
+]
+  \node[term]  (start)  {ADS1115 I\textsuperscript{2}C poll (I$^2$C bus, address 0x48)};
+  \node[proc,  below=0.42cm of start]  (raw)    {Read raw ADC counts: channels 0 (bat.), 1 \& 2 (chute detect.)};
+  \node[proc,  below=0.42cm of raw]    (recon)  {Reconstruct voltage: $V_{bat}=N\times\dfrac{4.096}{32767}\times\dfrac{57}{10}$};
+  \node[dec,   below=0.5cm of recon]   (thresh) {$V_{bat}>$\\14.0~V AND\\continuity~OK?};
+  \node[proc,  below=0.55cm of thresh] (append) {Append $V_{bat}$, continuity flags to telemetry packet};
+  \node[term,  below=0.42cm of append] (tx)     {Transmit updated packet via CommunicationManager};
+  \node[side,  right=1.2cm of thresh]  (inhibit){Set PWR\_INHIBIT flag;\\broadcast warning packet};
+  \draw[arr] (start)  -- (raw);
+  \draw[arr] (raw)    -- (recon);
+  \draw[arr] (recon)  -- (thresh);
+  \draw[arr] (thresh) -- node[left,font=\scriptsize]{Yes} (append);
+  \draw[arr] (thresh) -| node[above,pos=0.25,font=\scriptsize]{No} (inhibit);
+  \draw[arr] (append) -- (tx);
+\end{tikzpicture}
+\caption{Power monitoring firmware flow: ADS1115 I$^2$C readout, voltage reconstruction, arm-inhibit decision, and telemetry packet update \cite{ads1115_datasheet,n4_pyro_control}. Authors' own diagram.}
+\label{fig:sw_power_flow}
+\end{figure}
 
 The reconstructed voltage is appended to the telemetry packet and compared against the inhibit threshold. If the value falls below \texttt{LAUNCH\_INHIBIT\_V}, the deployment arm flag is cleared and a ``\texttt{PWR INHIBIT}'' status byte is broadcast over XBee to the ground station before launch \cite{n4_pyro_control}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.78\textwidth, trim=0 12mm 0 0, clip]{images/Power_Monitoring_Design_Concept.png}
-\caption{Power monitoring concept: ADS1115 I\textsuperscript{2}C polling, voltage reconstruction, and launch-inhibit logic}
+\caption{Power monitoring hardware concept: ADS1115 I\textsuperscript{2}C polling, voltage-divider network, and launch-inhibit logic \cite{ads1115_datasheet,n4_pyro_control}. Authors' own diagram.}
 \label{fig:sw_power_concept}
 \end{figure}
 

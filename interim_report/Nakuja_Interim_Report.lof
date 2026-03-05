@@ -1,46 +1,56 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces XBee-PRO 900HP telemetry integration architecture used to improve end-to-end link reliability}}{2}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Full Nakuja N3 rocket showing the dual-deployment recovery configuration and component layout}}{4}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Rocket in flight demonstrating the dual-deployment sequence and aerodynamic stability during ascent}}{5}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces XBee radio module used as the long-range telemetry transceiver platform}}{6}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Beacon RSSI decay analysis showing signal degradation with distance and altitude}}{6}{figure.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces 900 MHz duck antenna used in the N4 telemetry configuration}}{7}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Dipole radiation ``donut'' pattern illustrating nulls along the antenna axis}}{7}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Example 900 MHz Bi-Quad ground-station antenna option for improved link margin}}{8}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Excessive crimson powder deployment showing the need for precise charge control}}{9}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Charge holder thermal damage from explosion highlighting thermal isolation requirements}}{9}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Post-deployment test showing charring effects and the importance of sealed containment}}{10}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Cut nichrome wire after pop testing, highlighting a key re-usability limitation in direct-wire ignition approaches}}{11}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Normalized isothermal and adiabatic pressure-volume curves used to justify near-adiabatic explosion modeling and the need for contained deployment}}{12}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Assembled avionics bay with integrated battery retention and vibration isolation}}{13}{figure.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Old flight-computer holder design showing failure during pop tests, where paired battery-cell loading increases reaction forces on the PLA-printed holder}}{14}{figure.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces XBee-PRO 900HP telemetry system integration showing complete signal path}}{15}{figure.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces XBee-PRO 900HP: primary long-range telemetry radio}}{19}{figure.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces XBee telemetry architecture: flight computer to ground station link}}{20}{figure.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces 900~MHz duck dipole: baseline rocket telemetry antenna}}{22}{figure.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Dipole radiation pattern: omnidirectional main lobe with axis null zones}}{22}{figure.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Base-station interconnect layout (Fritzing)}}{27}{figure.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Rocket XBee extension wiring layout (Fritzing)}}{28}{figure.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Flight-computer holder sled: stepped battery seating, load path, and upper electronics mounting platform}}{35}{figure.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces 18650 battery case for the stepped carrier assembly}}{35}{figure.24}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Raised edge battery support clearing the threaded-rod path}}{36}{figure.25}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Mid battery support for controlled pack height and fit}}{36}{figure.26}%
-\contentsline {figure}{\numberline {27}{\ignorespaces N4 flight firmware state machine: operational states, transitions, and per-state behaviour}}{41}{figure.27}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Deployment channel firmware flow: arm checks, PWM fire command, and post-event confirmation}}{42}{figure.28}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Power monitoring concept: ADS1115 I\textsuperscript {2}C polling, voltage reconstruction, and launch-inhibit logic}}{43}{figure.29}%
-\contentsline {figure}{\numberline {30}{\ignorespaces 18650 battery case: front, end, and top views with dimensions}}{46}{figure.30}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Mid battery support: orthographic views with key dimensions}}{46}{figure.31}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Raised edge battery support: orthographic views with key dimensions}}{47}{figure.32}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Flight-computer holder sled: 3D CAD model showing battery seating, rod clearances, and upper mounting platform}}{47}{figure.33}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Threaded-rod integration: raised edge cells preserve rod clearance and structural alignment}}{48}{figure.34}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Cross-sectional view of the avionics bay showing component stacking and internal clearances}}{48}{figure.35}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Avionics bay assembly: battery pack, holder, and electronics stack integrated}}{49}{figure.36}%
-\contentsline {figure}{\numberline {37}{\ignorespaces Full avionics bay integration showing sled mounted in cylindrical airframe section}}{49}{figure.37}%
-\contentsline {figure}{\numberline {38}{\ignorespaces Proteus simulation of the ADS1115 battery monitoring circuit: 47~k$\Omega $/10~k$\Omega $ divider, dual chute-detection inputs, and I\textsuperscript {2}C power distribution}}{50}{figure.38}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Fabricated flight-computer PCB after chemical etching: ESP32, XBee interface, and MOSFET ignition channels}}{51}{figure.39}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Current circuit implementation showing component placement and inter-board wiring}}{52}{figure.40}%
-\contentsline {figure}{\numberline {41}{\ignorespaces 18650 battery case cover -- 2D manufacturing drawing with title block}}{63}{figure.41}%
-\contentsline {figure}{\numberline {42}{\ignorespaces 18650 battery case body -- 2D manufacturing drawing with title block}}{64}{figure.42}%
-\contentsline {figure}{\numberline {43}{\ignorespaces Edge battery support bracket -- 2D manufacturing drawing with title block}}{65}{figure.43}%
-\contentsline {figure}{\numberline {44}{\ignorespaces Mid battery support bracket -- 2D manufacturing drawing with title block}}{66}{figure.44}%
-\contentsline {figure}{\numberline {45}{\ignorespaces Current flight computer EasyEDA schematic -- design reference for PCB fabrication (ESP32, XBee-PRO 900HP, power management, deployment circuitry)}}{67}{figure.45}%
-\contentsline {figure}{\numberline {46}{\ignorespaces N4 recovery system project Gantt chart showing planned phases, milestones, and current progress}}{69}{figure.46}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Full Nakuja N3 rocket showing the dual-deployment recovery configuration and component layout \cite {nakuja_website}}}{4}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Rocket in flight demonstrating the dual-deployment sequence and aerodynamic stability during ascent \cite {nakuja_website}}}{5}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces XBee radio module used as the long-range telemetry transceiver platform \cite {xbee_manual}}}{6}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Beacon RSSI decay analysis showing signal degradation with distance and altitude. Authors' own data.}}{6}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces 900~MHz duck antenna used in the N4 telemetry configuration \cite {arrl_antenna_book}}}{7}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Dipole radiation ``donut'' pattern illustrating nulls along the antenna axis \cite {pozar_microwave}}}{7}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Example 900~MHz Bi-Quad ground-station antenna option for improved link margin \cite {arrl_antenna_book}}}{8}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Excessive crimson powder deployment showing the need for precise charge control. Authors' own field test photograph \cite {n4_poptest_internal}.}}{9}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Charge holder thermal damage from explosion highlighting thermal isolation requirements. Authors' own photograph \cite {n4_poptest_internal}.}}{9}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Post-deployment test showing charring effects and the importance of sealed containment. Authors' own photograph \cite {n4_poptest_internal}.}}{10}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Cut nichrome wire after pop testing, highlighting a key re-usability limitation in direct-wire ignition approaches. Authors' own photograph \cite {n4_poptest_internal}.}}{10}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Normalized isothermal and adiabatic pressure-volume curves used to justify near-adiabatic explosion modelling and the need for contained deployment \cite {turns_combustion,glassman_combustion}}}{11}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Assembled avionics bay with integrated battery retention and vibration isolation. Authors' own fabrication.}}{12}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Old flight-computer holder design showing failure during pop tests, where paired battery-cell loading increases reaction forces on the PLA-printed holder. Authors' own design \cite {n4_poptest_internal}.}}{13}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces XBee-PRO 900HP telemetry system integration showing complete signal path \cite {n4_comm_architecture}}}{14}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces XBee-PRO 900HP transparent UART data-flow: ESP32 serial output routes directly through the radio link to the ground station with no packet-framing overhead \cite {digikey_xbee_dataflow,xbee_manual}}}{21}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces N4 XBee telemetry architecture: flight computer UART link to ground station \cite {n4_xbee_integration,n4_comm_architecture}. Authors' own diagram.}}{22}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces XBee-equipped ground control station (GCS) configuration showing transceiver, antenna, and laptop connection \cite {autoquad_gcs_xbee}}}{24}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Dipole radiation ``donut'' pattern: omnidirectional main lobe with axis null zones \cite {pozar_microwave,arrl_antenna_book}}}{24}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Base-station interconnect layout (Fritzing schematic). Authors' own diagram.}}{29}{figure.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Rocket XBee extension wiring layout (Fritzing schematic). Authors' own diagram.}}{30}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Flight-computer holder sled: stepped battery seating, load path, and upper electronics mounting platform}}{37}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces 18650 battery case for the stepped carrier assembly}}{37}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Raised edge battery support clearing the threaded-rod path}}{38}{figure.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Mid battery support for controlled pack height and fit}}{38}{figure.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Communication Manager architecture: three independent physical channels selectable at runtime; XBee is the primary recovery link, Beacon is the redundant research channel \cite {n4_comm_architecture}. Authors' own diagram.}}{44}{figure.27}%
+\contentsline {figure}{\numberline {28}{\ignorespaces N4 flight firmware state machine: operational states, transitions, and per-state behaviour}}{44}{figure.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Deployment channel firmware flow: arm checks, PWM fire command, and post-event confirmation}}{45}{figure.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Power monitoring firmware flow: ADS1115 I$^2$C readout, voltage reconstruction, arm-inhibit decision, and telemetry packet update \cite {ads1115_datasheet,n4_pyro_control}. Authors' own diagram.}}{47}{figure.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Power monitoring hardware concept: ADS1115 I\textsuperscript {2}C polling, voltage-divider network, and launch-inhibit logic \cite {ads1115_datasheet,n4_pyro_control}. Authors' own diagram.}}{48}{figure.31}%
+\contentsline {figure}{\numberline {32}{\ignorespaces 18650 battery case: front, end, and top views with dimensions. Authors' own CAD.}}{49}{figure.32}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Mid battery support: orthographic views with key dimensions. Authors' own CAD.}}{50}{figure.33}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Raised edge battery support: orthographic views with key dimensions. Authors' own CAD.}}{50}{figure.34}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Flight-computer holder sled: 3D CAD model showing battery seating, rod clearances, and upper mounting platform. Authors' own CAD.}}{51}{figure.35}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Threaded-rod integration: raised edge cells preserve rod clearance and structural alignment. Authors' own CAD.}}{51}{figure.36}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Labelled cross-sectional view of the avionics bay showing component stacking, retention rod paths, and internal clearances. Authors' own CAD.}}{52}{figure.37}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Full avionics bay assembly parts list showing all structural and electronic sub-components and their relative positions. Authors' own CAD.}}{52}{figure.38}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Avionics bay assembly: battery pack, holder, and electronics stack integrated. Authors' own fabrication.}}{53}{figure.39}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Full avionics bay integration showing sled mounted in cylindrical airframe section. Authors' own fabrication.}}{53}{figure.40}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Base station EasyEDA schematic showing XBee UART interface, Bluetooth passthrough, and RSSI measurement circuit. Authors' own design.}}{54}{figure.41}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Proteus simulation of the ADS1115 battery monitoring circuit: 47~k$\Omega $/10~k$\Omega $ divider, dual chute-detection inputs, and I\textsuperscript {2}C power distribution. Authors' own simulation.}}{55}{figure.42}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Flight-computer PCB after chemical etching (bare board, pre-assembly). Authors' own fabrication.}}{56}{figure.43}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Fully soldered and labelled flight-computer PCB (88~mm~$\times $~93~mm): ESP32, XBee UART interface, IRLZ44N MOSFET ignition channels, and ADS1115 monitoring circuit. Authors' own fabrication.}}{57}{figure.44}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Current circuit implementation showing component placement and inter-board wiring. Authors' own photograph.}}{58}{figure.45}%
+\contentsline {figure}{\numberline {46}{\ignorespaces 18650 battery case cover -- 2D manufacturing drawing with title block}}{68}{figure.46}%
+\contentsline {figure}{\numberline {47}{\ignorespaces 18650 battery case body -- 2D manufacturing drawing with title block}}{69}{figure.47}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Edge battery support bracket -- 2D manufacturing drawing with title block}}{70}{figure.48}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Mid battery support bracket -- 2D manufacturing drawing with title block}}{71}{figure.49}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Flight computer EasyEDA schematic: ESP32, XBee-PRO 900HP UART interface, IRLZ44N MOSFET ignition channels, and ADS1115 power monitoring. Authors' own design.}}{72}{figure.50}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Base station EasyEDA schematic: XBee UART interface, ESP32 receiver, and Bluetooth passthrough. Authors' own design.}}{73}{figure.51}%
+\contentsline {figure}{\numberline {52}{\ignorespaces N4 recovery system project Gantt chart showing planned phases, milestones, and current progress}}{75}{figure.52}%
+\contentsline {figure}{\numberline {53}{\ignorespaces Labelled cross-sectional view of the avionics bay showing component stacking order, threaded-rod paths, and internal clearance zones. Authors' own CAD.}}{76}{figure.53}%
+\contentsline {figure}{\numberline {54}{\ignorespaces Full avionics bay assembly parts list with annotated component identifications and sub-assembly references. Authors' own CAD.}}{77}{figure.54}%
+\contentsline {figure}{\numberline {55}{\ignorespaces Labelled avionics bay photograph identifying the battery pack, FC sled, retention rods, and deployment channel connectors. Authors' own fabrication.}}{78}{figure.55}%
+\contentsline {figure}{\numberline {56}{\ignorespaces Labelled flight-computer PCB photograph identifying the ESP32, XBee module, IRLZ44N MOSFETs, ADS1115, and passive components. Authors' own fabrication.}}{79}{figure.56}%

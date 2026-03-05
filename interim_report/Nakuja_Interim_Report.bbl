@@ -21,6 +21,63 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{nakuja_website}
+{Nakuja Project}, ``Nakuja rocketry - jkuat space program,''
+  \url{https://www.nakujarocket.com}, 2024, accessed: 2024.
+
+\bibitem{xbee_manual}
+\emph{XBee-PRO 900HP/XBee-PRO XSC RF Module User Guide}, Digi International
+  Inc., 2019, document 90002173.
+
+\bibitem{arrl_antenna_book}
+H.~W. Silver, Ed., \emph{The ARRL Antenna Book for Radio Communications},
+  24th~ed.\hskip 1em plus 0.5em minus 0.4em\relax ARRL, the National
+  Association for Amateur Radio, 2019.
+
+\bibitem{pozar_microwave}
+D.~M. Pozar, \emph{Microwave Engineering}, 4th~ed.\hskip 1em plus 0.5em minus
+  0.4em\relax John Wiley \& Sons, 2011.
+
+\bibitem{n4_poptest_internal}
+{Nakuja Recovery Team}, ``N4 pop-test records and chamber pressure notes,''
+  2025, internal project test documentation (188 kPa reference).
+
+\bibitem{turns_combustion}
+S.~R. Turns, \emph{An Introduction to Combustion: Concepts and Applications},
+  3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax McGraw-Hill, 2012.
+
+\bibitem{glassman_combustion}
+I.~Glassman, R.~A. Yetter, and N.~G. Glumac, \emph{Combustion}, 5th~ed.\hskip
+  1em plus 0.5em minus 0.4em\relax Academic Press, 2014.
+
+\bibitem{n4_comm_architecture}
+{Nakuja Recovery Team}, ``N4 communication architecture,'' 2026, internal
+  technical documentation.
+
+\bibitem{digikey_xbee_dataflow}
+{Digi International / DigiKey Electronics}, ``Xbee-pro 900hp transparent uart
+  data-flow diagram,'' 2019, product resource image. Available at:
+  \url{https://www.digikey.jp/htmldatasheets/production/3531891/0/0/1/media/bg12.jpg}.
+  Accessed: 2026.
+
+\bibitem{n4_xbee_integration}
+{Nakuja Recovery Team}, ``Xbee communication integration - n4 flight
+  software,'' 2026, internal technical documentation.
+
+\bibitem{autoquad_gcs_xbee}
+{AutoQuad Project}, ``Ground control station xbee telemetry link
+  configuration,'' 2012, project documentation image. Available at:
+  \url{http://autoquad.org/wp-content/uploads/2012/06/GCS_XBEE.png}. Accessed:
+  2026.
+
+\bibitem{ads1115_datasheet}
+\emph{ADS111x Ultra-Small, Low-Power, I2C-Compatible, 860 SPS, 16-Bit ADCs},
+  Texas Instruments, 2020, data sheet, Rev. E.
+
+\bibitem{n4_pyro_control}
+{Nakuja Recovery Team}, ``N4 pyro control system,'' 2026, internal technical
+  documentation.
+
 \bibitem{sutton_rocket}
 G.~P. Sutton and O.~Biblarz, \emph{Rocket Propulsion Elements}, 9th~ed.\hskip
   1em plus 0.5em minus 0.4em\relax John Wiley \& Sons, 2016.
@@ -29,26 +86,9 @@ G.~P. Sutton and O.~Biblarz, \emph{Rocket Propulsion Elements}, 9th~ed.\hskip
 T.~W. Knacke, ``Parachute recovery systems design manual,'' \emph{Naval Weapons
   Center Technical Report}, no. NWC TP 6575, 1991.
 
-\bibitem{nakuja_website}
-{Nakuja Project}, ``Nakuja rocketry - jkuat space program,''
-  \url{https://www.nakujarocket.com}, 2024, accessed: 2024.
-
 \bibitem{telemetry_reliability}
 J.~Anderson and R.~Smith, ``Reliability analysis of rocket telemetry systems,''
   in \emph{AIAA Atmospheric Flight Mechanics Conference}, 2018.
-
-\bibitem{xbee_manual}
-\emph{XBee-PRO 900HP/XBee-PRO XSC RF Module User Guide}, Digi International
-  Inc., 2019, document 90002173.
-
-\bibitem{pozar_microwave}
-D.~M. Pozar, \emph{Microwave Engineering}, 4th~ed.\hskip 1em plus 0.5em minus
-  0.4em\relax John Wiley \& Sons, 2011.
-
-\bibitem{arrl_antenna_book}
-H.~W. Silver, Ed., \emph{The ARRL Antenna Book for Radio Communications},
-  24th~ed.\hskip 1em plus 0.5em minus 0.4em\relax ARRL, the National
-  Association for Amateur Radio, 2019.
 
 \bibitem{black_powder_characterization}
 M.~Roberts and J.~Thompson, ``Experimental characterization of black powder
@@ -74,14 +114,6 @@ R.~Nakka, ``Electric igniter design, performance, and repeatability in amateur
   rocket pyrotechnic applications,'' \emph{International Journal of Energetic
   Materials and Chemical Propulsion}, vol.~20, no.~4, pp. 327--346, 2021.
 
-\bibitem{turns_combustion}
-S.~R. Turns, \emph{An Introduction to Combustion: Concepts and Applications},
-  3rd~ed.\hskip 1em plus 0.5em minus 0.4em\relax McGraw-Hill, 2012.
-
-\bibitem{glassman_combustion}
-I.~Glassman, R.~A. Yetter, and N.~G. Glumac, \emph{Combustion}, 5th~ed.\hskip
-  1em plus 0.5em minus 0.4em\relax Academic Press, 2014.
-
 \bibitem{high_g_electronics}
 D.~Thompson and S.~Wilson, ``Design of electronics for high-g shock
   environments,'' Sandia National Laboratories, Tech. Rep. SAND2015-8342, 2015.
@@ -98,10 +130,6 @@ R.~Nakka, ``Solid rocket motor theory -- thrust,'' Online, 2023, accessed:
 \bibitem{nakka_eqns}
 ------, ``Derivation of selected rocket equations,'' Online, 2016, accessed:
   2026-02-28, \url{https://www.nakka-rocketry.net/eqns.html}.
-
-\bibitem{n4_poptest_internal}
-{Nakuja Recovery Team}, ``N4 pop-test records and chamber pressure notes,''
-  2025, internal project test documentation (188 kPa reference).
 
 \bibitem{petg_mechanical}
 L.~Santana and J.~L. Alves, ``Mechanical properties of petg parts manufactured
@@ -130,28 +158,20 @@ R.~T.~L. Ferreira, I.~C. Amatte, T.~A. Dutra, and D.~Bürger, ``Experimental
   datasheet,'' Archived online PDF, 2013, accessed: 2026-02-28,
   \url{https://web.archive.org/web/20130603055918/http://www.panasonic.com/industrial/includes/pdf/Panasonic_LiIon_CGR18650DA.pdf}.
 
-\bibitem{n4_xbee_integration}
-{Nakuja Recovery Team}, ``Xbee communication integration - n4 flight
-  software,'' 2026, internal technical documentation.
-
-\bibitem{n4_comm_architecture}
-------, ``N4 communication architecture,'' 2026, internal technical
-  documentation.
+\bibitem{n4_beacon_configuration}
+{Nakuja Recovery Team}, ``N4 beacon configuration guide,'' 2026, internal
+  technical documentation.
 
 \bibitem{esp32_datasheet}
 \emph{ESP32 Series Datasheet}, Espressif Systems, 2023, version 4.3.
 
-\bibitem{ads1115_datasheet}
-\emph{ADS111x Ultra-Small, Low-Power, I2C-Compatible, 860 SPS, 16-Bit ADCs},
-  Texas Instruments, 2020, data sheet, Rev. E.
-
-\bibitem{n4_pyro_control}
-{Nakuja Recovery Team}, ``N4 pyro control system,'' 2026, internal technical
-  documentation.
+\bibitem{voltage_divider_theory}
+A.~S. Sedra and K.~C. Smith, \emph{Microelectronic Circuits}, 8th~ed.\hskip 1em
+  plus 0.5em minus 0.4em\relax Oxford University Press, 2019.
 
 \bibitem{n4_pwm_config}
-------, ``Pwm configuration via esp-now commands,'' 2026, internal technical
-  documentation.
+{Nakuja Recovery Team}, ``Pwm configuration via esp-now commands,'' 2026,
+  internal technical documentation.
 
 \bibitem{irlz44n_datasheet}
 {Infineon Technologies}, \emph{{IRLZ44N} Power {MOSFET}
@@ -162,5 +182,10 @@ R.~T.~L. Ferreira, I.~C. Amatte, T.~A. Dutra, and D.~Bürger, ``Experimental
 \bibitem{mosfet_switching}
 C.~Rodriguez, ``Application note: Mosfet switching characteristics and gate
   drive requirements,'' Texas Instruments, Tech. Rep. SLVA618A, 2020.
+
+\bibitem{n4_github}
+{Nakuja Recovery Team}, ``N4 flight software -- full firmware codebase,''
+  GitHub Repository, 2026, available at:
+  \url{https://github.com/nakujaproject/N4-Flight-Software}.
 
 \end{thebibliography}
