@@ -1,4 +1,4 @@
-\section{Methodology}
+﻿\section{Methodology}
 \label{sec:methodology}
 
 This chapter presents the \textit{what, why, and how} of the N4 recovery-system design process. In line with the interim-report guidelines, this chapter contains design considerations, calculations, circuit and CAD development workflow, and implementation planning for each subsystem.
@@ -99,7 +99,7 @@ The beacon system has been field-tested to 4~km line-of-sight using a 2.4~GHz du
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.72\textwidth]{images/XBeeDiagram.png}
-\caption{N4 XBee telemetry architecture: flight computer UART link to ground station \cite{n4_xbee_integration,n4_comm_architecture}. Authors' own diagram.}
+\caption{N4 XBee telemetry architecture: flight computer UART link to ground station \cite{n4_xbee_integration,n4_comm_architecture}. Project diagram.}
 \label{fig:method_xbee_system}
 \end{figure}
 
@@ -267,14 +267,14 @@ The Fritzing layouts below document the early wiring verification stage. Final E
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.62\textwidth]{images/Base_Station_Design.jpeg}
-\caption{Base-station interconnect layout (Fritzing schematic). Authors' own diagram.}
+\caption{Base-station interconnect layout (Fritzing schematic). Project diagram.}
 \label{fig:fritzing_base}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.62\textwidth]{images/Rocket_Extension_Design.jpeg}
-\caption{Rocket XBee extension wiring layout (Fritzing schematic). Authors' own diagram.}
+\caption{Rocket XBee extension wiring layout (Fritzing schematic). Project diagram.}
 \label{fig:fritzing_rocket}
 \end{figure}
 
@@ -669,7 +669,7 @@ All three channels are coordinated by the CommunicationManager class, which sele
   \node[rangelbl, right=0.5cm of beacon] {\textit{Redundant research channel}};
   \node[rangelbl, right=0.5cm of mqtt] {\textit{Pad ops / ground only}};
 \end{tikzpicture}
-\caption{Communication Manager architecture: three independent physical channels selectable at runtime; XBee is the primary recovery link, Beacon is the redundant research channel \cite{n4_comm_architecture}. Authors' own diagram.}
+\caption{Communication Manager architecture: three independent physical channels selectable at runtime; XBee is the primary recovery link, Beacon is the redundant research channel \cite{n4_comm_architecture}. Project diagram.}
 \label{fig:sw_comm_manager}
 \end{figure}
 
@@ -798,7 +798,7 @@ Figure~\ref{fig:sw_power_flow} shows the firmware flow for the monitoring integr
   \draw[arr] (thresh) -| node[above,pos=0.25,font=\scriptsize]{No} (inhibit);
   \draw[arr] (append) -- (tx);
 \end{tikzpicture}
-\caption{Power monitoring firmware flow: ADS1115 I$^2$C readout, voltage reconstruction, arm-inhibit decision, and telemetry packet update \cite{ads1115_datasheet,n4_pyro_control}. Authors' own diagram.}
+\caption{Power monitoring firmware flow: ADS1115 I$^2$C readout, voltage reconstruction, arm-inhibit decision, and telemetry packet update \cite{ads1115_datasheet,n4_pyro_control}. Project diagram.}
 \label{fig:sw_power_flow}
 \end{figure}
 
@@ -807,7 +807,7 @@ The reconstructed voltage is appended to the telemetry packet and compared again
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.78\textwidth, trim=0 12mm 0 0, clip]{images/Power_Monitoring_Design_Concept.png}
-\caption{Power monitoring hardware concept: ADS1115 I\textsuperscript{2}C polling, voltage-divider network, and launch-inhibit logic \cite{ads1115_datasheet,n4_pyro_control}. Authors' own diagram.}
+\caption{Power monitoring hardware concept: ADS1115 I\textsuperscript{2}C polling, voltage-divider network, and launch-inhibit logic \cite{ads1115_datasheet,n4_pyro_control}. Project diagram.}
 \label{fig:sw_power_concept}
 \end{figure}
 

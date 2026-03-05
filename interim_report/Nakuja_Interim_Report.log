@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  5 MAR 2026 09:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  5 MAR 2026 09:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2633,16 +2633,7 @@ File: images/Labeled/Full_assemly_Parts_List.PNG Graphic file (type png)
 Package pdftex.def Info: images/Labeled/Full_assemly_Parts_List.PNG  used on in
 put line 115.
 (pdftex.def)             Requested size: 370.74237pt x 267.5533pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[76]
-<images/Labeled/Avionics_Bay.PNG, id=1534, 442.65375pt x 312.41719pt>
+<images/Labeled/Avionics_Bay.PNG, id=1530, 442.65375pt x 312.41719pt>
 File: images/Labeled/Avionics_Bay.PNG Graphic file (type png)
 <use images/Labeled/Avionics_Bay.PNG>
 Package pdftex.def Info: images/Labeled/Avionics_Bay.PNG  used on input line 12
@@ -2656,7 +2647,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[77]
+[76]
 File: images/Labeled/Soldered_FC.PNG Graphic file (type png)
 <use images/Labeled/Soldered_FC.PNG>
 Package pdftex.def Info: images/Labeled/Soldered_FC.PNG  used on input line 129
@@ -2670,7 +2661,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[78 <./images/Labeled/Avionics_Bay.PNG>]
+[77 <./images/Labeled/Avionics_Bay.PNG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2678,7 +2669,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[79]
+[78]
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
@@ -2697,6 +2688,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
+[79]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
 [80]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2706,14 +2705,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [81]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[82]
 Overfull \hbox (36.4604pt too wide) in paragraph at lines 251--252
 [][] 
  []
@@ -2725,7 +2716,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[83])
+[82])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2733,7 +2724,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[84] (Nakuja_Interim_Report.aux)
+[83] (Nakuja_Interim_Report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -2746,8 +2737,8 @@ Package rerunfilecheck Info: File `Nakuja_Interim_Report.out' has not changed.
 (rerunfilecheck)             Checksum: 0B50E74D4909372859FED463D4724B61;17934.
  ) 
 Here is how much of TeX's memory you used:
- 25558 strings out of 467870
- 480653 string characters out of 5418838
+ 25557 strings out of 467870
+ 480646 string characters out of 5418838
  1204203 words of memory out of 5000000
  53509 multiletter control sequences out of 15000+600000
  638700 words of font info for 82 fonts, out of 8000000 for 9000
@@ -2774,9 +2765,9 @@ ts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/user/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/user/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/user/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Nakuja_Interim_Report.pdf (102 pages, 6408494 bytes).
+Output written on Nakuja_Interim_Report.pdf (101 pages, 6407560 bytes).
 PDF statistics:
- 1870 PDF objects out of 2073 (max. 8388607)
- 485 named destinations out of 1000 (max. 500000)
+ 1866 PDF objects out of 2073 (max. 8388607)
+ 484 named destinations out of 1000 (max. 500000)
  903 words of extra memory for PDF output out of 10000 (max. 10000000)
 

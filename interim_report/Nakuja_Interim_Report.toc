@@ -87,4 +87,4 @@
 \contentsline {section}{\numberline {C}Appendix C: Project Budget}{74}{appendix.C}%
 \contentsline {section}{\numberline {D}Appendix D: Project Timeplan}{75}{appendix.D}%
 \contentsline {section}{\numberline {E}Appendix E: Labelled Assembly Reference Photographs}{75}{appendix.E}%
-\contentsline {section}{\numberline {F}Appendix F: Firmware Code Snippets and Repository}{80}{appendix.F}%
+\contentsline {section}{\numberline {F}Appendix F: Firmware Code Snippets and Repository}{79}{appendix.F}%
