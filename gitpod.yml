@@ -1,0 +1,11 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: echo "LaTeX environment is ready."
+    command: echo "Happy coding!"
+
+extensions:
+  - james-yu.latex-workshop
+  - github.copilot
+  - valentjn.vscode-ltex
