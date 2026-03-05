@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  27 FEB 2026 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  5 MAR 2026 03:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -159,18 +159,92 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count298
 \@thisrulewidth=\dimen172
 )
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen173
+\ar@mcellbox=\box55
+\extrarowheight=\dimen174
+\NC@list=\toks23
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box56
+)
+\TX@col@width=\dimen175
+\TX@old@table=\dimen176
+\TX@old@col=\dimen177
+\TX@target=\dimen178
+\TX@delta=\dimen179
+\TX@cols=\count299
+\TX@ftn=\toks24
+)
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks25
+\XKV@tempa@toks=\toks26
+)
+\XKV@depth=\count300
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.st
+y
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box57
+)
+\tc@llx=\dimen180
+\tc@lly=\dimen181
+\tc@urx=\dimen182
+\tc@ury=\dimen183
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+File: tc-pdftex.def 2025/02/26 v2.3 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen184
+\adjbox@Height=\dimen185
+\adjbox@Depth=\dimen186
+\adjbox@Totalheight=\dimen187
+\adjbox@pwidth=\dimen188
+\adjbox@pheight=\dimen189
+\adjbox@pdepth=\dimen190
+\adjbox@ptotalheight=\dimen191
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count301
+) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box58
+\sift@deathcycles=\count302
+\@vwid@loff=\dimen192
+\@vwid@roff=\dimen193
+)
+==> First Aid for varwidth.sty applied!
+) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count299
-\float@exts=\toks23
-\float@box=\box55
-\@float@everytoks=\toks24
-\@floatcapt=\box56
+\c@float@type=\count303
+\float@exts=\toks27
+\float@box=\box59
+\@float@everytoks=\toks28
+\@floatcapt=\box60
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
@@ -180,34 +254,24 @@ Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen173
-\captionmargin=\dimen174
-\caption@leftmargin=\dimen175
-\caption@rightmargin=\dimen176
-\caption@width=\dimen177
-\caption@indent=\dimen178
-\caption@parindent=\dimen179
-\caption@hangindent=\dimen180
+\caption@tempdima=\dimen194
+\captionmargin=\dimen195
+\caption@leftmargin=\dimen196
+\caption@rightmargin=\dimen197
+\caption@width=\dimen198
+\caption@indent=\dimen199
+\caption@parindent=\dimen256
+\caption@hangindent=\dimen257
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count300
-\c@continuedfloat=\count301
+\c@caption@flags=\count304
+\c@continuedfloat=\count305
 Package caption Info: float package is loaded.
 )
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count302
+\c@subfigure=\count306
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count303
-)
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
-Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen181
-\ar@mcellbox=\box57
-\extrarowheight=\dimen182
-\NC@list=\toks25
-\extratabsurround=\skip55
-\backup@length=\skip56
-\ar@cellbox=\box58
+\c@subtable=\count307
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
@@ -215,25 +279,25 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTright=\skip58
 \LTpre=\skip59
 \LTpost=\skip60
-\LTchunksize=\count304
-\LTcapwidth=\dimen183
-\LT@head=\box59
-\LT@firsthead=\box60
-\LT@foot=\box61
-\LT@lastfoot=\box62
-\LT@gbox=\box63
-\LT@cols=\count305
-\LT@rows=\count306
-\c@LT@tables=\count307
-\c@LT@chunks=\count308
-\LT@p@ftn=\toks26
+\LTchunksize=\count308
+\LTcapwidth=\dimen258
+\LT@head=\box61
+\LT@firsthead=\box62
+\LT@foot=\box63
+\LT@lastfoot=\box64
+\LT@gbox=\box65
+\LT@cols=\count309
+\LT@rows=\count310
+\c@LT@tables=\count311
+\c@LT@chunks=\count312
+\LT@p@ftn=\toks29
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip61
-\multirow@cntb=\count309
+\multirow@cntb=\count313
 \multirow@dima=\skip62
-\bigstrutjot=\dimen184
+\bigstrutjot=\dimen259
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
@@ -254,27 +318,27 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count310
-\lst@gtempboxa=\box64
-\lst@token=\toks27
-\lst@length=\count311
-\lst@currlwidth=\dimen185
-\lst@column=\count312
-\lst@pos=\count313
-\lst@lostspace=\dimen186
-\lst@width=\dimen187
-\lst@newlines=\count314
-\lst@lineno=\count315
-\lst@maxwidth=\dimen188
+\lst@mode=\count314
+\lst@gtempboxa=\box66
+\lst@token=\toks30
+\lst@length=\count315
+\lst@currlwidth=\dimen260
+\lst@column=\count316
+\lst@pos=\count317
+\lst@lostspace=\dimen261
+\lst@width=\dimen262
+\lst@newlines=\count318
+\lst@lineno=\count319
+\lst@maxwidth=\dimen263
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count316
-\lst@skipnumbers=\count317
-\lst@framebox=\box65
+\c@lstnumber=\count320
+\lst@skipnumbers=\count321
+\lst@framebox=\box67
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
@@ -297,13 +361,13 @@ ty
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
 common.tex
-\pgfutil@everybye=\toks28
-\pgfutil@tempdima=\dimen189
-\pgfutil@tempdimb=\dimen190
+\pgfutil@everybye=\toks31
+\pgfutil@tempdima=\dimen264
+\pgfutil@tempdimb=\dimen265
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-
 latex.def
-\pgfutil@abb=\box66
+\pgfutil@abb=\box68
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.c
 ode.tex
@@ -322,33 +386,33 @@ Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.
 code.tex
-\pgfkeys@pathtoks=\toks29
-\pgfkeys@temptoks=\toks30
+\pgfkeys@pathtoks=\toks32
+\pgfkeys@temptoks=\toks33
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysl
 ibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks31
+\pgfkeys@tmptoks=\toks34
 ))
-\pgf@x=\dimen191
-\pgf@y=\dimen192
-\pgf@xa=\dimen193
-\pgf@ya=\dimen194
-\pgf@xb=\dimen195
-\pgf@yb=\dimen196
-\pgf@xc=\dimen197
-\pgf@yc=\dimen198
-\pgf@xd=\dimen199
-\pgf@yd=\dimen256
+\pgf@x=\dimen266
+\pgf@y=\dimen267
+\pgf@xa=\dimen268
+\pgf@ya=\dimen269
+\pgf@xb=\dimen270
+\pgf@yb=\dimen271
+\pgf@xc=\dimen272
+\pgf@yc=\dimen273
+\pgf@xd=\dimen274
+\pgf@yd=\dimen275
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count318
-\c@pgf@countb=\count319
-\c@pgf@countc=\count320
-\c@pgf@countd=\count321
-\t@pgf@toka=\toks32
-\t@pgf@tokb=\toks33
-\t@pgf@tokc=\toks34
-\pgf@sys@id@count=\count322
+\c@pgf@counta=\count322
+\c@pgf@countb=\count323
+\c@pgf@countc=\count324
+\c@pgf@countd=\count325
+\t@pgf@toka=\toks35
+\t@pgf@tokb=\toks36
+\t@pgf@tokc=\toks37
+\pgf@sys@id@count=\count326
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cf
 g
@@ -367,8 +431,8 @@ File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
 softpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count323
-\pgfsyssoftpath@bigbuffer@items=\count324
+\pgfsyssoftpath@smallbuffer@items=\count327
+\pgfsyssoftpath@bigbuffer@items=\count328
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys
 protocol.code.tex
@@ -384,12 +448,12 @@ tex
 ode.tex)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser
 .code.tex
-\pgfmath@dimen=\dimen257
-\pgfmath@count=\count325
-\pgfmath@box=\box67
-\pgfmath@toks=\toks35
-\pgfmath@stack@operand=\toks36
-\pgfmath@stack@operation=\toks37
+\pgfmath@dimen=\dimen276
+\pgfmath@count=\count329
+\pgfmath@box=\box69
+\pgfmath@toks=\toks38
+\pgfmath@stack@operand=\toks39
+\pgfmath@stack@operation=\toks40
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfuncti
 ons.code.tex)
@@ -413,59 +477,59 @@ ons.integerarithmetics.code.tex)
 ode.tex)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.
 code.tex
-\c@pgfmathroundto@lastzeros=\count326
+\c@pgfmathroundto@lastzeros=\count330
 ))
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.t
 ex)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 points.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen258
-\pgf@picmaxx=\dimen259
-\pgf@picminy=\dimen260
-\pgf@picmaxy=\dimen261
-\pgf@pathminx=\dimen262
-\pgf@pathmaxx=\dimen263
-\pgf@pathminy=\dimen264
-\pgf@pathmaxy=\dimen265
-\pgf@xx=\dimen266
-\pgf@xy=\dimen267
-\pgf@yx=\dimen268
-\pgf@yy=\dimen269
-\pgf@zx=\dimen270
-\pgf@zy=\dimen271
+\pgf@picminx=\dimen277
+\pgf@picmaxx=\dimen278
+\pgf@picminy=\dimen279
+\pgf@picmaxy=\dimen280
+\pgf@pathminx=\dimen281
+\pgf@pathmaxx=\dimen282
+\pgf@pathminy=\dimen283
+\pgf@pathmaxy=\dimen284
+\pgf@xx=\dimen285
+\pgf@xy=\dimen286
+\pgf@yx=\dimen287
+\pgf@yy=\dimen288
+\pgf@zx=\dimen289
+\pgf@zy=\dimen290
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 pathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen272
-\pgf@path@lasty=\dimen273
+\pgf@path@lastx=\dimen291
+\pgf@path@lasty=\dimen292
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 pathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen274
-\pgf@shorten@start@additional=\dimen275
+\pgf@shorten@end@additional=\dimen293
+\pgf@shorten@start@additional=\dimen294
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 scopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfpic=\box68
-\pgf@hbox=\box69
-\pgf@layerbox@main=\box70
-\pgf@picture@serial@count=\count327
+\pgfpic=\box70
+\pgf@hbox=\box71
+\pgf@layerbox@main=\box72
+\pgf@picture@serial@count=\count331
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 graphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen276
+\pgflinewidth=\dimen295
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 transformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen277
-\pgf@pt@y=\dimen278
-\pgf@pt@temp=\dimen279
+\pgf@pt@x=\dimen296
+\pgf@pt@y=\dimen297
+\pgf@pt@temp=\dimen298
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 quick.code.tex
@@ -482,14 +546,14 @@ File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 arrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen280
+\pgfarrowsep=\dimen299
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 shade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen281
-\pgf@sys@shading@range@num=\count328
-\pgf@shadingcount=\count329
+\pgf@max=\dimen300
+\pgf@sys@shading@range@num=\count332
+\pgf@shadingcount=\count333
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 image.code.tex
@@ -498,7 +562,7 @@ File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 external.code.tex
 File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfexternal@startupbox=\box71
+\pgfexternal@startupbox=\box73
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore
 layers.code.tex
@@ -519,7 +583,7 @@ File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodules
 hapes.code.tex
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfnodeparttextbox=\box72
+\pgfnodeparttextbox=\box74
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulep
 lot.code.tex
@@ -528,8 +592,8 @@ File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcom
 p-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen282
-\pgf@nodesepend=\dimen283
+\pgf@nodesepstart=\dimen301
+\pgf@nodesepend=\dimen302
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcom
 p-version-1-18.sty
@@ -547,10 +611,10 @@ tex))
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.c
 ode.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen284
-\pgffor@skip=\dimen285
-\pgffor@stack=\toks38
-\pgffor@toks=\toks39
+\pgffor@iter=\dimen303
+\pgffor@skip=\dimen304
+\pgffor@stack=\toks41
+\pgffor@toks=\toks42
 ))
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
 \tikz.code.tex
@@ -559,34 +623,34 @@ Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
 ryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count330
-\pgfplotmarksize=\dimen286
+\pgf@plot@mark@count=\count334
+\pgfplotmarksize=\dimen305
 )
-\tikz@lastx=\dimen287
-\tikz@lasty=\dimen288
-\tikz@lastxsaved=\dimen289
-\tikz@lastysaved=\dimen290
-\tikz@lastmovetox=\dimen291
-\tikz@lastmovetoy=\dimen292
-\tikzleveldistance=\dimen293
-\tikzsiblingdistance=\dimen294
-\tikz@figbox=\box73
-\tikz@figbox@bg=\box74
-\tikz@tempbox=\box75
-\tikz@tempbox@bg=\box76
-\tikztreelevel=\count331
-\tikznumberofchildren=\count332
-\tikznumberofcurrentchild=\count333
-\tikz@fig@count=\count334
+\tikz@lastx=\dimen306
+\tikz@lasty=\dimen307
+\tikz@lastxsaved=\dimen308
+\tikz@lastysaved=\dimen309
+\tikz@lastmovetox=\dimen310
+\tikz@lastmovetoy=\dimen311
+\tikzleveldistance=\dimen312
+\tikzsiblingdistance=\dimen313
+\tikz@figbox=\box75
+\tikz@figbox@bg=\box76
+\tikz@tempbox=\box77
+\tikz@tempbox@bg=\box78
+\tikztreelevel=\count335
+\tikznumberofchildren=\count336
+\tikznumberofcurrentchild=\count337
+\tikz@fig@count=\count338
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulem
 atrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count335
-\pgfmatrixcurrentcolumn=\count336
-\pgf@matrix@numberofcolumns=\count337
+\pgfmatrixcurrentrow=\count339
+\pgfmatrixcurrentcolumn=\count340
+\pgf@matrix@numberofcolumns=\count341
 )
-\tikz@expandcount=\count338
+\tikz@expandcount=\count342
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
 /libraries\tikzlibrarytopaths.code.tex
@@ -599,13 +663,13 @@ File: tikzlibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibra
 ryarrows.code.tex
 File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\arrowsize=\dimen295
+\arrowsize=\dimen314
 ))
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
 /libraries\tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@layerbox@background=\box77
-\pgf@layerboxsaved@background=\box78
+\pgf@layerbox@background=\box79
+\pgf@layerboxsaved@background=\box80
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
 /libraries\tikzlibrarycalc.code.tex
@@ -636,34 +700,34 @@ r.sty
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfcalen
 dar.code.tex
 File: pgfcalendar.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfcalendarcurrentjulian=\count339
-\pgf@cal@easter@Y=\count340
-\pgf@cal@easter@G=\count341
-\pgf@cal@easter@C=\count342
-\pgf@cal@easter@X=\count343
-\pgf@cal@easter@Z=\count344
-\pgf@cal@easter@D=\count345
-\pgf@cal@easter@E=\count346
-\pgf@cal@easter@N=\count347
-\pgf@cal@easter@M=\count348
-\pgf@cal@easter@julianday=\count349
+\pgfcalendarcurrentjulian=\count343
+\pgf@cal@easter@Y=\count344
+\pgf@cal@easter@G=\count345
+\pgf@cal@easter@C=\count346
+\pgf@cal@easter@X=\count347
+\pgf@cal@easter@Z=\count348
+\pgf@cal@easter@D=\count349
+\pgf@cal@easter@E=\count350
+\pgf@cal@easter@N=\count351
+\pgf@cal@easter@M=\count352
+\pgf@cal@easter@julianday=\count353
 ))
-\gtt@currentline=\count350
-\gtt@lasttitleline=\count351
-\gtt@currgrid=\count352
-\gtt@chartwidth=\count353
-\gtt@lasttitleslot=\count354
-\gtt@elementid=\count355
-\gtt@today@slot=\count356
-\gtt@startjulian=\count357
-\gtt@endjulian=\count358
-\gtt@chartid=\count359
-\gtt@vrule@slot=\count360
-\gtt@calendar@slots=\count361
-\gtt@calendar@weeknumber=\count362
-\gtt@calendar@startofweek=\count363
-\gtt@left@slot=\count364
-\gtt@right@slot=\count365
+\gtt@currentline=\count354
+\gtt@lasttitleline=\count355
+\gtt@currgrid=\count356
+\gtt@chartwidth=\count357
+\gtt@lasttitleslot=\count358
+\gtt@elementid=\count359
+\gtt@today@slot=\count360
+\gtt@startjulian=\count361
+\gtt@endjulian=\count362
+\gtt@chartid=\count363
+\gtt@vrule@slot=\count364
+\gtt@calendar@slots=\count365
+\gtt@calendar@weeknumber=\count366
+\gtt@calendar@startofweek=\count367
+\gtt@left@slot=\count368
+\gtt@right@slot=\count369
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz
 /libraries\tikzlibraryshapes.code.tex
@@ -704,26 +768,26 @@ File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\p
 gflibraryshapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfnodepartlowerbox=\box79
-\pgfnodeparttwobox=\box80
-\pgfnodepartthreebox=\box81
-\pgfnodepartfourbox=\box82
-\pgfnodeparttwentybox=\box83
-\pgfnodepartnineteenbox=\box84
-\pgfnodeparteighteenbox=\box85
-\pgfnodepartseventeenbox=\box86
-\pgfnodepartsixteenbox=\box87
-\pgfnodepartfifteenbox=\box88
-\pgfnodepartfourteenbox=\box89
-\pgfnodepartthirteenbox=\box90
-\pgfnodeparttwelvebox=\box91
-\pgfnodepartelevenbox=\box92
-\pgfnodeparttenbox=\box93
-\pgfnodepartninebox=\box94
-\pgfnodeparteightbox=\box95
-\pgfnodepartsevenbox=\box96
-\pgfnodepartsixbox=\box97
-\pgfnodepartfivebox=\box98
+\pgfnodepartlowerbox=\box81
+\pgfnodeparttwobox=\box82
+\pgfnodepartthreebox=\box83
+\pgfnodepartfourbox=\box84
+\pgfnodeparttwentybox=\box85
+\pgfnodepartnineteenbox=\box86
+\pgfnodeparteighteenbox=\box87
+\pgfnodepartseventeenbox=\box88
+\pgfnodepartsixteenbox=\box89
+\pgfnodepartfifteenbox=\box90
+\pgfnodepartfourteenbox=\box91
+\pgfnodepartthirteenbox=\box92
+\pgfnodeparttwelvebox=\box93
+\pgfnodepartelevenbox=\box94
+\pgfnodeparttenbox=\box95
+\pgfnodepartninebox=\box96
+\pgfnodeparteightbox=\box97
+\pgfnodepartsevenbox=\box98
+\pgfnodepartsixbox=\box99
+\pgfnodepartfivebox=\box100
 )))
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -754,8 +818,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip86
 \cftfigindent=\skip87
 \cftfignumwidth=\skip88
-\c@lofdepth=\count366
-\c@lotdepth=\count367
+\c@lofdepth=\count370
+\c@lotdepth=\count371
 \cftbeforelottitleskip=\skip89
 \cftafterlottitleskip=\skip90
 \cftbeforetabskip=\skip91
@@ -808,19 +872,19 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count368
+\c@section@level=\count372
 ) (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count369
+\etb@tempcnta=\count373
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.st
 y
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen296
-\Hy@linkcounter=\count370
-\Hy@pagecounter=\count371
+\@linkdim=\dimen315
+\Hy@linkcounter=\count374
+\Hy@pagecounter=\count375
  (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -829,7 +893,7 @@ Now handling font encoding PD1 ...
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count372
+\Hy@SavedSpaceFactor=\count376
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
@@ -843,14 +907,14 @@ Package hyperref Info: Plain pages OFF on input line 4210.
 Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count373
+\c@Hy@tempcnt=\count377
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen297
+\XeTeXLinkMargin=\dimen316
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -860,9 +924,9 @@ sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count374
-\Field@Width=\dimen298
-\Fld@charsize=\dimen299
+\Fld@menulength=\count378
+\Field@Width=\dimen317
+\Fld@charsize=\dimen318
 Package hyperref Info: Hyper figures OFF on input line 6078.
 Package hyperref Info: Link nesting OFF on input line 6083.
 Package hyperref Info: Hyper index ON on input line 6086.
@@ -870,16 +934,16 @@ Package hyperref Info: backreferencing OFF on input line 6093.
 Package hyperref Info: Link coloring OFF on input line 6098.
 Package hyperref Info: Link coloring with OCG OFF on input line 6103.
 Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count375
-\c@Item=\count376
-\c@Hfootnote=\count377
+\Hy@abspage=\count379
+\c@Item=\count380
+\c@Hfootnote=\count381
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
-\Fld@listcount=\count378
-\c@bookmark@seq@number=\count379
+\Fld@listcount=\count382
+\c@bookmark@seq@number=\count383
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfile
 check.sty
@@ -896,53 +960,53 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 ) (Styles/hangcaption.sty
 \captionwidth=\skip95
 ) (Styles/fancyheadings.sty
-\headrulewidth=\dimen300
-\footrulewidth=\dimen301
-\plainheadrulewidth=\dimen302
-\plainfootrulewidth=\dimen303
-\headwidth=\dimen304
-\footruleskip=\dimen305
+\headrulewidth=\dimen319
+\footrulewidth=\dimen320
+\plainheadrulewidth=\dimen321
+\plainfootrulewidth=\dimen322
+\headwidth=\dimen323
+\footruleskip=\dimen324
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count380
+\l__color_backend_stack_int=\count384
 ) (Interim_Report_Main.aux)
 \openout1 = `Interim_Report_Main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count381
-\scratchdimen=\dimen306
-\scratchbox=\box99
-\nofMPsegments=\count382
-\nofMParguments=\count383
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count384
-\MPscratchDim=\dimen307
-\MPnumerator=\count385
-\makeMPintoPDFobject=\count386
-\everyMPtoPDFconversion=\toks41
+\scratchcounter=\count385
+\scratchdimen=\dimen325
+\scratchbox=\box101
+\nofMPsegments=\count386
+\nofMParguments=\count387
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count388
+\MPscratchDim=\dimen326
+\MPnumerator=\count389
+\makeMPintoPDFobject=\count390
+\everyMPtoPDFconversion=\toks44
 )
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
 se.sty
@@ -963,24 +1027,24 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count387
-Package hyperref Info: Link coloring OFF on input line 86.
+\c@lstlisting=\count391
+Package hyperref Info: Link coloring OFF on input line 88.
 
 (Interim_Report_Main.out) (Interim_Report_Main.out)
 \@outlinefile=\write4
 \openout4 = `Interim_Report_Main.out'.
 
  (Files/title_page.tex
-<Figures/Figures/Jomo_logo.pdf, id=282, 249.93375pt x 185.69376pt>
-File: Figures/Figures/Jomo_logo.pdf Graphic file (type pdf)
-<use Figures/Figures/Jomo_logo.pdf>
-Package pdftex.def Info: Figures/Figures/Jomo_logo.pdf  used on input line 6.
-(pdftex.def)             Requested size: 136.5746pt x 101.47452pt.
+<Figures/logo.png, id=298, 222.8325pt x 204.765pt>
+File: Figures/logo.png Graphic file (type png)
+<use Figures/logo.png>
+Package pdftex.def Info: Figures/logo.png  used on input line 6.
+(pdftex.def)             Requested size: 136.5746pt x 125.50009pt.
 
 [1
 
-{C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Figures/Fig
-ures/Jomo_logo.pdf>]) (Files/Declaration.tex
+{C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Figures/log
+o.png>]) (Files/Declaration.tex
 LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -1011,29 +1075,29 @@ four-class clas-si-fi-ca-tion (un-
 [7
 
 ]
-Overfull \hbox (21.6844pt too wide) in paragraph at lines 17--17
+Overfull \hbox (21.6844pt too wide) in paragraph at lines 23--23
  [][] [][]\OT1/cmr/m/n/12 Fritzing cir-cuit di-a-gram of the ESP32 solenoid dri
 ver im-ple-men-ta-tion: IRLZ44N 
  []
 
-
-Overfull \hbox (1.63799pt too wide) in paragraph at lines 22--22
+[8]
+Overfull \hbox (1.63799pt too wide) in paragraph at lines 27--27
  [][] [][]\OT1/cmr/m/n/12 Proteus os-cil-lo-scope: MOS-FET turn-OFF --- drain r
 e-cov-ers to 12V; 1N5819 
  []
 
-[8])
+[9])
 \tf@lof=\write6
 \openout6 = `Interim_Report_Main.lof'.
 
- [9] (Interim_Report_Main.lot)
+ [10] (Interim_Report_Main.lot)
 \tf@lot=\write7
 \openout7 = `Interim_Report_Main.lot'.
 
- [10
+ [11
 
 ] (Files/Chapter1_Introduction.tex
-<Figures/Figures/harvested coffee berry variation.jpeg, id=559, 451.6875pt x 30
+<Figures/Figures/harvested coffee berry variation.jpeg, id=595, 451.6875pt x 30
 1.125pt>
 File: Figures/Figures/harvested coffee berry variation.jpeg Graphic file (type 
 jpg)
@@ -1050,500 +1114,608 @@ l.17
       [1
 
 ] [2 <./Figures/Figures/harvested coffee berry variation.jpeg>]
-[3] [4]) [5] (Files/Chapter2_LiteratureReview.tex
-<Figures/Figures/Ripe.jpeg, id=600, 517.935pt x 351.3125pt>
+[3]
+Overfull \hbox (17.30113pt too wide) in paragraph at lines 48--49
+[]\OT1/cmr/m/n/12 To re-train the clas-si-fi-ca-tion model on a bi-nary \OT1/cm
+tt/m/n/12 accept\OT1/cmr/m/n/12 /\OT1/cmtt/m/n/12 reject \OT1/cmr/m/n/12 datase
+t us-ing YOLOv11n
+ []
+
+[4] [5]
+Overfull \hbox (9.04984pt too wide) in paragraph at lines 83--84
+[]\OT1/cmr/m/n/12 A YOLOv11n bi-nary clas-si-fier de-ployed on Rasp-berry Pi 4 
+achiev-ing mAP@0.5 $\OML/cmm/m/it/12 >$ \OT1/cmr/m/n/12 90%,
+ []
+
+) [6] (Files/Chapter2_LiteratureReview.tex
+<Figures/Figures/Ripe.jpeg, id=654, 517.935pt x 351.3125pt>
 File: Figures/Figures/Ripe.jpeg Graphic file (type jpg)
 <use Figures/Figures/Ripe.jpeg>
-Package pdftex.def Info: Figures/Figures/Ripe.jpeg  used on input line 20.
+Package pdftex.def Info: Figures/Figures/Ripe.jpeg  used on input line 22.
 (pdftex.def)             Requested size: 318.66946pt x 216.16043pt.
- [6
+ [7
 
- <./Figures/Figures/Ripe.jpeg>] [7]
-<context/Old_val_batch2_labels.jpg, id=620, 1927.2pt x 1927.2pt>
+ <./Figures/Figures/Ripe.jpeg>]
+[8]
+<context/Old_val_batch2_labels.jpg, id=687, 1927.2pt x 1927.2pt>
 File: context/Old_val_batch2_labels.jpg Graphic file (type jpg)
 <use context/Old_val_batch2_labels.jpg>
 Package pdftex.def Info: context/Old_val_batch2_labels.jpg  used on input line 
-82.
+92.
 (pdftex.def)             Requested size: 386.96024pt x 386.93292pt.
- [8]
-<images/Previous_Model_F1__score.PNG, id=631, 331.2375pt x 265.74281pt>
+ [9]
+<images/Previous_Model_F1__score.PNG, id=695, 331.2375pt x 265.74281pt>
 File: images/Previous_Model_F1__score.PNG Graphic file (type png)
 <use images/Previous_Model_F1__score.PNG>
 Package pdftex.def Info: images/Previous_Model_F1__score.PNG  used on input lin
-e 89.
+e 99.
 (pdftex.def)             Requested size: 341.43306pt x 273.9371pt.
- [9 <./context/Old_val_batch2_labels.jpg>]
-<Figures/Figures/sorting_comparison.pdf, id=640, 596.12108pt x 338.2216pt>
+ [10 <./context/Old_val_batch2_labels.jpg>]
+<Figures/Figures/sorting_comparison.pdf, id=703, 596.12108pt x 338.2216pt>
 File: Figures/Figures/sorting_comparison.pdf Graphic file (type pdf)
 <use Figures/Figures/sorting_comparison.pdf>
 Package pdftex.def Info: Figures/Figures/sorting_comparison.pdf  used on input 
-line 116.
+line 126.
 (pdftex.def)             Requested size: 373.30347pt x 211.806pt.
- [10 <./images/Previous_Model_F1__score.PNG>]
-<images/Mechanical_Images/Fully_Fabricated_Assembbly_From_Previous_Group.PNG, i
-d=648, 645.91313pt x 474.27188pt>
-File: images/Mechanical_Images/Fully_Fabricated_Assembbly_From_Previous_Group.P
-NG Graphic file (type png)
-<use images/Mechanical_Images/Fully_Fabricated_Assembbly_From_Previous_Group.PN
-G>
-Package pdftex.def Info: images/Mechanical_Images/Fully_Fabricated_Assembbly_Fr
-om_Previous_Group.PNG  used on input line 123.
-(pdftex.def)             Requested size: 386.96024pt x 284.13112pt.
- [11 <./Figures/Figures/sorting_comparison.pdf>]
+ [11 <./images/Previous_Model_F1__score.PNG>]
+<images/coffee_Images/parts_list.JPG, id=709, 378.66469pt x 192.72pt>
+File: images/coffee_Images/parts_list.JPG Graphic file (type jpg)
+<use images/coffee_Images/parts_list.JPG>
+Package pdftex.def Info: images/coffee_Images/parts_list.JPG  used on input lin
+e 133.
+(pdftex.def)             Requested size: 227.62204pt x 115.84755pt.
+ [12 <./Figures/Figures/sorting_comparison.pdf> <./images/coffee_Images/parts_l
+ist.JPG>]
+<../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG, id=754, 76
+7.11594pt x 487.06969pt>
+File: ../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG Graphi
+c file (type png)
+<use ../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG>
+Package pdftex.def Info: ../project_proposal/images/Air_Ejector_With.out_title_
+BlockPNG.PNG  used on input line 154.
+(pdftex.def)             Requested size: 355.08981pt x 221.9744pt.
 
-pdfTeX warning: pdflatex.exe (file ./Figures/Figures/Air_ejector_design.pdf): P
-DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<Figures/Figures/Air_ejector_design.pdf, id=693, 1195.46625pt x 845.1575pt>
-File: Figures/Figures/Air_ejector_design.pdf Graphic file (type pdf)
-<use Figures/Figures/Air_ejector_design.pdf>
-Package pdftex.def Info: Figures/Figures/Air_ejector_design.pdf  used on input 
-line 144.
-(pdftex.def)             Requested size: 355.08981pt x 249.25143pt.
-[12 <./images/Mechanical_Images/Fully_Fabricated_Assembbly_From_Previous_Group.
-PNG>]
-Overfull \hbox (5.823pt too wide) in paragraph at lines 161--168
+Overfull \hbox (5.823pt too wide) in paragraph at lines 171--178
 \OT1/cmr/m/n/12 dis-tor-tion en-tirely. Global-shutter CMOS sen-sors (e.g., Son
 y IMX296, Om-nivi-sion OV9281)
  []
 
-[13 <./Figures/Figures/Air_ejector_design.pdf>] [14]
-<Figures/Figures/processing_flow.pdf, id=756, 386.54312pt x 1238.31236pt>
-File: Figures/Figures/processing_flow.pdf Graphic file (type pdf)
-<use Figures/Figures/processing_flow.pdf>
-Package pdftex.def Info: Figures/Figures/processing_flow.pdf  used on input lin
-e 212.
-(pdftex.def)             Requested size: 309.56264pt x 991.72827pt.
- [15]
-Overfull \vbox (445.97826pt too high) has occurred while \output is active []
+[13 <../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG>]
+[14]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 244.
 
+Overfull \hbox (75.55463pt too wide) in paragraph at lines 255--258
+ [][] 
+ []
 
-[16 <./Figures/Figures/processing_flow.pdf>]
-<Figures/Figures/classification_flowchart.pdf, id=795, 712.49384pt x 495.98802p
+[15]
+<Figures/Figures/classification_flowchart.pdf, id=804, 712.49384pt x 495.98802p
 t>
 File: Figures/Figures/classification_flowchart.pdf Graphic file (type pdf)
 <use Figures/Figures/classification_flowchart.pdf>
 Package pdftex.def Info: Figures/Figures/classification_flowchart.pdf  used on 
-input line 229.
+input line 275.
 (pdftex.def)             Requested size: 341.43306pt x 237.68556pt.
- [17 <./Figures/Figures/classification_flowchart.pdf>]
-<Figures/Figures/coffee_berries_hands.jpg, id=817, 451.6875pt x 301.125pt>
+ [16] [17 <./Figures/Figures/classification_flowchart.pdf>]
+<Figures/Figures/coffee_berries_hands.jpg, id=842, 451.6875pt x 301.125pt>
 File: Figures/Figures/coffee_berries_hands.jpg Graphic file (type jpg)
 <use Figures/Figures/coffee_berries_hands.jpg>
 Package pdftex.def Info: Figures/Figures/coffee_berries_hands.jpg  used on inpu
-t line 259.
+t line 308.
 (pdftex.def)             Requested size: 364.19664pt x 242.81175pt.
  [18 <./Figures/Figures/coffee_berries_hands.jpg>]
-<Figures/Figures/coprocessing_architecture.pdf, id=824, 522.42982pt x 469.00117
+<Figures/Figures/coprocessing_architecture.pdf, id=854, 522.42982pt x 469.00117
 pt>
 File: Figures/Figures/coprocessing_architecture.pdf Graphic file (type pdf)
 <use Figures/Figures/coprocessing_architecture.pdf>
 Package pdftex.def Info: Figures/Figures/coprocessing_architecture.pdf  used on
- input line 292.
+ input line 342.
 (pdftex.def)             Requested size: 341.43306pt x 306.52173pt.
- [19]
-Underfull \hbox (badness 10000) in paragraph at lines 315--315
-\OMS/cmsy/m/n/10.95 ^^X$\OT1/cmr/m/n/10.95 30ms read-out smears
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
+[]|\OT1/cmr/m/n/10.95 Motion blur at op-er-at-ing
  []
 
 
-Underfull \hbox (badness 4242) in paragraph at lines 316--317
-\OT1/cmr/m/n/10.95 full-frame ex-po-sure elim-i-nates
+Underfull \hbox (badness 5726) in paragraph at lines 376--376
+[]|\OT1/cmr/m/n/10.95 Rolling-shutter sen-sor with
  []
 
 
-Underfull \hbox (badness 8170) in paragraph at lines 318--318
-\OT1/cmr/m/n/10.95 put lim-ited to $\OMS/cmsy/m/n/10.95 ^^X$\OT1/cmr/m/n/10.95 
-35
+Underfull \hbox (badness 3375) in paragraph at lines 376--376
+[]|\OT1/cmr/m/n/10.95 Replace with global-shutter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
-\OT1/cmr/m/n/10.95 fu-sion (semi-ripe/ripe
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
+\OT1/cmr/m/n/10.95 Ar-d-u-cam OV9281 mod-ule;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--322
-\OT1/cmr/m/n/10.95 bound-ary) re-duces
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
+\OML/cmm/m/it/10.95 <$\OT1/cmr/m/n/10.95 1ms full-frame ex-po-sure
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
+Underfull \hbox (badness 1960) in paragraph at lines 376--376
+\OT1/cmr/m/n/10.95 [[]29[]]: Pi han-dles in-fer-ence;
+ []
+
+
+Underfull \hbox (badness 6173) in paragraph at lines 376--376
+\OT1/cmr/m/n/10.95 ESP32 han-dles hard real-
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 376--376
+[]|\OT1/cmr/m/n/10.95 Fine-grained class con-fu-sion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
 []|\OT1/cmr/m/n/10.95 Binary AC-CEPT/REJECT
  []
 
 
-Underfull \hbox (badness 2689) in paragraph at lines 324--325
-\OT1/cmr/m/n/10.95 scheme aligned with in-dus-try
+Underfull \hbox (badness 2173) in paragraph at lines 376--376
+\OT1/cmr/m/n/10.95 prac-tice; YOLOv11 trained
  []
 
-) [20 <./Figures/Figures/coprocessing_architecture.pdf>] [21]
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
+\OT1/cmr/m/n/10.95 on two classes elim-i-nates
+ []
+
+[19 <./Figures/Figures/coprocessing_architecture.pdf>]) [20]
 (Files/Chapter3_Methodology.tex
-<Figures/Figures/system_architecture.pdf, id=879, 547.9341pt x 350.0528pt>
+<Figures/Figures/system_architecture.pdf, id=909, 547.9341pt x 350.0528pt>
 File: Figures/Figures/system_architecture.pdf Graphic file (type pdf)
 <use Figures/Figures/system_architecture.pdf>
 Package pdftex.def Info: Figures/Figures/system_architecture.pdf  used on input
  line 11.
 (pdftex.def)             Requested size: 432.48048pt x 276.30365pt.
- [22
+ [21
 
- <./Figures/Figures/system_architecture.pdf>] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+ <./Figures/Figures/system_architecture.pdf>] [22]
+<images/coffee_Images/Hopper.JPG, id=944, 656.4525pt x 404.26031pt>
+File: images/coffee_Images/Hopper.JPG Graphic file (type jpg)
+<use images/coffee_Images/Hopper.JPG>
+Package pdftex.def Info: images/coffee_Images/Hopper.JPG  used on input line 47
+.
+(pdftex.def)             Requested size: 213.96527pt x 131.76549pt.
+<images/coffee_Images/feeder_trough.JPG, id=945, 577.40718pt x 368.87813pt>
+File: images/coffee_Images/feeder_trough.JPG Graphic file (type jpg)
+<use images/coffee_Images/feeder_trough.JPG>
+Package pdftex.def Info: images/coffee_Images/feeder_trough.JPG  used on input 
+line 53.
+(pdftex.def)             Requested size: 213.96527pt x 136.69102pt.
+<images/coffee_Images/chute.JPG, id=948, 575.14874pt x 360.59718pt>
+File: images/coffee_Images/chute.JPG Graphic file (type jpg)
+<use images/coffee_Images/chute.JPG>
+Package pdftex.def Info: images/coffee_Images/chute.JPG  used on input line 67.
+
+(pdftex.def)             Requested size: 213.96527pt x 134.14516pt.
+<images/coffee_Images/main_assembly.JPG, id=949, 198.7425pt x 234.8775pt>
+File: images/coffee_Images/main_assembly.JPG Graphic file (type jpg)
+<use images/coffee_Images/main_assembly.JPG>
+Package pdftex.def Info: images/coffee_Images/main_assembly.JPG  used on input 
+line 73.
+(pdftex.def)             Requested size: 213.96527pt x 252.87544pt.
+ [23 <./images/coffee_Images/Hopper.JPG> <./images/coffee_Images/feeder_trough.
+JPG>]
+<images/coffee_Images/main_Frame.JPG, id=954, 619.56468pt x 407.27156pt>
+File: images/coffee_Images/main_Frame.JPG Graphic file (type jpg)
+<use images/coffee_Images/main_Frame.JPG>
+Package pdftex.def Info: images/coffee_Images/main_Frame.JPG  used on input lin
+e 87.
+(pdftex.def)             Requested size: 213.96527pt x 140.64555pt.
+<images/coffee_Images/full__assembly_front_views.JPG, id=955, 217.5628pt x 472.
+76625pt>
+File: images/coffee_Images/full__assembly_front_views.JPG Graphic file (type jp
+g)
+<use images/coffee_Images/full__assembly_front_views.JPG>
+Package pdftex.def Info: images/coffee_Images/full__assembly_front_views.JPG  u
+sed on input line 93.
+(pdftex.def)             Requested size: 213.96527pt x 464.98137pt.
+ [24 <./images/coffee_Images/chute.JPG> <./images/coffee_Images/main_assembly.J
+PG>] [25 <./images/coffee_Images/main_Frame.JPG> <./images/coffee_Images/full__
+assembly_front_views.JPG>] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 []|\OT1/cmr/m/n/12 Unripe (green), semi-ripe
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 \OT1/cmr/m/n/12 (yel-low/orange), over-ripe
  []
 
 
-Underfull \hbox (badness 4621) in paragraph at lines 75--76
+Underfull \hbox (badness 4621) in paragraph at lines 141--142
 \OT1/cmr/m/n/12 (dark/black), and dam-aged
  []
 
-[24]
-Overfull \hbox (44.91306pt too wide) in paragraph at lines 83--84
+
+Overfull \hbox (44.91306pt too wide) in paragraph at lines 149--150
 \OT1/cmr/m/n/12 The an-no-tated dataset was split 70% train / 15% val-i-da-tion
  / 15% test us-ing the \OT1/cmtt/m/n/12 split[]dataset.py
  []
 
-[25] [26]
+[27] [28]
 File: Figures/Figures/coprocessing_architecture.pdf Graphic file (type pdf)
 <use Figures/Figures/coprocessing_architecture.pdf>
 Package pdftex.def Info: Figures/Figures/coprocessing_architecture.pdf  used on
- input line 149.
+ input line 215.
 (pdftex.def)             Requested size: 373.30347pt x 335.14006pt.
- [27]
-<Figures/Figures/control_flow.pdf, id=936, 536.64589pt x 1051.45618pt>
+ [29]
+<Figures/Figures/control_flow.pdf, id=989, 536.64589pt x 1051.45618pt>
 File: Figures/Figures/control_flow.pdf Graphic file (type pdf)
 <use Figures/Figures/control_flow.pdf>
-Package pdftex.def Info: Figures/Figures/control_flow.pdf  used on input line 1
-57.
-(pdftex.def)             Requested size: 409.71689pt x 802.78906pt.
- [28]
-Overfull \vbox (235.28905pt too high) has occurred while \output is active []
+Package pdftex.def Info: Figures/Figures/control_flow.pdf  used on input line 2
+23.
+(pdftex.def)             Requested size: 273.14922pt x 535.1927pt.
+ [30] [31 <./Figures/Figures/control_flow.pdf>]
+Overfull \hbox (1.62202pt too wide) in paragraph at lines 234--236
+[]\OT1/cmr/m/n/12 YOLOv11 per-forms in-fer-ence to de-tect and clas-sify berrie
+s in the frame (Fig-ure []3.10[]). 
+ []
 
 
-[29 <./Figures/Figures/control_flow.pdf>]
-File: Figures/Figures/processing_flow.pdf Graphic file (type pdf)
-<use Figures/Figures/processing_flow.pdf>
-Package pdftex.def Info: Figures/Figures/processing_flow.pdf  used on input lin
-e 180.
-(pdftex.def)             Requested size: 295.90587pt x 947.96721pt.
- [30]
-Overfull \vbox (402.2172pt too high) has occurred while \output is active []
-
-
-[31]
-<Figures/Figures/uart_communication.pdf, id=973, 477.81612pt x 721.31181pt>
-File: Figures/Figures/uart_communication.pdf Graphic file (type pdf)
-<use Figures/Figures/uart_communication.pdf>
-Package pdftex.def Info: Figures/Figures/uart_communication.pdf  used on input 
-line 190.
-(pdftex.def)             Requested size: 364.19664pt x 549.78758pt.
- [32 <./Figures/Figures/uart_communication.pdf>] [33] [34]
-Overfull \hbox (66.92992pt too wide) in paragraph at lines 257--271
+Overfull \hbox (75.55463pt too wide) in paragraph at lines 276--280
  [][] 
  []
 
-[35]
-<Figures/Figures/circuit_implementation.png, id=1013, 872.50969pt x 588.69937pt
->
-File: Figures/Figures/circuit_implementation.png Graphic file (type png)
-<use Figures/Figures/circuit_implementation.png>
-Package pdftex.def Info: Figures/Figures/circuit_implementation.png  used on in
-put line 309.
-(pdftex.def)             Requested size: 432.48048pt x 286.7762pt.
- [36] [37 <./Figures/Figures/circuit_implementation.png>] [38]
-Overfull \hbox (1.21019pt too wide) in paragraph at lines 350--351
+[32] [33] [34] [35] [36]
+<images/Proteus_Full_Circuit.PNG, id=1044, 791.95876pt x 624.83438pt>
+File: images/Proteus_Full_Circuit.PNG Graphic file (type png)
+<use images/Proteus_Full_Circuit.PNG>
+Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 45
+0.
+(pdftex.def)             Requested size: 432.48048pt x 337.60652pt.
+ [37] [38 <./images/Proteus_Full_Circuit.PNG>] [39]
+Overfull \hbox (1.21019pt too wide) in paragraph at lines 491--492
 []\OT1/cmr/bx/n/12 image test: \OT1/cmr/m/n/12 Run the YOLOv11 model on the hel
 d-out test set and re-port mAP@0.5,
  []
 
-) [39] (Files/Chapter4_ResultsDiscussion.tex [40
+) [40] (Files/Chapter4_ResultsDiscussion.tex [41
 
 ]
-Overfull \hbox (7.13034pt too wide) in paragraph at lines 47--52
+Overfull \hbox (7.13034pt too wide) in paragraph at lines 49--54
 []\OT1/cmr/bx/n/12 Ejector driver tran-sis-tor up-grade: \OT1/cmr/m/n/12 PN2222
 A BJTs were re-placed with \OT1/cmr/bx/n/12 IRLZ44N
  []
 
-[41]
-<Figures/Figures/electrical_schematic.pdf, id=1051, 656.39731pt x 354.54056pt>
-File: Figures/Figures/electrical_schematic.pdf Graphic file (type pdf)
-<use Figures/Figures/electrical_schematic.pdf>
-Package pdftex.def Info: Figures/Figures/electrical_schematic.pdf  used on inpu
-t line 77.
-(pdftex.def)             Requested size: 373.30347pt x 201.63579pt.
-<Figures/Figures/system_block_diagram.pdf, id=1052, 582.42691pt x 452.95122pt>
+[42]
+<Figures/Figures/system_block_diagram.pdf, id=1081, 582.42691pt x 452.95122pt>
 File: Figures/Figures/system_block_diagram.pdf Graphic file (type pdf)
 <use Figures/Figures/system_block_diagram.pdf>
 Package pdftex.def Info: Figures/Figures/system_block_diagram.pdf  used on inpu
-t line 85.
+t line 78.
 (pdftex.def)             Requested size: 364.19664pt x 283.23895pt.
- [42 <./Figures/Figures/electrical_schematic.pdf>]
-Overfull \hbox (5.7469pt too wide) in paragraph at lines 98--101
- []\OT1/cmr/bx/n/12 Full Cir-cuit Overview[] \OT1/cmr/m/n/12 Fig-ure []4.3[] sh
+ [43 <./Figures/Figures/system_block_diagram.pdf>]
+Overfull \hbox (5.7469pt too wide) in paragraph at lines 91--94
+ []\OT1/cmr/bx/n/12 Full Cir-cuit Overview[] \OT1/cmr/m/n/12 Fig-ure []4.2[] sh
 ows the com-plete Pro-teus schematic: four IRLZ44N
  []
 
-<../project_proposal/images/Full_proteus_circuit.pdf, id=1079, 3186.90625pt x 2
-319.66624pt>
-File: ../project_proposal/images/Full_proteus_circuit.pdf Graphic file (type pd
-f)
-<use ../project_proposal/images/Full_proteus_circuit.pdf>
-Package pdftex.def Info: ../project_proposal/images/Full_proteus_circuit.pdf  u
-sed on input line 104.
-(pdftex.def)             Requested size: 373.30347pt x 271.69363pt.
-[43 <./Figures/Figures/system_block_diagram.pdf>]
-<../project_proposal/images/Trigger_ON.PNG, id=1112, 566.86781pt x 398.23781pt>
+File: images/Proteus_Full_Circuit.PNG Graphic file (type png)
+<use images/Proteus_Full_Circuit.PNG>
+Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 97
+.
+(pdftex.def)             Requested size: 418.82372pt x 330.44557pt.
+[44]
+<../project_proposal/images/Trigger_ON.PNG, id=1122, 566.86781pt x 398.23781pt>
 
 File: ../project_proposal/images/Trigger_ON.PNG Graphic file (type png)
 <use ../project_proposal/images/Trigger_ON.PNG>
 Package pdftex.def Info: ../project_proposal/images/Trigger_ON.PNG  used on inp
-ut line 126.
+ut line 119.
 (pdftex.def)             Requested size: 355.08981pt x 249.46313pt.
- [44 <../project_proposal/images/Full_proteus_circuit.pdf>]
-<../project_proposal/images/Trigger_OFF.PNG, id=1141, 842.39719pt x 502.12593pt
+<../project_proposal/images/Trigger_OFF.PNG, id=1123, 842.39719pt x 502.12593pt
 >
 File: ../project_proposal/images/Trigger_OFF.PNG Graphic file (type png)
 <use ../project_proposal/images/Trigger_OFF.PNG>
 Package pdftex.def Info: ../project_proposal/images/Trigger_OFF.PNG  used on in
-put line 135.
+put line 128.
 (pdftex.def)             Requested size: 355.08981pt x 211.65764pt.
- [45 <../project_proposal/images/Trigger_ON.PNG> <../project_proposal/images/Tr
-igger_OFF.PNG>] [46]
+ [45 <../project_proposal/images/Trigger_ON.PNG>] [46 <../project_proposal/imag
+es/Trigger_OFF.PNG>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 180.
-<images/model__Training_Results/results.png, id=1157, 867.24pt x 433.62pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 174.
+ [47]
+<images/model__Training_Results/results.png, id=1146, 867.24pt x 433.62pt>
 File: images/model__Training_Results/results.png Graphic file (type png)
 <use images/model__Training_Results/results.png>
 Package pdftex.def Info: images/model__Training_Results/results.png  used on in
-put line 198.
+put line 193.
 (pdftex.def)             Requested size: 386.96024pt x 193.47969pt.
- [47 <./images/model__Training_Results/results.png>]
-<images/model__Training_Results/F1_curve.png, id=1164, 650.43pt x 433.62pt>
+<images/model__Training_Results/F1_curve.png, id=1148, 650.43pt x 433.62pt>
 File: images/model__Training_Results/F1_curve.png Graphic file (type png)
 <use images/model__Training_Results/F1_curve.png>
 Package pdftex.def Info: images/model__Training_Results/F1_curve.png  used on i
-nput line 207.
+nput line 202.
 (pdftex.def)             Requested size: 373.30347pt x 248.87302pt.
-<images/model__Training_Results/PR_curve.png, id=1167, 650.43pt x 433.62pt>
+ [48 <./images/model__Training_Results/results.png>]
+<images/model__Training_Results/PR_curve.png, id=1156, 650.43pt x 433.62pt>
 File: images/model__Training_Results/PR_curve.png Graphic file (type png)
 <use images/model__Training_Results/PR_curve.png>
 Package pdftex.def Info: images/model__Training_Results/PR_curve.png  used on i
-nput line 216.
+nput line 211.
 (pdftex.def)             Requested size: 373.30347pt x 248.87302pt.
- [48 <./images/model__Training_Results/F1_curve.png>]
-<images/model__Training_Results/confusion_matrix_normalized.png, id=1173, 867.2
+ [49 <./images/model__Training_Results/F1_curve.png>]
+<images/model__Training_Results/confusion_matrix_normalized.png, id=1163, 867.2
 4pt x 650.43pt>
 File: images/model__Training_Results/confusion_matrix_normalized.png Graphic fi
 le (type png)
 <use images/model__Training_Results/confusion_matrix_normalized.png>
 Package pdftex.def Info: images/model__Training_Results/confusion_matrix_normal
-ized.png  used on input line 223.
+ized.png  used on input line 218.
 (pdftex.def)             Requested size: 341.43306pt x 256.07838pt.
-
-[49 <./images/model__Training_Results/PR_curve.png>]
-<images/model__Training_Results/labels.jpg, id=1182, 578.16pt x 578.16pt>
+ [50 <./images/model__Training_Results/PR_curve.png>]
+<images/model__Training_Results/labels.jpg, id=1172, 578.16pt x 578.16pt>
 File: images/model__Training_Results/labels.jpg Graphic file (type jpg)
 <use images/model__Training_Results/labels.jpg>
 Package pdftex.def Info: images/model__Training_Results/labels.jpg  used on inp
-ut line 251.
+ut line 248.
 (pdftex.def)             Requested size: 355.08981pt x 355.0855pt.
- [50 <./images/model__Training_Results/confusion_matrix_normalized.png>]
-<images/model__Training_Results/val_batch0_labels.jpg, id=1189, 1927.2pt x 1927
+ [51 <./images/model__Training_Results/confusion_matrix_normalized.png>]
+<images/model__Training_Results/val_batch0_labels.jpg, id=1178, 1927.2pt x 1927
 .2pt>
 File: images/model__Training_Results/val_batch0_labels.jpg Graphic file (type j
 pg)
 <use images/model__Training_Results/val_batch0_labels.jpg>
 Package pdftex.def Info: images/model__Training_Results/val_batch0_labels.jpg  
-used on input line 258.
+used on input line 255.
 (pdftex.def)             Requested size: 355.08981pt x 355.0855pt.
- [51 <./images/model__Training_Results/labels.jpg>]
-<images/model__Training_Results/val_batch0_pred.jpg, id=1195, 1927.2pt x 1927.2
+ [52 <./images/model__Training_Results/labels.jpg>]
+<images/model__Training_Results/val_batch0_pred.jpg, id=1184, 1927.2pt x 1927.2
 pt>
 File: images/model__Training_Results/val_batch0_pred.jpg Graphic file (type jpg
 )
 <use images/model__Training_Results/val_batch0_pred.jpg>
 Package pdftex.def Info: images/model__Training_Results/val_batch0_pred.jpg  us
-ed on input line 269.
+ed on input line 266.
 (pdftex.def)             Requested size: 355.08981pt x 355.0855pt.
- [52 <./images/model__Training_Results/val_batch0_labels.jpg>]
-Overfull \hbox (19.25916pt too wide) in paragraph at lines 277--279
+
+[53 <./images/model__Training_Results/val_batch0_labels.jpg>]
+Overfull \hbox (19.25916pt too wide) in paragraph at lines 274--276
 \OT1/cmr/m/n/12 The fol-low-ing soft-ware mod-ules have been de-vel-oped and ar
 e tracked in the \OT1/cmtt/m/n/12 CoffeeBerry[]YOLO
  []
 
-[53 <./images/model__Training_Results/val_batch0_pred.jpg>]
+[54 <./images/model__Training_Results/val_batch0_pred.jpg>]
 File: Figures/Figures/control_flow.pdf Graphic file (type pdf)
 <use Figures/Figures/control_flow.pdf>
 Package pdftex.def Info: Figures/Figures/control_flow.pdf  used on input line 2
-93.
+90.
 (pdftex.def)             Requested size: 345.98299pt x 677.90327pt.
- [54]
+ [55]
 Overfull \vbox (110.40326pt too high) has occurred while \output is active []
 
 
-[55]
-Underfull \hbox (badness 10000) in paragraph at lines 309--309
-[]|\OT1/cmr/m/n/12 Completed: global-shutter
+[56]
+Underfull \hbox (badness 6775) in paragraph at lines 309--309
+\OT1/cmr/m/n/12 la-tency (380ms), and
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 309--309
-\OT1/cmr/m/n/12 cam-era, MOS-FET drivers,
+\OT1/cmr/m/n/12 clas-si-fi-ca-tion ac-cu-racy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--310
-\OT1/cmr/m/n/12 bi-nary dataset com-piled,
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
+[]|\OT1/cmr/m/n/12 Completed: global-
  []
 
 
-Overfull \hbox (40.11201pt too wide) in paragraph at lines 305--314
- [][] 
+Underfull \hbox (badness 3029) in paragraph at lines 309--309
+\OT1/cmr/m/n/12 shutter cam-era, MOS-
  []
 
-) [56] (Files/Chapter5_Conclusion.tex [57
 
-]) [58] (Interim_Report_Main.bbl
-[59
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
+\OT1/cmr/m/n/12 FET drivers, ESP32
+ []
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
+\OT1/cmr/m/n/12 co-processor, Pro-teus
+ []
+
+
+Underfull \hbox (badness 7540) in paragraph at lines 309--309
+\OT1/cmr/m/n/12 cured, bi-nary dataset
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
+\OT1/cmr/m/n/12 com-piled, YOLOv11
+ []
+
+) [57] (Files/Chapter5_Conclusion.tex [58
+
+]) [59] (Interim_Report_Main.bbl
+[60
+
+] [61]
+Underfull \hbox (badness 10000) in paragraph at lines 159--162
 []\OT1/cmr/m/n/12 Espressif Sys-tems, ``ESP32 tech-ni-cal ref-er-ence man-ual, 
 ver-sion 5.1,''
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
+Underfull \hbox (badness 10000) in paragraph at lines 159--162
 []$\OT1/cmr/m/n/12 https : / / www . espressif . com / sites / default / ^^Lles
  / documentation / esp32[]technical[]
  []
 
-) [60] (Files/Appendices.tex
+[62]) [63] (Files/Appendices.tex
+<Figures/Figures/electrical_schematic.pdf, id=1252, 656.39731pt x 354.54056pt>
 File: Figures/Figures/electrical_schematic.pdf Graphic file (type pdf)
 <use Figures/Figures/electrical_schematic.pdf>
 Package pdftex.def Info: Figures/Figures/electrical_schematic.pdf  used on inpu
-t line 5.
+t line 9.
 (pdftex.def)             Requested size: 373.30347pt x 201.63579pt.
-<Figures/Figures/esp32_schematic.pdf, id=1249, 407.90993pt x 442.54335pt>
+<Figures/Figures/esp32_schematic.pdf, id=1253, 407.90993pt x 442.54335pt>
 File: Figures/Figures/esp32_schematic.pdf Graphic file (type pdf)
 <use Figures/Figures/esp32_schematic.pdf>
 Package pdftex.def Info: Figures/Figures/esp32_schematic.pdf  used on input lin
-e 12.
+e 16.
 (pdftex.def)             Requested size: 373.30347pt x 404.99747pt.
- [61
+ [64
 
-]
+ <./Figures/Figures/electrical_schematic.pdf>]
+<Figures/Figures/circuit_implementation.png, id=1279, 872.50969pt x 588.69937pt
+>
 File: Figures/Figures/circuit_implementation.png Graphic file (type png)
 <use Figures/Figures/circuit_implementation.png>
 Package pdftex.def Info: Figures/Figures/circuit_implementation.png  used on in
-put line 19.
+put line 23.
 (pdftex.def)             Requested size: 373.30347pt x 251.86922pt.
- [62 <./Figures/Figures/esp32_schematic.pdf>]
-File: ../project_proposal/images/Full_proteus_circuit.pdf Graphic file (type pd
-f)
-<use ../project_proposal/images/Full_proteus_circuit.pdf>
-Package pdftex.def Info: ../project_proposal/images/Full_proteus_circuit.pdf  u
-sed on input line 26.
-(pdftex.def)             Requested size: 373.30347pt x 271.69363pt.
-<Figures/Figures/Time_Plan.jpeg, id=1295, 894.34125pt x 514.92375pt>
-File: Figures/Figures/Time_Plan.jpeg Graphic file (type jpg)
-<use Figures/Figures/Time_Plan.jpeg>
-Package pdftex.def Info: Figures/Figures/Time_Plan.jpeg  used on input line 35.
+ [65 <./Figures/Figures/esp32_schematic.pdf>]
+File: images/Proteus_Full_Circuit.PNG Graphic file (type png)
+<use images/Proteus_Full_Circuit.PNG>
+Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 30
+.
+(pdftex.def)             Requested size: 418.82372pt x 330.44557pt.
+ [66 <./Figures/Figures/circuit_implementation.png>]
+<images/coffee_Images/coffee_Timeplan.jpeg, id=1327, 916.42375pt x 513.92pt>
+File: images/coffee_Images/coffee_Timeplan.jpeg Graphic file (type jpg)
+<use images/coffee_Images/coffee_Timeplan.jpeg>
+Package pdftex.def Info: images/coffee_Images/coffee_Timeplan.jpeg  used on inp
+ut line 40.
+(pdftex.def)             Requested size: 432.48048pt x 242.53049pt.
+ [67]
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 Arducam
+ []
 
-(pdftex.def)             Requested size: 373.30347pt x 214.93864pt.
 
-[63]
-<Figures/Figures/Budget.jpeg, id=1300, 702.625pt x 538.01pt>
-File: Figures/Figures/Budget.jpeg Graphic file (type jpg)
-<use Figures/Figures/Budget.jpeg>
-Package pdftex.def Info: Figures/Figures/Budget.jpeg  used on input line 42.
-(pdftex.def)             Requested size: 355.08981pt x 271.90224pt.
-<context/Old_F1_Curve_.png, id=1301, 650.43pt x 433.62pt>
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+\OT1/cmr/m/n/10 OV9281 Global
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 Pneumatic air
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 Prestige In-dus-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 DC vi-brat-ing
+ []
+
+
+Overfull \hbox (2.61388pt too wide) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 Electromechanical
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 6m Mild steel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+\OT1/cmr/m/n/10 struc-tural sec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 Local Hard-ware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 Local Hard-ware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 1000$\OMS/cmsy/m/n/10 ^^B$\OT1/cmr/m/n/10 500$\OMS/cmsy/m/n/
+10 ^^B$\OT1/cmr/m/n/10 2mm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]|\OT1/cmr/m/n/10 Local Hard-ware
+ []
+
+[68 <./images/coffee_Images/coffee_Timeplan.jpeg>]
+<context/Old_F1_Curve_.png, id=1337, 650.43pt x 433.62pt>
 File: context/Old_F1_Curve_.png Graphic file (type png)
 <use context/Old_F1_Curve_.png>
-Package pdftex.def Info: context/Old_F1_Curve_.png  used on input line 51.
+Package pdftex.def Info: context/Old_F1_Curve_.png  used on input line 76.
 (pdftex.def)             Requested size: 373.30347pt x 248.87302pt.
- [64 <./Figures/Figures/Time_Plan.jpeg> <./Figures/Figures/Budget.jpeg>]
+ [69]
 File: context/Old_val_batch2_labels.jpg Graphic file (type jpg)
 <use context/Old_val_batch2_labels.jpg>
 Package pdftex.def Info: context/Old_val_batch2_labels.jpg  used on input line 
-58.
+83.
 (pdftex.def)             Requested size: 373.30347pt x 373.28822pt.
+ [70 <./context/Old_F1_Curve_.png>]
+<images/coffee_Images/with_title_blocks/bottom_plate.JPG, id=1348, 325.215pt x 
+475.7775pt>
+File: images/coffee_Images/with_title_blocks/bottom_plate.JPG Graphic file (typ
+e jpg)
+<use images/coffee_Images/with_title_blocks/bottom_plate.JPG>
+Package pdftex.def Info: images/coffee_Images/with_title_blocks/bottom_plate.JP
+G  used on input line 95.
+(pdftex.def)             Requested size: 418.82372pt x 612.76819pt.
+ [71]
+Overfull \vbox (23.51817pt too high) has occurred while \output is active []
 
-[65 <./context/Old_F1_Curve_.png>]
 
-pdfTeX warning: pdflatex.exe (file ./images/Mechanical_Images/Bottom plate.pdf)
-: PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/Mechanical_Images/Bottom plate.pdf, id=1312, 1195.46625pt x 845.1575pt>
-
-File: images/Mechanical_Images/Bottom plate.pdf Graphic file (type pdf)
-<use images/Mechanical_Images/Bottom plate.pdf>
-Package pdftex.def Info: images/Mechanical_Images/Bottom plate.pdf  used on inp
-ut line 69.
-(pdftex.def)             Requested size: 418.82372pt x 296.09326pt.
-[66]
-
-pdfTeX warning: pdflatex.exe (file ./images/Mechanical_Images/Chute .pdf): PDF 
-inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/Mechanical_Images/Chute .pdf, id=1317, 1195.46625pt x 845.1575pt>
-File: images/Mechanical_Images/Chute .pdf Graphic file (type pdf)
-<use images/Mechanical_Images/Chute .pdf>
-Package pdftex.def Info: images/Mechanical_Images/Chute .pdf  used on input lin
-e 76.
-(pdftex.def)             Requested size: 418.82372pt x 296.09326pt.
-[67 <./images/Mechanical_Images/Bottom plate.pdf>]
-
-pdfTeX warning: pdflatex.exe (file ./images/Mechanical_Images/Chute bracket.pdf
-): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/Mechanical_Images/Chute bracket.pdf, id=1343, 1195.46625pt x 845.1575pt
->
-File: images/Mechanical_Images/Chute bracket.pdf Graphic file (type pdf)
-<use images/Mechanical_Images/Chute bracket.pdf>
-Package pdftex.def Info: images/Mechanical_Images/Chute bracket.pdf  used on in
-put line 83.
-(pdftex.def)             Requested size: 418.82372pt x 296.09326pt.
-[68 <./images/Mechanical_Images/Chute .pdf>]
-
-pdfTeX warning: pdflatex.exe (file ./images/Mechanical_Images/Feeder trough.pdf
-): PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/Mechanical_Images/Feeder trough.pdf, id=1378, 1195.46625pt x 845.1575pt
->
-File: images/Mechanical_Images/Feeder trough.pdf Graphic file (type pdf)
-<use images/Mechanical_Images/Feeder trough.pdf>
-Package pdftex.def Info: images/Mechanical_Images/Feeder trough.pdf  used on in
-put line 90.
-(pdftex.def)             Requested size: 418.82372pt x 296.09326pt.
-[69 <./images/Mechanical_Images/Chute bracket.pdf>]
-
-pdfTeX warning: pdflatex.exe (file ./images/Mechanical_Images/Hopper.pdf): PDF 
-inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/Mechanical_Images/Hopper.pdf, id=1407, 1195.46625pt x 845.1575pt>
-File: images/Mechanical_Images/Hopper.pdf Graphic file (type pdf)
-<use images/Mechanical_Images/Hopper.pdf>
-Package pdftex.def Info: images/Mechanical_Images/Hopper.pdf  used on input lin
-e 97.
-(pdftex.def)             Requested size: 418.82372pt x 296.09326pt.
-) [70 <./images/Mechanical_Images/Feeder trough.pdf>] [71 <./images/Mechanical_
-Images/Hopper.pdf>] (Interim_Report_Main.aux)
+[72 <./images/coffee_Images/with_title_blocks/bottom_plate.JPG>]
+File: images/coffee_Images/chute.JPG Graphic file (type jpg)
+<use images/coffee_Images/chute.JPG>
+Package pdftex.def Info: images/coffee_Images/chute.JPG  used on input line 102
+.
+(pdftex.def)             Requested size: 418.82372pt x 262.59549pt.
+<images/coffee_Images/with_title_blocks/chute_bracket.JPG, id=1357, 343.2825pt 
+x 479.54156pt>
+File: images/coffee_Images/with_title_blocks/chute_bracket.JPG Graphic file (ty
+pe jpg)
+<use images/coffee_Images/with_title_blocks/chute_bracket.JPG>
+Package pdftex.def Info: images/coffee_Images/with_title_blocks/chute_bracket.J
+PG  used on input line 109.
+(pdftex.def)             Requested size: 418.82372pt x 585.0618pt.
+ [73]
+File: images/coffee_Images/feeder_trough.JPG Graphic file (type jpg)
+<use images/coffee_Images/feeder_trough.JPG>
+Package pdftex.def Info: images/coffee_Images/feeder_trough.JPG  used on input 
+line 116.
+(pdftex.def)             Requested size: 418.82372pt x 267.57893pt.
+ [74 <./images/coffee_Images/with_title_blocks/chute_bracket.JPG>]
+<images/coffee_Images/hopper.JPG, id=1367, 656.4525pt x 404.26031pt>
+File: images/coffee_Images/hopper.JPG Graphic file (type jpg)
+<use images/coffee_Images/hopper.JPG>
+Package pdftex.def Info: images/coffee_Images/hopper.JPG  used on input line 12
+3.
+(pdftex.def)             Requested size: 418.82372pt x 257.92381pt.
+) [75 <./images/coffee_Images/hopper.JPG>] (Interim_Report_Main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `Interim_Report_Main.out' has not changed.
-(rerunfilecheck)             Checksum: DAAE1B8908656710D555059FEAB83E8E;13501.
+(rerunfilecheck)             Checksum: 907AB5D82F0C93F307259BEC78B0FF3B;14372.
  ) 
 Here is how much of TeX's memory you used:
- 27915 strings out of 467870
- 557671 string characters out of 5418838
- 954270 words of memory out of 5000000
- 56040 multiletter control sequences out of 15000+600000
- 637551 words of font info for 76 fonts, out of 8000000 for 9000
+ 29417 strings out of 467870
+ 584225 string characters out of 5418838
+ 981610 words of memory out of 5000000
+ 57477 multiletter control sequences out of 15000+600000
+ 640240 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,108p,810b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,131p,814b,946s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 200.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1563,12 +1735,15 @@ sfonts/cm/cmsl12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/user/AppData/Local/Programs/MiKTe
 X/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Users/user/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/user/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/user/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Interim_Report_Main.pdf (82 pages, 6105114 bytes).
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/user/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/user/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/use
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/U
+sers/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.p
+fb>
+Output written on Interim_Report_Main.pdf (87 pages, 4797059 bytes).
 PDF statistics:
- 1591 PDF objects out of 1728 (max. 8388607)
- 266 named destinations out of 1000 (max. 500000)
- 762 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1508 PDF objects out of 1728 (max. 8388607)
+ 290 named destinations out of 1000 (max. 500000)
+ 799 words of extra memory for PDF output out of 10000 (max. 10000000)
 

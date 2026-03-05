@@ -1,4 +1,8 @@
-\section{Circuit Schematics}\label{app:schematics}
+\section*{Appendices}\label{app:appendices}
+\addcontentsline{toc}{section}{Appendices}
+
+\section*{Appendix A: Circuit Schematics}\label{app:schematics}
+\addcontentsline{toc}{section}{Appendix A: Circuit Schematics}
 
 \begin{figure}[H]
   \centering
@@ -23,28 +27,49 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.82\textwidth]{Full_proteus_circuit.pdf}
+  \includegraphics[width=0.92\textwidth]{Proteus_Full_Circuit.PNG}
   \caption{Proteus full-circuit simulation}
   \label{fig:app_proteus_full}
 \end{figure}
 
-\section{Schedule and Budget}\label{app:schedule_budget}
+\section*{Appendix B: Schedule and Budget}\label{app:schedule_budget}
+\addcontentsline{toc}{section}{Appendix B: Schedule and Budget}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.82\textwidth]{Time_Plan.jpeg}
-  \caption{Project schedule from the approved proposal}
+  \includegraphics[width=0.95\textwidth]{coffee_Timeplan.jpeg}
+  \caption{Project Gantt chart and schedule}
   \label{fig:app_timeplan}
 \end{figure}
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
-  \includegraphics[width=0.78\textwidth]{Budget.jpeg}
-  \caption{Project budget from the approved proposal}
-  \label{fig:app_budget}
-\end{figure}
+  \caption{Project Budget --- Modification and Improvement of a Coffee Berry Sorting Machine}
+  \label{tab:app_budget}
+  \footnotesize
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabularx}{\linewidth}{@{}clXXrrr@{}}
+    \toprule
+    \textbf{S/No.} & \textbf{Item} & \textbf{Description} & \textbf{Store/Shop} &
+    \textbf{Unit (KES)} & \textbf{Qty} & \textbf{Total (KES)} \\
+    \midrule
+    1  & Controllers      & ESP32 and Raspberry Pi~4               & Bluepack Nova                  & 13{,}000 & 1 & 13{,}000 \\
+    2  & Camera Module    & Arducam OV9281 Global Shutter Camera   & Bluepack Nova                  &  6{,}000 & 1 &  6{,}000 \\
+    3  & Power Supply     & DC power supply unit                   & Bluepack Nova                  &  2{,}500 & 1 &  2{,}500 \\
+    4  & Air Ejectors     & Pneumatic air ejector nozzles          & Prestige Industrial Services   &    625 & 4 &  2{,}500 \\
+    5  & Vibrating Motor  & DC vibrating motor (eccentric-mass)    & Bluepack Nova                  &  1{,}500 & 1 &  1{,}500 \\
+    6  & Relay            & Electromechanical relay module         & Bluepack Nova                  &    100 & 1 &    100 \\
+    7  & Frame            & 6m Mild steel structural sections      & Local Hardware shop            &    500 & 6 &  3{,}000 \\
+    8  & Bolts and Nuts   & M8~20 fastening hardware               & Local Hardware shop            &    300 & 1 &    300 \\
+    9  & Sheet Metal      & 1000$\times$500$\times$2\,mm mild steel plates & Local Hardware shop &  4{,}000 & 1 &  4{,}000 \\
+    \midrule
+    \multicolumn{6}{l}{\textbf{Total}} & \textbf{32{,}900} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
 
-\section{Dataset and Model Outputs}\label{app:dataset}
+\section*{Appendix C: Dataset and Model Outputs}\label{app:dataset}
+\addcontentsline{toc}{section}{Appendix C: Dataset and Model Outputs}
 
 \begin{figure}[H]
   \centering
@@ -60,41 +85,42 @@
   \label{fig:app_old_val}
 \end{figure}
 
-\section{Mechanical Design Schematics}\label{app:mechanical_schematics}
+\section*{Appendix D: Mechanical Design}\label{app:mechanical_schematics}
+\addcontentsline{toc}{section}{Appendix D: Mechanical Design}
 
-Detailed mechanical design schematics from the reference implementation \cite{mugo2017} are provided below for reference. These technical drawings document the dimensional specifications and assembly details of the mechanical subsystem that is retained in the improved sorting machine.
+Detailed mechanical design drawings from the reference implementation \cite{mugo2017} are provided below. These technical drawings document the dimensional specifications and assembly details of the mechanical subsystem that is being retained and re-fabricated in the improved sorting machine.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.92\textwidth]{Bottom plate.pdf}
-  \caption{Bottom plate technical drawing with dimensions and specifications}
-  \label{fig:bottom_plate_schematic}
+  \includegraphics[width=0.92\textwidth]{bottom_plate.JPG}
+  \caption{Base plate technical drawing with dimensions and specifications}
+  \label{fig:app_bottom_plate}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.92\textwidth]{Chute .pdf}
+  \includegraphics[width=0.92\textwidth]{chute.JPG}
   \caption{Chute assembly technical drawing with dimensions and specifications}
-  \label{fig:chute_schematic}
+  \label{fig:app_chute}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.92\textwidth]{Chute bracket.pdf}
+  \includegraphics[width=0.92\textwidth]{chute_bracket.JPG}
   \caption{Chute mounting bracket technical drawing with dimensions and specifications}
-  \label{fig:chute_bracket_schematic}
+  \label{fig:app_chute_bracket}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.92\textwidth]{Feeder trough.pdf}
+  \includegraphics[width=0.92\textwidth]{feeder_trough.JPG}
   \caption{Vibrating feeder trough technical drawing with dimensions and specifications}
-  \label{fig:feeder_schematic}
+  \label{fig:app_feeder}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.92\textwidth]{Hopper.pdf}
+  \includegraphics[width=0.92\textwidth]{hopper.JPG}
   \caption{Hopper assembly technical drawing with dimensions and specifications}
-  \label{fig:hopper_schematic}
+  \label{fig:app_hopper}
 \end{figure}

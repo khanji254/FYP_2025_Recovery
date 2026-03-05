@@ -25,16 +25,82 @@ A structured performance audit of the existing sorting machine was conducted to 
   \item Measuring end-to-end pipeline latency (frame capture $\rightarrow$ inference $\rightarrow$ actuation trigger) under realistic operating conditions.
   \item Evaluating classification accuracy on a held-out set of berry images collected directly from the machine at operating speed, where motion blur was most evident.
   \item Characterising the rolling-shutter distortion of the original Raspberry Pi Camera V2 at chute speeds of 0.4--0.6\,m\,s$^{-1}$.
-  \item Identifying the contribution of the single-core Raspberry Pi~3B+ to pipeline serialisation and throughput bottlenecks.
+  \item Identifying the contribution of the Raspberry Pi~4 running a serialised single-threaded pipeline to throughput bottlenecks.
 \end{itemize}
 
 These findings directly informed the improvements described in the following sections.
 
 % ---------------------------------------------------------------
+\subsection{Mechanical Subsystem — Retained and Fabricated}
+\label{subsec:mechanical}
+
+The mechanical subsystem of the coffee berry sorting machine was originally designed and fabricated by a previous team of fifth-year mechatronic engineering students at JKUAT \cite{mugo2017}. Their work established the structural framework, berry feeding mechanism, chute, and ejection arrangement that form the physical backbone of the sorting system. This project acknowledges and builds upon that foundational design work. Since the mechanical components are being re-fabricated for the improved system, the design specifications from the original project have been reviewed, retained, and re-used as the basis for fabrication.
+
+\subsubsection{Berry Feeding Mechanism}
+
+Berries are loaded into a hopper and fed onto the inspection chute via a \textbf{vibrating feeder trough}. An eccentric-mass DC vibrating motor, mounted beneath the trough, imparts periodic vibration that causes berries to advance along the trough in a singulated stream toward the imaging and ejection zone. The vibration frequency and amplitude are controlled by PWM from the ESP32, allowing feed rate to be adjusted. Figure~\ref{fig:mech_hopper} and Figure~\ref{fig:mech_feeder} show the hopper and feeder trough respectively.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Hopper.JPG}
+    \caption{Hopper assembly — berry loading and gravity feed into the trough}
+    \label{fig:mech_hopper}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{feeder_trough.JPG}
+    \caption{Vibrating feeder trough — singulated berry stream to inspection zone}
+    \label{fig:mech_feeder}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{Inspection Chute and Ejection}
+
+From the feeder trough, berries transit through the \textbf{inspection chute} where the camera captures frames for classification. Berries classified as \texttt{reject} are diverted by \textbf{pneumatic air ejector nozzles} mounted in the ejector holder; a short burst of compressed air deflects the berry into the reject bin. Berries classified as \texttt{accept} continue to the accept bin unimpeded. Figure~\ref{fig:mech_chute} shows the chute assembly and Figure~\ref{fig:mech_assembly} shows the full assembled structure.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{chute.JPG}
+    \caption{Inspection chute — berry transit path from feeder to ejection zone}
+    \label{fig:mech_chute}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{main_assembly.JPG}
+    \caption{Full assembly of the sorting machine}
+    \label{fig:mech_assembly}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{Structural Frame and Components}
+
+The main structural frame is fabricated from mild steel structural sections, providing rigidity and vibration resistance. Key fabricated components include the main frame, base plate, chute bracket, and the camera and ejector holder stand — all of which position the sensing and actuation components relative to the berry stream. These components are being re-fabricated for the improved machine using the original design drawings (see Appendix~D).
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{main_Frame.JPG}
+    \caption{Main structural frame of the sorting machine}
+    \label{fig:mech_frame}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{{full__assembly_front_views.JPG}}
+    \caption{Full assembly front view}
+    \label{fig:mech_front}
+  \end{minipage}
+\end{figure}
+
+% ---------------------------------------------------------------
 \subsection{Dataset Collection and Model Training}
 \label{subsec:dataset}
 
-The classification model was rebuilt from the ground up using upgraded hardware and a purpose-built binary dataset. The Raspberry Pi~3B+ was replaced with the \textbf{Raspberry Pi~4 (4\,GB RAM)}, providing a quad-core Cortex-A72 at 1.5\,GHz and approximately 3$\times$ the memory bandwidth, allowing inference to run concurrently with frame capture. The MobileNetV2 TFLite classifier was replaced with \textbf{YOLOv11n}, retrained on a new binary dataset that consolidates the original four ambiguous ripeness classes into two well-separated outcomes.
+The classification model was rebuilt from the ground up using upgraded hardware and a purpose-built binary dataset. The \textbf{Raspberry Pi~4 (4\,GB RAM)} was selected as the inference platform, providing a quad-core Cortex-A72 at 1.5\,GHz and approximately 3$\times$ the memory bandwidth of earlier Pi generations, allowing inference to run concurrently with frame capture. The MobileNetV2 TFLite classifier was replaced with \textbf{YOLOv11n}, retrained on a new binary dataset that consolidates the original four ambiguous ripeness classes into two well-separated outcomes.
 
 \subsubsection{Image Acquisition}
 
@@ -154,7 +220,7 @@ the two processors is over UART at 115\,200\,baud.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.90\textwidth]{control_flow.pdf}
+  \includegraphics[width=0.60\textwidth]{control_flow.pdf}
   \caption{System control flow: task distribution between Raspberry Pi~4
   (inference and tracking) and ESP32 (actuation, timing, and PWM control)}
   \label{fig:ctrl_flow_ch3}
@@ -167,7 +233,8 @@ The pipeline operates as follows:
   \item Pi Camera captures a frame from the detection zone.
   \item YOLOv11 performs inference to detect and classify berries in the frame
         (Figure~\ref{fig:processing_flow}).
-  \item Detected berry positions are tracked across frames using a centroid tracker.
+  \item Detected berry positions are tracked across frames using a centroid tracker
+        \cite{bewley2016}.
   \item When a tracked berry reaches the ejection zone, the Pi sends a binary decision
         (\texttt{ACCEPT} or \texttt{REJECT:n} where $n$ is the ejector index) to the
         ESP32 via UART (Figure~\ref{fig:uart_flow}).
@@ -177,18 +244,90 @@ The pipeline operates as follows:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.65\textwidth]{processing_flow.pdf}
+  \begin{tikzpicture}[
+    node distance=0.6cm,
+    proc/.style={rectangle, rounded corners=4pt, draw=black!65, fill=blue!8,
+                 text width=8cm, minimum height=0.9cm, align=center, font=\small},
+    dec/.style={diamond, draw=black!65, fill=orange!12, aspect=3,
+                text width=4cm, align=center, font=\small\bfseries, inner sep=1pt},
+    act/.style={rectangle, rounded corners=4pt, draw=black!65, fill=green!10,
+                text width=5.2cm, minimum height=0.85cm, align=center, font=\small},
+    arr/.style={->, >=stealth, thick}
+  ]
+    \node[proc] (cap) {Frame Capture\\
+                       \footnotesize{OV9281 Global-Shutter Camera}};
+    \node[proc, below=of cap] (pre) {Pre-processing\\
+                       \footnotesize{Resize $\rightarrow$ normalise $\rightarrow$ greyscale conversion}};
+    \node[proc, below=of pre] (inf) {YOLOv11n Inference\\
+                       \footnotesize{Raspberry Pi~4 (4\,GB RAM) --- ARM Cortex-A72 @ 1.5\,GHz}};
+    \node[proc, below=of inf] (trk) {Centroid Tracking\\
+                       \footnotesize{Assign berry ID; predict ejection timing}};
+    \node[dec, below=0.9cm of trk] (dec) {Classify as \texttt{reject}?};
+    \node[act, below left=0.8cm and 2.5cm of dec] (rej) {\texttt{REJECT:n} via UART\\
+                       \footnotesize{ESP32 fires solenoid ejector}};
+    \node[act, below right=0.8cm and 2.5cm of dec] (acc) {\texttt{ACCEPT}\\
+                       \footnotesize{Berry passes through chute}};
+    \draw[arr] (cap)--(pre);
+    \draw[arr] (pre)--(inf);
+    \draw[arr] (inf)--(trk);
+    \draw[arr] (trk)--(dec);
+    \draw[arr] (dec) -- node[left, font=\footnotesize\bfseries]{Yes} (rej);
+    \draw[arr] (dec) -- node[right, font=\footnotesize\bfseries]{No}  (acc);
+  \end{tikzpicture}
   \caption{Image processing pipeline for the YOLOv11-based sorter:
   frame capture (global shutter) $\rightarrow$ pre-processing $\rightarrow$
-  YOLOv11 inference on Raspberry Pi~4 $\rightarrow$ tracking $\rightarrow$
-  UART command to ESP32}
+  YOLOv11 inference on Raspberry Pi~4 $\rightarrow$ centroid tracking
+  $\rightarrow$ UART command to ESP32}
   \label{fig:processing_flow}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.80\textwidth]{uart_communication.pdf}
-  \caption{UART communication and data flow between Raspberry Pi and ESP32}
+  \begin{adjustbox}{max width=\linewidth}
+  \begin{tikzpicture}[
+    node distance=0.55cm,
+    pib/.style={rectangle, rounded corners=3pt, draw=blue!60!black, fill=blue!7,
+                text width=5.2cm, minimum height=0.85cm, align=center, font=\small},
+    espb/.style={rectangle, rounded corners=3pt, draw=orange!80!black, fill=orange!7,
+                 text width=5.2cm, minimum height=0.85cm, align=center, font=\small},
+    hdr/.style={rectangle, draw=gray!50, fill=gray!18, text width=5.2cm,
+                minimum height=0.7cm, align=center, font=\small\bfseries},
+    piarr/.style={->, >=stealth, thick, blue!60!black},
+    esparr/.style={->, >=stealth, thick, orange!70!black},
+    uartarr/.style={->, >=stealth, thick, dashed, gray!50!black, line width=1.2pt}
+  ]
+    %--- Pi~4 column (left) ---
+    \node[hdr]  (pH)  at (2.8,0)    {Raspberry Pi~4};
+    \node[pib]  (p1)  at (2.8,-1.2) {1.\ Capture frame\\
+                                      \footnotesize{OV9281 global-shutter camera}};
+    \node[pib]  (p2)  at (2.8,-2.65){2.\ YOLOv11n inference\\
+                                      \footnotesize{Bounding box + class per berry}};
+    \node[pib]  (p3)  at (2.8,-4.1) {3.\ Centroid tracking\\
+                                      \footnotesize{Compute ejection timing offset}};
+    \node[pib]  (p4)  at (2.8,-5.55){4.\ Send UART command\\
+                                      \footnotesize{\texttt{REJECT:n} (n=1--4) or \texttt{ACCEPT}}};
+    %--- ESP32 column (right) ---
+    \node[hdr]  (eH)  at (11.3,0)    {ESP32};
+    \node[espb] (e1)  at (11.3,-5.55){1.\ Receive UART bytes\\
+                                       \footnotesize{115\,200\,bps, 8N1 framing}};
+    \node[espb] (e2)  at (11.3,-7.0) {2.\ Parse command string\\
+                                       \footnotesize{Extract type and ejector index}};
+    \node[espb] (e3)  at (11.3,-8.45){3a.\ Fire solenoid \emph{n} for 40\,ms\\
+                                       \footnotesize{3b.\ No action on \texttt{ACCEPT}}};
+    %--- Pi flow ---
+    \draw[piarr] (p1)--(p2);
+    \draw[piarr] (p2)--(p3);
+    \draw[piarr] (p3)--(p4);
+    %--- ESP flow ---
+    \draw[esparr] (e1)--(e2);
+    \draw[esparr] (e2)--(e3);
+    %--- UART link ---
+    \draw[uartarr] (p4.east) -- node[above, font=\footnotesize]{UART 115\,200\,bps} (e1.west);
+  \end{tikzpicture}
+  \end{adjustbox}
+  \caption{UART communication and data flow between Raspberry Pi~4 and ESP32:
+  the Pi sends \texttt{REJECT:n} or \texttt{ACCEPT} commands after each inference
+  decision; the ESP32 handles all real-time solenoid actuation.}
   \label{fig:uart_flow}
 \end{figure}
 
@@ -201,42 +340,42 @@ Table~\ref{tab:wiring} defines the pin assignments for the ESP32 microcontroller
   \caption{Raspberry Pi, ESP32, and Peripheral Wiring Assignment}
   \label{tab:wiring}
   \small
-  \begin{tabular}{@{}llll@{}}
+  \begin{tabularx}{\linewidth}{@{}lllX@{}}
     \toprule
     \textbf{Function} & \textbf{Device} & \textbf{Pin/Port} & \textbf{Notes} \\
     \midrule
-    \multicolumn{4}{l}{\textbf{UART Communication (Pi $\leftrightarrow$ ESP32)}} \\
+    \multicolumn{4}{@{}l}{\textbf{UART Communication (Pi $\leftrightarrow$ ESP32)}} \\
     UART TX & Raspberry Pi & GPIO 14 (TXD) & 3.3\,V; transmit to ESP32 RX \\
     UART RX & Raspberry Pi & GPIO 15 (RXD) & 3.3\,V; receive from ESP32 TX \\
     UART RX & ESP32 & GPIO 16 & Receive from Pi TXD \\
     UART TX & ESP32 & GPIO 17 & Transmit to Pi RXD \\
     Baud rate & Both & 115\,200 bps, 8N1 & Serial protocol parameters \\
     \midrule
-    \multicolumn{4}{l}{\textbf{Ejector Solenoid Control (ESP32)}} \\
+    \multicolumn{4}{@{}l}{\textbf{Ejector Solenoid Control (ESP32)}} \\
     Ejector 1 & ESP32 & GPIO 4 & MOSFET gate + 220\,$\Omega$ resistor \\
     Ejector 2 & ESP32 & GPIO 5 & Flyback diode across solenoid \\
     Ejector 3 & ESP32 & GPIO 12 & 1N4007 (cathode to +12\,V) \\
     Ejector 4 & ESP32 & GPIO 13 & 100\,k$\Omega$ pull-down for safety \\
     \midrule
-    \multicolumn{4}{l}{\textbf{Vibrating Motor (ESP32)}} \\
+    \multicolumn{4}{@{}l}{\textbf{Vibrating Motor (ESP32)}} \\
     Motor PWM & ESP32 & GPIO 14 (PWM) & MOSFET gate driver \\
     Motor supply & 12\,V rail & +12\,V, GND & Flyback diode protection \\
     \midrule
-    \multicolumn{4}{l}{\textbf{Pneumatic Compressor (ESP32)}} \\
+    \multicolumn{4}{@{}l}{\textbf{Pneumatic Compressor (ESP32)}} \\
     Compressor & ESP32 & GPIO 21 (relay) & Relay driver; on/off switching \\
     Compressor supply & 12\,V rail & +12\,V, GND & Relay coil protection diode \\
     \midrule
-    \multicolumn{4}{l}{\textbf{LED Status Indicator (ESP32)}} \\
+    \multicolumn{4}{@{}l}{\textbf{LED Status Indicator (ESP32)}} \\
     LED PWM & ESP32 & GPIO 22 (PWM) & MOSFET gate driver \\
     LED supply & 12\,V rail & +12\,V, GND & Flyback diode protection \\
     \midrule
-    \multicolumn{4}{l}{\textbf{Power Supply}} \\
+    \multicolumn{4}{@{}l}{\textbf{Power Supply}} \\
     Logic 5\,V & Buck converter & Pi 5\,V, 3\,A+ & Raspberry Pi~4 supply \\
     Logic 5\,V & Buck converter & ESP32 5\,V, 2\,A+ & Onboard 3.3\,V regulator \\
     Motor/actuator 12\,V & Battery/adapter & 10\,A fused & Main actuator supply \\
     Common GND & All devices & Star ground point & All GND returns tied together \\
     \bottomrule
-  \end{tabular}
+  \end{tabularx}
 \end{table}
 
 Each ejector solenoid circuit includes a 220\,$\Omega$ gate resistor for current limiting and a 100\,k$\Omega$ pull-down to prevent false firing on power-up. A flyback diode (1N4007, cathode to +12\,V) across each solenoid suppresses inductive transient kickback when the MOSFET switch opens.
@@ -254,6 +393,7 @@ becomes critical in a timer-sensitive ejection circuit.
   \caption{BJT (PN2222A) vs.\ Logic-Level MOSFET (IRLZ44N) switching comparison}
   \label{tab:bjt_vs_mosfet}
   \small
+  \begin{adjustbox}{max width=\linewidth}
   \begin{tabular}{@{}lll@{}}
     \toprule
     \textbf{Parameter} & \textbf{BJT (PN2222A)} & \textbf{MOSFET (IRLZ44N)} \\ \midrule
@@ -268,6 +408,7 @@ becomes critical in a timer-sensitive ejection circuit.
     Suitability at 3.3\,V gate/base & Marginal ($V_{BE}$ barely saturates) & Full enhancement; specified at 3.3\,V \\
     \bottomrule
   \end{tabular}
+  \end{adjustbox}
 \end{table}
 
 The critical advantage of the MOSFET for this application is the absence of
@@ -306,7 +447,7 @@ the design verified in Proteus and tabulated in Table~\ref{tab:wiring}.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\textwidth, trim=15 15 15 15, clip]{circuit_implementation.png}
+  \includegraphics[width=0.95\textwidth, trim=15 15 15 15, clip]{Proteus_Full_Circuit.PNG}
   \caption{Fritzing circuit diagram of the ESP32 solenoid driver implementation:
   IRLZ44N MOSFET switching stages, flyback diodes, gate resistors, and
   Raspberry Pi UART connection}

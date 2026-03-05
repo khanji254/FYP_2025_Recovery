@@ -4,70 +4,74 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Background of Study}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Problem Statement}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Objectives}{3}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}Main Objective}{3}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}Specific Objectives}{3}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3}Objectives}{4}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Main Objective}{4}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Specific Objectives}{4}{subsubsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.4}Justification}{4}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Scope of the Project}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.5}Scope of the Project}{5}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}Expected Outcomes}{5}{subsection.1.6}%
-\contentsline {section}{\numberline {2}Literature Review}{6}{section.2}%
-\contentsline {subsection}{\numberline {2.1}The Reference Project: Previous Coffee Berry Sorting Machine}{7}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}System Architecture of the Reference Machine}{7}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Identified Limitations of the Reference Machine}{8}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Challenges of Manual and Early Automated Sorting}{10}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Mechanical Material Handling}{11}{subsection.2.3}%
+\contentsline {section}{\numberline {2}Literature Review}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Previous Works}{8}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}System Architecture of the Reference Machine}{8}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Identified Limitations of the Reference Machine}{9}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Challenges of Manual and Early Automated Sorting}{11}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Mechanical Material Handling}{12}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Camera Technology: Rolling Shutter vs.\ Global Shutter}{13}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Deep Learning Object Detection for Sorting}{14}{subsection.2.5}%
 \contentsline {subsubsection}{\numberline {2.5.1}CNN-Based Feature Extraction}{14}{subsubsection.2.5.1}%
 \contentsline {subsubsection}{\numberline {2.5.2}MobileNetV2 and its Limitations}{14}{subsubsection.2.5.2}%
 \contentsline {subsubsection}{\numberline {2.5.3}YOLO Family: Real-Time Detection with Localisation}{15}{subsubsection.2.5.3}%
-\contentsline {subsubsection}{\numberline {2.5.4}YOLOv11 on Embedded Platforms}{17}{subsubsection.2.5.4}%
+\contentsline {subsubsection}{\numberline {2.5.4}YOLOv11 on Embedded Platforms}{16}{subsubsection.2.5.4}%
 \contentsline {subsection}{\numberline {2.6}Binary (Accept/Reject) vs.\ Fine-Grained Classification}{17}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Embedded Co-Processor Architectures}{19}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.7}Embedded Co-Processor Architectures}{18}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Summary of Literature Gaps Addressed by This Project}{20}{subsection.2.8}%
-\contentsline {section}{\numberline {3}Methodology}{22}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Performance Analysis of Existing Machine}{22}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Dataset Collection and Model Training}{23}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Image Acquisition}{23}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Annotation}{24}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Dataset Split}{25}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}YOLOv11 Model Training}{25}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Framework and Backbone}{25}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Training Configuration}{26}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Evaluation Metrics}{26}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Sorting Mechanism Improvements}{26}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Hardware Platform}{27}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Detection-to-Actuation Pipeline}{30}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}ESP32 Pin Assignment and Wiring}{33}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Transistor Technology Selection: BJT vs.\ Logic-Level MOSFET}{35}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}Solenoid Driver Circuit}{36}{subsubsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.5}Circuit Simulation in Proteus}{37}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Simulation Scope}{37}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Simulation Methodology}{38}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Validation Strategy}{39}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Results and Discussion}{40}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Overview}{40}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Performance Analysis of Existing System}{40}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Sorting Mechanism Improvements}{41}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Procured and Verified Hardware}{41}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Proteus Circuit Simulation Results}{43}{subsubsection.4.3.2}%
-\contentsline {paragraph}{Full Circuit Overview}{43}{section*.30}%
-\contentsline {paragraph}{UART Communication Verification}{44}{section*.32}%
-\contentsline {paragraph}{Solenoid Driver Switching Waveforms}{44}{section*.33}%
-\contentsline {paragraph}{Motor PWM and Compressor Relay}{46}{section*.36}%
-\contentsline {subsection}{\numberline {4.4}Hardware Upgrade and Model Development}{46}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Dataset and Class Reduction}{46}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}YOLOv11n Training Results}{47}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Dataset Visualisations}{50}{subsubsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.4}Sample Detection Output}{52}{subsubsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.5}Software Development}{53}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Discussion: Progress Against Objectives}{56}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Conclusion}{57}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Summary}{57}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Future Work}{58}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Project Schedule}{58}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Risk Assessment}{58}{subsection.5.4}%
-\contentsline {section}{\numberline {A}Circuit Schematics}{61}{appendix.A}%
-\contentsline {section}{\numberline {B}Schedule and Budget}{64}{appendix.B}%
-\contentsline {section}{\numberline {C}Dataset and Model Outputs}{65}{appendix.C}%
-\contentsline {section}{\numberline {D}Mechanical Design Schematics}{66}{appendix.D}%
+\contentsline {section}{\numberline {3}Methodology}{21}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Performance Analysis of Existing Machine}{21}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Mechanical Subsystem — Retained and Fabricated}{22}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Berry Feeding Mechanism}{22}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Inspection Chute and Ejection}{23}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Structural Frame and Components}{24}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Dataset Collection and Model Training}{26}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Image Acquisition}{26}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Annotation}{27}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Dataset Split}{27}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}YOLOv11 Model Training}{27}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Framework and Backbone}{27}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Training Configuration}{28}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Evaluation Metrics}{28}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Sorting Mechanism Improvements}{28}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Hardware Platform}{29}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Detection-to-Actuation Pipeline}{32}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}ESP32 Pin Assignment and Wiring}{34}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Transistor Technology Selection: BJT vs.\ Logic-Level MOSFET}{36}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Solenoid Driver Circuit}{37}{subsubsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.6}Circuit Simulation in Proteus}{38}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Simulation Scope}{39}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Simulation Methodology}{39}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Validation Strategy}{40}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Results and Discussion}{41}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Overview}{41}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Performance Analysis of Existing System}{41}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Sorting Mechanism Improvements}{42}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Procured and Verified Hardware}{42}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Proteus Circuit Simulation Results}{44}{subsubsection.4.3.2}%
+\contentsline {paragraph}{Full Circuit Overview}{44}{section*.32}%
+\contentsline {paragraph}{UART Communication Verification}{45}{section*.34}%
+\contentsline {paragraph}{Solenoid Driver Switching Waveforms}{45}{section*.35}%
+\contentsline {paragraph}{Motor PWM and Compressor Relay}{46}{section*.38}%
+\contentsline {subsection}{\numberline {4.4}Hardware Upgrade and Model Development}{47}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Dataset and Class Reduction}{47}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}YOLOv11n Training Results}{48}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Dataset Visualisations}{51}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Sample Detection Output}{53}{subsubsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.5}Software Development}{54}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Discussion: Progress Against Objectives}{57}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Conclusion}{58}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Summary}{58}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Future Work}{59}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Project Schedule}{59}{subsection.5.3}%
+\contentsline {section}{Appendices}{64}{section*.51}%
+\contentsline {section}{Appendix A: Circuit Schematics}{64}{section*.52}%
+\contentsline {section}{Appendix B: Schedule and Budget}{68}{section*.57}%
+\contentsline {section}{Appendix C: Dataset and Model Outputs}{70}{section*.60}%
+\contentsline {section}{Appendix D: Mechanical Design}{71}{section*.63}%

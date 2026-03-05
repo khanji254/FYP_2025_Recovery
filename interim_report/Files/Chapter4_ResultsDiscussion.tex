@@ -14,6 +14,7 @@ A detailed performance audit of the existing sorting machine was conducted to es
 \begin{table}[H]
   \centering
   \caption{Measured baseline performance of existing sorting machine}
+  \begin{adjustbox}{max width=\linewidth}
   \begin{tabular}{@{}lcc@{}}
     \toprule
     \textbf{Metric} & \textbf{Measured Value} & \textbf{Target} \\ \midrule
@@ -22,11 +23,12 @@ A detailed performance audit of the existing sorting machine was conducted to es
     Throughput (berries/min) & $\approx 35$ & $>80$ \\
     \bottomrule
   \end{tabular}
+  \end{adjustbox}
   \label{tab:baseline}
 \end{table}
 
-The dominant contribution to latency was the serialised inference on the Pi~3
-($\approx 310$\,ms per frame using TensorFlow Lite MobileNet). Motion blur from
+The dominant contribution to latency was the serialised inference pipeline
+($\approx 310$\,ms per frame using TensorFlow Lite MobileNet on the original platform). Motion blur from
 the rolling-shutter camera degraded image quality at operating chute speed, reducing
 classification confidence. Misclassification was concentrated at the semi-ripe/ripe
 boundary in the four-class model, where visually similar colours produced ambiguous
@@ -68,17 +70,8 @@ The following components have been procured, bench-tested, and verified for comp
   \item IRLZ44N MOSFETs (×4), 1N5819 Schottky diodes, 220\,$\Omega$ and 100\,k$\Omega$ resistors.
 \end{itemize}
 
-The electrical design including power distribution and solenoid driver circuits is
-documented in Figure~\ref{fig:elec_schematic}, and the high-level system block
-diagram in Figure~\ref{fig:sys_block}.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.82\textwidth]{electrical_schematic.pdf}
-  \caption{Electrical schematic: power distribution, processor connections, actuator
-  outputs, and communication links}
-  \label{fig:elec_schematic}
-\end{figure}
+The high-level system block diagram, showing the processor hierarchy,
+communication links, and actuator outputs, is presented in Figure~\ref{fig:sys_block}.
 
 \begin{figure}[H]
   \centering
@@ -101,7 +94,7 @@ relay module, and UART virtual terminal representing the Raspberry Pi link.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.82\textwidth]{Full_proteus_circuit.pdf}
+  \includegraphics[width=0.92\textwidth]{Proteus_Full_Circuit.PNG}
   \caption{Complete Proteus ISIS simulation: ESP32 with four IRLZ44N solenoid driver
   channels, vibrating motor PWM, LED strip driver, 2-channel optocoupler relay, and
   UART virtual terminal}
@@ -158,7 +151,7 @@ compressor load ON/OFF with clean switching and correct protection diode behavio
 
 With the mechanism improvements validated, work shifted to upgrading the processing
 platform and classification model. The \textbf{Raspberry Pi~4 (4\,GB RAM)}
-replaces the Pi~3B+, providing $\approx$3$\times$ memory bandwidth and enabling
+\cite{raspberrypi2019} is the selected platform, providing $\approx$3$\times$ the memory bandwidth of earlier Pi generations, enabling
 YOLOv11 inference to overlap with the next frame capture. In parallel, the
 MobileNetV2 four-class classifier was retired; \textbf{YOLOv11n} was retrained
 on a new 2{,}000-image binary dataset, eliminating the semi-ripe/ripe boundary
@@ -175,6 +168,7 @@ ambiguous classes into two eliminates the dominant misclassification boundary.
 \begin{table}[H]
   \centering
   \caption{Dataset split summary (2{,}000-image binary dataset)}
+  \begin{adjustbox}{max width=\linewidth}
   \begin{tabular}{@{}lccc@{}}
     \toprule
     \textbf{Split} & \textbf{Images} & \textbf{\texttt{accept} instances} & \textbf{\texttt{reject} instances} \\ \midrule
@@ -185,6 +179,7 @@ ambiguous classes into two eliminates the dominant misclassification boundary.
     \textbf{Total} & \textbf{2{,}000} & \textbf{TODO} & \textbf{TODO} \\
     \bottomrule
   \end{tabular}
+  \end{adjustbox}
   \label{tab:dataset_split}
 \end{table}
 
@@ -230,6 +225,7 @@ Table~\ref{tab:results} summarises the final evaluation metrics on the test spli
 \begin{table}[H]
   \centering
   \caption{YOLOv11n evaluation results on test split}
+  \begin{adjustbox}{max width=\linewidth}
   \begin{tabular}{@{}lcccc@{}}
     \toprule
     \textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{mAP@0.5} & \textbf{mAP@0.5:0.95} \\ \midrule
@@ -239,6 +235,7 @@ Table~\ref{tab:results} summarises the final evaluation metrics on the test spli
     \textbf{Overall (binary mean)} & \textbf{TODO} & \textbf{TODO} & \textbf{TODO} & \textbf{TODO} \\
     \bottomrule
   \end{tabular}
+  \end{adjustbox}
   \label{tab:results}
 \end{table}
 
@@ -302,13 +299,13 @@ distribution between the Raspberry Pi and ESP32.
 \begin{table}[H]
   \centering
   \caption{Progress summary against specific objectives}
-  \begin{tabular}{@{}clp{5.5cm}l@{}}
+  \begin{tabularx}{\linewidth}{@{}cXp{4.5cm}c@{}}
     \toprule
     \textbf{Obj.} & \textbf{Description} & \textbf{Status} & \textbf{\% Complete} \\ \midrule
     1 & Analyse performance limitations & Completed: motion blur, latency (380\,ms), and classification accuracy quantified & 100\% \\
     2 & Improve the sorting mechanism & Completed: global-shutter camera, MOSFET drivers, ESP32 co-processor, Proteus verified & 90\% \\
     3 & Evaluate upgraded processing hardware & In progress: Pi~4 procured, binary dataset compiled, YOLOv11 training ongoing & 70\% \\
     \bottomrule
-  \end{tabular}
+  \end{tabularx}
   \label{tab:progress}
 \end{table}
