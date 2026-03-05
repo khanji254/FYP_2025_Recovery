@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  5 MAR 2026 09:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  5 MAR 2026 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1024,7 +1024,7 @@ Overfull \hbox (2.8972pt too wide) in paragraph at lines 11--12
 dur-ing crit-i-cal flight phases,
  []
 
-<images/XBeeDiagram.png, id=755, 799.98875pt x 466.74374pt>
+<images/XBeeDiagram.png, id=753, 799.98875pt x 466.74374pt>
 File: images/XBeeDiagram.png Graphic file (type png)
 <use images/XBeeDiagram.png>
 Package pdftex.def Info: images/XBeeDiagram.png  used on input line 15.
@@ -1067,12 +1067,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3] (Files/Chapter2_LiteratureReview.tex
-<images/Nakuja_N3_Rocket.PNG, id=780, 620.3175pt x 381.67593pt>
+<images/Nakuja_N3_Rocket.PNG, id=778, 620.3175pt x 381.67593pt>
 File: images/Nakuja_N3_Rocket.PNG Graphic file (type png)
 <use images/Nakuja_N3_Rocket.PNG>
 Package pdftex.def Info: images/Nakuja_N3_Rocket.PNG  used on input line 10.
 (pdftex.def)             Requested size: 255.40001pt x 157.14624pt.
-<images/Dual_Deployment.PNG, id=783, 297.36093pt x 198.7425pt>
+<images/Dual_Deployment.PNG, id=781, 297.36093pt x 198.7425pt>
 File: images/Dual_Deployment.PNG Graphic file (type png)
 <use images/Dual_Deployment.PNG>
 Package pdftex.def Info: images/Dual_Deployment.PNG  used on input line 17.
@@ -1145,18 +1145,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5 <./images/Dual_Deployment.PNG>]
-<images/xbee_module.jpg, id=803, 803.0pt x 803.0pt>
+<images/xbee_module.jpg, id=801, 803.0pt x 803.0pt>
 File: images/xbee_module.jpg Graphic file (type jpg)
 <use images/xbee_module.jpg>
 Package pdftex.def Info: images/xbee_module.jpg  used on input line 51.
 (pdftex.def)             Requested size: 131.82341pt x 131.81537pt.
-<images/Beacon_RSSI_Decay_Plot.PNG, id=806, 998.22937pt x 420.06938pt>
+<images/Beacon_RSSI_Decay_Plot.PNG, id=804, 998.22937pt x 420.06938pt>
 File: images/Beacon_RSSI_Decay_Plot.PNG Graphic file (type png)
 <use images/Beacon_RSSI_Decay_Plot.PNG>
 Package pdftex.def Info: images/Beacon_RSSI_Decay_Plot.PNG  used on input line 
 58.
 (pdftex.def)             Requested size: 238.92523pt x 100.54309pt.
-<images/duck_antenna.jpg, id=809, 702.625pt x 702.625pt>
+<images/duck_antenna.jpg, id=807, 702.625pt x 702.625pt>
 File: images/duck_antenna.jpg Graphic file (type jpg)
 <use images/duck_antenna.jpg>
 Package pdftex.def Info: images/duck_antenna.jpg  used on input line 69.
@@ -1170,12 +1170,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6 <./images/xbee_module.jpg> <./images/Beacon_RSSI_Decay_Plot.PNG>]
-<images/donut_pattern.png, id=818, 564.60938pt x 453.19313pt>
+<images/donut_pattern.png, id=816, 564.60938pt x 453.19313pt>
 File: images/donut_pattern.png Graphic file (type png)
 <use images/donut_pattern.png>
 Package pdftex.def Info: images/donut_pattern.png  used on input line 78.
 (pdftex.def)             Requested size: 185.37119pt x 148.79352pt.
-<images/BiQuadPic.jpg, id=821, 642.4pt x 357.335pt>
+<images/BiQuadPic.jpg, id=819, 642.4pt x 357.335pt>
 File: images/BiQuadPic.jpg Graphic file (type jpg)
 <use images/BiQuadPic.jpg>
 Package pdftex.def Info: images/BiQuadPic.jpg  used on input line 85.
@@ -1189,7 +1189,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7 <./images/duck_antenna.jpg> <./images/donut_pattern.png>]
-<images/The Crimson Powder Problem_Excessive_Pop.PNG, id=834, 228.10219pt x 245
+<images/The Crimson Powder Problem_Excessive_Pop.PNG, id=832, 228.10219pt x 245
 .41687pt>
 File: images/The Crimson Powder Problem_Excessive_Pop.PNG Graphic file (type pn
 g)
@@ -1197,21 +1197,21 @@ g)
 Package pdftex.def Info: images/The Crimson Powder Problem_Excessive_Pop.PNG  u
 sed on input line 103.
 (pdftex.def)             Requested size: 144.18108pt x 155.1302pt.
-<images/CHarge_Holder_Melted_From_Explosion.jpeg, id=837, 433.62pt x 374.14781p
+<images/CHarge_Holder_Melted_From_Explosion.jpeg, id=835, 433.62pt x 374.14781p
 t>
 File: images/CHarge_Holder_Melted_From_Explosion.jpeg Graphic file (type jpg)
 <use images/CHarge_Holder_Melted_From_Explosion.jpeg>
 Package pdftex.def Info: images/CHarge_Holder_Melted_From_Explosion.jpeg  used 
 on input line 110.
 (pdftex.def)             Requested size: 144.18108pt x 124.40543pt.
-<images/Post_PopTest_Charring_And_Leak_Image.jpeg, id=840, 432.86719pt x 667.74
-469pt>
+<images/Post_PopTest_Charring_And_Leak_Image.jpeg, id=838, 324.46219pt x 417.81
+094pt>
 File: images/Post_PopTest_Charring_And_Leak_Image.jpeg Graphic file (type jpg)
 <use images/Post_PopTest_Charring_And_Leak_Image.jpeg>
 Package pdftex.def Info: images/Post_PopTest_Charring_And_Leak_Image.jpeg  used
  on input line 117.
-(pdftex.def)             Requested size: 144.18108pt x 222.4146pt.
-<images/Cut_Nichrome_Wire.PNG, id=845, 243.15843pt x 241.65282pt>
+(pdftex.def)             Requested size: 144.18108pt x 185.66708pt.
+<images/Cut_Nichrome_Wire.PNG, id=844, 243.15843pt x 241.65282pt>
 File: images/Cut_Nichrome_Wire.PNG Graphic file (type png)
 <use images/Cut_Nichrome_Wire.PNG>
 Package pdftex.def Info: images/Cut_Nichrome_Wire.PNG  used on input line 126.
@@ -1875,6 +1875,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 444--444
  []
 
 
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 458--458
 []|\OT1/cmr/bx/n/10.95 Envelope
  []
@@ -1949,46 +1956,6 @@ Overfull \hbox (28.5284pt too wide) in paragraph at lines 456--463
  [][] 
  []
 
-<images/mechanical/FC_Holder_without title block.JPG, id=1115, 803.25093pt x 51
-2.66531pt>
-File: images/mechanical/FC_Holder_without title block.JPG Graphic file (type jp
-g)
-<use images/mechanical/FC_Holder_without title block.JPG>
-Package pdftex.def Info: images/mechanical/FC_Holder_without title block.JPG  u
-sed on input line 471.
-(pdftex.def)             Requested size: 329.55226pt x 210.33493pt.
-<images/mechanical/18650_case_without title block.JPG, id=1116, 813.79031pt x 5
-11.9125pt>
-File: images/mechanical/18650_case_without title block.JPG Graphic file (type j
-pg)
-<use images/mechanical/18650_case_without title block.JPG>
-Package pdftex.def Info: images/mechanical/18650_case_without title block.JPG  
-used on input line 480.
-(pdftex.def)             Requested size: 329.55226pt x 207.29999pt.
-<images/mechanical/Edge_batt_without title block.JPG, id=1117, 769.37437pt x 47
-9.54156pt>
-File: images/mechanical/Edge_batt_without title block.JPG Graphic file (type jp
-g)
-<use images/mechanical/Edge_batt_without title block.JPG>
-Package pdftex.def Info: images/mechanical/Edge_batt_without title block.JPG  u
-sed on input line 487.
-(pdftex.def)             Requested size: 329.55226pt x 205.40858pt.
-<images/mechanical/Mid_batt_without title block.JPG, id=1118, 883.04906pt x 548
-.0475pt>
-File: images/mechanical/Mid_batt_without title block.JPG Graphic file (type jpg
-)
-<use images/mechanical/Mid_batt_without title block.JPG>
-Package pdftex.def Info: images/mechanical/Mid_batt_without title block.JPG  us
-ed on input line 494.
-(pdftex.def)             Requested size: 329.55226pt x 204.53052pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[34]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1997,6 +1964,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [35]
+<images/mechanical/FC_Holder_without title block.JPG, id=1122, 803.25093pt x 51
+2.66531pt>
+File: images/mechanical/FC_Holder_without title block.JPG Graphic file (type jp
+g)
+<use images/mechanical/FC_Holder_without title block.JPG>
+Package pdftex.def Info: images/mechanical/FC_Holder_without title block.JPG  u
+sed on input line 471.
+(pdftex.def)             Requested size: 411.93877pt x 262.91867pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2005,6 +1981,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [36]
+<images/mechanical/18650_case_without title block.JPG, id=1127, 813.79031pt x 5
+11.9125pt>
+File: images/mechanical/18650_case_without title block.JPG Graphic file (type j
+pg)
+<use images/mechanical/18650_case_without title block.JPG>
+Package pdftex.def Info: images/mechanical/18650_case_without title block.JPG  
+used on input line 480.
+(pdftex.def)             Requested size: 411.93877pt x 259.12694pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2012,8 +1997,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[37 <./images/mechanical/FC_Holder_without title block.JPG> <./images/mechanica
-l/18650_case_without title block.JPG>]
+[37 <./images/mechanical/FC_Holder_without title block.JPG>]
+<images/mechanical/Edge_batt_without title block.JPG, id=1133, 769.37437pt x 47
+9.54156pt>
+File: images/mechanical/Edge_batt_without title block.JPG Graphic file (type jp
+g)
+<use images/mechanical/Edge_batt_without title block.JPG>
+Package pdftex.def Info: images/mechanical/Edge_batt_without title block.JPG  u
+sed on input line 487.
+(pdftex.def)             Requested size: 411.93877pt x 256.76074pt.
+<images/mechanical/Mid_batt_without title block.JPG, id=1134, 883.04906pt x 548
+.0475pt>
+File: images/mechanical/Mid_batt_without title block.JPG Graphic file (type jpg
+)
+<use images/mechanical/Mid_batt_without title block.JPG>
+Package pdftex.def Info: images/mechanical/Mid_batt_without title block.JPG  us
+ed on input line 494.
+(pdftex.def)             Requested size: 411.93877pt x 255.65898pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2021,8 +2022,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38 <./images/mechanical/Edge_batt_without title block.JPG> <./images/mechanica
-l/Mid_batt_without title block.JPG>]
+[38 <./images/mechanical/18650_case_without title block.JPG> <./images/mechanic
+al/Edge_batt_without title block.JPG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2030,7 +2031,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[39]
+[39 <./images/mechanical/Mid_batt_without title block.JPG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2039,6 +2040,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[41]
 Overfull \hbox (23.52647pt too wide) in paragraph at lines 604--605
 \OT1/cmr/m/n/12 The XBee-PRO 900HP hard-ware ex-poses only a UART se-rial in-te
 r-face for transparent-
@@ -2071,14 +2080,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[41]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [42]
 Overfull \hbox (1.56439pt too wide) in paragraph at lines 659--659
  [][]\OT1/cmr/bx/n/10.95 Communication 
@@ -2088,21 +2089,6 @@ Overfull \hbox (1.56439pt too wide) in paragraph at lines 659--659
 Overfull \hbox (56.11794pt too wide) in paragraph at lines 671--672
  [][] 
  []
-
-
-Overfull \hbox (14.72527pt too wide) in paragraph at lines 693--693
- [][]\OT1/cmr/bx/n/10.95 RECOVERY 
- []
-
-
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``hold''? on input line 
-742.
-
-
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``inhib''? on input line
- 745.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2120,6 +2106,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [44]
+Overfull \hbox (14.72527pt too wide) in paragraph at lines 693--693
+ [][]\OT1/cmr/bx/n/10.95 RECOVERY 
+ []
+
+
+Package pgf Warning: Returning node center instead of a point on node border. D
+id you specify a point identical to the center of node ``hold''? on input line 
+750.
+
+
+Package pgf Warning: Returning node center instead of a point on node border. D
+id you specify a point identical to the center of node ``inhib''? on input line
+ 750.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2129,18 +2129,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [45]
 
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``inhibit''? on input li
-ne 798.
-
-<images/Power_Monitoring_Design_Concept.png, id=1226, 1437.11906pt x 651.18282p
-t>
-File: images/Power_Monitoring_Design_Concept.png Graphic file (type png)
-<use images/Power_Monitoring_Design_Concept.png>
-Package pdftex.def Info: images/Power_Monitoring_Design_Concept.png  used on in
-put line 809.
-(pdftex.def)             Requested size: 321.31172pt x 137.95229pt.
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -2149,13 +2137,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [46]
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+Package pgf Warning: Returning node center instead of a point on node border. D
+id you specify a point identical to the center of node ``inhibit''? on input li
+ne 804.
 
-[47])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2163,16 +2148,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[48 <./images/Power_Monitoring_Design_Concept.png>]
+[47]
+<images/Power_Monitoring_Design_Concept.png, id=1234, 1437.11906pt x 651.18282p
+t>
+File: images/Power_Monitoring_Design_Concept.png Graphic file (type png)
+<use images/Power_Monitoring_Design_Concept.png>
+Package pdftex.def Info: images/Power_Monitoring_Design_Concept.png  used on in
+put line 813.
+(pdftex.def)             Requested size: 411.93877pt x 176.86552pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[48])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[49 <./images/Power_Monitoring_Design_Concept.png>]
 (Files/Chapter4_ResultsDiscussion.tex
-<images/mechanical/18650_case_cover_without title block.JPG, id=1249, 792.71156
+<images/mechanical/18650_case_cover_without title block.JPG, id=1253, 792.71156
 pt x 483.30562pt>
 File: images/mechanical/18650_case_cover_without title block.JPG Graphic file (
 type jpg)
 <use images/mechanical/18650_case_cover_without title block.JPG>
 Package pdftex.def Info: images/mechanical/18650_case_cover_without title block
 .JPG  used on input line 18.
-(pdftex.def)             Requested size: 288.35587pt x 175.81142pt.
+(pdftex.def)             Requested size: 411.93877pt x 251.15813pt.
 File: images/mechanical/Mid_batt_without title block.JPG Graphic file (type jpg
 )
 <use images/mechanical/Mid_batt_without title block.JPG>
@@ -2187,7 +2196,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[49
+[50
 
  <./images/mechanical/18650_case_cover_without title block.JPG>]
 File: images/mechanical/Edge_batt_without title block.JPG Graphic file (type jp
@@ -2196,12 +2205,12 @@ g)
 Package pdftex.def Info: images/mechanical/Edge_batt_without title block.JPG  u
 sed on input line 32.
 (pdftex.def)             Requested size: 288.35587pt x 179.73251pt.
-<images/mechanical/FC_Holder Cad.jpeg, id=1256, 1311.90125pt x 709.65125pt>
+<images/mechanical/FC_Holder Cad.jpeg, id=1259, 808.52063pt x 494.59781pt>
 File: images/mechanical/FC_Holder Cad.jpeg Graphic file (type jpg)
 <use images/mechanical/FC_Holder Cad.jpeg>
 Package pdftex.def Info: images/mechanical/FC_Holder Cad.jpeg  used on input li
 ne 43.
-(pdftex.def)             Requested size: 308.95407pt x 167.1254pt.
+(pdftex.def)             Requested size: 308.95407pt x 188.99814pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2210,9 +2219,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50]
+[51]
 <images/mechanical/Threaded_Rod_Integration_showing raised battery cells to giv
-e way to threaded rods.PNG, id=1262, 749.80125pt x 359.09157pt>
+e way to threaded rods.PNG, id=1265, 749.80125pt x 359.09157pt>
 File: images/mechanical/Threaded_Rod_Integration_showing raised battery cells t
 o give way to threaded rods.PNG Graphic file (type png)
 <use images/mechanical/Threaded_Rod_Integration_showing raised battery cells to
@@ -2220,7 +2229,7 @@ o give way to threaded rods.PNG Graphic file (type png)
 Package pdftex.def Info: images/mechanical/Threaded_Rod_Integration_showing rai
 sed battery cells to give way to threaded rods.PNG  used on input line 50.
 (pdftex.def)             Requested size: 308.95407pt x 147.9627pt.
-<images/Labeled/Assembly_Cross_section.PNG, id=1263, 445.665pt x 261.97874pt>
+<images/Labeled/Assembly_Cross_section.PNG, id=1266, 445.665pt x 261.97874pt>
 File: images/Labeled/Assembly_Cross_section.PNG Graphic file (type png)
 <use images/Labeled/Assembly_Cross_section.PNG>
 Package pdftex.def Info: images/Labeled/Assembly_Cross_section.PNG  used on inp
@@ -2234,21 +2243,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[51 <./images/mechanical/FC_Holder Cad.jpeg> <./images/mechanical/Threaded_Rod_
+[52 <./images/mechanical/FC_Holder Cad.jpeg> <./images/mechanical/Threaded_Rod_
 Integration_showing raised battery cells to give way to threaded rods.PNG>]
-<images/Labeled/Full_assemly_Parts_List.PNG, id=1269, 597.73312pt x 431.36156pt
+<images/Labeled/Full_assemly_Parts_List.PNG, id=1272, 597.73312pt x 431.36156pt
 >
 File: images/Labeled/Full_assemly_Parts_List.PNG Graphic file (type png)
 <use images/Labeled/Full_assemly_Parts_List.PNG>
 Package pdftex.def Info: images/Labeled/Full_assemly_Parts_List.PNG  used on in
 put line 64.
-(pdftex.def)             Requested size: 370.74237pt x 267.5533pt.
-<images/mechanical/Avionics assembly.jpeg, id=1270, 963.6pt x 597.23125pt>
-File: images/mechanical/Avionics assembly.jpeg Graphic file (type jpg)
-<use images/mechanical/Avionics assembly.jpeg>
-Package pdftex.def Info: images/mechanical/Avionics assembly.jpeg  used on inpu
-t line 71.
-(pdftex.def)             Requested size: 308.95407pt x 191.48242pt.
+(pdftex.def)             Requested size: 411.93877pt x 297.28436pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2257,9 +2260,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52 <./images/Labeled/Assembly_Cross_section.PNG> <./images/Labeled/Full_asseml
-y_Parts_List.PNG>]
-<images/mechanical/Full Integration in avionics bay.jpeg, id=1277, 1015.795pt x
+[53 <./images/Labeled/Assembly_Cross_section.PNG>]
+<images/mechanical/Avionics assembly.jpeg, id=1278, 940.26282pt x 593.21625pt>
+File: images/mechanical/Avionics assembly.jpeg Graphic file (type jpg)
+<use images/mechanical/Avionics assembly.jpeg>
+Package pdftex.def Info: images/mechanical/Avionics assembly.jpeg  used on inpu
+t line 71.
+(pdftex.def)             Requested size: 308.95407pt x 194.92015pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[54 <./images/Labeled/Full_assemly_Parts_List.PNG>]
+<images/mechanical/Full Integration in avionics bay.jpeg, id=1284, 1015.795pt x
  673.51625pt>
 File: images/mechanical/Full Integration in avionics bay.jpeg Graphic file (typ
 e jpg)
@@ -2267,14 +2284,6 @@ e jpg)
 Package pdftex.def Info: images/mechanical/Full Integration in avionics bay.jpe
 g  used on input line 78.
 (pdftex.def)             Requested size: 308.95407pt x 204.85178pt.
-<images/Basestation_Circuit_Design_White_Background.png, id=1279, 656.4525pt x 
-371.13657pt>
-File: images/Basestation_Circuit_Design_White_Background.png Graphic file (type
- png)
-<use images/Basestation_Circuit_Design_White_Background.png>
-Package pdftex.def Info: images/Basestation_Circuit_Design_White_Background.png
-  used on input line 89.
-(pdftex.def)             Requested size: 370.74237pt x 209.60759pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2283,9 +2292,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53 <./images/mechanical/Avionics assembly.jpeg> <./images/mechanical/Full Inte
+[55 <./images/mechanical/Avionics assembly.jpeg> <./images/mechanical/Full Inte
 gration in avionics bay.jpeg>]
-<images/Battery _Monitoring_Proteus_DesignWhite_background.PNG, id=1284, 587.94
+<images/Basestation_Circuit_Design_White_Background.png, id=1292, 656.4525pt x 
+371.13657pt>
+File: images/Basestation_Circuit_Design_White_Background.png Graphic file (type
+ png)
+<use images/Basestation_Circuit_Design_White_Background.png>
+Package pdftex.def Info: images/Basestation_Circuit_Design_White_Background.png
+  used on input line 89.
+(pdftex.def)             Requested size: 370.74237pt x 209.60759pt.
+<images/Battery _Monitoring_Proteus_DesignWhite_background.PNG, id=1293, 587.94
 656pt x 384.6872pt>
 File: images/Battery _Monitoring_Proteus_DesignWhite_background.PNG Graphic fil
 e (type png)
@@ -2301,13 +2318,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54 <./images/Basestation_Circuit_Design_White_Background.png>]
-<images/etched FC circuit.jpeg, id=1290, 1204.5pt x 1606.0pt>
+[56 <./images/Basestation_Circuit_Design_White_Background.png>]
+<images/etched FC circuit.jpeg, id=1299, 683.55376pt x 654.94687pt>
 File: images/etched FC circuit.jpeg Graphic file (type jpg)
 <use images/etched FC circuit.jpeg>
 Package pdftex.def Info: images/etched FC circuit.jpeg  used on input line 113.
 
-(pdftex.def)             Requested size: 288.35587pt x 384.46765pt.
+(pdftex.def)             Requested size: 288.35587pt x 276.29504pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2316,8 +2333,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[55 <./images/Battery _Monitoring_Proteus_DesignWhite_background.PNG>]
-<images/Labeled/Soldered_FC.PNG, id=1297, 328.97906pt x 543.53062pt>
+[57 <./images/Battery _Monitoring_Proteus_DesignWhite_background.PNG>]
+<images/Labeled/Soldered_FC.PNG, id=1305, 328.97906pt x 543.53062pt>
 File: images/Labeled/Soldered_FC.PNG Graphic file (type png)
 <use images/Labeled/Soldered_FC.PNG>
 Package pdftex.def Info: images/Labeled/Soldered_FC.PNG  used on input line 120
@@ -2331,8 +2348,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[56 <./images/etched FC circuit.jpeg>]
-<images/Current_Circuit_Design.png, id=1302, 736.25063pt x 344.03531pt>
+[58 <./images/etched FC circuit.jpeg>]
+<images/Current_Circuit_Design.png, id=1310, 736.25063pt x 344.03531pt>
 File: images/Current_Circuit_Design.png Graphic file (type png)
 <use images/Current_Circuit_Design.png>
 Package pdftex.def Info: images/Current_Circuit_Design.png  used on input line 
@@ -2346,7 +2363,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[57 <./images/Labeled/Soldered_FC.PNG>]
+[59 <./images/Labeled/Soldered_FC.PNG>]
 Overfull \hbox (16.3537pt too wide) in paragraph at lines 140--159
  [][] 
  []
@@ -2358,7 +2375,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[58 <./images/Current_Circuit_Design.png>]
+[60 <./images/Current_Circuit_Design.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2366,7 +2383,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[59]
+[61]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2374,7 +2391,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[60]
+[62]
 Overfull \hbox (12.28047pt too wide) in paragraph at lines 214--215
 []\OT1/cmr/m/n/12 Flight state ma-chine (Pre-launch, As-cent, Apogee de-tec-tio
 n, De-scent, Landed) 
@@ -2393,7 +2410,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[61])
+[63])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2401,7 +2418,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[62] (Files/Chapter5_RemainingWork.tex)
+[64] (Files/Chapter5_RemainingWork.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2409,16 +2426,80 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[63
+[65
 
-] (Nakuja_Interim_Report.bbl
-Underfull \hbox (badness 1412) in paragraph at lines 58--62
+]
+
+LaTeX Warning: Citation `IEEEexample:BSTcontrol' undefined on input line 125.
+
+(Nakuja_Interim_Report.bbl
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[66
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[67]
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
+[]\OT1/cmr/m/n/12 Panasonic In-dus-trial De-vices, ``Cgr18650da lithium-ion cyl
+in-dri-cal
+ []
+
+
+Underfull \hbox (badness 2538) in paragraph at lines 129--132
+\OT1/cmr/m/n/12 cell datasheet,'' Archived on-line PDF, 2013, ac-cessed: 2026-0
+2-28,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
+[]$\OT1/cmr/m/n/12 https : / / web . archive . org / web / 20130603055918 / htt
+p : / / www . panasonic . com /
+ []
+
+
+Underfull \hbox (badness 3482) in paragraph at lines 134--137
+[]\OT1/cmr/m/n/12 Nakuja Re-cov-ery Team, ``N4 com-mu-ni-ca-tion ar-chi-tec-tur
+e,'' GitHub
+ []
+
+
+Underfull \hbox (badness 8170) in paragraph at lines 134--137
+\OT1/cmr/m/n/12 Repos-i-tory, 2026, avail-able at: []$https : / / github . com 
+/ nakujaproject /
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 144--147
+[]\OT1/cmr/m/n/12 Nakuja Re-cov-ery Team, ``N4 bea-con con-fig-u-ra-tion guide,
+'' GitHub
+ []
+
+
+Underfull \hbox (badness 8170) in paragraph at lines 144--147
+\OT1/cmr/m/n/12 Repos-i-tory, 2026, avail-able at: []$https : / / github . com 
+/ nakujaproject /
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 149--153
 []\OT1/cmr/m/n/12 Digi In-ter-na-tional / DigiKey Elec-tron-ics, ``Xbee-pro 900
 hp trans-par-
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 58--62
+Underfull \hbox (badness 2384) in paragraph at lines 149--153
 \OT1/cmr/m/n/12 ent uart data-flow di-a-gram,'' 2019, prod-uct re-source im-age
 . Avail-
  []
@@ -2430,9 +2511,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[64
-
-]
+[68])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2440,40 +2519,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[65]
-Underfull \hbox (badness 10000) in paragraph at lines 157--160
-[]\OT1/cmr/m/n/12 Panasonic In-dus-trial De-vices, ``Cgr18650da lithium-ion cyl
-in-dri-cal
- []
-
-
-Underfull \hbox (badness 2538) in paragraph at lines 157--160
-\OT1/cmr/m/n/12 cell datasheet,'' Archived on-line PDF, 2013, ac-cessed: 2026-0
-2-28,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--160
-[]$\OT1/cmr/m/n/12 https : / / web . archive . org / web / 20130603055918 / htt
-p : / / www . panasonic . com /
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[66])
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[67] (Files/Appendices.tex
+[69] (Files/Appendices.tex
 Overfull \hbox (8.18495pt too wide) in paragraph at lines 8--8
 []\OT1/cmr/bx/n/17.28 Appendix A: CAD Draw-ings with Ti-tle Blocks 
  []
@@ -2482,7 +2528,7 @@ Overfull \hbox (8.18495pt too wide) in paragraph at lines 8--8
 
 pdfTeX warning: pdflatex.exe (file ./images/mechanical/18650_case_cover.pdf): P
 DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/mechanical/18650_case_cover.pdf, id=1378, page=1, 1195.46625pt x 845.15
+<images/mechanical/18650_case_cover.pdf, id=1395, page=1, 1195.46625pt x 845.15
 75pt>
 File: images/mechanical/18650_case_cover.pdf Graphic file (type pdf)
 <use images/mechanical/18650_case_cover.pdf, page 1>
@@ -2493,7 +2539,7 @@ Package pdftex.def Info: images/mechanical/18650_case_cover.pdf , page1 used on
 
 pdfTeX warning: pdflatex.exe (file ./images/mechanical/18650_case.pdf): PDF inc
 lusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/mechanical/18650_case.pdf, id=1379, page=1, 1195.46625pt x 845.1575pt>
+<images/mechanical/18650_case.pdf, id=1396, page=1, 1195.46625pt x 845.1575pt>
 File: images/mechanical/18650_case.pdf Graphic file (type pdf)
 <use images/mechanical/18650_case.pdf, page 1>
 Package pdftex.def Info: images/mechanical/18650_case.pdf , page1 used on input
@@ -2506,13 +2552,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[68
+[70
 
  <./images/mechanical/18650_case_cover.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/mechanical/Edge_Batt.pdf): PDF incl
 usion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/mechanical/Edge_Batt.pdf, id=1415, page=1, 1195.46625pt x 845.1575pt>
+<images/mechanical/Edge_Batt.pdf, id=1432, page=1, 1195.46625pt x 845.1575pt>
 File: images/mechanical/Edge_Batt.pdf Graphic file (type pdf)
 <use images/mechanical/Edge_Batt.pdf, page 1>
 Package pdftex.def Info: images/mechanical/Edge_Batt.pdf , page1 used on input 
@@ -2525,11 +2571,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[69 <./images/mechanical/18650_case.pdf>]
+[71 <./images/mechanical/18650_case.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/mechanical/mid_Batt.pdf): PDF inclu
 sion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/mechanical/mid_Batt.pdf, id=1447, page=1, 1195.46625pt x 845.1575pt>
+<images/mechanical/mid_Batt.pdf, id=1464, page=1, 1195.46625pt x 845.1575pt>
 File: images/mechanical/mid_Batt.pdf Graphic file (type pdf)
 <use images/mechanical/mid_Batt.pdf, page 1>
 Package pdftex.def Info: images/mechanical/mid_Batt.pdf , page1 used on input l
@@ -2542,8 +2588,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[70 <./images/mechanical/Edge_Batt.pdf>]
-<images/FC_Xbee_Design__easyDA_White_Background.PNG, id=1477, 308.65312pt x 328
+[72 <./images/mechanical/Edge_Batt.pdf>]
+<images/FC_Xbee_Design__easyDA_White_Background.PNG, id=1494, 308.65312pt x 328
 .97906pt>
 File: images/FC_Xbee_Design__easyDA_White_Background.PNG Graphic file (type png
 )
@@ -2559,7 +2605,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[71 <./images/mechanical/mid_Batt.pdf>]
+[73 <./images/mechanical/mid_Batt.pdf>]
 File: images/Basestation_Circuit_Design_White_Background.png Graphic file (type
  png)
 <use images/Basestation_Circuit_Design_White_Background.png>
@@ -2574,7 +2620,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[72 <./images/FC_Xbee_Design__easyDA_White_Background.PNG>]
+[74 <./images/FC_Xbee_Design__easyDA_White_Background.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []|\OT1/cmr/bx/n/10.95 Total
  []
@@ -2596,8 +2642,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[73]
-<images/Timeplan.PNG, id=1520, 772.38562pt x 526.21594pt>
+[75]
+<images/Timeplan.PNG, id=1537, 772.38562pt x 526.21594pt>
 File: images/Timeplan.PNG Graphic file (type png)
 <use images/Timeplan.PNG>
 Package pdftex.def Info: images/Timeplan.PNG  used on input line 95.
@@ -2610,7 +2656,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[74]
+[76]
 Overfull \hbox (19.36707pt too wide) in paragraph at lines 101--101
 []\OT1/cmr/bx/n/17.28 Appendix E: La-belled As-sem-bly Ref-er-ence Pho-
  []
@@ -2627,13 +2673,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[75 <./images/Timeplan.PNG>]
+[77 <./images/Timeplan.PNG>]
 File: images/Labeled/Full_assemly_Parts_List.PNG Graphic file (type png)
 <use images/Labeled/Full_assemly_Parts_List.PNG>
 Package pdftex.def Info: images/Labeled/Full_assemly_Parts_List.PNG  used on in
 put line 115.
 (pdftex.def)             Requested size: 370.74237pt x 267.5533pt.
-<images/Labeled/Avionics_Bay.PNG, id=1530, 442.65375pt x 312.41719pt>
+<images/Labeled/Avionics_Bay.PNG, id=1547, 442.65375pt x 312.41719pt>
 File: images/Labeled/Avionics_Bay.PNG Graphic file (type png)
 <use images/Labeled/Avionics_Bay.PNG>
 Package pdftex.def Info: images/Labeled/Avionics_Bay.PNG  used on input line 12
@@ -2647,7 +2693,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[76]
+[78]
 File: images/Labeled/Soldered_FC.PNG Graphic file (type png)
 <use images/Labeled/Soldered_FC.PNG>
 Package pdftex.def Info: images/Labeled/Soldered_FC.PNG  used on input line 129
@@ -2661,7 +2707,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[77 <./images/Labeled/Avionics_Bay.PNG>]
+[79 <./images/Labeled/Avionics_Bay.PNG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2669,7 +2715,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[78]
+[80]
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
@@ -2688,23 +2734,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[79]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[80]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [81]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[82]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[83]
 Overfull \hbox (36.4604pt too wide) in paragraph at lines 251--252
 [][] 
  []
@@ -2716,7 +2762,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[82])
+[84])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2724,22 +2770,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[83] (Nakuja_Interim_Report.aux)
+[85] (Nakuja_Interim_Report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Nakuja_Interim_Report.out' has not changed.
 (rerunfilecheck)             Checksum: 0B50E74D4909372859FED463D4724B61;17934.
  ) 
 Here is how much of TeX's memory you used:
- 25557 strings out of 467870
- 480646 string characters out of 5418838
- 1204203 words of memory out of 5000000
+ 25559 strings out of 467870
+ 480660 string characters out of 5418838
+ 1205096 words of memory out of 5000000
  53509 multiletter control sequences out of 15000+600000
  638700 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2765,9 +2811,9 @@ ts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/user/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/user/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/user/AppData/Lo
 cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Nakuja_Interim_Report.pdf (101 pages, 6407560 bytes).
+Output written on Nakuja_Interim_Report.pdf (103 pages, 6358372 bytes).
 PDF statistics:
- 1866 PDF objects out of 2073 (max. 8388607)
- 484 named destinations out of 1000 (max. 500000)
+ 1884 PDF objects out of 2073 (max. 8388607)
+ 486 named destinations out of 1000 (max. 500000)
  903 words of extra memory for PDF output out of 10000 (max. 10000000)
 

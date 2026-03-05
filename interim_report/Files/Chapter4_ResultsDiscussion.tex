@@ -15,7 +15,7 @@ Figures~\ref{fig:res_18650_2d}--\ref{fig:res_edge_2d} present the dimensioned 2D
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.70\textwidth]{{images/mechanical/18650_case_cover_without title block.JPG}}
+\includegraphics[width=\textwidth]{{images/mechanical/18650_case_cover_without title block.JPG}}
 \caption{18650 battery case: front, end, and top views with dimensions. Project CAD.}
 \label{fig:res_18650_2d}
 \end{figure}
@@ -61,7 +61,7 @@ The 3D CAD models confirm dimensional fit, threaded-rod routing, and sub-assembl
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.90\textwidth]{images/Labeled/Full_assemly_Parts_List.PNG}
+\includegraphics[width=\textwidth]{images/Labeled/Full_assemly_Parts_List.PNG}
 \caption{Full avionics bay assembly parts list showing all structural and electronic sub-components and their relative positions. Project CAD.}
 \label{fig:res_parts_list}
 \end{figure}
@@ -219,12 +219,7 @@ The following modules require completion:
 
 \subsection{Challenges Encountered}
 
-\begin{itemize}
-    \item XBee modules required XCTU-based configuration; AT-command-only approach was insufficient
-    \item ESP32 ADC noise under active WiFi addressed with moving average filter ($N=10$)
-    \item Initial nichrome wire gauge incorrect; correct 26~AWG stock sourced and verified
-    \item PETG 3D prints exhibited warping; resolved by adjusting bed temperature, nozzle temperature, and print speed
-\end{itemize}
+Throughout the development phase, several technical challenges were encountered and resolved. XBee module configuration proved more complex than anticipated: the AT-command-only approach was insufficient for the required transparent-mode and channel settings, necessitating the use of XCTU software to reliably configure both modules to matching network parameters. The ESP32 analogue-to-digital converter exhibited elevated noise levels when the built-in Wi-Fi subsystem was active; this was mitigated by implementing a moving-average filter with a window size of $N=10$~samples, which smoothed the ADC output to levels acceptable for battery voltage monitoring. The initial nichrome wire procurement used an incorrect gauge; after confirming the correct specification to be 26~AWG, replacement stock was sourced and bench-verified for continuity and resistance prior to integration. Finally, early PETG 3D prints suffered from bed-adhesion warping that compromised dimensional accuracy; the defect was resolved by systematically adjusting bed temperature, nozzle temperature, and print speed until stable, warp-free parts were produced consistently.
 
 
 

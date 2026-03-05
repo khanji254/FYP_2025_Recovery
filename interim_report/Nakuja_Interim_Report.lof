@@ -21,36 +21,36 @@
 \contentsline {figure}{\numberline {21}{\ignorespaces Base-station interconnect layout (Fritzing schematic). Project diagram.}}{29}{figure.21}%
 \contentsline {figure}{\numberline {22}{\ignorespaces Rocket XBee extension wiring layout (Fritzing schematic). Project diagram.}}{30}{figure.22}%
 \contentsline {figure}{\numberline {23}{\ignorespaces Flight-computer holder sled: stepped battery seating, load path, and upper electronics mounting platform}}{37}{figure.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces 18650 battery case for the stepped carrier assembly}}{37}{figure.24}%
+\contentsline {figure}{\numberline {24}{\ignorespaces 18650 battery case for the stepped carrier assembly}}{38}{figure.24}%
 \contentsline {figure}{\numberline {25}{\ignorespaces Raised edge battery support clearing the threaded-rod path}}{38}{figure.25}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Mid battery support for controlled pack height and fit}}{38}{figure.26}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Mid battery support for controlled pack height and fit}}{39}{figure.26}%
 \contentsline {figure}{\numberline {27}{\ignorespaces Communication Manager architecture: three independent physical channels selectable at runtime; XBee is the primary recovery link, Beacon is the redundant research channel \cite {n4_comm_architecture}. Project diagram.}}{44}{figure.27}%
-\contentsline {figure}{\numberline {28}{\ignorespaces N4 flight firmware state machine: operational states, transitions, and per-state behaviour}}{44}{figure.28}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Deployment channel firmware flow: arm checks, PWM fire command, and post-event confirmation}}{45}{figure.29}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Power monitoring firmware flow: ADS1115 I$^2$C readout, voltage reconstruction, arm-inhibit decision, and telemetry packet update \cite {ads1115_datasheet,n4_pyro_control}. Project diagram.}}{47}{figure.30}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Power monitoring hardware concept: ADS1115 I\textsuperscript {2}C polling, voltage-divider network, and launch-inhibit logic \cite {ads1115_datasheet,n4_pyro_control}. Project diagram.}}{48}{figure.31}%
-\contentsline {figure}{\numberline {32}{\ignorespaces 18650 battery case: front, end, and top views with dimensions. Project CAD.}}{49}{figure.32}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Mid battery support: orthographic views with key dimensions. Project CAD.}}{50}{figure.33}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Raised edge battery support: orthographic views with key dimensions. Project CAD.}}{50}{figure.34}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Flight-computer holder sled: 3D CAD model showing battery seating, rod clearances, and upper mounting platform. Project CAD.}}{51}{figure.35}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Threaded-rod integration: raised edge cells preserve rod clearance and structural alignment. Project CAD.}}{51}{figure.36}%
-\contentsline {figure}{\numberline {37}{\ignorespaces Labelled cross-sectional view of the avionics bay showing component stacking, retention rod paths, and internal clearances. Project CAD.}}{52}{figure.37}%
-\contentsline {figure}{\numberline {38}{\ignorespaces Full avionics bay assembly parts list showing all structural and electronic sub-components and their relative positions. Project CAD.}}{52}{figure.38}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Avionics bay assembly: battery pack, holder, and electronics stack integrated. Project fabrication.}}{53}{figure.39}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Full avionics bay integration showing sled mounted in cylindrical airframe section. Project fabrication.}}{53}{figure.40}%
-\contentsline {figure}{\numberline {41}{\ignorespaces Base station EasyEDA schematic showing XBee UART interface, Bluetooth passthrough, and RSSI measurement circuit. Project design.}}{54}{figure.41}%
-\contentsline {figure}{\numberline {42}{\ignorespaces Proteus simulation of the ADS1115 battery monitoring circuit: 47~k$\Omega $/10~k$\Omega $ divider, dual chute-detection inputs, and I\textsuperscript {2}C power distribution. Project simulation.}}{55}{figure.42}%
-\contentsline {figure}{\numberline {43}{\ignorespaces Flight-computer PCB after chemical etching (bare board, pre-assembly). Project fabrication.}}{56}{figure.43}%
-\contentsline {figure}{\numberline {44}{\ignorespaces Fully soldered and labelled flight-computer PCB (88~mm~$\times $~93~mm): ESP32, XBee UART interface, IRLZ44N MOSFET ignition channels, and ADS1115 monitoring circuit. Project fabrication.}}{57}{figure.44}%
-\contentsline {figure}{\numberline {45}{\ignorespaces Current circuit implementation showing component placement and inter-board wiring. Project photograph.}}{58}{figure.45}%
-\contentsline {figure}{\numberline {46}{\ignorespaces 18650 battery case cover -- 2D manufacturing drawing with title block}}{68}{figure.46}%
-\contentsline {figure}{\numberline {47}{\ignorespaces 18650 battery case body -- 2D manufacturing drawing with title block}}{69}{figure.47}%
-\contentsline {figure}{\numberline {48}{\ignorespaces Edge battery support bracket -- 2D manufacturing drawing with title block}}{70}{figure.48}%
-\contentsline {figure}{\numberline {49}{\ignorespaces Mid battery support bracket -- 2D manufacturing drawing with title block}}{71}{figure.49}%
-\contentsline {figure}{\numberline {50}{\ignorespaces Flight computer EasyEDA schematic: ESP32, XBee-PRO 900HP UART interface, IRLZ44N MOSFET ignition channels, and ADS1115 power monitoring. Project design.}}{72}{figure.50}%
-\contentsline {figure}{\numberline {51}{\ignorespaces Base station EasyEDA schematic: XBee UART interface, ESP32 receiver, and Bluetooth passthrough. Project design.}}{73}{figure.51}%
-\contentsline {figure}{\numberline {52}{\ignorespaces N4 recovery system project Gantt chart showing planned phases, milestones, and current progress}}{75}{figure.52}%
-\contentsline {figure}{\numberline {53}{\ignorespaces Labelled cross-sectional view of the avionics bay showing component stacking order, threaded-rod paths, and internal clearance zones. Project CAD.}}{76}{figure.53}%
-\contentsline {figure}{\numberline {54}{\ignorespaces Full avionics bay assembly parts list with annotated component identifications and sub-assembly references. Project CAD.}}{76}{figure.54}%
-\contentsline {figure}{\numberline {55}{\ignorespaces Labelled avionics bay photograph identifying the battery pack, FC sled, retention rods, and deployment channel connectors. Project fabrication.}}{77}{figure.55}%
-\contentsline {figure}{\numberline {56}{\ignorespaces Labelled flight-computer PCB photograph identifying the ESP32, XBee module, IRLZ44N MOSFETs, ADS1115, and passive components. Project fabrication.}}{78}{figure.56}%
+\contentsline {figure}{\numberline {28}{\ignorespaces N4 flight firmware state machine: operational states, transitions, and per-state behaviour}}{45}{figure.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Deployment channel firmware flow: arm checks, PWM fire command, and post-event confirmation}}{46}{figure.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Power monitoring firmware flow: ADS1115 I$^2$C readout, voltage reconstruction, arm-inhibit decision, and telemetry packet update \cite {ads1115_datasheet,n4_pyro_control}. Project diagram.}}{48}{figure.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Power monitoring hardware concept: ADS1115 I\textsuperscript {2}C polling, voltage-divider network, and launch-inhibit logic \cite {ads1115_datasheet,n4_pyro_control}. Project diagram.}}{49}{figure.31}%
+\contentsline {figure}{\numberline {32}{\ignorespaces 18650 battery case: front, end, and top views with dimensions. Project CAD.}}{50}{figure.32}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Mid battery support: orthographic views with key dimensions. Project CAD.}}{51}{figure.33}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Raised edge battery support: orthographic views with key dimensions. Project CAD.}}{51}{figure.34}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Flight-computer holder sled: 3D CAD model showing battery seating, rod clearances, and upper mounting platform. Project CAD.}}{52}{figure.35}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Threaded-rod integration: raised edge cells preserve rod clearance and structural alignment. Project CAD.}}{52}{figure.36}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Labelled cross-sectional view of the avionics bay showing component stacking, retention rod paths, and internal clearances. Project CAD.}}{53}{figure.37}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Full avionics bay assembly parts list showing all structural and electronic sub-components and their relative positions. Project CAD.}}{54}{figure.38}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Avionics bay assembly: battery pack, holder, and electronics stack integrated. Project fabrication.}}{55}{figure.39}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Full avionics bay integration showing sled mounted in cylindrical airframe section. Project fabrication.}}{55}{figure.40}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Base station EasyEDA schematic showing XBee UART interface, Bluetooth passthrough, and RSSI measurement circuit. Project design.}}{56}{figure.41}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Proteus simulation of the ADS1115 battery monitoring circuit: 47~k$\Omega $/10~k$\Omega $ divider, dual chute-detection inputs, and I\textsuperscript {2}C power distribution. Project simulation.}}{57}{figure.42}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Flight-computer PCB after chemical etching (bare board, pre-assembly). Project fabrication.}}{58}{figure.43}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Fully soldered and labelled flight-computer PCB (88~mm~$\times $~93~mm): ESP32, XBee UART interface, IRLZ44N MOSFET ignition channels, and ADS1115 monitoring circuit. Project fabrication.}}{59}{figure.44}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Current circuit implementation showing component placement and inter-board wiring. Project photograph.}}{60}{figure.45}%
+\contentsline {figure}{\numberline {46}{\ignorespaces 18650 battery case cover -- 2D manufacturing drawing with title block}}{70}{figure.46}%
+\contentsline {figure}{\numberline {47}{\ignorespaces 18650 battery case body -- 2D manufacturing drawing with title block}}{71}{figure.47}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Edge battery support bracket -- 2D manufacturing drawing with title block}}{72}{figure.48}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Mid battery support bracket -- 2D manufacturing drawing with title block}}{73}{figure.49}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Flight computer EasyEDA schematic: ESP32, XBee-PRO 900HP UART interface, IRLZ44N MOSFET ignition channels, and ADS1115 power monitoring. Project design.}}{74}{figure.50}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Base station EasyEDA schematic: XBee UART interface, ESP32 receiver, and Bluetooth passthrough. Project design.}}{75}{figure.51}%
+\contentsline {figure}{\numberline {52}{\ignorespaces N4 recovery system project Gantt chart showing planned phases, milestones, and current progress}}{77}{figure.52}%
+\contentsline {figure}{\numberline {53}{\ignorespaces Labelled cross-sectional view of the avionics bay showing component stacking order, threaded-rod paths, and internal clearance zones. Project CAD.}}{78}{figure.53}%
+\contentsline {figure}{\numberline {54}{\ignorespaces Full avionics bay assembly parts list with annotated component identifications and sub-assembly references. Project CAD.}}{78}{figure.54}%
+\contentsline {figure}{\numberline {55}{\ignorespaces Labelled avionics bay photograph identifying the battery pack, FC sled, retention rods, and deployment channel connectors. Project fabrication.}}{79}{figure.55}%
+\contentsline {figure}{\numberline {56}{\ignorespaces Labelled flight-computer PCB photograph identifying the ESP32, XBee module, IRLZ44N MOSFETs, ADS1115, and passive components. Project fabrication.}}{80}{figure.56}%

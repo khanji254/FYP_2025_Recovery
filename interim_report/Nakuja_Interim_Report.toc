@@ -45,46 +45,46 @@
 \contentsline {subsection}{\numberline {3.4}Structural (Mechanical) Module Design Methodology}{33}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Structural Module Scope}{33}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Structural Design Considerations}{33}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Structural Parts List}{34}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Structural Design Option Comparison}{34}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}Chosen Structural Design and Implementation}{34}{subsubsection.3.4.5}%
-\contentsline {subsubsection}{\numberline {3.4.6}Structural Load Calculations}{34}{subsubsection.3.4.6}%
-\contentsline {paragraph}{(a) 18650 battery mass and weight}{34}{section*.7}%
-\contentsline {paragraph}{(b) Launch inertial force (4g design case)}{39}{section*.8}%
-\contentsline {paragraph}{(c) Pop-test pressure-driven force (188~kPa reference)}{39}{section*.9}%
+\contentsline {subsubsection}{\numberline {3.4.3}Structural Parts List}{35}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Structural Design Option Comparison}{36}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}Chosen Structural Design and Implementation}{36}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Structural Load Calculations}{39}{subsubsection.3.4.6}%
+\contentsline {paragraph}{(a) 18650 battery mass and weight}{39}{section*.7}%
+\contentsline {paragraph}{(b) Launch inertial force (4g design case)}{40}{section*.8}%
+\contentsline {paragraph}{(c) Pop-test pressure-driven force (188~kPa reference)}{40}{section*.9}%
 \contentsline {paragraph}{(d) Impulse estimate for pop transient}{40}{section*.10}%
-\contentsline {paragraph}{(e) Load distribution through fasteners and supports}{40}{section*.11}%
-\contentsline {subsection}{\numberline {3.5}Embedded Software Methodology}{40}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Software Module Scope}{40}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Software Design Considerations}{40}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}XBee Communication Interface: SPI vs UART}{41}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}Radio Pre-Flight Configuration via XCTU}{41}{subsubsection.3.5.4}%
+\contentsline {paragraph}{(e) Load distribution through fasteners and supports}{41}{section*.11}%
+\contentsline {subsection}{\numberline {3.5}Embedded Software Methodology}{41}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Software Module Scope}{41}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Software Design Considerations}{41}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}XBee Communication Interface: SPI vs UART}{42}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Radio Pre-Flight Configuration via XCTU}{43}{subsubsection.3.5.4}%
 \contentsline {subsubsection}{\numberline {3.5.5}Communication Manager Architecture}{43}{subsubsection.3.5.5}%
-\contentsline {subsubsection}{\numberline {3.5.6}Firmware State Machine Architecture}{43}{subsubsection.3.5.6}%
+\contentsline {subsubsection}{\numberline {3.5.6}Firmware State Machine Architecture}{45}{subsubsection.3.5.6}%
 \contentsline {subsubsection}{\numberline {3.5.7}Pyrotechnic Deployment Software Flow}{45}{subsubsection.3.5.7}%
-\contentsline {subsubsection}{\numberline {3.5.8}Power Monitoring Software Integration (In Progress)}{46}{subsubsection.3.5.8}%
-\contentsline {subsection}{\numberline {3.6}Validation and Test Method}{46}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Results and Discussion}{49}{section.4}%
-\contentsline {subsection}{\numberline {4.1}System Design Completion}{49}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Mechanical Structural Design}{49}{subsubsection.4.1.1}%
-\contentsline {paragraph}{2D Dimensioned Drawings}{49}{section*.12}%
-\contentsline {paragraph}{3D CAD Models and Assembly}{50}{section*.13}%
-\contentsline {subsubsection}{\numberline {4.1.2}Electrical Circuit Design}{53}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Power Monitoring Simulation}{54}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}Fabricated PCB}{55}{subsubsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.2}Component Procurement}{58}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Preliminary Testing Results}{59}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Pending Tests --- Scheduled for Next Phase}{60}{subsubsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.4}Firmware Development Progress}{60}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Completed Modules}{60}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Integration Status}{61}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Remaining Firmware Work}{61}{subsubsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.5}Challenges Encountered}{62}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Conclusion}{63}{section.5}%
-\contentsline {section}{References}{64}{section*.14}%
-\contentsline {section}{\numberline {A}Appendix A: CAD Drawings with Title Blocks}{68}{appendix.A}%
-\contentsline {section}{\numberline {B}Appendix B: Flight Computer and Base Station Circuit Design Reference}{71}{appendix.B}%
-\contentsline {section}{\numberline {C}Appendix C: Project Budget}{74}{appendix.C}%
-\contentsline {section}{\numberline {D}Appendix D: Project Timeplan}{75}{appendix.D}%
-\contentsline {section}{\numberline {E}Appendix E: Labelled Assembly Reference Photographs}{75}{appendix.E}%
-\contentsline {section}{\numberline {F}Appendix F: Firmware Code Snippets and Repository}{79}{appendix.F}%
+\contentsline {subsubsection}{\numberline {3.5.8}Power Monitoring Software Integration (In Progress)}{47}{subsubsection.3.5.8}%
+\contentsline {subsection}{\numberline {3.6}Validation and Test Method}{49}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Results and Discussion}{50}{section.4}%
+\contentsline {subsection}{\numberline {4.1}System Design Completion}{50}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Mechanical Structural Design}{50}{subsubsection.4.1.1}%
+\contentsline {paragraph}{2D Dimensioned Drawings}{50}{section*.12}%
+\contentsline {paragraph}{3D CAD Models and Assembly}{51}{section*.13}%
+\contentsline {subsubsection}{\numberline {4.1.2}Electrical Circuit Design}{56}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Power Monitoring Simulation}{56}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Fabricated PCB}{57}{subsubsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.2}Component Procurement}{60}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Preliminary Testing Results}{61}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Pending Tests --- Scheduled for Next Phase}{62}{subsubsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.4}Firmware Development Progress}{62}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Completed Modules}{62}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Integration Status}{63}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Remaining Firmware Work}{63}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Challenges Encountered}{64}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Conclusion}{65}{section.5}%
+\contentsline {section}{References}{66}{section*.14}%
+\contentsline {section}{\numberline {A}Appendix A: CAD Drawings with Title Blocks}{70}{appendix.A}%
+\contentsline {section}{\numberline {B}Appendix B: Flight Computer and Base Station Circuit Design Reference}{73}{appendix.B}%
+\contentsline {section}{\numberline {C}Appendix C: Project Budget}{76}{appendix.C}%
+\contentsline {section}{\numberline {D}Appendix D: Project Timeplan}{77}{appendix.D}%
+\contentsline {section}{\numberline {E}Appendix E: Labelled Assembly Reference Photographs}{77}{appendix.E}%
+\contentsline {section}{\numberline {F}Appendix F: Firmware Code Snippets and Repository}{81}{appendix.F}%

@@ -425,7 +425,7 @@ The structural design constraints are:
 
 \subsubsection{Structural Parts List}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Structural Module Parts List}
 \label{tab:structural_parts}
@@ -447,7 +447,7 @@ XBee extension mount + BMS mount area & 1 each & Allocated upper-plane features 
 
 \subsubsection{Structural Design Option Comparison}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Structural Design Comparison Against Mechanical Requirements}
 \label{tab:structural_option_compare}
@@ -466,32 +466,32 @@ Adhesive-only retention & Good & Low & Simple initially & Poor serviceability an
 
 The selected design is a stepped battery-holder architecture with raised edge supports, shorter mid supports, dual threaded-rod retention, and distributed self-tapping screw points. This combination provides geometric clearance and better load sharing under launch and pop-test disturbances. The holder additionally fastens the complete 4-cell battery pack as a single retained unit, and the upper platform above the battery carriers serves as the mounting bed for both the XBee extension board and the beacon antenna module, keeping all avionics electronics within the 95~mm bay envelope.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{{images/mechanical/FC_Holder_without title block.JPG}}
+\includegraphics[width=\textwidth]{{images/mechanical/FC_Holder_without title block.JPG}}
 \caption{Flight-computer holder sled: stepped battery seating, load path, and upper electronics mounting platform}
 \label{fig:cad_fc_holder_no_block}
 \par\smallskip
 {\small The sled fastens the complete 4-cell pack as a unified assembly and serves as the mounting bed for the XBee extension board and beacon antenna above the battery carriers.}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{{images/mechanical/18650_case_without title block.JPG}}
+\includegraphics[width=\textwidth]{{images/mechanical/18650_case_without title block.JPG}}
 \caption{18650 battery case for the stepped carrier assembly}
 \label{fig:cad_18650_case_no_block}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{{images/mechanical/Edge_batt_without title block.JPG}}
+\includegraphics[width=\textwidth]{{images/mechanical/Edge_batt_without title block.JPG}}
 \caption{Raised edge battery support clearing the threaded-rod path}
 \label{fig:cad_edge_batt_no_block}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{{images/mechanical/Mid_batt_without title block.JPG}}
+\includegraphics[width=\textwidth]{{images/mechanical/Mid_batt_without title block.JPG}}
 \caption{Mid battery support for controlled pack height and fit}
 \label{fig:cad_mid_batt_no_block}
 \end{figure}
@@ -712,8 +712,9 @@ The firmware is structured as a finite-state machine (FSM) executed inside the E
 
 The deployment channel is driven only when the FSM reaches the APOGEE or RECOVERY state and all pre-fire checks pass. Figure~\ref{fig:sw_deploy_flow} shows the gating logic.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
+\resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[
   >=Latex,
   proc/.style={draw, rectangle, rounded corners=4pt, fill=gray!10, minimum width=6.2cm,
@@ -745,7 +746,8 @@ The deployment channel is driven only when the FSM reaches the APOGEE or RECOVER
   \draw[arr] (armq) -| node[above, pos=0.25, font=\scriptsize]{No}  (inhib);
   \draw[arr] (fire)  -- (poll);
   \draw[arr] (poll)  -- (done);
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \caption{Deployment channel firmware flow: arm checks, PWM fire command, and post-event confirmation}
 \label{fig:sw_deploy_flow}
 \end{figure}
@@ -770,8 +772,9 @@ where $V_{ADC}$ is the raw ADC reading in volts, and the factor 57/10 is the rec
 
 Figure~\ref{fig:sw_power_flow} shows the firmware flow for the monitoring integration.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
+\resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[
   >=Latex,
   proc/.style={draw, rectangle, rounded corners=4pt, fill=gray!10, minimum width=6.2cm,
@@ -797,16 +800,17 @@ Figure~\ref{fig:sw_power_flow} shows the firmware flow for the monitoring integr
   \draw[arr] (thresh) -- node[left,font=\scriptsize]{Yes} (append);
   \draw[arr] (thresh) -| node[above,pos=0.25,font=\scriptsize]{No} (inhibit);
   \draw[arr] (append) -- (tx);
-\end{tikzpicture}
+\end{tikzpicture}%
+}
 \caption{Power monitoring firmware flow: ADS1115 I$^2$C readout, voltage reconstruction, arm-inhibit decision, and telemetry packet update \cite{ads1115_datasheet,n4_pyro_control}. Project diagram.}
 \label{fig:sw_power_flow}
 \end{figure}
 
 The reconstructed voltage is appended to the telemetry packet and compared against the inhibit threshold. If the value falls below \texttt{LAUNCH\_INHIBIT\_V}, the deployment arm flag is cleared and a ``\texttt{PWR INHIBIT}'' status byte is broadcast over XBee to the ground station before launch \cite{n4_pyro_control}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.78\textwidth, trim=0 12mm 0 0, clip]{images/Power_Monitoring_Design_Concept.png}
+\includegraphics[width=\textwidth, trim=0 12mm 0 0, clip]{images/Power_Monitoring_Design_Concept.png}
 \caption{Power monitoring hardware concept: ADS1115 I\textsuperscript{2}C polling, voltage-divider network, and launch-inhibit logic \cite{ads1115_datasheet,n4_pyro_control}. Project diagram.}
 \label{fig:sw_power_concept}
 \end{figure}
