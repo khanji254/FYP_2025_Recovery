@@ -34,32 +34,30 @@
 \contentsline {subsection}{\numberline {3.3}Dataset Collection and Model Training}{26}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Image Acquisition}{26}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Annotation}{27}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Dataset Split}{27}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}YOLOv11 Model Training}{27}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Framework and Backbone}{27}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Training Configuration}{28}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Evaluation Metrics}{28}{subsubsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}Sorting Mechanism Improvements}{28}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Hardware Platform}{29}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Detection-to-Actuation Pipeline}{32}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}ESP32 Pin Assignment and Wiring}{34}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}Transistor Technology Selection: BJT vs.\ Logic-Level MOSFET}{36}{subsubsection.3.5.4}%
-\contentsline {subsubsection}{\numberline {3.5.5}Solenoid Driver Circuit}{37}{subsubsection.3.5.5}%
-\contentsline {subsection}{\numberline {3.6}Circuit Simulation in Proteus}{38}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Simulation Scope}{39}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Simulation Methodology}{39}{subsubsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.7}Validation Strategy}{40}{subsection.3.7}%
-\contentsline {section}{\numberline {4}Results and Discussion}{41}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Overview}{41}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Performance Analysis of Existing System}{41}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Dataset Split}{28}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}YOLOv11 Model Training}{28}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Framework and Backbone}{28}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Training Configuration}{29}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Evaluation Metrics}{29}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Sorting Mechanism Improvements}{29}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Hardware Platform}{30}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Detection-to-Actuation Pipeline}{33}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}ESP32 Pin Assignment and Wiring}{35}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Transistor Technology Selection: BJT vs.\ Logic-Level MOSFET}{37}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Solenoid Driver Circuit}{38}{subsubsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.6}Circuit Simulation in Proteus}{39}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Simulation Scope}{40}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Simulation Methodology}{40}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Validation Strategy}{41}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Results and Discussion}{42}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Overview}{42}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Design Rationale}{42}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Sorting Mechanism Improvements}{42}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Procured and Verified Hardware}{42}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1}Procured and Verified Hardware}{43}{subsubsection.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.3.2}Proteus Circuit Simulation Results}{44}{subsubsection.4.3.2}%
 \contentsline {paragraph}{Full Circuit Overview}{44}{section*.32}%
-\contentsline {paragraph}{UART Communication Verification}{45}{section*.34}%
-\contentsline {paragraph}{Solenoid Driver Switching Waveforms}{45}{section*.35}%
-\contentsline {paragraph}{Motor PWM and Compressor Relay}{46}{section*.38}%
-\contentsline {subsection}{\numberline {4.4}Hardware Upgrade and Model Development}{47}{subsection.4.4}%
+\contentsline {paragraph}{Solenoid Driver Switching Waveforms}{45}{section*.34}%
+\contentsline {subsection}{\numberline {4.4}Model Training Results}{47}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Dataset and Class Reduction}{47}{subsubsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.2}YOLOv11n Training Results}{48}{subsubsection.4.4.2}%
 \contentsline {subsubsection}{\numberline {4.4.3}Dataset Visualisations}{51}{subsubsection.4.4.3}%
@@ -70,8 +68,8 @@
 \contentsline {subsection}{\numberline {5.1}Summary}{58}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Future Work}{59}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Project Schedule}{59}{subsection.5.3}%
-\contentsline {section}{Appendices}{64}{section*.51}%
-\contentsline {section}{Appendix A: Circuit Schematics}{64}{section*.52}%
-\contentsline {section}{Appendix B: Schedule and Budget}{68}{section*.57}%
-\contentsline {section}{Appendix C: Dataset and Model Outputs}{70}{section*.60}%
-\contentsline {section}{Appendix D: Mechanical Design}{71}{section*.63}%
+\contentsline {section}{Appendices}{64}{section*.49}%
+\contentsline {section}{Appendix A: Circuit Schematics}{64}{section*.50}%
+\contentsline {section}{Appendix B: Schedule and Budget}{68}{section*.55}%
+\contentsline {section}{Appendix C: Dataset and Model Outputs}{70}{section*.58}%
+\contentsline {section}{Appendix D: Mechanical Design}{71}{section*.61}%

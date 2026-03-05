@@ -21,11 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{mugo2017}
-J.~Mugo \emph{et~al.}, ``Design and development of an automated coffee berry
-  sorting machine,'' Final Year Project Report, Jomo Kenyatta University of
-  Agriculture and Technology (JKUAT), Mechatronic Engineering Department, 2019.
-
 \bibitem{brosnan2004}
 T.~Brosnan and D.-W. Sun, ``Improving quality inspection of food products by
   computer vision --- a review,'' \emph{Journal of Food Engineering}, vol.~61,
@@ -45,6 +40,11 @@ S.~Kumar, ``Computer vision-based fabric defect detection: a survey,''
 P.~Ramos, F.~Prieto, E.~Montoya, and C.~Oliveros, ``Automatic fruit count on
   coffee branches using computer vision,'' \emph{Computers and Electronics in
   Agriculture}, vol. 137, pp. 9--22, 2017.
+
+\bibitem{mugo2017}
+J.~Mugo \emph{et~al.}, ``Design and development of an automated coffee berry
+  sorting machine,'' Final Year Project Report, Jomo Kenyatta University of
+  Agriculture and Technology (JKUAT), Mechatronic Engineering Department, 2019.
 
 \bibitem{zhang2018}
 X.~Zhang, Y.~Qiao, F.~Meng, C.~Fan, and M.~Zhang, ``Identification of maize
@@ -165,5 +165,31 @@ T.-Y. Lin, P.~Doll\'{a}r, R.~Girshick, K.~He, B.~Hariharan, and S.~Belongie,
   ``Feature pyramid networks for object detection,'' in \emph{Proceedings of
   the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 2017,
   pp. 2117--2125.
+
+\bibitem{roboflow_ripeness}
+{Roboflow Universe}, ``Coffee cherry ripeness detection {[Dataset]},''
+  Roboflow.
+  \url{https://universe.roboflow.com/cherry-ripeness-identificator/coffee-cherry-ripeness-detection},
+  2023.
+
+\bibitem{tabiolo_cherry}
+L.~G. Tabiolo, ``Coffee cherry 0ig00 {[Dataset]},'' Roboflow Universe.
+  \url{https://universe.roboflow.com/lyka-grace-tabiolo-9kido/coffee-cherry-0ig00},
+  2023.
+
+\bibitem{roboflow_coffeeapp}
+{Roboflow Universe}, ``Coffee app --- coffee cherry classification
+  {[Dataset]},'' Roboflow.
+  \url{https://universe.roboflow.com/coffee-cherry-classification/coffee-app},
+  2023.
+
+\bibitem{roboflow_cherryclassification}
+------, ``Coffee cherry classification {[Dataset]},'' Roboflow.
+  \url{https://universe.roboflow.com/coffee-cherry-classification/coffee-cherry},
+  2023.
+
+\bibitem{robopulse_berry}
+{Robopulse}, ``Coffee berry detection (xhx7a) {[Dataset]},'' Roboflow Universe.
+  \url{https://universe.roboflow.com/robopulse/coffee-berry-xhx7a}, 2023.
 
 \end{thebibliography}

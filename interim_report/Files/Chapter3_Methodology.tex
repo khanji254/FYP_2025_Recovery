@@ -104,23 +104,28 @@ The classification model was rebuilt from the ground up using upgraded hardware 
 
 \subsubsection{Image Acquisition}
 
-A dataset of \textbf{2{,}000} annotated images was compiled, balanced across the
-\texttt{accept} and \texttt{reject} classes. Images were sourced from:
-\begin{enumerate}
-  \item Static tabletop photographs taken under controlled LED lighting (multiple angles and distances).
-  \item In-situ frames extracted from video captured on the actual chute at operational speed.
-\end{enumerate}
+The training dataset was assembled by aggregating five publicly available, annotated coffee berry image datasets from the Roboflow Universe platform \cite{roboflow_ripeness,tabiolo_cherry,roboflow_coffeeapp,roboflow_cherryclassification,robopulse_berry}. A total of \textbf{2{,}000} representative images were selected from these combined sources, balanced across the \texttt{accept} and \texttt{reject} classes. Sourcing images from multiple independently collected datasets provides a broader diversity of imaging conditions, geographical origins, lighting environments, and berry varieties than could be achieved with a single physical capture setup, improving the generalisability of the trained model.
 
-Images were captured using the \textbf{Arducam OV9281 Global-Shutter Camera Module}
-(Raspberry Pi CSI-2 interface, 1\,MP, 1280\,\texttimes{}800 native resolution, Sony OV9281 sensor).
-The global-shutter sensor exposes all pixels simultaneously, eliminating the rolling-shutter
-motion smear that degraded classification in the reference system (see Section~\ref{subsec:shutter}).
-Images were saved at $1280 \times 800$ and subsequently centre-cropped and resized to
-$640 \times 640$ for training.
+The five contributing datasets are summarised in Table~\ref{tab:dataset_sources}.
 
-\textit{Note: The mechanical chute and vibrating eccentric-motor feeder are retained unchanged
-from the reference machine \cite{mugo2017}. Improvements in this project are confined to
-the electronics, imaging, and software sub-systems.}
+\begin{table}[H]
+  \centering
+  \caption{Image dataset sources used for model training \cite{roboflow_ripeness,tabiolo_cherry,roboflow_coffeeapp,roboflow_cherryclassification,robopulse_berry}}
+  \small
+  \begin{tabularx}{\linewidth}{@{}p{4.2cm}p{2.8cm}X@{}}
+    \toprule
+    \textbf{Dataset} & \textbf{Source (2023)} & \textbf{Roboflow URL} \\ \midrule
+    Coffee Cherry Ripeness Detection & Roboflow Universe & \url{https://universe.roboflow.com/cherry-ripeness-identificator/coffee-cherry-ripeness-detection} \\[4pt]
+    Coffee Cherry 0ig00 & Tabiolo, L.\,G. & \url{https://universe.roboflow.com/lyka-grace-tabiolo-9kido/coffee-cherry-0ig00} \\[4pt]
+    Coffee App --- Cherry Classification & Roboflow Universe & \url{https://universe.roboflow.com/coffee-cherry-classification/coffee-app} \\[4pt]
+    Coffee Cherry Classification & Roboflow Universe & \url{https://universe.roboflow.com/coffee-cherry-classification/coffee-cherry} \\[4pt]
+    Coffee Berry Detection (xhx7a) & Robopulse & \url{https://universe.roboflow.com/robopulse/coffee-berry-xhx7a} \\
+    \bottomrule
+  \end{tabularx}
+  \label{tab:dataset_sources}
+\end{table}
+
+All selected images were rescaled and centre-cropped to $640 \times 640$ pixels to match the YOLOv11 input specification.
 
 \subsubsection{Annotation}
 
@@ -164,7 +169,7 @@ The Ultralytics YOLOv11 Nano (\texttt{yolo11n.pt}) pre-trained on COCO was selec
   \begin{tabular}{@{}ll@{}}
     \toprule
     \textbf{Parameter} & \textbf{Value} \\ \midrule
-    Epochs      & 100 \\
+    Epochs      & 15 \\
     Image size  & 640 $\times$ 640 \\
     Batch size  & 16 \\
     Optimizer   & SGD (default Ultralytics) \\
