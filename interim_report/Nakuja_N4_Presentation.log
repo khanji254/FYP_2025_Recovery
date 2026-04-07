@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  3 MAR 2026 07:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  6 MAR 2026 03:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1107,228 +1107,830 @@ Overfull \vbox (15.63992pt too high) detected at line 46
 {C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
 
 ]
-<images/XBeeDiagram.png, id=27, 799.98875pt x 466.74374pt>
-File: images/XBeeDiagram.png Graphic file (type png)
-<use images/XBeeDiagram.png>
-Package pdftex.def Info: images/XBeeDiagram.png  used on input line 95.
-(pdftex.def)             Requested size: 175.26994pt x 102.25662pt.
+<images/Nakuja_N3_Rocket.PNG, id=28, 620.3175pt x 381.67593pt>
+File: images/Nakuja_N3_Rocket.PNG Graphic file (type png)
+<use images/Nakuja_N3_Rocket.PNG>
+Package pdftex.def Info: images/Nakuja_N3_Rocket.PNG  used on input line 108.
+(pdftex.def)             Requested size: 150.5703pt x 92.64075pt.
+<images/Dual_Deployment.PNG, id=30, 297.36093pt x 198.7425pt>
+File: images/Dual_Deployment.PNG Graphic file (type png)
+<use images/Dual_Deployment.PNG>
+Package pdftex.def Info: images/Dual_Deployment.PNG  used on input line 108.
+(pdftex.def)             Requested size: 150.5703pt x 100.63254pt.
 
-Overfull \vbox (69.47934pt too high) detected at line 95
+Overfull \vbox (82.74603pt too high) detected at line 108
  []
 
 [3
 
- <./images/XBeeDiagram.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 124
+ <./images/Nakuja_N3_Rocket.PNG> <./images/Dual_Deployment.PNG>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 145
 .
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 124
+LaTeX Font Info:    Trying to load font information for U+msb on input line 145
 .
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 124.
+ut line 145.
 
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathke
 rncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-Overfull \vbox (6.79665pt too high) detected at line 124
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+\OT1/cmss/m/n/10.95 con-ti-nu-ity un-known at
+ []
+
+
+Overfull \hbox (34.66226pt too wide) in paragraph at lines 145--145
+[][]  
+ []
+
+<images/The Crimson Powder Problem_Excessive_Pop.PNG, id=39, 228.10219pt x 245.
+41687pt>
+File: images/The Crimson Powder Problem_Excessive_Pop.PNG Graphic file (type pn
+g)
+<use images/The Crimson Powder Problem_Excessive_Pop.PNG>
+Package pdftex.def Info: images/The Crimson Powder Problem_Excessive_Pop.PNG  u
+sed on input line 145.
+(pdftex.def)             Requested size: 143.72263pt x 154.63591pt.
+<images/CHarge_Holder_Melted_From_Explosion.jpeg, id=40, 433.62pt x 374.14781pt
+>
+File: images/CHarge_Holder_Melted_From_Explosion.jpeg Graphic file (type jpg)
+<use images/CHarge_Holder_Melted_From_Explosion.jpeg>
+Package pdftex.def Info: images/CHarge_Holder_Melted_From_Explosion.jpeg  used 
+on input line 145.
+(pdftex.def)             Requested size: 143.72263pt x 124.0115pt.
+
+Overfull \vbox (166.12016pt too high) detected at line 145
  []
 
 [4
 
-]
-<images/Battery _Monitoring_Proteus_Design.PNG, id=45, 1008.76875pt x 623.32875
-pt>
-File: images/Battery _Monitoring_Proteus_Design.PNG Graphic file (type png)
-<use images/Battery _Monitoring_Proteus_Design.PNG>
-Package pdftex.def Info: images/Battery _Monitoring_Proteus_Design.PNG  used on
- input line 157.
-(pdftex.def)             Requested size: 172.07956pt x 106.32591pt.
-<images/mechanical/FC_Holder Cad.jpeg, id=46, 1311.90125pt x 709.65125pt>
-File: images/mechanical/FC_Holder Cad.jpeg Graphic file (type jpg)
-<use images/mechanical/FC_Holder Cad.jpeg>
-Package pdftex.def Info: images/mechanical/FC_Holder Cad.jpeg  used on input li
-ne 157.
-(pdftex.def)             Requested size: 162.52185pt x 87.90488pt.
-
-Overfull \vbox (104.98656pt too high) detected at line 157
+ <./images/The Crimson Powder Problem_Excessive_Pop.PNG> <./images/CHarge_Holde
+r_Melted_From_Explosion.jpeg>]
+Overfull \vbox (60.9473pt too high) detected at line 170
  []
 
 [5
 
- <./images/Battery _Monitoring_Proteus_Design.PNG> <./images/mechanical/FC_Hold
-er Cad.jpeg>]
-Overfull \hbox (5.00749pt too wide) in paragraph at lines 210--210
- [][]\OT1/cmss/bx/n/10 RECOVERY 
- []
-
-<images/Power_Monitoring_Design_Concept.png, id=53, 1437.11906pt x 651.18282pt>
-
-File: images/Power_Monitoring_Design_Concept.png Graphic file (type png)
-<use images/Power_Monitoring_Design_Concept.png>
-Package pdftex.def Info: images/Power_Monitoring_Design_Concept.png  used on in
-put line 210.
-(pdftex.def)             Requested size: 179.25114pt x 81.2188pt.
-
-Overfull \hbox (10.24431pt too wide) in paragraph at lines 210--210
- [][] 
+]
+Underfull \hbox (badness 6157) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 Digi In-ter-na-tional
  []
 
 
-Overfull \vbox (36.68735pt too high) detected at line 210
+Underfull \hbox (badness 2653) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 No application-level link-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 Pozar (2011);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 ARRL An-tenna
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 Free-space path loss model;
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 dipole ra-di-a-tion pat-tern ^a\TS1/cmss/m/n/10 ¿\OT1/cmss/m/n
+/10 "
+ []
+
+
+Underfull \hbox (badness 3780) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 Null zones along dipole
+ []
+
+
+Underfull \hbox (badness 5726) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 axis re-quire tilt mar-gin
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 ^a\TS1/cmss/m/n/10 ¿\OT1/cmss/m/n/10 " Py-rotech-nic
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 no in-rocket de-ploy-ment
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 Martinez & Chen
+ []
+
+
+Underfull \hbox (badness 2512) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 ef-fec-tive ther-mal con-trol for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 Texas In-stru-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 ments (2020)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 ^a\TS1/cmss/m/n/10 ¿\OT1/cmss/m/n/10 " ADS1115
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 16-bit I$[]$C ADC; $\OMS/cmsy/m/n/10 ^^F$\OT1/cmss/m/n/10 4.
+096 V
+ []
+
+
+Underfull \hbox (badness 1092) in paragraph at lines 202--202
+\OT1/cmss/m/n/10 FSR; 860 SPS max; 32,768
+ []
+
+
+Underfull \hbox (badness 4096) in paragraph at lines 202--202
+[]\OT1/cmss/m/n/10 No ref-er-ence de-sign for
  []
 
 [6
 
- <./images/Power_Monitoring_Design_Concept.png>]
-<images/Rocket_Extension_Design.jpeg, id=59, 1019.81pt x 557.08125pt>
-File: images/Rocket_Extension_Design.jpeg Graphic file (type jpg)
-<use images/Rocket_Extension_Design.jpeg>
-Package pdftex.def Info: images/Rocket_Extension_Design.jpeg  used on input lin
-e 253.
-(pdftex.def)             Requested size: 119.50279pt x 65.27429pt.
-<images/Base_Station_Design.jpeg, id=60, 904.37875pt x 783.92876pt>
-File: images/Base_Station_Design.jpeg Graphic file (type jpg)
-<use images/Base_Station_Design.jpeg>
-Package pdftex.def Info: images/Base_Station_Design.jpeg  used on input line 25
-3.
-(pdftex.def)             Requested size: 119.50279pt x 103.577pt.
-<images/FC_Xbee_Design__easyDA.PNG, id=61, 676.02562pt x 590.205pt>
-File: images/FC_Xbee_Design__easyDA.PNG Graphic file (type png)
-<use images/FC_Xbee_Design__easyDA.PNG>
-Package pdftex.def Info: images/FC_Xbee_Design__easyDA.PNG  used on input line 
-253.
-(pdftex.def)             Requested size: 119.50279pt x 104.33209pt.
-<images/etched FC circuit.jpeg, id=62, 1204.5pt x 1606.0pt>
-File: images/etched FC circuit.jpeg Graphic file (type jpg)
-<use images/etched FC circuit.jpeg>
-Package pdftex.def Info: images/etched FC circuit.jpeg  used on input line 253.
+]
+Underfull \hbox (badness 2351) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Santana & Alves
+ []
 
-(pdftex.def)             Requested size: 119.50279pt x 159.33511pt.
 
-Overfull \vbox (115.5808pt too high) detected at line 253
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 PETG ten-sile strength
+ []
+
+
+Underfull \hbox (badness 8038) in paragraph at lines 234--234
+\OMS/cmsy/m/n/10 ^^Y$\OT1/cmss/m/n/10 50 MPa, chem-i-cal re-sis-
+ []
+
+
+Underfull \hbox (badness 1248) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 tance, low warp-ing vs PLA;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 High-shock load data
+ []
+
+
+Underfull \hbox (badness 4060) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Real Time En-gi-
+ []
+
+
+Underfull \hbox (badness 2478) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 neers Ltd (2023)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 ^a\TS1/cmss/m/n/10 ¿\OT1/cmss/m/n/10 " FreeR-TOS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 No rocket-specific FSM
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 ref-er-ence ar-chi-tec-ture
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Knacke, T.W.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 (1991) ^a\TS1/cmss/m/n/10 ¿\OT1/cmss/m/n/10 "
+ []
+
+
+Underfull \hbox (badness 5519) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 Parachute Re-cov-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Drogue + main dual-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 deployment prin-ci-ples; de-
+ []
+
+
+Underfull \hbox (badness 7504) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 ploy-ment force and tim-ing
+ []
+
+
+Underfull \hbox (badness 3713) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 trig-ger logic or apogee-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 detection al-go-rithms
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Rodriguez, C.
+ []
+
+
+Underfull \hbox (badness 5817) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 FET Gate Drive
+ []
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 IRLZ44N logic-level en-hance-
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 ment at 3.3 V; $\OT1/mathkerncmss/m/sl/10 R[] \OT1/cmss/m/n/10
+ =
+ []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Switching char-ac-ter-i-sa-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 ignition-specific test-ing
+ []
+
+
+Underfull \hbox (badness 1596) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Sutton & Biblarz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 (2016) ^a\TS1/cmss/m/n/10 ¿\OT1/cmss/m/n/10 "
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Black-powder ejec-tion charge
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 the-ory; pressure-volume re-la-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]\OT1/cmss/m/n/10 Theoretical; no small-
+ []
+
+
+Underfull \hbox (badness 7362) in paragraph at lines 234--234
+\OT1/cmss/m/n/10 rocket cal-i-brated charge
  []
 
 [7
 
- <./images/Rocket_Extension_Design.jpeg> <./images/Base_Station_Design.jpeg> <.
-/images/FC_Xbee_Design__easyDA.PNG> <./images/etched FC circuit.jpeg>]
-<images/mechanical/18650_case_cover_without title block.JPG, id=70, 792.71156pt
- x 483.30562pt>
-File: images/mechanical/18650_case_cover_without title block.JPG Graphic file (
-type jpg)
-<use images/mechanical/18650_case_cover_without title block.JPG>
-Package pdftex.def Info: images/mechanical/18650_case_cover_without title block
-.JPG  used on input line 282.
-(pdftex.def)             Requested size: 118.3064pt x 72.12398pt.
-<images/mechanical/Edge_batt_without title block.JPG, id=71, 769.37437pt x 479.
-54156pt>
-File: images/mechanical/Edge_batt_without title block.JPG Graphic file (type jp
-g)
-<use images/mechanical/Edge_batt_without title block.JPG>
-Package pdftex.def Info: images/mechanical/Edge_batt_without title block.JPG  u
-sed on input line 282.
-(pdftex.def)             Requested size: 118.3064pt x 73.73547pt.
-<images/mechanical/Threaded_Rod_Integration_showing raised battery cells to giv
-e way to threaded rods.PNG, id=72, 749.80125pt x 359.09157pt>
-File: images/mechanical/Threaded_Rod_Integration_showing raised battery cells t
-o give way to threaded rods.PNG Graphic file (type png)
-<use images/mechanical/Threaded_Rod_Integration_showing raised battery cells to
- give way to threaded rods.PNG>
-Package pdftex.def Info: images/mechanical/Threaded_Rod_Integration_showing rai
-sed battery cells to give way to threaded rods.PNG  used on input line 282.
-(pdftex.def)             Requested size: 118.3064pt x 56.65584pt.
-<images/mechanical/Cross_sectional view of avionics bay .jpeg, id=73, 828.09375
-pt x 696.6025pt>
-File: images/mechanical/Cross_sectional view of avionics bay .jpeg Graphic file
- (type jpg)
-<use images/mechanical/Cross_sectional view of avionics bay .jpeg>
-Package pdftex.def Info: images/mechanical/Cross_sectional view of avionics bay
- .jpeg  used on input line 282.
-(pdftex.def)             Requested size: 118.3064pt x 99.51135pt.
-<images/mechanical/Avionics assembly.jpeg, id=74, 963.6pt x 597.23125pt>
-File: images/mechanical/Avionics assembly.jpeg Graphic file (type jpg)
-<use images/mechanical/Avionics assembly.jpeg>
-Package pdftex.def Info: images/mechanical/Avionics assembly.jpeg  used on inpu
-t line 282.
-(pdftex.def)             Requested size: 111.13483pt x 68.87607pt.
-<images/mechanical/Full Integration in avionics bay.jpeg, id=75, 1015.795pt x 6
-73.51625pt>
-File: images/mechanical/Full Integration in avionics bay.jpeg Graphic file (typ
-e jpg)
-<use images/mechanical/Full Integration in avionics bay.jpeg>
-Package pdftex.def Info: images/mechanical/Full Integration in avionics bay.jpe
-g  used on input line 282.
-(pdftex.def)             Requested size: 111.13483pt x 73.6862pt.
-
-Overfull \vbox (8.41565pt too high) detected at line 282
+]
+Overfull \vbox (95.87576pt too high) detected at line 261
  []
 
 [8
 
- <./images/mechanical/18650_case_cover_without title block.JPG> <./images/mecha
-nical/Edge_batt_without title block.JPG> <./images/mechanical/Threaded_Rod_Inte
-gration_showing raised battery cells to give way to threaded rods.PNG> <./image
-s/mechanical/Cross_sectional view of avionics bay .jpeg> <./images/mechanical/A
-vionics assembly.jpeg> <./images/mechanical/Full Integration in avionics bay.jp
-eg>]
-File: images/etched FC circuit.jpeg Graphic file (type jpg)
-<use images/etched FC circuit.jpeg>
-Package pdftex.def Info: images/etched FC circuit.jpeg  used on input line 313.
+]
+Overfull \hbox (83.97827pt too wide) in paragraph at lines 351--351
+ [][] 
+ []
 
-(pdftex.def)             Requested size: 159.33604pt x 212.43866pt.
-File: images/Battery _Monitoring_Proteus_Design.PNG Graphic file (type png)
-<use images/Battery _Monitoring_Proteus_Design.PNG>
-Package pdftex.def Info: images/Battery _Monitoring_Proteus_Design.PNG  used on
- input line 313.
-(pdftex.def)             Requested size: 181.64018pt x 112.23238pt.
 
-Overfull \vbox (148.92906pt too high) detected at line 313
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/bx/n/10 Key Hard-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/bx/n/10 Telemetry
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/m/n/10 XBee-PRO
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/m/n/10 900MHz
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 mar-gin at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 5km; 3-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 channel
+ []
+
+
+Underfull \hbox (badness 3713) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 comm man-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/bx/n/10 Electrical
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/bx/n/10 + De-ploy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/m/n/10 IRLZ44N
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 MOS-FET;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 ADS1115;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/m/n/10 PWM
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 ig-ni-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 ($\OT1/mathkerncmss/m/sl/10 D[]\OT1/cmss/m/n/10 0\OML/cmm/m/it
+/10 :\OT1/cmss/m/n/10 40$);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 bat-tery
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 volt-age +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 con-ti-nu-ity
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/bx/n/10 Structural
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/m/n/10 PETG sled;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 18650$\OMS/cmsy/m/n/10 ^^B$\OT1/cmss/m/n/10 4;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/m/n/10 95mm bay;
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 stepped car-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 rier clears
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 rod paths;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 vi-bra-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/bx/n/10 Embedded
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+[]\OT1/cmss/m/n/10 ESP32;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 FreeR-TOS;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 Comm-
+ []
+
+
+Overfull \hbox (36.98965pt too wide) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 XBee/Beacon/MQTT
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 fall-back;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--351
+\OT1/cmss/m/n/10 launch-
  []
 
 [9
 
 ]
-<images/Assembled_Avionics_Bay.jpeg, id=87, 963.6pt x 444.15938pt>
-File: images/Assembled_Avionics_Bay.jpeg Graphic file (type jpg)
-<use images/Assembled_Avionics_Bay.jpeg>
-Package pdftex.def Info: images/Assembled_Avionics_Bay.jpeg  used on input line
- 341.
-(pdftex.def)             Requested size: 169.2951pt x 78.03403pt.
-
-Overfull \hbox (85.56671pt too wide) in paragraph at lines 341--341
-\OT1/cmss/m/n/10.95 (IDLE\TS1/cmss/m/n/10.95 ^^Y\OT1/cmss/m/n/10.95 ARMED\TS1/c
-mss/m/n/10.95 ^^Y\OT1/cmss/m/n/10.95 FLIGHT\TS1/cmss/m/n/10.95 ^^Y\OT1/cmss/m/n
-/10.95 APOGEE\TS1/cmss/m/n/10.95 ^^Y\OT1/cmss/m/n/10.95 RECOVERY)  
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+[]\OT1/cmss/m/n/10.95 Long-range rocket
  []
 
 
-Overfull \vbox (66.00145pt too high) detected at line 341
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+[]\OT1/cmss/m/n/10.95 Controlled ejec-tion
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 405--405
+\OT1/cmss/m/n/10.95 charge ac-ti-va-tion for
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 405--405
+\OT1/cmss/m/n/10.95 tery state + ig-niter
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+[]\OT1/cmss/m/n/10.95 Structural con-tain-
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 405--405
+\OT1/cmss/m/n/10.95 ment within 95 mm
+ []
+
+
+Overfull \vbox (147.15959pt too high) detected at line 405
  []
 
 [10
 
- <./images/Assembled_Avionics_Bay.jpeg>]
-<images/Timeplan.PNG, id=94, 772.38562pt x 526.21594pt>
-File: images/Timeplan.PNG Graphic file (type png)
-<use images/Timeplan.PNG>
-Package pdftex.def Info: images/Timeplan.PNG  used on input line 380.
-(pdftex.def)             Requested size: 175.26994pt x 119.40518pt.
+]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 446.
 
-Overfull \vbox (143.09695pt too high) detected at line 380
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 446.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 446.
+
+
+Overfull \hbox (29.88551pt too wide) in paragraph at lines 446--446
+[] 
+ []
+
+<images/xbee_module.jpg, id=85, 803.0pt x 803.0pt>
+File: images/xbee_module.jpg Graphic file (type jpg)
+<use images/xbee_module.jpg>
+Package pdftex.def Info: images/xbee_module.jpg  used on input line 446.
+(pdftex.def)             Requested size: 153.52145pt x 153.51505pt.
+<images/xbee_Data flow.jpg, id=86, 1085.05376pt x 977.6525pt>
+File: images/xbee_Data flow.jpg Graphic file (type jpg)
+<use images/xbee_Data flow.jpg>
+Package pdftex.def Info: images/xbee_Data flow.jpg  used on input line 446.
+(pdftex.def)             Requested size: 153.52145pt x 138.31743pt.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 446.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 446.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 446.
+
+
+Overfull \vbox (159.77641pt too high) detected at line 446
  []
 
 [11
 
- <./images/Timeplan.PNG>] [12
+ <./images/xbee_module.jpg> <./images/xbee_Data flow.jpg>]
+Underfull \hbox (badness 1688) in paragraph at lines 487--487
+[]\OT1/cmss/m/n/10.95 Current con-
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 487--487
+[]\OT1/cmss/m/n/10.95 Holder dam-
+ []
+
+<images/Cut_Nichrome_Wire.PNG, id=92, 243.15843pt x 241.65282pt>
+File: images/Cut_Nichrome_Wire.PNG Graphic file (type png)
+<use images/Cut_Nichrome_Wire.PNG>
+Package pdftex.def Info: images/Cut_Nichrome_Wire.PNG  used on input line 487.
+(pdftex.def)             Requested size: 82.64679pt x 82.13506pt.
+<images/Post_PopTest_Charring_And_Leak_Image.jpeg, id=93, 324.46219pt x 417.810
+94pt>
+File: images/Post_PopTest_Charring_And_Leak_Image.jpeg Graphic file (type jpg)
+<use images/Post_PopTest_Charring_And_Leak_Image.jpeg>
+Package pdftex.def Info: images/Post_PopTest_Charring_And_Leak_Image.jpeg  used
+ on input line 487.
+(pdftex.def)             Requested size: 63.78227pt x 82.13264pt.
+
+Overfull \vbox (130.55804pt too high) detected at line 487
+ []
+
+[12
+
+ <./images/Cut_Nichrome_Wire.PNG> <./images/Post_PopTest_Charring_And_Leak_Imag
+e.jpeg>]
+<images/mechanical/18650_case_cover_without title block.JPG, id=101, 792.71156p
+t x 483.30562pt>
+File: images/mechanical/18650_case_cover_without title block.JPG Graphic file (
+type jpg)
+<use images/mechanical/18650_case_cover_without title block.JPG>
+Package pdftex.def Info: images/mechanical/18650_case_cover_without title block
+.JPG  used on input line 514.
+(pdftex.def)             Requested size: 103.38455pt x 63.03105pt.
+<images/mechanical/FC_Holder_without title block.JPG, id=102, 803.25093pt x 512
+.66531pt>
+File: images/mechanical/FC_Holder_without title block.JPG Graphic file (type jp
+g)
+<use images/mechanical/FC_Holder_without title block.JPG>
+Package pdftex.def Info: images/mechanical/FC_Holder_without title block.JPG  u
+sed on input line 514.
+(pdftex.def)             Requested size: 103.38455pt x 65.9839pt.
+<images/mechanical/Edge_batt_without title block.JPG, id=103, 769.37437pt x 479
+.54156pt>
+File: images/mechanical/Edge_batt_without title block.JPG Graphic file (type jp
+g)
+<use images/mechanical/Edge_batt_without title block.JPG>
+Package pdftex.def Info: images/mechanical/Edge_batt_without title block.JPG  u
+sed on input line 514.
+(pdftex.def)             Requested size: 103.38455pt x 64.4353pt.
+<images/mechanical/Mid_batt_without title block.JPG, id=104, 883.04906pt x 548.
+0475pt>
+File: images/mechanical/Mid_batt_without title block.JPG Graphic file (type jpg
+)
+<use images/mechanical/Mid_batt_without title block.JPG>
+Package pdftex.def Info: images/mechanical/Mid_batt_without title block.JPG  us
+ed on input line 514.
+(pdftex.def)             Requested size: 103.38455pt x 64.15726pt.
+<images/mechanical/FC_Holder Cad.jpeg, id=105, 808.52063pt x 494.59781pt>
+File: images/mechanical/FC_Holder Cad.jpeg Graphic file (type jpg)
+<use images/mechanical/FC_Holder Cad.jpeg>
+Package pdftex.def Info: images/mechanical/FC_Holder Cad.jpeg  used on input li
+ne 514.
+(pdftex.def)             Requested size: 136.27573pt x 83.36354pt.
+<images/mechanical/Threaded_Rod_Integration_showing raised battery cells to giv
+e way to threaded rods.PNG, id=106, 749.80125pt x 359.09157pt>
+File: images/mechanical/Threaded_Rod_Integration_showing raised battery cells t
+o give way to threaded rods.PNG Graphic file (type png)
+<use images/mechanical/Threaded_Rod_Integration_showing raised battery cells to
+ give way to threaded rods.PNG>
+Package pdftex.def Info: images/mechanical/Threaded_Rod_Integration_showing rai
+sed battery cells to give way to threaded rods.PNG  used on input line 514.
+(pdftex.def)             Requested size: 136.27573pt x 65.26381pt.
+<images/Labeled/Assembly_Cross_section.PNG, id=107, 445.665pt x 261.97874pt>
+File: images/Labeled/Assembly_Cross_section.PNG Graphic file (type png)
+<use images/Labeled/Assembly_Cross_section.PNG>
+Package pdftex.def Info: images/Labeled/Assembly_Cross_section.PNG  used on inp
+ut line 514.
+(pdftex.def)             Requested size: 136.27573pt x 80.10927pt.
+ [13
+
+ <./images/mechanical/18650_case_cover_without title block.JPG> <./images/mecha
+nical/FC_Holder_without title block.JPG> <./images/mechanical/Edge_batt_without
+ title block.JPG> <./images/mechanical/Mid_batt_without title block.JPG> <./ima
+ges/mechanical/FC_Holder Cad.jpeg> <./images/mechanical/Threaded_Rod_Integratio
+n_showing raised battery cells to give way to threaded rods.PNG> <./images/Labe
+led/Assembly_Cross_section.PNG>]
+<images/Rocket_Extension_Design.jpeg, id=117, 1019.81pt x 557.08125pt>
+File: images/Rocket_Extension_Design.jpeg Graphic file (type jpg)
+<use images/Rocket_Extension_Design.jpeg>
+Package pdftex.def Info: images/Rocket_Extension_Design.jpeg  used on input lin
+e 555.
+(pdftex.def)             Requested size: 119.50279pt x 65.27429pt.
+<images/Base_Station_Design.jpeg, id=118, 904.37875pt x 783.92876pt>
+File: images/Base_Station_Design.jpeg Graphic file (type jpg)
+<use images/Base_Station_Design.jpeg>
+Package pdftex.def Info: images/Base_Station_Design.jpeg  used on input line 55
+5.
+(pdftex.def)             Requested size: 119.50279pt x 103.577pt.
+<images/FC_Xbee_Design__easyDA_White_Background.PNG, id=119, 308.65312pt x 328.
+97906pt>
+File: images/FC_Xbee_Design__easyDA_White_Background.PNG Graphic file (type png
+)
+<use images/FC_Xbee_Design__easyDA_White_Background.PNG>
+Package pdftex.def Info: images/FC_Xbee_Design__easyDA_White_Background.PNG  us
+ed on input line 555.
+(pdftex.def)             Requested size: 119.50279pt x 127.37265pt.
+<images/Battery _Monitoring_Proteus_DesignWhite_background.PNG, id=120, 587.946
+56pt x 384.6872pt>
+File: images/Battery _Monitoring_Proteus_DesignWhite_background.PNG Graphic fil
+e (type png)
+<use images/Battery _Monitoring_Proteus_DesignWhite_background.PNG>
+Package pdftex.def Info: images/Battery _Monitoring_Proteus_DesignWhite_backgro
+und.PNG  used on input line 555.
+(pdftex.def)             Requested size: 119.50279pt x 78.18634pt.
+
+Overfull \vbox (58.80745pt too high) detected at line 555
+ []
+
+[14
+
+ <./images/Rocket_Extension_Design.jpeg> <./images/Base_Station_Design.jpeg> <.
+/images/FC_Xbee_Design__easyDA_White_Background.PNG> <./images/Battery _Monitor
+ing_Proteus_DesignWhite_background.PNG>]
+Overfull \hbox (61.79807pt too wide) in paragraph at lines 612--612
+ [][] 
+ []
+
+
+Overfull \vbox (27.30002pt too high) detected at line 612
+ []
+
+[15
+
+]
+<images/Labeled/Full_assemly_Parts_List.PNG, id=135, 597.73312pt x 431.36156pt>
+
+File: images/Labeled/Full_assemly_Parts_List.PNG Graphic file (type png)
+<use images/Labeled/Full_assemly_Parts_List.PNG>
+Package pdftex.def Info: images/Labeled/Full_assemly_Parts_List.PNG  used on in
+put line 639.
+(pdftex.def)             Requested size: 123.56561pt x 89.16687pt.
+<images/mechanical/Avionics assembly.jpeg, id=136, 940.26282pt x 593.21625pt>
+File: images/mechanical/Avionics assembly.jpeg Graphic file (type jpg)
+<use images/mechanical/Avionics assembly.jpeg>
+Package pdftex.def Info: images/mechanical/Avionics assembly.jpeg  used on inpu
+t line 639.
+(pdftex.def)             Requested size: 123.56561pt x 77.95357pt.
+File: images/mechanical/Threaded_Rod_Integration_showing raised battery cells t
+o give way to threaded rods.PNG Graphic file (type png)
+<use images/mechanical/Threaded_Rod_Integration_showing raised battery cells to
+ give way to threaded rods.PNG>
+Package pdftex.def Info: images/mechanical/Threaded_Rod_Integration_showing rai
+sed battery cells to give way to threaded rods.PNG  used on input line 639.
+(pdftex.def)             Requested size: 123.56561pt x 59.17632pt.
+<images/mechanical/Full Integration in avionics bay.jpeg, id=137, 1015.795pt x 
+673.51625pt>
+File: images/mechanical/Full Integration in avionics bay.jpeg Graphic file (typ
+e jpg)
+<use images/mechanical/Full Integration in avionics bay.jpeg>
+Package pdftex.def Info: images/mechanical/Full Integration in avionics bay.jpe
+g  used on input line 639.
+(pdftex.def)             Requested size: 123.56561pt x 81.92838pt.
+<images/Labeled/Assembly.PNG, id=138, 405.76593pt x 278.54062pt>
+File: images/Labeled/Assembly.PNG Graphic file (type png)
+<use images/Labeled/Assembly.PNG>
+Package pdftex.def Info: images/Labeled/Assembly.PNG  used on input line 639.
+(pdftex.def)             Requested size: 123.56561pt x 84.82088pt.
+
+Overfull \vbox (21.49771pt too high) detected at line 639
+ []
+
+[16
+
+ <./images/Labeled/Full_assemly_Parts_List.PNG> <./images/mechanical/Avionics a
+ssembly.jpeg> <./images/mechanical/Full Integration in avionics bay.jpeg> <./im
+ages/Labeled/Assembly.PNG>]
+<images/Labeled/Soldered_FC.PNG, id=147, 328.97906pt x 543.53062pt>
+File: images/Labeled/Soldered_FC.PNG Graphic file (type png)
+<use images/Labeled/Soldered_FC.PNG>
+Package pdftex.def Info: images/Labeled/Soldered_FC.PNG  used on input line 669
+.
+(pdftex.def)             Requested size: 171.2857pt x 282.99417pt.
+<images/Basestation_Circuit_Design_White_Background.png, id=148, 656.4525pt x 3
+71.13657pt>
+File: images/Basestation_Circuit_Design_White_Background.png Graphic file (type
+ png)
+<use images/Basestation_Circuit_Design_White_Background.png>
+Package pdftex.def Info: images/Basestation_Circuit_Design_White_Background.png
+  used on input line 669.
+(pdftex.def)             Requested size: 172.07956pt x 97.28606pt.
+File: images/Battery _Monitoring_Proteus_DesignWhite_background.PNG Graphic fil
+e (type png)
+<use images/Battery _Monitoring_Proteus_DesignWhite_background.PNG>
+Package pdftex.def Info: images/Battery _Monitoring_Proteus_DesignWhite_backgro
+und.PNG  used on input line 669.
+(pdftex.def)             Requested size: 172.07956pt x 112.58951pt.
+
+Overfull \vbox (296.31732pt too high) detected at line 669
+ []
+
+[17
+
+ <./images/Labeled/Soldered_FC.PNG> <./images/Basestation_Circuit_Design_White_
+Background.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 697--697
+[]\OT1/cmss/m/n/10 XBee-PRO 900HP mod-ules
+ []
+
+
+Overfull \vbox (34.10149pt too high) detected at line 697
+ []
+
+[18
+
+]
+Overfull \hbox (7.96425pt too wide) in paragraph at lines 739--739
+ [][] 
+ []
+
+
+Overfull \vbox (209.7265pt too high) detected at line 739
+ []
+
+[19
+
+]
+<images/Timeplan.PNG, id=167, 772.38562pt x 526.21594pt>
+File: images/Timeplan.PNG Graphic file (type png)
+<use images/Timeplan.PNG>
+Package pdftex.def Info: images/Timeplan.PNG  used on input line 748.
+(pdftex.def)             Requested size: 366.47076pt x 249.67413pt.
+
+Overfull \vbox (76.9844pt too high) detected at line 748
+ []
+
+[20
+
+ <./images/Timeplan.PNG>] [21
 
 ]
 \tf@nav=\write6
@@ -1350,28 +1952,34 @@ Package rerunfilecheck Info: File `Nakuja_N4_Presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26392 strings out of 467870
- 545539 string characters out of 5418838
- 923741 words of memory out of 5000000
- 54720 multiletter control sequences out of 15000+600000
- 637944 words of font info for 76 fonts, out of 8000000 for 9000
+ 26693 strings out of 467870
+ 553254 string characters out of 5418838
+ 936760 words of memory out of 5000000
+ 54998 multiletter control sequences out of 15000+600000
+ 642993 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,13n,123p,1891b,1137s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1
-095.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmss10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmss12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/user/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/user/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/user/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/Users/user
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
-ers/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam
-10.pfb>
-Output written on Nakuja_N4_Presentation.pdf (12 pages, 1409031 bytes).
+ 128i,20n,123p,1891b,1151s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss0
+600.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcss0800.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
+i600\tcsx1200.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\tcss1095.pk> <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\tcss1000.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/user/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/user/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/user/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/user
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Use
+rs/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.p
+fb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmssi10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmssi8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Nakuja_N4_Presentation.pdf (21 pages, 3588534 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 263 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

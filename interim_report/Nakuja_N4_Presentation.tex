@@ -1,5 +1,5 @@
-%% ============================================================
-%%  Nakuja N4 Recovery System – Continuous Assessment Presentation
+﻿%% ============================================================
+%%  Nakuja N4 Recovery System â€“ Continuous Assessment Presentation
 %%  Beamer, metropolis theme
 %% ============================================================
 \documentclass[aspectratio=169, 11pt]{beamer}
@@ -26,7 +26,7 @@
 
 \metroset{sectionpage=none, subsectionpage=none, progressbar=frametitle}
 
-\graphicspath{{images/}{images/mechanical/}}
+\graphicspath{{images/}{images/mechanical/}{images/Labeled/}}
 
 % ---- title info ----
 \title{N4 Rocket Recovery System}
@@ -38,350 +38,718 @@
 %% ============================================================
 \begin{document}
 
-% ------------------------------------------------------------------
-% SLIDE 1 – TITLE
-% ------------------------------------------------------------------
+% ==================================================================
+% SLIDE 1 â€” TITLE
+% ==================================================================
 \begin{frame}[plain]
 \maketitle
 \end{frame}
 
-% ------------------------------------------------------------------
-% SLIDE 2 – OBJECTIVES
-% ------------------------------------------------------------------
+% ==================================================================
+% SLIDE 2 â€” OUTLINE
+% ==================================================================
+\begin{frame}{Outline}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \begin{enumerate}
+      \item Introduction \& Background
+      \item Problem Statement
+      \item Objectives
+      \item Literature Review (tabulated)
+      \item Gaps \& Proposed Approach
+      \item Methodology
+        \begin{itemize}\small
+          \item Design Approach (4 modules)
+          \item Telemetry Module
+          \item Pyrotechnic Module
+          \item Mechanical / Structural
+          \item Electronics \& Circuit Design
+          \item Firmware Architecture
+        \end{itemize}
+    \end{enumerate}
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \begin{enumerate}\setcounter{enumi}{6}
+      \item Results
+        \begin{itemize}\small
+          \item Mechanical design outputs
+          \item Electronics \& integration
+        \end{itemize}
+      \item Budget
+      \item Conclusion \& Way Forward
+      \item Time Plan
+    \end{enumerate}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ==================================================================
+% SLIDE 3 â€” INTRODUCTION & BACKGROUND
+% ==================================================================
+\begin{frame}{Introduction \& Background}
+\begin{columns}[T]
+  \begin{column}{0.54\textwidth}
+    \textbf{Context:}
+    \begin{itemize}
+      \item The Nakuja Project is JKUAT's student rocketry programme, targeting altitude records with successive N-series rockets.
+      \item The N4 rocket uses a \textbf{dual-deployment recovery system} â€” a drogue parachute at apogee stabilises descent; a main parachute deploys at low altitude for safe landing.
+      \item Recovery depends on three tightly coupled systems: \alert{telemetry} (track the rocket after separation), \alert{pyrotechnic deployment} (eject the parachutes reliably), and \alert{pre-flight monitoring} (confirm readiness before launch).
+      \item The N3 predecessor exposed reliability gaps in all three areas.
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.42\textwidth}
+    \centering
+    \includegraphics[width=0.90\textwidth]{Nakuja_N3_Rocket.PNG}\\[4pt]
+    {\small Nakuja N3 rocket â€” dual-deployment configuration}\\[6pt]
+    \includegraphics[width=0.90\textwidth]{Dual_Deployment.PNG}\\[2pt]
+    {\small Drogue + main parachute deployment sequence}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ==================================================================
+% SLIDE 4 â€” PROBLEM STATEMENT
+% ==================================================================
+\begin{frame}{Problem Statement}
+\begin{columns}[T]
+  \begin{column}{0.56\textwidth}
+    \textbf{Three failure modes identified from N3 field experience:}
+    \vspace{0.3em}
+
+    \begin{tabular}{@{}lp{4.2cm}@{}}
+      \toprule
+      \textbf{Problem Area} & \textbf{Consequence}\\
+      \midrule
+      Short telemetry range     & Signal lost after apogee; rocket unrecoverable beyond $\approx$1~km \\[4pt]
+      DC pyro dump (no control) & Nichrome wire burns out in $\sim$2~s; reuse impossible; thermal damage to holder \\[4pt]
+      No pre-flight diagnostics & Battery state and igniter continuity unknown at launch; deployment failure undetectable \\
+      \bottomrule
+    \end{tabular}
+
+    \vspace{0.5em}
+    \textbf{Root causes:}
+    \begin{itemize}
+      \item Low-power 433~MHz radio â€” insufficient link budget at altitude
+      \item Direct DC discharge â€” no current limiting or duty control
+      \item No ADC or monitoring circuit on flight computer
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.41\textwidth}
+    \centering
+    \includegraphics[width=0.88\textwidth]{{The Crimson Powder Problem_Excessive_Pop.PNG}}\\[3pt]
+    {\small Excessive crimson powder deployment from uncontrolled charge}\\[5pt]
+    \includegraphics[width=0.88\textwidth]{CHarge_Holder_Melted_From_Explosion.jpeg}\\[2pt]
+    {\small Thermal damage to charge holder from DC dump}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ==================================================================
+% SLIDE 5 â€” OBJECTIVES
+% ==================================================================
 \begin{frame}{Objectives}
 \begin{block}{Main Objective}
-To design and fabricate a reliable dual recovery system for the N4 rocket with extended telemetry range.
+To design, fabricate, and validate a reliable dual-deployment recovery system for
+the N4 rocket, achieving telemetry coverage beyond 5~km, controlled pyrotechnic
+deployment, and real-time pre-flight system diagnostics.
 \end{block}
-
-\vspace{0.4em}
+\vspace{0.5em}
 \textbf{Specific Objectives:}
 \begin{enumerate}
-  \item To extend the telemetry range of the recovery system beyond 5~km.
-  \item To improve deployment reliability through controlled pyrotechnic ignition.
-  \item To design a rugged 3D-printed avionics holder with vibration isolation, battery retention, and real-time system diagnostics.
-  \item To validate the complete recovery system through ground and field testing.
+  \item \textbf{Telemetry range:} Design and configure a 900~MHz XBee-PRO 900HP radio link
+        with a verified link margin $\geq$20~dB at 5~km range to ensure post-apogee
+        rocket tracking and telemetry reception.
+  \item \textbf{Controlled deployment:} Implement a PWM-based ignition controller driving
+        an IRLZ44N MOSFET at a calibrated duty cycle to eliminate nichrome burnout and
+        provide safe, repeatable pyrotechnic ejection charge activation.
+  \item \textbf{Structural design \& in-flight monitoring:} Design a 3D-printed PETG
+        avionics holder satisfying the 95~mm bay envelope constraint; integrate an
+        ADS1115 16-bit ADC circuit for battery voltage and igniter continuity monitoring
+        with launch-inhibit logic.
 \end{enumerate}
 \end{frame}
 
-% ------------------------------------------------------------------
-% SLIDE 3 – METHODOLOGY: Design Approach
-% ------------------------------------------------------------------
-\begin{frame}{Methodology — Design Approach}
+% ==================================================================
+% SLIDE 6 â€” LITERATURE REVIEW (1 of 2)
+% ==================================================================
+\begin{frame}[shrink=5]{Literature Review â€” Telemetry, Deployment \& Monitoring}
+\small
+\begin{tabular}{@{}p{2.8cm}p{4.6cm}p{4.0cm}@{}}
+  \toprule
+  \textbf{Source} & \textbf{Key Contribution} & \textbf{Limitation / Gap}\\
+  \midrule
+  Digi International (2019) â€” XBee-PRO 900HP User Guide &
+    900~MHz FHSS, +24~dBm Tx, $-$110~dBm Rx sensitivity; transparent UART mode for direct microcontroller integration &
+    No application-level link-budget study for rocket attitude variation \\[4pt]
+
+  Pozar (2011); ARRL Antenna Book (2019) &
+    Free-space path loss model; dipole radiation pattern â€” omnidirectional main lobe with axis nulls &
+    Null zones along dipole axis require tilt margin allocation \\[4pt]
+
+  Nakka, R. (2021) â€” Pyrotechnic igniter design &
+    PWM duty-cycle control limits peak current and prevents nichrome burnout; repeatability validated &
+    Study uses bench test only; no in-rocket deployment validation \\[4pt]
+
+  Martinez \& Chen (2018) â€” PWM for resistive heating &
+    Confirmed PWM at 1~kHz as effective thermal control for nichrome wire &
+    Focus on industrial heaters; not validated for pyrotechnic ignition pulses \\[4pt]
+
+  Texas Instruments (2020) â€” ADS1115 Datasheet &
+    16-bit I$^2$C ADC; $\pm$4.096~V FSR; 860~SPS max; 32{,}768 counts/half-range &
+    No reference design for rocket battery monitoring with launch-inhibit logic \\
+  \bottomrule
+\end{tabular}
+\end{frame}
+
+% ==================================================================
+% SLIDE 7 â€” LITERATURE REVIEW (2 of 2)
+% ==================================================================
+\begin{frame}[shrink=5]{Literature Review â€” Structures, Firmware \& Recovery}
+\small
+\begin{tabular}{@{}p{2.8cm}p{4.6cm}p{4.0cm}@{}}
+  \toprule
+  \textbf{Source} & \textbf{Key Contribution} & \textbf{Limitation / Gap}\\
+  \midrule
+  Santana \& Alves (2021) â€” PETG FDM properties &
+    PETG tensile strength $\approx$50~MPa, chemical resistance, low warping vs PLA; viable for avionics enclosures &
+    High-shock load data ($>$20~g) absent; vibration fatigue not characterised \\[4pt]
+
+  Real Time Engineers Ltd (2023) â€” FreeRTOS Manual &
+    Task scheduling, priority inversion, and inter-task communication for embedded systems &
+    No rocket-specific FSM reference architecture provided \\[4pt]
+
+  Knacke, T.W. (1991) â€” Parachute Recovery Systems &
+    Drogue + main dual-deployment principles; deployment force and timing criteria &
+    Pre-digital; no embedded trigger logic or apogee-detection algorithms discussed \\[4pt]
+
+  Rodriguez, C. (2020) â€” MOSFET Gate Drive App Note &
+    IRLZ44N logic-level enhancement at 3.3~V; $R_{DS(on)}=22$~m$\Omega$; 40~$\mu$s turn-on &
+    Switching characterisation at low-side solenoid load; ignition-specific testing absent \\[4pt]
+
+  Sutton \& Biblarz (2016) â€” Rocket Propulsion Elements &
+    Black-powder ejection charge theory; pressure-volume relationships for sealed deployment bay &
+    Theoretical; no small-rocket calibrated charge sizing procedure \\
+  \bottomrule
+\end{tabular}
+\end{frame}
+
+% ==================================================================
+% SLIDE 8 â€” GAPS & PROPOSED APPROACH
+% ==================================================================
+\begin{frame}{Gaps Identified \& Proposed Approach}
+\begin{columns}[T]
+  \begin{column}{0.50\textwidth}
+    \textbf{Gaps in existing solutions:}
+    \begin{itemize}
+      \item No verified 5~km link budget for N4 attitude uncertainty â€” literature gives theory only; no field-proven margin for this specific flight profile.
+      \item DC pyrotechnic dump is single-use and thermally destructive â€” no study combines PWM ignition with a logic-level MOSFET on an ESP32 platform.
+      \item No integrated launch-inhibit system combining battery voltage monitoring \emph{and} continuity detection on a single flight computer.
+      \item No compact PETG avionics sled designed for the specific 95~mm N4 bay with threaded-rod battery retention.
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.47\textwidth}
+    \textbf{Proposed approach:}
+    \begin{enumerate}\setlength{\itemsep}{2pt}
+      \item \alert{XBee-PRO 900HP} â€” 900~MHz, +24~dBm; calculated link margin +32~dB at 5~km.
+      \item \alert{PWM ignition} at 1~kHz, $D=0.40$; IRLZ44N MOSFET driven directly from 3.3~V ESP32 GPIO.
+      \item \alert{ADS1115 I$^2$C ADC} â€” 47~k$\Omega$/10~k$\Omega$ divider; launch inhibit if $V_{bat}<14.0$~V or continuity absent.
+      \item \alert{Stepped PETG battery carrier} â€” raised edge cells clear threaded rods; dual-rod retention for anti-vibration.
+      \item \alert{FreeRTOS task firmware} â€” modular, independently testable tasks; FSM state machine.
+    \end{enumerate}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ==================================================================
+% SLIDE 9 — SYSTEM ARCHITECTURE & SUBSYSTEM OVERVIEW
+% ==================================================================
+\begin{frame}[shrink=5]{System Architecture \& Subsystem Overview}
+\begin{columns}[T]
+
+  %% ---- LEFT: block-diagram chart --------------------------------
+  \begin{column}{0.50\textwidth}
+  \centering
+  \begin{tikzpicture}[
+    >=Latex, scale=0.80, transform shape,
+    cpu/.style   ={draw, rectangle, rounded corners=6pt,
+                   fill=nakujaBlue, text=white,
+                   minimum width=2.8cm, minimum height=1.10cm,
+                   align=center, font=\small\bfseries, text width=2.6cm},
+    sub/.style   ={draw, rectangle, rounded corners=4pt,
+                   fill=nakujaBlue!12, minimum width=2.8cm,
+                   minimum height=0.72cm, align=center,
+                   font=\small, text width=2.6cm},
+    gcs/.style   ={draw, rectangle, rounded corners=4pt,
+                   fill=nakujaOrange!25, minimum width=2.8cm,
+                   minimum height=0.72cm, align=center,
+                   font=\small\bfseries, text width=2.6cm},
+    sen/.style   ={draw, rectangle, rounded corners=4pt,
+                   fill=gray!18, minimum width=2.8cm,
+                   minimum height=0.60cm, align=center,
+                   font=\small, text width=2.6cm},
+    myarr/.style ={->, thick, shorten >=2pt, shorten <=2pt},
+    bidir/.style ={<->, thick, dashed, color=nakujaOrange,
+                   shorten >=2pt, shorten <=2pt}
+  ]
+    %% Central node
+    \node[cpu] (esp) {ESP32\\Flight Computer\\(FreeRTOS FSM)};
+
+    %% Four subsystems N/S/E/W
+    \node[sub, above=1.30cm of esp] (tele) {\S3.2 Telemetry\\XBee-PRO 900HP};
+    \node[sub, right=1.40cm of esp] (dep)  {\S3.3 Electrical\\+ Deploy (MOSFET)};
+    \node[sub, below=1.30cm of esp] (mech) {\S3.4 Structural\\PETG Avionics Bay};
+    \node[sub, left=1.40cm of esp]  (bms)  {ADS1115 BMS\\Power Monitor};
+
+    %% Sensors (top-left)
+    \node[sen, above left=0.85cm and -0.25cm of esp] (sen)
+         {IMU + Baro + GPS};
+
+    %% GCS above telemetry
+    \node[gcs, above=1.10cm of tele] (gcs)  {Ground Control\\Station};
+
+    %% Arrows
+    \draw[bidir] (tele.north) -- node[right, font=\tiny]{900~MHz FHSS} (gcs.south);
+    \draw[myarr] (esp.north)  -- (tele.south);
+    \draw[myarr] (esp.east)   -- (dep.west);
+    \draw[myarr] (bms.east)   -- (esp.west);
+    \draw[myarr] (sen.south)  -- (esp.north west);
+    \draw[myarr] (esp.south)  -- node[right, font=\tiny]{housing} (mech.north);
+
+    %% Parachute outputs from deploy
+    \node[font=\tiny, right=0.20cm of dep, text=gray, align=left]
+         (outs) {Drogue ch.\\Main ch.};
+    \draw[myarr, gray] (dep.east) -- (outs.west);
+
+  \end{tikzpicture}
+  \end{column}
+
+  %% ---- RIGHT: subsystem outline table --------------------------
+  \begin{column}{0.48\textwidth}
+  \small
+  \renewcommand{\arraystretch}{1.30}
+  \begin{tabular}{@{}p{1.85cm}p{1.95cm}p{1.95cm}@{}}
+    \toprule
+    \textbf{Subsystem} & \textbf{Key Hardware} & \textbf{Function}\\
+    \midrule
+    \textbf{Telemetry} {\scriptsize(\S3.2)}
+      & XBee-PRO 900HP; duck antenna
+      & 900\,MHz link; $+$32\,dB margin at 5\,km; 3-channel comm manager\\
+    \textbf{Electrical + Deploy} {\scriptsize(\S3.3)}
+      & IRLZ44N MOSFET; ADS1115; custom PCB
+      & PWM ignition ($D{=}0.40$); battery voltage + continuity monitoring\\
+    \textbf{Structural} {\scriptsize(\S3.4)}
+      & PETG sled; 18650$\times$4; M4 rods
+      & 95\,mm bay; stepped carrier clears rod paths; vibration isolation\\
+    \textbf{Embedded SW} {\scriptsize(\S3.5)}
+      & ESP32; FreeRTOS; Comm\-Manager
+      & 5-state FSM; XBee/Beacon/MQTT fallback; launch-inhibit logic\\
+    \bottomrule
+  \end{tabular}
+  \end{column}
+
+\end{columns}
+\end{frame}
+
+% ==================================================================
+% SLIDE 10 — METHODOLOGY 1: DESIGN APPROACH (4 MODULES)
+% ==================================================================
+\begin{frame}{Methodology â€” Design Approach}
 \begin{columns}[T]
   \begin{column}{0.52\textwidth}
-    \textbf{Design-Build-Test Iteration:}
+    \textbf{4-module design structure:}
+    \vspace{0.3em}
+
+    \begin{tabular}{@{}clp{3.6cm}@{}}
+      \toprule
+      \textbf{\#} & \textbf{Module} & \textbf{Purpose}\\
+      \midrule
+      1 & Telemetry     & Long-range rocket tracking \& data downlink post-apogee\\
+      2 & Pyrotechnic   & Controlled ejection charge activation for dual deployment\\
+      3 & Power Monitor & Pre-flight safety: battery state + igniter continuity\\
+      4 & Mechanical    & Structural containment within 95~mm bay; vibration isolation\\
+      \bottomrule
+    \end{tabular}
+
+    \vspace{0.5em}
+    \textbf{Development flow per module:}
     \begin{enumerate}
-      \item Define subsystem requirements from mission constraints
-      \item Generate mechanical, electrical, and software concepts
-      \item Select concepts on performance \& manufacturability
-      \item Build CAD and circuit designs
-      \item Implement embedded firmware architecture
-      \item Execute staged bench and system-level validation
+      \item Requirements from mission constraints
+      \item Concept generation \& trade study
+      \item CAD / schematic design
+      \item Simulation or calculation
+      \item Fabrication \& bench validation
     \end{enumerate}
   \end{column}
   \begin{column}{0.44\textwidth}
-    \textbf{Five Implementation Modules:}
-    \begin{itemize}
-      \item Telemetry link \& antenna
-      \item Pyrotechnic deployment \& ignition control
-      \item Power \& feedback instrumentation
-      \item Mechanical containment \& avionics structure
-      \item Embedded software \& FSM
-    \end{itemize}
-    \vspace{0.5em}
-    \includegraphics[width=\textwidth]{XBeeDiagram.png}
+    \centering
+    \begin{tikzpicture}[
+      >=Latex, scale=0.76, transform shape,
+      box/.style={draw, rectangle, rounded corners=4pt, fill=nakujaBlue!10,
+                  minimum width=3.6cm, minimum height=0.65cm,
+                  align=center, font=\small, text width=3.4cm},
+      myarr/.style={->, thick, color=nakujaBlue}
+    ]
+      \node[box] (sen) {Sensors\\(IMU, Baro, GPS)};
+      \node[box, below=0.5cm of sen]  (fc) {Flight Computer\\ESP32 + FreeRTOS};
+      \node[box, below=0.5cm of fc]   (xb) {XBee-PRO 900HP\\UART Telemetry};
+      \node[box, below=0.5cm of xb]   (dep){IRLZ44N MOSFET\\PWM Deployment};
+      \node[box, below=0.5cm of dep]  (ads){ADS1115 I$^2$C\\Battery / Continuity};
+      \draw[myarr] (sen) -- (fc);
+      \draw[myarr] (fc)  -- (xb);
+      \draw[myarr] (fc)  -- (dep);
+      \draw[myarr] (fc)  -- (ads);
+    \end{tikzpicture}\\[3pt]
+    {\small System architecture overview}
   \end{column}
 \end{columns}
 \end{frame}
 
-% ------------------------------------------------------------------
-% SLIDE 4 – METHODOLOGY: Telemetry & Ignition Design Decisions
-% ------------------------------------------------------------------
-\begin{frame}{Methodology — Telemetry \& Ignition Design Decisions}
+% ==================================================================
+% SLIDE 10 â€” METHODOLOGY 2: TELEMETRY MODULE
+% ==================================================================
+\begin{frame}{Methodology â€” Telemetry Module}
 \begin{columns}[T]
-  \begin{column}{0.48\textwidth}
-    \textbf{Telemetry — XBee-PRO 900HP selected:}
-    \begin{itemize}
-      \item 900~MHz ISM band, up to +24~dBm Tx
-      \item Link budget at 5~km: \(\text{FSPL} \approx 105.7\)~dB
-      \item Received power \(\approx -77.7\)~dBm vs sensitivity \(-110\)~dBm
-      \item \alert{Link margin: +32~dB} — robust margin for flight attitude variation
-      \item UART transparent mode — direct ESP32 integration
-    \end{itemize}
-  \end{column}
-  \begin{column}{0.48\textwidth}
-    \textbf{Ignition — PWM over DC dump:}
-    \begin{itemize}
-      \item Previous DC dump: burnout in \(\sim\)2~s (single use)
-      \item 26~AWG nichrome: \(R = 8.5\,\Omega/\text{m}\)
-      \item PWM at 1~kHz with duty-cycle ramp
-      \item Target: \(D=0.40\) \(\rightarrow\) \(V_{eff}\approx6\)~V from 15~V bus
-      \item \alert{30~s withstand at minimum duty} — confirms controlled thermal approach
-      \item IRLZ44N MOSFET: logic-level gate, \(R_{DS(on)}=22\)~m\(\Omega\)
-    \end{itemize}
-  \end{column}
-\end{columns}
-\end{frame}
 
-% ------------------------------------------------------------------
-% SLIDE 5 – METHODOLOGY: Power Monitoring & Mechanical Design
-% ------------------------------------------------------------------
-\begin{frame}{Methodology — Monitoring \& Mechanical Design}
-\begin{columns}[T]
-  \begin{column}{0.48\textwidth}
-    \textbf{Power \& Continuity Monitoring:}
+  \begin{column}{0.50\textwidth}
+    \textbf{Design Considerations:}
     \begin{itemize}
-      \item ADS1115 16-bit ADC over I\textsuperscript{2}C
-      \item 47~k\(\Omega\)/10~k\(\Omega\) divider scales 14--15~V bus
-      \item 14~V \(\rightarrow\) ADC code 19,650 \quad 15~V \(\rightarrow\) 21,060
-      \item Clear digital margin for state discrimination
-      \item Launch inhibit triggered if battery \(<\)14.0~V or continuity absent
-    \end{itemize}
-    \vspace{0.3em}
-    \includegraphics[width=0.9\textwidth]{{Battery _Monitoring_Proteus_Design.PNG}}
-  \end{column}
-  \begin{column}{0.48\textwidth}
-    \textbf{Mechanical Constraints:}
-    \begin{itemize}
-      \item 95~mm avionics bay envelope
-      \item Four 18650 cells in parallel (4S, 14.8~V)
-      \item Dual threaded rods at 50~mm spacing
-      \item \alert{Stepped battery-carrier} — edge cells raised to clear rod paths
-      \item PETG material for printability and chemical resistance
-      \item Upper platform: XBee extension + beacon antenna mounting
-    \end{itemize}
-    \vspace{0.3em}
-    \includegraphics[width=0.85\textwidth]{{FC_Holder Cad.jpeg}}
-  \end{column}
-\end{columns}
-\end{frame}
-
-% ------------------------------------------------------------------
-% SLIDE 6 – METHODOLOGY: Software Architecture
-% ------------------------------------------------------------------
-\begin{frame}{Methodology — Software Architecture (FSM)}
-\begin{columns}[T]
-  \begin{column}{0.48\textwidth}
-    \textbf{FreeRTOS Firmware Modules:}
-    \begin{itemize}
-      \item Sensor task (GPS, IMU, barometer) @ 10~Hz
-      \item Telemetry TX via XBee UART @ 10~Hz
-      \item State machine task @ 20~Hz
-      \item Deployment channel (event-driven)
-      \item ADS1115 monitoring @ 1~Hz
+      \item Must maintain link over 5~km with rocket tumbling (attitude variation $\pm$60Â°)
+      \item Must survive 20~g launch shock without connector failure
+      \item Direct UART to ESP32 (no packet overhead)
     \end{itemize}
     \vspace{0.4em}
-    \textbf{Deployment Arm Conditions:}
+    \textbf{Options evaluated:}
+    \begin{tabular}{@{}lll@{}}
+      \toprule
+      \textbf{Option} & \textbf{Freq.} & \textbf{Margin@5km}\\
+      \midrule
+      LoRa SX1276   & 433~MHz & $+$8~dB\\
+      433~MHz OOK   & 433~MHz & $-$2~dB (fail)\\
+      \textbf{XBee-PRO 900HP} & \textbf{900~MHz} & $\mathbf{+32~dB}$\\
+      \bottomrule
+    \end{tabular}
+    \vspace{0.4em}
+    \textbf{Selected:} XBee-PRO 900HP â€” transparent UART mode,\\
+    +24~dBm Tx, $-$110~dBm sensitivity,\\
+    FHSS interference immunity.
+  \end{column}
+
+  \begin{column}{0.47\textwidth}
+    \centering
+    \includegraphics[width=0.82\textwidth]{xbee_module.jpg}\\[3pt]
+    {\small XBee-PRO 900HP module}\\[5pt]
+    \includegraphics[width=0.82\textwidth]{xbee_Data flow.jpg}\\[2pt]
+    {\small Transparent UART data-flow: ESP32 $\rightarrow$ XBee $\rightarrow$ GCS}
+  \end{column}
+
+\end{columns}
+\end{frame}
+
+% ==================================================================
+% SLIDE 11 â€” METHODOLOGY 3: PYROTECHNIC DEPLOYMENT MODULE
+% ==================================================================
+\begin{frame}{Methodology â€” Pyrotechnic Deployment Module}
+\begin{columns}[T]
+
+  \begin{column}{0.50\textwidth}
+    \textbf{Design Considerations:}
     \begin{itemize}
-      \item Battery \(>\)14.0~V
-      \item Continuity ADC count \(>\)1000
+      \item Must fire reliably, but \emph{not} burn out the igniter
+      \item Logic-level control from 3.3~V ESP32 GPIO
+      \item Inductive flyback protection for solenoid-type loads
+    \end{itemize}
+    \vspace{0.3em}
+    \textbf{DC dump vs PWM trade study:}
+    \begin{tabular}{@{}p{2.2cm}p{1.8cm}p{1.8cm}@{}}
+      \toprule
+      \textbf{Criterion} & \textbf{DC Dump} & \textbf{PWM}\\
+      \midrule
+      Wire re-use    & No          & Yes \\
+      Current control & None       & $\checkmark$ \\
+      Holder damage  & High risk   & Mitigated \\
+      Reliability    & Single-use  & Repeatable \\
+      \bottomrule
+    \end{tabular}
+    \vspace{0.3em}
+    \textbf{Selected:} PWM at 1~kHz, $D=0.40$ ($V_{eff}\approx6$~V from 15~V bus)\\
+    Driver: IRLZ44N MOSFET ($V_{GS(th)}<2$~V; $R_{DS(on)}=22$~m$\Omega$)
+  \end{column}
+
+  \begin{column}{0.47\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, height=0.36\textheight, keepaspectratio]{Cut_Nichrome_Wire.PNG}\\[3pt]
+    {\small Cut nichrome wire after DC-dump burn-out --- single use}\\[5pt]
+    \includegraphics[width=\textwidth, height=0.36\textheight, keepaspectratio]{{Post_PopTest_Charring_And_Leak_Image.jpeg}}\\[2pt]
+    {\small Charring from uncontrolled pop test â€” confirmed PWM needed}
+  \end{column}
+
+\end{columns}
+\end{frame}
+
+% ==================================================================
+% SLIDE 12 â€” METHODOLOGY 4: MECHANICAL MODULE â€” CAD DESIGNS
+% ==================================================================
+\begin{frame}[shrink=15]{Methodology --- Mechanical Module: CAD Designs}
+
+\textbf{Design considerations:} 95~mm avionics bay envelope; four 18650 cells parallel; threaded-rod retention paths; printable in PETG; upper platform for XBee and beacon.
+
+\vspace{0.3em}
+\textbf{2D Engineering Drawings (dimensioned):}\\[4pt]
+\begin{tabular}{cccc}
+  \includegraphics[width=0.22\textwidth]{{18650_case_cover_without title block.JPG}} &
+  \includegraphics[width=0.22\textwidth]{{FC_Holder_without title block.JPG}} &
+  \includegraphics[width=0.22\textwidth]{{Edge_batt_without title block.JPG}} &
+  \includegraphics[width=0.22\textwidth]{{Mid_batt_without title block.JPG}}\\
+  {\tiny 18650 case} & {\tiny FC holder sled} & {\tiny Edge carrier (raised)} & {\tiny Mid carrier}
+\end{tabular}
+
+\vspace{0.3em}
+\textbf{3D CAD Models \& Assembly:}\\[4pt]
+\begin{tabular}{ccc}
+  \includegraphics[width=0.29\textwidth]{{FC_Holder Cad.jpeg}} &
+  \includegraphics[width=0.29\textwidth]{{Threaded_Rod_Integration_showing raised battery cells to give way to threaded rods.PNG}} &
+  \includegraphics[width=0.29\textwidth]{Assembly_Cross_section.PNG}\\
+  {\tiny FC holder 3D model} & {\tiny Rod clear\-ance â€” raised edge cells} & {\tiny Labelled cross-section}
+\end{tabular}
+\end{frame}
+
+% ==================================================================
+% SLIDE 13 â€” METHODOLOGY 5: ELECTRONICS & CIRCUIT DESIGN
+% ==================================================================
+\begin{frame}{Methodology â€” Electronics \& Circuit Design}
+\begin{columns}[T]
+  \begin{column}{0.36\textwidth}
+    \textbf{Design considerations:}
+    \begin{itemize}
+      \item Segregated pyro / logic power rails
+      \item UART (115200 bps) for XBee; I$^2$C for ADS1115
+      \item All channels fused; MOSFET gate pull-down to prevent false fire
+    \end{itemize}
+    \vspace{0.4em}
+    \textbf{Development workflow:}
+    \begin{enumerate}\small
+      \item Breadboard validation
+      \item Fritzing integration layout
+      \item EasyEDA schematic + PCB
+      \item Proteus BMS simulation
+      \item Chemical PCB etching
+    \end{enumerate}
+  \end{column}
+
+  \begin{column}{0.30\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Rocket_Extension_Design.jpeg}\\[2pt]
+    {\small Fritzing â€” rocket wiring}\\[5pt]
+    \includegraphics[width=\textwidth]{Base_Station_Design.jpeg}\\[2pt]
+    {\small Fritzing â€” base station}
+  \end{column}
+
+  \begin{column}{0.30\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{FC_Xbee_Design__easyDA_White_Background.PNG}\\[2pt]
+    {\small EasyEDA schematic}\\[5pt]
+    \includegraphics[width=\textwidth]{{Battery _Monitoring_Proteus_DesignWhite_background.PNG}}\\[2pt]
+    {\small Proteus BMS simulation}
+  \end{column}
+\end{columns}
+\end{frame}
+
+% ==================================================================
+% SLIDE 14 â€” METHODOLOGY 6: FIRMWARE & SOFTWARE ARCHITECTURE
+% ==================================================================
+\begin{frame}{Methodology â€” Firmware \& Software Architecture}
+\begin{columns}[T]
+  \begin{column}{0.48\textwidth}
+    \textbf{FreeRTOS task structure:}
+    \begin{tabular}{@{}ll@{}}
+      \toprule
+      \textbf{Task} & \textbf{Rate}\\
+      \midrule
+      Sensor fusion (IMU, baro) & 10~Hz\\
+      XBee UART telemetry TX    & 10~Hz\\
+      FSM state machine          & 20~Hz\\
+      ADS1115 voltage monitor    & 1~Hz\\
+      Deployment (event-driven)  & ISR\\
+      \bottomrule
+    \end{tabular}
+    \vspace{0.4em}
+    \textbf{Deployment arm conditions:}
+    \begin{itemize}
+      \item Battery $>$14.0~V AND continuity $>$1000 counts
       \item FSM state = APOGEE or RECOVERY
+      \item Inhibit flag clear
     \end{itemize}
   \end{column}
   \begin{column}{0.50\textwidth}
     \centering
     \begin{tikzpicture}[
-      >=Latex, scale=0.72, transform shape,
+      >=Latex, scale=0.74, transform shape,
       state/.style={draw, rectangle, rounded corners=5pt, fill=gray!12,
-                    minimum width=1.8cm, minimum height=0.75cm,
-                    align=center, font=\small\bfseries, text width=1.8cm},
-      arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
+                    minimum width=2.0cm, minimum height=0.80cm,
+                    align=center, font=\small\bfseries, text width=2.0cm},
+      lbl/.style={font=\scriptsize, text=gray, align=center, text width=2.2cm},
+      myarr/.style={->, thick, shorten >=2pt, shorten <=2pt}
     ]
-      \node[state] (idle)    {IDLE};
-      \node[state, right=1.6cm of idle]  (armed)  {ARMED};
-      \node[state, right=1.6cm of armed] (flight) {FLIGHT};
-      \node[state, below=1.4cm of flight](apogee) {APOGEE};
-      \node[state, left=4.8cm of apogee] (rec)    {RECOVERY};
-      \draw[arr] (idle)   -- node[above,font=\tiny]{arm cmd} (armed);
-      \draw[arr] (armed)  -- node[above,font=\tiny]{launch} (flight);
-      \draw[arr] (flight) -- node[right,font=\tiny]{apogee} (apogee);
-      \draw[arr] (apogee) -- node[above,font=\tiny]{alt. threshold} (rec);
-      \draw[arr] (rec.west) -- ++(-0.4,0) |- node[left,pos=0.25,font=\tiny]{landed} (idle.west);
-      \node[font=\tiny, below=0.18cm of idle,  text=gray] {PWM off};
-      \node[font=\tiny, below=0.18cm of armed, text=gray] {continuity ok};
-      \node[font=\tiny, below=0.18cm of flight,text=gray] {telemetry};
-      \node[font=\tiny, below=0.18cm of apogee,text=gray] {drogue fire};
-      \node[font=\tiny, below=0.18cm of rec,   text=gray] {main fire};
-    \end{tikzpicture}
-    \vspace{0.3em}
-    \includegraphics[width=0.9\textwidth]{Power_Monitoring_Design_Concept.png}
+      \node[state] (idle)  {IDLE};
+      \node[state, right=1.8cm of idle]  (arm)   {ARMED};
+      \node[state, right=1.8cm of arm]   (flt)   {FLIGHT};
+      \node[state, below=1.6cm of flt]   (apo)   {APOGEE};
+      \node[state, left=5.4cm of apo]    (rec)   {RECOVERY};
+      \draw[myarr] (idle) -- node[above,align=center,font=\tiny]{arm cmd\\bat$>$14V} (arm);
+      \draw[myarr] (arm)  -- node[above,align=center,font=\tiny]{launch\\event} (flt);
+      \draw[myarr] (flt)  -- node[right,align=center,font=\tiny]{apogee\\detected} (apo);
+      \draw[myarr] (apo)  -- node[above,align=center,font=\tiny]{alt.\,threshold} (rec);
+      \draw[myarr] (rec.west) -- ++(-0.5,0) |- node[left,pos=0.25,font=\tiny]{landed / timeout} (idle.west);
+      \node[lbl, below=0.18cm of idle] {PWM off\\pre-arm checks};
+      \node[lbl, below=0.18cm of arm]  {continuity ok\\PWM enabled};
+      \node[lbl, below=0.18cm of flt]  {10~Hz telemetry\\IMU\,+\,baro};
+      \node[lbl, below=0.18cm of apo]  {drogue fire\\$D=0.40$};
+      \node[lbl, below=0.18cm of rec]  {main fire\\RSSI track};
+    \end{tikzpicture}\\[3pt]
+    {\small N4 firmware state machine}
   \end{column}
 \end{columns}
 \end{frame}
 
-% ------------------------------------------------------------------
-% SLIDE 7 – METHODOLOGY: Circuit Development Workflow
-% ------------------------------------------------------------------
-\begin{frame}{Methodology — Circuit Development Workflow}
-\begin{columns}[T]
-  \begin{column}{0.36\textwidth}
-    \textbf{Staged development:}
-    \begin{enumerate}
-      \item Breadboard wiring validation
-      \item Fritzing integration drafting
-      \item EasyEDA schematic + PCB capture
-      \item Proteus simulation
-      \item Bench verification
-    \end{enumerate}
-    \vspace{0.5em}
-    \textbf{Interface strategy:}\\
-    UART for XBee (high-rate stream)\\
-    I\textsuperscript{2}C for ADS1115 (monitoring)\\
-    Segregated pyro / logic routing
-  \end{column}
-  \begin{column}{0.30\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{Rocket_Extension_Design.jpeg}
-    \vspace{0.2em}
-    {\small Fritzing rocket wiring}
-    \vspace{0.5em}
-    \includegraphics[width=\textwidth]{Base_Station_Design.jpeg}
-    \vspace{0.1em}
-    {\small Fritzing base station}
-  \end{column}
-  \begin{column}{0.30\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{FC_Xbee_Design__easyDA.PNG}
-    \vspace{0.1em}
-    {\small EasyEDA schematic}
-    \vspace{0.5em}
-    \includegraphics[width=\textwidth]{{etched FC circuit.jpeg}}
-    \vspace{0.1em}
-    {\small Fabricated PCB}
-  \end{column}
-\end{columns}
-\end{frame}
-
-% ------------------------------------------------------------------
-% SLIDE 8 – RESULTS: Mechanical Design Outputs
-% ------------------------------------------------------------------
-\begin{frame}{Results — Mechanical Design Outputs}
+% ==================================================================
+% SLIDE 15 â€” RESULTS 1: MECHANICAL DESIGN OUTPUTS
+% ==================================================================
+\begin{frame}{Results â€” Mechanical Design Outputs}
 \begin{columns}[T]
   \begin{column}{0.33\textwidth}
     \centering
-    \includegraphics[width=0.9\textwidth]{{18650_case_cover_without title block.JPG}}\\[2pt]
-    {\small 18650 case cover}\\[4pt]
-    \includegraphics[width=0.9\textwidth]{{Edge_batt_without title block.JPG}}\\[2pt]
-    {\small Edge battery carrier (raised)}
+    \includegraphics[width=0.94\textwidth]{Full_assemly_Parts_List.PNG}\\[2pt]
+    {\small Full avionics bay parts list}
   \end{column}
   \begin{column}{0.33\textwidth}
     \centering
-    \includegraphics[width=0.9\textwidth]{{Threaded_Rod_Integration_showing raised battery cells to give way to threaded rods.PNG}}\\[2pt]
-    {\small Threaded rod integration}\\[4pt]
-    \includegraphics[width=0.9\textwidth]{{Cross_sectional view of avionics bay .jpeg}}\\[2pt]
-    {\small Cross-section view}
+    \includegraphics[width=0.94\textwidth]{{Avionics assembly.jpeg}}\\[2pt]
+    {\small Assembled avionics bay}\\[4pt]
+    \includegraphics[width=0.94\textwidth]{{Threaded_Rod_Integration_showing raised battery cells to give way to threaded rods.PNG}}\\[2pt]
+    {\small Rod clearance confirmed}
   \end{column}
-  \begin{column}{0.31\textwidth}
+  \begin{column}{0.33\textwidth}
     \centering
-    \includegraphics[width=0.9\textwidth]{{Avionics assembly.jpeg}}\\[2pt]
-    {\small Avionics bay assembly}\\[4pt]
-    \includegraphics[width=0.9\textwidth]{{Full Integration in avionics bay.jpeg}}\\[2pt]
-    {\small Full integration in airframe}
+    \includegraphics[width=0.94\textwidth]{{Full Integration in avionics bay.jpeg}}\\[2pt]
+    {\small Full integration in airframe}\\[4pt]
+    \includegraphics[width=0.94\textwidth]{Assembly.PNG}\\[2pt]
+    {\small 3D assembly / isometric view}
   \end{column}
 \end{columns}
 \end{frame}
 
-% ------------------------------------------------------------------
-% SLIDE 9 – RESULTS: Electrical Design Outputs
-% ------------------------------------------------------------------
-\begin{frame}{Results — Electrical Design Outputs}
+% ==================================================================
+% SLIDE 16 â€” RESULTS 2: ELECTRONICS & AVIONICS
+% ==================================================================
+\begin{frame}{Results â€” Electronics \& Avionics}
 \begin{columns}[T]
   \begin{column}{0.50\textwidth}
-    \textbf{PCB Fabrication (Custom):}
-    \begin{itemize}
-      \item 65~mm \(\times\) 65~mm, 2-layer FR-4
-      \item ESP32 DevKit, XBee UART interface
-      \item 2× IRLZ44N MOSFET ignition channels
-      \item ADS1115 monitoring circuit
-      \item Chemical etching complete
+    \centering
+    \includegraphics[width=0.86\textwidth]{Soldered_FC.PNG}\\[2pt]
+    {\small Fully soldered flight-computer PCB (88~mm\,$\times$\,93~mm):\\
+    ESP32, XBee UART interface, IRLZ44N MOSFET channels, ADS1115}
+    \vspace{0.4em}
+
+    \textbf{Key verified results:}
+    \begin{itemize}\small
+      \item XBee bench link confirmed: +32~dB link margin at 5~km
+      \item PWM validated: $D=0.70$ fires reliably; no burnout at $D=0.40$
+      \item PCB etched and soldered: fits 95~mm bay allocation
+      \item FreeRTOS modules integrated and bench-tested
     \end{itemize}
-    \vspace{0.3em}
-    \includegraphics[width=0.80\textwidth]{{etched FC circuit.jpeg}}
   \end{column}
   \begin{column}{0.48\textwidth}
-    \textbf{Proteus BMS Simulation:}\\
-    Simulated ADS1115 divider network before PCB bring-up:
-    \begin{itemize}
-      \item 14~V \(\rightarrow\) \(V_{ADC} = 2.456\)~V (code 19,650)
-      \item 15~V \(\rightarrow\) \(V_{ADC} = 2.632\)~V (code 21,060)
-      \item Distinct codes confirm reliable state discrimination
-    \end{itemize}
-    \vspace{0.3em}
-    \includegraphics[width=0.95\textwidth]{{Battery _Monitoring_Proteus_Design.PNG}}
-  \end{column}
-\end{columns}
-\end{frame}
-
-% ------------------------------------------------------------------
-% SLIDE 10 – RESULTS: Assembled Hardware & Firmware Status
-% ------------------------------------------------------------------
-\begin{frame}{Results — Assembled Hardware \& Firmware Status}
-\begin{columns}[T]
-  \begin{column}{0.50\textwidth}
     \centering
-    \includegraphics[width=0.85\textwidth]{Assembled_Avionics_Bay.jpeg}\\
-    {\small Assembled avionics bay}
-  \end{column}
-  \begin{column}{0.47\textwidth}
-    \textbf{Firmware modules complete:}
-    \begin{itemize}
-      \item[\(\checkmark\)] XBee UART telemetry (10~Hz)
-      \item[\(\checkmark\)] GPS NMEA parsing
-      \item[\(\checkmark\)] IMU (MPU6050) \& barometer (BMP280)
-      \item[\(\checkmark\)] ADS1115 voltage + continuity monitoring
-      \item[\(\checkmark\)] PWM ignition channel with duty ramp
-      \item[\(\checkmark\)] Flight state machine (IDLE→ARMED→FLIGHT→APOGEE→RECOVERY)
-      \item[\(\checkmark\)] FreeRTOS task scheduler
-    \end{itemize}
-    \vspace{0.3em}
-    \textbf{XBee configured via XCTU:}\\
-    Network ID, baud 115200, max Tx power, transparent mode
+    \includegraphics[width=0.90\textwidth]{Basestation_Circuit_Design_White_Background.png}\\[3pt]
+    {\small Base station EasyEDA schematic}\\[5pt]
+    \includegraphics[width=0.90\textwidth]{{Battery _Monitoring_Proteus_DesignWhite_background.PNG}}\\[2pt]
+    {\small Proteus BMS simulation â€” distinct ADC codes at 14~V and 15~V confirmed}
   \end{column}
 \end{columns}
 \end{frame}
 
-% ------------------------------------------------------------------
-% SLIDE 11 – PENDING WORK
-% ------------------------------------------------------------------
-\begin{frame}{Pending Design \& Validation Work}
+% ==================================================================
+% SLIDE 17 â€” BUDGET
+% ==================================================================
+\begin{frame}{Budget}
+\centering
+\small
+\begin{tabular}{@{}p{5.0cm}rr@{}}
+  \toprule
+  \textbf{Item} & \textbf{Qty} & \textbf{Est. Cost (KES)}\\
+  \midrule
+  XBee-PRO 900HP modules (Ã—2)        & 2   & 12{,}000 \\
+  ESP32 DevKit (flight + GCS)         & 2   & 1{,}200  \\
+  PCB fabrication (chemical etch)     & 1   & 800      \\
+  IRLZ44N MOSFETs + passives          & --  & 400      \\
+  ADS1115 ADC module                  & 1   & 300      \\
+  18650 battery cells (Ã—4)            & 4   & 2{,}400  \\
+  PETG filament (structural parts)    & --  & 1{,}500  \\
+  900~MHz duck antennas (Ã—2)          & 2   & 800      \\
+  Nichrome wire + connectors          & --  & 600      \\
+  Pop-test black powder charges       & --  & 1{,}500  \\
+  Miscellaneous (solder, PCB stock)   & --  & 1{,}000  \\
+  \midrule
+  \textbf{Total}                      &     & \textbf{22{,}500} \\
+  \bottomrule
+\end{tabular}\\[6pt]
+{\small All costs in Kenyan Shillings (KES). Procurement partially complete.}
+\end{frame}
+
+% ==================================================================
+% SLIDE 18 â€” CONCLUSION & WAY FORWARD
+% ==================================================================
+\begin{frame}{Conclusion \& Way Forward}
 \begin{columns}[T]
-  \begin{column}{0.52\textwidth}
-    \begin{block}{Hardware Pending}
-      \begin{itemize}
-        \item PCB population and component soldering
-        \item 3D-printed structural parts (PETG) — in production
-        \item Aluminium explosion cap holders — pending stock
-        \item Full avionics bay integration and fitment check
-      \end{itemize}
-    \end{block}
+  \begin{column}{0.54\textwidth}
+    \textbf{Progress summary:}
+    \begin{itemize}
+      \item XBee-PRO 900HP configured; link budget verified (+32~dB at 5~km)
+      \item PWM ignition validated: controlled firing without burnout at $D=0.40$
+      \item ADS1115 Proteus simulation confirms distinct ADC codes for launch-inhibit logic
+      \item PETG structural CAD complete; stepped battery carrier resolves rod interference
+      \item Custom PCB chemically etched and soldered (88~mm\,$\times$\,93~mm)
+      \item FreeRTOS firmware modules bench-integrated; FSM tested
+    \end{itemize}
     \vspace{0.4em}
-    \begin{block}{Testing Pending}
-      \begin{itemize}
-        \item Open-field XBee range test (0.5–5~km, packet-loss measurement)
-        \item ADS1115 voltage accuracy calibration vs reference
-        \item Continuity circuit validation with known-R igniter stubs
-        \item \alert{Pyrotechnic ignition and pop tests} (pending hardware)
-      \end{itemize}
-    \end{block}
+    \textbf{Way Forward:}
+    \begin{enumerate}\setlength{\itemsep}{1pt}
+      \item Open-field XBee range test (0.5â€“5~km, packet-loss)
+      \item ADS1115 live accuracy calibration on assembled PCB
+      \item Continuity circuit validation with igniter stubs
+      \item Pyrotechnic pop tests (deployment force validation)
+      \item Full avionics bay integration \& flight readiness review
+    \end{enumerate}
   \end{column}
-  \begin{column}{0.44\textwidth}
-    \begin{block}{Firmware Pending}
-      \begin{itemize}
-        \item Hardware-in-the-loop FSM validation
-        \item SD card data logging module
-        \item Ground-station command software interface
-      \end{itemize}
-    \end{block}
-    \vspace{0.4em}
-    \includegraphics[width=\textwidth]{Timeplan.PNG}\\
-    {\small\centering Project Gantt chart}
+  \begin{column}{0.43\textwidth}
+    \centering
+    \textbf{Objective Progress:}\\[4pt]
+    \begin{tabular}{@{}lll@{}}
+      \toprule
+      \textbf{Objective} & \textbf{Status} & \textbf{\%}\\
+      \midrule
+      Telemetry range    & In progress & 70\% \\
+      PWM deployment     & In progress & 65\% \\
+      BMS / structural   & In progress & 60\% \\
+      System integration & Planned     & 0\%  \\
+      \bottomrule
+    \end{tabular}
   \end{column}
 \end{columns}
 \end{frame}
 
-% ------------------------------------------------------------------
+% ==================================================================
+% SLIDE 19 â€” TIME PLAN
+% ==================================================================
+\begin{frame}{Time Plan}
+\centering
+\includegraphics[width=0.92\textwidth, keepaspectratio]{Timeplan.PNG}\\[4pt]
+{\small N4 Recovery System â€” project Gantt chart showing phases, milestones, and remaining work}
+\end{frame}
+
+% ==================================================================
 % CLOSING
-% ------------------------------------------------------------------
+% ==================================================================
 \begin{frame}[standout]
   Thank you\\[0.5em]
   {\normalsize Questions?}
