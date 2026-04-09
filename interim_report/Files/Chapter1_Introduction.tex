@@ -6,12 +6,12 @@ The global coffee industry remains a significant contributor to the economies of
 
 Manual sorting methods are highly susceptible to human error and fatigue, which can result in misclassification of berries and reduced overall product quality \cite{kumar2010}. Furthermore, the labor-intensive nature of manual sorting limits scalability and efficiency, particularly during peak harvest periods when labor shortages are common \cite{ramos2017}. These challenges highlight the need for automated sorting solutions capable of performing classification tasks with higher accuracy, consistency, and throughput \cite{brosnan2004}.
 
-Recent advancements in computer vision, machine learning, and embedded systems have enabled the development of automated coffee berry sorting machines that utilize image-based detection and real-time classification techniques. Previous work by fifth-year mechatronics engineering students resulted in the development of an image-based coffee berry sorting machine incorporating a vibrating conveyor system, optical detection, and air-ejection mechanisms controlled by a Raspberry Pi-based processing unit. While the system successfully demonstrated automated sorting, practical challenges were identified during real-time operation, particularly related to motion blur, processing latency, and limited computational throughput.
+Recent advancements in computer vision, machine learning, and embedded systems have enabled the development of automated coffee berry sorting machines that utilize image-based detection and real-time classification techniques. Previous work by fifth-year mechatronics engineering students resulted in the development of an image-based coffee berry sorting machine incorporating a vibrating system, optical detection, and air-ejection mechanisms controlled by a Raspberry Pi-based processing unit. While the system successfully demonstrated automated sorting, practical challenges were identified during real-time operation, particularly related to motion blur, processing latency, and limited computational throughput.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{harvested coffee berry variation.jpeg}
-  \caption{Harvested coffee berry variation showing visual diversity in colour, size, and surface texture (Source: \cite{mugo2017})}
+  \caption[Harvested coffee berry variation showing visual diversity in colour, size, and surface texture]{Harvested coffee berry variation showing visual diversity in colour, size, and surface texture \cite{mugo2017}}
   \label{fig:berry_variation}
 \end{figure}
 
@@ -38,14 +38,17 @@ There is a clear need to improve the vision system, processing architecture, and
 
 \subsubsection{Main Objective}
 
-To modify and improve an existing automated coffee berry sorting machine.
+To design, implement, and validate an improved coffee berry sorting machine that
+achieves $>$90\% mAP@0.5, end-to-end latency below 100\,ms, and throughput above
+150 berries per minute.
 
 \subsubsection{Specific Objectives}
 
 \begin{enumerate}
-  \item To analyse and document the performance limitations of the existing image-based coffee berry sorting system, with emphasis on motion blur, processing latency, and classification accuracy.
-  \item To upgrade the camera sensor from a rolling-shutter module to a global-shutter module, replace BJT solenoid drivers with logic-level MOSFETs, and integrate an ESP32 co-processor to eliminate motion blur and improve ejection timing reliability.
-  \item To retrain the classification model on a binary \texttt{accept}/\texttt{reject} dataset using YOLOv11n deployed on a Raspberry Pi~4, targeting end-to-end pipeline latency below 100\,ms and throughput above 150 berries per minute.
+  \item To quantify baseline performance of the existing system (latency, accuracy, and throughput) and document root causes for each limitation.
+  \item To implement a global-shutter camera, MOSFET-based ejector drivers, and an ESP32 co-processor, and verify motion-blur reduction and solenoid timing repeatability (target jitter $\leq$5\,ms).
+  \item To implement an accept/reject classification scheme using a Computer vision model, and evaluate performance on a held-out test set.
+  \item To test the improved system under real-world conditions and validate the performance gains.
 \end{enumerate}
 
 % -------------------------------------------------------------------
@@ -66,7 +69,7 @@ The proposed improvements are expected to:
 
 This project is limited to the modification and improvement of the existing coffee berry sorting machine. Specifically:
 \begin{itemize}
-  \item The mechanical subsystem (vibratory feeder, hopper, chute, and air-ejection hardware) is retained from the original design and re-fabricated; no mechanical re-design is undertaken unless critical faults are identified.
+  \item The mechanical subsystem (vibratory feeder, hopper, chute, and air-ejection hardware) is retained and re-fabricated; only minor fitment changes are made to support improved camera alignment and ejector positioning.
   \item Focus is placed on the vision and control sub-systems: camera selection, lighting, model training, inference pipeline, and microcontroller–Pi communication.
   \item Classification uses a binary \textbf{ACCEPT/REJECT} scheme: the \texttt{accept} class covers uniform deep-red ripe berries; the \texttt{reject} class covers unripe (green), semi-ripe (yellow/orange), overripe (dark/black), and physically damaged berries. This aligns with Kenyan cooperative grading practice.
   \item Deployment targets the Raspberry Pi~4 or equivalent single-board computer for embedded inference.

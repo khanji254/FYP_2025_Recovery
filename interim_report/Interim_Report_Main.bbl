@@ -67,22 +67,6 @@ A.~Kamilaris and F.~Prenafeta-Bold\'{u}, ``Deep learning in agriculture: A
   survey,'' \emph{Computers and Electronics in Agriculture}, vol. 147, pp.
   70--90, 2018.
 
-\bibitem{sandler2018}
-M.~Sandler, A.~Howard, M.~Zhu, A.~Zhmoginov, and L.-C. Chen, ``{MobileNetV2}:
-  Inverted residuals and linear bottlenecks,'' in \emph{Proceedings of the IEEE
-  Conference on Computer Vision and Pattern Recognition (CVPR)}, 2018, pp.
-  4510--4520.
-
-\bibitem{howard2017}
-A.~G. Howard, M.~Zhu, B.~Chen, D.~Kalenichenko, W.~Wang, T.~Weyand,
-  M.~Andreetto, and H.~Adam, ``{MobileNets}: Efficient convolutional neural
-  networks for mobile vision applications,'' arXiv preprint arXiv:1704.04861,
-  2017.
-
-\bibitem{ultralytics2024}
-Ultralytics, ``{YOLOv11}: Object detection and segmentation framework,''
-  \url{https://docs.ultralytics.com}, 2024.
-
 \bibitem{mahmood2019}
 A.~Mahmood, J.-P. Oakley, and D.~Sherwood, ``Air-jet separation of agricultural
   products: a review of key parameters,'' \emph{Computers and Electronics in
@@ -110,6 +94,18 @@ S.~Mohanty, D.~Hughes, and M.~Salathe, ``Using deep learning for image-based
   plant disease detection,'' \emph{Frontiers in Plant Science}, vol.~7, p.
   1419, 2016.
 
+\bibitem{sandler2018}
+M.~Sandler, A.~Howard, M.~Zhu, A.~Zhmoginov, and L.-C. Chen, ``{MobileNetV2}:
+  Inverted residuals and linear bottlenecks,'' in \emph{Proceedings of the IEEE
+  Conference on Computer Vision and Pattern Recognition (CVPR)}, 2018, pp.
+  4510--4520.
+
+\bibitem{howard2017}
+A.~G. Howard, M.~Zhu, B.~Chen, D.~Kalenichenko, W.~Wang, T.~Weyand,
+  M.~Andreetto, and H.~Adam, ``{MobileNets}: Efficient convolutional neural
+  networks for mobile vision applications,'' arXiv preprint arXiv:1704.04861,
+  2017.
+
 \bibitem{redmon2016}
 J.~Redmon, S.~Divvala, R.~Girshick, and A.~Farhadi, ``You only look once:
   Unified, real-time object detection,'' in \emph{Proceedings of the IEEE
@@ -131,6 +127,10 @@ G.~Jocher, A.~Chaurasia, and J.~Qiu, ``{Ultralytics YOLOv8},''
 \bibitem{reis2023}
 D.~Reis, J.~Kupec, J.~Hong, and A.~Daoudi, ``Real-time flying object detection
   with {YOLOv8},'' arXiv preprint arXiv:2305.09972, 2023.
+
+\bibitem{ultralytics2024}
+Ultralytics, ``{YOLOv11}: Object detection and segmentation framework,''
+  \url{https://docs.ultralytics.com}, 2024.
 
 \bibitem{raspberrypi2019}
 {Raspberry Pi Foundation}, ``Raspberry pi 4 model {B} product brief,''

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  5 MAR 2026 10:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  7 APR 2026 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1035,7 +1035,7 @@ Package hyperref Info: Link coloring OFF on input line 88.
 \openout4 = `Interim_Report_Main.out'.
 
  (Files/title_page.tex
-<Figures/logo.png, id=298, 222.8325pt x 204.765pt>
+<Figures/logo.png, id=302, 222.8325pt x 204.765pt>
 File: Figures/logo.png Graphic file (type png)
 <use Figures/logo.png>
 Package pdftex.def Info: Figures/logo.png  used on input line 6.
@@ -1067,7 +1067,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `Interim_Report_Main.toc'.
 
  [6] (Interim_Report_Main.lof
-Overfull \hbox (0.15959pt too wide) in paragraph at lines 3--3
+Overfull \hbox (0.15959pt too wide) in paragraph at lines 10--10
  [][] [][]\OT1/cmr/m/n/12 Reference model val-i-da-tion pre-dic-tions show-ing 
 four-class clas-si-fi-ca-tion (un- 
  []
@@ -1080,24 +1080,24 @@ Overfull \hbox (21.6844pt too wide) in paragraph at lines 23--23
 ver im-ple-men-ta-tion: IRLZ44N 
  []
 
-[8]
-Overfull \hbox (1.63799pt too wide) in paragraph at lines 27--27
+
+Overfull \hbox (1.63799pt too wide) in paragraph at lines 28--28
  [][] [][]\OT1/cmr/m/n/12 Proteus os-cil-lo-scope: MOS-FET turn-OFF --- drain r
 e-cov-ers to 12V; 1N5819 
  []
 
-[9])
+[8])
 \tf@lof=\write6
 \openout6 = `Interim_Report_Main.lof'.
 
- [10] (Interim_Report_Main.lot)
+ [9] (Interim_Report_Main.lot)
 \tf@lot=\write7
 \openout7 = `Interim_Report_Main.lot'.
 
- [11
+ [10
 
 ] (Files/Chapter1_Introduction.tex
-<Figures/Figures/harvested coffee berry variation.jpeg, id=599, 451.6875pt x 30
+<Figures/Figures/harvested coffee berry variation.jpeg, id=585, 451.6875pt x 30
 1.125pt>
 File: Figures/Figures/harvested coffee berry variation.jpeg Graphic file (type 
 jpg)
@@ -1114,21 +1114,14 @@ l.17
       [1
 
 ] [2 <./Figures/Figures/harvested coffee berry variation.jpeg>]
-[3]
-Overfull \hbox (17.30113pt too wide) in paragraph at lines 48--49
-[]\OT1/cmr/m/n/12 To re-train the clas-si-fi-ca-tion model on a bi-nary \OT1/cm
-tt/m/n/12 accept\OT1/cmr/m/n/12 /\OT1/cmtt/m/n/12 reject \OT1/cmr/m/n/12 datase
-t us-ing YOLOv11n
- []
-
-[4] [5]
-Overfull \hbox (9.04984pt too wide) in paragraph at lines 83--84
+[3] [4] [5]
+Overfull \hbox (9.04984pt too wide) in paragraph at lines 86--87
 []\OT1/cmr/m/n/12 A YOLOv11n bi-nary clas-si-fier de-ployed on Rasp-berry Pi 4 
 achiev-ing mAP@0.5 $\OML/cmm/m/it/12 >$ \OT1/cmr/m/n/12 90%,
  []
 
 ) [6] (Files/Chapter2_LiteratureReview.tex
-<Figures/Figures/Ripe.jpeg, id=658, 517.935pt x 351.3125pt>
+<Figures/Figures/Ripe.jpeg, id=646, 517.935pt x 351.3125pt>
 File: Figures/Figures/Ripe.jpeg Graphic file (type jpg)
 <use Figures/Figures/Ripe.jpeg>
 Package pdftex.def Info: Figures/Figures/Ripe.jpeg  used on input line 22.
@@ -1136,473 +1129,511 @@ Package pdftex.def Info: Figures/Figures/Ripe.jpeg  used on input line 22.
  [7
 
  <./Figures/Figures/Ripe.jpeg>]
-[8]
-<context/Old_val_batch2_labels.jpg, id=691, 1927.2pt x 1927.2pt>
-File: context/Old_val_batch2_labels.jpg Graphic file (type jpg)
-<use context/Old_val_batch2_labels.jpg>
-Package pdftex.def Info: context/Old_val_batch2_labels.jpg  used on input line 
-92.
-(pdftex.def)             Requested size: 386.96024pt x 386.93292pt.
- [9]
-<images/Previous_Model_F1__score.PNG, id=699, 331.2375pt x 265.74281pt>
-File: images/Previous_Model_F1__score.PNG Graphic file (type png)
-<use images/Previous_Model_F1__score.PNG>
-Package pdftex.def Info: images/Previous_Model_F1__score.PNG  used on input lin
-e 99.
-(pdftex.def)             Requested size: 341.43306pt x 273.9371pt.
- [10 <./context/Old_val_batch2_labels.jpg>]
-<Figures/Figures/sorting_comparison.pdf, id=707, 596.12108pt x 338.2216pt>
+<Figures/Figures/sorting_comparison.pdf, id=658, 596.12108pt x 338.2216pt>
 File: Figures/Figures/sorting_comparison.pdf Graphic file (type pdf)
 <use Figures/Figures/sorting_comparison.pdf>
 Package pdftex.def Info: Figures/Figures/sorting_comparison.pdf  used on input 
-line 126.
+line 49.
 (pdftex.def)             Requested size: 373.30347pt x 211.806pt.
- [11 <./images/Previous_Model_F1__score.PNG>]
-<images/coffee_Images/parts_list.JPG, id=713, 378.66469pt x 192.72pt>
+<images/coffee_Images/parts_list.JPG, id=659, 378.66469pt x 192.72pt>
 File: images/coffee_Images/parts_list.JPG Graphic file (type jpg)
 <use images/coffee_Images/parts_list.JPG>
 Package pdftex.def Info: images/coffee_Images/parts_list.JPG  used on input lin
-e 133.
+e 56.
 (pdftex.def)             Requested size: 227.62204pt x 115.84755pt.
- [12 <./Figures/Figures/sorting_comparison.pdf> <./images/coffee_Images/parts_l
-ist.JPG>]
-<../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG, id=758, 76
+
+[8 <./Figures/Figures/sorting_comparison.pdf>]
+<../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG, id=705, 76
 7.11594pt x 487.06969pt>
 File: ../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG Graphi
 c file (type png)
 <use ../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG>
 Package pdftex.def Info: ../project_proposal/images/Air_Ejector_With.out_title_
-BlockPNG.PNG  used on input line 154.
+BlockPNG.PNG  used on input line 77.
 (pdftex.def)             Requested size: 355.08981pt x 221.9744pt.
-
-Overfull \hbox (5.823pt too wide) in paragraph at lines 171--178
+ [9 <./images/coffee_Images/parts_list.JPG>]
+Overfull \hbox (5.823pt too wide) in paragraph at lines 94--101
 \OT1/cmr/m/n/12 dis-tor-tion en-tirely. Global-shutter CMOS sen-sors (e.g., Son
 y IMX296, Om-nivi-sion OV9281)
  []
 
-[13 <../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG>]
-[14]
+[10 <../project_proposal/images/Air_Ejector_With.out_title_BlockPNG.PNG>]
+[11]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 244.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 167.
 
-Overfull \hbox (75.55463pt too wide) in paragraph at lines 255--258
+Overfull \hbox (75.55463pt too wide) in paragraph at lines 178--181
  [][] 
  []
 
-[15]
-<Figures/Figures/classification_flowchart.pdf, id=808, 712.49384pt x 495.98802p
+[12]
+<Figures/Figures/classification_flowchart.pdf, id=763, 712.49384pt x 495.98802p
 t>
 File: Figures/Figures/classification_flowchart.pdf Graphic file (type pdf)
 <use Figures/Figures/classification_flowchart.pdf>
 Package pdftex.def Info: Figures/Figures/classification_flowchart.pdf  used on 
-input line 275.
+input line 198.
 (pdftex.def)             Requested size: 341.43306pt x 237.68556pt.
- [16] [17 <./Figures/Figures/classification_flowchart.pdf>]
-<Figures/Figures/coffee_berries_hands.jpg, id=846, 451.6875pt x 301.125pt>
+ [13 <./Figures/Figures/classification_flowchart.pdf>]
+<Figures/Figures/coffee_berries_hands.jpg, id=793, 451.6875pt x 301.125pt>
 File: Figures/Figures/coffee_berries_hands.jpg Graphic file (type jpg)
 <use Figures/Figures/coffee_berries_hands.jpg>
 Package pdftex.def Info: Figures/Figures/coffee_berries_hands.jpg  used on inpu
-t line 308.
+t line 231.
 (pdftex.def)             Requested size: 364.19664pt x 242.81175pt.
- [18 <./Figures/Figures/coffee_berries_hands.jpg>]
-<Figures/Figures/coprocessing_architecture.pdf, id=858, 522.42982pt x 469.00117
+ [14 <./Figures/Figures/coffee_berries_hands.jpg>]
+<Figures/Figures/coprocessing_architecture.pdf, id=806, 522.42982pt x 469.00117
 pt>
 File: Figures/Figures/coprocessing_architecture.pdf Graphic file (type pdf)
 <use Figures/Figures/coprocessing_architecture.pdf>
 Package pdftex.def Info: Figures/Figures/coprocessing_architecture.pdf  used on
- input line 342.
+ input line 265.
 (pdftex.def)             Requested size: 341.43306pt x 306.52173pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 376--376
+ [15] [16 <./Figures/Figures/coprocessing_architecture.pdf>] [17]
+<context/Old_val_batch2_labels.jpg, id=881, 1927.2pt x 1927.2pt>
+File: context/Old_val_batch2_labels.jpg Graphic file (type jpg)
+<use context/Old_val_batch2_labels.jpg>
+Package pdftex.def Info: context/Old_val_batch2_labels.jpg  used on input line 
+336.
+(pdftex.def)             Requested size: 386.96024pt x 386.93292pt.
+ [18]
+<images/Previous_Model_F1__score.PNG, id=888, 331.2375pt x 265.74281pt>
+File: images/Previous_Model_F1__score.PNG Graphic file (type png)
+<use images/Previous_Model_F1__score.PNG>
+Package pdftex.def Info: images/Previous_Model_F1__score.PNG  used on input lin
+e 343.
+(pdftex.def)             Requested size: 341.43306pt x 273.9371pt.
+ [19 <./context/Old_val_batch2_labels.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
 []|\OT1/cmr/m/n/10.95 Motion blur at op-er-at-ing
  []
 
 
-Underfull \hbox (badness 5726) in paragraph at lines 376--376
+Underfull \hbox (badness 5726) in paragraph at lines 380--380
 []|\OT1/cmr/m/n/10.95 Rolling-shutter sen-sor with
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 376--376
+Underfull \hbox (badness 3375) in paragraph at lines 380--380
 []|\OT1/cmr/m/n/10.95 Replace with global-shutter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--376
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
 \OT1/cmr/m/n/10.95 Ar-d-u-cam OV9281 mod-ule;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--376
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
 \OML/cmm/m/it/10.95 <$\OT1/cmr/m/n/10.95 1ms full-frame ex-po-sure
  []
 
 
-Underfull \hbox (badness 1960) in paragraph at lines 376--376
+Underfull \hbox (badness 1960) in paragraph at lines 380--380
 \OT1/cmr/m/n/10.95 [[]29[]]: Pi han-dles in-fer-ence;
  []
 
 
-Underfull \hbox (badness 6173) in paragraph at lines 376--376
+Underfull \hbox (badness 6173) in paragraph at lines 380--380
 \OT1/cmr/m/n/10.95 ESP32 han-dles hard real-
  []
 
 
-Underfull \hbox (badness 1789) in paragraph at lines 376--376
+Underfull \hbox (badness 2726) in paragraph at lines 380--380
+\OT1/cmr/m/n/10.95 poor gen-er-al-i-sa-tion to new
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 380--380
+\OT1/cmr/m/n/10.95 nar-row light-ing and va-ri-ety
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+[]|\OT1/cmr/m/n/10.95 Aggregate multi-source
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 380--380
 []|\OT1/cmr/m/n/10.95 Fine-grained class con-fu-sion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--376
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
 []|\OT1/cmr/m/n/10.95 Binary AC-CEPT/REJECT
  []
 
 
-Underfull \hbox (badness 2173) in paragraph at lines 376--376
+Underfull \hbox (badness 2173) in paragraph at lines 380--380
 \OT1/cmr/m/n/10.95 prac-tice; YOLOv11 trained
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--376
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
 \OT1/cmr/m/n/10.95 on two classes elim-i-nates
  []
 
-[19 <./Figures/Figures/coprocessing_architecture.pdf>]) [20]
+) [20 <./images/Previous_Model_F1__score.PNG>] [21]
 (Files/Chapter3_Methodology.tex
-<Figures/Figures/system_architecture.pdf, id=913, 547.9341pt x 350.0528pt>
+<Figures/Figures/system_architecture.pdf, id=909, 547.9341pt x 350.0528pt>
 File: Figures/Figures/system_architecture.pdf Graphic file (type pdf)
 <use Figures/Figures/system_architecture.pdf>
 Package pdftex.def Info: Figures/Figures/system_architecture.pdf  used on input
  line 11.
 (pdftex.def)             Requested size: 432.48048pt x 276.30365pt.
- [21
+ [22
 
- <./Figures/Figures/system_architecture.pdf>] [22]
+ <./Figures/Figures/system_architecture.pdf>] [23]
 <images/coffee_Images/Hopper.JPG, id=948, 656.4525pt x 404.26031pt>
 File: images/coffee_Images/Hopper.JPG Graphic file (type jpg)
 <use images/coffee_Images/Hopper.JPG>
-Package pdftex.def Info: images/coffee_Images/Hopper.JPG  used on input line 47
+Package pdftex.def Info: images/coffee_Images/Hopper.JPG  used on input line 52
 .
-(pdftex.def)             Requested size: 213.96527pt x 131.76549pt.
+(pdftex.def)             Requested size: 409.71689pt x 252.31664pt.
 <images/coffee_Images/feeder_trough.JPG, id=949, 577.40718pt x 368.87813pt>
 File: images/coffee_Images/feeder_trough.JPG Graphic file (type jpg)
 <use images/coffee_Images/feeder_trough.JPG>
 Package pdftex.def Info: images/coffee_Images/feeder_trough.JPG  used on input 
-line 53.
-(pdftex.def)             Requested size: 213.96527pt x 136.69102pt.
-<images/coffee_Images/chute.JPG, id=952, 575.14874pt x 360.59718pt>
+line 59.
+(pdftex.def)             Requested size: 409.71689pt x 261.75894pt.
+ [24 <./images/coffee_Images/Hopper.JPG>]
+<images/coffee_Images/chute.JPG, id=956, 575.14874pt x 360.59718pt>
 File: images/coffee_Images/chute.JPG Graphic file (type jpg)
 <use images/coffee_Images/chute.JPG>
-Package pdftex.def Info: images/coffee_Images/chute.JPG  used on input line 67.
+Package pdftex.def Info: images/coffee_Images/chute.JPG  used on input line 70.
 
-(pdftex.def)             Requested size: 213.96527pt x 134.14516pt.
-<images/coffee_Images/main_assembly.JPG, id=953, 198.7425pt x 234.8775pt>
+(pdftex.def)             Requested size: 409.71689pt x 256.88414pt.
+ [25 <./images/coffee_Images/feeder_trough.JPG>]
+<images/coffee_Images/main_assembly.JPG, id=961, 198.7425pt x 234.8775pt>
 File: images/coffee_Images/main_assembly.JPG Graphic file (type jpg)
 <use images/coffee_Images/main_assembly.JPG>
 Package pdftex.def Info: images/coffee_Images/main_assembly.JPG  used on input 
-line 73.
-(pdftex.def)             Requested size: 213.96527pt x 252.87544pt.
- [23 <./images/coffee_Images/Hopper.JPG> <./images/coffee_Images/feeder_trough.
-JPG>]
-<images/coffee_Images/main_Frame.JPG, id=958, 619.56468pt x 407.27156pt>
+line 77.
+(pdftex.def)             Requested size: 409.71689pt x 484.2652pt.
+ [26 <./images/coffee_Images/chute.JPG>] [27 <./images/coffee_Images/main_assem
+bly.JPG>]
+<images/coffee_Images/main_Frame.JPG, id=971, 619.56468pt x 407.27156pt>
 File: images/coffee_Images/main_Frame.JPG Graphic file (type jpg)
 <use images/coffee_Images/main_Frame.JPG>
 Package pdftex.def Info: images/coffee_Images/main_Frame.JPG  used on input lin
-e 87.
-(pdftex.def)             Requested size: 213.96527pt x 140.64555pt.
-<images/coffee_Images/full__assembly_front_views.JPG, id=959, 217.5628pt x 472.
+e 88.
+(pdftex.def)             Requested size: 409.71689pt x 269.32207pt.
+<images/coffee_Images/full__assembly_front_views.JPG, id=972, 217.5628pt x 472.
 76625pt>
 File: images/coffee_Images/full__assembly_front_views.JPG Graphic file (type jp
 g)
 <use images/coffee_Images/full__assembly_front_views.JPG>
 Package pdftex.def Info: images/coffee_Images/full__assembly_front_views.JPG  u
-sed on input line 93.
-(pdftex.def)             Requested size: 213.96527pt x 464.98137pt.
- [24 <./images/coffee_Images/chute.JPG> <./images/coffee_Images/main_assembly.J
-PG>] [25 <./images/coffee_Images/main_Frame.JPG> <./images/coffee_Images/full__
-assembly_front_views.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+sed on input line 95.
+(pdftex.def)             Requested size: 409.71689pt x 890.44542pt.
+ [28 <./images/coffee_Images/main_Frame.JPG>]
+Overfull \vbox (301.1954pt too high) has occurred while \output is active []
+
+
+[29 <./images/coffee_Images/full__assembly_front_views.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|\OT1/cmr/m/n/10.95 Roboflow Uni-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|[]$\OT1/cmtt/m/n/10.95 https : / / universe . roboflow . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 \OT1/cmtt/m/n/10.95 cherry-[]ripeness-[]identificator /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|[]$\OT1/cmtt/m/n/10.95 https : / / universe . roboflow .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 \OT1/cmtt/m/n/10.95 com / lyka-[]grace-[]tabiolo-[]9kido /
  []
 
 
-Underfull \hbox (badness 1852) in paragraph at lines 124--124
+Underfull \hbox (badness 1852) in paragraph at lines 127--127
 []|\OT1/cmr/m/n/10.95 Coffee App --- Cherry
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|\OT1/cmr/m/n/10.95 Roboflow Uni-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|[]$\OT1/cmtt/m/n/10.95 https : / / universe . roboflow . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|\OT1/cmr/m/n/10.95 Roboflow Uni-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|[]$\OT1/cmtt/m/n/10.95 https : / / universe . roboflow . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 \OT1/cmtt/m/n/10.95 coffee-[]cherry-[]classification /
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 124--124
+Underfull \hbox (badness 1838) in paragraph at lines 127--127
 []|\OT1/cmr/m/n/10.95 Coffee Berry De-tec-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--124
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
 []|[]$\OT1/cmtt/m/n/10.95 https : / / universe . roboflow . com / robopulse /
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 []|\OT1/cmr/m/n/12 Unripe (green), semi-ripe
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 \OT1/cmr/m/n/12 (yel-low/orange), over-ripe
  []
 
 
-Underfull \hbox (badness 4621) in paragraph at lines 146--147
+Underfull \hbox (badness 4621) in paragraph at lines 149--150
 \OT1/cmr/m/n/12 (dark/black), and dam-aged
  []
 
-[27]
-Overfull \hbox (44.91306pt too wide) in paragraph at lines 154--155
+[31]
+Overfull \hbox (44.91306pt too wide) in paragraph at lines 157--158
 \OT1/cmr/m/n/12 The an-no-tated dataset was split 70% train / 15% val-i-da-tion
  / 15% test us-ing the \OT1/cmtt/m/n/12 split[]dataset.py
  []
 
-[28] [29]
+[32] [33]
 File: Figures/Figures/coprocessing_architecture.pdf Graphic file (type pdf)
 <use Figures/Figures/coprocessing_architecture.pdf>
 Package pdftex.def Info: Figures/Figures/coprocessing_architecture.pdf  used on
- input line 220.
+ input line 223.
 (pdftex.def)             Requested size: 373.30347pt x 335.14006pt.
- [30]
-<Figures/Figures/control_flow.pdf, id=1023, 536.64589pt x 1051.45618pt>
+ [34]
+<Figures/Figures/control_flow.pdf, id=1044, 536.64589pt x 1051.45618pt>
 File: Figures/Figures/control_flow.pdf Graphic file (type pdf)
 <use Figures/Figures/control_flow.pdf>
 Package pdftex.def Info: Figures/Figures/control_flow.pdf  used on input line 2
-28.
-(pdftex.def)             Requested size: 273.14922pt x 535.1927pt.
- [31] [32 <./Figures/Figures/control_flow.pdf>]
-Overfull \hbox (1.62202pt too wide) in paragraph at lines 239--241
+33.
+(pdftex.def)             Requested size: 446.13725pt x 707.25381pt.
+File: Figures/Figures/control_flow.pdf Graphic file (type pdf)
+<use Figures/Figures/control_flow.pdf>
+Package pdftex.def Info: Figures/Figures/control_flow.pdf  used on input line 2
+39.
+(pdftex.def)             Requested size: 446.13725pt x 707.25381pt.
+ [35]
+Overfull \vbox (907.85759pt too high) has occurred while \output is active []
+
+
+[36 <./Figures/Figures/control_flow.pdf>]
+Overfull \hbox (1.62202pt too wide) in paragraph at lines 252--254
 []\OT1/cmr/m/n/12 YOLOv11 per-forms in-fer-ence to de-tect and clas-sify berrie
 s in the frame (Fig-ure []3.10[]). 
  []
 
-
-Overfull \hbox (75.55463pt too wide) in paragraph at lines 281--285
- [][] 
- []
-
-[33] [34] [35] [36] [37]
-<images/Proteus_Full_Circuit.PNG, id=1079, 791.95876pt x 624.83438pt>
+[37] [38] [39] [40] [41]
+<images/Proteus_Full_Circuit.PNG, id=1103, 791.95876pt x 624.83438pt>
 File: images/Proteus_Full_Circuit.PNG Graphic file (type png)
 <use images/Proteus_Full_Circuit.PNG>
-Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 45
-5.
+Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 47
+0.
 (pdftex.def)             Requested size: 432.48048pt x 337.60652pt.
- [38] [39 <./images/Proteus_Full_Circuit.PNG>] [40]
-Overfull \hbox (1.21019pt too wide) in paragraph at lines 496--497
+ [42] [43 <./images/Proteus_Full_Circuit.PNG>] [44]
+Overfull \hbox (1.21019pt too wide) in paragraph at lines 511--512
 []\OT1/cmr/bx/n/12 image test: \OT1/cmr/m/n/12 Run the YOLOv11 model on the hel
 d-out test set and re-port mAP@0.5,
  []
 
-) [41] (Files/Chapter4_ResultsDiscussion.tex
-Overfull \hbox (7.13034pt too wide) in paragraph at lines 25--30
+) [45] (Files/Chapter4_ResultsDiscussion.tex
+<images/coffee_Images/with_title_blocks/main_Frame.JPG, id=1128, 320.69812pt x 
+496.10344pt>
+File: images/coffee_Images/with_title_blocks/main_Frame.JPG Graphic file (type 
+jpg)
+<use images/coffee_Images/with_title_blocks/main_Frame.JPG>
+Package pdftex.def Info: images/coffee_Images/with_title_blocks/main_Frame.JPG 
+ used on input line 25.
+(pdftex.def)             Requested size: 218.51521pt x 338.03473pt.
+<images/coffee_Images/with_title_blocks/chute.JPG, id=1129, 307.1475pt x 469.00
+218pt>
+File: images/coffee_Images/with_title_blocks/chute.JPG Graphic file (type jpg)
+<use images/coffee_Images/with_title_blocks/chute.JPG>
+Package pdftex.def Info: images/coffee_Images/with_title_blocks/chute.JPG  used
+ on input line 30.
+(pdftex.def)             Requested size: 218.51521pt x 333.66658pt.
+ [46
+
+]
+Overfull \hbox (7.13034pt too wide) in paragraph at lines 48--53
 []\OT1/cmr/bx/n/12 Ejector driver tran-sis-tor up-grade: \OT1/cmr/m/n/12 PN2222
 A BJTs were re-placed with \OT1/cmr/bx/n/12 IRLZ44N
  []
 
-[42
-
-]
-<Figures/Figures/system_block_diagram.pdf, id=1108, 582.42691pt x 452.95122pt>
+[47 <./images/coffee_Images/with_title_blocks/main_Frame.JPG> <./images/coffee_
+Images/with_title_blocks/chute.JPG>]
+<Figures/Figures/system_block_diagram.pdf, id=1140, 582.42691pt x 452.95122pt>
 File: Figures/Figures/system_block_diagram.pdf Graphic file (type pdf)
 <use Figures/Figures/system_block_diagram.pdf>
 Package pdftex.def Info: Figures/Figures/system_block_diagram.pdf  used on inpu
-t line 54.
+t line 77.
 (pdftex.def)             Requested size: 364.19664pt x 283.23895pt.
- [43]
-Overfull \hbox (5.7469pt too wide) in paragraph at lines 67--70
- []\OT1/cmr/bx/n/12 Full Cir-cuit Overview[] \OT1/cmr/m/n/12 Fig-ure []4.2[] sh
+ [48]
+Overfull \hbox (5.7469pt too wide) in paragraph at lines 90--93
+ []\OT1/cmr/bx/n/12 Full Cir-cuit Overview[] \OT1/cmr/m/n/12 Fig-ure []4.3[] sh
 ows the com-plete Pro-teus schematic: four IRLZ44N
  []
 
 File: images/Proteus_Full_Circuit.PNG Graphic file (type png)
 <use images/Proteus_Full_Circuit.PNG>
-Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 73
+Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 96
 .
 (pdftex.def)             Requested size: 418.82372pt x 330.44557pt.
-[44 <./Figures/Figures/system_block_diagram.pdf>]
-<../project_proposal/images/Trigger_ON.PNG, id=1151, 566.86781pt x 398.23781pt>
+[49 <./Figures/Figures/system_block_diagram.pdf>]
+<../project_proposal/images/Trigger_ON.PNG, id=1182, 566.86781pt x 398.23781pt>
 
 File: ../project_proposal/images/Trigger_ON.PNG Graphic file (type png)
 <use ../project_proposal/images/Trigger_ON.PNG>
 Package pdftex.def Info: ../project_proposal/images/Trigger_ON.PNG  used on inp
-ut line 87.
+ut line 110.
 (pdftex.def)             Requested size: 355.08981pt x 249.46313pt.
- [45]
-<../project_proposal/images/Trigger_OFF.PNG, id=1157, 842.39719pt x 502.12593pt
+ [50]
+<../project_proposal/images/Trigger_OFF.PNG, id=1189, 842.39719pt x 502.12593pt
 >
 File: ../project_proposal/images/Trigger_OFF.PNG Graphic file (type png)
 <use ../project_proposal/images/Trigger_OFF.PNG>
 Package pdftex.def Info: ../project_proposal/images/Trigger_OFF.PNG  used on in
-put line 96.
+put line 119.
 (pdftex.def)             Requested size: 355.08981pt x 211.65764pt.
- [46 <../project_proposal/images/Trigger_ON.PNG> <../project_proposal/images/Tr
+ [51 <../project_proposal/images/Trigger_ON.PNG> <../project_proposal/images/Tr
 igger_OFF.PNG>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 127.
- [47]
-<images/model__Training_Results/results.png, id=1173, 867.24pt x 433.62pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 150.
+ [52]
+<images/model__Training_Results/results.png, id=1205, 867.24pt x 433.62pt>
 File: images/model__Training_Results/results.png Graphic file (type png)
 <use images/model__Training_Results/results.png>
 Package pdftex.def Info: images/model__Training_Results/results.png  used on in
-put line 145.
+put line 168.
 (pdftex.def)             Requested size: 386.96024pt x 193.47969pt.
-<images/model__Training_Results/F1_curve.png, id=1175, 650.43pt x 433.62pt>
+<images/model__Training_Results/F1_curve.png, id=1207, 650.43pt x 433.62pt>
 File: images/model__Training_Results/F1_curve.png Graphic file (type png)
 <use images/model__Training_Results/F1_curve.png>
 Package pdftex.def Info: images/model__Training_Results/F1_curve.png  used on i
-nput line 154.
+nput line 177.
 (pdftex.def)             Requested size: 373.30347pt x 248.87302pt.
 
-[48 <./images/model__Training_Results/results.png>]
-<images/model__Training_Results/PR_curve.png, id=1183, 650.43pt x 433.62pt>
+[53 <./images/model__Training_Results/results.png>]
+<images/model__Training_Results/PR_curve.png, id=1215, 650.43pt x 433.62pt>
 File: images/model__Training_Results/PR_curve.png Graphic file (type png)
 <use images/model__Training_Results/PR_curve.png>
 Package pdftex.def Info: images/model__Training_Results/PR_curve.png  used on i
-nput line 163.
+nput line 186.
 (pdftex.def)             Requested size: 373.30347pt x 248.87302pt.
- [49 <./images/model__Training_Results/F1_curve.png>]
-<images/model__Training_Results/confusion_matrix_normalized.png, id=1190, 867.2
+ [54 <./images/model__Training_Results/F1_curve.png>]
+<images/model__Training_Results/confusion_matrix_normalized.png, id=1221, 867.2
 4pt x 650.43pt>
 File: images/model__Training_Results/confusion_matrix_normalized.png Graphic fi
 le (type png)
 <use images/model__Training_Results/confusion_matrix_normalized.png>
 Package pdftex.def Info: images/model__Training_Results/confusion_matrix_normal
-ized.png  used on input line 170.
+ized.png  used on input line 193.
 (pdftex.def)             Requested size: 341.43306pt x 256.07838pt.
- [50 <./images/model__Training_Results/PR_curve.png>]
-<images/model__Training_Results/labels.jpg, id=1199, 578.16pt x 578.16pt>
+ [55 <./images/model__Training_Results/PR_curve.png>]
+<images/model__Training_Results/labels.jpg, id=1230, 578.16pt x 578.16pt>
 File: images/model__Training_Results/labels.jpg Graphic file (type jpg)
 <use images/model__Training_Results/labels.jpg>
 Package pdftex.def Info: images/model__Training_Results/labels.jpg  used on inp
-ut line 200.
+ut line 223.
 (pdftex.def)             Requested size: 355.08981pt x 355.0855pt.
 
-[51 <./images/model__Training_Results/confusion_matrix_normalized.png>]
-<images/model__Training_Results/val_batch0_labels.jpg, id=1205, 1927.2pt x 1927
+[56 <./images/model__Training_Results/confusion_matrix_normalized.png>]
+<images/model__Training_Results/val_batch0_labels.jpg, id=1237, 1927.2pt x 1927
 .2pt>
 File: images/model__Training_Results/val_batch0_labels.jpg Graphic file (type j
 pg)
 <use images/model__Training_Results/val_batch0_labels.jpg>
 Package pdftex.def Info: images/model__Training_Results/val_batch0_labels.jpg  
-used on input line 207.
+used on input line 230.
 (pdftex.def)             Requested size: 355.08981pt x 355.0855pt.
 
-[52 <./images/model__Training_Results/labels.jpg>]
-<images/model__Training_Results/val_batch0_pred.jpg, id=1211, 1927.2pt x 1927.2
+[57 <./images/model__Training_Results/labels.jpg>]
+<images/model__Training_Results/val_batch0_pred.jpg, id=1243, 1927.2pt x 1927.2
 pt>
 File: images/model__Training_Results/val_batch0_pred.jpg Graphic file (type jpg
 )
 <use images/model__Training_Results/val_batch0_pred.jpg>
 Package pdftex.def Info: images/model__Training_Results/val_batch0_pred.jpg  us
-ed on input line 218.
+ed on input line 241.
 (pdftex.def)             Requested size: 355.08981pt x 355.0855pt.
- [53 <./images/model__Training_Results/val_batch0_labels.jpg>]
-Overfull \hbox (19.25916pt too wide) in paragraph at lines 226--228
+ [58 <./images/model__Training_Results/val_batch0_labels.jpg>]
+Overfull \hbox (19.25916pt too wide) in paragraph at lines 249--251
 \OT1/cmr/m/n/12 The fol-low-ing soft-ware mod-ules have been de-vel-oped and ar
 e tracked in the \OT1/cmtt/m/n/12 CoffeeBerry[]YOLO
  []
 
-[54 <./images/model__Training_Results/val_batch0_pred.jpg>]
+[59 <./images/model__Training_Results/val_batch0_pred.jpg>]
 File: Figures/Figures/control_flow.pdf Graphic file (type pdf)
 <use Figures/Figures/control_flow.pdf>
 Package pdftex.def Info: Figures/Figures/control_flow.pdf  used on input line 2
-42.
+65.
 (pdftex.def)             Requested size: 345.98299pt x 677.90327pt.
- [55]
+ [60]
 Overfull \vbox (110.40326pt too high) has occurred while \output is active []
 
 
-[56]
-Underfull \hbox (badness 4467) in paragraph at lines 261--261
+[61]
+Underfull \hbox (badness 4467) in paragraph at lines 284--284
 \OT1/cmr/m/n/12 sure-ments to be con-
  []
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 261--261
+Underfull \hbox (badness 2285) in paragraph at lines 284--284
 \OT1/cmr/m/n/12 ducted dur-ing phys-i-cal
  []
 
 
-Underfull \hbox (badness 1874) in paragraph at lines 261--261
+Underfull \hbox (badness 1874) in paragraph at lines 284--284
 \OT1/cmr/m/n/12 sys-tem in-te-gra-tion and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--261
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
 []|\OT1/cmr/m/n/12 In progress: cir-cuit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--261
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
 \OT1/cmr/m/n/12 switch-ing con-firmed);
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--261
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
 \OT1/cmr/m/n/12 hard-ware pro-cured;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--261
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
 \OT1/cmr/m/n/12 model trained (15
  []
 
-) [57] (Files/Chapter5_Conclusion.tex [58
+) [62] (Files/Chapter5_Conclusion.tex [63
 
-]) [59] (Interim_Report_Main.bbl
-[60
+]) [64] (Interim_Report_Main.bbl
+[65
 
-] [61]
+] [66]
 Underfull \hbox (badness 10000) in paragraph at lines 159--162
 []\OT1/cmr/m/n/12 Espressif Sys-tems, ``ESP32 tech-ni-cal ref-er-ence man-ual, 
 ver-sion 5.1,''
@@ -1614,7 +1645,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--162
  / documentation / esp32[]technical[]
  []
 
-[62]
+[67]
 Underfull \hbox (badness 10000) in paragraph at lines 170--174
 []\OT1/cmr/m/n/12 Roboflow Uni-verse, ``Cof-fee cherry ripeness de-tec-tion [Da
 taset],''
@@ -1626,169 +1657,169 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--174
 ripeness-[]identi^^Lcator /
  []
 
-) [63] (Files/Appendices.tex
-<Figures/Figures/electrical_schematic.pdf, id=1291, 656.39731pt x 354.54056pt>
+) [68] (Files/Appendices.tex
+<Figures/Figures/electrical_schematic.pdf, id=1322, 656.39731pt x 354.54056pt>
 File: Figures/Figures/electrical_schematic.pdf Graphic file (type pdf)
 <use Figures/Figures/electrical_schematic.pdf>
 Package pdftex.def Info: Figures/Figures/electrical_schematic.pdf  used on inpu
-t line 9.
+t line 10.
 (pdftex.def)             Requested size: 373.30347pt x 201.63579pt.
-<Figures/Figures/esp32_schematic.pdf, id=1292, 407.90993pt x 442.54335pt>
+<Figures/Figures/esp32_schematic.pdf, id=1323, 407.90993pt x 442.54335pt>
 File: Figures/Figures/esp32_schematic.pdf Graphic file (type pdf)
 <use Figures/Figures/esp32_schematic.pdf>
 Package pdftex.def Info: Figures/Figures/esp32_schematic.pdf  used on input lin
-e 16.
+e 17.
 (pdftex.def)             Requested size: 373.30347pt x 404.99747pt.
- [64
+ [69
 
  <./Figures/Figures/electrical_schematic.pdf>]
-<Figures/Figures/circuit_implementation.png, id=1318, 872.50969pt x 588.69937pt
+<Figures/Figures/circuit_implementation.png, id=1349, 872.50969pt x 588.69937pt
 >
 File: Figures/Figures/circuit_implementation.png Graphic file (type png)
 <use Figures/Figures/circuit_implementation.png>
 Package pdftex.def Info: Figures/Figures/circuit_implementation.png  used on in
-put line 23.
+put line 24.
 (pdftex.def)             Requested size: 373.30347pt x 251.86922pt.
 
-[65 <./Figures/Figures/esp32_schematic.pdf>]
+[70 <./Figures/Figures/esp32_schematic.pdf>]
 File: images/Proteus_Full_Circuit.PNG Graphic file (type png)
 <use images/Proteus_Full_Circuit.PNG>
-Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 30
+Package pdftex.def Info: images/Proteus_Full_Circuit.PNG  used on input line 31
 .
 (pdftex.def)             Requested size: 418.82372pt x 330.44557pt.
- [66 <./Figures/Figures/circuit_implementation.png>]
-<images/coffee_Images/coffee_Timeplan.jpeg, id=1366, 916.42375pt x 513.92pt>
+ [71 <./Figures/Figures/circuit_implementation.png>]
+<images/coffee_Images/coffee_Timeplan.jpeg, id=1397, 916.42375pt x 513.92pt>
 File: images/coffee_Images/coffee_Timeplan.jpeg Graphic file (type jpg)
 <use images/coffee_Images/coffee_Timeplan.jpeg>
 Package pdftex.def Info: images/coffee_Images/coffee_Timeplan.jpeg  used on inp
-ut line 40.
+ut line 41.
 (pdftex.def)             Requested size: 432.48048pt x 242.53049pt.
- [67]
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+ [72]
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 Arducam
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 \OT1/cmr/m/n/10 OV9281 Global
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 Pneumatic air
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 Prestige In-dus-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 DC vi-brat-ing
  []
 
 
-Overfull \hbox (2.61388pt too wide) in paragraph at lines 68--68
+Overfull \hbox (2.61388pt too wide) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 Electromechanical
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 6m Mild steel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 \OT1/cmr/m/n/10 struc-tural sec-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 Local Hard-ware
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 Local Hard-ware
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 1000$\OMS/cmsy/m/n/10 ^^B$\OT1/cmr/m/n/10 500$\OMS/cmsy/m/n/
 10 ^^B$\OT1/cmr/m/n/10 2mm
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 69--69
 []|\OT1/cmr/m/n/10 Local Hard-ware
  []
 
-[68 <./images/coffee_Images/coffee_Timeplan.jpeg>]
-<context/Old_F1_Curve_.png, id=1376, 650.43pt x 433.62pt>
+[73 <./images/coffee_Images/coffee_Timeplan.jpeg>]
+<context/Old_F1_Curve_.png, id=1406, 650.43pt x 433.62pt>
 File: context/Old_F1_Curve_.png Graphic file (type png)
 <use context/Old_F1_Curve_.png>
-Package pdftex.def Info: context/Old_F1_Curve_.png  used on input line 76.
+Package pdftex.def Info: context/Old_F1_Curve_.png  used on input line 77.
 (pdftex.def)             Requested size: 373.30347pt x 248.87302pt.
- [69]
+ [74]
 File: context/Old_val_batch2_labels.jpg Graphic file (type jpg)
 <use context/Old_val_batch2_labels.jpg>
 Package pdftex.def Info: context/Old_val_batch2_labels.jpg  used on input line 
-83.
+84.
 (pdftex.def)             Requested size: 373.30347pt x 373.28822pt.
- [70 <./context/Old_F1_Curve_.png>]
-<images/coffee_Images/with_title_blocks/bottom_plate.JPG, id=1387, 325.215pt x 
+ [75 <./context/Old_F1_Curve_.png>]
+<images/coffee_Images/with_title_blocks/bottom_plate.JPG, id=1418, 325.215pt x 
 475.7775pt>
 File: images/coffee_Images/with_title_blocks/bottom_plate.JPG Graphic file (typ
 e jpg)
 <use images/coffee_Images/with_title_blocks/bottom_plate.JPG>
 Package pdftex.def Info: images/coffee_Images/with_title_blocks/bottom_plate.JP
-G  used on input line 95.
+G  used on input line 96.
 (pdftex.def)             Requested size: 418.82372pt x 612.76819pt.
- [71]
+ [76]
 Overfull \vbox (23.51817pt too high) has occurred while \output is active []
 
 
-[72 <./images/coffee_Images/with_title_blocks/bottom_plate.JPG>]
+[77 <./images/coffee_Images/with_title_blocks/bottom_plate.JPG>]
 File: images/coffee_Images/chute.JPG Graphic file (type jpg)
 <use images/coffee_Images/chute.JPG>
-Package pdftex.def Info: images/coffee_Images/chute.JPG  used on input line 102
+Package pdftex.def Info: images/coffee_Images/chute.JPG  used on input line 103
 .
 (pdftex.def)             Requested size: 418.82372pt x 262.59549pt.
-<images/coffee_Images/with_title_blocks/chute_bracket.JPG, id=1396, 343.2825pt 
+<images/coffee_Images/with_title_blocks/chute_bracket.JPG, id=1427, 343.2825pt 
 x 479.54156pt>
 File: images/coffee_Images/with_title_blocks/chute_bracket.JPG Graphic file (ty
 pe jpg)
 <use images/coffee_Images/with_title_blocks/chute_bracket.JPG>
 Package pdftex.def Info: images/coffee_Images/with_title_blocks/chute_bracket.J
-PG  used on input line 109.
+PG  used on input line 110.
 (pdftex.def)             Requested size: 418.82372pt x 585.0618pt.
- [73]
+ [78]
 File: images/coffee_Images/feeder_trough.JPG Graphic file (type jpg)
 <use images/coffee_Images/feeder_trough.JPG>
 Package pdftex.def Info: images/coffee_Images/feeder_trough.JPG  used on input 
-line 116.
+line 117.
 (pdftex.def)             Requested size: 418.82372pt x 267.57893pt.
- [74 <./images/coffee_Images/with_title_blocks/chute_bracket.JPG>]
-<images/coffee_Images/hopper.JPG, id=1406, 656.4525pt x 404.26031pt>
+ [79 <./images/coffee_Images/with_title_blocks/chute_bracket.JPG>]
+<images/coffee_Images/hopper.JPG, id=1436, 656.4525pt x 404.26031pt>
 File: images/coffee_Images/hopper.JPG Graphic file (type jpg)
 <use images/coffee_Images/hopper.JPG>
 Package pdftex.def Info: images/coffee_Images/hopper.JPG  used on input line 12
-3.
+4.
 (pdftex.def)             Requested size: 418.82372pt x 257.92381pt.
-) [75 <./images/coffee_Images/hopper.JPG>] (Interim_Report_Main.aux)
+) [80 <./images/coffee_Images/hopper.JPG>] (Interim_Report_Main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
 Package rerunfilecheck Info: File `Interim_Report_Main.out' has not changed.
-(rerunfilecheck)             Checksum: BC6727579D0BB3D724FE5AA137C9B907;14162.
+(rerunfilecheck)             Checksum: 7D22569E7AFC3F7BCD9B6A71035E62C9;14422.
  ) 
 Here is how much of TeX's memory you used:
- 29423 strings out of 467870
- 584417 string characters out of 5418838
- 982839 words of memory out of 5000000
- 57482 multiletter control sequences out of 15000+600000
+ 29458 strings out of 467870
+ 585620 string characters out of 5418838
+ 981132 words of memory out of 5000000
+ 57508 multiletter control sequences out of 15000+600000
  640240 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,131p,814b,946s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1817,9 +1848,9 @@ ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/use
 r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/U
 sers/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.p
 fb>
-Output written on Interim_Report_Main.pdf (87 pages, 4805733 bytes).
+Output written on Interim_Report_Main.pdf (91 pages, 4871108 bytes).
 PDF statistics:
- 1547 PDF objects out of 1728 (max. 8388607)
- 291 named destinations out of 1000 (max. 500000)
- 799 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1579 PDF objects out of 1728 (max. 8388607)
+ 300 named destinations out of 1000 (max. 500000)
+ 829 words of extra memory for PDF output out of 10000 (max. 10000000)
 

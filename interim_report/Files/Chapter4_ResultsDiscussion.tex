@@ -11,6 +11,29 @@ This chapter presents the results and current status of work completed during th
 
 The existing sorting machine has three documented limitations: motion blur from a rolling-shutter camera at operational chute speed, high end-to-end pipeline latency from a single-threaded inference pipeline on an older Raspberry Pi platform, and classification inaccuracies at the semi-ripe/ripe boundary in the original four-class model. These limitations motivate the hardware and software improvements described in the following sections. Quantitative baseline measurements will be conducted when the improved physical system is assembled and tested.
 
+\subsubsection{Design Drawings and Assembly Outputs}
+
+Figure~\ref{fig:design_drawings} presents representative mechanical design drawings used
+for re-fabrication, showing the frame and chute geometry with title blocks and
+dimensions. These drawings provide the structural reference for fabrication and
+assembly alignment.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{with_title_blocks/main_Frame.JPG}
+    \caption{Main frame design drawing}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{with_title_blocks/chute.JPG}
+    \caption{Chute design drawing}
+  \end{subfigure}
+  \caption{Mechanical design drawings used for fabrication and assembly alignment}
+  \label{fig:design_drawings}
+\end{figure}
+
 % ---------------------------------------------------------------
 \subsection{Sorting Mechanism Improvements}
 \label{subsec:obj2results}

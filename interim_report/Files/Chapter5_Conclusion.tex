@@ -16,15 +16,23 @@ Software development is advancing: training, evaluation, and inference scripts h
 % ---------------------------------------------------------------
 \subsection{Future Work}
 
-The following tasks remain to complete the project by the final submission deadline:
+Future work will focus on research directions that extend the current prototype and
+improve real-world robustness:
 
 \begin{enumerate}
-  \item \textbf{Model optimisation:} Export the trained YOLOv11n model to ONNX / TFLite format and benchmark inference speed on the Raspberry Pi~4. Apply quantisation if necessary to achieve $<100$\,ms per frame.
-  \item \textbf{Centroid tracking integration:} Implement a lightweight centroid tracker to associate detections across frames and calculate berry position on the chute relative to the ejection zone.
-  \item \textbf{UART communication protocol:} Finalise the Pi $\leftrightarrow$ ESP32 messaging protocol for solenoid trigger commands, including robust error handling and retransmission logic.
-  \item \textbf{Physical integration:} Mount the Pi Camera above the inspection chute, calibrate feed-speed-to-timing offset, and wire the solenoid driver circuits.
-  \item \textbf{Throughput benchmarking:} Measure berries per minute at several feed rates and identify the optimal operating point.
-  \item \textbf{Documentation and final report:} Write up final results, update design drawings, and compile the complete project report.
+  \item \textbf{Field validation and robustness:} Evaluate performance under variable
+    lighting, berry varieties, and contamination levels to quantify generalisation
+    beyond the current dataset.
+  \item \textbf{Dataset expansion and domain adaptation:} Collect locally captured
+    images, add hard-negative samples, and study domain-adaptation techniques to
+    reduce accuracy drop under new farm conditions.
+  \item \textbf{Closed-loop timing calibration:} Develop an adaptive timing model that
+    updates ejection offsets in real time as feed rate and berry velocity change.
+  \item \textbf{Multi-object tracking at high throughput:} Investigate improved tracking
+    and data-association methods to maintain stable IDs when multiple berries are
+    present in the imaging zone.
+  \item \textbf{Cost and power optimisation:} Compare alternative SBCs or accelerators
+    (e.g., NPUs) and quantify energy-per-berry to guide scalable deployment.
 \end{enumerate}
 
 % ---------------------------------------------------------------

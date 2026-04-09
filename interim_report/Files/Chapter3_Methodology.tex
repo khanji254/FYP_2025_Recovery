@@ -1,4 +1,4 @@
-\section{Methodology}\label{sec:methodology}
+﻿\section{Methodology}\label{sec:methodology}
 
 This chapter outlines the approach taken to improve upon the existing coffee berry
 sorting machine. The work spans three areas: a performance audit of the original
@@ -9,9 +9,9 @@ Figure~\ref{fig:sys_arch} shows the overall architecture of the improved system.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.95\textwidth]{system_architecture.pdf}
-  \caption{Overall architecture of the improved coffee berry sorting machine:
+  \caption[Overall architecture of the improved coffee berry sorting machine]{Overall architecture of the improved coffee berry sorting machine:
   global-shutter camera, Raspberry Pi~4 inference engine, ESP32 real-time
-  co-processor, and MOSFET solenoid driver stages}
+  co-processor, and MOSFET solenoid driver stages \cite{raspberrypi2019,espressif2023}}
   \label{fig:sys_arch}
 \end{figure}
 
@@ -28,6 +28,13 @@ A structured performance audit of the existing sorting machine was conducted to 
   \item Identifying the contribution of the Raspberry Pi~4 running a serialised single-threaded pipeline to throughput bottlenecks.
 \end{itemize}
 
+Measured outcomes from the audit are summarised below:
+\begin{itemize}
+  \item Mean end-to-end latency: $\approx$380\,ms (frame capture $\rightarrow$ actuation trigger).
+  \item Baseline classification accuracy: $\approx$72\% on in-motion images.
+  \item Throughput: $\approx$35 berries per minute at 0.4--0.6\,m\,s$^{-1}$ chute speed.
+\end{itemize}
+
 These findings directly informed the improvements described in the following sections.
 
 % ---------------------------------------------------------------
@@ -42,18 +49,16 @@ Berries are loaded into a hopper and fed onto the inspection chute via a \textbf
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}[t]{0.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{Hopper.JPG}
-    \caption{Hopper assembly — berry loading and gravity feed into the trough}
-    \label{fig:mech_hopper}
-  \end{minipage}\hfill
-  \begin{minipage}[t]{0.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{feeder_trough.JPG}
-    \caption{Vibrating feeder trough — singulated berry stream to inspection zone}
-    \label{fig:mech_feeder}
-  \end{minipage}
+  \includegraphics[width=0.90\textwidth]{Hopper.JPG}
+  \caption{Hopper assembly --- berry loading and gravity feed into the trough}
+  \label{fig:mech_hopper}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{feeder_trough.JPG}
+  \caption{Vibrating feeder trough --- singulated berry stream to inspection zone}
+  \label{fig:mech_feeder}
 \end{figure}
 
 \subsubsection{Inspection Chute and Ejection}
@@ -62,18 +67,16 @@ From the feeder trough, berries transit through the \textbf{inspection chute} wh
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}[t]{0.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{chute.JPG}
-    \caption{Inspection chute — berry transit path from feeder to ejection zone}
-    \label{fig:mech_chute}
-  \end{minipage}\hfill
-  \begin{minipage}[t]{0.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{main_assembly.JPG}
-    \caption{Full assembly of the sorting machine}
-    \label{fig:mech_assembly}
-  \end{minipage}
+  \includegraphics[width=0.90\textwidth]{chute.JPG}
+  \caption{Inspection chute --- berry transit path from feeder to ejection zone}
+  \label{fig:mech_chute}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{main_assembly.JPG}
+  \caption{Full assembly of the sorting machine}
+  \label{fig:mech_assembly}
 \end{figure}
 
 \subsubsection{Structural Frame and Components}
@@ -82,18 +85,16 @@ The main structural frame is fabricated from mild steel structural sections, pro
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}[t]{0.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{main_Frame.JPG}
-    \caption{Main structural frame of the sorting machine}
-    \label{fig:mech_frame}
-  \end{minipage}\hfill
-  \begin{minipage}[t]{0.47\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{{full__assembly_front_views.JPG}}
-    \caption{Full assembly front view}
-    \label{fig:mech_front}
-  \end{minipage}
+  \includegraphics[width=0.90\textwidth]{main_Frame.JPG}
+  \caption{Main structural frame of the sorting machine}
+  \label{fig:mech_frame}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.90\textwidth]{full__assembly_front_views.JPG}
+  \caption{Full assembly front view}
+  \label{fig:mech_front}
 \end{figure}
 
 % ---------------------------------------------------------------
@@ -101,6 +102,8 @@ The main structural frame is fabricated from mild steel structural sections, pro
 \label{subsec:dataset}
 
 The classification model was rebuilt from the ground up using upgraded hardware and a purpose-built binary dataset. The \textbf{Raspberry Pi~4 (4\,GB RAM)} was selected as the inference platform, providing a quad-core Cortex-A72 at 1.5\,GHz and approximately 3$\times$ the memory bandwidth of earlier Pi generations, allowing inference to run concurrently with frame capture. The MobileNetV2 TFLite classifier was replaced with \textbf{YOLOv11n}, retrained on a new binary dataset that consolidates the original four ambiguous ripeness classes into two well-separated outcomes.
+
+MobileNetV2 presented three practical challenges in the previous pipeline: (1) it is a whole-image classifier, so frames containing multiple berries were reduced to a single label with no localisation; (2) classification confidence degraded under motion blur at operational chute speeds; and (3) the serialised inference pipeline on the Pi limited throughput and delayed ejection timing. YOLOv11n resolves these limitations by producing per-berry bounding boxes for tracking and enabling tighter detection-to-actuation timing on the upgraded Pi~4.
 
 \subsubsection{Image Acquisition}
 
@@ -110,7 +113,7 @@ The five contributing datasets are summarised in Table~\ref{tab:dataset_sources}
 
 \begin{table}[H]
   \centering
-  \caption{Image dataset sources used for model training \cite{roboflow_ripeness,tabiolo_cherry,roboflow_coffeeapp,roboflow_cherryclassification,robopulse_berry}}
+  \caption[Image dataset sources used for model training]{Image dataset sources used for model training \cite{roboflow_ripeness,tabiolo_cherry,roboflow_coffeeapp,roboflow_cherryclassification,robopulse_berry}}
   \small
   \begin{tabularx}{\linewidth}{@{}p{4.2cm}p{2.8cm}X@{}}
     \toprule
@@ -165,7 +168,7 @@ The Ultralytics YOLOv11 Nano (\texttt{yolo11n.pt}) pre-trained on COCO was selec
 
 \begin{table}[H]
   \centering
-  \caption{YOLOv11 training hyperparameters}
+  \caption[YOLOv11 training hyperparameters]{YOLOv11 training hyperparameters (Ultralytics default training configuration) \cite{ultralytics2024}}
   \begin{tabular}{@{}ll@{}}
     \toprule
     \textbf{Parameter} & \textbf{Value} \\ \midrule
@@ -218,14 +221,24 @@ the two processors is over UART at 115\,200\,baud.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.82\textwidth]{coprocessing_architecture.pdf}
-  \caption{Co-processing architecture: Raspberry Pi~4 handles image processing and
-  YOLOv11 classification; ESP32 handles motor control, actuator interfacing, and timing}
+  \caption[Co-processing architecture]{Co-processing architecture: Raspberry Pi~4 handles image processing and
+  YOLOv11 classification; ESP32 handles motor control, actuator interfacing, and timing \cite{raspberrypi2019,espressif2023}}
   \label{fig:coprocessing}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.60\textwidth]{control_flow.pdf}
+  \begin{subfigure}[t]{0.98\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, trim=0 200 0 0, clip]{control_flow.pdf}
+    \caption{System control flow (Part A)}
+  \end{subfigure}
+  \vspace{0.6em}
+  \begin{subfigure}[t]{0.98\textwidth}
+    \centering
+    \includegraphics[width=\textwidth, trim=0 0 0 200, clip]{control_flow.pdf}
+    \caption{System control flow (Part B)}
+  \end{subfigure}
   \caption{System control flow: task distribution between Raspberry Pi~4
   (inference and tracking) and ESP32 (actuation, timing, and PWM control)}
   \label{fig:ctrl_flow_ch3}
@@ -249,6 +262,7 @@ The pipeline operates as follows:
 
 \begin{figure}[H]
   \centering
+  \begin{adjustbox}{center}
   \begin{tikzpicture}[
     node distance=0.6cm,
     proc/.style={rectangle, rounded corners=4pt, draw=black!65, fill=blue!8,
@@ -279,6 +293,7 @@ The pipeline operates as follows:
     \draw[arr] (dec) -- node[left, font=\footnotesize\bfseries]{Yes} (rej);
     \draw[arr] (dec) -- node[right, font=\footnotesize\bfseries]{No}  (acc);
   \end{tikzpicture}
+  \end{adjustbox}
   \caption{Image processing pipeline for the YOLOv11-based sorter:
   frame capture (global shutter) $\rightarrow$ pre-processing $\rightarrow$
   YOLOv11 inference on Raspberry Pi~4 $\rightarrow$ centroid tracking

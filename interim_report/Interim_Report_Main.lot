@@ -1,10 +1,10 @@
-\contentsline {table}{\numberline {2.1}{\ignorespaces Literature gaps and corresponding improvements in this project}}{20}{table.caption.16}%
-\contentsline {table}{\numberline {3.1}{\ignorespaces Image dataset sources used for model training \cite {roboflow_ripeness,tabiolo_cherry,roboflow_coffeeapp,roboflow_cherryclassification,robopulse_berry}}}{27}{table.caption.21}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Binary coffee berry classification scheme}}{28}{table.caption.22}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces YOLOv11 training hyperparameters}}{29}{table.caption.23}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Raspberry Pi, ESP32, and Peripheral Wiring Assignment}}{36}{table.caption.28}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces BJT (PN2222A) vs.\ Logic-Level MOSFET (IRLZ44N) switching comparison}}{37}{table.caption.29}%
-\contentsline {table}{\numberline {4.1}{\ignorespaces Dataset split summary (2{,}000-image binary dataset)}}{48}{table.caption.37}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces YOLOv11n evaluation results on test split}}{51}{table.caption.42}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Progress summary against specific objectives}}{57}{table.caption.47}%
-\contentsline {table}{\numberline {.1}{\ignorespaces Project Budget --- Modification and Improvement of a Coffee Berry Sorting Machine}}{69}{table.caption.57}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Literature gaps and corresponding improvements in this project}}{21}{table.caption.16}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Image dataset sources used for model training}}{31}{table.caption.24}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Binary coffee berry classification scheme}}{32}{table.caption.25}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces YOLOv11 training hyperparameters}}{33}{table.caption.26}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Raspberry Pi, ESP32, and Peripheral Wiring Assignment}}{40}{table.caption.31}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces BJT (PN2222A) vs.\ Logic-Level MOSFET (IRLZ44N) switching comparison}}{41}{table.caption.32}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Dataset split summary (2{,}000-image binary dataset)}}{53}{table.caption.41}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces YOLOv11n evaluation results on test split}}{56}{table.caption.46}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Progress summary against specific objectives}}{62}{table.caption.51}%
+\contentsline {table}{\numberline {.1}{\ignorespaces Project Budget --- Modification and Improvement of a Coffee Berry Sorting Machine}}{74}{table.caption.61}%

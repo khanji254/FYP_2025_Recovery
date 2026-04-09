@@ -20,85 +20,8 @@ addressed by this work.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.70\textwidth]{Ripe.jpeg}
-  \caption{Ripe coffee berries showing colour variation from green to deep red (Source: \cite{mugo2017})}
+  \caption[Ripe coffee berries showing colour variation from green to deep red]{Ripe coffee berries showing colour variation from green to deep red \cite{mugo2017}}
   \label{fig:ripe_berries}
-\end{figure}
-
-% ---------------------------------------------------------------
-\subsection{Previous Works}
-\label{subsec:ref_project}
-
-The foundation of this work is a fifth-year mechatronics engineering project
-(FYP~22-22) at JKUAT that designed and built an automated coffee berry sorting
-machine \cite{mugo2017}. That project established the core mechanical and electronic
-architecture on which the current work builds, and its documented performance
-shortcomings directly motivate the improvements proposed here.
-
-\subsubsection{System Architecture of the Reference Machine}
-
-The reference system integrated four main subsystems:
-\begin{enumerate}
-  \item \textbf{Mechanical handling:} A vibrating eccentric-motor tray singulated
-        berries from a hopper onto an inclined chute. Gravity and vibration aligned
-        berries into a near-single-file stream before the imaging zone.
-  \item \textbf{Image acquisition:} A Raspberry Pi Camera Module V2 (rolling-shutter,
-        8\,MP Sony IMX219) mounted above the chute captured frames at fixed intervals.
-  \item \textbf{Classification model:} The reference project initially deployed a
-        MobileNetV2-based model \cite{sandler2018,howard2017} for per-frame ripeness
-        classification, exporting it as a TensorFlow Lite INT8 quantised file. In a
-        subsequent revision, the team retrained using \textbf{YOLOv11n}
-        \cite{ultralytics2024} to gain bounding-box localisation per berry. Despite
-        the model upgrade to YOLOv11n, the pipeline remained serialised on a single
-        Raspberry Pi~3B+, so the inference-latency bottleneck persisted.
-  \item \textbf{Actuation:} Compressed-air solenoid jets, triggered through the
-        Pi's GPIO pins via PN2222A BJT drivers, deflected reject-class berries into
-        separate chutes; accepted berries continued to the accept bin under gravity.
-\end{enumerate}
-
-The mechanical chute and vibrating feeder proved robust and reliable in field
-testing \cite{mugo2017}. This project retains that mechanical subsystem unchanged,
-focusing improvements exclusively on the electronics, vision pipeline, and
-software layers.
-
-\subsubsection{Identified Limitations of the Reference Machine}
-
-Post-build evaluation of the reference machine identified three critical performance
-bottlenecks \cite{mugo2017}:
-
-\begin{enumerate}
-  \item \textbf{Motion blur:} The rolling-shutter sensor read out rows sequentially
-        over a $\sim$30\,ms window. At operating chute speeds of
-        0.4--0.6\,m\,s$^{-1}$, berries translated 12--18\,mm per frame, producing
-        visible smearing that degraded classification confidence, particularly at
-        the semi-ripe/ripe colour boundary \cite{ramos2017}.
-  \item \textbf{Processing latency:} Running YOLOv11n inference, GPIO triggering,
-        and camera I/O on the Raspberry Pi~3B+ in a serialised single-threaded
-        pipeline produced end-to-end latency of 280--400\,ms per berry, limiting
-        practical throughput to approximately 35 berries per minute---far below the
-        commercial target of $>$150 per minute \cite{mugo2017}.
-  \item \textbf{Fine-grained class confusion:} The four-class model (unripe,
-        semi-ripe, ripe, overripe) struggled with the visually similar semi-ripe and
-        ripe classes. This confusion produced mis-ejections: commercially acceptable
-        red berries were rejected and semi-ripe berries accepted into the output
-        stream, reducing economic yield \cite{kumar2010,blasco2003}.
-\end{enumerate}
-
-Figures~\ref{fig:old_model_predictions} and~\ref{fig:old_model_f1} illustrate
-the performance characteristics of the reference YOLOv11n model operating in
-four-class mode, showing the persistent classification confusion across categories.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.85\textwidth]{Old_val_batch2_labels.jpg}
-  \caption{Reference model validation predictions showing four-class classification (unripe, semi-ripe, ripe, overripe) with visible confusion between visually similar categories}
-  \label{fig:old_model_predictions}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.75\textwidth]{Previous_Model_F1__score.PNG}
-  \caption{Reference model F1-score performance across the four ripeness categories, highlighting the classification difficulty at the semi-ripe/ripe boundary}
-  \label{fig:old_model_f1}
 \end{figure}
 
 % ---------------------------------------------------------------
@@ -131,7 +54,7 @@ challenges of motion blur, latency, and fine-grained class confusion documented 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{parts_list.JPG}
-  \caption{Fully fabricated mechanical assembly from the reference implementation \cite{mugo2017}, showing integrated hopper, vibrating feeder, chute, and frame structure. This mechanical subsystem forms the foundation upon which the improved imaging and control systems are built.}
+  \caption[Fully fabricated mechanical assembly from the reference implementation]{Fully fabricated mechanical assembly from the reference implementation \cite{mugo2017}, showing integrated hopper, vibrating feeder, chute, and frame structure. This mechanical subsystem forms the foundation upon which the improved imaging and control systems are built.}
   \label{fig:fabricated_assembly}
 \end{figure}
 
@@ -152,7 +75,7 @@ and tight timing constraints \cite{mahmood2019}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.78\textwidth, trim=10 10 10 10, clip]{Air_Ejector_With.out_title_BlockPNG.PNG}
-  \caption{CAD drawing of the air-ejector nozzle assembly from the reference sorting
+  \caption[CAD drawing of the air-ejector nozzle assembly]{CAD drawing of the air-ejector nozzle assembly from the reference sorting
   machine showing solenoid valve, nozzle orientation, and berry deflection trajectory
   \cite{mugo2017}}
   \label{fig:air_ejector_cad}
@@ -329,7 +252,7 @@ Xtensa LX6 microcontroller with native UART, SPI, I\textsuperscript{2}C, and 16
 configurable PWM channels. Its deterministic ISR latency ($<$5\,\textmu{}s) and
 hardware-timer-based solenoid firing eliminate the scheduling jitter inherent in
 Linux-based Pi GPIO control. This is essential for accurate berry ejection timing
-at conveyor speeds above 0.3\,m\,s$^{-1}$.
+at berry supply speeds above 0.3\,m\,s$^{-1}$.
 
 The proposed co-processing architecture assigns the Pi~4 to neural-network inference
 and tracking, while the ESP32 exclusively handles solenoid, motor, and compressor
@@ -340,16 +263,93 @@ decision.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{coprocessing_architecture.pdf}
-  \caption{Proposed co-processing architecture: Raspberry Pi~4 handles inference;
-           ESP32-WROOM-32 manages all hard real-time actuation via UART.}
+  \caption[Proposed co-processing architecture]{Proposed co-processing architecture: Raspberry Pi~4 handles inference;
+       ESP32-WROOM-32 manages all hard real-time actuation via UART \cite{raspberrypi2019,espressif2023}.}
   \label{fig:coprocessing_arch}
+\end{figure}
+
+% ---------------------------------------------------------------
+\subsection{Previous Works}
+\label{subsec:ref_project}
+
+The foundation of this work is a fifth-year mechatronics engineering project
+(FYP~22-22) at JKUAT that designed and built an automated coffee berry sorting
+machine \cite{mugo2017}. That project established the core mechanical and electronic
+architecture on which the current work builds, and its documented performance
+shortcomings directly motivate the improvements proposed here.
+
+\subsubsection{System Architecture of the Reference Machine}
+
+The reference system integrated four main subsystems:
+\begin{enumerate}
+  \item \textbf{Mechanical handling:} A vibrating eccentric-motor tray singulated
+    berries from a hopper onto an inclined chute. Gravity and vibration aligned
+    berries into a near-single-file stream before the imaging zone.
+  \item \textbf{Image acquisition:} A Raspberry Pi Camera Module V2 (rolling-shutter,
+    8\,MP Sony IMX219) mounted above the chute captured frames at fixed intervals.
+  \item \textbf{Classification model:} The reference project initially deployed a
+    MobileNetV2-based model \cite{sandler2018,howard2017} for per-frame ripeness
+    classification, exporting it as a TensorFlow Lite INT8 quantised file. In a
+    subsequent revision, the team retrained using \textbf{YOLOv11n}
+    \cite{ultralytics2024} to gain bounding-box localisation per berry. Despite
+    the model upgrade to YOLOv11n, the pipeline remained serialised on a single
+    Raspberry Pi~3B+, so the inference-latency bottleneck persisted.
+  \item \textbf{Actuation:} Compressed-air solenoid jets, triggered through the
+    Pi's GPIO pins via PN2222A BJT drivers, deflected reject-class berries into
+    separate chutes; accepted berries continued to the accept bin under gravity.
+\end{enumerate}
+
+The mechanical chute and vibrating feeder proved robust and reliable in field
+testing \cite{mugo2017}. This project retains that mechanical subsystem unchanged,
+focusing improvements exclusively on the electronics, vision pipeline, and
+software layers.
+
+\subsubsection{Identified Limitations of the Reference Machine}
+
+Post-build evaluation of the reference machine identified three critical performance
+bottlenecks \cite{mugo2017}:
+
+\begin{enumerate}
+  \item \textbf{Motion blur:} The rolling-shutter sensor read out rows sequentially
+    over a $\sim$30\,ms window. At operating chute speeds of
+    0.4--0.6\,m\,s$^{-1}$, berries translated 12--18\,mm per frame, producing
+    visible smearing that degraded classification confidence, particularly at
+    the semi-ripe/ripe colour boundary \cite{ramos2017}.
+  \item \textbf{Processing latency:} Running YOLOv11n inference, GPIO triggering,
+    and camera I/O on the Raspberry Pi~3B+ in a serialised single-threaded
+    pipeline produced end-to-end latency of 280--400\,ms per berry, limiting
+    practical throughput to approximately 35 berries per minute---far below the
+    commercial target of $>$150 per minute \cite{mugo2017}.
+  \item \textbf{Fine-grained class confusion:} The four-class model (unripe,
+    semi-ripe, ripe, overripe) struggled with the visually similar semi-ripe and
+    ripe classes. This confusion produced mis-ejections: commercially acceptable
+    red berries were rejected and semi-ripe berries accepted into the output
+    stream, reducing economic yield \cite{kumar2010,blasco2003}.
+\end{enumerate}
+
+Figures~\ref{fig:old_model_predictions} and~\ref{fig:old_model_f1} illustrate
+the performance characteristics of the reference YOLOv11n model operating in
+four-class mode, showing the persistent classification confusion across categories.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{Old_val_batch2_labels.jpg}
+  \caption{Reference model validation predictions showing four-class classification (unripe, semi-ripe, ripe, overripe) with visible confusion between visually similar categories}
+  \label{fig:old_model_predictions}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Previous_Model_F1__score.PNG}
+  \caption{Reference model F1-score performance across the four ripeness categories, highlighting the classification difficulty at the semi-ripe/ripe boundary}
+  \label{fig:old_model_f1}
 \end{figure}
 
 % ---------------------------------------------------------------
 \subsection{Summary of Literature Gaps Addressed by This Project}
 \label{subsec:gaps}
 
-Table~\ref{tab:gaps} summarises the three specific technical gaps identified in the
+Table~\ref{tab:gaps} summarises four specific technical gaps identified in the
 literature and the previous project, and maps each to the corresponding improvement
 proposed in this work.
 
@@ -368,6 +368,10 @@ proposed in this work.
     High end-to-end latency (280--400\,ms); throughput limited to $\sim$35 berries/min &
       Pi~4 runs inference, GPIO, and camera I/O in a serialised pipeline &
       Pi~4 + ESP32 co-processor \cite{espressif2023}: Pi handles inference; ESP32 handles hard real-time solenoid timing; target $<$100\,ms \\
+    \addlinespace
+    Limited dataset diversity and poor generalisation to new farms &
+      Training data captured under narrow lighting and variety conditions; model overfits to a single domain &
+      Aggregate multi-source datasets (Roboflow) and apply augmentation to improve robustness across lighting and berry varieties \\
     \addlinespace
     Fine-grained class confusion (semi-ripe/ripe boundary) reduces economic yield &
       Four-class model amplifies label ambiguity at visually similar boundaries &
