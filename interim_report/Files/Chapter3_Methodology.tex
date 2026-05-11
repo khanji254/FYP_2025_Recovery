@@ -5,25 +5,29 @@ This chapter presents the \textit{what, why, and how} of the N4 recovery-system 
 
 \subsection{Design Approach and Subsystem Decomposition}
 
-The project follows a design-build-test iteration sequence adapted from the proposal and refined for interim implementation:
+\subsection{Methodology structure}
+
+The N4 recovery work follows an iterative design–build–test cycle. For clarity and traceability this chapter separates the lifecycle into two orthogonal views: (A) the project phases (linear progression through development and verification) and (B) the implementation modules (concurrent subsystem workstreams).
+
+\paragraph{Project phases}
+1. Requirements definition — derive subsystem requirements from mission constraints and safety limits.
+2. Concept generation — produce candidate mechanical, electrical and software solutions.
+3. Concept selection — evaluate candidates against performance, manufacturability and safety.
+4. Design and build — produce CAD, schematics and prototype hardware; capture PCB/EAGLE/EasyEDA sources.
+5. Firmware implementation — develop modular ESP32 firmware and inter-module interfaces.
+6. Validation and testing — staged bench and system-level tests, logging, and pre‑flight checks.
+
+\paragraph{Implementation modules}
+These workstreams run in parallel across the phases above:
 \begin{enumerate}
-    \item Define subsystem-level requirements from mission constraints.
-    \item Generate candidate mechanical, electrical, and software concepts.
-    \item Select implementable concepts using performance and manufacturability criteria.
-    \item Build CAD and circuit designs for the selected concepts.
-    \item Implement embedded firmware architecture and integration interfaces.
-    \item Execute staged bench and system-level validation tests.
+  \item Telemetry and antenna strategy (XBee, beacon, ground-station),
+  \item Pyrotechnic deployment and ignition control (PWM, MOSFET drive),
+  \item Power and feedback instrumentation (ADS1115 monitoring, continuity sensing),
+  \item Mechanical containment and avionics support structure (holder, battery pack),
+  \item Embedded software and communication control (FSM, CommunicationManager).
 \end{enumerate}
 
-The methodology is organized into five implementation modules:
-\begin{enumerate}
-    \item Telemetry link and antenna strategy,
-    \item Pyrotechnic deployment and ignition control,
-    \item Power and feedback instrumentation,
-    \item Mechanical containment and avionics support structure,
-    \item Embedded software architecture and communication control.
-\end{enumerate}
-
+This structure keeps the chapter descriptive (``what we did and why'') rather than prescriptive, and maps directly to the deliverables referenced in Chapter~4 and the Appendices
 \subsection{Telemetry Module Design Methodology}
 
 \subsubsection{Telemetry Module Scope}
@@ -87,21 +91,7 @@ The N4 flight computer implements three independent communication channels manag
 
 \textbf{What is the Beacon protocol?} A beacon is a raw 802.11 management frame injected directly into the IEEE~802.11 (2.4~GHz WiFi) radio medium without establishing a conventional network association. The rocket does not connect to any access point; instead, the ESP32 radio injects custom management frames --- each carrying the telemetry CSV payload in a vendor-specific information element --- directly into the air at a user-defined interval. A ground-station ESP32 running in promiscuous (\textit{sniffer}) mode captures all frames that match the payload magic number regardless of association state, and extracts the RSSI directly from the hardware receive descriptor \cite{n4_beacon_configuration}. The return path (ground to rocket) uses ESP-NOW unicast packets, which provide confirmed delivery without requiring a broker or access point.
 
-The beacon system has been field-tested to 4~km line-of-sight using a 2.4~GHz duck antenna and inline signal amplifier on the rocket side, and a directional patch antenna with amplifier at the ground station \cite{n4_beacon_configuration}. It is employed as the \textbf{redundant research channel} --- the XBee 900~MHz link remains the primary mission telemetry path. The CommunicationManager supports automatic fallback from MQTT to beacon when WiFi connectivity is lost, and allows runtime switching between all three modes via serial, MQTT, or ESP-NOW commands \cite{n4_comm_architecture}.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{images/xbee_Data flow.jpg}
-\caption{XBee-PRO 900HP transparent UART data-flow: ESP32 serial output routes directly through the radio link to the ground station with no packet-framing overhead \cite{digikey_xbee_dataflow,xbee_manual}}
-\label{fig:selected_xbee_module}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.72\textwidth]{images/XBeeDiagram.png}
-\caption{N4 XBee telemetry architecture: flight computer UART link to ground station \cite{n4_xbee_integration,n4_comm_architecture}. Project diagram.}
-\label{fig:method_xbee_system}
-\end{figure}
+The beacon system has been field-tested to 4~km line-of-sight using a 2.4~GHz duck antenna and inline signal amplifier on the rocket side, and a directional patch antenna with amplifier at the ground station \cite{n4_beacon_configuration}. It is employed as the \textbf{redundant research channel} --- the XBee 900~MHz link remains the primary mission telemetry path. The CommunicationManager supports automatic fallback from MQTT to beacon when WiFi connectivity is lost, and allows runtime switching between all three modes via serial, MQTT, or ESP-NOW commands \cite{n4_comm_architecture}. The telemetry architecture is shown in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_method_xbee_system}).
 
 \subsubsection{Antenna Options and Selection Using Link-Budget Math}
 
@@ -130,23 +120,14 @@ The selected baseline antenna pair for current implementation is the 900~MHz duc
 
 where $d$ is the link distance in metres, $f$ is the carrier frequency in hertz, and 147.55 is the SI-unit normalisation constant derived from the $\lambda/(4\pi R)$ free-space propagation factor \cite{pozar_microwave}.
 
-Substituting the N4 target range $d = 5{,}000$~m and centre frequency $f = 915\times10^6$~Hz:
-\begin{equation}
-\mathrm{FSPL} \approx 105.66\,\mathrm{dB}
-\label{eq:fspl_value}
-\end{equation}
-
+At the N4 target range of $d = 5{,}000$~m and centre frequency of $f = 915\times10^6$~Hz, the free-space path loss is 105.66~dB, which is within the expected range for 900~MHz ISM-band communications at this distance \cite{xbee_manual}.
 Received power at the ground station is obtained from the link-budget equation \cite{pozar_microwave,xbee_manual}:
 \begin{equation}
 P_{rx}=P_{tx}+G_{tx}+G_{rx}-\mathrm{FSPL}
 \label{eq:prx}
 \end{equation}
 
-where $P_{tx}$ is the transmit power in dBm, $G_{tx}$ and $G_{rx}$ are the transmit and receive antenna gains in dBi, and FSPL is the free-space path loss calculated above (dB). The XBee-PRO 900HP rated output is $P_{tx}=+24$~dBm \cite{xbee_manual}, and both ends use duck dipole antennas with $G_{tx}=G_{rx}=2$~dBi:
-\begin{equation}
-P_{rx} = 24 + 2 + 2 - 105.66 \approx -77.66\,\mathrm{dBm}
-\label{eq:prx_value}
-\end{equation}
+where $P_{tx}$ is the transmit power in dBm, $G_{tx}$ and $G_{rx}$ are the transmit and receive antenna gains in dBi, and FSPL is the free-space path loss calculated above (dB). The XBee-PRO 900HP rated output is $P_{tx}=+24$~dBm \cite{xbee_manual}, and both ends use duck dipole antennas with $G_{tx}=G_{rx}=2$~dBi. From equation~\ref{eq:prx} the received power at the ground station, $P_{rx}$, was obtained as $-77.66$~dBm.
 
 Link margin quantifies the safety buffer above the minimum detectable signal threshold \cite{pozar_microwave}:
 \begin{equation}
@@ -154,25 +135,7 @@ Link margin quantifies the safety buffer above the minimum detectable signal thr
 \label{eq:margin}
 \end{equation}
 
-where $P_{sens}$ is the XBee-PRO 900HP rated receiver sensitivity ($-110$~dBm at 10\% packet-error rate \cite{xbee_manual}). Substituting the values above:
-\begin{equation}
-\mathrm{Margin} = -77.66 - (-110) = +32.34\,\mathrm{dB}
-\label{eq:margin_value}
-\end{equation}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.72\textwidth]{images/GCS_XBEE.png}
-\caption{XBee-equipped ground control station (GCS) configuration showing transceiver, antenna, and laptop connection \cite{autoquad_gcs_xbee}}
-\label{fig:dipole_method}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.50\textwidth]{images/donut_pattern.png}
-\caption{Dipole radiation ``donut'' pattern: omnidirectional main lobe with axis null zones \cite{pozar_microwave,arrl_antenna_book}}
-\label{fig:dipole_wave_profile}
-\end{figure}
+where $P_{sens}$ is the XBee-PRO 900HP rated receiver sensitivity ($-110$~dBm at 10\% packet-error rate \cite{xbee_manual}). Using the values above gives a link margin of $32.34$~dB, which leaves enough headroom for atmospheric loss, multipath fading, and small misalignments. The antenna pattern discussion is continued in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_dipole_wave_profile}).
 
 To mitigate dipole null effects at the ground segment, a \textbf{Bi-Quad antenna is being considered as a potential base-station alternative} for improved directional gain and better coverage across critical tracking sectors \cite{arrl_antenna_book, pozar_microwave}.
 
@@ -190,13 +153,15 @@ Key electrical/deployment design considerations are:
     \item Telemetry radio (XBee) requires hardware serial, with remapped RX/TX pins on ESP32 to preserve other interfaces.
     \item Power monitoring and chute-state sensing require additional channels beyond native MCU pin allocation, motivating ADC expansion over I$^2$C.
     \item The electronics stack must fit inside the 95~mm avionics bay and align with holder mounting geometry and rod clearances.
-    \item The deployment channel sees high-voltage transients (up to 15~V at chute lines), while BMS-limited bus operation is capped around 14~V.
+    \item The deployment channel is validated against a 16.8~V fully charged 4S LiPo input and a 14~V minimum arm threshold so the sensing and inhibit logic cover both the worst-case supply peak and the lowest safe pre-fire condition.
     \item Pyro switching must be compatible with 3.3~V logic drive and sustain current pulses without excessive heating.
 \end{itemize}
 
 \subsubsection{Protocol and Interface Option Comparison}
 
-\begin{table}[htbp]
+Table~\ref{tab:electrical_protocol_compare} compares interface options against pin, telemetry, and monitoring requirements.
+
+\begin{table}[H]
 \centering
 \caption{Electrical Interface Options for Pin-Constrained Flight Computer Integration}
 \label{tab:electrical_protocol_compare}
@@ -216,7 +181,9 @@ The selected architecture uses hardware UART for XBee telemetry and I$^2$C for A
 
 \subsubsection{Dimensional Constraints and Power Requirements}
 
-\begin{table}[htbp]
+Table~\ref{tab:electrical_constraints_power} summarizes packaging and electrical limits that bound the design.
+
+\begin{table}[H]
 \centering
 \caption{Electrical Module Constraints and Design Power Budget}
 \label{tab:electrical_constraints_power}
@@ -228,13 +195,15 @@ Avionics bay diameter envelope & 95~mm & PCB and daughter-board placements const
 PCB footprint target & up to 70~mm \(\times\) 70~mm & Allows routing margin while preserving service clearance \\
 XBee supply rail & 3.3~V (radio domain) & Requires clean low-voltage rail and UART-level compatibility \\
 Main pyro bus & 14--15~V domain & High-energy actuation path isolated from logic rail \\
-Chute line deployment potential & up to 15~V (observed), BMS-limited to \(\sim\)14~V nominal cap & Monitoring divider and ADC scaling must tolerate both cases \\ \bottomrule
+Chute line deployment potential & 16.8~V max input, 14~V minimum arm threshold & Monitoring divider and ADC scaling must tolerate the full operating window \\ \bottomrule
 \end{tabular}
 \end{table}
 
 \subsubsection{Electrical Materials List}
 
-\begin{table}[htbp]
+Table~\ref{tab:electrical_materials} lists the selected components and their roles in deployment control.
+
+\begin{table}[H]
 \centering
 \caption{Electrical and Deployment Submodule Materials}
 \label{tab:electrical_materials}
@@ -264,40 +233,31 @@ Electrical implementation follows a staged concept-to-production flow:
 
 The Fritzing layouts below document the early wiring verification stage. Final EasyEDA schematics and fabricated PCB designs are presented in Chapter~4.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.62\textwidth]{images/Base_Station_Design.jpeg}
-\caption{Base-station interconnect layout (Fritzing schematic). Project diagram.}
-\label{fig:fritzing_base}
-\end{figure}
+See Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_fritzing_base}).
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.62\textwidth]{images/Rocket_Extension_Design.jpeg}
-\caption{Rocket XBee extension wiring layout (Fritzing schematic). Project diagram.}
-\label{fig:fritzing_rocket}
-\end{figure}
+See Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_fritzing_rocket}).
 
 \subsubsection{Power-Monitoring Calculations (ADS1115)}
 
-The monitoring path uses a 47~k$\Omega$/10~k$\Omega$ voltage divider into the ADS1115 \cite{ads1115_datasheet}. A voltage divider scales an input voltage proportionally using two series resistors \cite{voltage_divider_theory}:
+This subsection describes the ADS1115 battery-monitoring and chute-state sensing design. The divider is sized for a 4S LiPo upper limit of 16.8~V and a 14~V minimum arm threshold so the monitoring and inhibit logic cover the full safe operating window.
+The monitoring path uses a 4.7~k$\Omega$/1.1~k$\Omega$ voltage divider into the ADS1115 \cite{ads1115_datasheet}. A voltage divider scales an input voltage proportionally using two series resistors \cite{voltage_divider_theory}:
 \begin{equation}
-V_{ADC}=V_{in}\cdot\frac{R_2}{R_1+R_2}=V_{in}\cdot\frac{10}{47+10}=V_{in}\cdot\frac{10}{57}
+V_{ADC}=V_{in}\cdot\frac{R_2}{R_1+R_2}=V_{in}\cdot\frac{1.1}{4.7+1.1}
 \label{eq:vadc_divider}
 \end{equation}
 
-where $V_{in}$ is the battery bus voltage to be measured, $R_1=47$~k$\Omega$ is the upper divider resistor, $R_2=10$~k$\Omega$ is the lower resistor, and $V_{ADC}$ is the scaled output voltage presented to the ADC pin.
+where $V_{in}$ is the battery bus voltage to be measured, $R_1=4.7$~k$\Omega$ is the upper divider resistor, $R_2=1.1$~k$\Omega$ is the lower resistor, and $V_{ADC}$ is the scaled output voltage presented to the ADC pin.
 
-Substituting $V_{in}=14$~V (nominal BMS-capped maximum):
+For $V_{in}=16.8$~V:
 \begin{equation}
-V_{ADC,14}=14\cdot\frac{10}{57}\approx 2.456\,\mathrm{V}
-\label{eq:vadc14}
+V_{ADC,16.8}=16.8\cdot\frac{1.1}{4.7+1.1}\approx 3.186\,\mathrm{V}
+\label{eq:vadc168}
 \end{equation}
 
-Substituting $V_{in}=15$~V (observed chute-line deployment transient):
+For $V_{in}=14$~V:
 \begin{equation}
-V_{ADC,15}=15\cdot\frac{10}{57}\approx 2.632\,\mathrm{V}
-\label{eq:vadc15}
+V_{ADC,14}=14\cdot\frac{1.1}{4.7+1.1}\approx 2.655\,\mathrm{V}
+\label{eq:vadc14}
 \end{equation}
 
 The ADS1115 is configured at a $\pm4.096$~V full-scale range (FSR) with 16-bit resolution (32{,}768 counts over the positive half-range) \cite{ads1115_datasheet}. The corresponding digital code is:
@@ -306,9 +266,9 @@ N=\frac{V_{ADC}}{4.096}\times32{,}767
 \label{eq:adc_counts}
 \end{equation}
 
-where $N$ is the 16-bit ADC output count and 32{,}767 is the maximum positive code ($2^{15}-1$). Substituting the two operating points:
+where $N$ is the 16-bit ADC output count and 32{,}767 is the maximum positive code ($2^{15}-1$). For the two design points:
 \begin{equation}
-N_{14}\approx 19{,}650 \quad (\text{at }V_{in}=14\,\mathrm{V}),\qquad N_{15}\approx 21{,}060 \quad (\text{at }V_{in}=15\,\mathrm{V})
+N_{16.8}\approx 25{,}487 \quad (\text{at }V_{in}=16.8\,\mathrm{V}),\qquad N_{14}\approx 21{,}242 \quad (\text{at }V_{in}=14\,\mathrm{V})
 \label{eq:adc_counts_values}
 \end{equation}
 
@@ -639,118 +599,18 @@ After configuration, a loopback range test confirms bidirectional packet deliver
 
 \subsubsection{Communication Manager Architecture}
 
-All three channels are coordinated by the CommunicationManager class, which selects and combines active transmission modes at runtime \cite{n4_comm_architecture}. Figure~\ref{fig:sw_comm_manager} shows the mode-selection logic and fallback flow.
+All three channels are coordinated by the CommunicationManager class, which selects and combines active transmission modes at runtime \cite{n4_comm_architecture}. The mode-selection logic and fallback flow are shown in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_comm_manager}).
 
-\begin{figure}[htbp]
-\centering
-\begin{tikzpicture}[
-  >=Latex,
-  mode/.style={draw, rectangle, rounded corners=5pt, fill=blue!10, minimum width=3.2cm,
-               minimum height=0.85cm, align=center, font=\small\bfseries, text width=3.0cm},
-  cmd/.style={draw, rectangle, rounded corners=3pt, fill=gray!12, minimum width=3.2cm,
-              minimum height=0.75cm, align=center, font=\scriptsize, text width=3.0cm},
-  rangelbl/.style={font=\scriptsize, align=center, text width=2.2cm},
-  arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
-]
-  \node[cmd] (mqtt)  {MQTT Mode\\WiFi/TCP\\$\sim$100~m range};
-  \node[cmd, right=1.8cm of mqtt]  (beacon) {Beacon Mode\\Raw 802.11\\4~km (field tested)};
-  \node[cmd, right=1.8cm of beacon](xbee)   {XBee Mode\\900~MHz UART\\5--28~km range};
-
-  \node[mode, below=1.4cm of beacon] (mgr) {Communication\\Manager\\(runtime control)};
-
-  \draw[arr] (mgr.north) -- node[left,font=\scriptsize]{auto-fallback} (mqtt.south);
-  \draw[arr] (mgr.north) -- (beacon.south);
-  \draw[arr] (mgr.north) -- (xbee.south);
-
-  \node[cmd, below=1.4cm of mgr] (fsm) {Flight FSM\\(telemetry packet source)};
-  \draw[arr] (fsm) -- node[right,font=\scriptsize]{25-field CSV} (mgr);
-
-  \node[rangelbl, right=0.5cm of xbee] {\textit{Primary recovery link}};
-  \node[rangelbl, right=0.5cm of beacon] {\textit{Redundant research channel}};
-  \node[rangelbl, right=0.5cm of mqtt] {\textit{Pad ops / ground only}};
-\end{tikzpicture}
-\caption{Communication Manager architecture: three independent physical channels selectable at runtime; XBee is the primary recovery link, Beacon is the redundant research channel \cite{n4_comm_architecture}. Project diagram.}
-\label{fig:sw_comm_manager}
-\end{figure}
+See Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_comm_manager}).
 
 \subsubsection{Firmware State Machine Architecture}
 
-The firmware is structured as a finite-state machine (FSM) executed inside the ESP32 main \texttt{loop()}, with telemetry transmission running continuously across all states via hardware serial interrupt.
-
-\begin{figure}[htbp]
-\centering
-\begin{tikzpicture}[
-  >=Latex,
-  state/.style={draw, rectangle, rounded corners=6pt, fill=gray!12, minimum width=2.0cm,
-                minimum height=0.9cm, align=center, font=\small\bfseries, text width=2.0cm},
-  lbl/.style={font=\scriptsize, align=center, text width=2.2cm},
-  arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
-]
-  \node[state] (idle)     {IDLE};
-  \node[state, right=2.0cm of idle]   (armed)   {ARMED};
-  \node[state, right=2.0cm of armed]  (flight)  {FLIGHT};
-  \node[state, below=1.8cm of flight] (apogee)  {APOGEE};
-  \node[state, left=5.8cm of apogee]  (recovery){RECOVERY};
-
-  \draw[arr] (idle)     -- node[above, font=\scriptsize, align=center]{arm cmd\\bat~$>$14~V} (armed);
-  \draw[arr] (armed)    -- node[above, font=\scriptsize, align=center]{launch\\event} (flight);
-  \draw[arr] (flight)   -- node[right, font=\scriptsize, align=center]{apogee\\detected} (apogee);
-  \draw[arr] (apogee)   -- node[above, font=\scriptsize, align=center]{altitude\\threshold} (recovery);
-  \draw[arr] (recovery.west) -- ++(-0.6,0) |- node[left, pos=0.25, font=\scriptsize]{landed/timeout} (idle.west);
-
-  \node[lbl, below=0.25cm of idle]    {\textit{PWM off}\\pre-arm checks};
-  \node[lbl, below=0.25cm of armed]   {\textit{continuity ok}\\PWM enabled};
-  \node[lbl, below=0.25cm of flight]  {10~Hz telemetry\\IMU\,+\,baro};
-  \node[lbl, below=0.25cm of apogee]  {drogue fire\\$D=0.40$};
-  \node[lbl, below=0.25cm of recovery]{main fire\\RSSI track};
-\end{tikzpicture}
-\caption{N4 flight firmware state machine: operational states, transitions, and per-state behaviour}
-\label{fig:sw_state_machine}
-\end{figure}
+The firmware is structured as a finite-state machine (FSM) executed inside the ESP32 main \texttt{loop()}, with telemetry transmission running continuously across all states via hardware serial interrupt. The full state-machine diagram is presented in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_state_machine}).
 
 \subsubsection{Pyrotechnic Deployment Software Flow}
 
-The deployment channel is driven only when the FSM reaches the APOGEE or RECOVERY state and all pre-fire checks pass. Figure~\ref{fig:sw_deploy_flow} shows the gating logic.
+The deployment channel is driven only when the FSM reaches the APOGEE or RECOVERY state and all pre-fire checks pass. See Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_deploy_flow}) for the full gating logic moved to the appendix.
 
-\begin{figure}[H]
-\centering
-\resizebox{\linewidth}{!}{%
-\begin{tikzpicture}[
-  >=Latex,
-  proc/.style={draw, rectangle, rounded corners=4pt, fill=gray!10, minimum width=6.2cm,
-               minimum height=0.72cm, align=center, font=\small, text width=6.0cm},
-  dec/.style={draw, diamond, fill=yellow!18, aspect=2.6, align=center,
-              font=\small, inner sep=1pt, text width=3.2cm},
-  term/.style={draw, rectangle, rounded corners=10pt, fill=green!14, minimum width=6.2cm,
-               minimum height=0.72cm, align=center, font=\small, text width=6.0cm},
-  side/.style={draw, rectangle, rounded corners=3pt, fill=red!12, minimum width=3.8cm,
-               minimum height=0.68cm, align=center, font=\scriptsize, text width=3.6cm},
-  arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
-]
-  \node[term] (start)  {\texttt{loop()} --- read FSM state, baro, ADC};
-  \node[dec,  below=0.45cm of start]  (fsm)    {State = APOGEE\\or RECOVERY?};
-  \node[proc, below=0.55cm of fsm]    (check)  {Check: bat\,$>$\,14.0~V AND continuity\,$>$\,1000 counts};
-  \node[dec,  below=0.45cm of check]  (armq)   {Arm conditions\\met?};
-  \node[proc, below=0.55cm of armq]   (fire)   {\texttt{ledcWrite(CH,~102)}\quad$D=0.40$\quad wait ignition window};
-  \node[proc, below=0.45cm of fire]   (poll)   {Poll ADC; count drops below threshold\,$\to$\,deploy confirmed};
-  \node[term, below=0.45cm of poll]   (done)   {\texttt{ledcWrite(CH,~0)}; log flag; XBee TX confirmation};
-
-  \node[side, right=1.2cm of fsm]   (hold)  {Hold; TX status\\packet; return};
-  \node[side, right=1.2cm of armq]  (inhib) {Set \texttt{PWR\_INHIBIT};\\TX warning; block};
-
-  \draw[arr] (start) -- (fsm);
-  \draw[arr] (fsm)   -- node[left, font=\scriptsize]{Yes} (check);
-  \draw[arr] (fsm)  -| node[above, pos=0.25, font=\scriptsize]{No}  (hold);
-  \draw[arr] (check) -- (armq);
-  \draw[arr] (armq)  -- node[left, font=\scriptsize]{Yes} (fire);
-  \draw[arr] (armq) -| node[above, pos=0.25, font=\scriptsize]{No}  (inhib);
-  \draw[arr] (fire)  -- (poll);
-  \draw[arr] (poll)  -- (done);
-\end{tikzpicture}%
-}
-\caption{Deployment channel firmware flow: arm checks, PWM fire command, and post-event confirmation}
-\label{fig:sw_deploy_flow}
-\end{figure}
 
 Key firmware constants for the deployment channel \cite{n4_pyro_control, n4_pwm_config}:
 \begin{itemize}
@@ -770,50 +630,9 @@ V_{battery} = V_{ADC} \times \frac{R_1+R_2}{R_2} = V_{ADC} \times \frac{57.0}{10
 
 where $V_{ADC}$ is the raw ADC reading in volts, and the factor 57/10 is the reciprocal of the hardware divider ratio \cite{voltage_divider_theory}.
 
-Figure~\ref{fig:sw_power_flow} shows the firmware flow for the monitoring integration.
+The monitoring flow is presented in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_power_flow}).
 
-\begin{figure}[H]
-\centering
-\resizebox{\linewidth}{!}{%
-\begin{tikzpicture}[
-  >=Latex,
-  proc/.style={draw, rectangle, rounded corners=4pt, fill=gray!10, minimum width=6.2cm,
-               minimum height=0.72cm, align=center, font=\small, text width=6.0cm},
-  dec/.style={draw, diamond, fill=yellow!18, aspect=2.4, align=center,
-              font=\small, inner sep=1pt, text width=2.8cm},
-  term/.style={draw, rectangle, rounded corners=10pt, fill=green!14, minimum width=6.2cm,
-               minimum height=0.72cm, align=center, font=\small, text width=6.0cm},
-  side/.style={draw, rectangle, rounded corners=3pt, fill=red!12, minimum width=3.5cm,
-               minimum height=0.64cm, align=center, font=\scriptsize, text width=3.3cm},
-  arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
-]
-  \node[term]  (start)  {ADS1115 I\textsuperscript{2}C poll (I$^2$C bus, address 0x48)};
-  \node[proc,  below=0.42cm of start]  (raw)    {Read raw ADC counts: channels 0 (bat.), 1 \& 2 (chute detect.)};
-  \node[proc,  below=0.42cm of raw]    (recon)  {Reconstruct voltage: $V_{bat}=N\times\dfrac{4.096}{32767}\times\dfrac{57}{10}$};
-  \node[dec,   below=0.5cm of recon]   (thresh) {$V_{bat}>$\\14.0~V AND\\continuity~OK?};
-  \node[proc,  below=0.55cm of thresh] (append) {Append $V_{bat}$, continuity flags to telemetry packet};
-  \node[term,  below=0.42cm of append] (tx)     {Transmit updated packet via CommunicationManager};
-  \node[side,  right=1.2cm of thresh]  (inhibit){Set PWR\_INHIBIT flag;\\broadcast warning packet};
-  \draw[arr] (start)  -- (raw);
-  \draw[arr] (raw)    -- (recon);
-  \draw[arr] (recon)  -- (thresh);
-  \draw[arr] (thresh) -- node[left,font=\scriptsize]{Yes} (append);
-  \draw[arr] (thresh) -| node[above,pos=0.25,font=\scriptsize]{No} (inhibit);
-  \draw[arr] (append) -- (tx);
-\end{tikzpicture}%
-}
-\caption{Power monitoring firmware flow: ADS1115 I$^2$C readout, voltage reconstruction, arm-inhibit decision, and telemetry packet update \cite{ads1115_datasheet,n4_pyro_control}. Project diagram.}
-\label{fig:sw_power_flow}
-\end{figure}
-
-The reconstructed voltage is appended to the telemetry packet and compared against the inhibit threshold. If the value falls below \texttt{LAUNCH\_INHIBIT\_V}, the deployment arm flag is cleared and a ``\texttt{PWR INHIBIT}'' status byte is broadcast over XBee to the ground station before launch \cite{n4_pyro_control}.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth, trim=0 12mm 0 0, clip]{images/Power_Monitoring_Design_Concept.png}
-\caption{Power monitoring hardware concept: ADS1115 I\textsuperscript{2}C polling, voltage-divider network, and launch-inhibit logic \cite{ads1115_datasheet,n4_pyro_control}. Project diagram.}
-\label{fig:sw_power_concept}
-\end{figure}
+The reconstructed voltage is appended to the telemetry packet and compared against the inhibit threshold. If the value falls below \texttt{LAUNCH\_INHIBIT\_V}, the deployment arm flag is cleared and a ``\texttt{PWR INHIBIT}'' status byte is broadcast over XBee to the ground station before launch \cite{n4_pyro_control}. The hardware concept for this monitor is shown in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_power_concept}).
 
 \textbf{Current integration status:} The hardware design and Proteus simulation of the ADS1115 monitoring circuit are complete (detailed in Section~\ref{sec:methodology}, Electrical Module). Firmware I\textsuperscript{2}C polling of ADS1115 channels and the voltage reconstruction function are coded but have not yet been validated against the assembled PCB. Integration testing is planned as the next milestone before launch readiness review.
 

@@ -2,20 +2,27 @@
 
 \subsection{Background of Study}
 
-Rocket recovery systems represent the most critical subsystem for preserving flight data and hardware in high-power rocketry missions. The evolution of recovery systems has progressed from simple single deployment methods to sophisticated dual deployment architectures. Single deployment systems release a parachute at apogee, presenting risks of high drift radius and unpredictable landing zones. In contrast, dual deployment systems utilize a drogue parachute at apogee for stability, followed by a main parachute deployment at lower altitude for controlled soft landing, establishing the standard for modern high-power rocketry operations \cite{sutton_rocket,parachute_deployment}.
+Rocket recovery systems represent the most critical subsystem for preserving flight data and hardware in high-power rocketry missions. The evolution of recovery systems has progressed from simple single-deployment methods to sophisticated dual-deployment architectures. Single deployment systems release a parachute at apogee, presenting risks of high drift radius and unpredictable landing zones. In contrast, dual-deployment systems utilise a drogue parachute at apogee for stability, followed by a main parachute deployment at lower altitude for controlled soft landing, establishing the standard for modern high-power rocketry operations \cite{sutton_rocket, parachute_deployment}.
 
-The Nakuja Project N4 mission builds upon previous experiences from the N3.5 mission, which employed a basic single-deployment piston-based system. The current N4 design implements dual deployment architecture but faces significant challenges in deployment reliability and telemetry signal integrity. Previous missions demonstrated critical vulnerabilities in both mechanical deployment mechanisms and communication systems, necessitating a comprehensive redesign approach \cite{nakuja_website}.
+The Nakuja Project is a student-led rocketry programme based at Jomo Kenyatta University of Agriculture and Technology (JKUAT) and the Pan African University Institute for Basic Sciences Technology and Innovation (PAUSTI), operating in collaboration with the Kenya Space Agency (KSA) and JICA with the long-term goal of developing a liquid-propellant rocket capable of orbital payload delivery \cite{nakuja_website}. The programme has progressed through four rocket generations: N-1 (2021, simulated apogee 285~m), N-2 (2022, 500~m), N-3 (2024, 1,000~m target), and N-3.5 (May 2024, highest recorded apogee in the series at the Isiolo School of Infantry Range) \cite{nakuja_website}. Each generation has introduced lessons that inform the next design cycle.
+
+The N-3.5 mission employed a piston-based single-deployment system using crimson powder and nichrome wire ignition, with telemetry transmitted over WiFi/MQTT via a Ubiquiti NanoStation \cite{n3p5_recovery_report}. While the launch was successful, post-flight analysis documented thermal damage to the charge holder, nichrome wire burnout after repeated pop tests, and effective telemetry range limited to the WiFi footprint of the NanoStation---constraints that were insufficient for the higher-altitude, longer-range N-4 mission profile \cite{n3p5_recovery_report, n4_poptest_internal}. The N-4 rocket, targeting an apogee of 3,540~m as an entry into the Spaceport America Cup (SRAD/Solid/10,000~ft class), requires a recovery system capable of operating at significantly greater ranges and with improved deployment reliability \cite{nakuja_website}.
 
 \subsection{Problem Statement}
 
-The N4 mission's recovery system faces critical reliability challenges including telemetry range limitations causing signal degradation during critical flight phases, uncontrolled ignition system temperatures exceeding 1000 degrees Celsius that create unreliable single-use deployment mechanisms, and absence of real-time pre-flight monitoring systems for battery voltage and igniter continuity, collectively threatening mission success through potential vehicle loss, deployment failures, and inability to validate system readiness before launch.
+The N4 mission recovery system faces three documented critical challenges arising from N-3.5 field experience and the N-4 mission requirements:
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.62\textwidth]{images/XBeeDiagram.png}
-\caption{XBee-PRO 900HP telemetry integration architecture used to improve end-to-end link reliability}
-\label{fig:intro_xbee_architecture}
-\end{figure}
+\begin{enumerate}
+    \item \textbf{Telemetry range limitation:} The N-3.5 WiFi/MQTT-based system (Ubiquiti NanoStation) was constrained to line-of-sight WiFi range, which is insufficient for N-4's simulated apogee of 3,540~m and competition recovery distance requirements exceeding 5~km. Signal degradation during critical descent phases risks total telemetry loss and inability to locate the vehicle \cite{n3p5_recovery_report}.
+
+    \item \textbf{Deployment unreliability:} Repeated N-3.5 pop tests documented nichrome wire burnout, thermal damage to the charge holder exceeding acceptable material limits, and inconsistent ejection from uncontrolled ignition energy. A single-deployment piston architecture also provides no redundancy against deployment failure at apogee \cite{n4_poptest_internal}.
+
+    \item \textbf{Absence of pre-flight system monitoring:} The N-3.5 system lacked real-time battery voltage and igniter continuity telemetry, preventing ground operators from verifying system readiness before launch and introducing risk of a failed deployment from an undetected low-battery or open-circuit condition \cite{n3p5_recovery_report}.
+\end{enumerate}
+
+These three gaps collectively threaten mission success through potential vehicle loss, deployment failure, and unverifiable launch readiness.
+
+See Appendix~\ref{app:firmware} (Figure~\ref{fig:app_intro_xbee_architecture}) for the N4 XBee telemetry architecture proposed to address gap~1.
 
 \subsection{Objectives}
 
@@ -23,25 +30,24 @@ The N4 mission's recovery system faces critical reliability challenges including
 
 \textbf{Specific Objectives:}
 \begin{enumerate}
-    \item To extend the telemetry range of the recovery system beyond 5~km.
-    \item To improve deployment reliability through controlled pyrotechnic ignition, targeting repeatable nichrome-wire energisation without wire burnout.
-    \item To design a rugged 3D-printed avionics holder with vibration isolation, battery retention, and real-time system diagnostics.
-    \item To validate the complete recovery system through ground and field testing.
+    \item To extend the telemetry range of the recovery system beyond 5~km using an XBee-PRO 900HP radio link.
+    \item To improve deployment reliability through controlled PWM pyrotechnic ignition, targeting repeatable nichrome-wire energisation without wire burnout.
+    \item To design a rugged 3D-printed PETG avionics holder with vibration isolation, battery retention, and real-time ADS1115-based system diagnostics.
+    \item To validate the complete recovery system through ground pop tests and field range tests.
 \end{enumerate}
 
 \subsection{Justification}
 
-The development of a reliable recovery system is paramount to mission success. Loss of the rocket vehicle results not only in hardware loss but also complete loss of flight data critical for mission analysis and future design improvements. The proposed improvements address documented failure modes from previous missions and implement industry-standard practices adapted for student rocketry applications.
+The development of a reliable recovery system is paramount to mission success. Loss of the rocket vehicle results not only in hardware loss but also complete loss of flight data critical for mission analysis and future design improvements. The N-4 rocket represents the Nakuja Project's most ambitious mission to date---a competition-class vehicle targeting 3,540~m---and the gap between its performance requirements and what the N-3.5 recovery system could support is substantial. The proposed improvements address documented failure modes from N-3.5 field tests and implement dual-deployment and long-range radio practices that are standard in the high-power rocketry community.
 
-The Nakuja Project represents a significant investment in student engineering education and practical aerospace systems development. Ensuring mission success through robust recovery systems validates this investment and provides valuable learning opportunities for future engineering professionals.
+Beyond the immediate mission, the Nakuja Project's open-source, student-centred model means that validated recovery designs and documented lessons become resources for future engineering cohorts and for the broader African student rocketry community \cite{nakuja_website}.
 
 \subsection{Expected Outcomes}
 
 The expected outcomes of this study are:
 \begin{enumerate}
-    \item Telemetry range exceeding 5~km with reliable link performance.
-    \item Consistent and repeatable parachute deployment through controlled pyrotechnic ignition.
-    \item A fabricated 3D-printed avionics holder providing vibration isolation, battery retention, and real-time system diagnostics.
-    \item A validated recovery system demonstrated through ground and field testing.
+    \item Telemetry range exceeding 5~km with reliable XBee-PRO 900HP link performance demonstrated during range tests.
+    \item Consistent and repeatable parachute deployment through PWM-controlled pyrotechnic ignition without nichrome wire burnout.
+    \item A fabricated 3D-printed PETG avionics holder providing vibration isolation, battery retention, and real-time ADS1115 system diagnostics.
+    \item A validated dual-deployment recovery system demonstrated through ground pop tests and integrated field testing.
 \end{enumerate}
-
