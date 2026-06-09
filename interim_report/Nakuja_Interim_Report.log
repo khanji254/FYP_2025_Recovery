@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  8 MAY 2026 23:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.12.22)  9 JUN 2026 04:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -832,7 +832,7 @@ Package hyperref Info: Link coloring OFF on input line 82.
 \c@lstlisting=\count351
 
 (Files/title_page.tex
-<Figures/Figures/logo.png, id=338, 222.8325pt x 204.765pt>
+<Figures/Figures/logo.png, id=374, 222.8325pt x 204.765pt>
 File: Figures/Figures/logo.png Graphic file (type png)
 <use Figures/Figures/logo.png>
 Package pdftex.def Info: Figures/Figures/logo.png  used on input line 4.
@@ -849,16 +849,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]) (Files/Declaration.tex
-Underfull \hbox (badness 10000) in paragraph at lines 16--20
-
- []
+LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--27
-
- []
-
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+
+
+(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -876,18 +878,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2
 
-] (Files/Abstract.tex
-Overfull \hbox (0.38507pt too wide) in paragraph at lines 6--7
-[]\OT1/cmr/m/n/12 The teleme-try sub-sys-tem em-ploys the XBee-PRO 900HP op-er-
-at-ing at 900 MHz
- []
-
-
-Overfull \hbox (4.65982pt too wide) in paragraph at lines 6--7
-\OT1/cmr/m/n/12 la-tion (PWM)-controlled IRLZ44N Metal-Oxide-Semiconductor Fiel
-d-Effect Tran-
- []
-
+] (Files/Abstract.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -897,7 +888,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3
 
-])
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -905,18 +896,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4] (Nakuja_Interim_Report.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
-
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
-
-(C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-[5
+[4] (Nakuja_Interim_Report.toc [5
 
 ]
 
@@ -964,7 +944,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10] (Nakuja_Interim_Report.lof [11
+[10] (Nakuja_Interim_Report.lof
+Overfull \hbox (1.46547pt too wide) in paragraph at lines 16--16
+ [][] [][]\OT1/cmr/m/n/12 Base sta-tion EasyEDA schematic with Ar-duino Mega, X
+Bee Shield, 
+ []
+
+[11
 
 ]
 
@@ -974,7 +960,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12])
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13])
 \tf@lof=\write6
 \openout6 = `Nakuja_Interim_Report.lof'.
 
@@ -986,11 +980,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13] (Nakuja_Interim_Report.lot)
+[14] (Nakuja_Interim_Report.lot)
 \tf@lot=\write7
 \openout7 = `Nakuja_Interim_Report.lot'.
 
- [14
+ [15
 
 ] (Files/Chapter1_Introduction.tex
 
@@ -1022,18 +1016,6 @@ LaTeX Warning: Citation `n3p5_recovery_report' on page 2 undefined on input lin
 e 16.
 
 
-Overfull \hbox (9.9196pt too wide) in paragraph at lines 16--17
-[]\OT1/cmr/bx/n/12 Telemetry range lim-i-ta-tion: \OT1/cmr/m/n/12 The N-3.5 WiF
-i/MQTT-based sys-tem (Ubiq-
- []
-
-
-Overfull \hbox (11.79033pt too wide) in paragraph at lines 18--19
-[]\OT1/cmr/bx/n/12 Deployment un-re-li-a-bil-ity: \OT1/cmr/m/n/12 Re-peated N-3
-.5 pop tests doc-u-mented nichrome
- []
-
-
 LaTeX Warning: Citation `n3p5_recovery_report' on page 2 undefined on input lin
 e 20.
 
@@ -1055,13 +1037,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 \subsection
-                {Objectives} [2]
-Overfull \hbox (8.11937pt too wide) in paragraph at lines 34--35
-\OT1/cmr/m/n/12 ni-tion, tar-get-ing re-peat-able nichrome-wire en-er-gi-sa-tio
-n with-out wire burnout. 
- []
-
+l.24 
+      [2]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1070,7 +1047,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3]
-Overfull \hbox (0.1501pt too wide) in paragraph at lines 52--53
+Overfull \hbox (0.1501pt too wide) in paragraph at lines 51--52
 []\OT1/cmr/m/n/12 A val-i-dated dual-deployment re-cov-ery sys-tem demon-strate
 d through ground
  []
@@ -1092,12 +1069,12 @@ e 8.
 LaTeX Warning: Citation `n3p5_recovery_report' on page 5 undefined on input lin
 e 8.
 
-<images/Nakuja_N3_Rocket.PNG, id=712, 620.3175pt x 381.67593pt>
+<images/Nakuja_N3_Rocket.PNG, id=803, 620.3175pt x 381.67593pt>
 File: images/Nakuja_N3_Rocket.PNG Graphic file (type png)
 <use images/Nakuja_N3_Rocket.PNG>
 Package pdftex.def Info: images/Nakuja_N3_Rocket.PNG  used on input line 12.
 (pdftex.def)             Requested size: 255.40001pt x 157.14624pt.
-<images/Dual_Deployment.PNG, id=714, 297.36093pt x 198.7425pt>
+<images/Dual_Deployment.PNG, id=805, 297.36093pt x 198.7425pt>
 File: images/Dual_Deployment.PNG Graphic file (type png)
 <use images/Dual_Deployment.PNG>
 Package pdftex.def Info: images/Dual_Deployment.PNG  used on input line 19.
@@ -1196,12 +1173,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-<images/xbee_module.jpg, id=738, 803.0pt x 803.0pt>
+<images/xbee_module.jpg, id=829, 803.0pt x 803.0pt>
 File: images/xbee_module.jpg Graphic file (type jpg)
 <use images/xbee_module.jpg>
 Package pdftex.def Info: images/xbee_module.jpg  used on input line 54.
 (pdftex.def)             Requested size: 131.82341pt x 131.81537pt.
-<images/Beacon_RSSI_Decay_Plot.PNG, id=741, 998.22937pt x 420.06938pt>
+<images/Beacon_RSSI_Decay_Plot.PNG, id=832, 998.22937pt x 420.06938pt>
 File: images/Beacon_RSSI_Decay_Plot.PNG Graphic file (type png)
 <use images/Beacon_RSSI_Decay_Plot.PNG>
 Package pdftex.def Info: images/Beacon_RSSI_Decay_Plot.PNG  used on input line 
@@ -1216,41 +1193,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8 <./images/xbee_module.jpg> <./images/Beacon_RSSI_Decay_Plot.PNG>]
-Overfull \hbox (9.06381pt too wide) in paragraph at lines 78--79
-\OT1/cmr/m/n/12 Black-powder and crimson-powder de-ploy-ment re-main com-mon se
-p-a-ra-tion/ejection
+Overfull \hbox (2.36667pt too wide) in paragraph at lines 78--79
+\OT1/cmr/m/n/12 tional wire ex-tend-ing di-rectly from the mod-ule PCB. It pro-
+vides an isotropic,
  []
-
-<images/The Crimson Powder Problem_Excessive_Pop.PNG, id=760, 228.10219pt x 245
-.41687pt>
-File: images/The Crimson Powder Problem_Excessive_Pop.PNG Graphic file (type pn
-g)
-<use images/The Crimson Powder Problem_Excessive_Pop.PNG>
-Package pdftex.def Info: images/The Crimson Powder Problem_Excessive_Pop.PNG  u
-sed on input line 82.
-(pdftex.def)             Requested size: 144.18108pt x 155.1302pt.
-<images/CHarge_Holder_Melted_From_Explosion.jpeg, id=762, 433.62pt x 374.14781p
-t>
-File: images/CHarge_Holder_Melted_From_Explosion.jpeg Graphic file (type jpg)
-<use images/CHarge_Holder_Melted_From_Explosion.jpeg>
-Package pdftex.def Info: images/CHarge_Holder_Melted_From_Explosion.jpeg  used 
-on input line 89.
-(pdftex.def)             Requested size: 144.18108pt x 124.40543pt.
-<images/Post_PopTest_Charring_And_Leak_Image.jpeg, id=764, 324.46219pt x 417.81
-094pt>
-File: images/Post_PopTest_Charring_And_Leak_Image.jpeg Graphic file (type jpg)
-<use images/Post_PopTest_Charring_And_Leak_Image.jpeg>
-Package pdftex.def Info: images/Post_PopTest_Charring_And_Leak_Image.jpeg  used
- on input line 96.
-(pdftex.def)             Requested size: 144.18108pt x 185.66708pt.
-<images/Cut_Nichrome_Wire.PNG, id=767, 243.15843pt x 241.65282pt>
-File: images/Cut_Nichrome_Wire.PNG Graphic file (type png)
-<use images/Cut_Nichrome_Wire.PNG>
-Package pdftex.def Info: images/Cut_Nichrome_Wire.PNG  used on input line 103.
-(pdftex.def)             Requested size: 144.18108pt x 143.28557pt.
-
-LaTeX Warning: Citation `n3p5_recovery_report' on page 9 undefined on input lin
-e 108.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1267,48 +1213,110 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10 <./images/The Crimson Powder Problem_Excessive_Pop.PNG> <./images/CHarge_Ho
-lder_Melted_From_Explosion.jpeg> <./images/Post_PopTest_Charring_And_Leak_Image
-.jpeg>]
-<images/adiabatic_curve.png, id=790, 451.32616pt x 342.19846pt>
+[10]
+
+LaTeX Warning: Citation `freertos_manual' on page 11 undefined on input line 10
+1.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11]
+Overfull \hbox (9.06381pt too wide) in paragraph at lines 105--106
+\OT1/cmr/m/n/12 Black-powder and crimson-powder de-ploy-ment re-main com-mon se
+p-a-ra-tion/ejection
+ []
+
+<images/The Crimson Powder Problem_Excessive_Pop.PNG, id=890, 228.10219pt x 245
+.41687pt>
+File: images/The Crimson Powder Problem_Excessive_Pop.PNG Graphic file (type pn
+g)
+<use images/The Crimson Powder Problem_Excessive_Pop.PNG>
+Package pdftex.def Info: images/The Crimson Powder Problem_Excessive_Pop.PNG  u
+sed on input line 109.
+(pdftex.def)             Requested size: 144.18108pt x 155.1302pt.
+<images/CHarge_Holder_Melted_From_Explosion.jpeg, id=892, 433.62pt x 374.14781p
+t>
+File: images/CHarge_Holder_Melted_From_Explosion.jpeg Graphic file (type jpg)
+<use images/CHarge_Holder_Melted_From_Explosion.jpeg>
+Package pdftex.def Info: images/CHarge_Holder_Melted_From_Explosion.jpeg  used 
+on input line 116.
+(pdftex.def)             Requested size: 144.18108pt x 124.40543pt.
+<images/Post_PopTest_Charring_And_Leak_Image.jpeg, id=894, 324.46219pt x 417.81
+094pt>
+File: images/Post_PopTest_Charring_And_Leak_Image.jpeg Graphic file (type jpg)
+<use images/Post_PopTest_Charring_And_Leak_Image.jpeg>
+Package pdftex.def Info: images/Post_PopTest_Charring_And_Leak_Image.jpeg  used
+ on input line 123.
+(pdftex.def)             Requested size: 144.18108pt x 185.66708pt.
+<images/Cut_Nichrome_Wire.PNG, id=897, 243.15843pt x 241.65282pt>
+File: images/Cut_Nichrome_Wire.PNG Graphic file (type png)
+<use images/Cut_Nichrome_Wire.PNG>
+Package pdftex.def Info: images/Cut_Nichrome_Wire.PNG  used on input line 130.
+(pdftex.def)             Requested size: 144.18108pt x 143.28557pt.
+
+LaTeX Warning: Citation `n3p5_recovery_report' on page 12 undefined on input li
+ne 135.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12 <./images/The Crimson Powder Problem_Excessive_Pop.PNG>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13 <./images/CHarge_Holder_Melted_From_Explosion.jpeg> <./images/Post_PopTest_
+Charring_And_Leak_Image.jpeg>]
+<images/adiabatic_curve.png, id=919, 451.32616pt x 342.19846pt>
 File: images/adiabatic_curve.png Graphic file (type png)
 <use images/adiabatic_curve.png>
-Package pdftex.def Info: images/adiabatic_curve.png  used on input line 114.
+Package pdftex.def Info: images/adiabatic_curve.png  used on input line 141.
 (pdftex.def)             Requested size: 247.16577pt x 187.40561pt.
 
-Overfull \hbox (9.88676pt too wide) in paragraph at lines 123--124
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14 <./images/Cut_Nichrome_Wire.PNG> <./images/adiabatic_curve.png>]
+Overfull \hbox (9.88676pt too wide) in paragraph at lines 150--151
 []\OT1/cmr/bx/n/12 Gap 6 --- Con-tain-ment val-i-da-tion: \OT1/cmr/m/n/12 Lim-i
 ted use of ther-mo-chem-i-cal adiabatic-
  []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+LaTeX Warning: Citation `n3p5_recovery_report' on page 15 undefined on input li
+ne 156.
 
-[11 <./images/Cut_Nichrome_Wire.PNG>]
-
-LaTeX Warning: Citation `n3p5_recovery_report' on page 12 undefined on input li
-ne 129.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[12 <./images/adiabatic_curve.png>]
-<images/Assembled_Avionics_Bay.jpeg, id=816, 963.6pt x 444.15938pt>
+<images/Assembled_Avionics_Bay.jpeg, id=936, 963.6pt x 444.15938pt>
 File: images/Assembled_Avionics_Bay.jpeg Graphic file (type jpg)
 <use images/Assembled_Avionics_Bay.jpeg>
 Package pdftex.def Info: images/Assembled_Avionics_Bay.jpeg  used on input line
- 133.
+ 160.
 (pdftex.def)             Requested size: 255.40001pt x 117.722pt.
 
-Overfull \hbox (7.10146pt too wide) in paragraph at lines 142--143
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+Overfull \hbox (7.10146pt too wide) in paragraph at lines 169--170
 []\OT1/cmr/m/n/12 Battery-pack in-te-gra-tion for com-mon 18650-class cells con
 -tributes non-negligible
  []
@@ -1320,155 +1328,148 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[13 <./images/Assembled_Avionics_Bay.jpeg>]
+[16 <./images/Assembled_Avionics_Bay.jpeg>]
 
-LaTeX Warning: Citation `n3p5_recovery_report' on page 14 undefined on input li
-ne 152.
-
-
-LaTeX Warning: Citation `n3p5_recovery_report' on page 14 undefined on input li
-ne 154.
+LaTeX Warning: Citation `n3p5_recovery_report' on page 17 undefined on input li
+ne 179.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+LaTeX Warning: Citation `n3p5_recovery_report' on page 17 undefined on input li
+ne 181.
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 []|\OT1/cmr/m/n/10.95 Dual-deployment
  []
 
 
-LaTeX Warning: Citation `n3p5_recovery_report' on page 15 undefined on input li
-ne 171.
+LaTeX Warning: Citation `n3p5_recovery_report' on page 17 undefined on input li
+ne 198.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 []|\OT1/cmr/m/n/10.95 N-3.5 used single-
  []
 
 
-Underfull \hbox (badness 2460) in paragraph at lines 171--171
+Underfull \hbox (badness 2460) in paragraph at lines 198--198
 \OT1/cmr/m/n/10.95 deployment pis-ton; no
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
+Underfull \hbox (badness 10000) in paragraph at lines 198--198
 \OT1/cmr/m/n/10.95 dual-stage data for
  []
 
 
-LaTeX Warning: Citation `n3p5_recovery_report' on page 15 undefined on input li
-ne 172.
+LaTeX Warning: Citation `n3p5_recovery_report' on page 17 undefined on input li
+ne 199.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
 []|\OT1/cmr/m/n/10.95 Antenna se-lec-tion
  []
 
 
-Underfull \hbox (badness 3884) in paragraph at lines 173--173
+Underfull \hbox (badness 3884) in paragraph at lines 200--200
 []|\OT1/cmr/m/n/10.95 No evidence-based an-
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 173--173
+Underfull \hbox (badness 1142) in paragraph at lines 200--200
 \OT1/cmr/m/n/10.95 tenna se-lec-tion for dy-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/10.95 Pyrotechnic pre-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
 []|\OT1/cmr/m/n/10.95 No mission-specific
  []
 
 
-Underfull \hbox (badness 1253) in paragraph at lines 175--175
+Underfull \hbox (badness 1253) in paragraph at lines 202--202
 []|\OT1/cmr/m/n/10.95 Ignition re-peata-bil-
  []
 
 
-LaTeX Warning: Citation `n3p5_recovery_report' on page 15 undefined on input li
-ne 175.
+LaTeX Warning: Citation `n3p5_recovery_report' on page 17 undefined on input li
+ne 202.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 []|\OT1/cmr/m/n/10.95 N-3.5 con-firmed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 \OT1/cmr/m/n/10.95 nichrome single-use
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--175
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
 \OT1/cmr/m/n/10.95 duty-cycle eval-u-a-
  []
 
 
-Underfull \hbox (badness 7925) in paragraph at lines 176--176
+Underfull \hbox (badness 7925) in paragraph at lines 203--203
 []|\OT1/cmr/m/n/10.95 No burst/yield anal-y-
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 176--176
+Underfull \hbox (badness 4954) in paragraph at lines 203--203
 \OT1/cmr/m/n/10.95 sis for charge holder;
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 176--176
+Underfull \hbox (badness 1838) in paragraph at lines 203--203
 \OT1/cmr/m/n/10.95 u-mented against ma-te-
  []
 
 
-Underfull \hbox (badness 4752) in paragraph at lines 177--177
+Underfull \hbox (badness 4752) in paragraph at lines 204--204
 []|\OT1/cmr/m/n/10.95 Structural ver-i-fi-ca-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--177
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
 []|\OT1/cmr/m/n/10.95 No shock-validated
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 177--177
+Underfull \hbox (badness 4699) in paragraph at lines 204--204
 \OT1/cmr/m/n/10.95 PETG avion-ics holder
  []
 
 
-Underfull \hbox (badness 5161) in paragraph at lines 178--178
+Underfull \hbox (badness 5161) in paragraph at lines 205--205
 []|\OT1/cmr/m/n/10.95 Pre-flight mon-i-tor-
  []
 
 
-LaTeX Warning: Citation `n3p5_recovery_report' on page 15 undefined on input li
-ne 178.
+LaTeX Warning: Citation `n3p5_recovery_report' on page 17 undefined on input li
+ne 205.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []|\OT1/cmr/m/n/10.95 N-3.5 lacked bat-tery
  []
 
 
-Underfull \hbox (badness 3942) in paragraph at lines 178--178
+Underfull \hbox (badness 3942) in paragraph at lines 205--205
 \OT1/cmr/m/n/10.95 volt-age and con-ti-nu-ity
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 \OT1/cmr/m/n/10.95 teleme-try; ex-plic-itly
  []
 
 
-LaTeX Warning: Float too large for page by 210.8527pt on input line 180.
+LaTeX Warning: Float too large for page by 210.8527pt on input line 207.
 
 )
 
@@ -1478,7 +1479,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[15]
+[17]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1486,14 +1487,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[16] (Files/Chapter3_Methodology.tex
-Overfull \hbox (3.00703pt too wide) in paragraph at lines 21--22
- []\OT1/cmr/bx/n/12 Implementation mod-ules[] \OT1/cmr/m/n/12 These work-stream
-s run in par-al-lel across the phases
- []
+[18] (Files/Chapter3_Methodology.tex
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22   \item R
+              equirements definition --- derive subsystem requirements from ...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (0.40836pt too wide) in paragraph at lines 25--26
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19
+
+]
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37   \item T
+              elemetry and antenna strategy (XBee, beacon, ground-station).
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (0.40836pt too wide) in paragraph at lines 39--41
 []\OT1/cmr/m/n/12 Power and feed-back in-stru-men-ta-tion (ADS1115 mon-i-tor-in
 g, con-ti-nu-ity sens-
  []
@@ -1505,147 +1536,88 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17
-
-]
-Underfull \hbox (badness 2158) in paragraph at lines 59--59
+[20]
+Underfull \hbox (badness 2158) in paragraph at lines 75--75
 []|\OT1/cmr/m/n/10.95 XBee-PRO 900HP
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 []|\OT1/cmr/m/n/10.95 Dual-core MCU,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 []|\OT1/cmr/m/n/10.95 Generates and streams teleme-try
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
-[]|\OT1/cmr/m/n/10.95 900 MHz Duck
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
+[]|\OT1/cmr/m/n/10.95 900MHz Duck
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 []|\OT1/cmr/m/n/10.95 XBee
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 \OT1/cmr/m/n/10.95 Shield/UART
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
 []|\OT1/cmr/m/n/10.95 Transparent se-rial
  []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
-[]|\OT1/cmr/bx/n/10.95 Integration
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
-[]|\OT1/cmr/bx/n/10.95 Reliability
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 []|\OT1/cmr/m/n/10.95 Low--
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
-[]|\OT1/cmr/m/n/10.95 LoRa (generic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 []|\OT1/cmr/m/n/10.95 Medium--
  []
 
 
-Underfull \hbox (badness 1394) in paragraph at lines 78--79
-\OT1/cmr/m/n/10.95 in-te-gra-tion and pro-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\OT1/cmr/m/n/10.95 ESP-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \OT1/cmr/m/n/10.95 NOW/Beacon
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\OT1/cmr/m/n/10.95 Medium
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
-\OT1/cmr/m/n/10.95 (field de-
- []
-
-
-Underfull \hbox (badness 3668) in paragraph at lines 79--80
+Underfull \hbox (badness 3668) in paragraph at lines 101--102
 []|\OT1/cmr/m/n/10.95 Useful backup path
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
-\OT1/cmr/m/n/10.95 sole pri-mary long-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 []|\OT1/cmr/bx/n/10.95 XBee-PRO
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 []|\OT1/cmr/bx/n/10.95 High
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
-\OT1/cmr/bx/n/10.95 (5 km+
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 []|\OT1/cmr/bx/n/10.95 Low--
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
-[]|\OT1/cmr/bx/n/10.95 Best match to
- []
-
-
-Underfull \hbox (badness 1009) in paragraph at lines 80--80
-\OT1/cmr/bx/n/10.95 range, ro-bust-ness,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
-\OT1/cmr/bx/n/10.95 and im-ple-men-ta-
- []
-
-
-Overfull \hbox (25.68295pt too wide) in paragraph at lines 74--82
+Overfull \hbox (25.68295pt too wide) in paragraph at lines 96--104
  [][] 
  []
 
@@ -1656,72 +1628,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[20]
-
-LaTeX Warning: Reference `app:moved_figures' on page 21 undefined on input line
- 94.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
-[]|\OT1/cmr/bx/n/10.95 Typical
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
-[]|\OT1/cmr/bx/n/10.95 Methodology As-sess-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
-[]|\OT1/cmr/m/n/10.95 Duck Dipole
- []
-
-
-Overfull \hbox (9.00244pt too wide) in paragraph at lines 109--109
-[]|\OT1/cmr/m/n/10.95 Omnidirectional| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
-[]|\OT1/cmr/m/n/10.95 Patch An-tenna
- []
-
-
-Underfull \hbox (badness 7362) in paragraph at lines 110--111
-[]|\OT1/cmr/m/n/10.95 Higher gain but stricter
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-[]|\OT1/cmr/m/n/10.95 Bi-Quad
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-[]|$\OMS/cmsy/m/n/10.95 ^^X$\OT1/cmr/m/n/10.95 10--
- []
-
-
-Underfull \hbox (badness 2253) in paragraph at lines 111--111
-\OT1/cmr/m/n/10.95 up-grade can-di-date to im-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [21]
+Overfull \hbox (0.88745pt too wide) in paragraph at lines 123--126
+\OT1/cmr/m/n/12 Table []5[] sum-marises can-di-date an-ten-nas. The base-line a
+n-tenna pair is the 900MHz
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1730,17 +1642,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22]
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
+[]|\OT1/cmr/m/n/10.95 Duck Dipole
+ []
 
-LaTeX Warning: Reference `app:moved_figures' on page 23 undefined on input line
- 138.
+
+Overfull \hbox (6.157pt too wide) in paragraph at lines 161--161
+[]|\OT1/cmr/m/n/10.95 Omnidirectional| 
+ []
 
 
-Overfull \hbox (20.1857pt too wide) in paragraph at lines 142--142
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
+[]|\OT1/cmr/m/n/10.95 Patch An-tenna
+ []
+
+
+Overfull \hbox (16.57341pt too wide) in paragraph at lines 158--165
+ [][] 
+ []
+
+
+Overfull \hbox (20.1857pt too wide) in paragraph at lines 167--167
 []\OT1/cmr/bx/n/14.4 Electrical Mod-ule with De-ploy-ment Sub-mod-ule Method-
  []
 
 
-Overfull \hbox (54.85777pt too wide) in paragraph at lines 146--147
+Overfull \hbox (54.85777pt too wide) in paragraph at lines 171--173
 \OT1/cmr/m/n/12 This mod-ule cov-ers on-board sig-nal in-ter-fac-ing, teleme-tr
 y elec-tri-cal rout-ing, power/continuity
  []
@@ -1753,88 +1680,63 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-Underfull \hbox (badness 2582) in paragraph at lines 171--171
-[]|\OT1/cmr/bx/n/10.95 Interface Op-
+Underfull \hbox (badness 10000) in paragraph at lines 202--202
+[]|\OT1/cmr/bx/n/10.95 XBee Suit-
  []
 
 
-Underfull \hbox (badness 6641) in paragraph at lines 172--172
-[]|\OT1/cmr/m/n/10.95 UART-only for
+Underfull \hbox (badness 3199) in paragraph at lines 203--203
+[]|\OT1/cmr/m/n/10.95 Poor scal-a-bil-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
-[]|\OT1/cmr/m/n/10.95 Excellent for
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
-[]|\OT1/cmr/m/n/10.95 Poor chan-nel
- []
-
-
-Underfull \hbox (badness 1694) in paragraph at lines 173--173
-[]|\OT1/cmr/m/n/10.95 Poor for high-
- []
-
-
-Underfull \hbox (badness 1275) in paragraph at lines 173--173
-[]|\OT1/cmr/m/n/10.95 Good for ADC
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-\OT1/cmr/m/n/10.95 sole in-ter-face
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-\OT1/cmr/m/n/10.95 due to XBee
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-\OT1/cmr/m/n/10.95 se-rial re-quire-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
-[]|\OT1/cmr/bx/n/10.95 Hybrid:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
-\OT1/cmr/bx/n/10.95 UART +
- []
-
-
-Underfull \hbox (badness 3058) in paragraph at lines 174--174
-\OT1/cmr/bx/n/10.95 hard-ware se-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
 []|\OT1/cmr/bx/n/10.95 Best for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
-\OT1/cmr/bx/n/10.95 ADS1115
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
+[]|\OT1/cmr/bx/n/10.95 Best for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
-[]|\OT1/cmr/bx/n/10.95 Best fit for
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
-\OT1/cmr/bx/n/10.95 sub-sys-tem
- []
-
-
-Overfull \hbox (37.06432pt too wide) in paragraph at lines 169--176
+Overfull \hbox (17.14703pt too wide) in paragraph at lines 200--207
  [][] 
+ []
+
+
+Overfull \hbox (8.89055pt too wide) in paragraph at lines 216--216
+[]|\OT1/cmr/bx/n/10.95 Constraint/Parameter| 
+ []
+
+
+Underfull \hbox (badness 3302) in paragraph at lines 217--218
+[]|\OT1/cmr/m/n/10.95 PCB place-ments con-strained by
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--232
+[]|\OT1/cmr/bx/n/10.95 Key Rat-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--234
+[]|\OT1/cmr/m/n/10.95 UART trans-par-ent
+ []
+
+
+Underfull \hbox (badness 4913) in paragraph at lines 238--238
+[]|\OT1/cmr/m/n/10.95 Nichrome ig-niter el-e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
+[]|\OT1/cmr/m/n/10.95 Resistive heat-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--239
+[]|\OT1/cmr/m/n/10.95 Over/under-voltage
  []
 
 
@@ -1845,30 +1747,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Overfull \hbox (14.58102pt too wide) in paragraph at lines 193--193
-[]|\OT1/cmr/bx/n/10.95 Constraint/Parameter| 
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 194--195
-[]|\OT1/cmr/m/n/10.95 PCB and daughter-board place-
- []
-
-
-Underfull \hbox (badness 1205) in paragraph at lines 194--195
-\OT1/cmr/m/n/10.95 ments con-strained by cylin-dri-cal
- []
-
-
-Underfull \hbox (badness 2351) in paragraph at lines 197--198
-[]|\OT1/cmr/m/n/10.95 High-energy ac-tu-a-tion path iso-
- []
-
-
-Underfull \hbox (badness 1521) in paragraph at lines 198--198
-[]|\OT1/cmr/m/n/10.95 16.8 V max in-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1877,60 +1755,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 213--213
-[]|\OT1/cmr/bx/n/10.95 Key Rat-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--214
-[]|\OT1/cmr/m/n/10.95 3.3 V logic,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--215
-[]|\OT1/cmr/m/n/10.95 UART trans-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--217
-[]|\OT1/cmr/m/n/10.95 IRLZ44N MOS-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--217
-[]|\OT1/cmr/m/n/10.95 Logic-level
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--217
-\OT1/cmr/m/n/10.95 gate, low
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-[]|\OT1/cmr/m/n/10.95 Pyro-channel low-side switch-ing for
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
-[]|\OT1/cmr/m/n/10.95 Voltage di-vider
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
-[]|\OT1/cmr/m/n/10.95 Nichrome ig-niter
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--220
-[]|\OT1/cmr/m/n/10.95 Over-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--220
-\OT1/cmr/m/n/10.95 voltage/under-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1947,13 +1771,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
+Underfull \hbox (badness 10000) in paragraph at lines 347--347
+[]|\OT1/cmr/m/n/10.95 Mid bat-tery hold-ers
+ []
 
-LaTeX Warning: Reference `app:moved_figures' on page 28 undefined on input line
- 236.
+
+Underfull \hbox (badness 5008) in paragraph at lines 348--348
+[]|\OT1/cmr/m/n/10.95 Edge bat-tery hold-ers
+ []
 
 
-LaTeX Warning: Reference `app:moved_figures' on page 28 undefined on input line
- 238.
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+[]|\OT1/cmr/m/n/10.95 Flight-computer mount-ing through
+ []
+
+
+Overfull \hbox (10.30934pt too wide) in paragraph at lines 342--354
+ [][] 
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1963,6 +1798,45 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
+Underfull \hbox (badness 10000) in paragraph at lines 366--366
+[]|\OT1/cmr/bx/n/10.95 Shock Ro-
+ []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 367--367
+[]|\OT1/cmr/m/n/10.95 Single-level bat-tery
+ []
+
+
+Underfull \hbox (badness 4242) in paragraph at lines 367--368
+[]|\OT1/cmr/m/n/10.95 Rod in-ter-fer-ence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--368
+[]|\OT1/cmr/m/n/10.95 Simple ini-
+ []
+
+
+Underfull \hbox (badness 3039) in paragraph at lines 368--369
+[]|\OT1/cmr/m/n/10.95 Poor ser-vice-abil-
+ []
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 368--369
+\OT1/cmr/m/n/10.95 ity un-der vi-bra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
+[]|\OT1/cmr/bx/n/10.95 Stepped hold-ers
+ []
+
+
+Overfull \hbox (45.5998pt too wide) in paragraph at lines 364--371
+ [][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1971,6 +1845,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [29]
+Overfull \hbox (12.7724pt too wide) detected at line 397
+ $\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y [][] \OMS/cmsy/m/
+n/12 ^^Y \OT1/cmr/m/n/12 7\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 09 \OMS/cmsy/m/n/12
+ ^^B \OT1/cmr/m/n/12 10[] m[] \OML/cmm/m/it/12 F[] \OT1/cmr/m/n/12 = 188[]000 \
+OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 7\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 09 \OMS/
+cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 10[] \OMS/cmsy/m/n/12 ^^Y \OT1/cmr/m/n/12 1[]33
+0 N$  
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1979,6 +1862,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [30]
+Underfull \hbox (badness 2990) in paragraph at lines 422--423
+[]|\OT1/cmr/m/n/10.95 Reduces per-packet la-tency; set
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1987,35 +1874,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 397--397
-[]|\OT1/cmr/m/n/10.95 Flight-computer
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 397--397
-\OT1/cmr/m/n/10.95 holder body
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--403
-[]|\OT1/cmr/m/n/10.95 Brass columns
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
-[]|\OT1/cmr/m/n/10.95 Flight-computer mount-ing through
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--404
-[]|\OT1/cmr/m/n/10.95 XBee ex-ten-sion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--404
-\OT1/cmr/m/n/10.95 mount + BMS
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2024,80 +1882,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-[]|\OT1/cmr/bx/n/10.95 Envelope
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--418
-\OT1/cmr/bx/n/10.95 Fit
- []
-
-
-Overfull \hbox (20.70302pt too wide) in paragraph at lines 418--418
-[]|\OT1/cmr/bx/n/10.95 Shock/Vibration
- []
-
-
-Overfull \hbox (49.05423pt too wide) in paragraph at lines 418--418
-[]|\OT1/cmr/bx/n/10.95 Assembly/Integration| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--420
-[]|\OT1/cmr/m/n/10.95 Adhesive-only
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--420
-[]|\OT1/cmr/m/n/10.95 Simple ini-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
-[]|\OT1/cmr/m/n/10.95 Poor ser-vice-abil-ity
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
-\OT1/cmr/m/n/10.95 and lim-ited re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
-\OT1/cmr/m/n/10.95 peata-bil-ity un-der
- []
-
-
-Underfull \hbox (badness 4886) in paragraph at lines 421--421
-[]|\OT1/cmr/bx/n/10.95 Best bal-ance of
- []
-
-
-Underfull \hbox (badness 3780) in paragraph at lines 421--421
-\OT1/cmr/bx/n/10.95 fit, force dis-tri-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 421--421
-\OT1/cmr/bx/n/10.95 bu-tion, main-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 421--421
-\OT1/cmr/bx/n/10.95 tain-abil-ity, and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 421--421
-\OT1/cmr/bx/n/10.95 sub-sys-tem in-te-
- []
-
-
-Overfull \hbox (28.5284pt too wide) in paragraph at lines 416--423
+Overfull \hbox (108.55128pt too wide) in paragraph at lines 501--510
  [][] 
  []
 
+
+Overfull \hbox (70.23708pt too wide) in paragraph at lines 520--529
+ [][] 
+ []
+
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2106,15 +1900,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [33]
-<images/mechanical/FC_Holder_without title block.JPG, id=1017, 803.25093pt x 51
-2.66531pt>
-File: images/mechanical/FC_Holder_without title block.JPG Graphic file (type jp
-g)
-<use images/mechanical/FC_Holder_without title block.JPG>
-Package pdftex.def Info: images/mechanical/FC_Holder_without title block.JPG  u
-sed on input line 431.
-(pdftex.def)             Requested size: 411.93877pt x 262.91867pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2122,267 +1907,47 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34]
-<images/mechanical/18650_case_without title block.JPG, id=1022, 813.79031pt x 5
-11.9125pt>
-File: images/mechanical/18650_case_without title block.JPG Graphic file (type j
-pg)
-<use images/mechanical/18650_case_without title block.JPG>
-Package pdftex.def Info: images/mechanical/18650_case_without title block.JPG  
-used on input line 440.
-(pdftex.def)             Requested size: 411.93877pt x 259.12694pt.
+[34] (Files/Chapter4_ResultsDiscussion.tex
+<images/etched FC circuit.jpeg, id=1115, 683.55376pt x 654.94687pt>
+File: images/etched FC circuit.jpeg Graphic file (type jpg)
+<use images/etched FC circuit.jpeg>
+Package pdftex.def Info: images/etched FC circuit.jpeg  used on input line 27.
+(pdftex.def)             Requested size: 288.35587pt x 276.29504pt.
+<images/Labeled/Soldered_FC.PNG, id=1116, 328.97906pt x 543.53062pt>
+File: images/Labeled/Soldered_FC.PNG Graphic file (type png)
+<use images/Labeled/Soldered_FC.PNG>
+Package pdftex.def Info: images/Labeled/Soldered_FC.PNG  used on input line 34.
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[35 <./images/mechanical/FC_Holder_without title block.JPG>]
-<images/mechanical/Edge_batt_without title block.JPG, id=1027, 769.37437pt x 47
-9.54156pt>
-File: images/mechanical/Edge_batt_without title block.JPG Graphic file (type jp
-g)
-<use images/mechanical/Edge_batt_without title block.JPG>
-Package pdftex.def Info: images/mechanical/Edge_batt_without title block.JPG  u
-sed on input line 447.
-(pdftex.def)             Requested size: 411.93877pt x 256.76074pt.
-<images/mechanical/Mid_batt_without title block.JPG, id=1028, 883.04906pt x 548
-.0475pt>
-File: images/mechanical/Mid_batt_without title block.JPG Graphic file (type jpg
-)
-<use images/mechanical/Mid_batt_without title block.JPG>
-Package pdftex.def Info: images/mechanical/Mid_batt_without title block.JPG  us
-ed on input line 454.
-(pdftex.def)             Requested size: 411.93877pt x 255.65898pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[36 <./images/mechanical/18650_case_without title block.JPG> <./images/mechanic
-al/Edge_batt_without title block.JPG>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[37 <./images/mechanical/Mid_batt_without title block.JPG>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[38]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[39]
-Overfull \hbox (23.52647pt too wide) in paragraph at lines 564--565
-\OT1/cmr/m/n/12 The XBee-PRO 900HP hard-ware ex-poses only a UART se-rial in-te
-r-face for transparent-
- []
-
-
-Underfull \hbox (badness 1881) in paragraph at lines 578--579
-[]|\OT1/cmr/m/n/10.95 Reduces per-packet la-tency; set
- []
-
-
-Underfull \hbox (badness 1189) in paragraph at lines 578--579
-\OT1/cmr/m/n/10.95 iden-ti-cally on flight and ground
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 580--580
-[]|\OT1/cmr/m/n/10.95 UART, 3.3 V
- []
-
-
-Underfull \hbox (badness 1616) in paragraph at lines 581--581
-[]|\OT1/cmr/m/n/10.95 Telemetry packet in-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[40]
-
-LaTeX Warning: Reference `app:moved_figures' on page 41 undefined on input line
- 602.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 41 undefined on input line
- 604.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 41 undefined on input line
- 608.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[41]
-
-LaTeX Warning: Reference `app:moved_figures' on page 42 undefined on input line
- 612.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 42 undefined on input line
- 633.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 42 undefined on input line
- 635.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[42])
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[43] (Files/Chapter4_ResultsDiscussion.tex
-
-LaTeX Warning: Reference `fig:res_18650_2d' on page 44 undefined on input line 
-14.
-
-
-LaTeX Warning: Reference `fig:res_edge_2d' on page 44 undefined on input line 1
-4.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 44 undefined on input line
- 16.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 44 undefined on input line
- 18.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 44 undefined on input line
- 20.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 44 undefined on input line
- 26.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 44 undefined on input line
- 28.
-
-<images/Labeled/Assembly_Cross_section.PNG, id=1121, 445.665pt x 261.97874pt>
+(pdftex.def)             Requested size: 288.35587pt x 476.42577pt.
+<images/Labeled/Assembly_Cross_section.PNG, id=1117, 445.665pt x 261.97874pt>
 File: images/Labeled/Assembly_Cross_section.PNG Graphic file (type png)
 <use images/Labeled/Assembly_Cross_section.PNG>
 Package pdftex.def Info: images/Labeled/Assembly_Cross_section.PNG  used on inp
-ut line 32.
+ut line 41.
 (pdftex.def)             Requested size: 370.74237pt x 217.93799pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[44
-
-]
-<images/Labeled/Full_assemly_Parts_List.PNG, id=1128, 597.73312pt x 431.36156pt
+<images/Labeled/Full_assemly_Parts_List.PNG, id=1118, 597.73312pt x 431.36156pt
 >
 File: images/Labeled/Full_assemly_Parts_List.PNG Graphic file (type png)
 <use images/Labeled/Full_assemly_Parts_List.PNG>
 Package pdftex.def Info: images/Labeled/Full_assemly_Parts_List.PNG  used on in
-put line 39.
+put line 48.
 (pdftex.def)             Requested size: 411.93877pt x 297.28436pt.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[45 <./images/Labeled/Assembly_Cross_section.PNG>]
-
-LaTeX Warning: Reference `app:moved_figures' on page 46 undefined on input line
- 44.
-
-<images/mechanical/Full Integration in avionics bay.jpeg, id=1136, 1015.795pt x
+<images/mechanical/Full Integration in avionics bay.jpeg, id=1119, 1015.795pt x
  673.51625pt>
 File: images/mechanical/Full Integration in avionics bay.jpeg Graphic file (typ
 e jpg)
 <use images/mechanical/Full Integration in avionics bay.jpeg>
 Package pdftex.def Info: images/mechanical/Full Integration in avionics bay.jpe
-g  used on input line 48.
+g  used on input line 55.
 (pdftex.def)             Requested size: 308.95407pt x 204.85178pt.
-
-LaTeX Warning: Reference `fig:res_bs_easyeda' on page 46 undefined on input lin
-e 55.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[46 <./images/Labeled/Full_assemly_Parts_List.PNG> <./images/mechanical/Full In
-tegration in avionics bay.jpeg>]
-
-LaTeX Warning: Reference `app:moved_figures' on page 47 undefined on input line
- 57.
-
-
-LaTeX Warning: Reference `app:moved_figures' on page 47 undefined on input line
- 63.
-
-<images/etched FC circuit.jpeg, id=1144, 683.55376pt x 654.94687pt>
-File: images/etched FC circuit.jpeg Graphic file (type jpg)
-<use images/etched FC circuit.jpeg>
-Package pdftex.def Info: images/etched FC circuit.jpeg  used on input line 73.
-(pdftex.def)             Requested size: 288.35587pt x 276.29504pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[47]
-<images/Labeled/Soldered_FC.PNG, id=1149, 328.97906pt x 543.53062pt>
-File: images/Labeled/Soldered_FC.PNG Graphic file (type png)
-<use images/Labeled/Soldered_FC.PNG>
-Package pdftex.def Info: images/Labeled/Soldered_FC.PNG  used on input line 80.
-
-(pdftex.def)             Requested size: 288.35587pt x 476.42577pt.
+<images/Battery _Monitoring_Proteus_DesignWhite_background.PNG, id=1120, 587.94
+656pt x 384.6872pt>
+File: images/Battery _Monitoring_Proteus_DesignWhite_background.PNG Graphic fil
+e (type png)
+<use images/Battery _Monitoring_Proteus_DesignWhite_background.PNG>
+Package pdftex.def Info: images/Battery _Monitoring_Proteus_DesignWhite_backgro
+und.PNG  used on input line 71.
+(pdftex.def)             Requested size: 350.15045pt x 229.1001pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2391,23 +1956,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[48 <./images/etched FC circuit.jpeg>]
-<images/Current_Circuit_Design.png, id=1154, 736.25063pt x 344.03531pt>
-File: images/Current_Circuit_Design.png Graphic file (type png)
-<use images/Current_Circuit_Design.png>
-Package pdftex.def Info: images/Current_Circuit_Design.png  used on input line 
-87.
-(pdftex.def)             Requested size: 288.35587pt x 134.74542pt.
+[35
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[49 <./images/Labeled/Soldered_FC.PNG>]
-Overfull \hbox (16.3537pt too wide) in paragraph at lines 100--119
+]
+Overfull \hbox (29.6409pt too wide) in paragraph at lines 123--132
  [][] 
  []
 
@@ -2418,7 +1970,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50 <./images/Current_Circuit_Design.png>]
+[36 <./images/etched FC circuit.jpeg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2426,7 +1978,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[51]
+[37 <./images/Labeled/Soldered_FC.PNG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2434,16 +1986,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52]
-Overfull \hbox (12.28047pt too wide) in paragraph at lines 174--175
-[]\OT1/cmr/m/n/12 Flight state ma-chine (Pre-launch, As-cent, Apogee de-tec-tio
-n, De-scent, Landed) 
- []
-
-
-Overfull \hbox (3.1236pt too wide) in paragraph at lines 175--176
-[]\OT1/cmr/m/n/12 Deployment trig-ger logic (altitude-based for drogue, altitud
-e-based for main) 
+[38]
+Overfull \hbox (109.93501pt too wide) in paragraph at lines 167--175
+ [][] 
  []
 
 
@@ -2453,7 +1998,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53])
+[39 <./images/Labeled/Assembly_Cross_section.PNG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2461,7 +2006,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54] (Files/Chapter5_RemainingWork.tex)
+[40 <./images/Labeled/Full_assemly_Parts_List.PNG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2469,9 +2014,211 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[55
+[41 <./images/mechanical/Full Integration in avionics bay.jpeg> <./images/Batte
+ry _Monitoring_Proteus_DesignWhite_background.PNG>]
 
-]
+LaTeX Warning: Reference `fig:team_site' on page 42 undefined on input line 186
+.
+
+File: images/Assembled_Avionics_Bay.jpeg Graphic file (type jpg)
+<use images/Assembled_Avionics_Bay.jpeg>
+Package pdftex.def Info: images/Assembled_Avionics_Bay.jpeg  used on input line
+ 193.
+(pdftex.def)             Requested size: 350.15045pt x 161.39503pt.
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201   \begin{subfigure}
+                         [b]{0.48\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.201   \begin{subfigure}[b]{0.48\textwidth}
+                                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.201   \begin{subfigure}[b]{0.48\textwidth}
+                                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+<images/FC_Design.png, id=1162, 1437.11906pt x 651.18282pt>
+File: images/FC_Design.png Graphic file (type png)
+<use images/FC_Design.png>
+Package pdftex.def Info: images/FC_Design.png  used on input line 203.
+(pdftex.def)             Requested size: 411.93877pt x 186.6522pt.
+
+! LaTeX Error: \begin{figure} on input line 199 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.207   \end{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.209   \begin{subfigure}
+                         [b]{0.48\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   }
+l.209   \begin{subfigure}[b]{0.48\textwidth}
+                                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.209   \begin{subfigure}[b]{0.48\textwidth}
+                                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+<images/GCS_XBEE.png, id=1163, 497.60907pt x 520.94624pt>
+File: images/GCS_XBEE.png Graphic file (type png)
+<use images/GCS_XBEE.png>
+Package pdftex.def Info: images/GCS_XBEE.png  used on input line 211.
+(pdftex.def)             Requested size: 411.93877pt x 431.26447pt.
+
+! LaTeX Error: \begin{figure} on input line 199 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215   \end{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Float too large for page by 176.74998pt on input line 218.
+
+<images/XCTUData_Transmitted.PNG, id=1164, 1445.4pt x 780.66656pt>
+File: images/XCTUData_Transmitted.PNG Graphic file (type png)
+<use images/XCTUData_Transmitted.PNG>
+Package pdftex.def Info: images/XCTUData_Transmitted.PNG  used on input line 22
+2.
+(pdftex.def)             Requested size: 288.35587pt x 155.73744pt.
+File: images/Post_PopTest_Charring_And_Leak_Image.jpeg Graphic file (type jpg)
+<use images/Post_PopTest_Charring_And_Leak_Image.jpeg>
+Package pdftex.def Info: images/Post_PopTest_Charring_And_Leak_Image.jpeg  used
+ on input line 238.
+(pdftex.def)             Requested size: 247.16577pt x 318.27914pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[42]
+Overfull \hbox (21.16101pt too wide) in paragraph at lines 264--266
+[]\OT1/cmr/bx/n/12 Barometer In-ter-face: \OT1/cmr/m/n/12 I$[]$C sam-pling of B
+MP280 for temperature-compensated
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[43]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[44 <./images/FC_Design.png> <./images/GCS_XBEE.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[45 <./images/XCTUData_Transmitted.PNG>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[46])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[47] (Files/Chapter5_RemainingWork.tex
+Overfull \hbox (8.89865pt too wide) in paragraph at lines 18--23
+[]\OT1/cmr/m/n/12 Controlled en-ergy de-liv-ery across the de-ploy-ment chan-ne
+ls was val-i-dated through
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[48
+
+])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[49]
 
 LaTeX Warning: Citation `IEEEexample:BSTcontrol' undefined on input line 125.
 
@@ -2483,7 +2230,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[56
+[50
 
 ]
 
@@ -2493,7 +2240,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[57]
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 129--132
 []\OT1/cmr/m/n/12 Panasonic In-dus-trial De-vices, ``Cgr18650da lithium-ion cyl
 in-dri-cal
@@ -2554,7 +2301,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[58])
+[52])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2562,31 +2309,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[59] (Files/Appendices.tex
-Overfull \hbox (8.18495pt too wide) in paragraph at lines 8--8
-[]\OT1/cmr/bx/n/17.28 Appendix A: CAD Draw-ings with Ti-tle Blocks 
- []
-
-
+[53] (Files/Appendices.tex
 
 pdfTeX warning: pdflatex.exe (file ./images/mechanical/18650_case_cover.pdf): P
 DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/mechanical/18650_case_cover.pdf, id=1242, page=1, 1195.46625pt x 845.15
+<images/mechanical/18650_case_cover.pdf, id=1261, page=1, 1195.46625pt x 845.15
 75pt>
 File: images/mechanical/18650_case_cover.pdf Graphic file (type pdf)
 <use images/mechanical/18650_case_cover.pdf, page 1>
 Package pdftex.def Info: images/mechanical/18650_case_cover.pdf , page1 used on
- input line 15.
+ input line 16.
 (pdftex.def)             Requested size: 411.93877pt x 291.23146pt.
 
 
 pdfTeX warning: pdflatex.exe (file ./images/mechanical/18650_case.pdf): PDF inc
 lusion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/mechanical/18650_case.pdf, id=1243, page=1, 1195.46625pt x 845.1575pt>
+<images/mechanical/18650_case.pdf, id=1262, page=1, 1195.46625pt x 845.1575pt>
 File: images/mechanical/18650_case.pdf Graphic file (type pdf)
 <use images/mechanical/18650_case.pdf, page 1>
 Package pdftex.def Info: images/mechanical/18650_case.pdf , page1 used on input
- line 22.
+ line 23.
 (pdftex.def)             Requested size: 411.93877pt x 291.23146pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2595,17 +2337,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[60
+[54
 
  <./images/mechanical/18650_case_cover.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/mechanical/Edge_Batt.pdf): PDF incl
 usion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/mechanical/Edge_Batt.pdf, id=1279, page=1, 1195.46625pt x 845.1575pt>
+<images/mechanical/Edge_Batt.pdf, id=1298, page=1, 1195.46625pt x 845.1575pt>
 File: images/mechanical/Edge_Batt.pdf Graphic file (type pdf)
 <use images/mechanical/Edge_Batt.pdf, page 1>
 Package pdftex.def Info: images/mechanical/Edge_Batt.pdf , page1 used on input 
-line 29.
+line 30.
 (pdftex.def)             Requested size: 411.93877pt x 291.23146pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2614,15 +2356,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[61 <./images/mechanical/18650_case.pdf>]
+[55 <./images/mechanical/18650_case.pdf>]
 
 pdfTeX warning: pdflatex.exe (file ./images/mechanical/mid_Batt.pdf): PDF inclu
 sion: found PDF version <1.6>, but at most version <1.5> allowed
-<images/mechanical/mid_Batt.pdf, id=1311, page=1, 1195.46625pt x 845.1575pt>
+<images/mechanical/mid_Batt.pdf, id=1330, page=1, 1195.46625pt x 845.1575pt>
 File: images/mechanical/mid_Batt.pdf Graphic file (type pdf)
 <use images/mechanical/mid_Batt.pdf, page 1>
 Package pdftex.def Info: images/mechanical/mid_Batt.pdf , page1 used on input l
-ine 36.
+ine 37.
 (pdftex.def)             Requested size: 411.93877pt x 291.23146pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2631,14 +2373,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[62 <./images/mechanical/Edge_Batt.pdf>]
-<images/FC_Xbee_Design__easyDA_White_Background.PNG, id=1341, 308.65312pt x 328
+[56 <./images/mechanical/Edge_Batt.pdf>]
+<images/FC_Xbee_Design__easyDA_White_Background.PNG, id=1361, 308.65312pt x 328
 .97906pt>
 File: images/FC_Xbee_Design__easyDA_White_Background.PNG Graphic file (type png
 )
 <use images/FC_Xbee_Design__easyDA_White_Background.PNG>
 Package pdftex.def Info: images/FC_Xbee_Design__easyDA_White_Background.PNG  us
-ed on input line 49.
+ed on input line 52.
 (pdftex.def)             Requested size: 411.93877pt x 439.10283pt.
 
 
@@ -2648,14 +2390,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[63 <./images/mechanical/mid_Batt.pdf>]
-<images/Basestation_Circuit_Design_White_Background.png, id=1375, 656.4525pt x 
+[57 <./images/mechanical/mid_Batt.pdf>]
+<images/Basestation_Circuit_Design_White_Background.png, id=1394, 656.4525pt x 
 371.13657pt>
 File: images/Basestation_Circuit_Design_White_Background.png Graphic file (type
  png)
 <use images/Basestation_Circuit_Design_White_Background.png>
 Package pdftex.def Info: images/Basestation_Circuit_Design_White_Background.png
-  used on input line 56.
+  used on input line 60.
 (pdftex.def)             Requested size: 411.93877pt x 232.89984pt.
 
 
@@ -2665,18 +2407,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[64 <./images/FC_Xbee_Design__easyDA_White_Background.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
+[58 <./images/FC_Xbee_Design__easyDA_White_Background.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []|\OT1/cmr/bx/n/10.95 Total
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 82--82
-[]|\OT1/cmr/m/n/10.95 Connectors (XT60, JST,
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
+[]|\OT1/cmr/m/n/10.95 4S Lithium-ion bat-ter-ies
  []
 
 
-Overfull \hbox (1.01746pt too wide) in paragraph at lines 69--87
+Overfull \hbox (25.82019pt too wide) in paragraph at lines 73--91
  [][] 
  []
 
@@ -2687,12 +2429,45 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[65 <./images/Basestation_Circuit_Design_White_Background.png>]
-<images/Timeplan.PNG, id=1387, 772.38562pt x 526.21594pt>
-File: images/Timeplan.PNG Graphic file (type png)
-<use images/Timeplan.PNG>
-Package pdftex.def Info: images/Timeplan.PNG  used on input line 97.
-(pdftex.def)             Requested size: 411.93877pt x 280.64352pt.
+[59 <./images/Basestation_Circuit_Design_White_Background.png>]
+
+! LaTeX Error: Environment longtable undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 \begin{longtable}
+                       {p{1cm}p{4.5cm}p{3cm}p{2.5cm}p{2.5cm}p{1.5cm}}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.102   \caption
+                {Production Plan --- Final Year Project 2025/2026 (Semester ...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Misplaced \noalign.
+\toprule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\abovetopsep \global \@b...
+l.104   \toprule
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--105
+
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2701,15 +2476,945 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[66]
-Overfull \hbox (19.36707pt too wide) in paragraph at lines 103--103
-[]\OT1/cmr/bx/n/17.28 Appendix E: La-belled As-sem-bly Ref-er-ence Pho-
+[60]
+! Misplaced alignment tab character &.
+l.105   \textbf{Wk} &
+                      \textbf{Tasks / Activities} & \textbf{Materials Requir...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.105 ...extbf{Wk} & \textbf{Tasks / Activities} &
+                                                   \textbf{Materials Require...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.105 ...tivities} & \textbf{Materials Required} &
+                                                   \textbf{Special Equipment...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.105 ... Required} & \textbf{Special Equipment} &
+                                                   \textbf{Sequential / Conc...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.105 ...ent} & \textbf{Sequential / Concurrent} &
+                                                   \textbf{Status}\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\midrule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@...
+l.106   \midrule
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+! Undefined control sequence.
+<recently read> \endfirsthead 
+                              
+l.107   \endfirsthead
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.108 ...le~\ref{tab:production_plan} continued)}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \noalign.
+\toprule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\abovetopsep \global \@b...
+l.109   \toprule
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
+
+ []
+
+! Misplaced alignment tab character &.
+l.110   \textbf{Wk} &
+                      \textbf{Tasks / Activities} & \textbf{Materials Requir...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.110 ...extbf{Wk} & \textbf{Tasks / Activities} &
+                                                   \textbf{Materials Require...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.110 ...tivities} & \textbf{Materials Required} &
+                                                   \textbf{Special Equipment...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.110 ... Required} & \textbf{Special Equipment} &
+                                                   \textbf{Sequential / Conc...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.110 ...ent} & \textbf{Sequential / Concurrent} &
+                                                   \textbf{Status}\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\midrule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@...
+l.111   \midrule
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--112
+
+ []
+
+! Undefined control sequence.
+<recently read> \endhead 
+                         
+l.112   \endhead
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced \noalign.
+\midrule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global \@...
+l.113   \midrule
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.114 ...r}{\small\textit{Continued on next page}}
+                                                  \\
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Undefined control sequence.
+<recently read> \endfoot 
+                         
+l.115   \endfoot
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced \noalign.
+\bottomrule ->\noalign 
+                       {\ifnum 0=`}\fi \@aboverulesep =\aboverulesep \global...
+l.116   \bottomrule
+                   
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
+
+ []
+
+! Undefined control sequence.
+<recently read> \endlastfoot 
+                             
+l.117   \endlastfoot
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.119   1 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.121 ... launch-inhibit triggers at $<$14.0\,V. &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.122 ...er clad; HCl + H$_2$O$_2$; solder, flux &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.123 ...ial monitor; soldering iron; multimeter &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.124 ...t update concurrent with SW integration &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--126
+
+ []
+
+! Misplaced alignment tab character &.
+l.127   2 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.129 ...onents; test power rails and XBee UART. &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.130 ...t; perfboard; solder, flux; header pins &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.131 ...ers; soldering iron; multimeter; laptop &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.132 ...able; base station soldering concurrent &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--134
+
+ []
+
+! Misplaced alignment tab character &.
+l.135   3 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.138 ...M; confirm sequence; iterate if needed. &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.139 ...r; nichrome wire; all-weather container &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.140 ...; laptop; safety PPE; fire extinguisher &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.141 ...rrent; pop test after cap fit confirmed &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--143
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[61]
+! Misplaced alignment tab character &.
+l.144   4 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.146 ...extbf{2.\ Base Station Final Assembly.} &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.147 ...50 battery pack; full avionics assembly &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.148 ...ial monitor; multimeter; soldering iron &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.149 ... sled + SW done; BS assembly concurrent &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--151
+
+ []
+
+! Misplaced alignment tab character &.
+l.152   5 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.153 ...ger main at 70\% PWM; confirm sequence. &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.154 ...50 battery pack; full avionics assembly &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.155 ...ial monitor; multimeter; soldering iron &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.156 ...embly concurrent with bench integration &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--158
+
+ []
+
+! Misplaced alignment tab character &.
+l.159   6 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.160 ... main fire at 70\% PWM; record results. &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.161 ...50 battery pack; full avionics assembly &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.162 ...ial monitor; multimeter; soldering iron &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.163   After all bench integration passes &
+                                            
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--165
+
+ []
+
+! Misplaced alignment tab character &.
+l.166   7 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.169 ...bf{3.\ Report \& Documentation Update.} &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.170   Both XBee modules; laptops; transport &
+                                               
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.171   Laptop + XCTU software &
+                                
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.172 ...h integration; documentation concurrent &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--174
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[62]
+! Misplaced alignment tab character &.
+l.175   8 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.177 ...xtbf{2.\ Pre-Launch System Validation.} &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.178 ...s assembly; drone platform; tether line &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.179 ...top + serial monitor; multimeter; drone &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.180 ...efinement; system validation concurrent &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--182
+
+ []
+
+! Misplaced alignment tab character &.
+l.183   9 &
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.186 ...rse final slide deck; deliver to panel. &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.187   Full system assembly; test fixtures &
+                                             
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.188   Laptop; camera/recorder &
+                                 
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.189 ...nt; presentation concurrent with report &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{document} ended by \end{longtable}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.191 \end{longtable}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--192
+
  []
 
 File: images/Labeled/Assembly_Cross_section.PNG Graphic file (type png)
 <use images/Labeled/Assembly_Cross_section.PNG>
 Package pdftex.def Info: images/Labeled/Assembly_Cross_section.PNG  used on inp
-ut line 110.
+ut line 202.
 (pdftex.def)             Requested size: 370.74237pt x 217.93799pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2718,17 +3423,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[67 <./images/Timeplan.PNG>]
+[63]
 File: images/Labeled/Full_assemly_Parts_List.PNG Graphic file (type png)
 <use images/Labeled/Full_assemly_Parts_List.PNG>
 Package pdftex.def Info: images/Labeled/Full_assemly_Parts_List.PNG  used on in
-put line 117.
+put line 209.
 (pdftex.def)             Requested size: 370.74237pt x 267.5533pt.
-<images/Labeled/Avionics_Bay.PNG, id=1401, 442.65375pt x 312.41719pt>
+<images/Labeled/Avionics_Bay.PNG, id=1424, 442.65375pt x 312.41719pt>
 File: images/Labeled/Avionics_Bay.PNG Graphic file (type png)
 <use images/Labeled/Avionics_Bay.PNG>
-Package pdftex.def Info: images/Labeled/Avionics_Bay.PNG  used on input line 12
-4.
+Package pdftex.def Info: images/Labeled/Avionics_Bay.PNG  used on input line 21
+6.
 (pdftex.def)             Requested size: 350.15045pt x 247.14532pt.
 
 
@@ -2738,10 +3443,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[68]
+[64]
 File: images/Labeled/Soldered_FC.PNG Graphic file (type png)
 <use images/Labeled/Soldered_FC.PNG>
-Package pdftex.def Info: images/Labeled/Soldered_FC.PNG  used on input line 131
+Package pdftex.def Info: images/Labeled/Soldered_FC.PNG  used on input line 223
 .
 (pdftex.def)             Requested size: 329.55226pt x 544.49133pt.
 
@@ -2752,7 +3457,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[69 <./images/Labeled/Avionics_Bay.PNG>]
+[65 <./images/Labeled/Avionics_Bay.PNG>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2760,7 +3465,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[70]
+[66]
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
@@ -2768,9 +3473,9 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 148.
+nput line 238.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 149.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 239.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2779,7 +3484,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[71]
+[67]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2787,7 +3492,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[72]
+[68]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2795,8 +3500,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[73]
-Overfull \hbox (36.4604pt too wide) in paragraph at lines 253--254
+[69]
+Overfull \hbox (36.4604pt too wide) in paragraph at lines 340--341
 [][] 
  []
 
@@ -2807,85 +3512,73 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[74]
-<images/XBeeDiagram.png, id=1544, 799.98875pt x 466.74374pt>
+[70]
+<images/XBeeDiagram.png, id=1570, 799.98875pt x 466.74374pt>
 File: images/XBeeDiagram.png Graphic file (type png)
 <use images/XBeeDiagram.png>
-Package pdftex.def Info: images/XBeeDiagram.png  used on input line 266.
+Package pdftex.def Info: images/XBeeDiagram.png  used on input line 353.
 (pdftex.def)             Requested size: 296.5964pt x 173.04857pt.
-<images/duck_antenna.jpg, id=1549, 702.625pt x 702.625pt>
+<images/duck_antenna.jpg, id=1575, 702.625pt x 702.625pt>
 File: images/duck_antenna.jpg Graphic file (type jpg)
 <use images/duck_antenna.jpg>
-Package pdftex.def Info: images/duck_antenna.jpg  used on input line 274.
+Package pdftex.def Info: images/duck_antenna.jpg  used on input line 360.
 (pdftex.def)             Requested size: 156.53874pt x 156.53995pt.
-<images/donut_pattern.png, id=1550, 564.60938pt x 453.19313pt>
+<images/donut_pattern.png, id=1576, 564.60938pt x 453.19313pt>
 File: images/donut_pattern.png Graphic file (type png)
 <use images/donut_pattern.png>
-Package pdftex.def Info: images/donut_pattern.png  used on input line 281.
+Package pdftex.def Info: images/donut_pattern.png  used on input line 367.
 (pdftex.def)             Requested size: 185.37119pt x 148.79352pt.
-<images/BiQuadPic.jpg, id=1551, 642.4pt x 357.335pt>
+<images/BiQuadPic.jpg, id=1577, 642.4pt x 357.335pt>
 File: images/BiQuadPic.jpg Graphic file (type jpg)
 <use images/BiQuadPic.jpg>
-Package pdftex.def Info: images/BiQuadPic.jpg  used on input line 289.
+Package pdftex.def Info: images/BiQuadPic.jpg  used on input line 374.
 (pdftex.def)             Requested size: 185.37119pt x 103.11195pt.
-<images/Old_FC_Holder.png, id=1552, 870.25125pt x 618.81187pt>
+<images/Old_FC_Holder.png, id=1578, 870.25125pt x 618.81187pt>
 File: images/Old_FC_Holder.png Graphic file (type png)
 <use images/Old_FC_Holder.png>
-Package pdftex.def Info: images/Old_FC_Holder.png  used on input line 296.
+Package pdftex.def Info: images/Old_FC_Holder.png  used on input line 381.
 (pdftex.def)             Requested size: 214.20992pt x 152.31367pt.
-File: images/XBeeDiagram.png Graphic file (type png)
-<use images/XBeeDiagram.png>
-Package pdftex.def Info: images/XBeeDiagram.png  used on input line 303.
-(pdftex.def)             Requested size: 255.40001pt x 149.00494pt.
-<images/Base_Station_Design.jpeg, id=1553, 904.37875pt x 783.92876pt>
+<images/Base_Station_Design.jpeg, id=1579, 904.37875pt x 783.92876pt>
 File: images/Base_Station_Design.jpeg Graphic file (type jpg)
 <use images/Base_Station_Design.jpeg>
-Package pdftex.def Info: images/Base_Station_Design.jpeg  used on input line 31
-0.
+Package pdftex.def Info: images/Base_Station_Design.jpeg  used on input line 38
+8.
 (pdftex.def)             Requested size: 255.40001pt x 221.37656pt.
-<images/Rocket_Extension_Design.jpeg, id=1554, 1019.81pt x 557.08125pt>
+<images/Rocket_Extension_Design.jpeg, id=1580, 1019.81pt x 557.08125pt>
 File: images/Rocket_Extension_Design.jpeg Graphic file (type jpg)
 <use images/Rocket_Extension_Design.jpeg>
 Package pdftex.def Info: images/Rocket_Extension_Design.jpeg  used on input lin
-e 317.
+e 395.
 (pdftex.def)             Requested size: 255.40001pt x 139.50798pt.
-
-Overfull \hbox (103.04866pt too wide) in paragraph at lines 376--377
- [][] 
- []
-
-
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``hold''? on input line 
-463.
-
-
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``inhib''? on input line
- 466.
-
-
-Overfull \hbox (18.3684pt too wide) in paragraph at lines 473--474
- [][] 
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[75 <./images/XBeeDiagram.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[76 <./images/duck_antenna.jpg> <./images/donut_pattern.png> <./images/BiQuadPi
-c.jpg>]
+<images/Power_Monitoring_Design_Concept.png, id=1581, 1437.11906pt x 651.18282p
+t>
+File: images/Power_Monitoring_Design_Concept.png Graphic file (type png)
+<use images/Power_Monitoring_Design_Concept.png>
+Package pdftex.def Info: images/Power_Monitoring_Design_Concept.png  used on in
+put line 402.
+(pdftex.def)             Requested size: 411.93877pt x 186.6522pt.
+<images/mechanical/FC_Holder Cad.jpeg, id=1582, 808.52063pt x 494.59781pt>
+File: images/mechanical/FC_Holder Cad.jpeg Graphic file (type jpg)
+<use images/mechanical/FC_Holder Cad.jpeg>
+Package pdftex.def Info: images/mechanical/FC_Holder Cad.jpeg  used on input li
+ne 409.
+(pdftex.def)             Requested size: 308.95407pt x 188.99814pt.
+<images/mechanical/Threaded_Rod_Integration_showing raised battery cells to giv
+e way to threaded rods.PNG, id=1583, 749.80125pt x 359.09157pt>
+File: images/mechanical/Threaded_Rod_Integration_showing raised battery cells t
+o give way to threaded rods.PNG Graphic file (type png)
+<use images/mechanical/Threaded_Rod_Integration_showing raised battery cells to
+ give way to threaded rods.PNG>
+Package pdftex.def Info: images/mechanical/Threaded_Rod_Integration_showing rai
+sed battery cells to give way to threaded rods.PNG  used on input line 416.
+(pdftex.def)             Requested size: 308.95407pt x 147.9627pt.
+<images/mechanical/Avionics assembly.jpeg, id=1584, 940.26282pt x 593.21625pt>
+File: images/mechanical/Avionics assembly.jpeg Graphic file (type jpg)
+<use images/mechanical/Avionics assembly.jpeg>
+Package pdftex.def Info: images/mechanical/Avionics assembly.jpeg  used on inpu
+t line 423.
+(pdftex.def)             Requested size: 308.95407pt x 194.92015pt.
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2893,7 +3586,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[77 <./images/Old_FC_Holder.png>]
+[71 <./images/XBeeDiagram.png> <./images/duck_antenna.jpg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2901,7 +3594,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[78 <./images/Base_Station_Design.jpeg> <./images/Rocket_Extension_Design.jpeg>
+[72 <./images/donut_pattern.png> <./images/BiQuadPic.jpg> <./images/Old_FC_Hold
+er.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[73 <./images/Base_Station_Design.jpeg> <./images/Rocket_Extension_Design.jpeg>
 ]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2910,7 +3612,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[79]
+[74 <./images/Power_Monitoring_Design_Concept.png> <./images/mechanical/FC_Hold
+er Cad.jpeg>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2918,141 +3621,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[80]
-Overfull \vbox (50.18622pt too high) has occurred while \output is active []
-
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[81]
-
-Package pgf Warning: Returning node center instead of a point on node border. D
-id you specify a point identical to the center of node ``inhibit''? on input li
-ne 510.
-
-
-Overfull \hbox (23.91464pt too wide) in paragraph at lines 515--516
- [][] 
- []
-
-<images/Power_Monitoring_Design_Concept.png, id=1601, 1437.11906pt x 651.18282p
-t>
-File: images/Power_Monitoring_Design_Concept.png Graphic file (type png)
-<use images/Power_Monitoring_Design_Concept.png>
-Package pdftex.def Info: images/Power_Monitoring_Design_Concept.png  used on in
-put line 524.
-(pdftex.def)             Requested size: 411.93877pt x 176.86552pt.
-<images/mechanical/18650_case_cover_without title block.JPG, id=1603, 792.71156
-pt x 483.30562pt>
-File: images/mechanical/18650_case_cover_without title block.JPG Graphic file (
-type jpg)
-<use images/mechanical/18650_case_cover_without title block.JPG>
-Package pdftex.def Info: images/mechanical/18650_case_cover_without title block
-.JPG  used on input line 531.
-(pdftex.def)             Requested size: 411.93877pt x 251.15813pt.
-File: images/mechanical/Mid_batt_without title block.JPG Graphic file (type jpg
-)
-<use images/mechanical/Mid_batt_without title block.JPG>
-Package pdftex.def Info: images/mechanical/Mid_batt_without title block.JPG  us
-ed on input line 538.
-(pdftex.def)             Requested size: 288.35587pt x 178.95793pt.
-File: images/mechanical/Edge_batt_without title block.JPG Graphic file (type jp
-g)
-<use images/mechanical/Edge_batt_without title block.JPG>
-Package pdftex.def Info: images/mechanical/Edge_batt_without title block.JPG  u
-sed on input line 545.
-(pdftex.def)             Requested size: 288.35587pt x 179.73251pt.
-<images/mechanical/FC_Holder Cad.jpeg, id=1604, 808.52063pt x 494.59781pt>
-File: images/mechanical/FC_Holder Cad.jpeg Graphic file (type jpg)
-<use images/mechanical/FC_Holder Cad.jpeg>
-Package pdftex.def Info: images/mechanical/FC_Holder Cad.jpeg  used on input li
-ne 552.
-(pdftex.def)             Requested size: 308.95407pt x 188.99814pt.
-<images/mechanical/Threaded_Rod_Integration_showing raised battery cells to giv
-e way to threaded rods.PNG, id=1605, 749.80125pt x 359.09157pt>
-File: images/mechanical/Threaded_Rod_Integration_showing raised battery cells t
-o give way to threaded rods.PNG Graphic file (type png)
-<use images/mechanical/Threaded_Rod_Integration_showing raised battery cells to
- give way to threaded rods.PNG>
-Package pdftex.def Info: images/mechanical/Threaded_Rod_Integration_showing rai
-sed battery cells to give way to threaded rods.PNG  used on input line 559.
-(pdftex.def)             Requested size: 308.95407pt x 147.9627pt.
-<images/mechanical/Avionics assembly.jpeg, id=1606, 940.26282pt x 593.21625pt>
-File: images/mechanical/Avionics assembly.jpeg Graphic file (type jpg)
-<use images/mechanical/Avionics assembly.jpeg>
-Package pdftex.def Info: images/mechanical/Avionics assembly.jpeg  used on inpu
-t line 566.
-(pdftex.def)             Requested size: 308.95407pt x 194.92015pt.
-File: images/Basestation_Circuit_Design_White_Background.png Graphic file (type
- png)
-<use images/Basestation_Circuit_Design_White_Background.png>
-Package pdftex.def Info: images/Basestation_Circuit_Design_White_Background.png
-  used on input line 573.
-(pdftex.def)             Requested size: 370.74237pt x 209.60759pt.
-<images/Battery _Monitoring_Proteus_DesignWhite_background.PNG, id=1607, 587.94
-656pt x 384.6872pt>
-File: images/Battery _Monitoring_Proteus_DesignWhite_background.PNG Graphic fil
-e (type png)
-<use images/Battery _Monitoring_Proteus_DesignWhite_background.PNG>
-Package pdftex.def Info: images/Battery _Monitoring_Proteus_DesignWhite_backgro
-und.PNG  used on input line 580.
-(pdftex.def)             Requested size: 350.15045pt x 229.1001pt.
-)
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[82]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[83 <./images/mechanical/18650_case_cover_without title block.JPG> <./images/Po
-wer_Monitoring_Design_Concept.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[84]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[85 <./images/mechanical/FC_Holder Cad.jpeg> <./images/mechanical/Threaded_Rod_
-Integration_showing raised battery cells to give way to threaded rods.PNG>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[86 <./images/mechanical/Avionics assembly.jpeg>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[87 <./images/Battery _Monitoring_Proteus_DesignWhite_background.PNG>]
+[75 <./images/mechanical/Threaded_Rod_Integration_showing raised battery cells 
+to give way to threaded rods.PNG> <./images/mechanical/Avionics assembly.jpeg>]
 (Nakuja_Interim_Report.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -3062,44 +3632,120 @@ L3 programming layer <2025-11-06>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `Nakuja_Interim_Report.out' has not changed.
-(rerunfilecheck)             Checksum: 63BA04C9731C3D5C56C8147EA094B8F8;17959.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `Nakuja_Interim_Report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Nakuja_Interim_Report.out':
+(rerunfilecheck)             Before: ED72A7B8DC3C44B87C3AF924856299BB;19463
+(rerunfilecheck)             After:  C3A5790A28B4E6877759B2D7FA73DBB7;18061.
  ) 
 Here is how much of TeX's memory you used:
- 25539 strings out of 467870
- 480331 string characters out of 5418838
- 1190039 words of memory out of 5000000
- 53496 multiletter control sequences out of 15000+600000
- 639009 words of font info for 83 fonts, out of 8000000 for 9000
+ 25207 strings out of 467870
+ 472862 string characters out of 5418838
+ 1178032 words of memory out of 5000000
+ 53182 multiletter control sequences out of 15000+600000
+ 638502 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,94p,2014b,2123s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
-200.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmbx8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/user/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/user/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/user/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/u
-ser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.p
-fb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr6.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/user/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/user/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/user/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/user/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/u
-ser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pf
-b>
-Output written on Nakuja_Interim_Report.pdf (103 pages, 6135064 bytes).
+ 84i,13n,94p,1013b,2056s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{figure.55} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.54} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.53} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.52} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.51} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.50} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.49} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.48} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.47} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.46} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.45} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.44} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.4.8} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.6.3} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.6.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.6.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.5.4} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.4.1.4} has been referenced but does n
+ot exist, replaced by a fixed one
+
+ <C:\Users\user\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm120
+0.pk><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmbx10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/user/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/user/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/user/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/user/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/use
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
+rs/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmti10.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmti12.pfb><C:/Users/user/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/user/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Nakuja_Interim_Report.pdf (92 pages, 5724268 bytes).
 PDF statistics:
- 1830 PDF objects out of 2073 (max. 8388607)
- 478 named destinations out of 1000 (max. 500000)
- 893 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1781 PDF objects out of 2073 (max. 8388607)
+ 462 named destinations out of 1000 (max. 500000)
+ 939 words of extra memory for PDF output out of 10000 (max. 10000000)
 

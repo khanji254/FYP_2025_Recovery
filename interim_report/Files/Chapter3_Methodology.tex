@@ -1,648 +1,529 @@
-﻿\section{Methodology}
+\section{Methodology}
 \label{sec:methodology}
 
-This chapter presents the \textit{what, why, and how} of the N4 recovery-system design process. In line with the interim-report guidelines, this chapter contains design considerations, calculations, circuit and CAD development workflow, and implementation planning for each subsystem.
+This chapter presents the \textit{what, why, and how} of the N4 recovery-system design
+process in line with the final-report guidelines, containing design considerations,
+calculations, circuit and CAD development workflow, and implementation planning
+for each subsystem.
 
 \subsection{Design Approach and Subsystem Decomposition}
+The development of the N-4 recovery system relies on rigorous decomposition of
+the mechatronic payload into isolated functional domains, isolating mechanical
+load paths, high-current ignition routing, and low-voltage computational
+electronics into independent modules.
 
-\subsection{Methodology structure}
+\subsection{Methodology Structure}
 
-The N4 recovery work follows an iterative design–build–test cycle. For clarity and traceability this chapter separates the lifecycle into two orthogonal views: (A) the project phases (linear progression through development and verification) and (B) the implementation modules (concurrent subsystem workstreams).
+The N-4 recovery work follows an iterative design--build--test cycle structured
+into two orthogonal views: (A)~project phases and (B)~implementation modules.
 
 \paragraph{Project phases}
-1. Requirements definition — derive subsystem requirements from mission constraints and safety limits.
-2. Concept generation — produce candidate mechanical, electrical and software solutions.
-3. Concept selection — evaluate candidates against performance, manufacturability and safety.
-4. Design and build — produce CAD, schematics and prototype hardware; capture PCB/EAGLE/EasyEDA sources.
-5. Firmware implementation — develop modular ESP32 firmware and inter-module interfaces.
-6. Validation and testing — staged bench and system-level tests, logging, and pre‑flight checks.
+\begin{enumerate}[leftmargin=*]
+  \item Requirements definition --- derive subsystem requirements from mission
+    constraints and safety limits.
+  \item Concept generation --- produce candidate mechanical, electrical, and
+    software solutions.
+  \item Concept selection --- evaluate candidates against performance,
+    manufacturability, and safety.
+  \item Design and build --- produce CAD, schematics, and prototype hardware.
+  \item Firmware implementation --- develop modular ESP32 firmware and
+    inter-module interfaces.
+  \item Validation and testing --- staged bench and system-level tests, logging,
+    and pre-flight checks.
+\end{enumerate}
 
-\paragraph{Implementation modules}
-These workstreams run in parallel across the phases above:
-\begin{enumerate}
-  \item Telemetry and antenna strategy (XBee, beacon, ground-station),
-  \item Pyrotechnic deployment and ignition control (PWM, MOSFET drive),
-  \item Power and feedback instrumentation (ADS1115 monitoring, continuity sensing),
-  \item Mechanical containment and avionics support structure (holder, battery pack),
+\paragraph{Implementation modules} (concurrent workstreams):
+\begin{enumerate}[leftmargin=*]
+  \item Telemetry and antenna strategy (XBee, beacon, ground-station).
+  \item Pyrotechnic deployment and ignition control (PWM, MOSFET drive).
+  \item Power and feedback instrumentation (ADS1115 monitoring, continuity
+    sensing).
+  \item Mechanical containment and avionics support structure (holder, battery
+    pack).
   \item Embedded software and communication control (FSM, CommunicationManager).
 \end{enumerate}
 
-This structure keeps the chapter descriptive (``what we did and why'') rather than prescriptive, and maps directly to the deliverables referenced in Chapter~4 and the Appendices
 \subsection{Telemetry Module Design Methodology}
 
 \subsubsection{Telemetry Module Scope}
 
-The telemetry module covers flight-to-ground data transmission hardware, antenna strategy, communication reliability constraints, and integration interfaces to the ESP32 flight computer firmware \cite{xbee_manual, n4_xbee_integration, n4_comm_architecture}.
+The telemetry module covers flight-to-ground data transmission hardware, antenna
+strategy, communication reliability constraints, and integration interfaces to the
+ESP32 flight computer firmware \cite{xbee_manual,n4_comm_architecture,n4_xbee_integration}.
 
 \subsubsection{Telemetry Design Considerations}
 
-Design considerations for telemetry selection are:
 \begin{itemize}
-    \item Minimum operational range of at least 5~km line-of-sight.
-    \item Robust packet delivery with low drop rate in dynamic flight attitude.
-    \item Simple and deterministic integration with ESP32 UART telemetry output.
-    \item Field-deployable ground-station setup without complex infrastructure.
-    \item Compatibility with future communication redundancy (beacon/MQTT fallback).
+  \item Minimum operational range of at least 5\,km line-of-sight.
+  \item Robust packet delivery with low drop rate in dynamic flight attitude.
+  \item Simple and deterministic integration with ESP32 UART telemetry output.
+  \item Field-deployable ground-station setup without complex infrastructure.
+  \item Compatibility with future communication redundancy (beacon/MQTT fallback).
 \end{itemize}
 
 \subsubsection{Telemetry Parts List}
 
-\begin{table}[htbp]
-\centering
-\caption{Telemetry Module Parts List}
-\label{tab:telemetry_parts}
-\small
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{3.3cm}|p{3.5cm}|p{6.4cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Part} & \textbf{Specification} & \textbf{Function in Module} \\ \midrule
-XBee-PRO 900HP (S3B) & 900~MHz ISM, up to +24~dBm Tx power & Primary long-range telemetry radio for rocket and base station links \\
-ESP32 Flight Computer & Dual-core MCU, UART interfaces & Generates and streams telemetry packet data to the radio interface \\
-900~MHz Duck Dipole Antenna & Approx. +2~dBi omnidirectional gain & Baseline antenna on rocket and ground for initial long-range tests \\
-XBee Shield/UART Interface & Transparent serial routing & Hardware adaptation between ESP32 UART and XBee module pins \\ \bottomrule
-\end{tabular}
-\end{table}
-
-\subsubsection{Telemetry Design-Option Comparison}
-
-\begin{table}[htbp]
-\centering
-\caption{Telemetry Design Comparison Against Module Considerations}
-\label{tab:telemetry_option_compare}
-\small
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{2.8cm}|p{2.0cm}|p{2.3cm}|p{2.5cm}|p{3.7cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Option} & \textbf{Range Capability} & \textbf{Integration Effort} & \textbf{Reliability Potential} & \textbf{Assessment vs Requirements} \\ \midrule
-XBee 2.4~GHz & Low--medium & Low & Medium & Insufficient long-range margin for target mission envelope \\
-LoRa (generic modules) & Medium--high & Medium & Medium--high & Good range but added integration and protocol adaptation overhead \\
-ESP-NOW/Beacon only & Medium (field dependent) & Medium & Medium & Useful backup path but not preferred as sole primary long-range channel \\
-\textbf{XBee-PRO 900HP} & \textbf{High (5~km+ target)} & \textbf{Low--medium} & \textbf{High} & \textbf{Best match to range, robustness, and implementation constraints} \\ \bottomrule
-\end{tabular}
+\begin{table}[!htbp]
+  \centering
+  \caption{Telemetry Module Parts List}
+  \label{tab:telemetry_parts}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}p{3.3cm}|p{3.5cm}|p{6.4cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Part} & \textbf{Specification} & \textbf{Function in Module} \\ \midrule
+    XBee-PRO 900HP (S3B) & 900\,MHz ISM, up to +24\,dBm Tx power & Primary long-range telemetry radio for rocket and base station \\
+    ESP32 Flight Computer & Dual-core MCU, UART interfaces & Generates and streams telemetry packet data to the radio interface \\
+    900\,MHz Duck Dipole Antenna & Approx.\ +2\,dBi omnidirectional gain & Baseline antenna on rocket and ground for initial long-range tests \\
+    XBee Shield/UART Interface & Transparent serial routing & Hardware adaptation between ESP32 UART and XBee module pins \\ \bottomrule
+  \end{tabular}
 \end{table}
 
 \subsubsection{Chosen Telemetry Design and Justification}
 
-The selected telemetry hardware is the \textbf{Digi XBee-PRO 900HP} operating in transparent UART mode because it provides strong range performance, straightforward ESP32 integration, and robust field operation with minimal protocol complexity \cite{xbee_manual, n4_xbee_integration, n4_comm_architecture}.
+The selected telemetry hardware is the \textbf{Digi XBee-PRO 900HP} operating in
+transparent UART mode because it provides strong range performance,
+straightforward ESP32 integration, and robust field operation with minimal
+protocol complexity \cite{xbee_manual,n4_comm_architecture,n4_xbee_integration}.
+Table~\ref{tab:telemetry_option_compare} summarises the design option comparison.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Telemetry Design Comparison Against Module Considerations}
+  \label{tab:telemetry_option_compare}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}p{2.8cm}|p{2.0cm}|p{2.3cm}|p{2.5cm}|p{3.7cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Option} & \textbf{Range} & \textbf{Integration} & \textbf{Reliability} & \textbf{Assessment} \\ \midrule
+    XBee 2.4\,GHz & Low--medium & Low & Medium & Insufficient long-range margin \\
+    LoRa (generic) & Medium--high & Medium & Med--high & Good range but added protocol overhead \\
+    ESP-NOW/Beacon only & Medium (field dep.) & Medium & Medium & Useful backup path only \\
+    \textbf{XBee-PRO 900HP} & \textbf{High (5\,km+)} & \textbf{Low--medium} & \textbf{High} & \textbf{Best match to all requirements} \\ \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsubsection{Communication Mode Architecture and the Beacon Protocol}
 
-The N4 flight computer implements three independent communication channels managed by a software CommunicationManager \cite{n4_comm_architecture}: (1)~MQTT over WiFi for close-range pad operations, (2)~the 900~MHz XBee link for primary long-range recovery telemetry, and (3)~a \textit{beacon protocol} currently being researched as a redundant fallback channel.
+The N-4 flight computer implements three independent communication channels
+managed by a software \texttt{CommunicationManager} \cite{n4_comm_architecture}:
+(1)~MQTT over WiFi for close-range pad operations, (2)~the 900\,MHz XBee link
+for primary long-range recovery telemetry, and (3)~a beacon protocol as a
+redundant fallback channel.
 
-\textbf{What is the Beacon protocol?} A beacon is a raw 802.11 management frame injected directly into the IEEE~802.11 (2.4~GHz WiFi) radio medium without establishing a conventional network association. The rocket does not connect to any access point; instead, the ESP32 radio injects custom management frames --- each carrying the telemetry CSV payload in a vendor-specific information element --- directly into the air at a user-defined interval. A ground-station ESP32 running in promiscuous (\textit{sniffer}) mode captures all frames that match the payload magic number regardless of association state, and extracts the RSSI directly from the hardware receive descriptor \cite{n4_beacon_configuration}. The return path (ground to rocket) uses ESP-NOW unicast packets, which provide confirmed delivery without requiring a broker or access point.
-
-The beacon system has been field-tested to 4~km line-of-sight using a 2.4~GHz duck antenna and inline signal amplifier on the rocket side, and a directional patch antenna with amplifier at the ground station \cite{n4_beacon_configuration}. It is employed as the \textbf{redundant research channel} --- the XBee 900~MHz link remains the primary mission telemetry path. The CommunicationManager supports automatic fallback from MQTT to beacon when WiFi connectivity is lost, and allows runtime switching between all three modes via serial, MQTT, or ESP-NOW commands \cite{n4_comm_architecture}. The telemetry architecture is shown in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_method_xbee_system}).
+The beacon system injects raw 802.11 management frames carrying the telemetry
+CSV payload in a vendor-specific information element. A ground-station ESP32
+running in promiscuous mode captures all frames that match the payload magic
+number. The return path uses ESP-NOW unicast packets. The beacon system has
+been field-tested to 4\,km line-of-sight using a 2.4\,GHz duck antenna and
+inline signal amplifier on the rocket side \cite{n4_beacon_configuration}.
 
 \subsubsection{Antenna Options and Selection Using Link-Budget Math}
 
-Candidate antennas considered for the telemetry link are summarized in Table~\ref{tab:antenna_compare_method}.
+Table~\ref{tab:antenna_compare_method} summarises candidate antennas. The baseline
+antenna pair is the 900\,MHz duck dipole. Free-space path loss (FSPL) is
+modelled as \cite{xbee_manual,arrl_antenna_book}:
 
-\begin{table}[htbp]
-\centering
-\caption{Antenna Options for Telemetry Module}
-\label{tab:antenna_compare_method}
-\small
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{3.1cm}|p{1.8cm}|p{2.4cm}|p{4.8cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Antenna Type} & \textbf{Typical Gain} & \textbf{Pattern} & \textbf{Methodology Assessment} \\ \midrule
-Duck Dipole (900~MHz) & $\sim$2~dBi & Omnidirectional & Baseline choice due to simplicity and tolerance to vehicle rotation \\
-Patch Antenna (900~MHz) & $\sim$7~dBi & Directional & Higher gain but stricter pointing and build tolerance requirements \\
-Bi-Quad (900~MHz) & $\sim$10--11~dBi & Directional & Considered as a base-station upgrade candidate to improve null-zone robustness \\ \bottomrule
-\end{tabular}
+\begin{equation}
+  \mathrm{FSPL}\,(\mathrm{dB}) = 20\log_{10}(d) + 20\log_{10}(f) - 147.55
+  \label{eq:fspl}
+\end{equation}
+
+where $d$ is the link distance in metres and $f$ is the carrier frequency in
+hertz. At the N-4 target range of $d = 5{,}000$\,m and $f = 915 \times 10^6$\,Hz,
+$\mathrm{FSPL} = 105.66$\,dB. Received power is:
+
+\begin{equation}
+  P_\mathrm{rx} = P_\mathrm{tx} + G_\mathrm{tx} + G_\mathrm{rx} - \mathrm{FSPL}
+  \label{eq:link_budget}
+\end{equation}
+
+With $P_\mathrm{tx} = +24$\,dBm and $G_\mathrm{tx} = G_\mathrm{rx} = 2$\,dBi,
+$P_\mathrm{rx} = -77.66$\,dBm. Link margin:
+
+\begin{equation}
+  \mathrm{Margin} = P_\mathrm{rx} - P_\mathrm{sens} = -77.66 - (-110) = \mathbf{32.34\,dB}
+  \label{eq:link_margin}
+\end{equation}
+
+This leaves significant headroom for atmospheric loss, multipath fading, and
+small misalignments.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Antenna Options for Telemetry Module}
+  \label{tab:antenna_compare_method}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}p{3.5cm}|p{2cm}|p{2.5cm}|p{5.5cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Antenna Type} & \textbf{Gain} & \textbf{Pattern} & \textbf{Assessment} \\ \midrule
+    Duck Dipole (900\,MHz) & $\sim$2\,dBi & Omnidirectional & Baseline --- simple, tolerant to vehicle rotation \\
+    Patch Antenna (900\,MHz) & $\sim$7\,dBi & Directional & Higher gain; stricter pointing requirements \\
+    Bi-Quad (900\,MHz) & $\sim$10--11\,dBi & Directional & Base-station upgrade candidate; improves null-zone robustness \\ \bottomrule
+  \end{tabular}
 \end{table}
-
-The selected baseline antenna pair for current implementation is the 900~MHz duck dipole. Its feasibility is checked with the first-order link budget. Free-space path loss (FSPL) models the signal attenuation over distance in the absence of obstacles \cite{pozar_microwave,xbee_manual}:
-\begin{equation}
-\mathrm{FSPL}\,(\mathrm{dB}) = 20\log_{10}(d) + 20\log_{10}(f) - 147.55
-\label{eq:fspl}
-\end{equation}
-
-where $d$ is the link distance in metres, $f$ is the carrier frequency in hertz, and 147.55 is the SI-unit normalisation constant derived from the $\lambda/(4\pi R)$ free-space propagation factor \cite{pozar_microwave}.
-
-At the N4 target range of $d = 5{,}000$~m and centre frequency of $f = 915\times10^6$~Hz, the free-space path loss is 105.66~dB, which is within the expected range for 900~MHz ISM-band communications at this distance \cite{xbee_manual}.
-Received power at the ground station is obtained from the link-budget equation \cite{pozar_microwave,xbee_manual}:
-\begin{equation}
-P_{rx}=P_{tx}+G_{tx}+G_{rx}-\mathrm{FSPL}
-\label{eq:prx}
-\end{equation}
-
-where $P_{tx}$ is the transmit power in dBm, $G_{tx}$ and $G_{rx}$ are the transmit and receive antenna gains in dBi, and FSPL is the free-space path loss calculated above (dB). The XBee-PRO 900HP rated output is $P_{tx}=+24$~dBm \cite{xbee_manual}, and both ends use duck dipole antennas with $G_{tx}=G_{rx}=2$~dBi. From equation~\ref{eq:prx} the received power at the ground station, $P_{rx}$, was obtained as $-77.66$~dBm.
-
-Link margin quantifies the safety buffer above the minimum detectable signal threshold \cite{pozar_microwave}:
-\begin{equation}
-\mathrm{Margin}=P_{rx}-P_{sens}
-\label{eq:margin}
-\end{equation}
-
-where $P_{sens}$ is the XBee-PRO 900HP rated receiver sensitivity ($-110$~dBm at 10\% packet-error rate \cite{xbee_manual}). Using the values above gives a link margin of $32.34$~dB, which leaves enough headroom for atmospheric loss, multipath fading, and small misalignments. The antenna pattern discussion is continued in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_dipole_wave_profile}).
-
-To mitigate dipole null effects at the ground segment, a \textbf{Bi-Quad antenna is being considered as a potential base-station alternative} for improved directional gain and better coverage across critical tracking sectors \cite{arrl_antenna_book, pozar_microwave}.
 
 \subsection{Electrical Module with Deployment Submodule Methodology}
 
 \subsubsection{Electrical + Deployment Module Scope}
 
-This module covers onboard signal interfacing, telemetry electrical routing, power/continuity monitoring, and pyrotechnic actuation electronics. It is paired with the deployment submodule because ignition-drive design depends directly on electrical interface limits and power budget constraints.
+This module covers onboard signal interfacing, telemetry electrical routing,
+power/continuity monitoring, and pyrotechnic actuation electronics.
 
 \subsubsection{Design Considerations}
 
-Key electrical/deployment design considerations are:
 \begin{itemize}
-    \item The flight computer has limited available pins, requiring protocol-level optimization between UART and I$^2$C paths.
-    \item Telemetry radio (XBee) requires hardware serial, with remapped RX/TX pins on ESP32 to preserve other interfaces.
-    \item Power monitoring and chute-state sensing require additional channels beyond native MCU pin allocation, motivating ADC expansion over I$^2$C.
-    \item The electronics stack must fit inside the 95~mm avionics bay and align with holder mounting geometry and rod clearances.
-    \item The deployment channel is validated against a 16.8~V fully charged 4S LiPo input and a 14~V minimum arm threshold so the sensing and inhibit logic cover both the worst-case supply peak and the lowest safe pre-fire condition.
-    \item Pyro switching must be compatible with 3.3~V logic drive and sustain current pulses without excessive heating.
+  \item Limited available pins on ESP32 requiring protocol-level optimisation
+    between UART and I$^2$C paths.
+  \item XBee requires hardware serial with remapped RX/TX pins.
+  \item ADC expansion over I$^2$C for monitoring beyond native MCU pin allocation.
+  \item Electronics stack must fit inside the 95\,mm avionics bay.
+  \item Deployment channel validated against 16.8\,V fully charged 4S LiPo input
+    and 14\,V minimum arm threshold.
+  \item Pyro switching must be compatible with 3.3\,V logic drive.
 \end{itemize}
-
-\subsubsection{Protocol and Interface Option Comparison}
-
-Table~\ref{tab:electrical_protocol_compare} compares interface options against pin, telemetry, and monitoring requirements.
-
-\begin{table}[H]
-\centering
-\caption{Electrical Interface Options for Pin-Constrained Flight Computer Integration}
-\label{tab:electrical_protocol_compare}
-\small
-\begin{tabular}{@{}p{2.8cm}|p{2.6cm}|p{2.7cm}|p{2.8cm}|p{2.8cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Interface Option} & \textbf{Pin Usage} & \textbf{Suitability for XBee} & \textbf{Suitability for Monitoring} & \textbf{Assessment} \\ \midrule
-UART-only for all peripherals & High & Excellent for XBee stream & Poor channel scalability & Not optimal for mixed telemetry + sensing architecture \\
-I$^2$C-only for all peripherals & Low & Poor for high-rate transparent radio stream & Good for ADC expansion & Not suitable as sole interface due to XBee serial requirements \\
-\textbf{Hybrid: UART + I$^2$C (chosen)} & \textbf{Balanced} & \textbf{Best for XBee hardware serial} & \textbf{Best for ADS1115 expansion} & \textbf{Best fit for pin limits and subsystem coexistence} \\ \bottomrule
-\end{tabular}
-\end{table}
 
 \subsubsection{Chosen Electrical Architecture}
 
-The selected architecture uses hardware UART for XBee telemetry and I$^2$C for ADS1115-based monitoring expansion. This preserves deterministic serial throughput for radio transmission while offloading analog channel scaling to an external converter integrated on the existing I$^2$C bus \cite{xbee_manual, esp32_datasheet, ads1115_datasheet, n4_xbee_integration, n4_comm_architecture}.
+The selected architecture uses hardware UART for XBee telemetry and I$^2$C for
+ADS1115-based monitoring expansion. Table~\ref{tab:electrical_protocol_compare}
+compares interface options. Table~\ref{tab:electrical_constraints_power} summarises
+packaging and electrical limits. Table~\ref{tab:electrical_materials} lists selected
+components.
 
-\subsubsection{Dimensional Constraints and Power Requirements}
-
-Table~\ref{tab:electrical_constraints_power} summarizes packaging and electrical limits that bound the design.
-
-\begin{table}[H]
-\centering
-\caption{Electrical Module Constraints and Design Power Budget}
-\label{tab:electrical_constraints_power}
-\small
-\begin{tabular}{@{}p{3.8cm}|p{3.0cm}|p{5.9cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Constraint/Parameter} & \textbf{Design Value} & \textbf{Implication} \\ \midrule
-Avionics bay diameter envelope & 95~mm & PCB and daughter-board placements constrained by cylindrical packaging \\
-PCB footprint target & up to 70~mm \(\times\) 70~mm & Allows routing margin while preserving service clearance \\
-XBee supply rail & 3.3~V (radio domain) & Requires clean low-voltage rail and UART-level compatibility \\
-Main pyro bus & 14--15~V domain & High-energy actuation path isolated from logic rail \\
-Chute line deployment potential & 16.8~V max input, 14~V minimum arm threshold & Monitoring divider and ADC scaling must tolerate the full operating window \\ \bottomrule
-\end{tabular}
+\begin{table}[!htbp]
+  \centering
+  \caption{Electrical Interface Options for Pin-Constrained Flight Computer Integration}
+  \label{tab:electrical_protocol_compare}
+  \small
+  \begin{tabular}{@{}p{3cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Option} & \textbf{Pin Usage} & \textbf{XBee Suitability} & \textbf{Monitoring} & \textbf{Assessment} \\ \midrule
+    UART-only for all & High & Excellent & Poor scalability & Not optimal \\
+    I$^2$C-only for all & Low & Poor for high-rate stream & Good for ADC & Not suitable \\
+    \textbf{Hybrid: UART + I$^2$C} & \textbf{Balanced} & \textbf{Best for XBee} & \textbf{Best for ADS1115} & \textbf{Best fit} \\ \bottomrule
+  \end{tabular}
 \end{table}
 
-\subsubsection{Electrical Materials List}
-
-Table~\ref{tab:electrical_materials} lists the selected components and their roles in deployment control.
-
-\begin{table}[H]
-\centering
-\caption{Electrical and Deployment Submodule Materials}
-\label{tab:electrical_materials}
-\small
-\begin{tabular}{@{}p{3.2cm}|p{2.6cm}|p{6.9cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Component} & \textbf{Key Rating/Interface} & \textbf{Role in Selected Design} \\ \midrule
-ESP32 flight computer & 3.3~V logic, UART + I$^2$C & Core control and communication processing \\
-XBee-PRO 900HP & UART transparent mode & Long-range telemetry radio interface \\
-ADS1115 ADC & 16-bit, I$^2$C interface & Voltage and chute channel expansion for pin-limited MCU \\
-IRLZ44N MOSFET & Logic-level gate, low \(R_{DS(on)}\) & Pyro-channel low-side switching for PWM ignition \\
-Voltage divider network & 47~k\(\Omega\) / 10~k\(\Omega\) & Scales 14--15~V monitoring signals to safe ADC range \\
-Nichrome igniter element & Resistive heating load & Converts electrical pulse to ignition heat \\
-BMS module & Over-voltage/under-voltage protection & Caps and protects battery bus for controlled deployment operation \\ \bottomrule
-\end{tabular}
+\begin{table}[!htbp]
+  \centering
+  \caption{Electrical Module Constraints and Design Power Budget}
+  \label{tab:electrical_constraints_power}
+  \small
+  \begin{tabular}{@{}p{4cm}|p{3cm}|p{6cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Constraint/Parameter} & \textbf{Design Value} & \textbf{Implication} \\ \midrule
+    Avionics bay diameter envelope & 95\,mm & PCB placements constrained by cylindrical packaging \\
+    PCB footprint target & up to 70$\times$70\,mm & Allows routing margin while preserving service clearance \\
+    XBee supply rail & 3.3\,V & Requires clean low-voltage rail and UART-level compatibility \\
+    Main pyro bus & 14--15\,V domain & High-energy actuation path isolated from logic rail \\
+    Chute line deployment potential & 16.8\,V max / 14\,V min arm threshold & Monitoring divider and ADC scaling must tolerate full operating window \\ \bottomrule
+  \end{tabular}
 \end{table}
 
-\subsubsection{Circuit Development Workflow}
-
-Electrical implementation follows a staged concept-to-production flow:
-\begin{enumerate}
-    \item Breadboard and wiring validation,
-    \item Fritzing-level integration drafting,
-    \item EasyEDA schematic and PCB capture,
-    \item Bench verification and revision control.
-\end{enumerate}
-
-The Fritzing layouts below document the early wiring verification stage. Final EasyEDA schematics and fabricated PCB designs are presented in Chapter~4.
-
-See Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_fritzing_base}).
-
-See Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_fritzing_rocket}).
+\begin{table}[!htbp]
+  \centering
+  \caption{Electrical and Deployment Submodule Materials}
+  \label{tab:electrical_materials}
+  \small
+  \begin{tabular}{@{}p{4cm}|p{3.5cm}|p{5.5cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Component} & \textbf{Key Rating/Interface} & \textbf{Role in Selected Design} \\ \midrule
+    ESP32 flight computer & 3.3\,V logic, UART + I$^2$C & Core control and communication processing \\
+    XBee-PRO 900HP & UART transparent mode & Long-range telemetry radio interface \\
+    ADS1115 ADC & 16-bit, I$^2$C interface & Voltage and chute channel expansion for pin-limited MCU \\
+    IRLZ44N MOSFET & Logic-level gate, low $R_\mathrm{DS(on)}$ & Pyro-channel low-side switching for PWM ignition \\
+    Voltage divider network & 47\,k$\Omega$ / 10\,k$\Omega$ & Scales 14--15\,V monitoring signals to safe ADC range \\
+    Nichrome igniter element & Resistive heating load & Converts electrical pulse to ignition heat \\
+    BMS module & Over/under-voltage protection & Caps and protects battery bus for controlled deployment \\ \bottomrule
+  \end{tabular}
+\end{table}
 
 \subsubsection{Power-Monitoring Calculations (ADS1115)}
+\label{sec:ads1115_calc}
 
-This subsection describes the ADS1115 battery-monitoring and chute-state sensing design. The divider is sized for a 4S LiPo upper limit of 16.8~V and a 14~V minimum arm threshold so the monitoring and inhibit logic cover the full safe operating window.
-The monitoring path uses a 4.7~k$\Omega$/1.1~k$\Omega$ voltage divider into the ADS1115 \cite{ads1115_datasheet}. A voltage divider scales an input voltage proportionally using two series resistors \cite{voltage_divider_theory}:
+The monitoring path uses a 4.7\,k$\Omega$/1.1\,k$\Omega$ voltage divider into
+the ADS1115 \cite{ads1115_datasheet}. The divider output:
+
 \begin{equation}
-V_{ADC}=V_{in}\cdot\frac{R_2}{R_1+R_2}=V_{in}\cdot\frac{1.1}{4.7+1.1}
-\label{eq:vadc_divider}
+  V_\mathrm{ADC} = V_\mathrm{in} \cdot \frac{R_2}{R_1 + R_2} = V_\mathrm{in} \cdot \frac{1.1}{4.7 + 1.1}
+  \label{eq:vadc_divider}
 \end{equation}
 
-where $V_{in}$ is the battery bus voltage to be measured, $R_1=4.7$~k$\Omega$ is the upper divider resistor, $R_2=1.1$~k$\Omega$ is the lower resistor, and $V_{ADC}$ is the scaled output voltage presented to the ADC pin.
+For $V_\mathrm{in} = 16.8$\,V: $V_\mathrm{ADC} \approx 3.186$\,V.
+For $V_\mathrm{in} = 14.0$\,V: $V_\mathrm{ADC} \approx 2.655$\,V.
 
-For $V_{in}=16.8$~V:
-\begin{equation}
-V_{ADC,16.8}=16.8\cdot\frac{1.1}{4.7+1.1}\approx 3.186\,\mathrm{V}
-\label{eq:vadc168}
-\end{equation}
+The ADS1115 is configured at $\pm$4.096\,V FSR (16-bit). Digital codes:
 
-For $V_{in}=14$~V:
-\begin{equation}
-V_{ADC,14}=14\cdot\frac{1.1}{4.7+1.1}\approx 2.655\,\mathrm{V}
-\label{eq:vadc14}
-\end{equation}
+\begin{align}
+  N_{16.8} &\approx 25{,}487 \quad (V_\mathrm{in} = 16.8\,\mathrm{V})\\
+  N_{14}   &\approx 21{,}242 \quad (V_\mathrm{in} = 14.0\,\mathrm{V})
+  \label{eq:adc_codes}
+\end{align}
 
-The ADS1115 is configured at a $\pm4.096$~V full-scale range (FSR) with 16-bit resolution (32{,}768 counts over the positive half-range) \cite{ads1115_datasheet}. The corresponding digital code is:
-\begin{equation}
-N=\frac{V_{ADC}}{4.096}\times32{,}767
-\label{eq:adc_counts}
-\end{equation}
-
-where $N$ is the 16-bit ADC output count and 32{,}767 is the maximum positive code ($2^{15}-1$). For the two design points:
-\begin{equation}
-N_{16.8}\approx 25{,}487 \quad (\text{at }V_{in}=16.8\,\mathrm{V}),\qquad N_{14}\approx 21{,}242 \quad (\text{at }V_{in}=14\,\mathrm{V})
-\label{eq:adc_counts_values}
-\end{equation}
-
-These ranges provide clear monitoring margin below ADC full-scale while preserving sensitivity to deployment-state transitions.
+These ranges provide clear monitoring margin below ADC full-scale while
+preserving sensitivity to deployment-state transitions.
 
 \subsubsection{Deployment PWM and MOSFET Selection}
+\label{sec:pwm_calc}
 
-The pyro channels are driven through PWM-controlled MOSFET stages to avoid nichrome burnout and improve reusability across repeated ground tests \cite{pwm_heating, barr_pwm, n4_pyro_control, n4_pwm_config}.
+\noindent\textbf{(a) Nichrome wire element characterisation.}
+The igniter elements use 26\,AWG nichrome wire with linear resistance
+$\rho_\mathrm{NiCr} \approx 8.5\,\Omega/\mathrm{m}$ \cite{nichrome_ignition}.
+For a 10\,cm bridge-wire element:
 
-\textbf{(a) Nichrome wire element characterisation:}
-
-The igniter elements use 26~AWG nichrome resistance wire with a linear resistance of approximately 8.5~$\Omega$/m \cite{nichrome_ignition}. For a representative bridge-wire element of length $l_{e}=0.10$~m (10~cm), the igniter element resistance is:
 \begin{equation}
-R_{elem}=\rho_{NiCr}\cdot l_{e}
-\label{eq:relem_formula}
+  R_\mathrm{elem} = \rho_\mathrm{NiCr} \cdot l_e = 8.5 \times 0.10 = 0.85\,\Omega
 \end{equation}
 
-where $\rho_{NiCr}$ is the linear resistance per unit length ($\Omega$/m) and $l_{e}$ is the active element length (m). Substituting values:
+At $V_\mathrm{target} = 6.0$\,V:
+
 \begin{equation}
-R_{elem}=8.5\times0.10=0.85\,\Omega
-\label{eq:relem}
+  I_\mathrm{elem} = \frac{V_\mathrm{target}}{R_\mathrm{elem}} = \frac{6.0}{0.85} \approx 7.06\,\mathrm{A}
+  \qquad
+  P_\mathrm{wire} = \frac{V_\mathrm{target}^2}{R_\mathrm{elem}} = \frac{36}{0.85} \approx 42.4\,\mathrm{W}
 \end{equation}
 
-At a target drive voltage $V_{target}=6.0$~V, steady-state current in the element is given by Ohm's Law \cite{voltage_divider_theory}:
+\noindent\textbf{(b) PWM duty-cycle model.}
+Average output voltage proportional to duty cycle \cite{pwm_heating,barr_pwm}:
+
 \begin{equation}
-I_{elem}=\frac{V_{target}}{R_{elem}}
-\label{eq:ielem_formula}
+  D = \frac{V_\mathrm{target}}{V_\mathrm{supply}} = \frac{6.0}{15.0} = 0.40
+  \quad (40\%\;\mathrm{duty\;cycle})
 \end{equation}
 
-Substituting:
+Field-validated deployment uses 70\% PWM duty cycle for reliable ignition with
+nichrome integrity preserved across repeated firings.
+
+\noindent\textbf{(c) IRLZ44N MOSFET selection.}
+Conduction loss \cite{irlz44n_datasheet}:
+
 \begin{equation}
-I_{elem}=\frac{6.0}{0.85}\approx7.06\,\mathrm{A}
-\label{eq:ielem}
+  P_\mathrm{cond} = I^2 \cdot R_\mathrm{DS(on)}
 \end{equation}
 
-Corresponding instantaneous resistive power dissipation:
-\begin{equation}
-P_{wire}=\frac{V_{target}^{2}}{R_{elem}}
-\label{eq:pwire_formula}
-\end{equation}
-
-Substituting:
-\begin{equation}
-P_{wire}=\frac{6.0^{2}}{0.85}\approx42.4\,\mathrm{W}
-\label{eq:pwire}
-\end{equation}
-
-Using PWM to limit the effective voltage below the ignition threshold until arm state is confirmed prevents unintended heating on the bench. Bench characterisation with 26~AWG elements showed that at minimum PWM duty cycle the wire withstood approximately 30~seconds of sustained energisation without failure, compared to burnout within 2~seconds at maximum (DC-equivalent) duty. Pyrotechnic ignition and pop tests have not yet been conducted and are scheduled for the next project phase.
-
-\textbf{(b) PWM duty-cycle model:}
-
-PWM controls the average voltage seen by the nichrome wire by rapidly switching the MOSFET on and off. The average output voltage is proportional to the duty cycle \cite{barr_pwm,n4_pyro_control}:
-\begin{equation}
-D = \frac{V_{target}}{V_{supply}}
-\label{eq:pwm_duty}
-\end{equation}
-
-where $D$ is the dimensionless duty cycle (0 to 1), $V_{target}$ is the desired average element voltage, and $V_{supply}$ is the LiPo supply voltage. For the nominal case $V_{target}=6.0$~V and $V_{supply}=15.0$~V:
-\begin{equation}
-D = \frac{6.0}{15.0} = 0.40 \quad (\text{i.e.\ }40\%\text{ duty cycle})
-\label{eq:pwm_duty_value}
-\end{equation}
-
-\textbf{(c) IRLZ44N vs IRF-type MOSFET choice:}
-
-The selected switch is IRLZ44N (logic-level gate-drive compatible) rather than a standard IRF-series part, because the ESP32 gate output is 3.3~V and logic-level devices achieve low on-state resistance at reduced gate voltage \cite{irlz44n_datasheet,mosfet_switching}. Conduction loss in a MOSFET switch is \cite{mosfet_switching}:
-\begin{equation}
-P_{cond}=I^2 R_{DS(on)}
-\label{eq:pcond_formula}
-\end{equation}
-
-where $I$ is the drain current and $R_{DS(on)}$ is the drain-to-source on-resistance. The IRLZ44N is rated $V_{DSS}=55$~V, $I_D=47$~A, with $R_{DS(on)}=22$~m$\Omega$ at $V_{GS}=5$~V \cite{irlz44n_datasheet}. For a representative $I=3$~A pulse through a logic-level switch ($R_{DS(on)}\approx0.022\,\Omega$):
-\begin{equation}
-P_{cond,IRLZ}=3^2\times0.022\approx0.20\,\mathrm{W}
-\label{eq:pcond_irlz}
-\end{equation}
-
-For a standard non-logic-level part at low gate drive ($R_{DS(on)}\gtrsim0.05\,\Omega$):
-\begin{equation}
-P_{cond,IRF}\gtrsim3^2\times0.05\gtrsim0.45\,\mathrm{W}
-\label{eq:pcond_irf}
-\end{equation}
-
-The lower dissipation and reliable 3.3~V gate compatibility motivate selecting IRLZ44N for the deployment channels.
-
-\subsubsection{Additional Implementation Details}
-
-To complete the electrical-deployment pairing, the design also includes:
-\begin{itemize}
-    \item Hardware serial pin remapping for XBee RX/TX on ESP32 without blocking I$^2$C monitoring.
-    \item Segregated low-voltage logic and high-energy pyro routing on PCB for reduced coupling.
-    \item Pre-arm validation of battery/chute channels before enabling deployment PWM outputs.
-\end{itemize}
+For $I = 3$\,A with IRLZ44N ($R_\mathrm{DS(on)} = 22$\,m$\Omega$):
+$P_\mathrm{cond} \approx 0.20$\,W, compared to $\geq 0.45$\,W for a
+non-logic-level IRF-series part at the same gate drive. The lower dissipation
+and reliable 3.3\,V gate compatibility motivate selecting IRLZ44N.
 
 \subsection{Structural (Mechanical) Module Design Methodology}
 
 \subsubsection{Structural Module Scope}
 
-The structural module defines the flight-computer holder, battery-carrier geometry, threaded-rod integration, mounting-hole allocation, and interface provision for the XBee extension board and battery management system (BMS). Beyond individual component retention, the holder functions as the primary mechanical bed that fastens the complete battery pack as a unified assembly and provides the upper-platform mounting surface for the XBee extension board and beacon antenna module.
+The structural module defines the flight-computer holder, battery-carrier
+geometry, threaded-rod integration, mounting-hole allocation, and interface
+provision for the XBee extension board and BMS.
 
 \subsubsection{Structural Design Considerations}
 
-The structural design constraints are:
 \begin{itemize}
-    \item Fit within the 95~mm avionics-bay envelope.
-    \item Survive launch and deployment shock/vibration events (design baseline: up to 4g sustained/inertial loading, with higher short-duration pop-test transients).
-    \item Package four 18650 cells in parallel while avoiding rod interference.
-    \item Maintain two threaded rods at 50~mm spacing and approximately 6~mm offset from the rear holder reference edge.
-    \item Raise edge battery seats relative to mid seats so outer cells clear rod paths.
-    \item Allocate and distribute self-tapping screw locations for load sharing.
-    \item Provide mounting provision above battery holders for XBee extension and BMS.
-    \item Include threaded holes for brass columns used to mount the flight computer.
+  \item Fit within the 95\,mm avionics-bay envelope.
+  \item Survive launch and deployment shock/vibration events (design baseline:
+    up to 4\,$g$ sustained, with higher pop-test transients).
+  \item Package four 18650 cells in parallel while avoiding rod interference.
+  \item Maintain two threaded rods at 50\,mm spacing and approximately 6\,mm
+    offset from the rear holder reference edge.
+  \item Raise edge battery seats relative to mid seats so outer cells clear rod
+    paths.
+  \item Provide mounting provision above battery holders for XBee extension and
+    BMS.
 \end{itemize}
 
 \subsubsection{Structural Parts List}
 
-\begin{table}[H]
-\centering
-\caption{Structural Module Parts List}
-\label{tab:structural_parts}
-\small
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{3.4cm}|p{3.1cm}|p{6.7cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Part} & \textbf{Nominal Quantity} & \textbf{Function in Structural Module} \\ \midrule
-Flight-computer holder body (PETG) & 1 & Primary load-carrying printed structure supporting electronics and battery fixtures \\
-18650 cells & 4 & Parallel energy source mounted in dedicated mid/edge battery carriers \\
-Mid battery holders (shorter) & 2 & Support central cells while preserving assembly height and alignment envelope \\
-Edge battery holders (raised) & 2 & Raise outer cells to clear threaded-rod trajectories \\
-Threaded rods & 2 & Structural retention members at 50~mm spacing and 6~mm rear offset reference \\
-Self-tapping screws & multiple & Distributed fastening points for force sharing and anti-vibration retention \\
-Brass columns (standoffs) & 4 & Flight-computer mounting through threaded holes in the holder \\
-XBee extension mount + BMS mount area & 1 each & Allocated upper-plane features for electronics integration above cell carriers \\ \bottomrule
-\end{tabular}
+\begin{table}[!htbp]
+  \centering
+  \caption{Structural Module Parts List}
+  \label{tab:structural_parts}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}p{4cm}|p{3.1cm}|p{6.7cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Part} & \textbf{Qty} & \textbf{Function} \\ \midrule
+    Flight-computer holder body (PETG) & 1 & Primary load-carrying printed structure \\
+    18650 cells & 4 & Parallel energy source in dedicated carriers \\
+    Mid battery holders (shorter) & 2 & Support central cells while preserving assembly height \\
+    Edge battery holders (raised) & 2 & Raise outer cells to clear threaded-rod trajectories \\
+    Threaded rods & 2 & Structural retention members at 50\,mm spacing \\
+    Self-tapping screws & multiple & Distributed fastening points for force sharing \\
+    Brass columns (standoffs) & 4 & Flight-computer mounting through threaded holes \\
+    XBee extension + BMS mount area & 1 each & Allocated upper-plane features for electronics integration \\ \bottomrule
+  \end{tabular}
 \end{table}
 
 \subsubsection{Structural Design Option Comparison}
 
-\begin{table}[H]
-\centering
-\caption{Structural Design Comparison Against Mechanical Requirements}
-\label{tab:structural_option_compare}
-\small
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{2.8cm}|p{2.1cm}|p{2.5cm}|p{2.5cm}|p{3.5cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Option} & \textbf{Envelope Fit (95~mm)} & \textbf{Shock/Vibration Robustness} & \textbf{Assembly/Integration} & \textbf{Assessment} \\ \midrule
-Single-level battery plane & Good & Medium--low & Simple & Rod interference risk for edge cells; weaker shock retention \\
-Adhesive-only retention & Good & Low & Simple initially & Poor serviceability and limited repeatability under vibration/pop tests \\
-\textbf{Stepped holders + rods + screws} & \textbf{Good} & \textbf{High} & \textbf{Moderate} & \textbf{Best balance of fit, force distribution, maintainability, and subsystem integration} \\ \bottomrule
-\end{tabular}
+\begin{table}[!htbp]
+  \centering
+  \caption{Structural Design Comparison Against Mechanical Requirements}
+  \label{tab:structural_option_compare}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}p{3.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{3cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Option} & \textbf{Envelope Fit} & \textbf{Shock Robustness} & \textbf{Assembly} & \textbf{Assessment} \\ \midrule
+    Single-level battery plane & Good & Medium--low & Simple & Rod interference risk for edge cells \\
+    Adhesive-only retention & Good & Low & Simple initially & Poor serviceability under vibration \\
+    \textbf{Stepped holders + rods + screws} & \textbf{Good} & \textbf{High} & \textbf{Moderate} & \textbf{Best balance of fit and load distribution} \\ \bottomrule
+  \end{tabular}
 \end{table}
-
-\subsubsection{Chosen Structural Design and Implementation}
-
-The selected design is a stepped battery-holder architecture with raised edge supports, shorter mid supports, dual threaded-rod retention, and distributed self-tapping screw points. This combination provides geometric clearance and better load sharing under launch and pop-test disturbances. The holder additionally fastens the complete 4-cell battery pack as a single retained unit, and the upper platform above the battery carriers serves as the mounting bed for both the XBee extension board and the beacon antenna module, keeping all avionics electronics within the 95~mm bay envelope.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{{images/mechanical/FC_Holder_without title block.JPG}}
-\caption{Flight-computer holder sled: stepped battery seating, load path, and upper electronics mounting platform}
-\label{fig:cad_fc_holder_no_block}
-\par\smallskip
-{\small The sled fastens the complete 4-cell pack as a unified assembly and serves as the mounting bed for the XBee extension board and beacon antenna above the battery carriers.}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{{images/mechanical/18650_case_without title block.JPG}}
-\caption{18650 battery case for the stepped carrier assembly}
-\label{fig:cad_18650_case_no_block}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{{images/mechanical/Edge_batt_without title block.JPG}}
-\caption{Raised edge battery support clearing the threaded-rod path}
-\label{fig:cad_edge_batt_no_block}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{{images/mechanical/Mid_batt_without title block.JPG}}
-\caption{Mid battery support for controlled pack height and fit}
-\label{fig:cad_mid_batt_no_block}
-\end{figure}
 
 \subsubsection{Structural Load Calculations}
 
-\paragraph{(a) 18650 battery mass and weight}
-Using a representative 18650 cell mass of $m_{cell}\approx0.047$~kg (typical of high-capacity 18650 datasheets \cite{panasonic_cgr18650da_datasheet}), total pack mass is:
+\paragraph{(a) Battery pack mass and weight.}
+For $n_\mathrm{cells} = 4$ cells at $m_\mathrm{cell} \approx 0.047$\,kg
+each \cite{panasonic_cgr18650da_datasheet}:
+
 \begin{equation}
-m_{pack}=n_{cells}\cdot m_{cell}
-\label{eq:mpack_formula}
+  m_\mathrm{pack} = 4 \times 0.047 = 0.188\,\mathrm{kg}
+  \qquad
+  W_\mathrm{pack} = 0.188 \times 9.81 \approx 1.84\,\mathrm{N}
 \end{equation}
 
-where $n_{cells}=4$ is the number of cells. Substituting:
+\paragraph{(b) Launch inertial force (4\,$g$ design case).}
+
 \begin{equation}
-m_{pack}=4\times0.047=0.188\,\mathrm{kg}
-\label{eq:mpack}
+  F_\mathrm{launch} = m_\mathrm{pack} \times 4g = 0.188 \times 39.24 \approx 7.38\,\mathrm{N}
 \end{equation}
 
-Static gravitational load from the four cells:
+\paragraph{(c) Pop-test pressure-driven force (188\,kPa reference).}
+
 \begin{equation}
-W_{pack}=m_{pack}\cdot g
-\label{eq:wpack_formula}
+  A_{95} = \pi\left(\frac{0.095}{2}\right)^2 \approx 7.09 \times 10^{-3}\,\mathrm{m}^2
+  \qquad
+  F_\mathrm{pop} = 188{,}000 \times 7.09 \times 10^{-3} \approx 1{,}330\,\mathrm{N}
 \end{equation}
 
-where $g=9.81$~m/s$^2$ is the standard gravitational acceleration. Substituting:
-\begin{equation}
-W_{pack}=0.188\times9.81\approx1.84\,\mathrm{N}
-\label{eq:wpack}
-\end{equation}
-
-\paragraph{(b) Launch inertial force (4g design case)}
-The inertial load on the battery pack during launch is obtained from Newton's second law \cite{nakka_thrust,nakka_eqns}:
-\begin{equation}
-F_{inertial}=m_{pack}\cdot a_{launch}
-\label{eq:flaunch_formula}
-\end{equation}
-
-where $a_{launch}$ is the peak launch acceleration. For a 4g design envelope:
-\begin{equation}
-a_{launch}=4g=4\times9.81=39.24\,\mathrm{m/s^2}
-\label{eq:alaunch}
-\end{equation}
-
-Substituting:
-\begin{equation}
-F_{launch}=0.188\times39.24\approx7.38\,\mathrm{N}
-\label{eq:flaunch}
-\end{equation}
-
-\paragraph{(c) Pop-test pressure-driven force (188~kPa reference)}
-Pressure force on a surface is \cite{n4_poptest_internal}:
-\begin{equation}
-F=P\cdot A
-\label{eq:fpop_formula}
-\end{equation}
-
-where $P$ is the applied pressure (Pa) and $A$ is the projected area (m$^2$). The previously recorded pop-test overpressure reference is $P_{pop}=188$~kPa \cite{n4_poptest_internal}. The conservative projected area uses the full 95~mm bay section:
-\begin{equation}
-A_{95}=\pi\left(\frac{0.095}{2}\right)^2\approx7.09\times10^{-3}\,\mathrm{m^2}
-\label{eq:a95}
-\end{equation}
-
-Substituting:
-\begin{equation}
-F_{pop}=P_{pop}\cdot A_{95}=188{,}000\times7.09\times10^{-3}\approx1.33\times10^{3}\,\mathrm{N}
-\label{eq:fpop}
-\end{equation}
-
-\paragraph{(d) Impulse estimate for pop transient}
-Impulse is the product of force and the duration over which it acts:
-\begin{equation}
-J=F_{pop}\cdot\Delta t
-\label{eq:impulse_pop}
-\end{equation}
-
-where $J$ is impulse (N$\cdot$s) and $\Delta t$ is the pressure-pulse duration. For a representative short pressure-pulse duration $\Delta t=10$~ms:
-\begin{equation}
-J\approx1{,}330\times0.01\approx13.3\,\mathrm{N\cdot s}
-\label{eq:impulse_pop_value}
-\end{equation}
-
-\paragraph{(e) Load distribution through fasteners and supports}
-For distributed fastening with $n$ screw/support points, first-order load per point under a total applied force $F$ is:
-\begin{equation}
-F_{point}=\frac{F}{n}
-\label{eq:fpoint}
-\end{equation}
-
-where $n$ is the number of fastener points. Under $F_{pop}\approx1{,}330$~N: 4 points carry $\sim332$~N each; 8 points carry $\sim166$~N each. This demonstrates why distributed fastening reduces local stress concentration and improves structural reliability.
+\paragraph{(d) Load distribution through fasteners.}
+Under $F_\mathrm{pop} \approx 1{,}330$\,N: 4 points carry $\sim$332\,N each; 8
+points carry $\sim$166\,N each. This motivates the distributed screw fastening
+strategy.
 
 \subsection{Embedded Software Methodology}
 
-\subsubsection{Software Module Scope}
+\subsubsection{XBee Communication Interface}
 
-The software module governs all firmware executing on the ESP32 flight computer, covering three implementation areas: (i)~telemetry and XBee communication management, (ii)~pyrotechnic deployment state-machine control via PWM, and (iii)~power and continuity monitoring integration. Area~(iii) is in active development and has not yet been validated against live hardware at the time of this report.
+The XBee-PRO 900HP exposes only a UART serial interface for transparent-mode
+data transfer. The design uses the ESP32 hardware UART peripheral with remapped
+RX/TX GPIO pins. Key serial parameters are listed in Table~\ref{tab:xbee_serial_params}.
 
-\subsubsection{Software Design Considerations}
-
-Three core problems drive the software design:
-
-\begin{enumerate}
-    \item \textbf{XBee Integration:} The XBee-PRO 900HP must stream telemetry reliably at a deterministic data rate using hardware serial. Interface selection (SPI vs UART), data rate constraints, and pre-flight radio configuration via XCTU must all be resolved before firmware integration.
-    \item \textbf{Pyrotechnic Deployment via PWM:} The deployment state machine must safely arm, fire, and confirm chute deployment events using PWM-gated MOSFET drive without false actuation or premature triggering under vibration or electromagnetic interference.
-    \item \textbf{Power Monitoring Integration:} Real-time battery voltage and chute-channel continuity feedback from the ADS1115 must be incorporated into pre-flight arm logic and appended to the outbound telemetry packet. This integration is not yet complete in the current firmware build.
-\end{enumerate}
-
-\subsubsection{XBee Communication Interface: SPI vs UART}
-
-The XBee-PRO 900HP hardware exposes only a UART serial interface for transparent-mode data transfer; it does not offer SPI or I\textsuperscript{2}C bus modes \cite{xbee_manual}. SPI is therefore inapplicable, and the design uses the ESP32 hardware UART peripheral with remapped RX/TX GPIO pins, preserving all other peripheral assignments on the flight computer \cite{esp32_datasheet}.
-
-Key serial parameters governing the XBee-to-ESP32 link are listed in Table~\ref{tab:xbee_serial_params}.
-
-\begin{table}[htbp]
-\centering
-\caption{XBee-PRO 900HP Serial Interface Parameters}
-\label{tab:xbee_serial_params}
-\small
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}p{3.8cm}|p{3.0cm}|p{5.9cm}@{}}
-\toprule
-\rowcolor{gray!22}\textbf{Parameter} & \textbf{Value} & \textbf{Implementation Note} \\ \midrule
-Default baud rate & 9600 baud & Factory default; must be updated via XCTU \texttt{BD} command \\
-N4 firmware baud rate & 115200 baud & Reduces per-packet latency; set identically on flight and ground units \\
-Over-air RF data rate & 200 kbps & Fixed by module hardware; not configurable from firmware side \\
-Interface type & UART, 3.3~V logic & No SPI path; transparent mode passes raw bytes directly to/from ESP32 \\
-Telemetry packet interval & 100~ms (10~Hz) & Frame rate used in N4 build; well below over-air throughput ceiling \\ \bottomrule
-\end{tabular}
+\begin{table}[!htbp]
+  \centering
+  \caption{XBee-PRO 900HP Serial Interface Parameters}
+  \label{tab:xbee_serial_params}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}p{4cm}|p{3cm}|p{6cm}@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Parameter} & \textbf{Value} & \textbf{Implementation Note} \\ \midrule
+    Default baud rate & 9600\,baud & Factory default; updated via XCTU \\
+    N-4 firmware baud rate & 115{,}200\,baud & Reduces per-packet latency; set identically on both units \\
+    Over-air RF data rate & 200\,kbps & Fixed by module hardware \\
+    Interface type & UART, 3.3\,V logic & Transparent mode passes raw bytes \\
+    Telemetry packet interval & 100\,ms (10\,Hz) & Well below over-air throughput ceiling \\ \bottomrule
+  \end{tabular}
 \end{table}
-
-\subsubsection{Radio Pre-Flight Configuration via XCTU}
-
-XCTU is Digi's official configuration and test utility for XBee modules. The N4 pre-flight procedure programs both flight and ground-station units via XCTU before each integration cycle \cite{xbee_manual}:
-
-\begin{enumerate}
-    \item \textbf{Network ID (ID):} Set identically on both units (e.g., \texttt{7FFF}) to isolate the N4 network from other XBee traffic in the field.
-    \item \textbf{Baud Rate (BD):} Set to 115200 on both units to match firmware UART initialization.
-    \item \textbf{Channel Mask:} 900~MHz ISM band frequency-hopping profile configured to minimize ambient interference.
-    \item \textbf{Transmit Power (PL):} Maximum (+24~dBm) for full downlink link-margin.
-    \item \textbf{API Mode (AP):} Set to 0 (transparent mode) so the module passes raw bytes directly without packet-framing overhead, which suits the simple CSV/binary telemetry stream.
-    \item \textbf{Sleep Mode (SM):} Disabled; module remains active continuously during all flight phases.
-\end{enumerate}
-
-After configuration, a loopback range test confirms bidirectional packet delivery before avionics bay assembly. Module profiles are saved in XCTU for rapid re-flashing if hardware replacement is required before launch.
 
 \subsubsection{Communication Manager Architecture}
 
-All three channels are coordinated by the CommunicationManager class, which selects and combines active transmission modes at runtime \cite{n4_comm_architecture}. The mode-selection logic and fallback flow are shown in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_comm_manager}).
-
-See Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_comm_manager}).
+All three channels are coordinated by the \texttt{CommunicationManager} class,
+which selects and combines active transmission modes at runtime. Mode-selection
+logic supports automatic fallback from MQTT to beacon when WiFi is lost, and
+allows runtime switching between all three modes via serial, MQTT, or ESP-NOW
+commands \cite{n4_comm_architecture}.
 
 \subsubsection{Firmware State Machine Architecture}
 
-The firmware is structured as a finite-state machine (FSM) executed inside the ESP32 main \texttt{loop()}, with telemetry transmission running continuously across all states via hardware serial interrupt. The full state-machine diagram is presented in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_state_machine}).
+The firmware is structured as a finite-state machine (FSM) executed inside the
+ESP32 \texttt{main loop()}, with telemetry transmission running continuously
+across all states via hardware serial interrupt. States:
+\texttt{PAD} $\to$ \texttt{ARMED} $\to$ \texttt{BOOST} $\to$ \texttt{APOGEE}
+$\to$ \texttt{DROGUE} $\to$ \texttt{MAIN} $\to$ \texttt{LANDED}.
 
 \subsubsection{Pyrotechnic Deployment Software Flow}
 
-The deployment channel is driven only when the FSM reaches the APOGEE or RECOVERY state and all pre-fire checks pass. See Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_deploy_flow}) for the full gating logic moved to the appendix.
+The deployment channel is driven only when the FSM reaches the APOGEE or
+RECOVERY state and all pre-fire checks pass \cite{n4_pyro_control,n4_pwm_config}.
 
-
-Key firmware constants for the deployment channel \cite{n4_pyro_control, n4_pwm_config}:
+Key firmware constants:
 \begin{itemize}
-    \item \texttt{PWM\_DUTY\_IGNITE = 102} \quad ($D = 0.40$, $V_{\mathrm{eff}} \approx 6$~V from 15~V supply)
-    \item \texttt{LAUNCH\_INHIBIT\_V = 14.0}~V \quad minimum battery voltage for arm enable
-    \item \texttt{CHUTE\_COUNT\_THRESHOLD = 1000} \quad ADS1115 ADC counts for continuity present
-    \item \texttt{PWM\_FREQ = 1000}~Hz \quad LEDC timer frequency for the ignition channel
+  \item \texttt{PWM\_DUTY\_IGNITE = 178} ($D = 0.70$, 70\% duty cycle)
+  \item \texttt{LAUNCH\_INHIBIT\_V = 14.0\,V} --- minimum battery voltage for
+    arm enable
+  \item \texttt{CHUTE\_COUNT\_THRESHOLD = 1000} --- ADS1115 ADC counts for
+    continuity present
+  \item \texttt{PWM\_FREQ = 1000\,Hz} --- LEDC timer frequency for ignition
+    channel
 \end{itemize}
 
-\subsubsection{Power Monitoring Software Integration (In Progress)}
+\subsubsection{Power Monitoring Software Integration}
 
-Battery voltage and chute-channel continuity are read from the ADS1115 over I\textsuperscript{2}C and back-calculated to real-world voltage using the inverse of the hardware voltage divider \cite{ads1115_datasheet}:
+Battery voltage and chute-channel continuity are read from the ADS1115 over
+I$^2$C and back-calculated using the inverse of the hardware voltage
+divider \cite{ads1115_datasheet,voltage_divider_theory}:
+
 \begin{equation}
-V_{battery} = V_{ADC} \times \frac{R_1+R_2}{R_2} = V_{ADC} \times \frac{57.0}{10.0}
-\label{eq:vbatt_sw}
+  V_\mathrm{battery} = V_\mathrm{ADC} \times \frac{R_1 + R_2}{R_2} = V_\mathrm{ADC} \times \frac{57.0}{10.0}
+  \label{eq:vbat_reconstruct}
 \end{equation}
 
-where $V_{ADC}$ is the raw ADC reading in volts, and the factor 57/10 is the reciprocal of the hardware divider ratio \cite{voltage_divider_theory}.
-
-The monitoring flow is presented in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_power_flow}).
-
-The reconstructed voltage is appended to the telemetry packet and compared against the inhibit threshold. If the value falls below \texttt{LAUNCH\_INHIBIT\_V}, the deployment arm flag is cleared and a ``\texttt{PWR INHIBIT}'' status byte is broadcast over XBee to the ground station before launch \cite{n4_pyro_control}. The hardware concept for this monitor is shown in Appendix~\ref{app:moved_figures} (Figure~\ref{fig:app_sw_power_concept}).
-
-\textbf{Current integration status:} The hardware design and Proteus simulation of the ADS1115 monitoring circuit are complete (detailed in Section~\ref{sec:methodology}, Electrical Module). Firmware I\textsuperscript{2}C polling of ADS1115 channels and the voltage reconstruction function are coded but have not yet been validated against the assembled PCB. Integration testing is planned as the next milestone before launch readiness review.
+If the reconstructed value falls below \texttt{LAUNCH\_INHIBIT\_V}, the deployment
+arm flag is cleared and a ``\texttt{PWR INHIBIT}'' status byte is broadcast over
+XBee to the ground station before launch.
 
 \subsection{Validation and Test Method}
 
 Testing is staged from component to full-system level:
-\begin{itemize}
-    \item \textbf{Component level:} PWM-output verification, continuity checks, and ADC calibration.
-    \item \textbf{Subsystem level:} telemetry range trials, ignition repeatability tests, and enclosure leak/charring checks.
-    \item \textbf{System level:} integrated ground rehearsal with full communication stack and deployment command-path validation.
-\end{itemize}
+\begin{enumerate}
+  \item \textbf{Component level:} PWM-output verification, continuity checks,
+    and ADC calibration.
+  \item \textbf{Subsystem level:} Telemetry range trials, ignition repeatability
+    tests, and enclosure leak/charring checks.
+  \item \textbf{System level:} Integrated ground rehearsal with full communication
+    stack and deployment command-path validation.
+  \item \textbf{Field level:} Open-terrain XBee range test, dual deployment pop
+    test, and drone-mounted simulated flight.
+\end{enumerate}
 
+\subsection{Laboratory Bench Characterisation Data}
 
+Table~\ref{tab:bench_bus_measurements} logs baseline operational diagnostic rail
+responses under load.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Electrical and Communication Bus Bench Reference Measurements}
+  \label{tab:bench_bus_measurements}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}l|c|c|l@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Parameter Monitored} & \textbf{Nominal Target} & \textbf{Measured Value} & \textbf{Status} \\ \midrule
+    Logic Voltage Rail ($V_\mathrm{DD}$) & 3.30\,V & 3.28\,V & Within functional margin ($\pm$2\%) \\ \hline
+    Battery Bus Voltage ($V_\mathrm{BAT}$) & 15.00\,V & 14.88\,V & Static arming state load check \\ \hline
+    I$^2$C SDA Rise Time ($t_r$) & $<$1000\,ns & 420\,ns & Standard-mode compliant \\ \hline
+    I$^2$C SCL Rise Time ($t_r$) & $<$1000\,ns & 385\,ns & Standard-mode compliant \\ \hline
+    Igniter Loop Leakage Current & 0.00\,mA & 0.01\,mA & Safe quiescent isolation \\ \bottomrule
+  \end{tabular}
+\end{table}
+
+PWM ignition reliability trials are summarised in Table~\ref{tab:bench_igniter_profiles}.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{PWM-Controlled Ignition and Nichrome Structural Reliability Trials}
+  \label{tab:bench_igniter_profiles}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}c|c|c|c|l@{}}
+    \toprule
+    \rowcolor{gray!22}\textbf{Trial} & \textbf{PWM Duty} & \textbf{Pulse Width} & \textbf{Ignition Result} & \textbf{Post-Test Element Condition} \\ \midrule
+    1 & 20\% & 1.50\,s & Failed & Intact (insufficient thermal power) \\ \hline
+    2 & 40\% & 1.50\,s & Successful & Intact (mechanically reusable) \\ \hline
+    3 & 50\% & 1.50\,s & Successful & Intact (mechanically reusable) \\ \hline
+    4 & 60\% & 1.50\,s & Successful & Minor structural necking detected \\ \hline
+    5 & 100\% (DC) & 1.50\,s & Successful & Total structural burnout and melting \\ \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,13 +1,18 @@
 \contentsline {table}{\numberline {1}{\ignorespaces Telemetry System Comparison for Student Rocketry Applications}}{7}{table.1}%
-\contentsline {table}{\numberline {2}{\ignorespaces Summary of Research Gaps Identified from Literature and Nakuja Mission Evidence}}{16}{table.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces Telemetry Module Parts List}}{19}{table.3}%
-\contentsline {table}{\numberline {4}{\ignorespaces Telemetry Design Comparison Against Module Considerations}}{20}{table.4}%
-\contentsline {table}{\numberline {5}{\ignorespaces Antenna Options for Telemetry Module}}{22}{table.5}%
+\contentsline {table}{\numberline {2}{\ignorespaces Summary of Research Gaps Identified from Literature and Nakuja Mission Evidence}}{18}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Telemetry Module Parts List}}{21}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Telemetry Design Comparison Against Module Considerations}}{22}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Antenna Options for Telemetry Module}}{23}{table.5}%
 \contentsline {table}{\numberline {6}{\ignorespaces Electrical Interface Options for Pin-Constrained Flight Computer Integration}}{25}{table.6}%
-\contentsline {table}{\numberline {7}{\ignorespaces Electrical Module Constraints and Design Power Budget}}{26}{table.7}%
-\contentsline {table}{\numberline {8}{\ignorespaces Electrical and Deployment Submodule Materials}}{27}{table.8}%
-\contentsline {table}{\numberline {9}{\ignorespaces Structural Module Parts List}}{33}{table.9}%
-\contentsline {table}{\numberline {10}{\ignorespaces Structural Design Comparison Against Mechanical Requirements}}{34}{table.10}%
-\contentsline {table}{\numberline {11}{\ignorespaces XBee-PRO 900HP Serial Interface Parameters}}{40}{table.11}%
-\contentsline {table}{\numberline {12}{\ignorespaces Component Procurement Status}}{51}{table.12}%
-\contentsline {table}{\numberline {13}{\ignorespaces Project Budget Breakdown}}{66}{table.13}%
+\contentsline {table}{\numberline {7}{\ignorespaces Electrical Module Constraints and Design Power Budget}}{25}{table.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces Electrical and Deployment Submodule Materials}}{26}{table.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces Structural Module Parts List}}{29}{table.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces Structural Design Comparison Against Mechanical Requirements}}{30}{table.10}%
+\contentsline {table}{\numberline {11}{\ignorespaces XBee-PRO 900HP Serial Interface Parameters}}{31}{table.11}%
+\contentsline {table}{\numberline {12}{\ignorespaces Electrical and Communication Bus Bench Reference Measurements}}{33}{table.12}%
+\contentsline {table}{\numberline {13}{\ignorespaces PWM-Controlled Ignition and Nichrome Structural Reliability Trials}}{34}{table.13}%
+\contentsline {table}{\numberline {14}{\ignorespaces Component Procurement Status}}{38}{table.14}%
+\contentsline {table}{\numberline {15}{\ignorespaces XBee UART Transparent Packet Stream Structure Verification}}{38}{table.15}%
+\contentsline {table}{\numberline {16}{\ignorespaces ADS1115 Voltage Divider Diagnostic Calibration Data}}{39}{table.16}%
+\contentsline {table}{\numberline {17}{\ignorespaces Igniter Continuity Loop State Discrimination Matrix}}{42}{table.17}%
+\contentsline {table}{\numberline {18}{\ignorespaces Project Budget Breakdown}}{60}{table.18}%

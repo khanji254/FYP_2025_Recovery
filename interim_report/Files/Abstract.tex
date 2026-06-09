@@ -1,12 +1,35 @@
 \section*{Abstract}
 \addcontentsline{toc}{section}{Abstract}
 
-The Nakuja N4 rocket recovery system addresses three critical failure modes identified in previous missions: insufficient telemetry range, uncontrolled nichrome-wire burnout during parachute deployment, and absence of pre-flight electrical status feedback. This report outlines the design and development efforts undertaken to address these challenges.
+The Nakuja N-4 rocket recovery system addresses three critical mechatronic
+failure modes documented in preceding missions: insufficient telemetry
+communication range, uncontrolled nichrome-wire igniter burnout during
+pyrotechnic parachute deployment, and an absence of real-time pre-flight
+electrical status feedback. This report details the complete design, fabrication,
+validation, and field testing of the mechatronic recovery suite developed to
+resolve these systemic challenges.
 
-The telemetry subsystem employs the XBee-PRO 900HP operating at 900~MHz in transparent Universal Asynchronous Receiver-Transmitter (UART) mode. A first-order link budget analysis confirms a +32~dB margin at 5~km using omnidirectional dipole antennas. The ignition subsystem introduces Pulse-Width Modulation (PWM)-controlled IRLZ44N Metal-Oxide-Semiconductor Field-Effect Transistor (MOSFET) switching at 1~kHz, replacing the previous direct DC dump. Bench tests of 26~AWG nichrome elements demonstrated sustained energisation for approximately 30~seconds at minimum duty cycle, compared to burnout within 2~seconds under DC-equivalent drive, validating the controlled-heating approach. Additionally, a battery monitoring and continuity-detection circuit, centred on the ADS1115 16-bit Analog-to-Digital Converter (ADC), provides pre-launch voltage and igniter-state visibility. Mechanically, a stepped polyethylene terephthalate glycol (PETG) battery-carrier architecture accommodates four 18650 cells within the 95~mm avionics bay while routing dual threaded retention rods without interference.
+The telemetry subsystem utilises a Digi XBee-PRO 900HP transceiver operating
+within the 900\,MHz ISM band under transparent Universal Asynchronous
+Receiver-Transmitter (UART) protocol. A first-order link-budget analysis
+validates a robust link margin of 32.34\,dB over a 5\,km line-of-sight recovery
+baseline. Field range testing confirmed sustained bidirectional packet delivery at
+distances exceeding 5\,km, with battery voltage, altitude, and RSSI telemetry
+verified live on the ground-station liquid-crystal display (LCD).
 
-Preliminary results indicate that all subsystem designs have been completed and verified through 2D/3D computer-aided design (CAD), EasyEDA printed circuit board (PCB) schematics, and Proteus circuit simulation. A custom flight-computer PCB is currently in fabrication, and 3D-printed structural parts are in production. Firmware modules for telemetry, sensor interfacing, PWM control, and flight-state management have been implemented on FreeRTOS. 
+The deployment ignition subsystem incorporates low-side switching driven by
+logic-level IRLZ44N Power MOSFETs regulated via a calibrated 70\% Pulse-Width
+Modulation (PWM) scheme. Dual deployment pop tests confirmed successful drogue
+and main parachute ejection without nichrome wire burnout under repeated
+firings. System diagnostic feedback is provided via a 16-bit ADS1115
+Analog-to-Digital Converter (ADC) over Inter-Integrated Circuit (I2C),
+supplying ground operators with real-time loop continuity verification and
+battery bus voltage tracking with a reconstructed accuracy of $\pm$0.02\,V.
 
-The impact of these developments is significant: the Nakuja N4 system demonstrates a robust and scalable approach to addressing critical recovery challenges, paving the way for enhanced reliability in future missions. The project will wholesomely improve how tests are done and 
-
-
+Mechanically, an additive-manufactured stepped Polyethylene Terephthalate
+Glycol (PETG) avionics bay sled secures four parallel 18650 lithium-ion cells
+within the 95\,mm inner airframe diameter. A drone-mounted simulated-flight
+test confirmed active telemetry and correct FSM state sequencing. All
+mechatronic subsystems have been fabricated, integrated, and field-validated,
+establishing a reproducible high-power rocket recovery standard for the Nakuja
+programme.

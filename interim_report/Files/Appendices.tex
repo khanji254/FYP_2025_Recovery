@@ -1,14 +1,15 @@
-﻿% ============================================================
-%  APPENDICES  –  N4 Recovery System Interim Report
-%  Minimal, image-focused appendix
+% ============================================================
+%  APPENDICES -- N4 Recovery System Final Report
 % ============================================================
 \appendix
 
 % ------------------------------------------------------------
-\section{Appendix A: CAD Drawings with Title Blocks}
+\section{CAD Drawings with Title Blocks}
 \label{app:cad}
 
-The engineering drawings below were produced in SolidWorks and include the institution title block, part number, material specification, and revision level required for fabrication.
+The engineering drawings below were produced in SolidWorks and include the
+institution title block, part number, material specification, and revision level
+required for fabrication. All dimensions are in millimetres.
 
 \begin{figure}[H]
 \centering
@@ -39,71 +40,162 @@ The engineering drawings below were produced in SolidWorks and include the insti
 \end{figure}
 
 % ------------------------------------------------------------
-\section{Appendix B: Flight Computer and Base Station Circuit Design Reference}
+\section{Flight Computer and Base Station Circuit Design Reference}
 \label{app:fc_schematic}
 
-Figures~\ref{fig:app_fc_easyeda} and~\ref{fig:app_bs_easyeda} present the complete EasyEDA schematics used as design references for PCB layout, component placement, and trace routing.
+Figures~\ref{fig:app_fc_easyeda} and~\ref{fig:app_bs_easyeda} present the complete
+EasyEDA schematics used as design references for PCB layout, component placement,
+and trace routing.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/FC_Xbee_Design__easyDA_White_Background.PNG}
-\caption{Flight computer EasyEDA schematic with ESP32, XBee, MOSFETs}
+\caption{Flight computer EasyEDA schematic with ESP32, XBee, MOSFETs, and
+  ADS1115 monitoring circuit.}
 \label{fig:app_fc_easyeda}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/Basestation_Circuit_Design_White_Background.png}
-\caption{Base station EasyEDA schematic with XBee and Bluetooth interface}
+\caption{Base station EasyEDA schematic with XBee UART and Bluetooth interface.}
 \label{fig:app_bs_easyeda}
 \end{figure}
 
 % ------------------------------------------------------------
-\section{Appendix C: Project Budget}
+\section{Project Budget}
 \label{app:budget}
 
 \begin{table}[H]
 \centering
 \caption{Project Budget Breakdown}
 \small
-\begin{tabular}{@{}p{4.5cm}|c|c|p{2cm}|c@{}}
+\begin{tabular}{@{}p{5.5cm}|c|c|p{2cm}|c@{}}
 \toprule
 \rowcolor{gray!22}\textbf{Item} & \textbf{Qty} & \textbf{Unit Cost (KES)} & \textbf{Total (KES)} & \textbf{Status} \\ \midrule
-ESP32-WROOM-32              & 2  & 1800   & 3600  & Received    \\
-XBee-PRO 900HP              & 2  & 4,500 & 9,000  & Received    \\
-4S Lithium ion batteries (30000 mAh) & 4  & 500 & 2000  & Received    \\
-BMS Board (4S)              & 3  & 650   & 1,950  & Received    \\
-IRLZ44N MOSFET              & 10 & 45    & 450    & Received    \\
-Nichrome Wire (10 m)        & 1  & 500   & 500    & Received    \\
-PCB Fabrication (5 pcs)     & 1  & 4,500 & 4,500  & Fabrication \\
-PCB Components (R, C, etc.) & 1  & 2,000 & 2,000  & Partial     \\
-PETG Filament (1 kg)        & 1  & 1,800 & 1,800  & Received    \\
-Crimson Powder (100 g)        & 1  & 500   & 500    & Pending     \\
-Connectors (XT60, JST, etc.)& 1  & 1,200 & 1,200  & Received    \\
-Fasteners and Hardware      & 1  & 800   & 800    & Partial     \\
-Miscellaneous               & 1  & 1,500 & 1,500  & --          \\ \midrule
-\multicolumn{2}{r|}{\textbf{Total Estimated Cost:}} & & \textbf{37,300} & -- \\ \bottomrule
+ESP32-WROOM-32              & 2  & 1{,}800 & 3{,}600  & Received    \\
+XBee-PRO 900HP              & 2  & 4{,}500 & 9{,}000  & Received    \\
+4S Lithium-ion batteries (30{,}000\,mAh) & 4 & 500 & 2{,}000 & Received \\
+BMS Board (4S)              & 3  & 650     & 1{,}950  & Received    \\
+IRLZ44N MOSFET              & 10 & 45      & 450      & Received    \\
+Nichrome Wire (10\,m)       & 1  & 500     & 500      & Received    \\
+PCB Fabrication (5\,pcs)    & 1  & 4{,}500 & 4{,}500  & Fabricated  \\
+PCB Components (R, C, etc.) & 1  & 2{,}000 & 2{,}000  & Partial     \\
+PETG Filament (1\,kg)       & 1  & 1{,}800 & 1{,}800  & Received    \\
+Crimson Powder (100\,g)     & 1  & 500     & 500      & Pending     \\
+Connectors (XT60, JST, etc.)& 1  & 1{,}200 & 1{,}200  & Received    \\
+Fasteners and Hardware      & 1  & 800     & 800      & Partial     \\
+Miscellaneous               & 1  & 1{,}500 & 1{,}500  & ---         \\ \midrule
+\multicolumn{2}{r|}{\textbf{Total Estimated Cost:}} & & \textbf{29{,}800} & --- \\ \bottomrule
 \end{tabular}
 \end{table}
 
 % ------------------------------------------------------------
-\section{Appendix D: Project Timeplan}
-\label{app:timeplan}
+\section{Production Plan}
+\label{app:production_plan}
 
-Figure~\ref{fig:app_timeplan} displays the project timeline including planned phases, key milestones, and current progress status.
+Table~\ref{tab:production_plan} presents the Semester~2 production plan for
+the N-4 recovery system, covering all fabrication, integration, testing, and
+documentation activities from March 2026 to June 2026.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{images/Timeplan.PNG}
-\caption{N4 recovery system project Gantt chart with phases and milestones}
-\label{fig:app_timeplan}
-\end{figure}
+\begin{longtable}{p{1cm}p{4.5cm}p{3cm}p{2.5cm}p{2.5cm}p{1.5cm}}
+  \caption{Production Plan --- Final Year Project 2025/2026 (Semester 2: March--June 2026)}
+  \label{tab:production_plan}\\
+  \toprule
+  \textbf{Wk} & \textbf{Tasks / Activities} & \textbf{Materials Required} & \textbf{Special Equipment} & \textbf{Sequential / Concurrent} & \textbf{Status}\\
+  \midrule
+  \endfirsthead
+  \multicolumn{6}{l}{\small\textit{(Table~\ref{tab:production_plan} continued)}}\\
+  \toprule
+  \textbf{Wk} & \textbf{Tasks / Activities} & \textbf{Materials Required} & \textbf{Special Equipment} & \textbf{Sequential / Concurrent} & \textbf{Status}\\
+  \midrule
+  \endhead
+  \midrule
+  \multicolumn{6}{r}{\small\textit{Continued on next page}}\\
+  \endfoot
+  \bottomrule
+  \endlastfoot
+
+  1 &
+  \textbf{1.\ FC Circuit Update:} Review FC PCB; source replacement components; re-etch board; re-solder and retest.
+  \textbf{2.\ Software --- Battery/Chute Monitoring:} Merge ADS1115 monitoring FreeRTOS task into main FC firmware; confirm 14.9\,V nominal detection; confirm launch-inhibit triggers at $<$14.0\,V. &
+  PCB copper clad; HCl + H$_2$O$_2$; solder, flux &
+  Laptop + serial monitor; soldering iron; multimeter &
+  Circuit update concurrent with SW integration &
+  Done\\[4pt]
+
+  2 &
+  \textbf{1.\ 3D Printing --- FC Sled Holder:} Slice in Prusa Slicer (PETG, 0.2\,mm layer, 40\% infill); print; test-fit with FC PCB and brass column mounts.
+  \textbf{2.\ Base Station Circuit --- Soldering:} Transfer schematic to perfboard; solder all components; test power rails and XBee UART. &
+  PETG filament; perfboard; solder, flux; header pins &
+  Prusa 3D printer; Prusa Slicer; callipers; soldering iron; multimeter; laptop &
+  FC sled print after printer available; base station soldering concurrent &
+  Done\\[4pt]
+
+  3 &
+  \textbf{1.\ Base Station 3D Print and Housing.}
+  \textbf{2.\ Ejection Caps Reprint:} Revised geometry; test-fit nichrome wire and seal.
+  \textbf{3.\ Dual Deployment Pop Test:} Safety clearance; load caps; trigger drogue at 70\% PWM; trigger main at 70\% PWM; confirm sequence; iterate if needed. &
+  PETG filament; perfboard; solder; black powder; nichrome wire; all-weather container &
+  Prusa 3D printer; soldering iron; multimeter; laptop; safety PPE; fire extinguisher &
+  Sled print + BS solder concurrent; pop test after cap fit confirmed &
+  Done\\[4pt]
+
+  4 &
+  \textbf{1.\ Full Avionics Integration --- Bench Test:} Mount FC PCB into PETG sled; connect battery, XBee, and deployment circuit; run FreeRTOS firmware; confirm launch inhibit, continuity detection, and fire logic.
+  \textbf{2.\ Base Station Final Assembly.} &
+  4S 18650 battery pack; full avionics assembly &
+  Laptop + serial monitor; multimeter; soldering iron &
+  Bench integration after FC sled + SW done; BS assembly concurrent &
+  Done\\[4pt]
+
+  5 &
+  \textbf{Dual Deployment Pop Test} (repeat): Safety clearance; trigger drogue at 70\% PWM; trigger main at 70\% PWM; confirm sequence. &
+  4S 18650 battery pack; full avionics assembly &
+  Laptop + serial monitor; multimeter; soldering iron &
+  BS assembly concurrent with bench integration &
+  Done\\[4pt]
+
+  6 &
+  \textbf{Dual Deployment Pop Test} (verification): Confirm drogue and main fire at 70\% PWM; record results. &
+  4S 18650 battery pack; full avionics assembly &
+  Laptop + serial monitor; multimeter; soldering iron &
+  After all bench integration passes &
+  Done\\[4pt]
+
+  7 &
+  \textbf{1.\ XBee Range Test (Field):} Set up FC transmitter at ground level; walk base station to 1\,km, 3\,km, 5\,km; record RSSI vs.\ distance via XCTU; validate $\geq$5\,km link margin.
+  \textbf{2.\ System Integration Refinement.}
+  \textbf{3.\ Report \& Documentation Update.} &
+  Both XBee modules; laptops; transport &
+  Laptop + XCTU software &
+  Range test after full bench integration; documentation concurrent &
+  Done\\[4pt]
+
+  8 &
+  \textbf{1.\ Drone Test (Simulated Flight):} Mount integrated avionics onto drone; tethered low-altitude flight; verify XBee telemetry active during flight; confirm apogee detection and deployment sequence logic; record all telemetry.
+  \textbf{2.\ Pre-Launch System Validation.} &
+  Full avionics assembly; drone platform; tether line &
+  Laptop + serial monitor; multimeter; drone &
+  Drone test after Wk 7 refinement; system validation concurrent &
+  Incomplete\\[4pt]
+
+  9 &
+  \textbf{1.\ Demonstration:} Prepare demonstration script and safety checklist; conduct supervised ground demonstration; document results.
+  \textbf{2.\ Final Report:} Write Chapter 4 (fabrication, test results, discussion); write Chapter 5 (conclusions); compile appendices; supervisor review and submission.
+  \textbf{3.\ Final Presentation:} Prepare and rehearse final slide deck; deliver to panel. &
+  Full system assembly; test fixtures &
+  Laptop; camera/recorder &
+  Demonstration after system validation sign-off; final report concurrent; presentation concurrent with report &
+  Pending\\
+\end{longtable}
 
 % ------------------------------------------------------------
-\section{Appendix E: Labelled Assembly Reference Photographs}
+\section{Labelled Assembly Reference Photographs}
 \label{app:labeled}
 
-The labelled images below serve as fabrication and assembly references, identifying all physical components and their spatial relationships. Figures~\ref{fig:app_cross_section}, \ref{fig:app_parts_list}, \ref{fig:app_avionics_bay}, and~\ref{fig:app_soldered_fc} provide comprehensive visual guides for system integration and component verification.
+The labelled images below serve as fabrication and assembly references,
+identifying all physical components and their spatial relationships.
 
 \begin{figure}[H]
 \centering
@@ -134,22 +226,19 @@ The labelled images below serve as fabrication and assembly references, identify
 \end{figure}
 
 % ------------------------------------------------------------
-\section{Appendix F: Firmware Code Snippets and Repository}
+\section{Firmware Code Snippets and Repository}
 \label{app:firmware}
 
-The N4 flight software is version-controlled and publicly available at:
+The N-4 flight software is version-controlled and publicly available at:
 \begin{center}
   \url{https://github.com/nakujaproject/N4-Flight-Software} \cite{n4_github}
 \end{center}
 
-Representative excerpts illustrating the four primary firmware modules are shown below.
-
 \subsection*{F.1\quad XBee UART Initialisation Task}
 \begin{lstlisting}[language=C, caption={XBee UART initialisation and AT-command configuration (excerpt from \texttt{xbee\_task.c}) \cite{n4_github}}]
 void xbee_init_task(void *pvParameters) {
-    // Configure UART2 for XBee at 9600 baud
     uart_config_t uart_cfg = {
-        .baud_rate  = 9600,
+        .baud_rate  = 115200,
         .data_bits  = UART_DATA_8_BITS,
         .parity     = UART_PARITY_DISABLE,
         .stop_bits  = UART_STOP_BITS_1,
@@ -160,12 +249,12 @@ void xbee_init_task(void *pvParameters) {
                  UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
     uart_driver_install(UART_NUM_2, BUF_SIZE, 0, 0, NULL, 0);
 
-    // Enter AT command mode and set destination address
-    xbee_send_at("+++");           vTaskDelay(pdMS_TO_TICKS(1200));
+    /* Enter AT command mode and set destination address */
+    xbee_send_at("+++");          vTaskDelay(pdMS_TO_TICKS(1200));
     xbee_send_at("ATDH 0013A200"); vTaskDelay(pdMS_TO_TICKS(100));
     xbee_send_at("ATDL 41B5C2F3"); vTaskDelay(pdMS_TO_TICKS(100));
-    xbee_send_at("ATWR");          vTaskDelay(pdMS_TO_TICKS(200));
-    xbee_send_at("ATCN");          // Exit command mode
+    xbee_send_at("ATWR");         vTaskDelay(pdMS_TO_TICKS(200));
+    xbee_send_at("ATCN");         /* Exit command mode */
     vTaskDelete(NULL);
 }
 \end{lstlisting}
@@ -176,7 +265,7 @@ void power_monitor_task(void *pvParameters) {
     ads1115_t ads = ads1115_init(I2C_NUM_0, ADS1115_ADDR_GND);
     while (1) {
         int16_t raw = ads1115_read_channel(&ads, ADS1115_MUX_AIN0);
-        // Reconstruct voltage: Vbus = raw * (4.096/32768) * (R1+R2)/R2
+        /* Reconstruct: Vbus = raw * (4.096/32768) * (R1+R2)/R2 */
         float v_sense = raw * (4.096f / 32768.0f);
         float v_bus   = v_sense * ((47000.0f + 10000.0f) / 10000.0f);
 
@@ -196,7 +285,7 @@ void power_monitor_task(void *pvParameters) {
 #define LEDC_CHANNEL_DROGUE  LEDC_CHANNEL_0
 #define LEDC_CHANNEL_MAIN    LEDC_CHANNEL_1
 #define PWM_FREQ_HZ          1000
-#define PWM_DUTY_PCT         70          // 70 % validated duty cycle
+#define PWM_DUTY_PCT         70   /* 70% validated duty cycle */
 
 void pyro_task(void *pvParameters) {
     ledc_timer_config_t timer = {
@@ -206,10 +295,9 @@ void pyro_task(void *pvParameters) {
         .freq_hz         = PWM_FREQ_HZ,
     };
     ledc_timer_config(&timer);
-    uint32_t duty = (PWM_DUTY_PCT * 255) / 100;  // = 178
+    uint32_t duty = (PWM_DUTY_PCT * 255) / 100;  /* = 178 */
     while (1) {
-        EventBits_t ev = xEventGroupWaitBits(
-            deploy_event_group,
+        EventBits_t ev = xEventGroupWaitBits(deploy_event_group,
             DEPLOY_DROGUE_BIT | DEPLOY_MAIN_BIT,
             pdFALSE, pdFALSE, portMAX_DELAY);
         if (ev & DEPLOY_DROGUE_BIT)
@@ -218,11 +306,11 @@ void pyro_task(void *pvParameters) {
         if (ev & DEPLOY_MAIN_BIT)
             ledc_set_duty_and_update(LEDC_LOW_SPEED_MODE,
                                      LEDC_CHANNEL_MAIN, duty, 0);
-        vTaskDelay(pdMS_TO_TICKS(3000));   // fire window
+        vTaskDelay(pdMS_TO_TICKS(3000));  /* fire window */
         ledc_set_duty_and_update(LEDC_LOW_SPEED_MODE,
-                                  LEDC_CHANNEL_DROGUE, 0, 0);
+                                 LEDC_CHANNEL_DROGUE, 0, 0);
         ledc_set_duty_and_update(LEDC_LOW_SPEED_MODE,
-                                  LEDC_CHANNEL_MAIN, 0, 0);
+                                 LEDC_CHANNEL_MAIN, 0, 0);
     }
 }
 \end{lstlisting}
@@ -234,8 +322,7 @@ typedef enum {
     STATE_APOGEE, STATE_DROGUE, STATE_MAIN, STATE_LANDED
 } flight_state_t;
 
-flight_state_t fsm_update(flight_state_t current,
-                           sensor_data_t  *s) {
+flight_state_t fsm_update(flight_state_t current, sensor_data_t *s) {
     switch (current) {
         case STATE_PAD:
             return (s->armed_flag) ? STATE_ARMED : STATE_PAD;
@@ -264,15 +351,14 @@ flight_state_t fsm_update(flight_state_t current,
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.72\textwidth]{images/XBeeDiagram.png}
-\caption{N4 XBee telemetry architecture for rocket-to-ground communication \cite{n4_xbee_integration,n4_comm_architecture}}
+\caption{N-4 XBee telemetry architecture for rocket-to-ground communication \cite{n4_xbee_integration,n4_comm_architecture}}
 \label{fig:app_intro_xbee_architecture}
-\label{fig:app_method_xbee_system}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.38\textwidth]{images/duck_antenna.jpg}
-\caption{900~MHz duck antenna used in the N4 telemetry configuration}
+\caption{900\,MHz duck antenna used in the N-4 telemetry configuration}
 \label{fig:app_duck_antenna}
 \end{figure}
 
@@ -281,13 +367,12 @@ flight_state_t fsm_update(flight_state_t current,
 \includegraphics[width=0.45\textwidth]{images/donut_pattern.png}
 \caption{Dipole radiation ``donut'' pattern illustrating nulls along the antenna axis}
 \label{fig:app_donut_pattern}
-\label{fig:app_dipole_wave_profile}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.45\textwidth]{images/BiQuadPic.jpg}
-\caption{900~MHz Bi-Quad ground-station antenna option}
+\caption{900\,MHz Bi-Quad ground-station antenna option}
 \label{fig:app_biquad}
 \end{figure}
 
@@ -296,13 +381,6 @@ flight_state_t fsm_update(flight_state_t current,
 \includegraphics[width=0.52\textwidth]{images/Old_FC_Holder.png}
 \caption{Old flight-computer holder failure after pop tests}
 \label{fig:app_old_fc_holder_design}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.62\textwidth]{images/XBeeDiagram.png}
-\caption{XBee-PRO 900HP telemetry integration signal path (duplicate instance moved for completeness)}
-\label{fig:app_xbee_integration}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -319,232 +397,11 @@ flight_state_t fsm_update(flight_state_t current,
 \label{fig:app_fritzing_rocket}
 \end{figure}
 
-\subsection*{F.6\quad Communication Manager Architecture}
-
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[
-    >=Latex,
-    term/.style={draw, rectangle, rounded corners=10pt, fill=green!14,
-                 minimum width=3.6cm, minimum height=0.85cm,
-                 align=center, font=\small\bfseries, text width=3.4cm},
-    mode/.style={draw, rectangle, rounded corners=5pt, fill=blue!10,
-                 minimum width=3.4cm, minimum height=0.85cm,
-                 align=center, font=\small\bfseries, text width=3.2cm},
-    cmd/.style={draw, rectangle, rounded corners=3pt, fill=gray!12,
-                minimum width=3.4cm, minimum height=0.75cm,
-                align=center, font=\scriptsize, text width=3.1cm},
-    rangelbl/.style={font=\scriptsize, align=center, text width=2.6cm},
-    arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
-]
-    % START terminal
-    \node[term] (start) {START};
-
-    % FSM source node
-    \node[cmd, below=0.8cm of start] (fsm)
-        {Flight FSM\\(25-field CSV telemetry packet)};
-
-    % Communication Manager
-    \node[mode, below=0.8cm of fsm] (mgr)
-        {Communication\\Manager\\(runtime control)};
-
-    % Three channel nodes side by side
-    \node[cmd, below left=1.4cm and 2.2cm of mgr]  (mqtt)
-        {MQTT Mode\\WiFi/TCP\\$\sim$100~m range};
-    \node[cmd, below=1.4cm of mgr]              (beacon)
-        {Beacon Mode\\Raw 802.11\\4~km (field tested)};
-    \node[cmd, below right=1.4cm and 2.2cm of mgr] (xbee)
-        {XBee Mode\\900~MHz UART\\5--28~km range};
-
-    % END terminal
-    \node[term, below=1.4cm of beacon] (stop) {END};
-
-    % Arrows
-    \draw[arr] (start)  -- (fsm);
-    \draw[arr] (fsm)    -- node[right, font=\scriptsize]{packet source} (mgr);
-    \draw[arr] (mgr)    -- node[above left,  font=\scriptsize]{auto-fallback}  (mqtt);
-    \draw[arr] (mgr)    -- (beacon);
-    \draw[arr] (mgr)    -- node[above right, font=\scriptsize]{primary link}   (xbee);
-    \draw[arr] (mqtt)   |- (stop);
-    \draw[arr] (beacon) -- (stop);
-    \draw[arr] (xbee)   |- (stop);
-
-    % Side labels
-    \node[rangelbl, right=0.5cm of xbee]   {\textit{Primary recovery link}};
-    \node[rangelbl, right=0.5cm of beacon]  {\textit{Redundant research channel}};
-    \node[rangelbl, right=0.5cm of mqtt]    {\textit{Pad ops / ground only}};
-\end{tikzpicture}
-\caption{Communication Manager architecture: three independent physical channels; XBee is primary}
-\label{fig:app_sw_comm_manager}
-\end{figure}
-
-\subsection*{F.7\quad Flight Firmware State Machine}
-
-\begin{figure}[htbp]
-\centering
-\begin{tikzpicture}[
-    >=Latex,
-    term/.style={draw, rectangle, rounded corners=10pt, fill=green!14,
-                 minimum width=3.2cm, minimum height=0.9cm,
-                 align=center, font=\normalsize\bfseries},
-    state/.style={draw, rectangle, rounded corners=6pt, fill=gray!12,
-                  minimum width=3.2cm, minimum height=0.9cm,
-                  align=center, font=\small\bfseries, text width=3.0cm},
-    lbl/.style={font=\scriptsize, align=center, text width=3.2cm,
-                fill=white, draw=none},
-    arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
-]
-    % Vertical chain
-    \node[term]  (start)    {START};
-    \node[state, below=0.7cm of start]  (idle)     {IDLE};
-    \node[state, below=0.7cm of idle]   (armed)    {ARMED};
-    \node[state, below=0.7cm of armed]  (flight)   {FLIGHT};
-    \node[state, below=0.7cm of flight] (apogee)   {APOGEE};
-    \node[state, below=0.7cm of apogee] (recovery) {RECOVERY};
-    \node[term,  below=0.7cm of recovery] (stop)   {END};
-
-    % Main flow arrows
-    \draw[arr] (start)    -- (idle);
-    \draw[arr] (idle)     -- node[right, font=\scriptsize]{arm cmd, $V_{bat}>14$~V} (armed);
-    \draw[arr] (armed)    -- node[right, font=\scriptsize]{launch detected} (flight);
-    \draw[arr] (flight)   -- node[right, font=\scriptsize]{apogee event} (apogee);
-    \draw[arr] (apogee)   -- node[right, font=\scriptsize]{drogue deployed} (recovery);
-    \draw[arr] (recovery) -- node[right, font=\scriptsize]{landed / timeout} (stop);
-
-    % Loopback: RECOVERY back to IDLE
-    \draw[arr] (recovery.west) -- ++(-1.4,0)
-               |- node[left, font=\scriptsize, pos=0.25]{reset / new flight} (idle.west);
-
-    % Side annotations
-    \node[lbl, right=2.8cm of idle]     {PWM off; pre-arm checks};
-    \node[lbl, right=2.8cm of armed]    {Continuity verified; channels enabled};
-    \node[lbl, right=2.8cm of flight]   {10~Hz telemetry and flight sensing};
-    \node[lbl, right=2.8cm of apogee]   {Drogue deploy command issued};
-    \node[lbl, right=2.8cm of recovery] {Main deploy and descent tracking};
-\end{tikzpicture}
-\caption{N4 flight firmware state machine and transition logic}
-\label{fig:app_sw_state_machine}
-\end{figure}
-
-\subsection*{F.8\quad Deployment Channel Firmware Flow}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[
-    >=Latex,
-    term/.style={draw, rectangle, rounded corners=10pt, fill=green!14,
-                 minimum width=9.0cm, minimum height=0.9cm,
-                 align=center, font=\small\bfseries, text width=8.6cm},
-    proc/.style={draw, rectangle, rounded corners=4pt, fill=gray!10,
-                 minimum width=9.0cm, minimum height=0.9cm,
-                 align=center, font=\small, text width=8.6cm},
-    dec/.style={draw, diamond, fill=yellow!18, aspect=2.4,
-                align=center, font=\small, inner sep=1pt, text width=4.2cm},
-    side/.style={draw, rectangle, rounded corners=3pt, fill=red!12,
-                 minimum width=4.6cm, minimum height=0.85cm,
-                 align=center, font=\scriptsize, text width=4.2cm},
-    arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
-]
-    \node[term]  (start)  {START};
-    \node[proc,  below=0.7cm of start]  (read)   {Read FSM state, barometer, and ADS1115 channels};
-    \node[dec,   below=0.7cm of read]   (fsm)    {State is APOGEE or RECOVERY?};
-    \node[proc,  below=0.9cm of fsm]    (check)  {Verify arm gates: $V_{bat}>14.0$~V and continuity counts $>1000$};
-    \node[dec,   below=0.7cm of check]  (armq)   {All gates valid?};
-    \node[proc,  below=0.9cm of armq]   (fire)   {Apply PWM fire command: \texttt{ledcWrite(CH,102)} for ignition window};
-    \node[proc,  below=0.7cm of fire]   (poll)   {Poll feedback; confirm deploy event from continuity transition};
-    \node[term,  below=0.7cm of poll]   (stop)   {END: set PWM to zero, log event, transmit confirmation};
-
-    \node[side, right=2.6cm of fsm]  (hold)   {Hold output; transmit status (no-deploy state)};
-    \node[side, right=2.6cm of armq] (inhib)  {Set \texttt{PWR\_INHIBIT}; transmit warning; block fire};
-
-    \draw[arr] (start) -- (read);
-    \draw[arr] (read)  -- (fsm);
-    \draw[arr] (fsm)   -- node[left,  font=\scriptsize]{Yes} (check);
-    \draw[arr] (fsm)   -| node[above, pos=0.22, font=\scriptsize]{No}  (hold);
-    \draw[arr] (check) -- (armq);
-    \draw[arr] (armq)  -- node[left,  font=\scriptsize]{Yes} (fire);
-    \draw[arr] (armq)  -| node[above, pos=0.22, font=\scriptsize]{No}  (inhib);
-    \draw[arr] (fire)  -- (poll);
-    \draw[arr] (poll)  -- (stop);
-
-    % Reconnect side branches to END
-    \draw[arr] (hold)   |- (stop);
-    \draw[arr] (inhib)  |- (stop);
-\end{tikzpicture}
-\caption{Deployment channel firmware flow with explicit arm/fire/confirm sequence}
-\label{fig:app_sw_deploy_flow}
-\end{figure}
-
-\subsection*{F.9\quad Power Monitoring Firmware Flow}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[
-    >=Latex,
-    term/.style={draw, rectangle, rounded corners=10pt, fill=green!14,
-                 minimum width=9.0cm, minimum height=0.9cm,
-                 align=center, font=\small\bfseries, text width=8.6cm},
-    proc/.style={draw, rectangle, rounded corners=4pt, fill=gray!10,
-                 minimum width=9.0cm, minimum height=0.9cm,
-                 align=center, font=\small, text width=8.6cm},
-    dec/.style={draw, diamond, fill=yellow!18, aspect=2.4,
-                align=center, font=\small, inner sep=1pt, text width=4.4cm},
-    side/.style={draw, rectangle, rounded corners=3pt, fill=red!12,
-                 minimum width=4.6cm, minimum height=0.85cm,
-                 align=center, font=\scriptsize, text width=4.2cm},
-    arr/.style={->, thick, shorten >=2pt, shorten <=2pt}
-]
-    \node[term]  (start)   {START: ADS1115 I\textsuperscript{2}C poll (address 0x48)};
-    \node[proc,  below=0.7cm of start]  (raw)    {Read raw ADC counts: battery and chute channels};
-    \node[proc,  below=0.7cm of raw]    (recon)  {Reconstruct voltage: $V_{bat}=N\times\dfrac{4.096}{32767}\times\dfrac{57}{10}$};
-    \node[dec,   below=0.9cm of recon]  (thresh) {$V_{bat}>14.0$~V and continuity valid?};
-    \node[proc,  below=0.9cm of thresh] (append) {Append voltage and continuity flags to telemetry packet};
-    \node[term,  below=0.7cm of append] (stop)   {END: transmit packet and update arm-inhibit status};
-
-    \node[side, right=2.6cm of thresh] (inhibit) {Set \texttt{PWR\_INHIBIT}; broadcast warning packet};
-
-    \draw[arr] (start)  -- (raw);
-    \draw[arr] (raw)    -- (recon);
-    \draw[arr] (recon)  -- (thresh);
-    \draw[arr] (thresh) -- node[left, font=\scriptsize]{Yes} (append);
-    \draw[arr] (thresh) -| node[above, pos=0.22, font=\scriptsize]{No} (inhibit);
-    \draw[arr] (append) -- (stop);
-
-    % Reconnect inhibit branch to END
-    \draw[arr] (inhibit) |- (stop);
-\end{tikzpicture}
-\caption{Power monitoring firmware flow with inhibit decision and telemetry update}
-\label{fig:app_sw_power_flow}
-\end{figure}
-
-\subsection*{F.10\quad Additional Hardware and Mechanical References}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth, trim=0 12mm 0 0, clip]{images/Power_Monitoring_Design_Concept.png}
+\includegraphics[width=\textwidth]{images/Power_Monitoring_Design_Concept.png}
 \caption{Power monitoring hardware concept with ADS1115 divider and launch inhibit path}
 \label{fig:app_sw_power_concept}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{{images/mechanical/18650_case_cover_without title block.JPG}}
-\caption{18650 battery case dimensioned orthographic views}
-\label{fig:app_res_18650_2d}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.70\textwidth]{{images/mechanical/Mid_batt_without title block.JPG}}
-\caption{Mid battery support orthographic views and dimensions}
-\label{fig:app_res_mid_2d}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.70\textwidth]{{images/mechanical/Edge_batt_without title block.JPG}}
-\caption{Edge battery support orthographic views and dimensions}
-\label{fig:app_res_edge_2d}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -566,20 +423,6 @@ flight_state_t fsm_update(flight_state_t current,
 \includegraphics[width=0.75\textwidth]{{images/mechanical/Avionics assembly.jpeg}}
 \caption{Avionics bay assembly showing battery, holder, and electronics integration}
 \label{fig:app_res_avionics_assembly}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.90\textwidth]{images/Basestation_Circuit_Design_White_Background.png}
-\caption{Base station EasyEDA schematic with XBee UART and Bluetooth interface}
-\label{fig:app_res_bs_easyeda}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.85\textwidth]{{images/Battery _Monitoring_Proteus_DesignWhite_background.PNG}}
-\caption{Proteus ADS1115 battery monitoring circuit simulation and verification}
-\label{fig:app_res_proteus_bms}
 \end{figure}
 
 % ============================================================

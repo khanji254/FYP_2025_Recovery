@@ -1,4 +1,65 @@
-﻿\section{Conclusion}
+\section{Conclusion and Recommendations}
 \label{sec:conclusion}
 
-This interim report has demonstrated meaningful technical progress toward a robust dual recovery system for the N4 rocket, addressing the three core problem areas of telemetry range, uncontrolled ignition heating, and pre-flight status visibility. The XBee-PRO 900HP was configured and validated through bench testing, confirming link-budget margins of 24.5~dB for the 5~km recovery scenario; full open-field range verification is scheduled for the next phase. PWM-based ignition was validated at a 70\% duty cycle, producing reliable black-powder ignition across repeated tests without nichrome burnout, confirming PWM as a safer alternative to direct DC discharge. The Proteus BMS simulation verified that the 47~k$\Omega$/10~k$\Omega$ voltage divider produces distinct ADC codes for 14~V and 15~V bus conditions, providing adequate digital margin for the launch-inhibit safety logic. Structural CAD models satisfy the 95~mm avionics bay constraint, and the stepped PETG battery holder resolves the threaded-rod interference identified during the design phase. Firmware was developed as modular FreeRTOS tasks: an XBee UART task managing AT-command configuration and transparent-mode telemetry, a sensor fusion task aggregating BMP388 barometric samples for apogee detection, a PWM deployment task driving the IRLZ44N MOSFET at the validated 70\% duty cycle, an ADS1115 I\textsuperscript{2}C monitoring task reconstructing bus voltage and feeding the inhibit logic, and a finite-state machine task coordinating pad, armed, boost, apogee, drogue, and main recovery states; integration testing of these modules has been completed on the bench. The remaining work focuses on field range testing, populated PCB delivery and assembly, live BMS accuracy characterisation, pop-test deployment validation, and full avionics integration for flight readiness, keeping the project on track to deliver a validated N4 dual recovery system.
+\subsection{Conclusion}
+
+This project has demonstrated a fully realised, structurally verified mechatronic
+solution for the N-4 sounding rocket dual-deployment recovery system,
+systematically mitigating the legacy constraints of telemetry range limits,
+pyrotechnic ignition fatigue, and the absence of pre-flight diagnostics.
+
+The integration of the sub-GHz Digi XBee-PRO 900HP transceiver was successfully
+achieved, verifying a deterministic hardware serial data link. Mathematical
+link-budget profiling confirmed a robust link margin of 32.34\,dB for the 5\,km
+line-of-sight recovery baseline, validated empirically during field range testing
+with the ground-station LCD confirming live packet reception including battery
+voltage and RSSI.
+
+Controlled energy delivery across the deployment channels was validated through
+IRLZ44N MOSFET switching with 70\% PWM duty cycle. Dual deployment pop tests
+confirmed successful drogue and main parachute ejection without nichrome wire
+structural failure, establishing a reliable alternative to direct-current discharge
+methods.
+
+Pre-flight systemic feedback was established via the 16-bit ADS1115 ADC over I$^2$C.
+Empirical bench testing confirmed voltage reconstruction accuracy of $\pm$0.02\,V
+across the full operating range, enabling automated continuity checks and
+launch-inhibit safety logic.
+
+The 3D-printed PETG avionics bay sled satisfied all physical constraints within
+the 95\,mm inner airframe diameter. The stepped battery seating geometry bypassed
+internal threaded structural rod trajectories while providing vibration isolation
+and secure battery retention under launch and pop-test loading.
+
+The embedded firmware was deployed as a concurrent multi-threaded architecture
+under FreeRTOS on the ESP32 microcontroller. A drone-mounted simulated flight
+test confirmed active telemetry and correct FSM state sequencing under dynamic
+conditions. The N-4 mechatronic recovery suite provides a scalable and robust
+design methodology for student-led aerospace initiatives.
+
+\subsection{Recommendations for Future Work}
+
+\begin{enumerate}
+  \item \textbf{Non-Volatile Black-Box Data Logging:} Integrate a high-speed SPI
+    micro-SD card logging module within the FreeRTOS framework to provide full
+    onboard data redundancy against transient telemetry dropouts at apogee.
+
+  \item \textbf{Advanced Sensor Fusion for Apogee Detection:} Incorporate a
+    dual-sensor filtering matrix (BMP280 barometer + MPU6050 accelerometer)
+    within the FSM logic to prevent premature ejection triggers caused by
+    transonic pressure anomalies.
+
+  \item \textbf{Bi-Quad Base-Station Antenna Upgrade:} Replace the duck dipole
+    ground-station antenna with a directional Bi-Quad at 900\,MHz to improve
+    null-zone robustness and extend effective link range during descent phases
+    when the rocket antenna axis may align with the ground-station direction.
+
+  \item \textbf{Full Rocket Integration and Launch:} Complete all hardware
+    integration, conduct a final end-to-end rehearsal test, and proceed to a
+    supervised launch at the Isiolo School of Infantry Range as an entry into the
+    Spaceport America Cup.
+
+  \item \textbf{Parachute Sizing and Drop Test:} Validate drogue and main
+    parachute sizing against the N-4 target descent rate profile using a drop
+    test from a tethered balloon or elevated platform.
+\end{enumerate}

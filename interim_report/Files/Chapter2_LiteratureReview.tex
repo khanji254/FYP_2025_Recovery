@@ -71,7 +71,34 @@ Literature and field practice identify several antenna families for rocket telem
 
 Published antenna fundamentals highlight two recurring operational issues in flight telemetry links: axis nulls in dipole-like radiation patterns and polarisation mismatch during vehicle attitude change \cite{arrl_antenna_book}. These effects can dominate link performance even when radio modules have adequate power margins.
 
+\subsubsection{Comparative Review of XBee Antenna Form Factors}
+The selection of an appropriate antenna form factor for the airborne XBee-PRO 900HP transceiver module is governed by mechanical volume constraints inside the avionics bay, structural shielding from the airframe, and RF radiation patterns \cite{xbee_manual, arrl_antenna_book}. Digi International offers four primary standard antenna configurations for the 900HP modules, outlined below:
+
+\begin{enumerate}
+    \item \textbf{Wire/Whip Antenna:} Consists of a pre-cut quarter-wave omnidirectional wire extending directly from the module PCB. It provides an isotropic, toroidal radiation pattern with a nominal gain of approximately 1.5 dBi to 2.1 dBi. Mechanically, it is lightweight but susceptible to bending or structural interference within tight airframe compartments, which can severely alter its matching impedance and resonance frequency \cite{xbee_manual}.
+    
+    \item \textbf{U.FL RF Connector:} A ultra-miniature surface-mount coaxial connector that allows an external coaxial pigtail cable to route the RF signal to an airframe-mounted external antenna (such as a ruggedized dipole or patch). This setup allows the transceiver to remain isolated inside a metallic or carbon shielding bay while routing radiation externally, minimizing insertion loss if high-quality, low-loss cables are used \cite{pozar_microwave}.
+    
+    \item \textbf{RPSMA Connector:} A reverse-polarity SMA female connector bulkhead integrated onto the module edge. It allows direct, threaded mechanical coupling of heavy-duty, external rubber-duck dipole antennas. While it offers excellent mechanical robustness and consistent impedance characteristics ($50\,\Omega$), its mass and physical volume are large, creating localized structural loading on 3D-printed avionics sleds during high-G launch acceleration \cite{high_g_electronics, xbee_manual}.
+    
+    \item \textbf{Chip Antenna:} Utilizes a high-permittivity surface-mount ceramic dielectric chip layout on the PCB. It offers the most compact mechanical footprint and zero vulnerability to shock or vibration. However, it exhibits a highly constrained, non-uniform radiation pattern with lower gain (typically $< 0\,\mathrm{dBi}$), rendering it highly sensitive to the surrounding PCB ground plane layout and insufficient for long-range, multi-kilometer telemetry applications \cite{pozar_microwave, xbee_manual}.
+\end{enumerate}
+
 \textbf{Gap 3 --- Antenna selection guidance:} Limited evidence-based antenna selection and orientation guidance exists for student recovery missions with dynamic vehicle attitude. No Nakuja documentation quantifies the performance difference between omnidirectional and directional ground antennas under real recovery descent scenarios, nor addresses polarisation mismatch during spin or tumble.
+
+\subsection{Inter-Integrated Circuit (I2C) Communication Protocols}
+Modern modular avionics bays rely heavily on synchronous, short-distance multi-master/multi-slave serial buses to interface master flight controllers with specialized telemetry nodes, environmental sensors, and external analog-to-digital converters \cite{esp32_datasheet, ads1115_datasheet}. The Inter-Integrated Circuit (I2C) protocol utilizes two bidirectional open-drain lines pulled up to the system logic voltage rail ($V_{DD}$): the Serial Data line (SDA) and the Serial Clock line (SCL) \cite{voltage_divider_theory}. 
+
+In the N-4 recovery framework, the I2C bus acts as the primary hardware path linking the master ESP32 microcontroller to the 16-bit ADS1115 diagnostic ADC. Because I2C uses open-drain architecture, devices can only pull the lines down to a logic low state ($V_{SS}$); returning lines to a logic high state relies completely on external pull-up resistors ($R_P$). The selection of $R_P$ dictates a direct engineering tradeoff between bus speed, power consumption, and signal rise-time constraints, governed by total bus capacitance ($C_B$), which is a function of trace lengths, connector footprints, and pin capacitances \cite{voltage_divider_theory}. The maximum allowable rise time ($t_r$) for Standard Mode ($100\,\mathrm{kbps}$) is $1000\,\mathrm{ns}$, and for Fast Mode ($400\,\mathrm{kbps}$) is $3000\,\mathrm{ns}$, bounding the resistor limits via:
+\begin{equation}
+R_{P(\text{max})} = \frac{t_r}{0.8473 \cdot C_B}
+\end{equation}
+Conversely, the minimum resistor value is bounded by the maximum sink current capability of the driving microcontrollers (typically $3\,\mathrm{mA}$) to prevent logic-low voltage thresholds ($V_{OL}$) from creeping above acceptable noise margins ($0.4\,\mathrm{V}$), expressed as:
+\begin{equation}
+R_{P(\text{max})} = \frac{V_{DD} - V_{OL}}{I_{OL}}
+\end{equation}
+
+In rocket environments, high-G mechanical vibrations and thermal transitions can induce minor variations in bus capacitance and pull-up impedance, causing signal distortion, clock-stretching errors, or total I2C bus locks (where a device holds SDA low indefinitely) \cite{high_g_electronics, freertos_manual}. In a critical recovery architecture, I2C firmware implementations require non-blocking timeouts and hardware reset routines to prevent a bus lock from freezing flight-critical parachute deployment tasks.
 
 \subsection{Pyrotechnic Deployment and Ignition Control}
 
@@ -178,5 +205,3 @@ Table~\ref{tab:gaps} consolidates the eight gaps identified across the preceding
 8 & Pre-flight monitoring & N-3.5 lacked battery voltage and continuity telemetry; explicitly flagged for N-4 \cite{n3p5_recovery_report} & Specific Objective 3 (system diagnostics) \\ \bottomrule
 \end{tabular}
 \end{table}
-
-These eight gaps collectively frame the need for the methodology in Chapter~3, where design calculations, selection rationale, and implementation details are developed and validated against each gap.
